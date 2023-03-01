@@ -31,12 +31,13 @@ const LandingSection = () => {
   <FullScreenSection
     backgroundColor="light"
     
-    alignItems={{base:'center', md:"flex-start", lg:'center'}}
+    alignItems={{base:'center', md:"flex-start", lg:'left'}}
     spacing={8}
     width='100vw'
     pt={ 48} 
-    pl={16}
+    pl={{base:16, md:16, lg:44}}
     pb={8}
+
     
     
     
@@ -44,7 +45,7 @@ const LandingSection = () => {
     
  
     
-    <VStack alignItems='start' justifyContent='flex-start'>
+    <VStack alignItems='start' justifyContent='center' >
       
 
       <Heading color='blue' size="sm" textStyle='button' >{greeting}</Heading>
