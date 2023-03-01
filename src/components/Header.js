@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, HStack, VStack, Divider } from "@chakra-ui/react";
+import { Box, HStack, VStack } from "@chakra-ui/react";
 import logoHenry from '../images/hc_logos_black.png'
 import CustomizedButton from "./CustomizedButton"
 import { useAlertContext } from "../context/alertContext"
