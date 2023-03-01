@@ -81,7 +81,7 @@ const AboutMeSection = () => (
   width='100vw'
   pb={{ base: 24, md: 36 }} 
   pt={16}
-  pl={16}
+  pl={32}
   pr={16}
   >
     <Heading as="h1" id="aboutme-section" color='dark' >About me</Heading>

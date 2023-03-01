@@ -100,7 +100,7 @@ const Header = () => {
 
 
 
-        <FullScreenSection
+        <Box
           position="fixed"
           top={0}
           translateY={0}
@@ -173,7 +173,7 @@ const Header = () => {
 
 
           </Box>
-        </FullScreenSection>
+        </Box>
 
 
       )}

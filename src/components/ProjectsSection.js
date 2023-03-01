@@ -39,8 +39,8 @@ const ProjectsSection = () => {
       spacing={8}
       width='100vw'
       pt={16}
-      pl={16}
-      pr={16}
+      pl={32}
+      
       pb={8}
 
     >
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
         gridGap={16}
         alignContent={'center'}
         pr={16}
-        pl={16}
+       
         pb={4}
         
 

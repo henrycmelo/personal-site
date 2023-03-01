@@ -31,12 +31,13 @@ const LandingSection = () => {
   <FullScreenSection
     backgroundColor="light"
     
-    alignItems={{base:'center', md:"flex-start", lg:'left'}}
+    alignItems={{base:'center', md:"flex-start", lg:'flex-start'}}
     spacing={8}
     width='100vw'
-    pt={ 48} 
-    pl={{base:16, md:16, lg:44}}
+    pt={48} 
+    pl={32}
     pb={8}
+    pr={16}
 
     
     
@@ -45,13 +46,13 @@ const LandingSection = () => {
     
  
     
-    <VStack alignItems='start' justifyContent='center' >
+    <VStack alignItems='start' justifyContent='left' >
       
 
       <Heading color='blue' size="sm" textStyle='button' >{greeting}</Heading>
-      <Heading color='dark' size="4xl" textStyle='h2'>{bio1}</Heading>
-      <Heading color='gray' size="3xl" textStyle='h3' pb='0.3em'>{bio2}</Heading>
-      <Text maxW='3xl' color='gray' size='sm' textStyle='body'>{intro} </Text>
+      <Heading color='dark' size={{base:"3xl",md:'4xl'}} textStyle='h2'>{bio1}</Heading>
+      <Heading color='gray' size={{base:"2xl",md:'3xl'}} textStyle='h3' pb='0.3em'>{bio2}</Heading>
+      <Text maxW='3xl' color='gray' fontSize={'sm'} textStyle='body'>{intro} </Text>
       <Text maxW='3xl' color='blue' size='sm' textStyle='body'>{intro2} </Text>
       <Wrap pt={10} pb={20}><CustomizedButton onClick={handleClick('contactme')}>CONTACT ME</CustomizedButton></Wrap>
 
