@@ -7,7 +7,7 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SmallScreen from "./SmallScreen"
 import { useScrollLock } from "../hooks/useScrollLock";
-import FullScreenSection from "./FullScreenSection";
+
 
 
 
