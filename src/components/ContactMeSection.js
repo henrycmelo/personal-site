@@ -107,6 +107,7 @@ const LandingSection = () => {
                   name="firstName"
                   borderColor='blue'
                   borderWidth='2px'
+                  focusBorderColor="yellow"
                   {...formik.getFieldProps('firstName')}
                   
                 />
@@ -122,6 +123,7 @@ const LandingSection = () => {
                   type="email"
                   borderColor='blue'
                   borderWidth='2px'
+                  focusBorderColor="yellow"
                   {...formik.getFieldProps('email')}
                 />
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
@@ -135,6 +137,7 @@ const LandingSection = () => {
                   height={250}
                   borderColor='blue'
                   borderWidth='2px'
+                  focusBorderColor="yellow"
                   {...formik.getFieldProps('comment')}
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
