@@ -98,9 +98,9 @@
                                   formik.handleSubmit(); 
                                   setIsInitialRender(true)}} //I am setting this initial render that if I get an error, the use is able to click again and receive a response
                                   method="post" 
-                                  action="https://formspree.io/f/{your-form-id}"
                                   name="contact"
                                   data-netlify="true"
+                                  data-netlify-honeypot="bot-field"
                                 >
                                   <input type="hidden" name="contact" value="contact" /> 
                                   
