@@ -97,7 +97,12 @@
             <form  onSubmit={(e) =>{e.preventDefault();
                                   formik.handleSubmit(); 
                                   setIsInitialRender(true)}} //I am setting this initial render that if I get an error, the use is able to click again and receive a response
-                                  > 
+                                  method="post" 
+                                  action="https://formspree.io/f/{your-form-id}"
+                                  name="contact"
+                                  data-netlify="true"
+                                >
+                                  <input type="hidden" name="contact" value="contact" /> 
                                   
               <VStack spacing={4}>
                 <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName ? true : false}>
