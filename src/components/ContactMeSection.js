@@ -81,7 +81,7 @@ const LandingSection = () => {
     <FullScreenSection
       backgroundColor="secondLight"
       
-      alignItems="flex-start"
+      alignItems={{base:'center', md:"flex-start", lg:'center'}}
       spacing={8}
       width='100vw'
       pt={16}

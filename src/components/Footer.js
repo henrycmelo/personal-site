@@ -12,7 +12,7 @@ const Footer = () => {
 
     <FullScreenSection
       backgroundColor="dark"
-      alignItems="flex-start"
+      alignItems='center'
       spacing={8}
       width='100vw'
       p={16}>
@@ -23,8 +23,7 @@ const Footer = () => {
               templateColumns= {{ base: "repeat(1,1fr)", md: "repeat(2, 1fr)" }}
               gap={2}
               color="light"
-              
-              maxWidth="1024px"
+              width={'100%'}   
               margin="0 auto"
               paddingBottom="1em"
               >
@@ -32,8 +31,7 @@ const Footer = () => {
             colSpan={1}
             px={12}
             color="light"
-            justifyContent="center"
-            alignItems="left"
+            
             maxWidth="1024px"
 
           >
@@ -45,6 +43,8 @@ const Footer = () => {
           </GridItem>
           <GridItem
             colSpan={1}
+            colStart={{base:0, md:4,lg:4}}
+            colEnd={{base:0, md:6,lg:6}}
             
             px={12}>
 
@@ -60,7 +60,7 @@ const Footer = () => {
           
           
         </Grid>
-        <Divider color='light'  alignItems="center" maxWidth="1024px" margin="0 auto" />
+        <Divider color='light'  alignItems="center"  margin="0 auto" />
         <Text  color='yellow' size='xs' textStyle='body' textAlign='center'>© Copyright 2023. Designed and built by <b>Henry Castillo</b> </Text>
         
       </footer>
