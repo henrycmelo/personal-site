@@ -18,7 +18,7 @@
   import CustomizedButton from "./CustomizedButton";
 
 
-  const LandingSection = () => {
+  const ContactMeSection = () => {
     const {isLoading, response, submit} = useSubmit();
     const { onOpen } = useAlertContext();
     const [isInitialRender, setIsInitialRender] = useState(true) //using this hook to avoid infinite loop of onOpen
@@ -158,4 +158,4 @@
     );
   };
 
-  export default LandingSection;
+  export default ContactMeSection;
