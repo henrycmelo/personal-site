@@ -1,4 +1,4 @@
-  import React, {useEffect, useState} from "react";
+  import React from "react";
   import { useFormik } from "formik";
   import {
     Box,
@@ -14,51 +14,20 @@
   import * as Yup from 'yup';
   import FullScreenSection from "./FullScreenSection";
   import useSubmit from "../hooks/useSubmit";
-  import {useAlertContext} from "../context/alertContext";
+  // import {useAlertContext} from "../context/alertContext";
   import CustomizedButton from "./CustomizedButton";
 
 
   const ContactMeSection = () => {
-    const {isLoading, response, submit} = useSubmit();
-    const { onOpen } = useAlertContext();
-    const [isInitialRender, setIsInitialRender] = useState(true) //using this hook to avoid infinite loop of onOpen
+    const {isLoading} = useSubmit();
+    // const { onOpen } = useAlertContext();
+    // const [isInitialRender, setIsInitialRender] = useState(true) //using this hook to avoid infinite loop of onOpen
 
     const encode = (data) => {
       return Object.keys(data)
           .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
           .join("&");
     }
-
-    const formik = useFormik({
-      initialValues: {
-          firstName:'',
-          email:'',
-          type: '',
-          comment: ''
-      },
-      onSubmit: (values,  ) => {
-          alert(JSON.stringify(values, null, 2))
-          
-      }
-          
-  
-        
-      ,
-      validationSchema: Yup.object().shape({
-          firstName: Yup.string()
-              .min(2,'Too Short!')
-              .max(15,'Too Long!')
-              .required('Required'),
-          email: Yup.string().email('Invalid email').required('Required'),
-
-          comment:Yup.string()
-              .min(10,'Too Short!')
-              .max(200,'Too Long!')
-              .required('Required'),
-
-      }),
-    });
-
     const onSubmit = (values, submitProps) => {
       fetch("/", {
           method: "POST",
@@ -78,6 +47,32 @@
               return response
           })
           .catch(error => alert(error));}
+
+
+
+    const formik = useFormik({
+      initialValues: {
+          firstName:'',
+          email:'',
+          comment: ''
+      },
+      onSubmit,
+      validationSchema: Yup.object().shape({
+          firstName: Yup.string()
+              .min(2,'Too Short!')
+              .max(15,'Too Long!')
+              .required('Required'),
+          email: Yup.string().email('Invalid email').required('Required'),
+
+          comment:Yup.string()
+              .min(10,'Too Short!')
+              .max(200,'Too Long!')
+              .required('Required'),
+
+      }),
+    });
+
+    
 
 
     
@@ -122,7 +117,7 @@
 
             <form  onSubmit={(e) =>{e.preventDefault();
                                   formik.handleSubmit(); 
-                                  onSubmit();}} //I am setting this initial render that if I get an error, the use is able to click again and receive a response
+                                 }} //I am setting this initial render that if I get an error, the use is able to click again and receive a response
                             method="post" 
                             name="contact"
                             data-netlify="true"
