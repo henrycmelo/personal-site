@@ -15,7 +15,7 @@ const useSubmit = () => {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
-        body:encodeURI({"form-name":"contact",...this.state}),
+        body:encodeURI({"form-name":"contact",...data}),
       });
       if (!response.ok) {
         throw new Error("Something went wrong");
