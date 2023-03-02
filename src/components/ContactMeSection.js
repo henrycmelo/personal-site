@@ -23,6 +23,12 @@
     const { onOpen } = useAlertContext();
     const [isInitialRender, setIsInitialRender] = useState(true) //using this hook to avoid infinite loop of onOpen
 
+    const encode = (data) => {
+      return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+    }
+
     const formik = useFormik({
       initialValues: {
           firstName:'',
@@ -53,26 +59,46 @@
       }),
     });
 
+    const onSubmit = (values, submitProps) => {
+      fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({ "form-name": "contact", ...values })
+        })
+          .then(response => {
+              if(!response.ok) {
+                  throw new Error(response.status)
+              } else if(response.ok) {
+                  alert("Success!")
+                  submitProps.resetForm()
+              } else {
+                  alert("Something went wrong!")
+              }
+
+              return response
+          })
+          .catch(error => alert(error));}
+
 
     
 
-    useEffect(()=>{
-      if(isInitialRender){  //so now in this way the onOpen only is called when isInitialRender is true, so in this way the effect is re-run and the onOpen variable will not re-trigger the effect
-        if(!isLoading && response){
-          setIsInitialRender(false);
-          if(response.type==='success'){ 
-          onOpen(response.type, response.message)
-          formik.resetForm()
-        }
-          if(response.type==='error'){
-            onOpen(response.type, response.message)
-          }
+    // useEffect(()=>{
+    //   if(isInitialRender){  //so now in this way the onOpen only is called when isInitialRender is true, so in this way the effect is re-run and the onOpen variable will not re-trigger the effect
+    //     if(!isLoading && response){
+    //       setIsInitialRender(false);
+    //       if(response.type==='success'){ 
+    //       onOpen(response.type, response.message)
+    //       formik.resetForm()
+    //     }
+    //       if(response.type==='error'){
+    //         onOpen(response.type, response.message)
+    //       }
       
-      }
+    //   }
 
-    }
+    // }
       
-    },[onOpen,isLoading, response,isInitialRender,formik])
+    // },[onOpen,isLoading, response,isInitialRender,formik])
 
   
   
@@ -96,11 +122,11 @@
 
             <form  onSubmit={(e) =>{e.preventDefault();
                                   formik.handleSubmit(); 
-                                  setIsInitialRender(true)}} //I am setting this initial render that if I get an error, the use is able to click again and receive a response
-                                  method="post" 
-                                  name="contact"
-                                  data-netlify="true"
-                                  data-netlify-honeypot="bot-field"
+                                  onSubmit();}} //I am setting this initial render that if I get an error, the use is able to click again and receive a response
+                            method="post" 
+                            name="contact"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
                                 >
                                   <input type="hidden" name="contact" value="contact" /> 
                                   
