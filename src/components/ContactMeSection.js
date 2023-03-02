@@ -36,8 +36,8 @@
           type: '',
           comment: ''
       },
-      onSubmit: async (values,  ) => {
-          await submit('url',values)
+      onSubmit: (values,  ) => {
+          alert(JSON.stringify(values, null, 2))
           
       }
           
