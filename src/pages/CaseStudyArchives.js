@@ -112,6 +112,38 @@ const CaseStudyArchives = () => {
 
   }]
 
+  const analyze=[{
+    title: "Analyze",
+    tool: 'Affinity Diagram',
+    descriptiontool:`I used the affinity diagram to find patterns and grouped them from the most to least common.  
+                    Consequently, we created recommendations based on the findings `,
+    getImageSrc: () => require("../images/affinity.png"),
+    userquoation:` "I wish there will more graphics"`,
+    insigths:[{
+      subtitle: `• Insights:`,
+      insigth1: `- Most users found that buttons were outdated and need to look more appealing`,
+      insigth2:`- Many users agreed that the content information should be condensed into on tab rather than having several ways`,
+      insigth3: `- some users thinks that the page should have narrative/personal touch`,
+      insigth4:`- Users thought that the font and the font size are inconsistent and should use more imagery`
+
+    }]
+  }]
+
+  const iterations=[{
+    title: "Iteration and Recommendations",
+    recommendations:[{
+      uno:'Recommendation 1-',
+      description: 'Buttons:',
+      analyze: ` The current design has small buttons which makes it difficult for the user to find and consequently 
+                discourages them from continuing with the donation process. The first thing the usability study revealed 
+                is that we should make the buttons larger. Next, we determined the  color of the call-to-action (CTA) button should be changed 
+                from blue to purple. We chose purple because it is more consistent with the style of the rest of the website 
+                and provides contrast to the secondary CTA buttons that were added to the side panel. 
+                Lastly, we moved the location of the donate button from the top of the navigation bar to the end of the navigation bar 
+                and changed the CTA from "Donate" to "Donate Now" to increase the urgency.`
+    }]
+  }]
+
 
 
 
@@ -269,7 +301,7 @@ const CaseStudyArchives = () => {
           <Text textStyle='h2' fontSize={'4xl'}> {usertesting[0].title}</Text>
           <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{usertesting[0].subtitle}</b></span> {usertesting[0].description}  </Text>
 
-          <Card boxShadow='xl' >
+          <Card boxShadow='xl' align={'center'}>
 
               <CardBody><Image src={usertesting[0].getImageSrc()} alt="usertesting on Zoom" background='none' borderRadius='lg' /> </CardBody>
 
@@ -294,6 +326,69 @@ const CaseStudyArchives = () => {
           <Text size='sm' textStyle='body' pl={16}>  {usertesting[0].followup[0].question3}</Text>
           
           </VStack>
+
+
+        </FullScreenSection>
+
+
+        {/*Analyze */}
+
+      <FullScreenSection
+        backgroundColor="secondLight"
+
+        alignItems={"center"}
+        spacing={8}
+        width='100vw'
+        pt={16}
+        pl={32}
+        pb={8}
+        pr={16}>
+
+          <VStack alignItems={'flex start'} justifyContent={'center'}>
+            <Text textStyle='h2' fontSize={'4xl'}> {analyze[0].title}</Text>
+            <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{analyze[0].tool}</b></span> {analyze[0].descriptiontool}  </Text>
+
+            <Card boxShadow='xl' align='center'>
+
+              <CardBody ><Image src={analyze[0].getImageSrc()} alt={analyze[0].tool} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>{analyze[0].userquoation}</b></span>
+                </Text> </CardFooter>
+            </Card>
+
+          <Text size='sm' textStyle='body' pl={8}>  <b>{analyze[0].insigths[0].subtitle}</b></Text>
+          <Text size='sm' textStyle='body' pl={16}>  {analyze[0].insigths[0].insigth1}</Text>
+          <Text size='sm' textStyle='body' pl={16}>  {analyze[0].insigths[0].insigth2}</Text>
+          <Text size='sm' textStyle='body' pl={16}>  {analyze[0].insigths[0].insigth3}</Text>
+          <Text size='sm' textStyle='body' pl={16}>  {analyze[0].insigths[0].insigth4}</Text>
+          </VStack>
+
+        </FullScreenSection>
+
+
+        {/*recommendation */}
+
+      <FullScreenSection
+        backgroundColor="light"
+
+        alignItems={"center"}
+        spacing={8}
+        width='100vw'
+        pt={16}
+        pl={32}
+        pb={8}
+        pr={16}>
+          <VStack alignItems={'flex start'} justifyContent={'center'}>
+            <Text textStyle='h2' fontSize={'4xl'}> {iterations[0].title}</Text>
+            <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].uno}</b>
+                                            <u>{iterations[0].recommendations[0].description}</u></span> 
+                                            {iterations[0].recommendations[0].analyze}  </Text>
+
+          </VStack>
+
+
+
 
 
         </FullScreenSection>
