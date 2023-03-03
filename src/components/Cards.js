@@ -8,7 +8,7 @@ const Cards = ({ title, description, imageSrc }) => {
   // Feel free to import other UI components from Chakra UI if you wish to.
 
   return (
-    <Card maxW='md' backgroundColor='light' shadow='lg'>
+    <Card maxW='md' backgroundColor='light' boxShadow='xl' >
       <CardBody>
 
         <Image src={imageSrc} alt={title} objectFit='cover' boxSize='100%' h='auto' />
