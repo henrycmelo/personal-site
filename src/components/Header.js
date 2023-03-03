@@ -7,6 +7,7 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SmallScreen from "./SmallScreen"
 import { useScrollLock } from "../hooks/useScrollLock";
+import { Link } from 'react-router-dom';
 
 
 
@@ -130,7 +131,7 @@ const Header = () => {
 
                 <HStack spacing={8} >
                   {logo.map(logos => (                // rendering the list of icons using .map () method
-                    <a key={logos.id} href='.' rel="noopener noreferrer">
+                    <a key={logos.id} href='/home' rel="noopener noreferrer">
                       <Logo key={logos.id} src={logos.src} alt={logos.alt} />
                     </a>
                   )
@@ -140,7 +141,7 @@ const Header = () => {
               <nav >
 
                 <HStack spacing={8} display={{ base: 'none', md: "flex" }}  >
-
+                  <Link to="/home"><button>Home</button></Link>
                   {(<button onClick={handleClick('aboutme')}>About</button>)}
                   {(<button onClick={handleClick('projects')}>Work</button>)}
                   {(<button onClick={handleClick('contactme')}> Contact</button>)}
