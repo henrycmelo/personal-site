@@ -1,4 +1,4 @@
-  import React from "react";
+  import React, {useState} from "react";
   import { useFormik } from "formik";
   import {
     Box,
@@ -14,14 +14,22 @@
   import * as Yup from 'yup';
   import FullScreenSection from "./FullScreenSection";
   import useSubmit from "../hooks/useSubmit";
-  // import {useAlertContext} from "../context/alertContext";
+  import {useAlertContext} from "../context/alertContext";
   import CustomizedButton from "./CustomizedButton";
 
 
   const ContactMeSection = () => {
-    const {isLoading} = useSubmit();
-    // const { onOpen } = useAlertContext();
-    // const [isInitialRender, setIsInitialRender] = useState(true) //using this hook to avoid infinite loop of onOpen
+    
+    const { onOpen, onClose } = useAlertContext();
+    const [isLoading, setLoading] = useState(false);
+    const responses= [
+      {type:'error',
+      message:'Something went wrong, please try again later!',
+      },
+      {type: 'success',
+      message: `Success, we will get back to you shortly!`}
+    ]
+
 
     const encode = (data) => {
       return Object.keys(data)
@@ -29,6 +37,7 @@
           .join("&");
     }
     const onSubmit = (values, submitProps) => {
+      setLoading(true)
       fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -37,16 +46,24 @@
           .then(response => {
               if(!response.ok) {
                   throw new Error(response.status)
-              } else if(response.ok) {
-                  alert("Success!")
+              } else if(response.ok ) {
+                  const successMessage= response[1].message
+                  const successAlert= `${successMessage} Thanks for you submission ${values.firstName}`
+                  onOpen (response[1].type, successAlert)
                   submitProps.resetForm()
               } else {
-                  alert("Something went wrong!")
+                  onClose("Something went wrong!")
               }
 
               return response
           })
-          .catch(error => alert(error));}
+          .catch(error => {
+            const genericMessage=responses[0].message;
+            const specificMessage=error.message;
+            const message= `${genericMessage} error ${specificMessage}`
+            onOpen(responses[0].type, message)
+          } );
+        setLoading(false)}
 
 
 

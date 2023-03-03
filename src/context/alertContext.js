@@ -59,7 +59,7 @@ export const AlertProvider = ({ children }) => {
     <AlertContext.Provider
       value={{
         ...state,
-        onOpen: (type, message) => setState({ isOpen: true, type, message }),
+        onOpen: (type, message,error) => setState({ isOpen: true, type, message,error }),
         onClose: () => setState({ isOpen: false, type: '', message: '' }),
         handleClick,
         socials
