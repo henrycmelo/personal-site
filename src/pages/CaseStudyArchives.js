@@ -1,7 +1,7 @@
 
 import {
-  Image, Box, Heading, VStack, Text, HStack,
-  Card, CardHeader, CardBody, CardFooter, Divider
+  Image, Box, VStack, Text, HStack,
+  Card, CardBody, CardFooter, 
 } from '@chakra-ui/react'
 import Header from "../components/Header"
 import FullScreenSection from "../components/FullScreenSection";
@@ -148,7 +148,23 @@ const CaseStudyArchives = () => {
       analyze2: ` The usability study showed that people were frustrated because of the lack of personal touch.
                  So I decided to add a carousel in a hero image with ‘donate now’ button and quotes from outside sources.`,
       getImageSrc3: ()=> require("../images/reco3.png"),
-      getImageSrc4: ()=> require("../images/reco4.png")
+      getImageSrc4: ()=> require("../images/reco4.png"),
+      three:'Recommendation 3-',
+      description3: 'Visual hierarchy:',
+      analyze3: ` The usability study gave us the insight that people found the content too dense and lacking visual cues. 
+                  To improve this, we decided to create cards as a common region and a CTA button in each of the cards 
+                  to differentiate the information and guide the user for better visual cues. In addition, I added an image to 
+                  the top of the landing page with a clear CTA button`,
+      getImageSrc5: ()=> require("../images/reco5.png"),
+      getImageSrc6: ()=> require("../images/reco6.png"),
+      four:'Recommendation 4-',
+      description4: 'Layout redesign, viewing pattern:',
+      analyze4: ` Although I tried to keep the layout consistency with the current one on the website because of the style, 
+                  I highly suggest to change this in order to improve the viewing pattern. The viewing pattern that I propose is 
+                  the F one because it will guide the users through the website without making them think, 
+                  and also leading them to scan the document in a friendly way. `,
+      getImageSrc7: ()=> require("../images/reco7.png"),
+      getImageSrc8: ()=> require("../images/reco8.png")
       
     }],
     
@@ -418,6 +434,8 @@ const CaseStudyArchives = () => {
 
           <br/>
 
+          {/*recommendation2 */}
+
           <VStack alignItems={'flex start'} justifyContent={'center'}>
             <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].dos}</b>
                                             <u>{iterations[0].recommendations[0].description2}</u></span> 
@@ -442,6 +460,67 @@ const CaseStudyArchives = () => {
             </HStack>
 
           </VStack>
+
+
+          <br/>
+
+          {/*recommendation3 */}
+
+          <VStack alignItems={'flex start'} justifyContent={'center'}>
+            <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].three}</b>
+                                            <u>{iterations[0].recommendations[0].description3}</u></span> 
+                                            {iterations[0].recommendations[0].analyze3}  </Text>
+            <HStack>
+            <Card boxShadow='xl' >
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc6()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Before</b></span>
+                </Text> </CardFooter>
+            </Card>
+            <Card boxShadow='xl'>
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc5()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>After</b></span>
+                </Text> </CardFooter>
+            </Card>
+            </HStack>
+
+          </VStack>
+
+
+          {/*recommendation4 */}
+
+          <VStack alignItems={'flex start'} justifyContent={'center'}>
+            <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].four}</b>
+                                            <u>{iterations[0].recommendations[0].description4}</u></span> 
+                                            {iterations[0].recommendations[0].analyze4}  </Text>
+            <HStack>
+            <Card boxShadow='xl' >
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc8()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Layout redesign</b></span>
+                </Text> </CardFooter>
+            </Card>
+            <Card boxShadow='xl'>
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc7()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Viewing pattern</b></span>
+                </Text> </CardFooter>
+            </Card>
+            </HStack>
+
+          </VStack>
+
+
+
 
 
 
