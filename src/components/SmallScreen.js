@@ -1,7 +1,7 @@
 import { Box, HStack, VStack } from "@chakra-ui/react";
 import CustomizedButton from "./CustomizedButton"
 import { useAlertContext } from "../context/alertContext"
-
+import { Link } from 'react-router-dom';
 import React from "react";
 
 
@@ -22,13 +22,6 @@ const SmallScreen = ({className,children}) => {
             className={className}
 
 
-
-
-
-
-
-
-
         >
             <Box color='light' margin="0 auto" textStyle="body" mt='7em'>
                 <HStack
@@ -44,6 +37,7 @@ const SmallScreen = ({className,children}) => {
                             <Box display='absolute' justifyContent='center' alignItems='center'>
 
                                 <VStack spacing={20} >
+                                    {(<Link to="/home"><button>Home</button></Link>)}
 
 
                                     {(<button onClick={handleClick('aboutme')}>About</button>)}
