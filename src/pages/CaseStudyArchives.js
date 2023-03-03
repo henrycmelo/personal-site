@@ -1,10 +1,11 @@
-
 import {
-  Image, Box, VStack, Text, HStack,
-  Card, CardBody, CardFooter, 
+  Image, Box, VStack, Text,
+  Card, CardBody, CardFooter,Stack 
 } from '@chakra-ui/react'
 import Header from "../components/Header"
 import FullScreenSection from "../components/FullScreenSection";
+import Footer from "../components/Footer";
+
 
 
 const CaseStudyArchives = () => {
@@ -164,9 +165,42 @@ const CaseStudyArchives = () => {
                   the F one because it will guide the users through the website without making them think, 
                   and also leading them to scan the document in a friendly way. `,
       getImageSrc7: ()=> require("../images/reco7.png"),
-      getImageSrc8: ()=> require("../images/reco8.png")
+      getImageSrc8: ()=> require("../images/reco8.png"),
+      five:'Recommendation 5-',
+      description5: 'Accessibility considerations',
+      analyze5: ` Provided access to users who are vision impaired through text to images for screen readers.`,
+      analyze51: `Implemented icons to enhance user navigation and improve accessibility.`,
+      analyze52: `Used detailed imagery to aid user understanding of relevant information on the screen`,
+      getImageSrc9: ()=> require("../images/reco9.jpg"),
+      getImageSrc10: ()=> require("../images/reco10.jpg"),
+      getImageSrc11: ()=> require("../images/reco11.jpg"),
       
     }],
+    
+  }]
+
+  const conclusion=[{
+    title: 'Conclusion', 
+    subtitle: 'Presentation: ',
+    subtitle2: 'Feedback',
+    presentation: `I presented the final report to the client in a virtual meeting through Zoom. 
+                    We went from the methodology used to the recommendations. 
+                    I explained in detail how we arrived at our recommendations and why they aligned with 
+                    the client's goal of improving the support page`,
+    feedback: `The client was happy with the results and the recommendations. They asked me for the final report, presentation video and slides. 
+              I am looking forward to continued work with them`,
+    getImageSrc: ()=> require("../images/conclusion.png"),
+  }]
+
+  const takeaways=[{
+    title: 'Going Forward', 
+    subtitle: 'Takeaways: ',
+    subtitle2: 'Next steps: ',
+    learned: `While working on this project, I learned that working in teams is very important and being open-minded 
+              played a key role in the development of it. I also learned that usability studies and peer feedback influence each iteration of website designs.
+              It is important to take into account the users and leave bias on the side.`,
+    nextsteps1: `- Conduct another round of usability studies to validate whether the user’s needs and frustrations experienced previously have been effectively addressed`,
+    nextsteps2:`- Conduct more user research to determine any new area of need`,
     
   }]
 
@@ -248,7 +282,7 @@ const CaseStudyArchives = () => {
         p={32}>
         <VStack alignItems={'flex start'} justifyContent={'center'}>
           <Text textStyle='h2' fontSize={'4xl'}> {currentState[0].title}</Text>
-          <HStack>
+          <Stack direction={{base: 'column', md: 'row'}}>
             <Card boxShadow='xl' >
 
               <CardBody><Image src={currentState[0].getImageSrc()} alt="mockup lato" background='none' borderRadius='lg' /> </CardBody>
@@ -267,7 +301,7 @@ const CaseStudyArchives = () => {
             </Card>
 
 
-          </HStack>
+          </Stack>
         </VStack>
 
       </FullScreenSection>
@@ -410,7 +444,7 @@ const CaseStudyArchives = () => {
             <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].uno}</b>
                                             <u>{iterations[0].recommendations[0].description}</u></span> 
                                             {iterations[0].recommendations[0].analyze}  </Text>
-            <HStack>
+            <Stack direction={{base: 'column', md: 'row'}}>
             <Card boxShadow='xl' >
 
               <CardBody><Image src={iterations[0].recommendations[0].getImageSrc()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
@@ -427,7 +461,7 @@ const CaseStudyArchives = () => {
                 <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>After</b></span>
                 </Text> </CardFooter>
             </Card>
-            </HStack>
+            </Stack>
 
           </VStack>
 
@@ -440,10 +474,10 @@ const CaseStudyArchives = () => {
             <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].dos}</b>
                                             <u>{iterations[0].recommendations[0].description2}</u></span> 
                                             {iterations[0].recommendations[0].analyze2}  </Text>
-            <HStack>
+            <Stack direction={{base: 'column', md: 'row'}}>
             <Card boxShadow='xl' >
 
-              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc4()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc4()} alt={iterations[0].recommendations[0].description2} background='none' borderRadius='lg' /> </CardBody>
 
               <CardFooter justify={'center'}>
                 <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Before</b></span>
@@ -451,13 +485,13 @@ const CaseStudyArchives = () => {
             </Card>
             <Card boxShadow='xl'>
 
-              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc3()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc3()} alt={iterations[0].recommendations[0].description2} background='none' borderRadius='lg' /> </CardBody>
 
               <CardFooter justify={'center'}>
                 <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>After</b></span>
                 </Text> </CardFooter>
             </Card>
-            </HStack>
+            </Stack>
 
           </VStack>
 
@@ -470,10 +504,10 @@ const CaseStudyArchives = () => {
             <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].three}</b>
                                             <u>{iterations[0].recommendations[0].description3}</u></span> 
                                             {iterations[0].recommendations[0].analyze3}  </Text>
-            <HStack>
+            <Stack direction={{base: 'column', md: 'row'}}>
             <Card boxShadow='xl' >
 
-              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc6()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc6()} alt={iterations[0].recommendations[0].description3} background='none' borderRadius='lg' /> </CardBody>
 
               <CardFooter justify={'center'}>
                 <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Before</b></span>
@@ -481,13 +515,13 @@ const CaseStudyArchives = () => {
             </Card>
             <Card boxShadow='xl'>
 
-              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc5()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc5()} alt={iterations[0].recommendations[0].description3} background='none' borderRadius='lg' /> </CardBody>
 
               <CardFooter justify={'center'}>
                 <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>After</b></span>
                 </Text> </CardFooter>
             </Card>
-            </HStack>
+            </Stack>
 
           </VStack>
 
@@ -498,10 +532,10 @@ const CaseStudyArchives = () => {
             <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].four}</b>
                                             <u>{iterations[0].recommendations[0].description4}</u></span> 
                                             {iterations[0].recommendations[0].analyze4}  </Text>
-            <HStack>
+            <Stack direction={{base: 'column', md: 'row'}}>
             <Card boxShadow='xl' >
 
-              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc8()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc8()} alt={iterations[0].recommendations[0].description4} background='none' borderRadius='lg' /> </CardBody>
 
               <CardFooter justify={'center'}>
                 <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Layout redesign</b></span>
@@ -509,13 +543,50 @@ const CaseStudyArchives = () => {
             </Card>
             <Card boxShadow='xl'>
 
-              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc7()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc7()} alt={iterations[0].recommendations[0].description4} background='none' borderRadius='lg' /> </CardBody>
 
               <CardFooter justify={'center'}>
                 <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Viewing pattern</b></span>
                 </Text> </CardFooter>
             </Card>
-            </HStack>
+            </Stack>
+
+          </VStack>
+
+
+          {/*recommendation5 */}
+
+          <VStack alignItems={'flex start'} justifyContent={'center'}>
+            <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].five}</b>
+                                            <u>{iterations[0].recommendations[0].description5}</u></span> 
+                                              </Text>
+            <Stack direction={{base: 'column', md: 'row'}}>
+            <Card boxShadow='xl' >
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc9()}  alt={iterations[0].recommendations[0].analyze5} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].analyze5}</b></span>
+                </Text> </CardFooter>
+            </Card>
+            <Card boxShadow='xl' align={'center'}>
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc10()}  alt={iterations[0].recommendations[0].analyze51} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'} >
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].analyze51}</b></span>
+                </Text> </CardFooter>
+            </Card>
+
+            <Card boxShadow='xl'>
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc11()} alt={iterations[0].recommendations[0].analyze52} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].analyze52}</b></span>
+                </Text> </CardFooter>
+            </Card>
+            </Stack>
 
           </VStack>
 
@@ -526,11 +597,69 @@ const CaseStudyArchives = () => {
 
 
 
-
-
         </FullScreenSection>
 
+     {/*conclusion */}
+
+     <FullScreenSection
+        backgroundColor="secondLight"
+
+        alignItems={"center"}
+        spacing={8}
+        width='100vw'
+        pt={16}
+        pl={32}
+        pb={8}
+        pr={16}>
+          <VStack alignItems={'flex start'} justifyContent={'center'}>
+          <Text textStyle='h2' fontSize={'4xl'}> {conclusion[0].title}</Text>
+          <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{conclusion[0].subtitle}</b></span> {conclusion[0].presentation}  </Text>
+          <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{conclusion[0].subtitle2}</b></span> {conclusion[0].feedback}  </Text>
+          <Card boxShadow='xl' >
+
+              <CardBody><Image src={conclusion[0].getImageSrc()} alt="mockup lato" background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Zoom meeting</b></span>
+                </Text> </CardFooter>
+            </Card>
+
+          </VStack>
+
+          </FullScreenSection>
+
+          {/*conclusion */}
+
+     <FullScreenSection
+        backgroundColor="light"
+
+        alignItems={"center"}
+        spacing={8}
+        width='100vw'
+        pt={16}
+        pl={32}
+        pb={8}
+        pr={16}>
+          <VStack alignItems={'flex start'} justifyContent={'center'}>
+          <Text textStyle='h2' fontSize={'4xl'}> {takeaways[0].title}</Text>
+          <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{takeaways[0].subtitle}</b></span> {takeaways[0].learned}  </Text>
+          <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{takeaways[0].subtitle2}</b></span>  </Text>
+          <Text size='sm' textStyle='body' pl={8}> {takeaways[0].nextsteps1}  </Text>
+          <Text size='sm' textStyle='body' pl={8}> {takeaways[0].nextsteps2}  </Text>
+         
+
+            
+
+          </VStack>
+
+          </FullScreenSection>
+
+    <Footer/>
+
     </main>)
+    
+       
+    
 
 }
 

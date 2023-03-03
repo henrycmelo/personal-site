@@ -21,6 +21,7 @@ const projects = [
     description:
       "Conducted a usability testing project on the Archives of American Art donation page, providing recommendations to improve its functionality, navigation, and search capabilities",
     getImageSrc: () => require("../images/aaa.jpg"),
+    path:'/casestudyarchives'
   },
   {
     title: "Designing a food menu app for a steakhouse",
@@ -31,6 +32,7 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  
   return (
     <FullScreenSection
       backgroundColor="blue"
@@ -70,6 +72,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            to ={project.path}
 
           />
         ))}

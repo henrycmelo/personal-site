@@ -141,7 +141,7 @@ const Header = () => {
               <nav >
 
                 <HStack spacing={8} display={{ base: 'none', md: "flex" }}  >
-                  <Link to="/home"><button>Home</button></Link>
+                  <Link to="/"><button>Home</button></Link>
                   {(<button onClick={handleClick('aboutme')}>About</button>)}
                   {(<button onClick={handleClick('projects')}>Work</button>)}
                   {(<button onClick={handleClick('contactme')}> Contact</button>)}

@@ -37,7 +37,7 @@ const SmallScreen = ({className,children}) => {
                             <Box display='absolute' justifyContent='center' alignItems='center'>
 
                                 <VStack spacing={20} >
-                                    {(<Link to="/home"><button>Home</button></Link>)}
+                                    {(<Link to="/"><button>Home</button></Link>)}
 
 
                                     {(<button onClick={handleClick('aboutme')}>About</button>)}
