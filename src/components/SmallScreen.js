@@ -46,7 +46,7 @@ const SmallScreen = ({className,children}) => {
 
                                     {(<button onClick={handleClick('contactme')}> Contact</button>)}
 
-                                    {(<CustomizedButton>RESUME</CustomizedButton>)}
+                                    {(<a href={require('../documents/resumeHenry.pdf')}  target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
                                 </VStack>
                             </Box>
                         </nav>

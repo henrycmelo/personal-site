@@ -8,6 +8,8 @@ import Home from "./pages/Home"
 
 
 
+
+
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -18,6 +20,7 @@ function App() {
           <Routes>
               <Route exact path="/" element={<Home/>}></Route>
               <Route exact path="/casestudyarchives" element={<CaseStudyArchives/>}></Route>
+              
           </Routes>
           
         </main>
