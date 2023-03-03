@@ -110,10 +110,7 @@ const ContactMeSection = () => {
       alignItems={{ base: 'center', md: "flex-start", lg: 'center' }}
       spacing={8}
       width='100vw'
-      pt={16}
-      pl={16}
-      pr={16}
-      pb={8}
+      p={{base:8, md:32}}
     >
       <Heading as="h1" id="contactme-section" color='dark'>Contact me</Heading>
       <VStack w='100%' alignItems='start' justifyContent='flex-start'  >

@@ -242,7 +242,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        p={32}>
+        p={{base:8, md:32}}>
         <VStack alignItems={'center'} justifyContent={'center'}>
           <Text textStyle='h2' fontSize={'4xl'}> {projectInfo[0].client}</Text>
           <Text textStyle='body' fontSize={'2xl'} textAlign={'center'}> {projectInfo[0].title}</Text>

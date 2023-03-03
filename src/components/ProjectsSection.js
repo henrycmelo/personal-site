@@ -40,10 +40,7 @@ const ProjectsSection = () => {
       alignItems={{base:'center', md:"flex-start", lg:'center'}}
       spacing={8}
       width='100vw'
-      pt={16}
-      pl={32}
-      
-      pb={8}
+      p={{base:8, md:32}}
 
     >
       <Heading as="h1" id="projects-section">Featured Projects</Heading>
@@ -52,7 +49,7 @@ const ProjectsSection = () => {
       
       <Box
         display="grid"
-        gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,minmax(0,1fr))", lg:"repeat(3,minmax(0,1fr))" }}
+        gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,minmax(0,1fr))"}}
         // The md breakpoint is a default breakpoint in Chakra UI that corresponds to screens with a width of 48em (768px) or larger
         gridGap={16}
         alignContent={'center'}

@@ -9,7 +9,7 @@ const Cards = ({ title, description, imageSrc, to }) => {
   }
 
   return (
-    <Card maxW='md' backgroundColor='light' boxShadow='xl' >
+    <Card maxW={['100%', 'md']} backgroundColor='light' boxShadow='xl' >
       <CardBody>
 
         <Image src={imageSrc} alt={title} objectFit='cover' boxSize='100%' h='auto' />

@@ -34,10 +34,10 @@ const LandingSection = () => {
     alignItems={{base:'center', md:"flex-start", lg:'flex-start'}}
     spacing={8}
     width='100vw'
-    pt={48} 
-    pl={32}
-    pb={8}
-    pr={16}
+    pt={48}
+    pl={{base:8, md:32}}
+    pb={32}
+    pr={{base:8, md:32}}
 
     
     

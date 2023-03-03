@@ -79,10 +79,10 @@ const AboutMeSection = () => (
   alignItems={{base:'center', md:"flex-start", lg:'center'}}
   spacing={8}
   width='100vw'
-  pb={{ base: 24, md: 36 }} 
-  pt={16}
-  pl={32}
-  pr={16}
+  pr={{base:8, md:32}}
+  pl={{base:8, md:32}}
+  pt={{base:8, md:32}}
+  pb={{base:32, md:32}}
   >
     <Heading as="h1" id="aboutme-section" color='dark' >About me</Heading>
 
@@ -103,7 +103,7 @@ const AboutMeSection = () => (
               alt={headshot.title} 
               boxSize='md' 
               objectFit='cover' 
-              objectPosition='100% 10%'
+              objectPosition='60% 20%'
               border="5px solid #272727"
              />
           ))}
