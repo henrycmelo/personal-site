@@ -9,6 +9,7 @@ import {
   Input,
   Textarea,
   VStack,
+  Spinner
 
 } from "@chakra-ui/react";
 import * as Yup from 'yup';
@@ -175,7 +176,7 @@ const ContactMeSection = () => {
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
               <CustomizedButton type="submit" colorScheme="blue" width="full" disabled={isLoading}>
-                {isLoading ? 'Submitting...' : 'Submit'}
+                {isLoading ?  <div>Submitting...<Spinner/></div> : 'Submit'}
               </CustomizedButton>
             </VStack>
           </form>
