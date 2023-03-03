@@ -136,12 +136,22 @@ const CaseStudyArchives = () => {
       description: 'Buttons:',
       analyze: ` The current design has small buttons which makes it difficult for the user to find and consequently 
                 discourages them from continuing with the donation process. The first thing the usability study revealed 
-                is that we should make the buttons larger. Next, we determined the  color of the call-to-action (CTA) button should be changed 
+                is that we should make the buttons larger. Next, I determined the  color of the call-to-action (CTA) button should be changed 
                 from blue to purple. We chose purple because it is more consistent with the style of the rest of the website 
                 and provides contrast to the secondary CTA buttons that were added to the side panel. 
-                Lastly, we moved the location of the donate button from the top of the navigation bar to the end of the navigation bar 
-                and changed the CTA from "Donate" to "Donate Now" to increase the urgency.`
-    }]
+                Lastly, I moved the location of the donate button from the top of the navigation bar to the end of the navigation bar 
+                and changed the CTA from "Donate" to "Donate Now" to increase the urgency`,
+                getImageSrc: ()=> require("../images/reco1.png"),
+                getImageSrc2: ()=> require("../images/reco2.png"),
+      dos:'Recommendation 2-',
+      description2: 'Hero page:',
+      analyze2: ` The usability study showed that people were frustrated because of the lack of personal touch.
+                 So I decided to add a carousel in a hero image with ‘donate now’ button and quotes from outside sources.`,
+      getImageSrc3: ()=> require("../images/reco3.png"),
+      getImageSrc4: ()=> require("../images/reco4.png")
+      
+    }],
+    
   }]
 
 
@@ -384,8 +394,56 @@ const CaseStudyArchives = () => {
             <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].uno}</b>
                                             <u>{iterations[0].recommendations[0].description}</u></span> 
                                             {iterations[0].recommendations[0].analyze}  </Text>
+            <HStack>
+            <Card boxShadow='xl' >
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Before</b></span>
+                </Text> </CardFooter>
+            </Card>
+            <Card boxShadow='xl'>
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc2()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>After</b></span>
+                </Text> </CardFooter>
+            </Card>
+            </HStack>
 
           </VStack>
+
+
+          <br/>
+
+          <VStack alignItems={'flex start'} justifyContent={'center'}>
+            <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].dos}</b>
+                                            <u>{iterations[0].recommendations[0].description2}</u></span> 
+                                            {iterations[0].recommendations[0].analyze2}  </Text>
+            <HStack>
+            <Card boxShadow='xl' >
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc4()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>Before</b></span>
+                </Text> </CardFooter>
+            </Card>
+            <Card boxShadow='xl'>
+
+              <CardBody><Image src={iterations[0].recommendations[0].getImageSrc3()} alt={iterations[0].recommendations[0].description} background='none' borderRadius='lg' /> </CardBody>
+
+              <CardFooter justify={'center'}>
+                <Text fontSize='lg' textStyle='body'> <span style={{ color: '#007183' }}><b>After</b></span>
+                </Text> </CardFooter>
+            </Card>
+            </HStack>
+
+          </VStack>
+
+
 
 
 
