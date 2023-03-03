@@ -145,7 +145,7 @@ const Header = () => {
                   {(<button onClick={handleClick('aboutme')}>About</button>)}
                   {(<button onClick={handleClick('projects')}>Work</button>)}
                   {(<button onClick={handleClick('contactme')}> Contact</button>)}
-                  {(<CustomizedButton>RESUME</CustomizedButton>)}
+                  {( <Link to= '../public/resumeHenry.pdf' target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </Link>)}
 
                 </HStack>
                 <VStack spacing={8} display={{ base: 'flex', md: "none" }} color={!isOpen ? "dark" : 'light'}  >
