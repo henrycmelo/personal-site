@@ -1,13 +1,10 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ChakraProvider } from "@chakra-ui/react";
-import Header from "./components/Header";
-import LandingSection from "./components/LandingSection";
-import AboutMeSection from "./components/AboutMeSection";
-import ProjectsSection from "./components/ProjectsSection";
-import ContactMeSection from "./components/ContactMeSection";
-import Footer from "./components/Footer";
 import { AlertProvider } from "./context/alertContext";
-import Alert from "./components/Alert";
+
 import theme from "../src/style/theme.js"
+import CaseStudyArchives from "./pages/CaseStudyArchives"
+import Home from "./pages/Home"
 
 
 
@@ -15,15 +12,16 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <AlertProvider>
+      <BrowserRouter>
         <main>
-          <Header />
-          <LandingSection />
-          <AboutMeSection /> 
-          <ProjectsSection />
-          <ContactMeSection />
-          <Footer />
-          <Alert />
+          
+          <Routes>
+              <Route exact path="/home" element={<Home/>}></Route>
+              <Route exact path="/casestudyarchives" element={<CaseStudyArchives/>}></Route>
+          </Routes>
+          
         </main>
+        </BrowserRouter>
       </AlertProvider>
     </ChakraProvider>
   );
