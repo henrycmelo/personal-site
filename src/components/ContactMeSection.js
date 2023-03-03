@@ -52,7 +52,7 @@ const ContactMeSection = () => {
         } else if (response.ok) {
           const successMessage = responses[1].message
           const successAlert = `${successMessage} Thanks for you submission ${values.firstName}`
-          onOpen(response[1].type, successAlert)
+          onOpen(responses[1].type, successAlert)
           submitProps.resetForm()
         } else {
           onClose("Something went wrong!")
