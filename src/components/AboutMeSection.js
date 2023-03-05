@@ -76,7 +76,7 @@ const headshot = [
 const AboutMeSection = () => (
   <FullScreenSection
   backgroundColor="secondLight"
-  alignItems={{base:'center', md:"flex-start", lg:'center'}}
+  alignItems={{base:'center', md:"center", xl:'flex-start'}}
   spacing={8}
   width='100vw'
   pr={{base:8, md:32}}
@@ -101,8 +101,9 @@ const AboutMeSection = () => (
               key={index}
               src={headshots.getImageSrc()} 
               alt={headshot.title} 
-              boxSize={{base:'lg', md:'sm'}}
-              objectFit={'cover'} 
+              boxSize={{base:'lg', md:'sm', xl:'xs'}}
+              objectFit={'cover'}
+              objectPosition='50% 20%' 
              
               
               border="5px solid #272727"

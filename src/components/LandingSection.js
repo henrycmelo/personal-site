@@ -31,7 +31,7 @@ const LandingSection = () => {
   <FullScreenSection
     backgroundColor="light"
     
-    alignItems={{base:'center', md:"flex-start", lg:'flex-start'}}
+    alignItems={{base:'center', md:"center", xl:'flex-start'}}
     spacing={8}
     width='100vw'
     pt={48}
