@@ -10,7 +10,8 @@ const SecondaryButton = ({children, onClick}) => {
                 fontWeight='800' 
                 p={6} textStyle="button" 
                 onClick={onClick}
-                border= '2px solid #696773'
+                shadow='lg'
+               
                 _hover={{bg:'dark'}}>{children}
                 
                 
