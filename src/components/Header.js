@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const logo = [
   {
     id: "henryLogo",
@@ -29,7 +30,7 @@ const Logo = ({ id, src, alt }) => <img style={{ width: '82px', height: '82px' }
 
 
 const Header = () => {
-  const { handleClick } = useAlertContext();
+  const { handleClick, handleClickToTop } = useAlertContext();
 
   const [previousScroll, setPreviousScroll] = useState(0)
   const [showMenu, setShowMenu] = useState(true)
@@ -141,7 +142,7 @@ const Header = () => {
               <nav >
 
                 <HStack spacing={8} display={{ base: 'none', md: "flex" }}  >
-                  <Link to="/"><button>Home</button></Link>
+                  <Link to="/"><button onClick={handleClickToTop}>Home</button></Link>
                   {(<button onClick={handleClick('aboutme')}>About</button>)}
                   {(<button onClick={handleClick('projects')}>Work</button>)}
                   {(<button onClick={handleClick('contactme')}> Contact</button>)}

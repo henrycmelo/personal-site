@@ -5,6 +5,8 @@ import {
 import Header from "../components/Header"
 import FullScreenSection from "../components/FullScreenSection";
 import Footer from "../components/Footer";
+import CustomizedButton from '../components/CustomizedButton';
+import SecondaryButton from '../components/SecondaryButton';
 
 
 
@@ -244,11 +246,11 @@ const CaseStudyArchives = () => {
         width='100vw'
         p={{base:8, md:32}}>
         <VStack alignItems={'center'} justifyContent={'center'}>
-          <Text textStyle='h2' fontSize={'4xl'}> {projectInfo[0].client}</Text>
-          <Text textStyle='body' fontSize={'2xl'} textAlign={'center'}> {projectInfo[0].title}</Text>
-          <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>Role:</b></span> {projectInfo[0].role}</Text>
-          <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>Tools:</b></span> {projectInfo[0].tools}</Text>
-          <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>Date: </b></span>{projectInfo[0].date}</Text>
+          <Text textStyle='h2' fontSize={'4xl'} align={'center'}> {projectInfo[0].client}</Text>
+          <Text textStyle='body' fontSize={'2xl'} align={'center'}> {projectInfo[0].title}</Text>
+          <Text size='sm' textStyle='body' align={'center'}> <span style={{ color: '#007183' }}><b>Role:</b></span> {projectInfo[0].role}</Text>
+          <Text size='sm' textStyle='body'align={'center'}> <span style={{ color: '#007183' }}><b>Tools:</b></span> {projectInfo[0].tools}</Text>
+          <Text size='sm' textStyle='body'align={'center'}> <span style={{ color: '#007183' }}><b>Date: </b></span>{projectInfo[0].date}</Text>
         </VStack>
 
 
@@ -261,7 +263,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        p={32}>
+        p={{base:8, md:32}}>
         <VStack alignItems={'flex start'} justifyContent={'center'}>
           <Text textStyle='h2' fontSize={'4xl'}> {projectOverview[0].title}</Text>
 
@@ -279,7 +281,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        p={32}>
+        p={{base:8, md:32}}>
         <VStack alignItems={'flex start'} justifyContent={'center'}>
           <Text textStyle='h2' fontSize={'4xl'}> {currentState[0].title}</Text>
           <Stack direction={{base: 'column', md: 'row'}}>
@@ -314,10 +316,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        pt={16}
-        pl={32}
-        pb={8}
-        pr={16}>
+        p={{base:8, md:32}}>
 
           <VStack alignItems={'flex start'} justifyContent={'center'}>
           <Text textStyle='h2' fontSize={'4xl'}> {research[0].title}</Text>
@@ -352,10 +351,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        pt={16}
-        pl={32}
-        pb={8}
-        pr={16}>
+        p={{base:8, md:32}}>
 
           <VStack alignItems={'flex start'} justifyContent={'center'}>
           <Text textStyle='h2' fontSize={'4xl'}> {usertesting[0].title}</Text>
@@ -399,10 +395,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        pt={16}
-        pl={32}
-        pb={8}
-        pr={16}>
+        p={{base:8, md:32}}>
 
           <VStack alignItems={'flex start'} justifyContent={'center'}>
             <Text textStyle='h2' fontSize={'4xl'}> {analyze[0].title}</Text>
@@ -435,10 +428,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        pt={16}
-        pl={32}
-        pb={8}
-        pr={16}>
+        p={{base:8, md:32}}>
           <VStack alignItems={'flex start'} justifyContent={'center'}>
             <Text textStyle='h2' fontSize={'4xl'}> {iterations[0].title}</Text>
             <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{iterations[0].recommendations[0].uno}</b>
@@ -607,10 +597,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        pt={16}
-        pl={32}
-        pb={8}
-        pr={16}>
+        p={{base:8, md:32}}>
           <VStack alignItems={'flex start'} justifyContent={'center'}>
           <Text textStyle='h2' fontSize={'4xl'}> {conclusion[0].title}</Text>
           <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{conclusion[0].subtitle}</b></span> {conclusion[0].presentation}  </Text>
@@ -628,7 +615,7 @@ const CaseStudyArchives = () => {
 
           </FullScreenSection>
 
-          {/*conclusion */}
+          {/*going forward*/}
 
      <FullScreenSection
         backgroundColor="light"
@@ -636,10 +623,7 @@ const CaseStudyArchives = () => {
         alignItems={"center"}
         spacing={8}
         width='100vw'
-        pt={16}
-        pl={32}
-        pb={8}
-        pr={16}>
+        p={{base:8, md:32}}>
           <VStack alignItems={'flex start'} justifyContent={'center'}>
           <Text textStyle='h2' fontSize={'4xl'}> {takeaways[0].title}</Text>
           <Text size='sm' textStyle='body'> <span style={{ color: '#007183' }}><b>{takeaways[0].subtitle}</b></span> {takeaways[0].learned}  </Text>
@@ -653,6 +637,26 @@ const CaseStudyArchives = () => {
           </VStack>
 
           </FullScreenSection>
+
+          <FullScreenSection
+        backgroundColor="light"
+
+        alignItems={"center"}
+        spacing={8}
+        width='100vw'
+        p={{base:8, md:32}}>
+
+          <Stack direction={'row'}>
+
+          <CustomizedButton> Contact me </CustomizedButton>
+          <SecondaryButton>View other projects</SecondaryButton>
+
+          </Stack>
+
+
+
+
+        </FullScreenSection>
 
     <Footer/>
 

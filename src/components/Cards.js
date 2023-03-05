@@ -2,14 +2,13 @@ import { Heading, Image, Text, Card, CardBody, CardFooter, Stack } from "@chakra
 import React from "react";
 import SecondaryButton from "./SecondaryButton";
 import { Link } from 'react-router-dom';
+import { useAlertContext } from "../context/alertContext"
 
 const Cards = ({ title, description, imageSrc, to }) => {
-  const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  const {handleClickToTop}=useAlertContext();
 
   return (
-    <Card maxW={['100%', 'md']} backgroundColor='light' boxShadow='xl' >
+    <Card maxW={['100%', 'md']} backgroundColor='light' boxShadow='xl'  >
       <CardBody>
 
         <Image src={imageSrc} alt={title} objectFit='cover' boxSize='100%' h='auto' />
@@ -22,7 +21,7 @@ const Cards = ({ title, description, imageSrc, to }) => {
 
       <CardFooter justify="flex-end">
 
-      <Link to={to}><SecondaryButton onClick={handleClick}>View Project</SecondaryButton> </Link>
+      <Link to={to}><SecondaryButton onClick={handleClickToTop}>View Project</SecondaryButton> </Link>
 
 
       </CardFooter>

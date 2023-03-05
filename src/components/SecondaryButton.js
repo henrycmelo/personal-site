@@ -4,13 +4,14 @@ import { Button } from "@chakra-ui/react";
 
 const SecondaryButton = ({children, onClick}) => {
     return (
-        <Button color='gray' 
+        <Button color='yellow'
+                backgroundColor='#5A5863'
                 borderRadius='10px'
                 fontWeight='800' 
                 p={6} textStyle="button" 
                 onClick={onClick}
                 border= '2px solid #696773'
-                _hover={{bg:'#696773', color:'light'}}>{children}
+                _hover={{bg:'dark'}}>{children}
                 
                 
                 

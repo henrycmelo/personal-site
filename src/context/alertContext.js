@@ -55,6 +55,11 @@ export const AlertProvider = ({ children }) => {
    
   ];
 
+  
+  const handleClickToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
   return (
     <AlertContext.Provider
       value={{
@@ -62,7 +67,8 @@ export const AlertProvider = ({ children }) => {
         onOpen: (type, message,error) => setState({ isOpen: true, type, message,error }),
         onClose: () => setState({ isOpen: false, type: '', message: '' }),
         handleClick,
-        socials
+        socials,
+        handleClickToTop
       }}
     >
       {children}

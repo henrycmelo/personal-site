@@ -6,7 +6,7 @@ import React from "react";
 
 
 const SmallScreen = ({className,children}) => {
-    const { handleClick } = useAlertContext();
+    const { handleClick, handleClickToTop } = useAlertContext();
     return (
 
         <Box
@@ -37,7 +37,7 @@ const SmallScreen = ({className,children}) => {
                             <Box display='absolute' justifyContent='center' alignItems='center'>
 
                                 <VStack spacing={20} >
-                                    {(<Link to="/"><button>Home</button></Link>)}
+                                    {(<Link to="/"><button onClick={handleClickToTop}>Home</button></Link>)}
 
 
                                     {(<button onClick={handleClick('aboutme')}>About</button>)}

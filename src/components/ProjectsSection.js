@@ -21,7 +21,7 @@ const projects = [
     description:
       "Conducted a usability testing project on the Archives of American Art donation page, providing recommendations to improve its functionality, navigation, and search capabilities",
     getImageSrc: () => require("../images/aaa.jpg"),
-    path:'/casestudyarchives'
+    path: '/casestudyarchives'
   },
   {
     title: "Designing a food menu app for a steakhouse",
@@ -32,33 +32,30 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
-  
+
   return (
     <FullScreenSection
       backgroundColor="blue"
       isDarkBackground
-      alignItems={{base:'center', md:"flex-start", lg:'center'}}
+      alignItems={{ base: 'center', md: "flex-start", lg: 'center' }}
       spacing={8}
       width='100vw'
-      p={{base:8, md:32}}
+      p={{ base: 8, md: 32 }}
 
     >
       <Heading as="h1" id="projects-section">Featured Projects</Heading>
 
-     
-      
+
+
       <Box
         display="grid"
-        gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,minmax(0,1fr))"}}
+        gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,minmax(0,1fr))" }}
         // The md breakpoint is a default breakpoint in Chakra UI that corresponds to screens with a width of 48em (768px) or larger
         gridGap={16}
-        alignContent={'center'}
-        pr={16}
-       
-        pb={4}
         
-
-
+        justifyContent={'center'}
+        
+        pb={4}
       >
 
 
@@ -69,15 +66,16 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
-            to ={project.path}
+            to={project.path}
+            a
 
           />
         ))}
 
 
       </Box>
-      
-      
+
+
 
     </FullScreenSection>
   );

@@ -68,7 +68,7 @@ const intro= (
 const headshot = [
   {
     title:"Henry headshot",
-    getImageSrc: () => require("../images/Henry-headshot.jpg"),
+    getImageSrc: () => require("../images/headshot.jpg"),
 
   }
 ]
@@ -95,19 +95,20 @@ const AboutMeSection = () => (
         </Box>
       
         
-        <Box boxSize='sm'  >
+       
           {headshot.map((headshots, index)=>(
             <Image
               key={index}
               src={headshots.getImageSrc()} 
               alt={headshot.title} 
-              boxSize='md' 
-              objectFit='cover' 
-              objectPosition='60% 20%'
+              boxSize={{base:'lg', md:'sm'}}
+              objectFit={'cover'} 
+             
+              
               border="5px solid #272727"
              />
           ))}
-        </Box>
+        
      
       </Stack>
 
