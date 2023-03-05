@@ -76,7 +76,7 @@ const headshot = [
 const AboutMeSection = () => (
   <FullScreenSection
   backgroundColor="secondLight"
-  alignItems={{base:'center', md:"center", xl:'flex-start'}}
+  alignItems={{base:'center', md:"flex-start", xl:'flex-start'}}
   spacing={8}
   width='100vw'
   pr={{base:8, md:32}}
@@ -84,7 +84,7 @@ const AboutMeSection = () => (
   pt={{base:8, md:32}}
   pb={{base:32, md:32}}
   >
-    <Heading as="h1" id="aboutme-section" color='dark' >About me</Heading>
+    <Heading as="h1" id="aboutme-section"  color='dark' >About me</Heading>
 
     <VStack alignItems='center'justifyContent='center' >
       

@@ -53,7 +53,7 @@ const LandingSection = () => {
       <Heading color='dark' size={{base:"3xl",md:'4xl'}} textStyle='h2'>{bio1}</Heading>
       <Heading color='gray' size={{base:"2xl",md:'3xl'}} textStyle='h3' pb='0.3em'>{bio2}</Heading>
       <Text maxW='3xl' color='gray' fontSize='sm' textStyle='body'>{intro} </Text>
-      <Text maxW='3xl' color='blue' fontSize='sm' textStyle='body'>{intro2} </Text>
+      <button onClick={handleClick('contactme')}><Text maxW='3xl' color='blue' fontSize='sm' textDecoration={'underline'} textStyle='body'>{intro2} </Text></button>
       <Wrap pt={10} pb={20}><CustomizedButton onClick={handleClick('contactme')}>CONTACT ME</CustomizedButton></Wrap>
 
 

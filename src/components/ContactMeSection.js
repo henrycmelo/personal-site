@@ -107,7 +107,7 @@ const ContactMeSection = () => {
     <FullScreenSection
       backgroundColor="secondLight"
 
-      alignItems={{ base: 'center', md: "flex-start", lg: 'center' }}
+      alignItems={{ base: 'center', md: "flex-start", lg: 'flex-start' }}
       spacing={8}
       width='100vw'
       p={{base:8, md:32}}

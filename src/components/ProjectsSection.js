@@ -5,21 +5,21 @@ import Cards from "./Cards";
 
 const projects = [
   {
-    title: "Building an Online Learning Platform w/ DJANGO",
+    title: "Building an online learning platform w/ DJANGO",
     description:
-      "Developed using Python/HTML/Bootstrap, a platform where instructors can create their online courses and its exams",
+      "Developed using Python/HTML/Bootstrap, a platform where instructors can create their online courses and its exams.",
     getImageSrc: () => require("../images/python.jpg"),
   },
   {
     title: "Building a dynamic web app with React, Chakra and Formik",
     description:
-      "My personal website feature he combination of these libraries allowed for the creation of an interactive and sleek user interface with efficient form management",
+      "My personal website feature the combination of these libraries allowed for the creation of an interactive and sleek user interface with efficient form management.",
     getImageSrc: () => require("../images/react.jpg"),
   },
   {
-    title: "Enhancing User Experience for Better Donations on Support Page",
+    title: "Enhancing user experience for better donations on support page",
     description:
-      "Conducted a usability testing project on the Archives of American Art donation page, providing recommendations to improve its functionality, navigation, and search capabilities",
+      "Conducted a usability testing project on the Archives of American Art donation page, providing recommendations to improve its functionality, navigation, and search capabilities.",
     getImageSrc: () => require("../images/aaa.jpg"),
     path: '/casestudyarchives'
   },

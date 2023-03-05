@@ -26,9 +26,9 @@ const CaseStudyArchives = () => {
       title: 'Project Overview',
       challenge: `Redesign the Archives of American Art support page to increase overall donations. 
                         Donations are critical to support the Archives' goal of collecting, preserving, 
-                        and providing access to primary sources that document the history of the visual arts`,
+                        and providing access to primary sources that document the history of the visual arts.`,
       solution: `Create a more friendly user interface (UI) by reorganizing the visual hierarchy of the content,
-                        creating more prominent and interactive buttons, and adding personal touches to the page`
+                        creating more prominent and interactive buttons, and adding personal touches to the page.`
     }
   ]
 
@@ -56,28 +56,28 @@ const CaseStudyArchives = () => {
                    `,
     description3:[
       {
-        subtitle: '• Three generations',
-        millenials: `- Millenials (Age 25-41)`,
-        generationX: `- Generation X (Age 42-57)`,
-        boomers: `- Boomers (Age 58-76)`
+        subtitle: '• Three generations:',
+        millenials: `- Millenials (Age 25-41).`,
+        generationX: `- Generation X (Age 42-57).`,
+        boomers: `- Boomers (Age 58-76).`
 
       }
     ],
     description4:[
       {
-        subtitle: '• Interests',
-        interests: `Art, culture and museums`
+        subtitle: '• Interests:',
+        interests: `Art, culture and museums.`
 
       }
     ],
     description5:[
       {
-        subtitle: '• Preferable ocupations',
-        art: `- Art enthusiast`,
-        collector: `- Collector`,
-        designer:`- Designer`,
-        museumgoer:`- Museum goer`,
-        historyresearcher: `-History researcher`,
+        subtitle: '• Preferable ocupations:',
+        art: `- Art enthusiast.`,
+        collector: `- Collector.`,
+        designer:`- Designer.`,
+        museumgoer:`- Museum goer.`,
+        historyresearcher: `-History researcher.`,
 
       }
     ]
@@ -88,20 +88,20 @@ const CaseStudyArchives = () => {
     subtitle: `Moderate remote & in-person:`,
     description:`To evaluate the usability of the existing Archive of American Art support page I conducted asynchronous 
                 sessions with each participant. All participants were guided through three tasks and scenarios in which they 
-                were prompted to think aloud. The team asked follow-up questions as needed to provide clarification `,
+                were prompted to think aloud. The team asked follow-up questions as needed to provide clarification. `,
     getImageSrc: () => require("../images/usertesting.png"),
     imagedescription:`Remote testing`,
     task1:[{
-      tasknumber: '• Task 1',
+      tasknumber: '• Task 1:',
       description:` Imagine that you want to  to support The Smithsonian Archives of American Art for its future growth and current mission. 
                     Please go to the support page (https://www.aaa.si.edu/support) and find different ways of donating and specifically find 
                     the IRA Rollover way of donation.`,
-      tasknumber2: '• Task 2',
+      tasknumber2: '• Task 2:',
       description2:` You are making a gift to Archives of American Art for research in honor of Kevin Baker. 
-                    Find how to make a 75 dollar donation and get to the billing page`,
-      tasknumber3: '• Task 3',
+                    Find how to make a 75 dollar donation and get to the billing page.`,
+      tasknumber3: '• Task 3:',
       description3:` You are a representative of an international company and your company wants to donate money to the Archives of American Art. 
-                    Find information on how your company can do that`,
+                    Find information on how your company can do that.`,
 
     }],
     followup:[
@@ -117,17 +117,17 @@ const CaseStudyArchives = () => {
 
   const analyze=[{
     title: "Analyze",
-    tool: 'Affinity Diagram',
+    tool: 'Affinity Diagram: ',
     descriptiontool:`I used the affinity diagram to find patterns and grouped them from the most to least common.  
-                    Consequently, we created recommendations based on the findings `,
+                    Consequently, we created recommendations based on the findings. `,
     getImageSrc: () => require("../images/affinity.png"),
     userquoation:` "I wish there will more graphics"`,
     insigths:[{
       subtitle: `• Insights:`,
-      insigth1: `- Most users found that buttons were outdated and need to look more appealing`,
-      insigth2:`- Many users agreed that the content information should be condensed into on tab rather than having several ways`,
+      insigth1: `- Most users found that buttons were outdated and need to look more appealing.`,
+      insigth2:`- Many users agreed that the content information should be condensed into on tab rather than having several ways.`,
       insigth3: `- some users thinks that the page should have narrative/personal touch`,
-      insigth4:`- Users thought that the font and the font size are inconsistent and should use more imagery`
+      insigth4:`- Users thought that the font and the font size are inconsistent and should use more imagery.`
 
     }]
   }]
@@ -143,7 +143,7 @@ const CaseStudyArchives = () => {
                 from blue to purple. We chose purple because it is more consistent with the style of the rest of the website 
                 and provides contrast to the secondary CTA buttons that were added to the side panel. 
                 Lastly, I moved the location of the donate button from the top of the navigation bar to the end of the navigation bar 
-                and changed the CTA from "Donate" to "Donate Now" to increase the urgency`,
+                and changed the CTA from "Donate" to "Donate Now" to increase the urgency.`,
                 getImageSrc: ()=> require("../images/reco1.png"),
                 getImageSrc2: ()=> require("../images/reco2.png"),
       dos:'Recommendation 2-',
@@ -157,7 +157,7 @@ const CaseStudyArchives = () => {
       analyze3: ` The usability study gave us the insight that people found the content too dense and lacking visual cues. 
                   To improve this, we decided to create cards as a common region and a CTA button in each of the cards 
                   to differentiate the information and guide the user for better visual cues. In addition, I added an image to 
-                  the top of the landing page with a clear CTA button`,
+                  the top of the landing page with a clear CTA button.`,
       getImageSrc5: ()=> require("../images/reco5.png"),
       getImageSrc6: ()=> require("../images/reco6.png"),
       four:'Recommendation 4-',
@@ -188,9 +188,9 @@ const CaseStudyArchives = () => {
     presentation: `I presented the final report to the client in a virtual meeting through Zoom. 
                     We went from the methodology used to the recommendations. 
                     I explained in detail how we arrived at our recommendations and why they aligned with 
-                    the client's goal of improving the support page`,
+                    the client's goal of improving the support page.`,
     feedback: `The client was happy with the results and the recommendations. They asked me for the final report, presentation video and slides. 
-              I am looking forward to continued work with them`,
+              I am looking forward to continued work with them.`,
     getImageSrc: ()=> require("../images/conclusion.png"),
   }]
 
@@ -201,8 +201,8 @@ const CaseStudyArchives = () => {
     learned: `While working on this project, I learned that working in teams is very important and being open-minded 
               played a key role in the development of it. I also learned that usability studies and peer feedback influence each iteration of website designs.
               It is important to take into account the users and leave bias on the side.`,
-    nextsteps1: `- Conduct another round of usability studies to validate whether the user’s needs and frustrations experienced previously have been effectively addressed`,
-    nextsteps2:`- Conduct more user research to determine any new area of need`,
+    nextsteps1: `- Conduct another round of usability studies to validate whether the user’s needs and frustrations experienced previously have been effectively addressed.`,
+    nextsteps2:`- Conduct more user research to determine any new area of need.`,
     
   }]
 

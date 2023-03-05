@@ -132,7 +132,7 @@ const Header = () => {
 
                 <HStack spacing={8} >
                   {logo.map(logos => (                // rendering the list of icons using .map () method
-                    <a key={logos.id} href='/home' rel="noopener noreferrer">
+                    <a key={logos.id} href='/' rel="noopener noreferrer">
                       <Logo key={logos.id} src={logos.src} alt={logos.alt} />
                     </a>
                   )
