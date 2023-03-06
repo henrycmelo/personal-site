@@ -4,7 +4,7 @@ import { Button } from "@chakra-ui/react";
 
 const CustomizedButton = ({children, onClick, type, width}) => {
     return (
-        <Button color='dark' 
+        <Button color='secondDark' 
                 borderRadius='10px'
                 backgroundColor='yellow'
                 fontWeight='800' 

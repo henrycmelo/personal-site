@@ -3,7 +3,6 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
-  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { useScrollLock } from "../hooks/useScrollLock";
 
@@ -47,10 +46,6 @@ export const AlertProvider = ({ children }) => {
     { id: "faLinkedin",
       icon: faLinkedin,
       url: "https://www.linkedin.com/in/henry--castillo/",
-    },
-    { id:"faInstagram",
-      icon: faInstagram,
-      url: "https://www.instagram.com/henrycastillome",
     }
    
   ];

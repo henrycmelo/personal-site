@@ -1,28 +1,31 @@
 import { extendTheme } from "@chakra-ui/react"
 
 
-const theme = extendTheme ( {
-    fonts:{
-        heading: "'Open Sans', sans-serif" 
+const theme = extendTheme({
+    fonts: {
+        heading: "'Open Sans', sans-serif"
     },
-    textStyles:{
+    textStyles: {
         h2: {
             fontFamily: "'Open Sans', sans-serif",
             fontStyle: 'normal',
             fontWeight: '700',
             lineHeight: '80px',
-            letterSpacing: '-0.25px' },
+            letterSpacing: '-0.25px'
+        },
         h3: {
             fontFamily: "'Open Sans', sans-serif",
             fontStyle: 'normal',
             fontWeight: '700',
-            lineHeight: '65px' },
+            lineHeight: '65px'
+        },
         h6: {
             fontFamily: "'Open Sans', sans-serif",
             fontStyle: 'normal',
             fontWeight: '600',
             lineHeight: '27px',
-            letterSpacing: '0.15px' },
+            letterSpacing: '0.15px'
+        },
         button: {
             fontFamily: `'Monserrat', sans-serif`,
             fontStyle: 'normal',
@@ -38,13 +41,15 @@ const theme = extendTheme ( {
             letterSpacing: '0.5px'
         }
     },
-    colors:{
-       light:'#EFF1F3' ,
-       dark: '#272727',
-       blue: '#007183',
-       yellow: '#FED766',
-       gray: '#696773',
-       secondLight:'#E8EBED'}
+    colors: {
+        light: '#EFF1F3',
+        dark: '#272727',
+        blue: '#007183',
+        yellow: '#FED766',
+        gray: '#696773',
+        secondLight: '#E8EBED',
+        secondDark: '#5A5863'
+    }
 })
 
 export default theme

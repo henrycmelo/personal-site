@@ -5,7 +5,7 @@ import { Button } from "@chakra-ui/react";
 const SecondaryButton = ({children, onClick}) => {
     return (
         <Button color='yellow'
-                backgroundColor='#5A5863'
+                backgroundColor='secondDark'
                 borderRadius='10px'
                 fontWeight='800' 
                 p={6} textStyle="button" 
