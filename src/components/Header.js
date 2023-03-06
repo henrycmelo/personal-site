@@ -146,7 +146,7 @@ const Header = () => {
                   {(<button onClick={handleClick('aboutme')}>About</button>)}
                   {(<button onClick={handleClick('projects')}>Work</button>)}
                   {(<button onClick={handleClick('contactme')}> Contact</button>)}
-                  {( <a href={require('../documents/resumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
+                  {( <a href={require('../documents/resumeHenry.pdf'  )} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
 
                 </HStack>
                 <VStack spacing={8} display={{ base: 'flex', md: "none" }} color={!isOpen ? "dark" : 'light'}  >
