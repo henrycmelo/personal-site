@@ -1,6 +1,6 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Box, Button, Heading } from "@chakra-ui/react";
+import { Box, Button, Heading, SimpleGrid } from "@chakra-ui/react";
 import Cards from "./Cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -37,8 +37,8 @@ const projects = [
   },
 ];
 
-const ProjectsSection = ({isHomePage}) => {
-  const {handleClickToTop}=useAlertContext();
+const ProjectsSection = ({ isHomePage }) => {
+  const { handleClickToTop } = useAlertContext();
 
   return (
     <FullScreenSection
@@ -59,9 +59,9 @@ const ProjectsSection = ({isHomePage}) => {
         gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,minmax(0,1fr))" }}
         // The md breakpoint is a default breakpoint in Chakra UI that corresponds to screens with a width of 48em (768px) or larger
         gridGap={16}
-        
+
         justifyContent={'center'}
-        
+
         pb={4}
       >
 
@@ -79,16 +79,28 @@ const ProjectsSection = ({isHomePage}) => {
           />
         ))}
 
-      {isHomePage && (<Box display={'flex'} justifyContent='flex-end' alignItems={'center'} gridColumn="2">
-        <Link to='/projects' ><Button onClick={handleClickToTop} gap={4}> View Other Projects  <FontAwesomeIcon icon={faArrowRight}/> </Button>
-         </Link> 
 
-      </Box>) }
 
 
       </Box>
 
-      
+      <SimpleGrid columns={[1, 3]} width='100%'>
+
+        {isHomePage && (<Box display='flex' justifyContent={{ base: 'center', md: 'flex-end' }} alignItems='center' gridColumn={{ base: 2, md: 3 }} >
+          <Link to='/projects' ><Button onClick={handleClickToTop} gap={4}> View Other Projects  <FontAwesomeIcon icon={faArrowRight} /> </Button>
+          </Link>
+
+        </Box>)}
+
+      </SimpleGrid>
+
+
+
+
+
+
+
+
 
 
 
