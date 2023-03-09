@@ -5,6 +5,8 @@ import { AlertProvider } from "./context/alertContext";
 import theme from "../src/style/theme.js"
 import CaseStudyArchives from "./pages/CaseStudyArchives"
 import Home from "./pages/Home"
+import DjangoPage from './pages/DjangoPage';
+import ProjectPage from './pages/ProjectPage';
 
 
 
@@ -19,7 +21,10 @@ function App() {
           
           <Routes>
               <Route exact path="/" element={<Home/>}></Route>
+              <Route exact path="/projects" element={<ProjectPage/>}></Route>
               <Route exact path="/casestudyarchives" element={<CaseStudyArchives/>}></Route>
+              <Route exact path="/projects/:postID" element={<DjangoPage/>}></Route>
+              <Route exact path="/:postID" element={<DjangoPage/>}></Route>
               
           </Routes>
           

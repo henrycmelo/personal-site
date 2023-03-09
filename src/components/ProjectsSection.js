@@ -1,7 +1,12 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Button, Heading } from "@chakra-ui/react";
 import Cards from "./Cards";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
+import { useAlertContext } from "../context/alertContext"
+
 
 const projects = [
   {
@@ -9,6 +14,7 @@ const projects = [
     description:
       "Developed using Python/HTML/Bootstrap, a platform where instructors can create their online courses and its exams.",
     getImageSrc: () => require("../images/python.jpg"),
+    path: 'djangopage'
   },
   {
     title: "Building a dynamic web app with React, Chakra and Formik",
@@ -21,7 +27,7 @@ const projects = [
     description:
       "Conducted a usability testing project on the Archives of American Art donation page, providing recommendations to improve its functionality, navigation, and search capabilities.",
     getImageSrc: () => require("../images/aaa.jpg"),
-    path: '/casestudyarchives'
+    path: 'casestudyarchives'
   },
   {
     title: "Designing a food menu app for a steakhouse",
@@ -31,7 +37,8 @@ const projects = [
   },
 ];
 
-const ProjectsSection = () => {
+const ProjectsSection = ({isHomePage}) => {
+  const {handleClickToTop}=useAlertContext();
 
   return (
     <FullScreenSection
@@ -72,8 +79,18 @@ const ProjectsSection = () => {
           />
         ))}
 
+      {isHomePage && (<Box display={'flex'} justifyContent='flex-end' alignItems={'center'} gridColumn="2">
+        <Link to='/projects' ><Button onClick={handleClickToTop} gap={4}> View Other Projects  <FontAwesomeIcon icon={faArrowRight}/> </Button>
+         </Link> 
+
+      </Box>) }
+
 
       </Box>
+
+      
+
+
 
 
 

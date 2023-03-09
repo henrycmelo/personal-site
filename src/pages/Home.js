@@ -18,7 +18,7 @@ function Home() {
           <Header />
           <LandingSection />
           <AboutMeSection /> 
-          <ProjectsSection />
+          <ProjectsSection isHomePage />
           <ContactMeSection />
           <Footer />
           <Alert />
