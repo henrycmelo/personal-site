@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import React from "react";
 
 
-const SmallScreen = ({className,children}) => {
+const SmallScreen = ({className,children, isHomePage}) => {
     const { handleClick, handleClickToTop } = useAlertContext();
     return (
 
@@ -35,7 +35,7 @@ const SmallScreen = ({className,children}) => {
 
 
                             <Box display='absolute' justifyContent='center' alignItems='center'>
-
+                                {isHomePage ? 
                                 <VStack spacing={20} >
                                     {(<Link to="/"><button onClick={handleClickToTop}>Home</button></Link>)}
 
@@ -48,6 +48,19 @@ const SmallScreen = ({className,children}) => {
 
                                     {(<a href={require('../documents/resumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
                                 </VStack>
+                                :
+                                <VStack spacing={20} >
+                                    {(<Link to="/"><button onClick={handleClickToTop}>Home</button></Link>)}
+
+
+                                    {<Link to="/aboutme"> <button onClick={handleClickToTop}>About</button></Link>}
+
+                                    {<Link to="/projects"><button onClick={handleClickToTop}>Work</button></Link>}
+
+                                    {<Link to="/contactme"><button onClick={handleClickToTop}> Contact</button></Link>}
+
+                                    {(<a href={require('../documents/resumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
+                                </VStack>}
                             </Box>
                         </nav>
                     </VStack>

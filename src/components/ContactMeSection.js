@@ -18,9 +18,9 @@ import { useAlertContext } from "../context/alertContext";
 import CustomizedButton from "./CustomizedButton";
 
 
-const ContactMeSection = () => {
+const ContactMeSection = ({isHomePage}) => {
 
-  const { onOpen, onClose } = useAlertContext();
+  const { onOpen, onClose, align } = useAlertContext();
   const [isLoading, setLoading] = useState(false);
   const responses = [
     {
@@ -94,6 +94,8 @@ const ContactMeSection = () => {
     }),
   });
 
+  
+
 
 
 
@@ -107,12 +109,12 @@ const ContactMeSection = () => {
     <FullScreenSection
       backgroundColor="secondLight"
 
-      alignItems={{ base: 'center', md: "flex-start", lg: 'flex-start' }}
+      alignItems={ align }
       spacing={8}
       width='100vw'
       p={{base:8, md:32}}
     >
-      <Heading as="h1" id="contactme-section" color='dark'>Contact me</Heading>
+      {isHomePage && <Heading as="h1" id="contactme-section" color='dark'>Contact me</Heading> }
       <VStack w='100%' alignItems='start' justifyContent='flex-start'  >
 
         <Box p={6} rounded="md" w="100%" >

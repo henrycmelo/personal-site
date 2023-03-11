@@ -5,6 +5,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { useScrollLock } from "../hooks/useScrollLock";
+import {useMediaQuery} from "@chakra-ui/react"
 
 
 const AlertContext = createContext(undefined);
@@ -55,6 +56,11 @@ export const AlertProvider = ({ children }) => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    const[isLargerThanBase]=useMediaQuery("(min-width:769px")
+    const direction=isLargerThanBase ? 'row' :"column";
+    const spacing =isLargerThanBase ? 20 : 16
+    const align = isLargerThanBase ? "flex-start" : 'center'
+
   return (
     <AlertContext.Provider
       value={{
@@ -63,7 +69,11 @@ export const AlertProvider = ({ children }) => {
         onClose: () => setState({ isOpen: false, type: '', message: '' }),
         handleClick,
         socials,
-        handleClickToTop
+        handleClickToTop,
+        direction,
+        spacing,
+        align,
+        isLargerThanBase
       }}
     >
       {children}

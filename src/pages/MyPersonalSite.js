@@ -6,37 +6,49 @@ import CustomizedButton from "../components/CustomizedButton";
 import SecondaryButton from "../components/SecondaryButton";
 import { useAlertContext } from "../context/alertContext"
 
-const DjangoPage = () => {
+const MyPersonalSite = () => {
   const { isLargerThanBase } = useAlertContext();
   const image = isLargerThanBase ? '' : '400px'
   const projectInfo = [
     {
-      getImageSrc: () => require("../images/django1.png"),
-      title: "Building an online learning platform w/ DJANGO",
+      getImageSrc: () => require("../images/reactpagepicture.png"),
+      title: "Building a dynamic web app with React, Chakra and Formik",
       subtitle:
-        "Developed using Python/HTML/Bootstrap, a platform where instructors can create their online courses and its exams.",
-      role: "Full-stack developer, UI/UX designer, DevOps Engineer",
-      technologies: "Python, Django, Bootstrap,HTML5, AWS S3 bucket, Heroku",
-      date: "Dec 2022-March 2023",
-      description: `This is an online course platform built with Django and Bootstrap. It allows students to enroll in courses,
-                             view the number of enrolled students, login, sign up, and take exams. Instructors can set up their courses, lessons, 
-                             and exams. The project uses AWS S3 bucket for storage and is deployed on Heroku.`,
+        "Personal website showcasing my work and projects..",
+      role: "Creator and developer.",
+      technologies: "React js, Chakra UI, Formik, Netlify.",
+      date: "Jan 2023-March 2023",
+      description: `This website is a platform for me to showcase my work and projects. It is built using React, a popular JavaScript 
+                library for building user interfaces, and Chakra UI, a component library for building accessible and responsive web applications. 
+                The website also uses Formik for form management and Netlify for deployment.`,
 
       features: [
         {
-          1: "• Student enrollment in courses",
-          2: "• Real-time updates on the number of enrolled students",
-          3: "• User authentication for students and instructors",
-          4: "• Exam taking functionality",
-          5: "•  Course creation and management for instructors",
+          1: "• Smooth scroll navigation that allows users to easily navigate between sections of the website.",
+          2: `• A contact form that users can fill out to send me a message, with validation powered by Formik. This ensures that the user's inputs are valid before the form is submitted, 
+                and provides helpful error messages if there are any issues. `,
+          3: "• A responsive navigation menu with buttons that link to various sections of the website.",
+          4: `• Implementation of React Context to manage global state across multiple components. 
+                This enables more efficient and reusable code, and helps to simplify complex components that require data 
+                from different parts of the application. For example, you could use context to manage the user's authentication status,
+                 or to store data that needs to be accessed by multiple components.` 
         },
       ],
 
-      developmentProcess: `The biggest challenge I faced during the development process was integrating AWS S3 bucket with Heroku for storage. 
-                                    I also had an issue with retrieving uploaded images from the admin panel. To overcome these challenges, I had to
-                                     read through the documentation for both AWS S3 and Heroku and use trial and error to find the correct configurations`,
+      developmentProcess: `I started developing my portfolio by creating wireframes and user flows using Figma. 
+                            This helped me establish the website's layout and plan for the user experience. 
+                            Then, I used React, Chakra, and Formik to build out the website's features, starting with core components and adding more 
+                            complex ones. I also integrated testing and debugging throughout the process to ensure a high-quality end product, 
+                            including testing on different devices and using automated testing tools like Jest and React Testing Library.`,
+
+           
+
+                            
+                            
+                            
       design:
-        "The project has a clean and modern user interface built with Bootstrap and HTML5",
+        `The website was designed with a minimalist aesthetic in mind, with a focus on clean lines and a simple color scheme. The layout is designed to be responsive, with a mobile-first approach that ensures the website looks great on any device. 
+        The typography and overall design were carefully chosen to reflect my personal style and brand.`
     },
   ];
 
@@ -135,6 +147,8 @@ const DjangoPage = () => {
             </span>{" "}
             {projectInfo[0].developmentProcess}
           </Text>
+        
+           
           <Text size="sm" textStyle="body">
             {" "}
             <span style={{ color: "#007183" }}>
@@ -158,10 +172,7 @@ const DjangoPage = () => {
             {" "}
             {projectInfo[0].features[0][4]}
           </Text>
-          <Text size="sm" textStyle="body" pl={8}>
-            {" "}
-            {projectInfo[0].features[0][5]}
-          </Text>
+       
 
           <Text size="sm" textStyle="body">
             {" "}
@@ -174,14 +185,14 @@ const DjangoPage = () => {
 
         <Stack direction="row" pt={8} pb={{ base: 8, md: 0 }}>
           <a
-            href="https://onlinecoursedjango.herokuapp.com/onlinecourseapp/"
+            href="https://henrycastillo.dev/"
             rel="noreferrer"
             target="_blank"
           >
             <CustomizedButton>Launch Project</CustomizedButton>
           </a>
           <a
-            href="https://github.com/henrycastillome/onlinecoursedjangoapp/"
+            href="https://github.com/henrycastillome/personal-site"
             rel="noreferrer"
             target="_blank"
           >
@@ -194,4 +205,4 @@ const DjangoPage = () => {
   );
 };
 
-export default DjangoPage;
+export default MyPersonalSite;

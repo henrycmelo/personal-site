@@ -1,4 +1,3 @@
-
 import Header from "../components/Header"
 import LandingSection from "../components/LandingSection";
 import AboutMeSection from "../components/AboutMeSection";
@@ -15,11 +14,11 @@ import Alert from "../components/Alert";
 function Home() {
   return (
     <main>
-          <Header />
+          <Header isHomePage />
           <LandingSection />
-          <AboutMeSection /> 
+          <AboutMeSection isHomePage/> 
           <ProjectsSection isHomePage />
-          <ContactMeSection />
+          <ContactMeSection isHomePage />
           <Footer />
           <Alert />
     </main>
