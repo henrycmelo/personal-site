@@ -7,14 +7,14 @@ import Footer from "../components/Footer";
 
 const aboutMe = "Contact Me";
 
-function ContactMePage() {
+function ContactMePage () {
   return (
     <main>
-      <Header />
+      <Header/>
       <FullScreenSection
         backgroundColor="light"
         alignContent="center"
-        alignItems={"center"}
+        alignItems={'center'}
         spacing={8}
         width="100vw"
         pt={48}
@@ -31,8 +31,7 @@ function ContactMePage() {
             {aboutMe}
           </Heading>
         </VStack>
-        </FullScreenSection>
-      
+      </FullScreenSection>
       <ContactMeSection />
       <Footer />
     </main>

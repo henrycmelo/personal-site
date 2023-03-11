@@ -27,7 +27,8 @@ const Footer = () => {
       alignItems="center"
       spacing={8}
       width="100vw"
-      p={16}
+     
+      p={ 8}
     >
       
         <Grid
