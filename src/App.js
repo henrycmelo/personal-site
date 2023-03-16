@@ -21,19 +21,19 @@ function App() {
       <BrowserRouter>
         <main>
           
-          <Routes>
-              <Route exact path="/" element={<Home/>}></Route>
-              <Route exact path="/projects" element={<ProjectPage/>}></Route>
-              <Route exact path="/aboutme" element={<AboutMePage/>}></Route>
-              <Route exact path="/contactme" element={<ContactPage/>}></Route>
-              <Route exact path="/casestudyarchives" element={<CaseStudyArchives/>}></Route>
-              <Route exact path="/projects/casestudyarchives" element={<CaseStudyArchives/>}></Route>
-              <Route exact path="/projects/djangopage" element={<DjangoPage/>}></Route>
-              <Route exact path="/djangopage" element={<DjangoPage/>}></Route>
-              <Route exact path="/projects/mypersonalsite" element={<MyPersonalSite/>}></Route>
-              <Route exact path="/mypersonalsite" element={<MyPersonalSite/>}></Route>
-              
-          </Routes>
+        <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<ProjectPage />}>
+                <Route path="casestudyarchives" element={<CaseStudyArchives />} />
+                <Route path="djangopage" element={<DjangoPage />} />
+                <Route path="mypersonalsite" element={<MyPersonalSite />} />
+              </Route>
+              <Route path="/aboutme" element={<AboutMePage />} />
+              <Route path="/contactme" element={<ContactPage />} />
+              <Route path="/casestudyarchives" element={<CaseStudyArchives />} />
+              <Route path="/djangopage" element={<DjangoPage />} />
+              <Route path="/mypersonalsite" element={<MyPersonalSite />} />
+            </Routes>
           
         </main>
         </BrowserRouter>

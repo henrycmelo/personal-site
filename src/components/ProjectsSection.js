@@ -15,8 +15,8 @@ const projects = [
     description:
       "Developed using Python/HTML/Bootstrap, a platform where instructors can create their online courses and its exams.",
     getImageSrc: () => require("../images/python.jpg"),
-    path: "djangopage",
-    path2: '/projects/djangopage'
+    path: "/djangopage",
+   
   },
   {
     title: "Building a dynamic web app with React, Chakra and Formik",
@@ -24,15 +24,15 @@ const projects = [
       "My personal website feature the combination of these libraries allowed for the creation of an interactive and sleek user interface with efficient form management.",
     getImageSrc: () => require("../images/react.jpg"),
     path: '/mypersonalsite',
-    path2: '/projects/mypersonalsite'
+    
   },
   {
     title: "Enhancing user experience for better donations on support page",
     description:
       "Conducted a usability testing project on the Archives of American Art donation page, providing recommendations to improve its functionality, navigation, and search capabilities.",
     getImageSrc: () => require("../images/aaa.jpg"),
-    path: "casestudyarchives",
-    path2: "/projects/casestudyarchives"
+    path: "/casestudyarchives",
+    
   },
   {
     title: "Designing a food menu app for a steakhouse",
@@ -76,7 +76,7 @@ const ProjectsSection = ({ isHomePage }) => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
-            to={isHomePage? project.path : project.path2 }
+            to={project.path }
             
           />
         ))}
