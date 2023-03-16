@@ -21,7 +21,7 @@ const Logo = ({ id, src, alt }) => (
   <img style={{ width: "82px", height: "82px" }} key={id} src={src} alt={alt} />
 );
 
-const Header = ({isHomePage}) => {
+const Header = ({ isHomePage }) => {
   const { handleClick, handleClickToTop } = useAlertContext();
 
   const [previousScroll, setPreviousScroll] = useState(0);
@@ -86,7 +86,7 @@ const Header = ({isHomePage}) => {
               alignItems="center"
             >
               <nav>
-                <HStack spacing={8}>
+                <HStack >
                   {logo.map(
                     (
                       logos // rendering the list of icons using .map () method
@@ -99,47 +99,65 @@ const Header = ({isHomePage}) => {
                 </HStack>
               </nav>
               <nav>
-                {isHomePage ?
-                <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-                  <Link to="/">
-                    <button onClick={handleClickToTop}>Home</button>
-                  </Link>
-                   
-                  {<button onClick={handleClick("aboutme")}>About</button>}
-                  {<button onClick={handleClick("projects")}>Work</button>}
-                  {<button onClick={handleClick("contactme")}> Contact</button>} 
-                  {
-                    <a
-                      href={require("../documents/resumeHenry.pdf")}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      {" "}
-                      <CustomizedButton>RESUME</CustomizedButton>{" "}
-                    </a>
-                  }
-                </HStack>
-                :
-                <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-                  <Link to="/">
-                    <button onClick={handleClickToTop}>Home</button>
-                  </Link>
-                   
-                  {<Link to="/aboutme"> <button onClick={handleClickToTop}>About</button></Link>}
-                  {<Link to="/projects"><button onClick={handleClickToTop}>Work</button></Link>}
-                  {<Link to="/contactme"><button onClick={handleClickToTop}> Contact</button></Link>} 
-                  {
-                    <a
-                      href={require("../documents/resumeHenry.pdf")}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      {" "}
-                      <CustomizedButton>RESUME</CustomizedButton>{" "}
-                    </a>
-                  }
-                </HStack>
-                }
+                {isHomePage ? (
+                  <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+                    <Link to="/">
+                      <button onClick={handleClickToTop}>Home</button>
+                    </Link>
+
+                    {<button onClick={handleClick("aboutme")}>About</button>}
+                    {<button onClick={handleClick("projects")}>Work</button>}
+                    {
+                      <button onClick={handleClick("contactme")}>
+                        {" "}
+                        Contact
+                      </button>
+                    }
+                    {
+                      <a
+                        href={require("../documents/resumeHenry.pdf")}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        {" "}
+                        <CustomizedButton>RESUME</CustomizedButton>{" "}
+                      </a>
+                    }
+                  </HStack>
+                ) : (
+                  <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+                    <Link to="/">
+                      <button onClick={handleClickToTop}>Home</button>
+                    </Link>
+
+                    {
+                      <Link to="/aboutme">
+                        {" "}
+                        <button onClick={handleClickToTop}>About</button>
+                      </Link>
+                    }
+                    {
+                      <Link to="/projects">
+                        <button onClick={handleClickToTop}>Work</button>
+                      </Link>
+                    }
+                    {
+                      <Link to="/contactme">
+                        <button onClick={handleClickToTop}> Contact</button>
+                      </Link>
+                    }
+                    {
+                      <a
+                        href={require("../documents/resumeHenry.pdf")}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        {" "}
+                        <CustomizedButton>RESUME</CustomizedButton>{" "}
+                      </a>
+                    }
+                  </HStack>
+                )}
                 <VStack
                   spacing={8}
                   display={{ base: "flex", md: "none" }}
@@ -153,18 +171,20 @@ const Header = ({isHomePage}) => {
                       <FontAwesomeIcon icon={faBars} size="2xl" id="icon" />
                     )}{" "}
                   </button>
-                   {isHomePage ?   
-                  <SmallScreen
-                    className={`${
-                      isOpen ? "removeTransition" : "addTransiton"
-                    }`}
-                    isHomePage
-                  /> :
-                  <SmallScreen
-                    className={`${
-                      isOpen ? "removeTransition" : "addTransiton"
-                    }`}
-                  />}
+                  {isHomePage ? (
+                    <SmallScreen
+                      className={`${
+                        isOpen ? "removeTransition" : "addTransiton"
+                      }`}
+                      isHomePage
+                    />
+                  ) : (
+                    <SmallScreen
+                      className={`${
+                        isOpen ? "removeTransition" : "addTransiton"
+                      }`}
+                    />
+                  )}
                 </VStack>
               </nav>
             </HStack>

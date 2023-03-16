@@ -22,15 +22,14 @@ const Footer = () => {
 
   return (
     <footer>
-    <FullScreenSection
-      backgroundColor="dark"
-      alignItems="center"
-      spacing={8}
-      width="100vw"
-     
-      p={ 8}
-    >
-      
+      <FullScreenSection
+        className='footer'
+        backgroundColor="dark"
+        alignItems="center"
+        spacing={8}
+        width="100vw"
+        p={8}
+      >
         <Grid
           templateRows="repeat(1, 1fr)"
           templateColumns={"repeat(1, 1fr)"}
@@ -84,8 +83,7 @@ const Footer = () => {
         <Text color="yellow" size="xs" textStyle="body" textAlign="center">
           © Copyright 2023. Designed and built by <b>Henry Castillo</b>{" "}
         </Text>
-      
-    </FullScreenSection>
+      </FullScreenSection>
     </footer>
   );
 };

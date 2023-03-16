@@ -7,7 +7,7 @@ import Home from "./pages/Home"
 import DjangoPage from './pages/DjangoPage';
 import ProjectPage from './pages/ProjectPage';
 import AboutMePage from './pages/AboutMePage';
-import ContactMePage from './pages/ContactPage';
+import ContactPage from './pages/ContactPage';
 import MyPersonalSite from './pages/MyPersonalSite';
 
 
@@ -25,7 +25,7 @@ function App() {
               <Route exact path="/" element={<Home/>}></Route>
               <Route exact path="/projects" element={<ProjectPage/>}></Route>
               <Route exact path="/aboutme" element={<AboutMePage/>}></Route>
-              <Route exact path="/contactme" element={<ContactMePage/>}></Route>
+              <Route exact path="/contactme" element={<ContactPage/>}></Route>
               <Route exact path="/casestudyarchives" element={<CaseStudyArchives/>}></Route>
               <Route exact path="/projects/casestudyarchives" element={<CaseStudyArchives/>}></Route>
               <Route exact path="/projects/djangopage" element={<DjangoPage/>}></Route>

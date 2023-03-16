@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import ProjectsSection from "../components/ProjectsSection";
 import Footer from "../components/Footer";
 
-const landingTitle = "All Projects";
+
 
 function ProjectPage() {
   return (
@@ -30,7 +30,7 @@ function ProjectPage() {
             size={{ base: "3xl", md: "4xl" }}
             textStyle="h2"
           >
-            {landingTitle}
+            All Projects
           </Heading>
         </VStack>
       </FullScreenSection>
