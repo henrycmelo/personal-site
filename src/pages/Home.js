@@ -19,7 +19,9 @@ function Home() {
           <AboutMeSection isHomePage/> 
           <ProjectsSection isHomePage />
           <ContactMeSection isHomePage />
+          <footer>
           <Footer />
+          </footer>
           <Alert />
     </main>
         

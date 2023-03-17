@@ -22,7 +22,7 @@ const Logo = ({ id, src, alt }) => (
 );
 
 const Header = ({ isHomePage }) => {
-  const { handleClick, handleClickToTop } = useAlertContext();
+  const { handleClick } = useAlertContext();
 
   const [previousScroll, setPreviousScroll] = useState(0);
   const [showMenu, setShowMenu] = useState(true);
@@ -102,7 +102,7 @@ const Header = ({ isHomePage }) => {
                 {isHomePage ? (
                   <HStack spacing={8} display={{ base: "none", md: "flex" }}>
                     <Link to="/">
-                      <button onClick={handleClickToTop}>Home</button>
+                      <button >Home</button>
                     </Link>
 
                     {<button onClick={handleClick("aboutme")}>About</button>}
@@ -127,23 +127,23 @@ const Header = ({ isHomePage }) => {
                 ) : (
                   <HStack spacing={8} display={{ base: "none", md: "flex" }}>
                     <Link to="/">
-                      <button onClick={handleClickToTop}>Home</button>
+                      <button >Home</button>
                     </Link>
 
                     {
                       <Link to="/aboutme">
                         {" "}
-                        <button onClick={handleClickToTop}>About</button>
+                        <button >About</button>
                       </Link>
                     }
                     {
                       <Link to="/projects">
-                        <button onClick={handleClickToTop}>Work</button>
+                        <button >Work</button>
                       </Link>
                     }
                     {
                       <Link to="/contactme">
-                        <button onClick={handleClickToTop}> Contact</button>
+                        <button > Contact</button>
                       </Link>
                     }
                     {

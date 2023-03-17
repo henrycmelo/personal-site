@@ -10,10 +10,9 @@ import {
 import React from "react";
 import SecondaryButton from "./SecondaryButton";
 import { Link } from "react-router-dom";
-import { useAlertContext } from "../context/alertContext";
+
 
 const Cards = ({ title, description, imageSrc, to }) => {
-  const { handleClickToTop } = useAlertContext();
 
   return (
     <Card maxW={["100%", "md"]} backgroundColor="light" boxShadow="xl">
@@ -37,7 +36,7 @@ const Cards = ({ title, description, imageSrc, to }) => {
 
       <CardFooter justify="flex-end">
         <Link to={to}>
-          <SecondaryButton onClick={handleClickToTop}>
+          <SecondaryButton >
             View Project
           </SecondaryButton>{" "}
         </Link>

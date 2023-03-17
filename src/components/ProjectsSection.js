@@ -16,6 +16,7 @@ const projects = [
       "Developed using Python/HTML/Bootstrap, a platform where instructors can create their online courses and its exams.",
     getImageSrc: () => require("../images/python.jpg"),
     path: "/djangopage",
+    id:'djangoimage'
    
   },
   {

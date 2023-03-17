@@ -4,7 +4,7 @@ import { Heading, VStack, Text } from "@chakra-ui/react";
 import Header from "../components/Header";
 import ContactMeSection from "../components/ContactMeSection";
 import Footer from "../components/Footer";
-
+import Alert from "../components/Alert";
 
 
 function ContactPage () {
@@ -52,6 +52,7 @@ function ContactPage () {
       <ContactMeSection />
      
       <Footer />
+      <Alert />
     </main>
   );
 }

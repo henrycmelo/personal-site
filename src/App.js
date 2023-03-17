@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { ChakraProvider } from "@chakra-ui/react";
 import { AlertProvider } from "./context/alertContext";
 import theme from "../src/style/theme.js"
@@ -18,7 +18,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <AlertProvider>
-      <BrowserRouter>
+      
         <main>
           
         <Routes>
@@ -36,7 +36,7 @@ function App() {
             </Routes>
           
         </main>
-        </BrowserRouter>
+        
       </AlertProvider>
     </ChakraProvider>
   );

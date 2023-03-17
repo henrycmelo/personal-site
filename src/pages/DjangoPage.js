@@ -36,7 +36,7 @@ const DjangoPage = () => {
                                     I also had an issue with retrieving uploaded images from the admin panel. To overcome these challenges, I had to
                                      read through the documentation for both AWS S3 and Heroku and use trial and error to find the correct configurations`,
       design:
-        "The project has a clean and modern user interface built with Bootstrap and HTML5",
+        "The project has a clean and modern user interface built with Bootstrap and HTML5"
     },
   ];
 
@@ -60,6 +60,7 @@ const DjangoPage = () => {
             alt="laptop"
             style={{ backgroundImage: "none" }}
             maxWidth={image}
+            
             
           />
         </Box>

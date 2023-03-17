@@ -6,7 +6,7 @@ import React from "react";
 
 
 const SmallScreen = ({className,children, isHomePage}) => {
-    const { handleClick, handleClickToTop } = useAlertContext();
+    const { handleClick} = useAlertContext();
     return (
 
         <Box
@@ -37,7 +37,7 @@ const SmallScreen = ({className,children, isHomePage}) => {
                             <Box display='absolute' justifyContent='center' alignItems='center'>
                                 {isHomePage ? 
                                 <VStack spacing={20} >
-                                    {(<Link to="/"><button onClick={handleClickToTop}>Home</button></Link>)}
+                                    {(<Link to="/"><button >Home</button></Link>)}
 
 
                                     {(<button onClick={handleClick('aboutme')}>About</button>)}
@@ -50,14 +50,14 @@ const SmallScreen = ({className,children, isHomePage}) => {
                                 </VStack>
                                 :
                                 <VStack spacing={20} >
-                                    {(<Link to="/"><button onClick={handleClickToTop}>Home</button></Link>)}
+                                    {(<Link to="/"><button >Home</button></Link>)}
 
 
-                                    {<Link to="/aboutme"> <button onClick={handleClickToTop}>About</button></Link>}
+                                    {<Link to="/aboutme"> <button >About</button></Link>}
 
-                                    {<Link to="/projects"><button onClick={handleClickToTop}>Work</button></Link>}
+                                    {<Link to="/projects"><button >Work</button></Link>}
 
-                                    {<Link to="/contactme"><button onClick={handleClickToTop}> Contact</button></Link>}
+                                    {<Link to="/contactme"><button > Contact</button></Link>}
 
                                     {(<a href={require('../documents/resumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
                                 </VStack>}

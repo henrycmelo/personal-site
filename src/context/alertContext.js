@@ -53,13 +53,12 @@ export const AlertProvider = ({ children }) => {
 
   
   const handleClickToTop = () => {
-    if ('scrollBehavior' in document.documentElement.style) {
+    try {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (error) {
+      window.scrollTo(0, 0);
     }
-    else {
-      window.scrollTo(0, 0)
-    }
-    };
+  };
 
     const[isLargerThanBase]=useMediaQuery("(min-width:769px")
     const direction=isLargerThanBase ? 'row' :"column";
