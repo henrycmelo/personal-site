@@ -8,7 +8,7 @@ import {
   CardFooter,
   Stack,
   GridItem,
-  Grid
+  Grid,
 } from "@chakra-ui/react";
 import Header from "../components/Header";
 import FullScreenSection from "../components/FullScreenSection";
@@ -56,7 +56,6 @@ const SteakHouse = () => {
                       but not wanting to cook, and ordering everything online. Plus other user difficulties such as not having 
                       a review of the food, nor a detailed description of it. `,
       subtitle2: "User pain points:",
-     
     },
   ];
 
@@ -70,9 +69,8 @@ const SteakHouse = () => {
       imagedescription: `Persona 1`,
       getImageSrc2: () => require("../images/persona2.png"),
       imagedescription2: `Persona 2`,
-      
-    }
-  ]
+    },
+  ];
 
   const journey = [
     {
@@ -82,63 +80,55 @@ const SteakHouse = () => {
                         users to have access to a detailed food menu app. `,
       getImageSrc: () => require("../images/journeymap.png"),
       userquoation: ` "Frustrated with basic descriptions"`,
-      
-    }
+    },
   ];
 
   const design = [
     {
       title: "Starting the Design",
-      tool: "Paper wireframes",    
+      tool: "Paper wireframes",
       analyze: ` Taking the time to draft iterations of each screen of the Steakhouse app, 
                 and making that the elements that will make it to digital are well-suited 
                 to address user pain point. I prioritized a quick and easy way to check the menu and past orders.`,
       getImageSrc: () => require("../images/paper.png"),
 
-      tool2: "Digital wireframes",    
+      tool2: "Digital wireframes",
       analyze2: ` As the initial design phase continued, I made sure to base screen designs 
                 on feedback and findings from the user research.`,
       getImageSrc2: () => require("../images/digital.png"),
       getImageSrc3: () => require("../images/digital2.png"),
 
-      tool3: "Low fidelity prototype",    
+      tool3: "Low fidelity prototype",
       analyze3: ` The low-fidelity prototype connected to the primary user flow of the checkout process from the restaurant nearby, 
                   so the prototype could be used in a usability study with users.`,
       getImageSrc4: () => require("../images/lowfi.png"),
-      link:'https://www.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=0%3A1&node-id=51-110&viewport=410%2C48%2C0.5&scaling=scale-down&starting-point-node-id=51%3A110'
+      link: "https://www.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=0%3A1&node-id=51-110&viewport=410%2C48%2C0.5&scaling=scale-down&starting-point-node-id=51%3A110",
+    },
+  ];
+
+  const testing = [
+    {
+      title: "User Testing",
+      subtitle: "Findings ",
+      description: `I have conducted two rounds of usability studies, which aided in the development 
+                  process from wireframes to mockups. The first study provided valuable insights, 
+                  which helped to guide the direction of the mockups. In the second study, a 
+                  high-fidelity prototype was used to identify areas that required further refinement or
+                   modification in the mockups.`,
       
-
-     
-         
-     
     },
   ];
 
-  const conclusion = [
+  const refine= [
     {
-      title: "Conclusion",
-      subtitle: "Presentation: ",
-      subtitle2: "Feedback",
-      presentation: `I presented the final report to the client in a virtual meeting through Zoom. 
-                    We went from the methodology used to the recommendations. 
-                    I explained in detail how we arrived at our recommendations and why they aligned with 
-                    the client's goal of improving the support page.`,
-      feedback: `The client was happy with the results and the recommendations. They asked me for the final report, presentation video and slides. 
-              I am looking forward to continued work with them.`,
-      getImageSrc: () => require("../images/conclusion.png"),
-    },
-  ];
-
-  const takeaways = [
-    {
-      title: "Going Forward",
-      subtitle: "Takeaways: ",
-      subtitle2: "Next steps: ",
-      learned: `While working on this project, I learned that working in teams is very important and being open-minded 
-              played a key role in the development of it. I also learned that usability studies and peer feedback influence each iteration of website designs.
-              It is important to take into account the users and leave bias on the side.`,
-      nextsteps1: `- Conduct another round of usability studies to validate whether the user’s needs and frustrations experienced previously have been effectively addressed.`,
-      nextsteps2: `- Conduct more user research to determine any new area of need.`,
+      title: "Refining the Design",
+      subtitle: "Mockups ",
+      description: `Early designs allowed to see on the main page recent orders, 
+              the menu and the preview of the current order. After the usability studies, 
+              I decided to minimize navigation and added a carousel for the menu category 
+              and item. Plus, a search bar for easy finding of any food item.`,
+      getImageSrc: () => require("../images/refine1.png"),
+      
     },
   ];
 
@@ -298,34 +288,82 @@ const SteakHouse = () => {
             <span style={{ color: "#007183" }}>
               <b>{research[0].subtitle2}</b>
             </span>{" "}
-            
           </Text>
-          <br/>
-          <Grid 
-            templateColumns='repeat(5, 1fr)' 
-            templateRows='1/2fr 1/2fr 2fr'
+          <br />
+          <Grid
+            templateColumns="repeat(5, 1fr)"
+            templateRows="1/2fr 1/2fr 2fr"
             gap={1}
-            align='center'
-            
-           
-            >
-          <GridItem><Circle number={1} /> </GridItem>
-          <GridItem ><Circle number={2} /> </GridItem>
-          <GridItem ><Circle number={3} /> </GridItem>
-          <GridItem ><Circle number={4} /> </GridItem>
-          <GridItem ><Circle number={5} /> </GridItem>
-          <GridItem ><Text fontSize="sm" color='blue' textStyle="body">Time</Text> </GridItem>
-          <GridItem ><Text fontSize="sm" color='blue' textStyle="body">Cost</Text> </GridItem>
-          <GridItem ><Text fontSize="sm" color='blue' textStyle="body">Accuracy</Text> </GridItem>
-          <GridItem ><Text fontSize="sm" color='blue' textStyle="body">Reviews</Text> </GridItem>
-          <GridItem ><Text fontSize="sm" color='blue' textStyle="body">Steps</Text> </GridItem>
-          <GridItem ><Text fontSize="xs" color='dark' textStyle="body">Working adults are too busy to spend time cooking.</Text> </GridItem>
-          <GridItem ><Text fontSize="xs" color='dark' textStyle="body">The delivery fee that the user has to pay is too high.</Text> </GridItem>
-          <GridItem ><Text fontSize="xs" color='dark' textStyle="body">Expectations unmet due to unclear or inaccurate food descriptions or pictures.</Text> </GridItem>
-          <GridItem ><Text fontSize="xs" color='dark' textStyle="body">No reviews or customization guidance makes trying new menu items difficult.</Text> </GridItem>
-          <GridItem ><Text fontSize="xs" color='dark' textStyle="body">Ordering is time-consuming for busy users due to excessive steps.</Text> </GridItem>
-          
-          
+            align="center"
+          >
+            <GridItem>
+              <Circle number={1} />{" "}
+            </GridItem>
+            <GridItem>
+              <Circle number={2} />{" "}
+            </GridItem>
+            <GridItem>
+              <Circle number={3} />{" "}
+            </GridItem>
+            <GridItem>
+              <Circle number={4} />{" "}
+            </GridItem>
+            <GridItem>
+              <Circle number={5} />{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="sm" color="blue" textStyle="body">
+                Time
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="sm" color="blue" textStyle="body">
+                Cost
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="sm" color="blue" textStyle="body">
+                Accuracy
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="sm" color="blue" textStyle="body">
+                Reviews
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="sm" color="blue" textStyle="body">
+                Steps
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="xs" color="dark" textStyle="body">
+                Working adults are too busy to spend time cooking.
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="xs" color="dark" textStyle="body">
+                The delivery fee that the user has to pay is too high.
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="xs" color="dark" textStyle="body">
+                Expectations unmet due to unclear or inaccurate food
+                descriptions or pictures.
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="xs" color="dark" textStyle="body">
+                No reviews or customization guidance makes trying new menu items
+                difficult.
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <Text fontSize="xs" color="dark" textStyle="body">
+                Ordering is time-consuming for busy users due to excessive
+                steps.
+              </Text>{" "}
+            </GridItem>
           </Grid>
         </VStack>
       </FullScreenSection>
@@ -390,8 +428,6 @@ const SteakHouse = () => {
               </Text>{" "}
             </CardFooter>
           </Card>
-
-           
         </VStack>
       </FullScreenSection>
 
@@ -436,8 +472,6 @@ const SteakHouse = () => {
               </Text>{" "}
             </CardFooter>
           </Card>
-
-           
         </VStack>
       </FullScreenSection>
 
@@ -483,12 +517,9 @@ const SteakHouse = () => {
               </Text>{" "}
             </CardFooter>
           </Card>
+        </VStack>
 
-          </VStack>
-
-          <VStack alignItems={"flex start"} justifyContent={"center"}>
-          
-
+        <VStack alignItems={"flex start"} justifyContent={"center"}>
           <Text size="sm" textStyle="body">
             {" "}
             <span style={{ color: "#007183" }}>
@@ -536,12 +567,9 @@ const SteakHouse = () => {
               </Text>{" "}
             </CardFooter>
           </Card>
+        </VStack>
 
-          </VStack>
-
-          <VStack alignItems={"flex start"} justifyContent={"center"}>
-          
-
+        <VStack alignItems={"flex start"} justifyContent={"center"}>
           <Text size="sm" textStyle="body">
             {" "}
             <span style={{ color: "#007183" }}>
@@ -564,64 +592,11 @@ const SteakHouse = () => {
               <Text fontSize="lg" textStyle="body">
                 {" "}
                 <span style={{ color: "#007183" }}>
-                  <a href={design[0].link} rel="noreferrer" target="_blank"><b><u>Clcik here to view low-fi prototype</u></b></a>
-                </span>
-              </Text>{" "}
-            </CardFooter>
-          </Card>
-
-          
-
-          </VStack>
-
-      </FullScreenSection>
-       
-         
-              
-
-      {/*conclusion */}
-
-      <FullScreenSection
-        backgroundColor="secondLight"
-        alignItems={"center"}
-        spacing={8}
-        width="100vw"
-        p={{ base: 8, md: 32 }}
-      >
-        <VStack alignItems={"flex start"} justifyContent={"center"}>
-          <Text textStyle="h2" fontSize={"4xl"}>
-            {" "}
-            {conclusion[0].title}
-          </Text>
-          <Text size="sm" textStyle="body">
-            {" "}
-            <span style={{ color: "#007183" }}>
-              <b>{conclusion[0].subtitle}</b>
-            </span>{" "}
-            {conclusion[0].presentation}{" "}
-          </Text>
-          <Text size="sm" textStyle="body">
-            {" "}
-            <span style={{ color: "#007183" }}>
-              <b>{conclusion[0].subtitle2}</b>
-            </span>{" "}
-            {conclusion[0].feedback}{" "}
-          </Text>
-          <Card boxShadow="xl">
-            <CardBody>
-              <Image
-                src={conclusion[0].getImageSrc()}
-                alt="mockup lato"
-                background="none"
-                borderRadius="lg"
-              />{" "}
-            </CardBody>
-
-            <CardFooter justify={"center"}>
-              <Text fontSize="lg" textStyle="body">
-                {" "}
-                <span style={{ color: "#007183" }}>
-                  <b>Zoom meeting</b>
+                  <a href={design[0].link} rel="noreferrer" target="_blank">
+                    <b>
+                      <u>Clcik here to view the low-fi prototype</u>
+                    </b>
+                  </a>
                 </span>
               </Text>{" "}
             </CardFooter>
@@ -629,7 +604,7 @@ const SteakHouse = () => {
         </VStack>
       </FullScreenSection>
 
-      {/*going forward*/}
+      {/*testing */}
 
       <FullScreenSection
         backgroundColor="light"
@@ -641,29 +616,121 @@ const SteakHouse = () => {
         <VStack alignItems={"flex start"} justifyContent={"center"}>
           <Text textStyle="h2" fontSize={"4xl"}>
             {" "}
-            {takeaways[0].title}
+            {testing[0].title}
           </Text>
           <Text size="sm" textStyle="body">
             {" "}
             <span style={{ color: "#007183" }}>
-              <b>{takeaways[0].subtitle}</b>
+              <b>{testing[0].subtitle}:</b>
             </span>{" "}
-            {takeaways[0].learned}{" "}
+            {testing[0].description}{" "}
+          </Text>
+          <br/>
+
+          <Grid
+            templateColumns="repeat(2, 1fr)"
+            templateRows="1/2fr 1fr"
+            gap={1}
+            align="center"
+            pl={8}
+            columnGap={16}
+          >
+            <GridItem>
+              {" "}
+              <Text fontSize="sm" color="blue" textStyle="body">
+                Round 1 findings{" "}
+              </Text>
+            </GridItem>
+            <GridItem>
+              {" "}
+              <Text fontSize="sm" color="blue" textStyle="body">
+                Round 2 findings{" "}
+              </Text>{" "}
+            </GridItem>
+            <GridItem>
+              <ol>
+                <Text fontSize="sm" color="dark" textStyle="body">
+                  <li>
+                    Users want a better path to follow in order to complete the
+                    checkout process{" "}
+                  </li>
+                </Text>
+                <Text fontSize="sm" color="dark" textStyle="body">
+                  <li>Users want a more minimalist design per page </li>
+                </Text>
+                <Text fontSize="sm" color="dark" textStyle="body">
+                  <li>
+                    User wants a more visible button to localize the nearest
+                    restaurant{" "}
+                  </li>
+                </Text>
+              </ol>
+            </GridItem>
+            <GridItem>
+              <ol>
+                <Text fontSize="sm" color="dark" textStyle="body">
+                  <li>
+                    The menu category “ALL” is overwhelming for most users
+                  </li>
+                </Text>
+                <Text fontSize="sm" color="dark" textStyle="body">
+                  <li>Finding the specials of the day is not easy for most users </li>
+                </Text>
+                <Text fontSize="sm" color="dark" textStyle="body">
+                  <li>
+                  Users want a button to checkout after adding to the cart instead of coming back to the main menu{" "}
+                  </li>
+                </Text>
+              </ol>
+            </GridItem>
+          </Grid>
+        </VStack>
+      </FullScreenSection>
+
+      {/*refining*/}
+
+      <FullScreenSection
+        backgroundColor="secondLight"
+        alignItems={"center"}
+        spacing={8}
+        width="100vw"
+        p={{ base: 8, md: 32 }}
+      >
+        <VStack alignItems={"flex start"} justifyContent={"center"}>
+          <Text textStyle="h2" fontSize={"4xl"}>
+            {" "}
+            {refine[0].title}
           </Text>
           <Text size="sm" textStyle="body">
             {" "}
             <span style={{ color: "#007183" }}>
-              <b>{takeaways[0].subtitle2}</b>
+              <b>{refine[0].subtitle}:</b>
             </span>{" "}
+            {refine[0].description}{" "}
           </Text>
-          <Text size="sm" textStyle="body" pl={8}>
-            {" "}
-            {takeaways[0].nextsteps1}{" "}
-          </Text>
-          <Text size="sm" textStyle="body" pl={8}>
-            {" "}
-            {takeaways[0].nextsteps2}{" "}
-          </Text>
+
+          <Card boxShadow="xl" align="center">
+            <CardBody>
+              <Image
+                src={refine[0].getImageSrc()}
+                alt={refine[0].subtitle}
+                background="none"
+                borderRadius="lg"
+              />{" "}
+            </CardBody>
+
+            <CardFooter justify={"center"}>
+            <CardFooter justify={"center"}>
+              <Text fontSize="lg" textStyle="body">
+                {" "}
+                <span style={{ color: "#007183" }}>
+                  <b>Mockup 1</b>
+                </span>
+              </Text>{" "}
+            </CardFooter>
+            </CardFooter>
+            </Card>
+          
         </VStack>
       </FullScreenSection>
 
