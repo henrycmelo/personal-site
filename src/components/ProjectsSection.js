@@ -40,11 +40,12 @@ const projects = [
     description:
       "Designed and conducted UX research for a user-friendly menu app for a popular steakhouse. Created intuitive UI to enhance the user experience and enable easy navigation.",
     getImageSrc: () => require("../images/steakhouse.jpg"),
+    path:"/steakhouse"
   },
 ];
 
 const ProjectsSection = ({ isHomePage }) => {
-  const { handleClickToTop, isLargerThanBase } = useAlertContext();
+  const {  isLargerThanBase } = useAlertContext();
 
   const gridColumns = isLargerThanBase
     ? "repeat(2,minmax(0,1fr))"
@@ -86,7 +87,7 @@ const ProjectsSection = ({ isHomePage }) => {
       <Box  justifyContent={'center'}>
         
         <Link to="/projects">
-      <MemoizedButton onClick={handleClickToTop} gap={4}>
+      <MemoizedButton  gap={4}>
         View Other Projects <FontAwesomeIcon icon={faArrowRight} />
       </MemoizedButton>
     </Link>

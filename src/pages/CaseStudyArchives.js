@@ -31,6 +31,12 @@ const CaseStudyArchives = () => {
   const projectOverview = [
     {
       title: "Project Overview",
+      product: `The Archives of American Art is a research center and repository dedicated to collecting, preserving,
+       and providing access to primary sources that document the history of the visual arts in the United States. 
+       The archives, which is part of the Smithsonian Institution, holds a vast collection of letters, diaries, sketches, 
+       photographs, and other documents related to American artists, art galleries, museums, and collectors. Its mission is to 
+       support research and scholarship in the field of American art history by making its holdings available to the public and 
+       providing educational programs and resources for researchers, students, and the general public.`,
       challenge: `Redesign the Archives of American Art support page to increase overall donations. 
                         Donations are critical to support the Archives' goal of collecting, preserving, 
                         and providing access to primary sources that document the history of the visual arts.`,
@@ -272,6 +278,7 @@ const CaseStudyArchives = () => {
             </span>{" "}
             {projectInfo[0].role}
           </Text>
+          
           <Text size="sm" textStyle="body" align={"center"}>
             {" "}
             <span style={{ color: "#007183" }}>
@@ -301,6 +308,13 @@ const CaseStudyArchives = () => {
           <Text textStyle="h2" fontSize={"4xl"}>
             {" "}
             {projectOverview[0].title}
+          </Text>
+          <Text size="sm" textStyle="body">
+            {" "}
+            <span style={{ color: "#007183" }}>
+              <b>Client:</b>
+            </span>{" "}
+            {projectOverview[0].product}
           </Text>
 
           <Text size="sm" textStyle="body">
