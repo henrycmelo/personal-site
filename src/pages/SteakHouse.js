@@ -16,6 +16,7 @@ import Footer from "../components/Footer";
 import CustomizedButton from "../components/CustomizedButton";
 import SecondaryButton from "../components/SecondaryButton";
 import { useAlertContext } from "../context/alertContext";
+import { Link } from "react-router-dom";
 
 const SteakHouse = () => {
   const { isLargerThanBase } = useAlertContext();
@@ -134,9 +135,40 @@ const SteakHouse = () => {
                   and reduced other customers’ rating to only the number.  Also, I created a menu category for 
                   Specials and other for Popular for easy find, and added icons to the menu category to make it more accessible.`,
       getImageSrc2: () => require("../images/refine2.png"),
+      getImageSrc3: () => require("../images/refine3.png"),
+      getImageSrc4: () => require("../images/hifi.gif")
+
       
     },
   ];
+
+  const hifi= [
+    {
+      title: "High-fidelity Prototype",
+      subtitle: "the final mockup ",
+      description: `The final high-fidelity prototype presented user flows for ordering
+                     a item from a Steakhouse. It also met user needs such as estimate time, 
+                    customizable modifications for an item, and having the option to either checkout or 
+                    come back to the menu after adding an item to the cart.`,
+      getImageSrc: () => require("../images/hifi.gif"),
+      link:'https://www.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=35%2C689%2C0.5&scaling=scale-down&starting-point-node-id=1184%3A9872'
+
+    }]
+
+    const takeaways = [
+      {
+        title: "Going Forward",
+        subtitle: "Takeaways: ",
+        subtitle2: "Next steps: ",
+        learned: `While designing the Steakhouse food menu app, I learned that the first ideas for the app are only the beginning 
+                of the process. Usability studies and peer feedback influence each iteration of the app’s designs`,
+        subtitle3:'Impact:',
+        impact:'The food menu app makes users feel the Steakhouse think how to meet their needs in a easy and intuitive way.',
+        quote:'“The app made it so easy and detailed to order from The Steakhouse! This food menu app would definitely make my life easier when I want to try something new and taking into account I am gluten free’’',
+        nextsteps1: `- Conduct another round of usability studies to validate whether the user’s needs and frustrations experienced previously have been effectively addressed.`,
+        nextsteps2: `- Conduct more user research to determine any new area of need.`,
+      },
+    ];
 
   function Circle(props) {
     const circleStyle = {
@@ -770,6 +802,30 @@ const SteakHouse = () => {
             </CardFooter>
             </CardFooter>
             </Card>
+
+            <Card boxShadow="xl" align="center">
+            <CardBody>
+              <Image
+                src={refine[0].getImageSrc3()}
+                alt={refine[0].subtitle2}
+                background="none"
+                borderRadius="lg"
+              />{" "}
+            </CardBody>
+
+            <CardFooter justify={"center"}>
+            <CardFooter justify={"center"}>
+              <Text fontSize="lg" textStyle="body">
+                {" "}
+                <span style={{ color: "#007183" }}>
+                  <b>Mockup 3</b>
+                </span>
+              </Text>{" "}
+            </CardFooter>
+            </CardFooter>
+            </Card>
+
+            
           
         </VStack>
       </FullScreenSection>
@@ -781,11 +837,110 @@ const SteakHouse = () => {
         width="100vw"
         p={{ base: 8, md: 32 }}
       >
+
+      <VStack alignItems={"flex start"} justifyContent={"center"}>
+          <Text textStyle="h2" fontSize={"4xl"}>
+            {" "}
+            {hifi[0].title}
+          </Text>
+          <Text size="sm" textStyle="body">
+            {" "}
+            <span style={{ color: "#007183" }}>
+              <b>{hifi[0].subtitle}:</b>
+            </span>{" "}
+            {hifi[0].description}{" "}
+          </Text>
+
+          <Card boxShadow="xl" align="center">
+            <CardBody>
+              <Image
+                src={hifi[0].getImageSrc()}
+                alt={hifi[0].subtitle}
+                background="none"
+                borderRadius="lg"
+              />{" "}
+            </CardBody>
+
+            
+            <CardFooter justify={"center"}>
+            <Text fontSize="lg" textStyle="body">
+                {" "}
+                <span style={{ color: "#007183" }}>
+                  <a href={hifi[0].link} rel="noreferrer" target="_blank">
+                    <b>
+                      <u>Clcik here to view the hi-fi prototype</u>
+                    </b>
+                  </a>
+                </span>
+              </Text>{" "}
+            
+            
+            </CardFooter>
+            </Card>
+          
+        </VStack>
+
+        </FullScreenSection>
+
+        <FullScreenSection
+        backgroundColor="secondLight"
+        alignItems={"center"}
+        spacing={8}
+        width="100vw"
+        p={{ base: 8, md: 32 }}
+      >
+         <VStack alignItems={"flex start"} justifyContent={"center"}>
+          <Text textStyle="h2" fontSize={"4xl"}>
+            {" "}
+            {takeaways[0].title}
+          </Text>
+          <Text size="sm" textStyle="body">
+            {" "}
+            <span style={{ color: "#007183" }}>
+              <b>{takeaways[0].subtitle}</b>
+            </span>{" "}
+            {takeaways[0].learned}{" "}
+          </Text>
+          <Text size="sm" textStyle="body">
+            {" "}
+            <span style={{ color: "#007183" }}>
+              <b>{takeaways[0].subtitle3}</b>
+            </span>{takeaways[0].impact}
+          </Text>
+          <Text size="sm" textStyle="body">
+            {" "}
+            <span style={{ color: "#007183" }}>
+              <b>One quote from a participant feedback: </b>
+            </span><i>{takeaways[0].quote}</i>
+          </Text>
+          <Text size="sm" textStyle="body">
+            {" "}
+            <span style={{ color: "#007183" }}>
+              <b>{takeaways[0].subtitle2}</b>
+            </span>{" "}
+          </Text>
+          <Text size="sm" textStyle="body" pl={8}>
+            {" "}
+            {takeaways[0].nextsteps1}{" "}
+          </Text>
+          <Text size="sm" textStyle="body" pl={8}>
+            {" "}
+            {takeaways[0].nextsteps2}{" "}
+          </Text>
+        </VStack>
+
+        <br/>
+        <br/>
+      
+
         <Stack direction={"row"}>
-          <CustomizedButton> Contact me </CustomizedButton>
-          <SecondaryButton>View other projects</SecondaryButton>
+          <Link to='/contactme'><CustomizedButton> Contact me </CustomizedButton></Link>
+          <Link to='/projects'><SecondaryButton>View other projects</SecondaryButton></Link>
         </Stack>
+
+
       </FullScreenSection>
+
 
       <Footer />
     </main>
