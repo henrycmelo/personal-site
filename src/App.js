@@ -9,6 +9,7 @@ import ProjectPage from './pages/ProjectPage';
 import AboutMePage from './pages/AboutMePage';
 import ContactPage from './pages/ContactPage';
 import MyPersonalSite from './pages/MyPersonalSite';
+import SteakHouse from './pages/SteakHouse';
 
 
 
@@ -27,12 +28,14 @@ function App() {
                 <Route path="casestudyarchives" element={<CaseStudyArchives />} />
                 <Route path="djangopage" element={<DjangoPage />} />
                 <Route path="mypersonalsite" element={<MyPersonalSite />} />
+                <Route path='steakhouse' element={<SteakHouse/>} />
               </Route>
               <Route path="/aboutme" element={<AboutMePage />} />
               <Route path="/contactme" element={<ContactPage />} />
               <Route path="/casestudyarchives" element={<CaseStudyArchives />} />
               <Route path="/djangopage" element={<DjangoPage />} />
               <Route path="/mypersonalsite" element={<MyPersonalSite />} />
+              <Route path='steakhouse' element={<SteakHouse/>} />
             </Routes>
           
         </main>
