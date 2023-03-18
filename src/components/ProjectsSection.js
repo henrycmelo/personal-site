@@ -14,7 +14,7 @@ const projects = [
     title: "Building an online learning platform w/ DJANGO",
     description:
       "Developed using Python/HTML/Bootstrap, a platform where instructors can create their online courses and its exams.",
-    getImageSrc: () => require("../images/python.jpg"),
+    getImageSrc: () => require("../images/python.png"),
     path: "/djangopage",
     id:'djangoimage'
    
@@ -23,7 +23,7 @@ const projects = [
     title: "Building a dynamic web app with React, Chakra and Formik",
     description:
       "My personal website feature the combination of these libraries allowed for the creation of an interactive and sleek user interface with efficient form management.",
-    getImageSrc: () => require("../images/react.jpg"),
+    getImageSrc: () => require("../images/react.png"),
     path: '/mypersonalsite',
     
   },
@@ -31,7 +31,7 @@ const projects = [
     title: "Enhancing user experience for better donations on support page",
     description:
       "Conducted a usability testing project on the Archives of American Art donation page, providing recommendations to improve its functionality, navigation, and search capabilities.",
-    getImageSrc: () => require("../images/aaa.jpg"),
+    getImageSrc: () => require("../images/aaa.png"),
     path: "/casestudyarchives",
     
   },
@@ -39,7 +39,7 @@ const projects = [
     title: "Designing a food menu app for a steakhouse",
     description:
       "Designed and conducted UX research for a user-friendly menu app for a popular steakhouse. Created intuitive UI to enhance the user experience and enable easy navigation.",
-    getImageSrc: () => require("../images/steakhouse.jpg"),
+    getImageSrc: () => require("../images/steakhouseHP.png"),
     path:"/steakhouse"
   },
 ];

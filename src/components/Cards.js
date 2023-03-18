@@ -23,6 +23,10 @@ const Cards = ({ title, description, imageSrc, to }) => {
           objectFit="cover"
           boxSize="100%"
           h="auto"
+          borderRadius='5px'
+          backgroundColor='#E8EBED'
+          
+          
         />
         <Stack mt="6" spacing="3">
           <Heading as="h6" fontSize="xl" color="dark">
