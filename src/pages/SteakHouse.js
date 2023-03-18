@@ -105,6 +105,7 @@ const SteakHouse = () => {
       analyze3: ` The low-fidelity prototype connected to the primary user flow of the checkout process from the restaurant nearby, 
                   so the prototype could be used in a usability study with users.`,
       getImageSrc4: () => require("../images/lowfi.png"),
+      link:'https://www.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=0%3A1&node-id=51-110&viewport=410%2C48%2C0.5&scaling=scale-down&starting-point-node-id=51%3A110'
       
 
      
@@ -546,7 +547,7 @@ const SteakHouse = () => {
             <span style={{ color: "#007183" }}>
               <b>{design[0].tool3}:</b>
             </span>{" "}
-            {design[0].analyze2}{" "}
+            {design[0].analyze3}{" "}
           </Text>
 
           <Card boxShadow="xl" align="center">
@@ -563,7 +564,7 @@ const SteakHouse = () => {
               <Text fontSize="lg" textStyle="body">
                 {" "}
                 <span style={{ color: "#007183" }}>
-                  <b>{design[0].tool2}</b>
+                  <a href={design[0].link} rel="noreferrer" target="_blank"><b><u>Clcik here to view low-fi prototype</u></b></a>
                 </span>
               </Text>{" "}
             </CardFooter>
