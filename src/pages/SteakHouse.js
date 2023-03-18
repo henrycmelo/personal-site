@@ -128,6 +128,12 @@ const SteakHouse = () => {
               I decided to minimize navigation and added a carousel for the menu category 
               and item. Plus, a search bar for easy finding of any food item.`,
       getImageSrc: () => require("../images/refine1.png"),
+      subtitle2: "After the second round user testing ",
+      description2: `The second usability study showed frustration with the menu item card because 
+                  it was too small and busy. To improve this, I made the menu item card bigger 
+                  and reduced other customers’ rating to only the number.  Also, I created a menu category for 
+                  Specials and other for Popular for easy find, and added icons to the menu category to make it more accessible.`,
+      getImageSrc2: () => require("../images/refine2.png"),
       
     },
   ];
@@ -725,6 +731,40 @@ const SteakHouse = () => {
                 {" "}
                 <span style={{ color: "#007183" }}>
                   <b>Mockup 1</b>
+                </span>
+              </Text>{" "}
+            </CardFooter>
+            </CardFooter>
+            </Card>
+          
+        </VStack>
+
+        <VStack alignItems={"flex start"} justifyContent={"center"}>
+          
+          <Text size="sm" textStyle="body">
+            {" "}
+            <span style={{ color: "#007183" }}>
+              <b>{refine[0].subtitle2}:</b>
+            </span>{" "}
+            {refine[0].description2}{" "}
+          </Text>
+
+          <Card boxShadow="xl" align="center">
+            <CardBody>
+              <Image
+                src={refine[0].getImageSrc2()}
+                alt={refine[0].subtitle2}
+                background="none"
+                borderRadius="lg"
+              />{" "}
+            </CardBody>
+
+            <CardFooter justify={"center"}>
+            <CardFooter justify={"center"}>
+              <Text fontSize="lg" textStyle="body">
+                {" "}
+                <span style={{ color: "#007183" }}>
+                  <b>Mockup 2</b>
                 </span>
               </Text>{" "}
             </CardFooter>
