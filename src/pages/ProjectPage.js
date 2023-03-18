@@ -7,8 +7,6 @@ import Header from "../components/Header";
 import ProjectsSection from "../components/ProjectsSection";
 import Footer from "../components/Footer";
 
-
-
 function ProjectPage() {
   return (
     <main>
@@ -16,7 +14,7 @@ function ProjectPage() {
       <FullScreenSection
         backgroundColor="light"
         alignContent="center"
-        alignItems={{ base: "center", md: "center", xl: "flex-start" }}
+        alignItems={{ base: "center", md: "center", xl: "center" }}
         spacing={8}
         width="100vw"
         pt={48}

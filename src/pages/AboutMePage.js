@@ -14,7 +14,7 @@ function AboutMePage () {
       <FullScreenSection
         backgroundColor="light"
         alignContent="center"
-        alignItems={{ base: "center", md: "center", xl: "flex-start" }}
+        alignItems={{ base: "center", md: "center", xl: "center" }}
         spacing={8}
         width="100vw"
         pt={48}

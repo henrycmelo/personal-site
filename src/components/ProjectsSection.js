@@ -1,4 +1,4 @@
-import React, {memo} from "react";
+import React from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Box, Button, Heading} from "@chakra-ui/react";
 import Cards from "./Cards";
@@ -7,7 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useAlertContext } from "../context/alertContext";
 
-const MemoizedButton = memo(Button); // Wrapping the Button with memo
+
 
 const projects = [
   {
@@ -87,9 +87,9 @@ const ProjectsSection = ({ isHomePage }) => {
       <Box  justifyContent={'center'}>
         
         <Link to="/projects">
-      <MemoizedButton  gap={4}>
+      <Button  gap={4}>
         View Other Projects <FontAwesomeIcon icon={faArrowRight} />
-      </MemoizedButton>
+      </Button>
     </Link>
       </Box>
 }
