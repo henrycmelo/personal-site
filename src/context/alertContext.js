@@ -52,13 +52,7 @@ export const AlertProvider = ({ children }) => {
   ];
 
   
-  const handleClickToTop = () => {
-    try {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } catch (error) {
-      window.scrollTo(0, 0);
-    }
-  };
+  
 
     const[isLargerThanBase]=useMediaQuery("(min-width:769px")
     const direction=isLargerThanBase ? 'row' :"column";
@@ -73,7 +67,6 @@ export const AlertProvider = ({ children }) => {
         onClose: () => setState({ isOpen: false, type: '', message: '' }),
         handleClick,
         socials,
-        handleClickToTop,
         direction,
         spacing,
         align,
