@@ -6,37 +6,52 @@ import CustomizedButton from "../components/CustomizedButton";
 import SecondaryButton from "../components/SecondaryButton";
 import { useAlertContext } from "../context/alertContext"
 
-const DjangoPage = () => {
+const Dash = () => {
   const { isLargerThanBase } = useAlertContext();
   const image = isLargerThanBase ? '' : '400px'
   const projectInfo = [
     {
-      getImageSrc: () => require("../images/django1.png"),
-      title: "Building an online learning platform w/ DJANGO",
+      getImageSrc: () => require("../images/dashpp.png"),
+      title: "Exploring Restaurant Violations in NYC with Python, Plotly, and Dash",
       subtitle:
-        "Developed using Python/HTML/Bootstrap, a platform where instructors can create their online courses and its exams.",
-      role: "Full-stack developer, UI/UX designer, DevOps Engineer",
-      technologies: "Python, Django, Bootstrap,HTML5, AWS S3 bucket, Heroku",
-      date: "Dec 2022-March 2023",
-      description: `This is an online course platform built with Django and Bootstrap. It allows students to enroll in courses,
-                             view the number of enrolled students, login, sign up, and take exams. Instructors can set up their courses, lessons, 
-                             and exams. The project uses AWS S3 bucket for storage and is deployed on Heroku.`,
+      "This project utilizes Python, Plotly, and Dash to explore and visualize restaurant violations in New York City using the dataset from the Department of Health and Mental Hygiene.",
+      role: "Full-stack developer",
+      technologies: "Python, Pandas, Plotly, Dash",
+      date: "Sep 2022-Dec 2022",
+      description: `By utilizing this interactive site, users can easily explore and visualize restaurant 
+                  violations data in New York City. The site provides five types of visualizations, including scattermapbox, 
+                  choropleth map, barchart, and scatterbox, which enable users to gain insights into restaurant
+                   violations across the city. Additionally, the search bar feature allows users to search for their favorite 
+                   restaurant and view its violations in a table format. This provides users with valuable information to make 
+                   informed choices about where to dine. Overall, this project provides an accessible and user-friendly way to
+                   explore restaurant violations data in New York City.`,
 
       features: [
         {
-          1: "• Student enrollment in courses",
-          2: "• Real-time updates on the number of enrolled students",
-          3: "• User authentication for students and instructors",
-          4: "• Exam taking functionality",
-          5: "•  Course creation and management for instructors",
+          1: "• Interactive visualizations: The site provides five types of interactive visualizations, including scattermapbox, choropleth map, barchart, and scatterbox, which enable users to explore restaurant violations data across New York City.",
+          2: "• Search bar: Users can search for their favorite restaurant and view its violations in a table format. This feature provides users with valuable information to make informed choices about where to dine.",
+          3: "• User-friendly interface: The site has a user-friendly interface that allows users to easily navigate the visualizations and search bar feature",
+          4: "• Data cleaning and preprocessing: Python and Pandas are used to clean and preprocess the dataset, ensuring it is in a format that can be easily analyzed and visualized.",
+          5: "• Scalability: The project is designed to be easily maintained and scaled in the future, with documentation and collaboration with other professionals if necessary.",
         },
       ],
 
-      developmentProcess: `The biggest challenge I faced during the development process was integrating AWS S3 bucket with Heroku for storage. 
-                                    I also had an issue with retrieving uploaded images from the admin panel. To overcome these challenges, I had to
-                                     read through the documentation for both AWS S3 and Heroku and use trial and error to find the correct configurations`,
+      developmentProcess: `The development process for this project involved collecting the Department of Health and Mental 
+                          Hygiene's restaurant violations dataset for New York City and using Python and Pandas to clean and 
+                          preprocess the data. One challenge was using a dataset that was very descriptive and trying to quantify 
+                          that to create the plots. `,
+
+      developmentProcess2:`Despite this challenge, Plotly was used to create five types of visualizations 
+      to explore and gain insights into the data. A search bar feature was implemented using Dash to allow users 
+      to search for their favorite restaurant and view its violations in a table format. Testing and debugging were
+       important steps to ensure that the website was functional and free of bugs. Finally, the website was deployed 
+       to a server or hosting platform so that it could be accessed by users. Throughout the development process, documentation
+        and collaboration with other professionals may have been necessary to ensure that the project was easily maintainable and scalable.`,
       design:
-        "The project has a clean and modern user interface built with Bootstrap and HTML5"
+        `The project has a modern and visually appealing design, with a dark mode color scheme that is easy on the eyes. The site's layout is intuitive, 
+        with the visualizations and search bar feature prominently displayed on the homepage. The dark mode design enhances the user experience by reducing 
+        eye strain and creating a sleek and professional look. Overall, the design of the site is intended to provide users with a seamless and enjoyable 
+        experience when exploring restaurant violations data.`
     },
   ];
 
@@ -137,6 +152,11 @@ const DjangoPage = () => {
             </span>{" "}
             {projectInfo[0].developmentProcess}
           </Text>
+          <Text size="sm" textStyle="body">
+            {" "}
+           
+            {projectInfo[0].developmentProcess2}
+          </Text>
           <br/>
           <Text size="sm" textStyle="body">
             {" "}
@@ -178,14 +198,14 @@ const DjangoPage = () => {
 
         <Stack direction="row" pt={8} pb={{ base: 8, md: 0 }}>
           <a
-            href="https://onlinecoursedjango.herokuapp.com/onlinecourseapp/"
+            href="http://henrycastillome.pythonanywhere.com/"
             rel="noreferrer"
             target="_blank"
           >
             <CustomizedButton>Launch Project</CustomizedButton>
           </a>
           <a
-            href="https://github.com/henrycastillome/onlinecoursedjangoapp/"
+            href="https://github.com/henrycastillome/PFCH"
             rel="noreferrer"
             target="_blank"
           >
@@ -198,4 +218,4 @@ const DjangoPage = () => {
   );
 };
 
-export default DjangoPage;
+export default Dash;

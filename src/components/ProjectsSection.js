@@ -44,6 +44,9 @@ const projects = [
   },
 ];
 
+
+
+
 const ProjectsSection = ({ isHomePage }) => {
   const {  isLargerThanBase } = useAlertContext();
 

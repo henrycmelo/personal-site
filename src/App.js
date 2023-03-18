@@ -10,6 +10,7 @@ import AboutMePage from './pages/AboutMePage';
 import ContactPage from './pages/ContactPage';
 import MyPersonalSite from './pages/MyPersonalSite';
 import SteakHouse from './pages/SteakHouse';
+import Dash from './pages/Dash';
 
 
 
@@ -29,13 +30,15 @@ function App() {
                 <Route path="djangopage" element={<DjangoPage />} />
                 <Route path="mypersonalsite" element={<MyPersonalSite />} />
                 <Route path='steakhouse' element={<SteakHouse/>} />
+                <Route path='dash' element={<Dash/>} />
               </Route>
               <Route path="/aboutme" element={<AboutMePage />} />
               <Route path="/contactme" element={<ContactPage />} />
               <Route path="/casestudyarchives" element={<CaseStudyArchives />} />
               <Route path="/djangopage" element={<DjangoPage />} />
               <Route path="/mypersonalsite" element={<MyPersonalSite />} />
-              <Route path='steakhouse' element={<SteakHouse/>} />
+              <Route path='/steakhouse' element={<SteakHouse/>} />
+              <Route path='/dash' element={<Dash/>} />
             </Routes>
           
         </main>
