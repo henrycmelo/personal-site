@@ -89,11 +89,13 @@ const ProjectsSection = ({ isHomePage }) => {
       {isHomePage &&
       <Box  justifyContent={'center'}>
         
-        <Link to="/projects">
+        
       <Button  gap={4}>
+      <Link to="/projects">
         View Other Projects <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
       </Button>
-    </Link>
+   
       </Box>
 }
      
