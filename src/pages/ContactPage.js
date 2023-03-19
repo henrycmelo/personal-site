@@ -43,7 +43,7 @@ function ContactPage () {
          <VStack alignItems={"center"} justifyContent={"center"}>
           <Text textStyle="body" fontSize={"xl"} align={"center"}>
           Get in touch with me to discuss your project and see how we can work together. 
-          Fill out the contact form or send me an email at <a href="mailto:hcasti40@pratt.edu" style={{ color: "#007183" }}>hcasti40@patt.edu </a> 
+          Fill out the contact form or send me an email at <a href="mailto:hcasti40@pratt.edu" style={{ color: "#007183" }}>hcasti40@pratt.edu </a> 
           and I'll get back to you as soon as possible.
           </Text>
           </VStack>
