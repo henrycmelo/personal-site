@@ -17,6 +17,7 @@ const programmingProjects = [
     path: "/dash",
     id: "dash",
   },
+  
 ];
 
 function ProjectPage() {
@@ -58,7 +59,7 @@ function ProjectPage() {
         p={{ base: 8, md: 32 }}
       >
         <VStack alignItems={"flex start"} justifyContent={"center"}>
-          <Heading as="h1">Programming Projects</Heading>
+          <Heading as="h1">Other Projects</Heading>
         </VStack>
 
         <Box
