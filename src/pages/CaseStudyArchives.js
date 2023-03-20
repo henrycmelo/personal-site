@@ -953,7 +953,8 @@ const CaseStudyArchives = () => {
             </span>{" "}
             {conclusion[0].feedback}{" "}
           </Text>
-          <Card boxShadow="xl">
+          <Stack direction={{ base: "column", md: "row" }}>
+          <Card boxShadow="xl" >
             <CardBody>
               <Image
                 src={conclusion[0].getImageSrc()}
@@ -972,6 +973,7 @@ const CaseStudyArchives = () => {
               </Text>{" "}
             </CardFooter>
           </Card>
+          </Stack>
         </VStack>
       </FullScreenSection>
 
