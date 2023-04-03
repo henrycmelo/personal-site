@@ -1022,9 +1022,9 @@ const CaseStudyArchives = () => {
         width="100vw"
         p={{ base: 8, md: 32 }}
       >
-        <Stack direction={"row"}>
-          <CustomizedButton> Contact me </CustomizedButton>
-          <SecondaryButton>View other projects</SecondaryButton>
+         <Stack direction={"row"}>
+          <Link to='/contactme'><CustomizedButton> Contact me </CustomizedButton></Link>
+          <Link to='/projects'><SecondaryButton>View other projects</SecondaryButton></Link>
         </Stack>
       </FullScreenSection>
 
