@@ -122,7 +122,7 @@ const Header = ({ isHomePage }) => {
                     }
                     {
                       <a
-                        href={require("../documents/ResumeHenry.pdf")}
+                        href={require("../documents/ResumeHenry.pdf")} 
                         rel="noreferrer"
                         target="_blank"
                         className={hasAnimated? "":"heading-animation-six-down"}
