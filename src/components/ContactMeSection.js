@@ -15,6 +15,7 @@ import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
 import { useAlertContext } from "../context/alertContext";
 import CustomizedButton from "./CustomizedButton";
+import ScrollReveal from "../hooks/ScrollReveal";
 
 const ContactMeSection = ({ isHomePage }) => {
   const { onOpen, onClose, align } = useAlertContext();
@@ -101,9 +102,9 @@ const ContactMeSection = ({ isHomePage }) => {
       pb={{ base: 32, md: 32 }}>
         
       {isHomePage && (
-        <Heading as="h1" id="contactme-section" color="dark">
+        <ScrollReveal><Heading as="h1" id="contactme-section" color="dark">
           Contact me
-        </Heading>
+        </Heading></ScrollReveal>
       )}
       <VStack w="100%" alignItems="start" justifyContent="flex-start">
         <Box p={6} rounded="md" w="100%">
@@ -127,10 +128,10 @@ const ContactMeSection = ({ isHomePage }) => {
                     : false
                 }
               >
-                <FormLabel htmlFor="firstName" textStyle="body">
+                <ScrollReveal><FormLabel htmlFor="firstName" textStyle="body">
                   Name
-                </FormLabel>
-                <Input
+                </FormLabel></ScrollReveal>
+                <ScrollReveal><Input
                   id="firstName"
                   name="firstName"
                   borderColor="blue"
@@ -138,6 +139,7 @@ const ContactMeSection = ({ isHomePage }) => {
                   focusBorderColor="yellow"
                   {...formik.getFieldProps("firstName")}
                 />
+                </ScrollReveal>
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
               <FormControl
@@ -145,10 +147,10 @@ const ContactMeSection = ({ isHomePage }) => {
                   formik.touched.email && formik.errors.email ? true : false
                 }
               >
-                <FormLabel htmlFor="email" textStyle="body">
+                <ScrollReveal><FormLabel htmlFor="email" textStyle="body">
                   Email Address
-                </FormLabel>
-                <Input
+                </FormLabel></ScrollReveal>
+                <ScrollReveal><Input
                   id="email"
                   name="email"
                   type="email"
@@ -157,6 +159,7 @@ const ContactMeSection = ({ isHomePage }) => {
                   focusBorderColor="yellow"
                   {...formik.getFieldProps("email")}
                 />
+                </ScrollReveal>
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
 
@@ -165,10 +168,10 @@ const ContactMeSection = ({ isHomePage }) => {
                   formik.touched.comment && formik.errors.comment ? true : false
                 }
               >
-                <FormLabel htmlFor="comment" textStyle="body">
+                <ScrollReveal><FormLabel htmlFor="comment" textStyle="body">
                   Your message
-                </FormLabel>
-                <Textarea
+                </FormLabel></ScrollReveal>
+                <ScrollReveal><Textarea
                   id="comment"
                   name="comment"
                   height={250}
@@ -176,7 +179,7 @@ const ContactMeSection = ({ isHomePage }) => {
                   borderWidth="2px"
                   focusBorderColor="yellow"
                   {...formik.getFieldProps("comment")}
-                />
+                /></ScrollReveal>
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
               <CustomizedButton
@@ -184,7 +187,7 @@ const ContactMeSection = ({ isHomePage }) => {
                 colorScheme="blue"
                 width="full"
                 disabled={isLoading}
-              >
+              ><ScrollReveal>
                 {isLoading ? (
                   <div>
                     Submitting...
@@ -192,8 +195,9 @@ const ContactMeSection = ({ isHomePage }) => {
                   </div>
                 ) : (
                   "Submit"
-                )}
+                )}</ScrollReveal>
               </CustomizedButton>
+              
             </VStack>
           </form>
         </Box>

@@ -10,6 +10,7 @@ import {
 import { useAlertContext } from "../context/alertContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FullScreenSection from "./FullScreenSection";
+import ScrollReveal from "../hooks/ScrollReveal";
 
 const Footer = () => {
   const { socials, isLargerThanBase } = useAlertContext();
@@ -40,10 +41,10 @@ const Footer = () => {
           paddingBottom="1em"
         >
           <GridItem colSpan={1} px={paddingX} color="light" maxWidth="1024px">
-            <Heading as="h3" paddingBottom={paddingHeading} align={align}>
+            <ScrollReveal><Heading as="h3" paddingBottom={paddingHeading} align={align}>
               Henry Castillo
-            </Heading>
-            <Text
+            </Heading></ScrollReveal>
+            <ScrollReveal><Text
               fontSize={{ md: "sm", base: "xs" }}
               textStyle="body"
               paddingRight={paddingText}
@@ -53,18 +54,19 @@ const Footer = () => {
               solutions - that's what I do as a UX designer and full-stack
               developer
             </Text>
+            </ScrollReveal>
           </GridItem>
           <GridItem colSpan={1} colStart={columStart} colEnd={columEnd} px={12}>
-            <Heading as="h3" paddingBottom={paddingHeading} align={align}>
+            <ScrollReveal><Heading as="h3" paddingBottom={paddingHeading} align={align}>
               {" "}
               Socials
-            </Heading>
+            </Heading></ScrollReveal>
             <Stack direction="row" justify={align} color="yellow">
               {socials.map(
                 (
                   icons // rendering the list of icons using .map () method
                 ) => (
-                  <a
+                  <ScrollReveal><a
                     key={icons.id}
                     href={icons.url}
                     style={{ padding: "1em" }}
@@ -73,16 +75,16 @@ const Footer = () => {
                     title={icons.url}
                   >
                     <FontAwesomeIcon icon={icons.icon} size="2x" />
-                  </a>
+                  </a></ScrollReveal>
                 )
               )}
             </Stack>
           </GridItem>
         </Grid>
         <Divider color="light" alignItems="center" margin="0 auto" />
-        <Text color="yellow" size="xs" textStyle="body" textAlign="center">
+        <ScrollReveal><Text color="yellow" size="xs" textStyle="body" textAlign="center">
           © Copyright 2023. Designed and built by <b>Henry Castillo</b>{" "}
-        </Text>
+        </Text></ScrollReveal>
       </FullScreenSection>
     </footer>
   );

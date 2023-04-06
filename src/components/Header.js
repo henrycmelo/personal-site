@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SmallScreen from "./SmallScreen";
 import { useScrollLock } from "../hooks/useScrollLock";
 import { Link } from "react-router-dom";
+import "animate.css";
 
 const logo = [
   {
@@ -28,6 +29,7 @@ const Header = ({ isHomePage }) => {
   const [showMenu, setShowMenu] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const { lockScroll, unlockScroll } = useScrollLock();
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -50,6 +52,9 @@ const Header = ({ isHomePage }) => {
           setShowMenu(false);
         } else {
           setShowMenu(true);
+          if(!hasAnimated){
+            setHasAnimated(true)
+          }
         }
       }
 
@@ -61,7 +66,9 @@ const Header = ({ isHomePage }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [previousScroll]);
+  }, [previousScroll, hasAnimated]);
+
+  
 
   return (
     <>
@@ -91,7 +98,7 @@ const Header = ({ isHomePage }) => {
                     (
                       logos // rendering the list of icons using .map () method
                     ) => (
-                      <a key={logos.id} href="/" rel="noopener noreferrer">
+                      <a className={hasAnimated? "": "heading-animation-down"}  key={logos.id} href="/" rel="noopener noreferrer">
                         <Logo key={logos.id} src={logos.src} alt={logos.alt} />
                       </a>
                     )
@@ -102,22 +109,23 @@ const Header = ({ isHomePage }) => {
                 {isHomePage ? (
                   <HStack spacing={8} display={{ base: "none", md: "flex" }}>
                     <Link to="/">
-                      <button >Home</button>
+                      <button className={hasAnimated? "":'heading-animation-two-down'} >Home</button>
                     </Link>
 
-                    {<button onClick={handleClick("aboutme")}>About</button>}
-                    {<button onClick={handleClick("projects")}>Work</button>}
+                    {<button className={hasAnimated? "":"heading-animation-three-down"} onClick={handleClick("aboutme")}>About</button>}
+                    {<button className={hasAnimated? "":"heading-animation-four-down"} onClick={handleClick("projects")}>Work</button>}
                     {
-                      <button onClick={handleClick("contactme")}>
+                      <button className={hasAnimated? "":"heading-animation-five-down"} onClick={handleClick("contactme")}>
                         {" "}
                         Contact
                       </button>
                     }
                     {
                       <a
-                        href={require("../documents/resumeHenry.pdf")}
+                        href={require("../documents/ResumeHenry.pdf")}
                         rel="noreferrer"
                         target="_blank"
+                        className={hasAnimated? "":"heading-animation-six-down"}
                       >
                         {" "}
                         <CustomizedButton>RESUME</CustomizedButton>{" "}
@@ -148,7 +156,7 @@ const Header = ({ isHomePage }) => {
                     }
                     {
                       <a
-                        href={require("../documents/resumeHenry.pdf")}
+                        href={require("../documents/ResumeHenry.pdf")}
                         rel="noreferrer"
                         target="_blank"
                       >

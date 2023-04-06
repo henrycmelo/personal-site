@@ -10,6 +10,8 @@ import {
 } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import { useAlertContext } from "../context/alertContext";
+import ScrollReveal from "../hooks/ScrollReveal";
+
 
 const intro = (
   <>
@@ -80,6 +82,7 @@ const headshot = [
 const AboutMeSection = ({isHomePage}) => {
   const { direction, spacing, align } = useAlertContext();
 
+
   return (
     <FullScreenSection
       backgroundColor="secondLight"
@@ -91,16 +94,16 @@ const AboutMeSection = ({isHomePage}) => {
       pt={{ base: 8, md: 32 }}
       pb={{ base: 32, md: 32 }}
     >
-      {isHomePage && <Heading as="h1" id="aboutme-section" color="dark">
+      {isHomePage && <ScrollReveal> <Heading  as="h1" id="aboutme-section" color="dark">
         About me
-      </Heading> }
+      </Heading> </ScrollReveal>}
 
       <VStack alignItems={align} justifyContent="center">
         <Stack direction={direction} spacing={spacing}>
-          <Box>{intro}</Box>
+        <ScrollReveal><Box >{intro}</Box></ScrollReveal>
 
           {headshot.map((headshots, index) => (
-            <Image
+           <ScrollReveal><Image
               key={index}
               src={headshots.getImageSrc()}
               alt={headshot.title}
@@ -108,7 +111,7 @@ const AboutMeSection = ({isHomePage}) => {
               objectFit={"cover"}
               objectPosition="50% 20%"
               border="5px solid #272727"
-            />
+            /></ScrollReveal>
           ))}
         </Stack>
       </VStack>

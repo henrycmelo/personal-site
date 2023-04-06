@@ -14,6 +14,7 @@ import Footer from "../components/Footer";
 import CustomizedButton from "../components/CustomizedButton";
 import SecondaryButton from "../components/SecondaryButton";
 import { useAlertContext } from "../context/alertContext"
+import { Link } from "react-router-dom";
 
 const CaseStudyArchives = () => {
   const { isLargerThanBase } = useAlertContext();

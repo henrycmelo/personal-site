@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useAlertContext } from "../context/alertContext";
+import ScrollReveal from "../hooks/ScrollReveal";
 
 
 
@@ -63,9 +64,9 @@ const ProjectsSection = ({ isHomePage }) => {
       width="100vw"
       p={{ base: 8, md: 32 }}
     >
-      <Heading as="h1" id="projects-section">
+      <ScrollReveal><Heading as="h1" id="projects-section">
         Featured Projects
-      </Heading>
+      </Heading></ScrollReveal>
 
    
       <Box
@@ -76,25 +77,25 @@ const ProjectsSection = ({ isHomePage }) => {
         pb={4}
       >
         {projects.map((project) => (
-          <Cards
+          <ScrollReveal><Cards
             key={project.title}
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
             to={project.path }
             
-          />
+          /></ScrollReveal>
         ))}
       </Box>
       {isHomePage &&
       <Box  justifyContent={'center'}>
         
         
-      <Button  gap={4}>
+      <ScrollReveal><Button  gap={4}>
       <Link to="/projects">
         View Other Projects <FontAwesomeIcon icon={faArrowRight} />
         </Link>
-      </Button>
+      </Button></ScrollReveal>
    
       </Box>
 }

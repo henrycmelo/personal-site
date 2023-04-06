@@ -46,7 +46,7 @@ const SmallScreen = ({className,children, isHomePage}) => {
 
                                     {(<button onClick={handleClick('contactme')}> Contact</button>)}
 
-                                    {(<a href={require('../documents/resumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
+                                    {(<a href={require('../documents/ResumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
                                 </VStack>
                                 :
                                 <VStack spacing={20} >
@@ -59,7 +59,7 @@ const SmallScreen = ({className,children, isHomePage}) => {
 
                                     {<Link to="/contactme"><button > Contact</button></Link>}
 
-                                    {(<a href={require('../documents/resumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
+                                    {(<a href={require('../documents/ResumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
                                 </VStack>}
                             </Box>
                         </nav>
