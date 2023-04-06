@@ -17,6 +17,7 @@ import Dash from './pages/Dash';
 
 
 function App() {
+  
   return (
     <ChakraProvider theme={theme}>
       <AlertProvider>

@@ -66,7 +66,7 @@ const Footer = () => {
                 (
                   icons // rendering the list of icons using .map () method
                 ) => (
-                  <ScrollReveal><a
+                  <ScrollReveal key={icons.id}><a
                     key={icons.id}
                     href={icons.url}
                     style={{ padding: "1em" }}

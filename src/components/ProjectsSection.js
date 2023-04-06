@@ -77,7 +77,7 @@ const ProjectsSection = ({ isHomePage }) => {
         pb={4}
       >
         {projects.map((project) => (
-          <ScrollReveal><Cards
+          <ScrollReveal key={project.title}><Cards
             key={project.title}
             title={project.title}
             description={project.description}

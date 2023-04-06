@@ -103,7 +103,7 @@ const AboutMeSection = ({isHomePage}) => {
         <ScrollReveal><Box >{intro}</Box></ScrollReveal>
 
           {headshot.map((headshots, index) => (
-           <ScrollReveal><Image
+           <ScrollReveal key={index}><Image
               key={index}
               src={headshots.getImageSrc()}
               alt={headshot.title}

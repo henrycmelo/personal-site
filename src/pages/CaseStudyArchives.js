@@ -16,7 +16,9 @@ import SecondaryButton from "../components/SecondaryButton";
 import { useAlertContext } from "../context/alertContext"
 import { Link } from "react-router-dom";
 
+
 const CaseStudyArchives = () => {
+  
   const { isLargerThanBase } = useAlertContext();
   const image = isLargerThanBase ? '' : '400px'
   const projectInfo = [
@@ -230,7 +232,11 @@ const CaseStudyArchives = () => {
   ];
 
   return (
+   
+
     <main>
+    
+        
       <Header />
       {/*image */}
       <FullScreenSection
@@ -1030,7 +1036,10 @@ const CaseStudyArchives = () => {
       </FullScreenSection>
 
       <Footer />
+      
+      
     </main>
+   
   );
 };
 
