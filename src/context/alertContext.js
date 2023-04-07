@@ -42,10 +42,16 @@ export const AlertProvider = ({ children }) => {
     },
   ];
 
-  const [isLargerThanBase] = useMediaQuery("(min-width:769px");
-  const direction = isLargerThanBase ? "row" : "column";
-  const spacing = isLargerThanBase ? 20 : 16;
-  const align = isLargerThanBase ? "flex-start" : "center";
+  const [isLargerThanBase] = useMediaQuery('(min-width: 769px)');
+  const [direction, setDirection] = useState('row');
+  const [spacing, setSpacing] = useState(20);
+  const [align, setAlign] = useState('flex-start');
+
+  useEffect(() => {
+    setDirection(isLargerThanBase ? 'row' : 'column');
+    setSpacing(isLargerThanBase ? 20 : 16);
+    setAlign(isLargerThanBase ? 'flex-start' : 'center');
+  }, [isLargerThanBase]);
 
   const [isLoading, setIsLoading] = useState(true);
 
