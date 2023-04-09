@@ -49,7 +49,7 @@ const ProjectOverview = ({ client,description, challenge, solution, backgroundCo
         
         
         <ScrollReveal>
-            <List spacing={1} fontSize={{base:"lg", md:"2xl"}} color="dark" textStyle="body">
+            <List spacing={1} fontSize={{base:"lg", md:"2xl"}} color="dark" textStyle="body" pb={8}>
               <ListItem>
                 <ListIcon as={MdCheckCircle} color="blue" />
 

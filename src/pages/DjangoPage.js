@@ -1,8 +1,5 @@
-import { Stack } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CustomizedButton from "../components/CustomizedButton";
-import SecondaryButton from "../components/SecondaryButton";
 import LandingImage from "../layout/LandingImage";
 import projectImage from "../images/django1.png"
 import ProjectTitle from "../layout/ProjectTitle";
