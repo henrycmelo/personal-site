@@ -10,7 +10,7 @@ import {
 import SecondaryButton from "../components/SecondaryButton";
 import { Link } from "react-router-dom";
 
-const ButtonsBottom=({button1, button2, path1, path2, backgroundColor})=>{
+const ButtonsBottom=({button1, button2, path1, path2, backgroundColor, hasLinkToOtherPages, href1, href2})=>{
     return(
         <FullScreenSection
         backgroundColor={backgroundColor}
@@ -19,7 +19,29 @@ const ButtonsBottom=({button1, button2, path1, path2, backgroundColor})=>{
         width="100vw"
         pb={{ base: 8, md: 32 }}
       >
+      {hasLinkToOtherPages?(
+
         <ScrollReveal>
+        <Stack direction={"row"}>
+        <a
+            href={href1}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <CustomizedButton>{button1} </CustomizedButton>
+          </a>
+          <a
+            href={href2}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <SecondaryButton>{button2}</SecondaryButton>
+          </a>
+        </Stack>
+        </ScrollReveal>
+        
+      ):(
+      <ScrollReveal>
         <Stack direction={"row"}>
           <Link to={path1}>
             <CustomizedButton>{button1} </CustomizedButton>
@@ -29,6 +51,8 @@ const ButtonsBottom=({button1, button2, path1, path2, backgroundColor})=>{
           </Link>
         </Stack>
         </ScrollReveal>
+        )}
+        
       </FullScreenSection>
     )
 }

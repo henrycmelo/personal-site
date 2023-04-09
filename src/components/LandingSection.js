@@ -41,7 +41,7 @@ const LandingSection = () => {
         </Heading>
         <Heading
           color="dark"
-          size={{ base: "3xl", md: "4xl" }}
+          fontSize={{ base:"4xl", md:"6xl" }}
           textStyle="h2"
           className="heading-animation-two"
         >
@@ -49,7 +49,7 @@ const LandingSection = () => {
         </Heading>
         <Heading
           color="gray"
-          size={{ base: "2xl", md: "3xl" }}
+          fontSize={{ base:"4xl", md:"6xl"}}
           textStyle="h3"
           pb="0.3em"
           className="heading-animation-three"
@@ -59,7 +59,7 @@ const LandingSection = () => {
         <Text
           maxW="3xl"
           color="gray"
-          fontSize="sm"
+          fontSize=""
           textStyle="body"
           className="heading-animation-four"
         >

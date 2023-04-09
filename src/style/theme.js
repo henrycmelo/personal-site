@@ -23,7 +23,7 @@ const theme = extendTheme({
             fontFamily: "'Open Sans', sans-serif",
             fontStyle: 'normal',
             fontWeight: '600',
-            lineHeight: '27px',
+            lineHeight: '40px',
             letterSpacing: '0.15px'
         },
         button: {
