@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { ChakraProvider } from "@chakra-ui/react";
 import { AlertProvider } from "./context/alertContext";
 import theme from "../src/style/theme.js"
@@ -11,28 +11,30 @@ import ContactPage from './pages/ContactPage';
 import MyPersonalSite from './pages/MyPersonalSite';
 import SteakHouse from './pages/SteakHouse';
 import Dash from './pages/Dash';
-import { Helmet } from 'react-helmet';
-
+import ReactGA from "react-ga";
 
 
 
 
 function App() {
-  const measurementId = process.env.REACT_APP_GOOGLE_ANALYTICS_MEASUREMENT_ID;
-  return (
-    <>
-    <Helmet>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-    <script>
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${measurementId}');
-      `}
-    </script>
+  const location = useLocation();
+
+useEffect(() => {
+  // Track the initial pageview
+  ReactGA.pageview(location.pathname + location.search);
+
+  // Track page views when the location changes
+  const unlisten = history.listen((location) => {
+    ReactGA.pageview(location.pathname + location.search);
+  });
+
+  // Cleanup the listener when the component unmounts
+  return () => {
+    unlisten();
+  };
+}, [location]);
+
     
-  </Helmet>
 
   
     <ChakraProvider theme={theme}>
@@ -62,7 +64,7 @@ function App() {
         
       </AlertProvider>
     </ChakraProvider>
-    </>
+    
   );
 }
 

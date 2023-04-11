@@ -7,6 +7,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 import ScrollToTop from './hooks/ScrollToTop';
 import { ColorModeScript } from '@chakra-ui/react'
 import theme from "./style/theme"
+import ReactGA from "react-ga";
+
+const measurementId = process.env.REACT_APP_GOOGLE_ANALYTICS_ID;
+ReactGA.initialize(measurementId);
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
