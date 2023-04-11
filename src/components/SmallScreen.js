@@ -6,7 +6,7 @@ import React from "react";
 
 
 const SmallScreen = ({className,children, isHomePage}) => {
-    const { handleClick} = useAlertContext();
+    const { handleClick, colorMode} = useAlertContext();
     return (
 
         <Box
@@ -37,27 +37,27 @@ const SmallScreen = ({className,children, isHomePage}) => {
                             <Box display='absolute' justifyContent='center' alignItems='center'>
                                 {isHomePage ? 
                                 <VStack spacing={20} >
-                                    {(<Link to="/"><button >Home</button></Link>)}
+                                    {(<Link to="/"><button className={colorMode==='light'? 'button':"hoverOtherProjects"} >Home</button></Link>)}
 
 
-                                    {(<button onClick={handleClick('aboutme')}>About</button>)}
+                                    {(<button className={colorMode==='light'? 'button':"hoverOtherProjects"} onClick={handleClick('aboutme')}>About</button>)}
 
-                                    {(<button onClick={handleClick('projects')}>Work</button>)}
+                                    {(<button className={colorMode==='light'? 'button':"hoverOtherProjects"} onClick={handleClick('projects')}>Work</button>)}
 
-                                    {(<button onClick={handleClick('contactme')}> Contact</button>)}
+                                    {(<button className={colorMode==='light'? 'button':"hoverOtherProjects"} onClick={handleClick('contactme')}> Contact</button>)}
 
                                     {(<a href={require('../document/resumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
                                 </VStack>
                                 :
                                 <VStack spacing={20} >
-                                    {(<Link to="/"><button >Home</button></Link>)}
+                                    {(<Link to="/"><button className={colorMode==='light'? 'button':"hoverOtherProjects"}>Home</button></Link>)}
 
 
-                                    {<Link to="/aboutme"> <button >About</button></Link>}
+                                    {<Link to="/aboutme"> <button className={colorMode==='light'? 'button':"hoverOtherProjects"}>About</button></Link>}
 
-                                    {<Link to="/projects"><button >Work</button></Link>}
+                                    {<Link to="/projects"><button className={colorMode==='light'? 'button':"hoverOtherProjects"}>Work</button></Link>}
 
-                                    {<Link to="/contactme"><button > Contact</button></Link>}
+                                    {<Link to="/contactme"><button className={colorMode==='light'? 'button':"hoverOtherProjects"}> Contact</button></Link>}
 
                                     {(<a href={require('../document/resumeHenry.pdf')} rel="noreferrer" target="_blank"> <CustomizedButton>RESUME</CustomizedButton> </a>)}
                                 </VStack>}

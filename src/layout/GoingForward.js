@@ -2,6 +2,7 @@ import { Heading, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
+import { useAlertContext } from "../context/alertContext";
 
 const GoingForward = ({
   title,
@@ -13,10 +14,12 @@ const GoingForward = ({
   backgroundColor,
   description,
 }) => {
+  const {  colorMode } = useAlertContext();
   return (
     <FullScreenSection
       backgroundColor={backgroundColor}
       alignItems={"center"}
+      color={colorMode==='light'? "dark":'light'}
       spacing={8}
       width="100vw"
       p={{ base: 8, md: 32 }}
@@ -37,7 +40,7 @@ const GoingForward = ({
             align={'center'}
             fontSize={{base:"2xl", md:"4xl"}}
             textStyle="h6"
-            textColor={"blue"}
+            textColor={colorMode==='light'?'blue':'blueDarkMode'}
             paddingBottom={4}
           >
             {type}
@@ -48,7 +51,7 @@ const GoingForward = ({
           <Text
             fontSize={{base:"lg", md:"2xl"}}
             textStyle="body"
-            textColor={"dark"}
+            textColor={colorMode==='light'? "dark":'light'}
             textAlign={"center"}
             paddingBottom={8}
           >
@@ -61,7 +64,7 @@ const GoingForward = ({
             as="b"
             fontSize={{base:"2xl", md:"4xl"}}
             textStyle="h6"
-            textColor={"blue"}
+            textColor={colorMode==='light'?'blue':'blueDarkMode'}
             paddingBottom={4}
           >
             {type2}
@@ -72,7 +75,7 @@ const GoingForward = ({
           <Text
             fontSize={{base:"lg", md:"2xl"}}
             textStyle="body"
-            textColor={"dark"}
+            textColor={colorMode==='light'? "dark":'light'}
             textAlign={"center"}
             paddingBottom={8}
           >

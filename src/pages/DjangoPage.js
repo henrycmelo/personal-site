@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LandingImage from "../layout/LandingImage";
@@ -5,14 +6,26 @@ import projectImage from "../images/django1.png"
 import ProjectTitle from "../layout/ProjectTitle";
 import ProjectOverview from "../layout/ProjectOverview"
 import ButtonsBottom from "../layout/ButtonsBottom"
+import { useAlertContext } from "../context/alertContext";
+import Loader from "../components/Loader";
 
 
 const DjangoPage = () => {
+  const {  colorMode} = useAlertContext();
+  const [isLoading, setIsLoading]=useState(true)
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsLoading(false);
+    }, 1500)
+  }, []);
+  
 
   return (
     <main>
+      {isLoading? (<Loader/>):(
+        <>
       <Header />
-      {/*image */}
+     
       <LandingImage
        imageSrc={projectImage}
        alt='mockup project'
@@ -32,8 +45,7 @@ const DjangoPage = () => {
   
 
       <ProjectOverview isProgrammingProject
-        backgroundColor='light'
-        client='Henry'
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         description='This is an online course platform built with Django and Bootstrap. It allows students to enroll in courses, 
                     view the number of enrolled students, login, sign up, and take exams. Instructors can set up their courses, lessons, and exams. 
                     The project uses AWS S3 bucket for storage and is deployed on Heroku'
@@ -49,7 +61,7 @@ const DjangoPage = () => {
       />
 
       <ButtonsBottom hasLinkToOtherPages
-        backgroundColor={'light'}
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         button1="Launch Project"
         button2="View Github"
         href1="https://onlinecoursedjango.herokuapp.com/onlinecourseapp/"
@@ -61,6 +73,8 @@ const DjangoPage = () => {
         
       
       <Footer />
+      </>
+      )}
     </main>
   );
 };

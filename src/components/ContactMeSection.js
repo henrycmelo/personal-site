@@ -18,7 +18,7 @@ import CustomizedButton from "./CustomizedButton";
 import ScrollReveal from "../hooks/ScrollReveal";
 
 const ContactMeSection = ({ isHomePage }) => {
-  const { onOpen, onClose, align } = useAlertContext();
+  const { onOpen, onClose, align, colorMode } = useAlertContext();
   const [isLoading, setLoading] = useState(false);
   const responses = [
     {
@@ -92,7 +92,7 @@ const ContactMeSection = ({ isHomePage }) => {
   return (
     <FullScreenSection
       
-      backgroundColor="secondLight"
+      backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'} 
       alignItems={align}
       spacing={8}
       width="100vw"
@@ -102,11 +102,11 @@ const ContactMeSection = ({ isHomePage }) => {
       pb={{ base: 32, md: 32 }}>
         
       {isHomePage && (
-        <ScrollReveal><Heading as="h1" id="contactme-section" color="dark">
+        <ScrollReveal><Heading as="h1" id="contactme-section" color={colorMode==='light'? "dark":'light'}>
           Contact me
         </Heading></ScrollReveal>
       )}
-      <VStack w="100%" alignItems="start" justifyContent="flex-start">
+      <VStack w="100%" alignItems="start" justifyContent="flex-start" color={colorMode==='light'? "dark":'light'}>
         <Box p={6} rounded="md" w="100%">
           <form
             onSubmit={(e) => {
@@ -134,9 +134,9 @@ const ContactMeSection = ({ isHomePage }) => {
                 <ScrollReveal><Input
                   id="firstName"
                   name="firstName"
-                  borderColor="blue"
+                  borderColor={colorMode==='light'? "blue":'grayDarkMode'}
                   borderWidth="2px"
-                  focusBorderColor="yellow"
+                  focusBorderColor={colorMode==='light'? "yellow":'blue'}
                   {...formik.getFieldProps("firstName")}
                 />
                 </ScrollReveal>
@@ -154,9 +154,9 @@ const ContactMeSection = ({ isHomePage }) => {
                   id="email"
                   name="email"
                   type="email"
-                  borderColor="blue"
+                  borderColor={colorMode==='light'? "blue":'grayDarkMode'}
                   borderWidth="2px"
-                  focusBorderColor="yellow"
+                  focusBorderColor={colorMode==='light'? "yellow":'blue'}
                   {...formik.getFieldProps("email")}
                 />
                 </ScrollReveal>
@@ -175,16 +175,15 @@ const ContactMeSection = ({ isHomePage }) => {
                   id="comment"
                   name="comment"
                   height={250}
-                  borderColor="blue"
+                  borderColor={colorMode==='light'? "blue":'grayDarkMode'}
                   borderWidth="2px"
-                  focusBorderColor="yellow"
+                  focusBorderColor={colorMode==='light'? "yellow":'blue'}
                   {...formik.getFieldProps("comment")}
                 /></ScrollReveal>
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
               <CustomizedButton
                 type="submit"
-                colorScheme="blue"
                 width="full"
                 disabled={isLoading}
               ><ScrollReveal>

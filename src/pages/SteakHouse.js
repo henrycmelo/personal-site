@@ -1,4 +1,4 @@
-
+import React, {useState, useEffect} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LandingImage from "../layout/LandingImage";
@@ -7,6 +7,7 @@ import ProjectTitle from "../layout/ProjectTitle";
 import ProjectOverview from "../layout/ProjectOverview";
 import Research from "../layout/Research";
 import Personas from "../layout/Personas";
+import Loader from "../components/Loader";
 import {
   faDollarSign,
   faClock,
@@ -28,13 +29,23 @@ import refine3 from "../images/refine3.png";
 import hifiproto from "../images/hifi.gif";
 import GoingForward from "../layout/GoingForward";
 import ButtonsBottom from "../layout/ButtonsBottom";
+import { useAlertContext } from "../context/alertContext";
 
 const SteakHouse = () => {
-
+  const {  colorMode } = useAlertContext();
+  const [isLoading, setIsLoading]=useState(true)
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsLoading(false);
+    }, 1500)
+  }, []);
+  
   return (
     <main>
+      {isLoading? (<Loader/>):(
+        <>
       <Header />
-      {/*image */}
+   
       <LandingImage imageSrc={projectimage} alt="Mockup project" />
 
       <ProjectTitle
@@ -46,7 +57,7 @@ const SteakHouse = () => {
       />
 
       <ProjectOverview
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         client="The Steakhouse,"
         description="located in a major US city, serves delicious steaks, seafood, and pasta. 
                     With a strong reputation, they offer quality products at competitive prices, targeting busy professionals and families."
@@ -55,7 +66,7 @@ const SteakHouse = () => {
       />
 
       <Research
-        backgroundColor={"secondLight"}
+        backgroundColor={colorMode==='light'? "light":'dark'}
         subtitle={"Understanding the user"}
         description="I conducted interviews and developed empathy maps to understand user needs. 
                     The primary group identified were busy working professionals in their mid-thirties, 
@@ -81,7 +92,7 @@ const SteakHouse = () => {
 
       <Personas
         hasTwoPersonas
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         subtitle="Comprehending user needs"
         description="I have created personas based on real data to understand needs and behaviors. This helps me create a user-centered design and better user experience."
         imageSrc={persona1}
@@ -91,7 +102,7 @@ const SteakHouse = () => {
       />
 
       <StartingDesign
-        backgroundColor={"secondLight"}
+        backgroundColor={colorMode==='light'? "light":'dark'}
         title="STARTING THE DESIGN"
         subtitle="Paper wireframes"
         description="While drafting iterations for each screen of the Steakhouse app, I focused on ensuring the elements effectively addressed user pain points. 
@@ -112,7 +123,7 @@ const SteakHouse = () => {
 
       <UserTesting
         hasFindings
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         type="Remote testing"
         description="I conducted two rounds of usability studies, facilitating the progression from wireframes to mockups. 
                   The first study offered crucial insights, steering the mockups' direction. In the second study, a high-fidelity 
@@ -130,7 +141,7 @@ const SteakHouse = () => {
       />
 
       <StartingDesign
-        backgroundColor={"secondLight"}
+        backgroundColor={colorMode==='light'? "light":'dark'}
         title="REFINING THE DESIGN"
         subtitle="High-Fidelity Design Concepts:"
         description="Initial designs displayed recent orders, the menu, and a current order preview on the main page. 
@@ -156,7 +167,7 @@ const SteakHouse = () => {
         href="https://www.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=35%2C689%2C0.5&scaling=scale-down&starting-point-node-id=1184%3A9872"
       />
       <GoingForward
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         title="GOING FORWARD"
         type="Takeaways"
         description="While working on the Steakhouse food menu app, I realized that early concepts are just the foundation.
@@ -171,13 +182,15 @@ const SteakHouse = () => {
         path1="/contactme"
         button2="View other projects"
         path2="/projects"
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
       />
 
 
      
 
       <Footer />
+      </>)
+}
     </main>
   );
 };

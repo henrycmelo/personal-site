@@ -18,6 +18,7 @@ import {
   import ScrollReveal from "../hooks/ScrollReveal";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MdCheckCircle } from "react-icons/md";
+import { useAlertContext } from "../context/alertContext";
   
   const Analyze= ({
     imageSrc,
@@ -31,6 +32,7 @@ import { MdCheckCircle } from "react-icons/md";
     item2,
     item3
   }) => {
+    const {  colorMode } = useAlertContext();
     return (
       <FullScreenSection
         backgroundColor={backgroundColor}
@@ -44,16 +46,17 @@ import { MdCheckCircle } from "react-icons/md";
             <Heading
               as="h2"
               fontSize={{base:"4xl", md:"6xl"}}
+              color={colorMode==='light'? "dark":'light'}
               paddingBottom={12}
               textAlign={"center"}
             >
               ANALYZE
             </Heading>
           </ScrollReveal>
-          <ScrollReveal><Text align='center' fontSize={{base:"2xl", md:"4xl"}} textStyle="h6" textColor={"blue"} paddingBottom={4}>
+          <ScrollReveal><Text align='center' fontSize={{base:"2xl", md:"4xl"}} textStyle="h6" textColor={colorMode==='light'?'blue':'blueDarkMode'} paddingBottom={4}>
           {type}
         </Text></ScrollReveal>
-        <Text fontSize={{base:"lg", md:"2xl"}} textStyle='body' textColor={"dark"}  textAlign={'center'} paddingBottom={8}>
+        <Text fontSize={{base:"lg", md:"2xl"}} textStyle='body' textColor={colorMode==='light'? "dark":'light'}  textAlign={'center'} paddingBottom={8}>
             {description}
         </Text>
           <ScrollReveal>
@@ -71,25 +74,25 @@ import { MdCheckCircle } from "react-icons/md";
           </GridItem>
           <GridItem >
           <ScrollReveal>
-            <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" color="dark">
+            <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" color={colorMode==='light'? "dark":'light'}>
               {iconTitle}
             </Text>{" "}
             </ScrollReveal>
           </GridItem>
           <GridItem pb={6}>
           <ScrollReveal>
-            <List spacing={1} fontSize="sm" color="dark" textStyle="body">
+            <List spacing={1} fontSize="sm" color={colorMode==='light'? "dark":'light'} textStyle="body">
               <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
+                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
 
                 {item}
               </ListItem>
               <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
+                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
                 {item2}
               </ListItem>
               <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
+                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
                 {item3}
               </ListItem>
             </List>
@@ -102,7 +105,7 @@ import { MdCheckCircle } from "react-icons/md";
 
           <Stack direction={{ base: "column", md: "row" }}>
             
-            <Card boxShadow="xl">
+            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
               <CardBody>
                 <Image
                   src={imageSrc}
@@ -113,7 +116,7 @@ import { MdCheckCircle } from "react-icons/md";
               </CardBody>
   
               <CardFooter justify={"center"}>
-                <Text as={"b"} fontSize="lg" textStyle="body" textColor={"blue"}>
+                <Text as={"b"} fontSize="lg" textStyle="body" textColor={colorMode==='light'?'blue':'blueDarkMode'}>
                   {descriptionImage}
                 </Text>
               </CardFooter>

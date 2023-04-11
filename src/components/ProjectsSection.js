@@ -1,6 +1,6 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Box, Button, Heading} from "@chakra-ui/react";
+import { Box, Button, Heading, Text} from "@chakra-ui/react";
 import Cards from "./Cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -49,7 +49,9 @@ const projects = [
 
 
 const ProjectsSection = ({ isHomePage }) => {
-  const {  isLargerThanBase } = useAlertContext();
+  const {  isLargerThanBase, colorMode } = useAlertContext();
+
+  
 
   const gridColumns = isLargerThanBase
     ? "repeat(2,minmax(0,1fr))"
@@ -57,14 +59,14 @@ const ProjectsSection = ({ isHomePage }) => {
 
   return (
     <FullScreenSection
-      backgroundColor="blue"
+      layerStyle={colorMode==='light'?'normalBlue':'gradientBack'}
       isDarkBackground
       alignItems={'center'}
       spacing={8}
       width="100vw"
       p={{ base: 8, md: 32 }}
     >
-      <ScrollReveal><Heading as="h1" id="projects-section">
+      <ScrollReveal><Heading as="h1" id="projects-section" color={colorMode==='light'? "secondLight":'light'}>
         Featured Projects
       </Heading></ScrollReveal>
 
@@ -93,7 +95,9 @@ const ProjectsSection = ({ isHomePage }) => {
         
       <ScrollReveal><Button  gap={4}>
       <Link to="/projects">
+      <Text  className={colorMode==='light'? 'button':"hoverOtherProjects"} fontSize="md" color={colorMode==='light'? 'secondLight' : 'grayDarkMode'} textStyle="body">
         View Other Projects <FontAwesomeIcon icon={faArrowRight} />
+        </Text>
         </Link>
       </Button></ScrollReveal>
    

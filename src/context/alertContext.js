@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useScrollLock } from "../hooks/useScrollLock";
-import { useMediaQuery } from "@chakra-ui/react";
+import { useMediaQuery,useColorMode } from "@chakra-ui/react";
 
 const AlertContext = createContext(undefined);
 
@@ -53,13 +53,19 @@ export const AlertProvider = ({ children }) => {
     setAlign(isLargerThanBase ? 'flex-start' : 'center');
   }, [isLargerThanBase]);
 
-  const [isLoading, setIsLoading] = useState(true);
+  
 
-  useEffect(() => {
-    setTimeout(() => {
+  const { colorMode, toggleColorMode } = useColorMode()
+
+  const [isLoading, setIsLoading]=useState(true)
+
+  useEffect(()=>{
+    setTimeout(()=>{
       setIsLoading(false);
-    }, 1000);
+    }, 3000)
   }, []);
+
+ 
 
   return (
     <AlertContext.Provider
@@ -74,7 +80,10 @@ export const AlertProvider = ({ children }) => {
         spacing,
         align,
         isLargerThanBase,
-        isLoading
+        isLoading,
+        colorMode,
+        toggleColorMode
+        
       }}
     >
       {children}

@@ -13,7 +13,7 @@ import FullScreenSection from "./FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
 
 const Footer = () => {
-  const { socials, isLargerThanBase } = useAlertContext();
+  const { socials, isLargerThanBase, colorMode } = useAlertContext();
   const align = isLargerThanBase ? "" : "center";
   const paddingHeading = isLargerThanBase ? "0.5em" : "0.2em";
   const paddingText = isLargerThanBase ? "1em" : "";
@@ -30,6 +30,7 @@ const Footer = () => {
         spacing={8}
         width="100vw"
         p={8}
+        boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
       >
         <Grid
           templateRows="repeat(1, 1fr)"
@@ -49,6 +50,7 @@ const Footer = () => {
               textStyle="body"
               paddingRight={paddingText}
               align={align}
+              
             >
               Crafting seamless user experiences and building robust, end-to-end
               solutions - that's what I do as a UX designer and full-stack
@@ -61,7 +63,7 @@ const Footer = () => {
               {" "}
               Socials
             </Heading></ScrollReveal>
-            <Stack direction="row" justify={align} color="yellow">
+            <Stack direction="row" justify={align} color={colorMode==='light'? "yellow":"blueDarkMode"}>
               {socials.map(
                 (
                   icons // rendering the list of icons using .map () method
@@ -82,7 +84,7 @@ const Footer = () => {
           </GridItem>
         </Grid>
         <Divider color="light" alignItems="center" margin="0 auto" />
-        <ScrollReveal><Text color="yellow" size="xs" textStyle="body" textAlign="center">
+        <ScrollReveal><Text color={colorMode==='light'? "yellow":"blueDarkMode"} size="xs" textStyle="body" textAlign="center">
           © Copyright 2023. Designed and built by <b>Henry Castillo</b>{" "}
         </Text></ScrollReveal>
       </FullScreenSection>

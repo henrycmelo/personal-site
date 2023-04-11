@@ -14,6 +14,7 @@ import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MdCheckCircle } from "react-icons/md";
+import { useAlertContext } from "../context/alertContext";
 
 
 const Research = ({
@@ -36,9 +37,11 @@ const Research = ({
   icon2,
   icon3
 }) => {
+  const {  colorMode } = useAlertContext();
   return (
     <FullScreenSection
       backgroundColor={backgroundColor}
+      color={colorMode==='light'? "dark":'light'}
       alignItems={"center"}
       spacing={8}
       width="100vw"
@@ -57,7 +60,7 @@ const Research = ({
           
             fontSize={{base:"2xl", md:"4xl"}}
             textStyle="h6"
-            textColor={"blue"}
+            textColor={colorMode==='light'?'blue':'blueDarkMode'}
             paddingBottom={4}
             
           >
@@ -68,7 +71,7 @@ const Research = ({
           <Text
             fontSize={{base:"lg", md:"2xl"}}
             textStyle="body"
-            textColor={"dark"}
+            textColor={colorMode==='light'? "dark":'light'}
             textAlign={"center"}
             paddingBottom={8}
           >
@@ -89,25 +92,25 @@ const Research = ({
           </GridItem>
           <GridItem >
           <ScrollReveal>
-            <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" color="dark">
+            <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" textColor={colorMode==='light'? "dark":'light'}>
               {iconTitle}
             </Text>{" "}
             </ScrollReveal>
           </GridItem>
           <GridItem pb={6}>
           <ScrollReveal>
-            <List spacing={1} fontSize="sm" color="dark" textStyle="body">
+            <List spacing={1} fontSize="sm" textColor={colorMode==='light'? "dark":'light'} textStyle="body">
               <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
+                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
 
                 {item}
               </ListItem>
               <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
+                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
                 {item2}
               </ListItem>
               <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
+                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'}  />
                 {item3}
               </ListItem>
             </List>
@@ -121,14 +124,14 @@ const Research = ({
           </GridItem>
           <GridItem>
             <ScrollReveal>
-          <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" color="dark">
+          <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" textColor={colorMode==='light'? "dark":'light'}>
               {iconTitle2}
             </Text>{" "}
             </ScrollReveal>
           </GridItem>
           <GridItem pb={6}>
           <ScrollReveal>
-            <List spacing={1} fontSize="sm" color="dark" textStyle="body">
+            <List spacing={1} fontSize="sm" textColor={colorMode==='light'? "dark":'light'} textStyle="body">
               <ListItem>
                 <ListIcon as={MdCheckCircle} color="blue" />
 
@@ -153,14 +156,14 @@ const Research = ({
           </GridItem>
           <GridItem>
             <ScrollReveal>
-          <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" color="dark">
+          <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" textColor={colorMode==='light'? "dark":'light'}>
               {iconTitle3}
             </Text>{" "}
             </ScrollReveal>
           </GridItem>
           <GridItem pb={6}>
           <ScrollReveal>
-            <List spacing={1} fontSize="sm" color="dark" textStyle="body">
+            <List spacing={1} fontSize="sm" textColor={colorMode==='light'? "dark":'light'} textStyle="body">
               <ListItem>
                 <ListIcon as={MdCheckCircle} color="blue" />
 

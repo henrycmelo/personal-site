@@ -10,6 +10,7 @@ import {
 import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
+import { useAlertContext } from "../context/alertContext";
 
 const Personas = ({
   backgroundColor,
@@ -21,11 +22,13 @@ const Personas = ({
   descriptionImage2,
   description,
 }) => {
+  const {  colorMode } = useAlertContext();
   return (
     <FullScreenSection
       backgroundColor={backgroundColor}
       alignItems={"center"}
       spacing={8}
+      color={colorMode==='light'? "dark":'light'}
       width="100vw"
       p={{ base: 8, md: 32 }}
     >
@@ -40,6 +43,7 @@ const Personas = ({
               as="h2"
               fontSize={{ base: "4xl", md: "6xl" }}
               paddingBottom={12}
+              
             >
               PERSONAS
             </Heading>
@@ -50,7 +54,7 @@ const Personas = ({
               align={"center"}
               fontSize={{ base: "2xl", md: "4xl" }}
               textStyle="h6"
-              textColor={"blue"}
+              textColor={colorMode==='light'?'blue':'blueDarkMode'}
               paddingBottom={4}
             >
               {subtitle}
@@ -60,7 +64,7 @@ const Personas = ({
             <Text
               fontSize={{ base: "lg", md: "2xl" }}
               textStyle="body"
-              textColor={"dark"}
+              textColor={colorMode==='light'? "dark":'light'}
               textAlign={"center"}
               paddingBottom={8}
             >
@@ -69,7 +73,7 @@ const Personas = ({
           </ScrollReveal>
 
           <ScrollReveal>
-            <Card boxShadow="xl">
+            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
               <CardBody>
                 <Image
                   src={imageSrc}
@@ -80,14 +84,14 @@ const Personas = ({
               </CardBody>
 
               <CardFooter justify={"center"}>
-                <Text fontSize="lg" textStyle="body" textColor={"blue"}>
+                <Text fontSize="lg" textStyle="body" textColor={colorMode==='light'?'blue':'blueDarkMode'}>
                   {descriptionImage}
                 </Text>
               </CardFooter>
             </Card>
           </ScrollReveal>
           <ScrollReveal>
-            <Card boxShadow="xl">
+            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
               <CardBody>
                 <Image
                   src={imageSrc2}
@@ -98,7 +102,7 @@ const Personas = ({
               </CardBody>
 
               <CardFooter justify={"center"}>
-                <Text fontSize="lg" textStyle="body" textColor={"blue"}>
+                <Text fontSize="lg" textStyle="body" textColor={colorMode==='light'?'blue':'blueDarkMode'}>
                   {descriptionImage2}
                 </Text>
               </CardFooter>
@@ -126,7 +130,7 @@ const Personas = ({
               align={"center"}
               fontSize={{ base: "2xl", md: "4xl" }}
               textStyle="h6"
-              textColor={"blue"}
+              textColor={colorMode==='light'?'blue':'blueDarkMode'}
               paddingBottom={4}
             >
               {subtitle}
@@ -134,7 +138,7 @@ const Personas = ({
           </ScrollReveal>
 
           <ScrollReveal>
-            <Card boxShadow="xl">
+            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
               <CardBody>
                 <Image
                   src={imageSrc}
@@ -145,7 +149,7 @@ const Personas = ({
               </CardBody>
 
               <CardFooter justify={"center"}>
-                <Text fontSize="lg" textStyle="body" textColor={"blue"}>
+                <Text fontSize="lg" textStyle="body" textColor={colorMode==='light'?'blue':'blueDarkMode'}>
                   {descriptionImage}
                 </Text>
               </CardFooter>

@@ -12,6 +12,7 @@ import {
 import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
+import { useAlertContext } from "../context/alertContext";
 
 
 
@@ -25,10 +26,12 @@ const Conclusion = ({
   backgroundColor,
   description,
 }) => {
+  const {  colorMode } = useAlertContext();
   return (
     <FullScreenSection
       backgroundColor={backgroundColor}
       alignItems={"center"}
+      color={colorMode==='light'? "dark":'light'}
       spacing={8}
       width="100vw"
       p={{ base: 8, md: 32 }}
@@ -49,7 +52,7 @@ const Conclusion = ({
             align={'center'}
             fontSize={{base:"2xl", md:"4xl"}}
             textStyle="h6"
-            textColor={"blue"}
+            textColor={colorMode==='light'?'blue':'blueDarkMode'}
             paddingBottom={4}
           >
             {type}
@@ -60,7 +63,7 @@ const Conclusion = ({
           <Text
             fontSize={{base:"lg", md:"2xl"}}
             textStyle="body"
-            textColor={"dark"}
+            textColor={colorMode==='light'? "dark":'light'} 
             textAlign={"center"}
             paddingBottom={8}
           >
@@ -73,7 +76,7 @@ const Conclusion = ({
             align={'center'}
             fontSize={{base:"2xl", md:"4xl"}}
             textStyle="h6"
-            textColor={"blue"}
+            textColor={colorMode==='light'?'blue':'blueDarkMode'}
             paddingBottom={4}
           >
             {type2}
@@ -84,7 +87,7 @@ const Conclusion = ({
           <Text
             fontSize={{base:"lg", md:"2xl"}}
             textStyle="body"
-            textColor={"dark"}
+            textColor={colorMode==='light'? "dark":'light'} 
             textAlign={"center"}
             paddingBottom={8}
           >
@@ -94,7 +97,7 @@ const Conclusion = ({
 
         <ScrollReveal>
           <Stack direction={{ base: "column", md: "row" }}>
-            <Card boxShadow="xl">
+            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
               <CardBody>
                 <Image
                   src={imageSrc}
@@ -109,7 +112,7 @@ const Conclusion = ({
                   as={"b"}
                   fontSize="lg"
                   textStyle="body"
-                  textColor={"blue"}
+                  textColor={colorMode==='light'?'blue':'blueDarkMode'}
                 >
                   {descriptionImage}
                 </Text>

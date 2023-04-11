@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProjectOverview from "../layout/ProjectOverview";
@@ -31,10 +32,24 @@ import ButtonsBottom from "../layout/ButtonsBottom";
 import LandingImage from "../layout/LandingImage";
 import landingProject from "../images/AAlaptop-noBG.png";
 import ProjectTitle from "../layout/ProjectTitle";
+import { useAlertContext } from "../context/alertContext";
+import Loader from "../components/Loader";
 
 const CaseStudyArchives = () => {
+  const {  colorMode,  } = useAlertContext();
+  const [isLoading, setIsLoading]=useState(true)
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsLoading(false);
+    }, 1500)
+  }, []);
   return (
     <main>
+       {isLoading ? (
+        <Loader />
+      ) : (
+        <>
       <Header />
       {/*image */}
 
@@ -55,7 +70,7 @@ const CaseStudyArchives = () => {
 
       {/*Project Overview section */}
       <ProjectOverview
-        backgroundColor={"secondLight"}
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         client="The Archives of American Art"
         description="is a research center and repository for primary sources related to American art history. It's 
                     mission is to make its vast collection of documents accessible to the public and support research and scholarship in the field."
@@ -66,7 +81,7 @@ const CaseStudyArchives = () => {
       />
 
       <CurrentUserInterface
-        backgroundColor={"light"}
+        backgroundColor={colorMode==='light'? "light":'dark'}
         imageSrc={currentstate1}
         imageSrc2={currentstate2}
         description="Main support page"
@@ -74,7 +89,7 @@ const CaseStudyArchives = () => {
       />
 
       <Research
-        backgroundColor={"secondLight"}
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         subtitle="Understanding the user target"
         description=" I initiated the project by investigating traits of users likely to donate. Using a give.org study on donor behavior, 
                       I developed a user profile focusing on generations with higher Art and Culture charity donations, considering education and employment status."
@@ -97,7 +112,7 @@ const CaseStudyArchives = () => {
 
       {/*User testing */}
       <UserTesting
-        backgroundColor={"light"}
+        backgroundColor={colorMode==='light'? "light":'dark'}
         type="Moderate remote & in-person"
         description="To assess the usability of the current Archive of American Art support page, 
                       I carried out asynchronous sessions with each participant. They were guided through three tasks and scenarios
@@ -109,7 +124,7 @@ const CaseStudyArchives = () => {
       {/*Analyze */}
 
       <Analyze
-        backgroundColor="secondLight"
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         type="Affinity diagram"
         description="I utilized an affinity diagram to identify patterns and organize them in descending order of prevalence. 
                     Based on these findings, I formulated recommendations for improvement."
@@ -126,7 +141,7 @@ const CaseStudyArchives = () => {
 
       <Recommendations
         title="RECOMMENDATIONS"
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "light":'dark'}
         type="Buttons"
         item="Enlarge buttons for easier user interaction"
         item2="Change CTA color to purple for consistency and contrast"
@@ -139,7 +154,7 @@ const CaseStudyArchives = () => {
       />
       <Recommendations
         hasTwoBulletPoints
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "light":'dark'}
         type="Hero Page"
         item="Usability study revealed user frustration due to absence of personal touch"
         item2='Added carousel in hero image with "Donate Now" button and external quotes'
@@ -151,7 +166,7 @@ const CaseStudyArchives = () => {
 
       <Recommendations
         hasThreeBulletPoints
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "light":'dark'}
         type="Visual hierarchy"
         item="Implemented cards with individual CTA buttons for better information differentiation and guidances"
         item2='Added carousel in hero image with "Donate Now" button and external quotes'
@@ -164,7 +179,7 @@ const CaseStudyArchives = () => {
 
       <Recommendations
         hasTwoBulletPoints
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "light":'dark'}
         type="Layout redesign"
         item="Suggested switching to F-pattern for enhanced viewing experience"
         item2="F-pattern enables intuitive navigation and user-friendly content scanning"
@@ -178,7 +193,7 @@ const CaseStudyArchives = () => {
 
       <Conclusion
         hasThreeBulletPoints
-        backgroundColor="secondLight"
+        backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
         title="CONCLUSION"
         type="Presentation"
         description="During a Zoom virtual meeting, I presented the final report to the client, encompassing the methodology and resulting recommendations. 
@@ -192,7 +207,7 @@ const CaseStudyArchives = () => {
       />
 
       <GoingForward
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "light":'dark'}
         title="GOING FORWARD"
         type="Takeaways"
         description="During this project, I discovered the significance of teamwork and the crucial role that open-mindedness plays in development. 
@@ -209,10 +224,12 @@ const CaseStudyArchives = () => {
         path1="/contactme"
         button2="View other projects"
         path2="/projects"
-        backgroundColor="light"
+        backgroundColor={colorMode==='light'? "light":'dark'}
       />
 
       <Footer />
+      </>
+      )}
     </main>
   );
 };

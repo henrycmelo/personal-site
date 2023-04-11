@@ -10,12 +10,14 @@ import {
 import React from "react";
 import SecondaryButton from "./SecondaryButton";
 import { Link } from "react-router-dom";
+import { useAlertContext } from "../context/alertContext";
 
 
 const Cards = ({ title, description, imageSrc, to }) => {
+  const {  colorMode } = useAlertContext();
 
   return (
-    <Card maxW={["100%", "md"]} backgroundColor="light" boxShadow="xl">
+    <Card maxW={["100%", "md"]} backgroundColor={colorMode==='light'? "light" : 'dark'} boxShadow="xl">
       <CardBody>
         <Image
           src={imageSrc}
@@ -24,15 +26,16 @@ const Cards = ({ title, description, imageSrc, to }) => {
           boxSize="100%"
           h="auto"
           borderRadius='5px'
-          backgroundColor='#E8EBED'
+          backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'}
+          
           
           
         />
         <Stack mt="6" spacing="3">
-          <Heading as="h6" fontSize="xl" color="dark">
+          <Heading as="h6" fontSize="xl" color={colorMode==='light'? "dark":'light'}>
             {title}
           </Heading>
-          <Text m={4} fontSize="md" color="gray" textStyle="body">
+          <Text m={4} fontSize="md" color={colorMode==='light'? 'gray' : 'grayDarkMode'} textStyle="body">
             {description}
           </Text>
         </Stack>

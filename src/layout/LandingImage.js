@@ -6,12 +6,12 @@ import {
   } from "@chakra-ui/react";
   import FullScreenSection from "../components/FullScreenSection";
 const LandingImage=({imageSrc,alt})=>{
-const { isLargerThanBase } = useAlertContext();
+const { isLargerThanBase, colorMode } = useAlertContext();
   const image = isLargerThanBase ? "" : "400px";
     return (
 
 <FullScreenSection
-backgroundColor="light"
+backgroundColor={colorMode==='light'? "light":'dark'}
 alignItems={"center"}
 spacing={8}
 width="100vw"

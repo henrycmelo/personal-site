@@ -17,6 +17,7 @@ import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
 import { MdSettings } from "react-icons/md";
+import { useAlertContext } from "../context/alertContext";
 
 const Recommendations = ({
   title,
@@ -33,11 +34,13 @@ const Recommendations = ({
   hasTwoBulletPoints,
   hasThreeBulletPoints,
 }) => {
+  const {  colorMode } = useAlertContext();
   return (
     <FullScreenSection
       backgroundColor={backgroundColor}
       alignItems={"center"}
       spacing={8}
+      color={colorMode==='light'? "dark":'light'}
       width="100vw"
       p={{ base: 8, md: 32 }}
     >
@@ -57,7 +60,7 @@ const Recommendations = ({
             align={'center'}
             fontSize={{base:"2xl", md:"4xl"}}
             textStyle="h6"
-            textColor={"blue"}
+            textColor={colorMode==='light'?'blue':'blueDarkMode'}
             paddingBottom={4}
           >
             {type}
@@ -78,16 +81,16 @@ const Recommendations = ({
                   <List
                     spacing={1}
                     fontSize={{base:"lg", md:"2xl"}}
-                    color="dark"
+                    color={colorMode==='light'? "dark":'light'}
                     textStyle="body"
                   >
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'}/>
 
                       {item}
                     </ListItem>
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'}/>
                       {item2}
                     </ListItem>
                   </List>
@@ -99,20 +102,20 @@ const Recommendations = ({
                   <List
                     spacing={1}
                     fontSize={{base:"lg", md:"2xl"}}
-                    color="dark"
+                    color={colorMode==='light'? "dark":'light'}
                     textStyle="body"
                   >
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'} />
 
                       {item}
                     </ListItem>
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'} />
                       {item2}
                     </ListItem>
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'} />
                       {item3}
                     </ListItem>
                   </List>
@@ -124,24 +127,24 @@ const Recommendations = ({
                   <List
                     spacing={1}
                     fontSize={{base:"lg", md:"2xl"}}
-                    color="dark"
+                    color={colorMode==='light'? "dark":'light'}
                     textStyle="body"
                   >
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'} />
 
                       {item}
                     </ListItem>
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'} />
                       {item2}
                     </ListItem>
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'} />
                       {item3}
                     </ListItem>
                     <ListItem>
-                      <ListIcon as={MdSettings} color="blue" />
+                      <ListIcon as={MdSettings} color={colorMode==='light'?'blue':'blueDarkMode'} />
                       {item4}
                     </ListItem>
                   </List>
@@ -151,7 +154,7 @@ const Recommendations = ({
           </Grid>
         <ScrollReveal>
           <Stack direction={{ base: "column", md: "row" }}>
-            <Card boxShadow="xl">
+            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
               <CardBody>
                 <Image
                   src={imageSrc}
@@ -166,14 +169,14 @@ const Recommendations = ({
                   as={"b"}
                   fontSize="lg"
                   textStyle="body"
-                  textColor={"blue"}
+                  textColor={colorMode==='light'?'blue':'blueDarkMode'}
                 >
                   {descriptionImage}
                 </Text>
               </CardFooter>
             </Card>
 
-            <Card boxShadow="xl">
+            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
               <CardBody>
                 <Image
                   src={imageSrc2}
@@ -188,7 +191,7 @@ const Recommendations = ({
                   as={"b"}
                   fontSize="lg"
                   textStyle="body"
-                  textColor={"blue"}
+                  textColor={colorMode==='light'?'blue':'blueDarkMode'}
                 >
                   {descriptionImage2}
                 </Text>

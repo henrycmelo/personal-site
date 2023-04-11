@@ -11,6 +11,7 @@ import {
 import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
+import { useAlertContext } from "../context/alertContext";
 
 const CurrentUserInterface = ({
   imageSrc,
@@ -19,9 +20,11 @@ const CurrentUserInterface = ({
   description2,
   backgroundColor,
 }) => {
+  const {  colorMode } = useAlertContext();
   return (
     <FullScreenSection
       backgroundColor={backgroundColor}
+      color={colorMode==='light'? "dark":'light'}
       alignItems={"center"}
       spacing={8}
       width="100vw"
@@ -41,7 +44,7 @@ const CurrentUserInterface = ({
         <ScrollReveal>
         <Stack direction={{ base: "column", md: "row" }}>
           
-          <Card boxShadow="xl">
+          <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
             <CardBody>
               <Image
                 src={imageSrc}
@@ -52,12 +55,12 @@ const CurrentUserInterface = ({
             </CardBody>
 
             <CardFooter justify={"center"}>
-              <Text as={"b"} fontSize="lg" textStyle="body" textColor={"blue"}>
+              <Text as={"b"} fontSize="lg" textStyle="body" textColor={colorMode==='light'?'blue':'blueDarkMode'}>
                 {description}
               </Text>
             </CardFooter>
           </Card>
-          <Card boxShadow="xl">
+          <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
             <CardBody>
               <Image
                 src={imageSrc2}
@@ -67,7 +70,7 @@ const CurrentUserInterface = ({
               />{" "}
             </CardBody>
 
-            <CardFooter justify={"center"}>
+            <CardFooter justify={"center"} >
               <Text  fontSize="lg" textStyle="body" textColor={"blue"}>
                 {description2}
               </Text>

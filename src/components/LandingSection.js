@@ -17,11 +17,12 @@ const intro = `I am a full stack developer and graduate student in my second yea
 const intro2 = "Let's create something amazing together";
 
 const LandingSection = () => {
-  const { handleClick } = useAlertContext();
+  const { handleClick,colorMode } = useAlertContext();
+
 
   return (
     <FullScreenSection
-      backgroundColor="light"
+      backgroundColor={colorMode==='light'? "light":'dark'} 
       alignItems={{ base: "center", md: "center", xl: "flex-start" }}
       spacing={8}
       width="100vw"
@@ -32,7 +33,7 @@ const LandingSection = () => {
     >
       <VStack alignItems="start" justifyContent="left">
         <Heading
-          color="blue"
+          color={colorMode==='light'? "blue":'grayBoldDarkMode'} 
           size="sm"
           textStyle="button"
           className="heading-animation"
@@ -40,7 +41,7 @@ const LandingSection = () => {
           {greeting}
         </Heading>
         <Heading
-          color="dark"
+          color={colorMode==='light'? "dark":'light'} 
           fontSize={{ base:"4xl", md:"6xl" }}
           textStyle="h2"
           className="heading-animation-two"
@@ -48,7 +49,7 @@ const LandingSection = () => {
           {bio1}
         </Heading>
         <Heading
-          color="gray"
+          color={colorMode==='light'? "gray":'grayDarkMode'} 
           fontSize={{ base:"4xl", md:"6xl"}}
           textStyle="h3"
           pb="0.3em"
@@ -57,18 +58,19 @@ const LandingSection = () => {
           {bio2}
         </Heading>
         <Text
-          maxW="3xl"
-          color="gray"
+          maxW="2xl"
+          color={colorMode==='light'? "gray":'grayDarkMode'} 
           fontSize=""
           textStyle="body"
           className="heading-animation-four"
+         
         >
           {intro}{" "}
         </Text>
-        <button onClick={handleClick("contactme")}>
+        <button  onClick={handleClick("contactme")}>
           <Text
             maxW="3xl"
-            color="blue"
+            color={colorMode==='light'? "blue":'grayBoldDarkMode'}
             fontSize="sm"
             textDecoration={"underline"}
             textStyle="body"

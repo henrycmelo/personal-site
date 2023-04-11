@@ -7,13 +7,15 @@ import {
   import React from "react";
   import FullScreenSection from "../components/FullScreenSection";
   import ScrollReveal from "../hooks/ScrollReveal";
+  import { useAlertContext } from "../context/alertContext";
 
 const ProjectTitle=({client, title, role, tools, date})=>{
+  const {  colorMode } = useAlertContext();
 
     return(
         <FullScreenSection
-        backgroundColor="dark"
-        isDarkBackground
+        layerStyle={colorMode==='light'?'normalDark':'gradientBack'}
+        color='light'
         alignItems={"center"}
         spacing={8}
         width="100vw"
@@ -24,13 +26,13 @@ const ProjectTitle=({client, title, role, tools, date})=>{
             {client.toUpperCase()}
           </Heading>
           <ScrollReveal>
-            <Text  fontSize={{base:"2xl", md:"4xl"}} textStyle="h6" textColor={"blue"} align={'center'} >
+            <Text  fontSize={{base:"2xl", md:"4xl"}} textStyle="h6" textColor={colorMode==='light'?'blue':'blueDarkMode'} align={'center'} >
          {title}
         </Text></ScrollReveal>
 
           <Text  fontSize={{base:"lg", md:"2xl"}} textStyle="body" align={"center"}>
             {" "}
-            <span style={{ color: "#007183" }}>
+            <span style={{ color: colorMode==='light'? "#007183" : '#00A4BD'}}>
               <b>Role:</b>
             </span>{" "}
             {role}
@@ -38,14 +40,14 @@ const ProjectTitle=({client, title, role, tools, date})=>{
 
           <Text fontSize={{base:"lg", md:"2xl"}} textStyle="body" align={"center"}>
             {" "}
-            <span style={{ color: "#007183" }}>
+            <span style={{ color: colorMode==='light'? "#007183" : '#00A4BD'}}>
               <b>Tools:</b>
             </span>{" "}
             {tools}
           </Text>
           <Text fontSize={{base:"lg", md:"2xl"}} textStyle="body" align={"center"}>
             {" "}
-            <span style={{ color: "#007183" }}>
+            <span style={{ color: colorMode==='light'? "#007183" : '#00A4BD' }}>
               <b>Date: </b>
             </span>
             {date}

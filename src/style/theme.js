@@ -1,7 +1,12 @@
 import { extendTheme } from "@chakra-ui/react"
+import { switchTheme } from "./Switch"
+
+
+
 
 
 const theme = extendTheme({
+    components: { Switch: switchTheme },
     fonts: {
         heading: "'Open Sans', sans-serif"
     },
@@ -48,8 +53,35 @@ const theme = extendTheme({
         yellow: '#FED766',
         gray: '#696773',
         secondLight: '#E8EBED',
-        secondDark: '#5A5863'
-    }
+        secondDark: '#5A5863',
+        blueDarkMode:"#00A4BD",
+        grayDarkMode:"#C3C3C3",
+        grayBoldDarkMode:"#909BA3",
+        darkDarkMode:'#232323',
+        
+      
+},
+    layerStyles:{
+        gradientBack:{
+            bg:'radial-gradient(circle, rgba(54,76,82,1) 0%, rgba(35,35,35,1) 100%)'
+
+      
+        },
+        normalBlue:{
+            bg:'#007183'
+        },
+        normalDark:{
+            bg:'#272727'
+        }
+       
+    },
+    
+   
+ 
+    initialColorMode: 'light',
+    useSystemColorMode: false,
 })
 
 export default theme
+
+
