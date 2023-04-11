@@ -1,4 +1,5 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
+import { useEffect } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { AlertProvider } from "./context/alertContext";
 import theme from "../src/style/theme.js"
@@ -18,22 +19,11 @@ import ReactGA from "react-ga";
 
 function App() {
   const location = useLocation();
-
-useEffect(() => {
-  // Track the initial pageview
-  ReactGA.pageview(location.pathname + location.search);
-
-  // Track page views when the location changes
-  const unlisten = history.listen((location) => {
+  useEffect(() => {
+    // Track page view when location changes
     ReactGA.pageview(location.pathname + location.search);
-  });
-
-  // Cleanup the listener when the component unmounts
-  return () => {
-    unlisten();
-  };
-}, [location]);
-
+  }, [location]);
+  return (
     
 
   
