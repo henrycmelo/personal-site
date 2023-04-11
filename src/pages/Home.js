@@ -31,7 +31,7 @@ function Home() {
     <main>
       {isLoading? (<Loader/>) : (
           <>
-          <Header isHomePage />, 
+          <Header isHomePage /> 
           {showNavBar && <LandingSection /> }
           {showNavBar&&<AboutMeSection isHomePage/>} 
           {showNavBar&&<ProjectsSection isHomePage />}

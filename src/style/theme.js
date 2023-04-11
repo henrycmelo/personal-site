@@ -2,10 +2,14 @@ import { extendTheme } from "@chakra-ui/react"
 import { switchTheme } from "./Switch"
 
 
-
+const config = {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  }
 
 
 const theme = extendTheme({
+    config,
     components: { Switch: switchTheme },
     fonts: {
         heading: "'Open Sans', sans-serif"
@@ -78,8 +82,7 @@ const theme = extendTheme({
     
    
  
-    initialColorMode: 'dark',
-    useSystemColorMode: false,
+    
 })
 
 export default theme

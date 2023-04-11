@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useScrollLock } from "../hooks/useScrollLock";
-import { useMediaQuery,useColorMode } from "@chakra-ui/react";
+import { useMediaQuery } from "@chakra-ui/react";
 
 const AlertContext = createContext(undefined);
 
@@ -55,8 +55,20 @@ export const AlertProvider = ({ children }) => {
 
   
 
-  const { colorMode, toggleColorMode } = useColorMode()
+  
+  const [colorMode, setColorMode]=useState('dark');
 
+  const toggleColorMode=()=>{
+    if (colorMode==='light'){
+        setColorMode('dark')
+    }
+    else {
+        setColorMode('light')
+    }
+   
+}
+
+  
  
 
  
