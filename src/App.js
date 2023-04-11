@@ -11,13 +11,30 @@ import ContactPage from './pages/ContactPage';
 import MyPersonalSite from './pages/MyPersonalSite';
 import SteakHouse from './pages/SteakHouse';
 import Dash from './pages/Dash';
+import { Helmet } from 'react-helmet';
 
 
 
 
 
 function App() {
+  const measurementId = process.env.REACT_APP_GOOGLE_ANALYTICS_MEASUREMENT_ID;
   return (
+    <>
+    <Helmet>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+    <script>
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${measurementId}');
+      `}
+    </script>
+    
+  </Helmet>
+
+  
     <ChakraProvider theme={theme}>
       <AlertProvider>
       
@@ -45,6 +62,7 @@ function App() {
         
       </AlertProvider>
     </ChakraProvider>
+    </>
   );
 }
 
