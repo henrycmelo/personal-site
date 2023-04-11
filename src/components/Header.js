@@ -96,7 +96,7 @@ const Header = ({ isHomePage }) => {
    
                    
 
-                  <Switch onChange={toggleColorMode} isChecked={colorMode==='dark'} >
+                  <Switch onChange={toggleColorMode} isChecked={colorMode==='dark'} defaultChecked={colorMode==='dark'}>
                      {colorMode === "light" ? "Dark Mode OFF" : "Dark Mode ON"}
                   </Switch>
 
