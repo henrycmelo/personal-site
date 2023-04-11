@@ -34,7 +34,7 @@ const SecondaryButton = ({ children, onClick, backgroundPage }) => {
       textStyle="button"
       onClick={onClick}
       shadow="lg"
-      _hover={{ bg: "blueDarkMode", color:'dark' }}
+      _hover={{ bg: "rgba(0, 164, 189, 0.2)" }}
     >
       {children}
     </Button>
