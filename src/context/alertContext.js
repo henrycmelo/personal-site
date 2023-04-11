@@ -57,13 +57,7 @@ export const AlertProvider = ({ children }) => {
 
   const { colorMode, toggleColorMode } = useColorMode()
 
-  const [isLoading, setIsLoading]=useState(true)
-
-  useEffect(()=>{
-    setTimeout(()=>{
-      setIsLoading(false);
-    }, 3000)
-  }, []);
+ 
 
  
 
@@ -80,7 +74,7 @@ export const AlertProvider = ({ children }) => {
         spacing,
         align,
         isLargerThanBase,
-        isLoading,
+       
         colorMode,
         toggleColorMode
         
