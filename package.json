@@ -26,10 +26,12 @@
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
+    "react-three-fiber": "^6.0.13",
     "reaptcha": "^1.12.1",
     "recaptcha-v3": "^1.10.0",
     "reveal-on-scroll-react": "^0.0.6",
     "web-vitals": "^2.1.4",
+    "wordcloud": "^1.2.2",
     "yup": "^1.0.2"
   },
   "scripts": {

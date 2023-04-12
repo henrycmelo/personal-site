@@ -4,6 +4,7 @@ import FullScreenSection from "./FullScreenSection";
 import CustomizedButton from "./CustomizedButton";
 import { useAlertContext } from "../context/alertContext";
 import "animate.css";
+import gif from "../images/giphy.gif"
 
 const greeting = "HI, MY NAME IS";
 const bio1 = "Henry Castillo";
@@ -18,10 +19,17 @@ const intro2 = "Let's create something amazing together";
 
 const LandingSection = () => {
   const { handleClick,colorMode } = useAlertContext();
+  
 
 
   return (
+    
     <FullScreenSection
+    backgroundImage={colorMode==='light'?`linear-gradient(rgba(239,241,243,.8), rgba(239,241,243,1)), url(${gif})`:`linear-gradient(rgba(39,39,39,.7), rgba(39,39,39,1)), url(${gif})`}
+    backgroundRepeat='no-repeat'
+    backgroundPosition='right bottom'
+    backgroundSize='contain'
+   
       backgroundColor={colorMode==='light'? "light":'dark'} 
       alignItems={{ base: "center", md: "center", xl: "flex-start" }}
       spacing={8}
@@ -30,8 +38,11 @@ const LandingSection = () => {
       pl={{ base: 8, md: 32 }}
       pb={32}
       pr={{ base: 8, md: 32 }}
+     
     >
-      <VStack alignItems="start" justifyContent="left">
+     
+
+      <VStack alignItems="start" justifyContent="left" >
         <Heading
           color={colorMode==='light'? "blue":'grayBoldDarkMode'} 
           size="sm"
@@ -89,7 +100,9 @@ const LandingSection = () => {
           </CustomizedButton>
         </Wrap>
       </VStack>
-    </FullScreenSection>
+      </FullScreenSection>
+      
+   
   );
 };
 
