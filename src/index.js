@@ -9,7 +9,7 @@ import { ColorModeScript } from '@chakra-ui/react'
 import theme from "./style/theme"
 import ReactGA from "react-ga";
 
-const measurementId = process.env.REACT_APP_GOOGLE_ANALYTICS_ID;
+const measurementId = 'UA-263701758-1';
 ReactGA.initialize(measurementId);
 
 
