@@ -99,7 +99,7 @@ const AboutMeSection = ({ isHomePage }) => {
           <br />
           <br />
         </Text>
-        <SimpleGrid columns={6} spacing={10} flexWrap='wrap' width="100%">
+        <SimpleGrid columns={4} flexWrap='wrap' spacing={4}>
         {technologies.map((technology, index) => (
           <img key={index} src={technology} alt={technology} width="70px" />
         ))}

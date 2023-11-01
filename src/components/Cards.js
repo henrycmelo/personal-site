@@ -25,14 +25,14 @@ const Cards = ({ title, description, imageSrc, to, badgeAlt, badgeSrc, date, rol
       <CardBody>
       <Flex alignItems="center">
         {date ? (
-          <Badge backgroundColor={colorMode==='light'? "yellow" : 'blueDarkMode'} color={colorMode==='light'? "dark" : 'darkDarkMode'} borderRadius="full" px="2" py="1" mb={2}>
+          <Badge fontSize="2xs" backgroundColor={colorMode==='light'? "yellow" : 'blueDarkMode'} color={colorMode==='light'? "dark" : 'darkDarkMode'} borderRadius="full" px="2" py="1" mb={2}>
             {formatDate(date)}
           </Badge>
         ) : null}
 
         {role ? (
           role.map((role, index)=>(
-            <Badge key={index} backgroundColor={colorMode==='light'? "secondDark" : 'yellow'} color={colorMode==='light'? "yellow" : 'darkDarkMode'} borderRadius="full" px="2" py="1" mb={2} ml={2}>
+            <Badge fontSize="2xs" key={index} backgroundColor={colorMode==='light'? "secondDark" : 'yellow'} color={colorMode==='light'? "yellow" : 'darkDarkMode'} borderRadius="full" px="2" py="1" mb={2} ml={2}>
               {role}
             </Badge>
           ))
@@ -62,11 +62,11 @@ const Cards = ({ title, description, imageSrc, to, badgeAlt, badgeSrc, date, rol
             {description}
           </Text>
         </Stack>
-        <Stack direction='row' flexWrap='wrap' maxWidth='100%' pt={2}>
+        <Flex direction='row' alignItems='flex-start' flexWrap='wrap' maxWidth='100%' gap={2} >
           {badgeSrc? (badgeSrc.map((badge, index)=>(
-            <img key={index} src={badge} alt={badgeAlt} width='50px' />
+            <img key={index} src={badge} alt={badgeAlt}  />
           ))): (null)}
-        </Stack>
+        </Flex>
       </CardBody>
 
       <CardFooter justify="flex-end">
