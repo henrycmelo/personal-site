@@ -10,6 +10,7 @@ import { useAlertContext } from "../context/alertContext";
 import Loader from "../components/Loader";
 
 
+
 const DjangoPage = () => {
   const {  colorMode} = useAlertContext();
   const [isLoading, setIsLoading]=useState(true)
@@ -39,7 +40,8 @@ const DjangoPage = () => {
         title='Using Python, HTML, and Bootstrap, this platform streamlines online course and exam creation for instructors.'
         role='Full-stack developer'
         tools="Python, Django, Bootstrap, HTML5, AWS S3 bucket, Heroku"
-        date="Dec 2022- March 2023"
+        dateInititial="2022-12"
+        dateFinal="2023-02"
 
         />
   

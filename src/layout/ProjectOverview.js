@@ -13,7 +13,7 @@ import { MdCheckCircle } from "react-icons/md";
 import { useAlertContext } from "../context/alertContext";
 
 
-const ProjectOverview = ({ client,description, challenge, solution, backgroundColor, isProgrammingProject, design, item, item2, item3 }) => {
+const ProjectOverview = ({ client,description, challenge, solution, backgroundColor, isProgrammingProject, design, item, item2, item3, code }) => {
   const {  colorMode } = useAlertContext();
   return (
     <FullScreenSection
@@ -72,14 +72,31 @@ const ProjectOverview = ({ client,description, challenge, solution, backgroundCo
         
     
 
-        <ScrollReveal><Text  fontSize={{base:"2xl", md:"4xl"}} textStyle="h6" textColor={colorMode==='light'?'blue':'blueDarkMode'} paddingBottom={4}>
+       
+        {design ? 
+         (
+         <>
+         <ScrollReveal><Text  fontSize={{base:"2xl", md:"4xl"}} textStyle="h6" textColor={colorMode==='light'?'blue':'blueDarkMode'} paddingBottom={4}>
          Design
         </Text></ScrollReveal>
-        <ScrollReveal>
-        <Text fontSize={{base:"lg", md:"2xl"}} textStyle='body' textColor={colorMode==='light'? "dark":'light'}  textAlign={'center'}>
-            {design}
+        <ScrollReveal>(
+          <Text fontSize={{base:"lg", md:"2xl"}} textStyle='body' textColor={colorMode==='light'? "dark":'light'}  textAlign={'center'}>
+          {design}
         </Text>
         </ScrollReveal>
+        </>)
+         : null}
+
+
+         {code?( 
+          <>
+          <ScrollReveal><Text  fontSize={{base:"2xl", md:"4xl"}} textStyle="h6" textColor={colorMode==='light'?'blue':'blueDarkMode'} paddingBottom={4}>
+          Code Snippet
+         </Text></ScrollReveal>
+         <img src={code} alt="code" />
+         </>): null}
+        
+        
 
 
        

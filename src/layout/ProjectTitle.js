@@ -8,8 +8,9 @@ import {
   import FullScreenSection from "../components/FullScreenSection";
   import ScrollReveal from "../hooks/ScrollReveal";
   import { useAlertContext } from "../context/alertContext";
+import { formatDateRange } from "../utils/formatDate";
 
-const ProjectTitle=({client, title, role, tools, date})=>{
+const ProjectTitle=({client, title, role, tools, dateInititial, dateFinal})=>{
   const {  colorMode } = useAlertContext();
 
     return(
@@ -50,7 +51,7 @@ const ProjectTitle=({client, title, role, tools, date})=>{
             <span style={{ color: colorMode==='light'? "#007183" : '#00A4BD' }}>
               <b>Date: </b>
             </span>
-            {date}
+            {formatDateRange(dateInititial, dateFinal)}
           </Text>
         </VStack>
       </FullScreenSection>

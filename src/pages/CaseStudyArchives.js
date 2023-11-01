@@ -65,7 +65,8 @@ const CaseStudyArchives = () => {
         title="Enhancing User Experience for Better Donations on Support Page"
         role="UX researcher, user testing, UI designer"
         tools="Figma, Zoom, MiroBoard"
-        date="Oct-Dec 2022"
+        dateInititial="2022-10"
+        dateFinal="2022-12"
       />
 
       {/*Project Overview section */}

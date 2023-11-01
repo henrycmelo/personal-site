@@ -35,7 +35,8 @@ const MyPersonalSite = () => {
             title="Personal website showcasing my work and projects"
             role="Creator and developer"
             tools="React Js, Chakra UI, Formik, and Netlify."
-            date="Jan- March 2023"
+            dateInititial="2023-01"
+            dateFinal="2023-03"
           />
 
           <ProjectOverview
@@ -66,7 +67,7 @@ const MyPersonalSite = () => {
             }
             button1="Launch Project"
             button2="View Github"
-            href="https://henrycastillo.dev/"
+            href1="https://henrycastillo.dev/"
             href2="https://github.com/henrycastillome/personal-site"
           />
         </>

@@ -13,6 +13,7 @@ import MyPersonalSite from './pages/MyPersonalSite';
 import SteakHouse from './pages/SteakHouse';
 import Dash from './pages/Dash';
 import ReactGA from "react-ga";
+import MachineLearning from './pages/MachineLearning';
 
 
 
@@ -48,6 +49,7 @@ function App() {
               <Route path="/mypersonalsite" element={<MyPersonalSite />} />
               <Route path='/steakhouse' element={<SteakHouse/>} />
               <Route path='/dash' element={<Dash/>} />
+              <Route path="/machinelearning" element={<MachineLearning/>} />
             </Routes>
           
         </main>

@@ -32,9 +32,11 @@ const Dash = () => {
       <ProjectTitle
         client="Analyzing NYC Restaurant Violations with Python, Plotly, and Dash"
         title="Examining NYC restaurant violations with Python, Plotly, and Dash using Health Department data."
-        role="Full-stack developer"
+        role="Data Analyst & Python Developer"
         tools="Python, Pandas, Plotly, Dash, HTML5, Bootstrap"
         date="Sep-Dec 2022"
+        dateInititial="2022-09"
+        dateFinal="2022-12"
       />
 
       <ProjectOverview

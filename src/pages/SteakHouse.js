@@ -54,6 +54,8 @@ const SteakHouse = () => {
         role="Product designer"
         tools="Figma, Zoom, Miroboard"
         date="Dec 2021- July 2022"
+        dateInititial="2021-12"
+        dateFinal="2022-07"
       />
 
       <ProjectOverview
