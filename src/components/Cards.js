@@ -92,10 +92,11 @@ const Cards = ({
               ml={2}
               fontSize="2xs"
               variant='outline'
+              colorScheme="darkMode"
               border={
                 colorMode === "light"
-                  ? "1px solid #007183 !important "
-                  : "1px solid #00A4BD !important"
+                  ? "1px solid  "
+                  : "1px solid "
               }
               
               color={colorMode === "light" ? "blue" : "blueDarkMode"}

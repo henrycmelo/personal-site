@@ -3,6 +3,7 @@ import { switchTheme } from "./Switch"
 
 
 const config = {
+    initialColorMode: 'dark',
     useSystemColorMode: false,
   }
 
@@ -13,6 +14,9 @@ const theme = extendTheme({
     fonts: {
         heading: "'Open Sans', sans-serif"
     },
+  
+
+  
     textStyles: {
         h2: {
             fontFamily: "'Open Sans', sans-serif",
