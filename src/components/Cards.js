@@ -72,8 +72,6 @@ const Cards = ({
                 </Badge>
               ))
             : null}
-
-         
         </Flex>
 
         <Box
@@ -83,23 +81,27 @@ const Cards = ({
             paddingTop: "20px",
           }}
         >
-           {date && isProjectDateRecent(date) ?
-          (<Badge
-            fontSize="2xs"
-            variant={colorMode==='light'? 'solid' : 'outline'}
-            border= {colorMode==="light" ?"1px solid #007183 " :"1px solid #00A4BD "}
-            // backgroundColor={colorMode==="light" ?"blue" :"transparent"}
-            color={colorMode === "light" ? "blue" : "blueDarkMode"}
-            borderRadius="full"
-            px="2"
-            py="1"
-            mb={2}
-            ml={2}
-            style={{ position: "absolute", right: "-5px", top: "20px" }}
-        
-          >
-            New
-          </Badge>):null}
+          {date && isProjectDateRecent(date) ? (
+            <Badge
+              fontSize="2xs"
+              variant='outline'
+              border={
+                colorMode === "light"
+                  ? "1px solid #007183 "
+                  : "1px solid #00A4BD "
+              }
+              
+              color={colorMode === "light" ? "blue" : "blueDarkMode"}
+              borderRadius="full"
+              px="2"
+              py="1"
+              mb={2}
+              ml={2}
+              style={{ position: "absolute", right: "-5px", top: "20px" }}
+            >
+              New
+            </Badge>
+          ) : null}
           <Image
             src={imageSrc}
             alt={title}
