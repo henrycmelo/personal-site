@@ -83,6 +83,13 @@ const Cards = ({
         >
           {date && isProjectDateRecent(date) ? (
             <Badge
+              position="absolute"
+              right="-5px"
+              top="20px"
+              px="2"
+              py="1"
+              mb={2}
+              ml={2}
               fontSize="2xs"
               variant='outline'
               border={
@@ -93,11 +100,8 @@ const Cards = ({
               
               color={colorMode === "light" ? "blue" : "blueDarkMode"}
               borderRadius="full"
-              px="2"
-              py="1"
-              mb={2}
-              ml={2}
-              style={{ position: "absolute", right: "-5px", top: "20px" }}
+              
+              
             >
               New
             </Badge>
