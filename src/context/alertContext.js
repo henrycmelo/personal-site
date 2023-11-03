@@ -1,6 +1,4 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useScrollLock } from "../hooks/useScrollLock";
 import { useMediaQuery } from "@chakra-ui/react";
 
@@ -28,19 +26,7 @@ export const AlertProvider = ({ children }) => {
       unlockScroll();
     }
   };
-  const socials = [
-    { id: "faEnvelope", icon: faEnvelope, url: "mailto: hcasti40@pratt.edu" },
-    {
-      id: "faGithub",
-      icon: faGithub,
-      url: "https://github.com/henrycastillome",
-    },
-    {
-      id: "faLinkedin",
-      icon: faLinkedin,
-      url: "https://www.linkedin.com/in/henry--castillo/",
-    },
-  ];
+  
 
   const [isLargerThanBase] = useMediaQuery('(min-width: 769px)');
   const [direction, setDirection] = useState('row');
@@ -81,7 +67,6 @@ export const AlertProvider = ({ children }) => {
           setState({ isOpen: true, type, message, error }),
         onClose: () => setState({ isOpen: false, type: "", message: "" }),
         handleClick,
-        socials,
         direction,
         spacing,
         align,

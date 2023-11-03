@@ -11,15 +11,18 @@ import { useAlertContext } from "../context/alertContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FullScreenSection from "./FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
+import socialsData from "../utils/socialsData";
 
 const Footer = () => {
-  const { socials, isLargerThanBase, colorMode } = useAlertContext();
+  const { isLargerThanBase, colorMode } = useAlertContext();
   const align = isLargerThanBase ? "" : "center";
   const paddingHeading = isLargerThanBase ? "0.5em" : "0.2em";
   const paddingText = isLargerThanBase ? "1em" : "";
   const paddingX = isLargerThanBase ? 12 : 4;
   const columStart = isLargerThanBase ? 4 : 0;
   const columEnd = isLargerThanBase ? 6 : 0;
+  const year= new Date().getFullYear();
+
 
   return (
     <footer>
@@ -64,7 +67,7 @@ const Footer = () => {
               Socials
             </Heading></ScrollReveal>
             <Stack direction="row" justify={align} color={colorMode==='light'? "yellow":"blueDarkMode"}>
-              {socials.map(
+              {socialsData.map(
                 (
                   icons // rendering the list of icons using .map () method
                 ) => (
@@ -85,7 +88,7 @@ const Footer = () => {
         </Grid>
         <Divider color="light" alignItems="center" margin="0 auto" />
         <ScrollReveal><Text color={colorMode==='light'? "yellow":"blueDarkMode"} size="xs" textStyle="body" textAlign="center">
-          © Copyright 2023. Designed and built by <b>Henry Castillo</b>{" "}
+          © Copyright {year}. Designed and built by <b>Henry Castillo</b>{" "}
         </Text></ScrollReveal>
       </FullScreenSection>
     </footer>

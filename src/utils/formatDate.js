@@ -1,5 +1,12 @@
 export const formatDate=(date)=>{
-    const newDate = new Date(Date.UTC(date.substring(0, 4), parseInt(date.substring(5)) ));
+    const isValidDate = (d) => d instanceof Date && !isNaN(d);
+    
+    const [year, month] = date.split("-");
+    const newDate = new Date(Date.UTC(year, parseInt(month)));
+
+    if (!isValidDate(newDate)) {
+      return new Error("Invalid Date");
+    }
     return newDate.toLocaleDateString("default", {
       year: "numeric",
       month: "long",

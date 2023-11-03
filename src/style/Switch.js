@@ -5,7 +5,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(switchAnatomy.keys)
 
 const baseStyle = definePartsStyle({
-  // define the part you're going to style
+  
   container: {
    
   },
