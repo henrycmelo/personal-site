@@ -3,7 +3,6 @@ import { switchTheme } from "./Switch"
 
 
 const config = {
-    initialColorMode: 'dark',
     useSystemColorMode: false,
   }
 
