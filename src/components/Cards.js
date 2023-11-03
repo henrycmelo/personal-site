@@ -85,13 +85,19 @@ const Cards = ({
             <Badge
               fontSize="2xs"
               variant='outline'
-              color={colorMode === "light" ? "gray" : "blueDarkMode"}
+              border={
+                colorMode === "light"
+                  ? "1px solid #007183 !important "
+                  : "1px solid #00A4BD !important"
+              }
+              
+              color={colorMode === "light" ? "blue" : "blueDarkMode"}
               borderRadius="full"
               px="2"
               py="1"
               mb={2}
               ml={2}
-              style={{ border:"1px solid #007183", position: "absolute", right: "-5px", top: "20px" }}
+              style={{ position: "absolute", right: "-5px", top: "20px" }}
             >
               New
             </Badge>
