@@ -87,11 +87,11 @@ const Cards = ({
               variant='outline'
               border={
                 colorMode === "light"
-                  ? "1px solid #007183 "
+                  ? "1px solid #696773 "
                   : "1px solid #00A4BD "
               }
               
-              color={colorMode === "light" ? "blue" : "blueDarkMode"}
+              color={colorMode === "light" ? "gray" : "blueDarkMode"}
               borderRadius="full"
               px="2"
               py="1"
