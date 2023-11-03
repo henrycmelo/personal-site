@@ -10,7 +10,31 @@ const config = {
 
 const theme = extendTheme({
     config,
-    components: { Switch: switchTheme },
+    components: { 
+        Switch: switchTheme,
+        Badge:{
+            
+            variants:{
+                light:{
+                    bg:'transparent',
+                    color:'blue',
+                    variant:'outline',
+                    border:"1px solid #007183"
+                },
+                dark:{
+                    bg:'transparent',
+                    color:'blueDarkMode',
+                    variant:'outline',
+                    border:"1px solid #00A4BD"
+                },
+                
+            },
+            defaultProps:{
+                variant:'solid'
+            }
+        },
+        
+    },
     fonts: {
         heading: "'Open Sans', sans-serif"
     },
@@ -65,6 +89,8 @@ const theme = extendTheme({
         grayDarkMode:"#C3C3C3",
         grayBoldDarkMode:"#909BA3",
         darkDarkMode:'#232323',
+      
+
         
       
 },
@@ -82,6 +108,7 @@ const theme = extendTheme({
         }
        
     },
+
     
    
  

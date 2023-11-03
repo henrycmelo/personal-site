@@ -91,15 +91,7 @@ const Cards = ({
               mb={2}
               ml={2}
               fontSize="2xs"
-              variant='outline'
-              colorScheme="teal"
-              // border={
-              //   colorMode === "light"
-              //     ? "1px solid  "
-              //     : "1px solid "
-              // }
-              
-              // color={colorMode === "light" ? "blue" : "blueDarkMode"}
+              variant={colorMode === "light" ? "light" : "dark"}
               borderRadius="full"
               
               
