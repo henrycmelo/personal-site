@@ -5,17 +5,7 @@ import CustomizedButton from "./CustomizedButton";
 import { useAlertContext } from "../context/alertContext";
 import "animate.css";
 import gif from "../images/giphy.gif"
-
-const greeting = "HI, MY NAME IS";
-const bio1 = "Henry Castillo";
-const bio2 = "I design and code delightful things";
-const intro = `I am a full stack developer and graduate student in my second year 
-              studying human-computer interaction. With a passion for UX design and a
-              love for building intuitive and visually stunning web applications, I have the
-              skills to bring your ideas to life from start to finish. Whether it's creating  
-              a sleek and responsive user interface or integrating a robust and scalable 
-              back-end, I am always up for a challenge and strive to exceed expectations. `;
-const intro2 = "Let's create something amazing together";
+import { dataLanding } from "../utils/dataLanding";
 
 const LandingSection = () => {
   const { handleClick,colorMode } = useAlertContext();
@@ -49,7 +39,7 @@ const LandingSection = () => {
           textStyle="button"
           className="heading-animation"
         >
-          {greeting}
+          {dataLanding.greeting}
         </Heading>
         <Heading
           color={colorMode==='light'? "dark":'light'} 
@@ -57,7 +47,7 @@ const LandingSection = () => {
           textStyle="h2"
           className="heading-animation-two"
         >
-          {bio1}
+          {dataLanding.bio1}
         </Heading>
         <Heading
           color={colorMode==='light'? "gray":'grayDarkMode'} 
@@ -66,7 +56,7 @@ const LandingSection = () => {
           pb="0.3em"
           className="heading-animation-three"
         >
-          {bio2}
+          {dataLanding.bio2}
         </Heading>
         <Text
           maxW="2xl"
@@ -76,7 +66,7 @@ const LandingSection = () => {
           className="heading-animation-four"
          
         >
-          {intro}{" "}
+          {dataLanding.intro}{" "}
         </Text>
         <button  onClick={handleClick("contactme")}>
           <Text
@@ -87,7 +77,7 @@ const LandingSection = () => {
             textStyle="body"
             className="heading-animation-five"
           >
-            {intro2}{" "}
+            {dataLanding.intro2}{" "}
           </Text>
         </button>
         <Wrap
