@@ -12,6 +12,7 @@ const Loader = () => {
 
   return (
     <FullScreenSection
+      data-testid='loader'
       backgroundColor={colorMode === "light" ? "light" : "dark"}
       alignItems={'center'}
       justifyContent={'center'}

@@ -17,14 +17,9 @@ import { useAlertContext } from "../context/alertContext";
 
 
 const Conclusion = ({
-  title,
-  imageSrc,
-  type,
-  type2,
-  description2,
-  descriptionImage,
+  conclusionData,
   backgroundColor,
-  description,
+  subTitle
 }) => {
   const {  colorMode } = useAlertContext();
   return (
@@ -44,22 +39,22 @@ const Conclusion = ({
             paddingBottom={12}
             textAlign={"center"}
           >
-            {title}
+            {subTitle.toUpperCase()}
           </Heading>
         </ScrollReveal>
         <ScrollReveal>
-          <Text
+          {conclusionData && conclusionData.map((conclusion, index) => (
+            <React.Fragment key={index}>
+            <Text
             align={'center'}
             fontSize={{base:"2xl", md:"4xl"}}
             textStyle="h6"
             textColor={colorMode==='light'?'blue':'blueDarkMode'}
             paddingBottom={4}
           >
-            {type}
+            {conclusion.type}
           </Text>
-        </ScrollReveal>
-
-        <ScrollReveal>
+          <ScrollReveal>
           <Text
             fontSize={{base:"lg", md:"2xl"}}
             textStyle="body"
@@ -67,59 +62,55 @@ const Conclusion = ({
             textAlign={"center"}
             paddingBottom={8}
           >
-            {description}
+            {conclusion.description}
           </Text>
         </ScrollReveal>
-
         <ScrollReveal>
-          <Text
-            align={'center'}
-            fontSize={{base:"2xl", md:"4xl"}}
-            textStyle="h6"
-            textColor={colorMode==='light'?'blue':'blueDarkMode'}
-            paddingBottom={4}
-          >
-            {type2}
-          </Text>
+                  <Stack direction={{ base: "column", md: "row" }} pb={16}>
+                    {conclusion.images && conclusion.images.map((image, index) => ( 
+                      <Card
+                      key={index}
+                      boxShadow="xl"
+                      backgroundColor={
+                        colorMode === "light" ? "white" : "darkDarkMode"
+                      }
+                      border={
+                        colorMode === "light" ? "none" : "1px solid #C3C3C3"
+                      }
+                    >
+                      <CardBody>
+                        <Image
+                          src={image.imagePath}
+                          alt={image.description}
+                          background="none"
+                          borderRadius="lg"
+                        />
+                      </CardBody>
+                      <CardFooter justify={"center"}>
+                        <Text
+                          as={"b"}
+                          fontSize="lg"
+                          textStyle="body"
+                          textColor={
+                            colorMode === "light" ? "blue" : "blueDarkMode"
+                          }
+                        >
+                          {image.description}
+                        </Text>
+                      </CardFooter>
+                      </Card>
+                    ))}
+
+
+                  </Stack>
+                </ScrollReveal>
+
+        </React.Fragment>
+          ))}
+          
         </ScrollReveal>
 
-        <ScrollReveal>
-          <Text
-            fontSize={{base:"lg", md:"2xl"}}
-            textStyle="body"
-            textColor={colorMode==='light'? "dark":'light'} 
-            textAlign={"center"}
-            paddingBottom={8}
-          >
-            {description2}
-          </Text>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <Stack direction={{ base: "column", md: "row" }}>
-            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
-              <CardBody>
-                <Image
-                  src={imageSrc}
-                  alt={descriptionImage}
-                  background="none"
-                  borderRadius="lg"
-                />
-              </CardBody>
-
-              <CardFooter justify={"center"}>
-                <Text
-                  as={"b"}
-                  fontSize="lg"
-                  textStyle="body"
-                  textColor={colorMode==='light'?'blue':'blueDarkMode'}
-                >
-                  {descriptionImage}
-                </Text>
-              </CardFooter>
-            </Card>
-          </Stack>
-        </ScrollReveal>
+    
       </VStack>
     </FullScreenSection>
   );

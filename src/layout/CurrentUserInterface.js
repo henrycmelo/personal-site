@@ -14,11 +14,8 @@ import ScrollReveal from "../hooks/ScrollReveal";
 import { useAlertContext } from "../context/alertContext";
 
 const CurrentUserInterface = ({
-  imageSrc,
-  imageSrc2,
-  description,
-  description2,
-  backgroundColor,
+  imageData,
+  backgroundColor
 }) => {
   const {  colorMode } = useAlertContext();
   return (
@@ -43,40 +40,25 @@ const CurrentUserInterface = ({
         </ScrollReveal>
         <ScrollReveal>
         <Stack direction={{ base: "column", md: "row" }}>
-          
-          <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
-            <CardBody>
-              <Image
-                src={imageSrc}
-                alt={description}
-                background="none"
-                borderRadius="lg"
-              />
-            </CardBody>
 
-            <CardFooter justify={"center"}>
-              <Text as={"b"} fontSize="lg" textStyle="body" textColor={colorMode==='light'?'blue':'blueDarkMode'}>
-                {description}
-              </Text>
-            </CardFooter>
-          </Card>
-          <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'}>
-            <CardBody>
-              <Image
-                src={imageSrc2}
-                alt={description2}
-                background="none"
-                borderRadius="lg"
-              />{" "}
-            </CardBody>
+          {imageData.map((item, index) => (
+            <Card boxShadow="xl" backgroundColor={colorMode==='light'? "white" : 'darkDarkMode'} border={colorMode==='light'?'none':'1px solid #C3C3C3'} key={index}>
+              <CardBody>
+                <Image
+                  src={item.imagePath}
+                  alt={item.description}
+                  background="none"
+                  borderRadius="lg"
+                />
+              </CardBody>
+              <CardFooter justify={"center"}>
+                <Text as={"b"} fontSize="lg" textStyle="body" textColor={colorMode==='light'?'blue':'blueDarkMode'}>
+                  {item.description}
+                </Text>
+              </CardFooter>
+            </Card>
+          ))}
 
-            <CardFooter justify={"center"} >
-              <Text  fontSize="lg" textStyle="body" textColor={"blue"}>
-                {description2}
-              </Text>
-            </CardFooter>
-          </Card>
-         
         </Stack>
         </ScrollReveal>
       </VStack>

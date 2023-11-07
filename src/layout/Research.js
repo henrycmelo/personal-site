@@ -3,39 +3,23 @@ import {
   Text,
   VStack,
   Grid,
-  GridItem,
-  List,
-  ListItem,
-  ListIcon,
 
 } from "@chakra-ui/react";
 import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MdCheckCircle } from "react-icons/md";
+import GridItemComponent from "./GridItemComponent";
 import { useAlertContext } from "../context/alertContext";
+
+
 
 
 const Research = ({
   subtitle,
   description,
-  iconTitle,
-  iconTitle2,
-  iconTitle3,
-  item,
-  item2,
-  item3,
-  item21,
-  item22,
-  item23,
-  item31,
-  item32,
-  item33,
+  data,
   backgroundColor,
-  icon,
-  icon2,
-  icon3
+ 
 }) => {
   const {  colorMode } = useAlertContext();
   return (
@@ -85,101 +69,17 @@ const Research = ({
           gap={1}
           align="center"
         >
-          <GridItem>
-            <ScrollReveal>
-              <FontAwesomeIcon icon={icon} size="4x" color="#FC9039" />
-            </ScrollReveal>
-          </GridItem>
-          <GridItem >
-          <ScrollReveal>
-            <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" textColor={colorMode==='light'? "dark":'light'}>
-              {iconTitle}
-            </Text>{" "}
-            </ScrollReveal>
-          </GridItem>
-          <GridItem pb={6}>
-          <ScrollReveal>
-            <List spacing={1} fontSize="sm" textColor={colorMode==='light'? "dark":'light'} textStyle="body">
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
-
-                {item}
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
-                {item2}
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'}  />
-                {item3}
-              </ListItem>
-            </List>
-            </ScrollReveal>
-          </GridItem>
-
-          <GridItem>
-            <ScrollReveal>
-              <FontAwesomeIcon icon={icon2} size="4x" color="#FC9039" />
-            </ScrollReveal>
-          </GridItem>
-          <GridItem>
-            <ScrollReveal>
-          <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" textColor={colorMode==='light'? "dark":'light'}>
-              {iconTitle2}
-            </Text>{" "}
-            </ScrollReveal>
-          </GridItem>
-          <GridItem pb={6}>
-          <ScrollReveal>
-            <List spacing={1} fontSize="sm" textColor={colorMode==='light'? "dark":'light'} textStyle="body">
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
-
-                {item21}
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
-                {item22}
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
-                {item23}
-              </ListItem>
-            </List>
-            </ScrollReveal>
-          </GridItem>
-
-          <GridItem>
-            <ScrollReveal>
-              <FontAwesomeIcon icon={icon3} size="4x" color="#FC9039" />
-            </ScrollReveal>
-          </GridItem>
-          <GridItem>
-            <ScrollReveal>
-          <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" textColor={colorMode==='light'? "dark":'light'}>
-              {iconTitle3}
-            </Text>{" "}
-            </ScrollReveal>
-          </GridItem>
-          <GridItem pb={6}>
-          <ScrollReveal>
-            <List spacing={1} fontSize="sm" textColor={colorMode==='light'? "dark":'light'} textStyle="body">
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
-
-                {item31}
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
-                {item32}
-              </ListItem>
-              <ListItem>
-                <ListIcon as={MdCheckCircle} color="blue" />
-                {item33}
-              </ListItem>
-            </List>
-            </ScrollReveal>
-          </GridItem>
+          {data.map((item, index) => (
+            
+            <GridItemComponent
+              key={index}
+              icon={item.icon}
+              title={item.iconTitle}
+              items={item.items}
+              color={colorMode==='light'? "dark":'light'}
+            />
+          
+          ))}
         </Grid>
       </VStack>
     </FullScreenSection>
