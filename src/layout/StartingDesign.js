@@ -15,22 +15,8 @@ import { useAlertContext } from "../context/alertContext";
 const StartingDesign = ({
   backgroundColor,
   subtitle,
-  description,
   designData,
-  imageSrc,
-  descriptionImage,
-  subtitle2,
-  subtitle3,
-  imageSrc2,
-  imageSrc22,
-  imageSrc3,
-  descriptionImage2,
-  descriptionImage22,
-  descriptionImage3,
-  description2,
-  description3,
-  title,
-  href
+
 }) => {
   const {  colorMode } = useAlertContext();
   return (

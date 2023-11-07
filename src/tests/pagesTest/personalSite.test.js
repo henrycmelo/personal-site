@@ -1,9 +1,19 @@
+// Mock IntersectionObserver
+global.IntersectionObserver = class IntersectionObserver {
+  constructor() {}
+
+  disconnect() {}
+
+  observe() {}
+
+  unobserve() {}
+};
 import { ChakraProvider, theme } from "@chakra-ui/react";
 import { AlertProvider } from "../../context/alertContext";
-import SteakHouse from "../../pages/SteakHouse";
 import { render } from "@testing-library/react";
+import MyPersonalSite from "../../pages/MyPersonalSite";
 
-describe("steakHouse", () => {
+describe("MyPersonalSite", () => {
   //mocking window.matchMedia that is being used by chakra ui.
 
   window.matchMedia =
@@ -20,7 +30,7 @@ describe("steakHouse", () => {
     render(
       <ChakraProvider theme={theme}>
         <AlertProvider>
-          <SteakHouse />
+          <MyPersonalSite />
         </AlertProvider>
       </ChakraProvider>
     );
@@ -30,7 +40,7 @@ describe("steakHouse", () => {
     const { getByTestId } = render(
       <ChakraProvider theme={theme}>
         <AlertProvider>
-          <SteakHouse />
+        <MyPersonalSite />
         </AlertProvider>
       </ChakraProvider>
     );
