@@ -1,15 +1,11 @@
 import {
   Heading,
-  List,
-  ListItem,
-  ListIcon,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
-import { MdCheckCircle } from "react-icons/md";
 import { useAlertContext } from "../context/alertContext";
 
 const ProjectOverview = ({
