@@ -59,9 +59,9 @@ const MachineLearning= () => {
               backgroundColor={
                  colorMode === "light" ? "light" : "dark"
               }
-              button1="Launch Project"
+              button1="View Dataset"
               button2="View Github"
-              href1={project.links.live}
+              href1={project.links.dataset}
               href2={project.links.github}
             />
           </React.Fragment>
