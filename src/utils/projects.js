@@ -37,7 +37,7 @@ const projects = [
       date: "2022-12",
       tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
       path: "/casestudyarchives",
-      featured: true,
+      featured: false,
       
     },
     {
@@ -75,6 +75,19 @@ const projects = [
       date: "2023-10",
       path: "/machinelearning",
       id: "machinelearning",
+      featured: true,
+    },
+    {
+      title:
+        "A comprehensive Database for Analyzing Student performance in public school",
+      description:
+        "Designed and developed a database for a public school to analyze student performance. ",
+      getImageSrc: () => require("../images/databasecard.png"),
+      tools: [badges["workbench"], badges["sql"], badges["lucidchart"]],
+      role:[role["Database Designer"]],
+      date: "2023-05",
+      path: "/databasedesign",
+      id: "databasedesign",
       featured: true,
     },
   ];

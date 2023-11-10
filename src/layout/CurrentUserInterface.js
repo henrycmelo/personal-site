@@ -15,7 +15,8 @@ import { useAlertContext } from "../context/alertContext";
 
 const CurrentUserInterface = ({
   imageData,
-  backgroundColor
+  backgroundColor,
+  subtitle
 }) => {
   const {  colorMode } = useAlertContext();
   return (
@@ -35,7 +36,7 @@ const CurrentUserInterface = ({
             paddingBottom={12}
             textAlign={"center"}
           >
-            CURRENT USER INTERFACE (UI) DESIGN
+            {subtitle.toUpperCase()}
           </Heading>
         </ScrollReveal>
         <ScrollReveal>

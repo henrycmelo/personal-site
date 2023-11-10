@@ -64,12 +64,14 @@ const MachineLearning= () => {
               href1={project.links.dataset}
               href2={project.links.github}
             />
+            <Footer />
           </React.Fragment>
         ))}
       </>
+      
     )}
 
-    <Footer />
+    
   </main>
   );
 };

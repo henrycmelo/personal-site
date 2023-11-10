@@ -66,12 +66,13 @@ const DjangoPage = () => {
                 href1={project.links.live}
                 href2={project.links.github}
               />
+              <Footer />
             </React.Fragment>
           ))}
         </>
       )}
 
-      <Footer />
+
     </main>
   );
 };

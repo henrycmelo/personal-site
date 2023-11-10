@@ -89,7 +89,7 @@ const Analyze = ({
             </ScrollReveal>
           </Grid>
 
-          <Stack direction={{ base: "column", md: "row" }}>
+          <Stack direction={{ base: "column", md: "column" }}>
             {imageData.map((item, index) => (
               <Card
                 boxShadow="xl"
@@ -105,6 +105,7 @@ const Analyze = ({
                     alt={item.description}
                     background="none"
                     borderRadius="lg"
+                    
                   />
                 </CardBody>
                 <CardFooter justify={"center"}>

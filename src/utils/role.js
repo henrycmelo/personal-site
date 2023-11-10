@@ -7,7 +7,7 @@ export const role = {
     "Product Designer": "Product Designer",
     "UX Engineer": "UX Engineer",
     "UX Researcher": "UX Researcher",
-    "database designer": "database designer",
+    "Database Designer": "database designer",
     "Machine Learning Engineer": "Machine Learning Engineer",
     "Data Analyst": "Data Analyst",
     "Python Developer": "Python Developer",

@@ -14,6 +14,7 @@ import SteakHouse from './pages/SteakHouse';
 import Dash from './pages/Dash';
 import ReactGA from "react-ga";
 import MachineLearning from './pages/MachineLearning';
+import DatabaseDesign from './pages/DatabaseDesign.js';
 
 
 
@@ -41,6 +42,8 @@ function App() {
                 <Route path="mypersonalsite" element={<MyPersonalSite />} />
                 <Route path='steakhouse' element={<SteakHouse/>} />
                 <Route path='dash' element={<Dash/>} />
+                <Route path='machinelearning' element={<MachineLearning/>} />
+                <Route path='databasedesign' element={<DatabaseDesign/>} />
               </Route>
               <Route path="/aboutme" element={<AboutMePage />} />
               <Route path="/contactme" element={<ContactPage />} />
@@ -50,6 +53,7 @@ function App() {
               <Route path='/steakhouse' element={<SteakHouse/>} />
               <Route path='/dash' element={<Dash/>} />
               <Route path="/machinelearning" element={<MachineLearning/>} />
+              <Route path='/databasedesign' element={<DatabaseDesign/>} />
             </Routes>
           
         </main>

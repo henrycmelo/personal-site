@@ -39,6 +39,7 @@ const StartingDesign = ({
               as="h2"
               fontSize={{ base: "4xl", md: "6xl" }}
               paddingBottom={12}
+              align={"center"}
             >
               {subtitle.toUpperCase()}
             </Heading>

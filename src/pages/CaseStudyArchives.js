@@ -62,6 +62,7 @@ const CaseStudyArchives = () => {
                 solution={item.projectOverview.solution}
               />
               <CurrentUserInterface
+                subtitle="CURRENT USER INTERFACE (UI) DESIGN"
                 backgroundColor={colorMode === "light" ? "light" : "dark"}
                 imageData={item.currentState.images}
               />

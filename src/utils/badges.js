@@ -34,4 +34,6 @@ export const badges={
     "seaborn": "https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=seaborn&logoColor=white",
     "dash": "https://img.shields.io/badge/Dash-000000?style=for-the-badge&logo=dash&logoColor=white",
     "plotly": "https://img.shields.io/badge/Plotly-239120?style=for-the-badge&logo=plotly&logoColor=white",
+    "workbench": "https://img.shields.io/badge/MySQL_Workbench-4479A1?style=for-the-badge&logo=mysql&logoColor=white",
+    "lucidchart": "https://img.shields.io/badge/Lucidchart-FF9900?style=for-the-badge&logo=lucidchart&logoColor=white",
 }
