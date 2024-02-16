@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Box, HStack, VStack,  Switch } from "@chakra-ui/react";
+import { Box, HStack, VStack, Switch} from "@chakra-ui/react";
 import logoHenry from "../images/hc_logos_black.png";
-import CustomizedButton from "./CustomizedButton";
 import { useAlertContext } from "../context/alertContext";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,14 +9,10 @@ import { useScrollLock } from "../hooks/useScrollLock";
 import { Link } from "react-router-dom";
 import "animate.css";
 import logoblue from "../images/hc_logo_blue.png";
-
-
-
-
+import PopUp from "./PopUp";
 
 const Header = ({ isHomePage }) => {
   const { handleClick, colorMode, toggleColorMode } = useAlertContext();
-
   const [previousScroll, setPreviousScroll] = useState(0);
   const [showMenu, setShowMenu] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
@@ -61,8 +56,6 @@ const Header = ({ isHomePage }) => {
     };
   }, [previousScroll, hasAnimated]);
 
-
-
   return (
     <>
       {showMenu && (
@@ -92,15 +85,19 @@ const Header = ({ isHomePage }) => {
             >
               <nav>
                 <HStack>
-                <img src={colorMode==='light'? logoHenry:logoblue} alt='logoHenry' style={{ width: "82px", height: "82px" }} className={hasAnimated? "":'heading-animation-down'} />
-   
-                   
+                  <img
+                    src={colorMode === "light" ? logoHenry : logoblue}
+                    alt="logoHenry"
+                    style={{ width: "82px", height: "82px" }}
+                    className={hasAnimated ? "" : "heading-animation-down"}
+                  />
 
-                  <Switch onChange={toggleColorMode} isChecked={colorMode==='dark'}>
-                     {colorMode === "light" ? "Dark Mode OFF" : "Dark Mode ON"}
+                  <Switch
+                    onChange={toggleColorMode}
+                    isChecked={colorMode === "dark"}
+                  >
+                    {colorMode === "light" ? "Dark Mode OFF" : "Dark Mode ON"}
                   </Switch>
-
-                  
                 </HStack>
               </nav>
               <nav>
@@ -110,7 +107,11 @@ const Header = ({ isHomePage }) => {
                       <button
                         className={`${
                           hasAnimated ? "" : "heading-animation-two-down"
-                        } ${colorMode==='light'? 'button':"hoverOtherProjects"}`}
+                        } ${
+                          colorMode === "light"
+                            ? "button"
+                            : "hoverOtherProjects"
+                        }`}
                       >
                         Home
                       </button>
@@ -120,7 +121,11 @@ const Header = ({ isHomePage }) => {
                       <button
                         className={`${
                           hasAnimated ? "" : "heading-animation-three-down"
-                        } ${colorMode==='light'? 'button':"hoverOtherProjects"}`}
+                        } ${
+                          colorMode === "light"
+                            ? "button"
+                            : "hoverOtherProjects"
+                        }`}
                         onClick={handleClick("aboutme")}
                       >
                         About
@@ -130,7 +135,11 @@ const Header = ({ isHomePage }) => {
                       <button
                         className={`${
                           hasAnimated ? "" : "heading-animation-four-down"
-                        } ${colorMode==='light'? 'button':"hoverOtherProjects"}`}
+                        } ${
+                          colorMode === "light"
+                            ? "button"
+                            : "hoverOtherProjects"
+                        }`}
                         onClick={handleClick("projects")}
                       >
                         Work
@@ -140,97 +149,110 @@ const Header = ({ isHomePage }) => {
                       <button
                         className={`${
                           hasAnimated ? "" : "heading-animation-five-down"
-                        } ${colorMode==='light'? 'button':"hoverOtherProjects"}`}
+                        } ${
+                          colorMode === "light"
+                            ? "button"
+                            : "hoverOtherProjects"
+                        }`}
                         onClick={handleClick("contactme")}
                       >
                         {" "}
                         Contact
                       </button>
                     }
-                    {
-                      <a
-                        href={require("../document/resumeHenry.pdf")}
-                        rel="noreferrer"
-                        target="_blank"
-                        className={
-                          hasAnimated ? "" : "heading-animation-six-down"
-                        }
-                      >
-                        {" "}
-                        <CustomizedButton>RESUME</CustomizedButton>{" "}
-                      </a>
-                    }
+                    <PopUp />
                   </HStack>
                 ) : (
                   <HStack spacing={8} display={{ base: "none", md: "flex" }}>
                     <Link to="/">
-                    <button
+                      <button
                         className={`${
                           hasAnimated ? "" : "heading-animation-two-down"
-                        } ${colorMode==='light'? 'button':"hoverOtherProjects"}`}
-                      >Home</button>
+                        } ${
+                          colorMode === "light"
+                            ? "button"
+                            : "hoverOtherProjects"
+                        }`}
+                      >
+                        Home
+                      </button>
                     </Link>
 
                     {
                       <Link to="/aboutme">
                         {" "}
                         <button
-                        className={`${
-                          hasAnimated ? "" : "heading-animation-three-down"
-                        } ${colorMode==='light'? 'button':"hoverOtherProjects"}`}
-                      >About</button>
+                          className={`${
+                            hasAnimated ? "" : "heading-animation-three-down"
+                          } ${
+                            colorMode === "light"
+                              ? "button"
+                              : "hoverOtherProjects"
+                          }`}
+                        >
+                          About
+                        </button>
                       </Link>
                     }
                     {
                       <Link to="/projects">
-                         <button
-                        className={`${
-                          hasAnimated ? "" : "heading-animation-four-down"
-                        } ${colorMode==='light'? 'button':"hoverOtherProjects"}`}
-                      >Work</button>
+                        <button
+                          className={`${
+                            hasAnimated ? "" : "heading-animation-four-down"
+                          } ${
+                            colorMode === "light"
+                              ? "button"
+                              : "hoverOtherProjects"
+                          }`}
+                        >
+                          Work
+                        </button>
                       </Link>
                     }
                     {
                       <Link to="/contactme">
-                         <button
-                        className={`${
-                          hasAnimated ? "" : "heading-animation-five-down"
-                        } ${colorMode==='light'? 'button':"hoverOtherProjects"}`}
-                      > Contact</button>
+                        <button
+                          className={`${
+                            hasAnimated ? "" : "heading-animation-five-down"
+                          } ${
+                            colorMode === "light"
+                              ? "button"
+                              : "hoverOtherProjects"
+                          }`}
+                        >
+                          {" "}
+                          Contact
+                        </button>
                       </Link>
                     }
-                    {
-                      <a
-                        href={require("../document/resumeHenry.pdf")}
-                        rel="noreferrer"
-                        target="_blank"
-                        className={
-                          hasAnimated ? "" : "heading-animation-six-down"
-                        }
-                      >
-                        {" "}
-                        <CustomizedButton>RESUME</CustomizedButton>{" "}
-                      </a>
-                    }
+                    <PopUp />
                   </HStack>
                 )}
-                <VStack
-                  spacing={8}
-                  display={{ base: "flex", md: "none" }}
-                   
-                >
-                  
-                    {" "}
-                    {isOpen ? (
-                      <button   className={colorMode==='light'? 'button-responsive':"hoverOtherProjects"} onClick={handleToggle} style={{ zIndex: "100000" }}>
+                <VStack spacing={8} display={{ base: "flex", md: "none" }}>
+                  {" "}
+                  {isOpen ? (
+                    <button
+                      className={
+                        colorMode === "light"
+                          ? "button-responsive"
+                          : "hoverOtherProjects"
+                      }
+                      onClick={handleToggle}
+                      style={{ zIndex: "100000" }}
+                    >
                       <FontAwesomeIcon icon={faTimes} size="2xl" />
-                      </button>
-                    ) : (
-                      <button   className={colorMode==='light'? 'button':"hoverOtherProjects"} onClick={handleToggle} style={{ zIndex: "100000" }}>
+                    </button>
+                  ) : (
+                    <button
+                      className={
+                        colorMode === "light" ? "button" : "hoverOtherProjects"
+                      }
+                      onClick={handleToggle}
+                      style={{ zIndex: "100000" }}
+                    >
                       <FontAwesomeIcon icon={faBars} size="2xl" id="icon" />
-                      </button>
-                    )}{" "}
-                
+                    </button>
+                  )}{" "}
                   {isHomePage ? (
                     <SmallScreen
                       className={`${

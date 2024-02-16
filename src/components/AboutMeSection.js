@@ -87,24 +87,24 @@ const AboutMeSection = ({ isHomePage }) => {
   const intro = (
     <>  
         <TextIntro>
-          Hello and welcome to my portfolio! My name is Henry and I am a
-          certified <HighlightedText> full stack developer and UX engineer </HighlightedText>
-          with a background in industrial engineering. After working as an
-          entrepreneur, I decided to switch careers and pursue my passion for
-          technology.I am currently <HighlightedText>in grad school at Pratt Institute, studying human-computer
-          interaction </HighlightedText> and gaining valuable skills in programming and design.
+          Hey there, welcome to my world of code and chaos! I'm Henry, a certified
+          <HighlightedText> tech wizard with a knack for cooking up digital delights. </HighlightedText>
+          With a background in industrial engineering, I've decided to ditch the spreadsheets for some serious coding and design adventures.
           <br />
           <br />
-          Although I am just starting my journey in the tech industry, I am
-          eager to learn and grow as a developer, I am always up for a challenge
-          and strive to exceed expectations in every project I work on.
+          I have already survived the wild ride of <HighlightedText>grad school at Pratt Institute,  where I became a guru in human-computer stuff. </HighlightedText> 
+          Picture me as Indiana Jones, but instead of a whip, I wield a keyboard and mouse with precision!
           <br />
           <br />
-          I am currently seeking opportunities as a <HighlightedText> software engineer, full stack developer,
-          front-end or back-end developer,</HighlightedText> and am excited to bring my skills and experience to a new team.
+          I'm still a newbie in the tech universe, I'm eager to tackle any challenge that comes my way. Whether it's front-end, back-end, design, 
+           or any tech in between, I'm your guy!
           <br />
           <br />
-          These are a few technologies I know:
+          So, <HighlightedText>if you need a tech whiz to join your team, you're in luck!</HighlightedText> Let's mix up some digital magic together!
+          <br />
+          <br />
+          
+          Here's a sneak peek at my tech toolbox:
           <br />
           <br />
         
