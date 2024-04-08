@@ -77,7 +77,7 @@ export const anchoredAiData= [
     designData:[
       
       {
-        type: "Digital Wireframes",
+        type: "Digital Wireframes-HEALTH SCENARIO",
         description: `As the initial design phase started, we prioritized tackling the issues users were encountering, drawing from our research findings. This ensures that our project puts the user's needs first.` ,
         images: [
           {
@@ -96,7 +96,7 @@ export const anchoredAiData= [
     
     refiningDesignData:[
       {
-        type: "High fidelity design concepts",
+        type: "High fidelity design concepts-HEALTH SCENARIO",
         description: `
         Transitioning from a low-fidelity to a high-fidelity mockup allows for a more detailed representation of the final product, providing stakeholders with a clearer vision of the user experience. ` ,
         images: [
@@ -111,7 +111,7 @@ export const anchoredAiData= [
         ],
       },
       {
-        type: "Wearable Interface Design",
+        type: "Wearable Interface Design -HEALTH SCENARIO",
         description: `The mockup of the watch interface ensures it works well on different devices. This makes sure that users have a similar and easy experience no matter what device they're using. ` ,
         images: [
           {
@@ -123,7 +123,7 @@ export const anchoredAiData= [
         ],
       },
       {
-        type: "High Fidelity Prototype",
+        type: "High Fidelity Prototype -HEALTH SCENARIO",
         description: `The final high-fidelity prototype showcased user flows for an active pause suggested by Anchored. It creates an active pause based on the user's settings and concludes with an accomplishment summary.` ,
         images: [
           {
