@@ -25,7 +25,7 @@ const projects = [
       date: "2023-03",
       tools: [badges["react"], badges["chakraui"], badges["html"], badges["css"], badges["javascript"], badges["netlify"]],
       path: '/mypersonalsite',
-      featured: true,
+      featured: false,
       
     },
     {
@@ -37,7 +37,7 @@ const projects = [
       date: "2022-12",
       tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
       path: "/casestudyarchives",
-      featured: false,
+      featured: true,
       
     },
     {
@@ -49,6 +49,17 @@ const projects = [
       date: "2022-07",
       tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
       path:"/steakhouse",
+      featured: true
+    },
+    {
+      title: "Designing a personalized AI assistant",
+      description:
+        "Ideated and designed a smart tool that helps improve daily routines, with a focus on health and well-being.", 
+      getImageSrc: () => require("../images/anchoredHP.png"),
+      role:[role["Product Designer"]],
+      date: "2023-12",
+      tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
+      path:"/anchoredai",
       featured: true
     },
     {
@@ -75,7 +86,7 @@ const projects = [
       date: "2023-10",
       path: "/machinelearning",
       id: "machinelearning",
-      featured: true,
+      featured: false,
     },
     {
       title:

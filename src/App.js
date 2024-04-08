@@ -15,7 +15,7 @@ import Dash from './pages/Dash';
 import ReactGA from "react-ga";
 import MachineLearning from './pages/MachineLearning';
 import DatabaseDesign from './pages/DatabaseDesign.js';
-
+import AnchoredAiPage from './pages/AnchoredAiPage.js';
 
 
 
@@ -41,6 +41,7 @@ function App() {
                 <Route path="djangopage" element={<DjangoPage />} />
                 <Route path="mypersonalsite" element={<MyPersonalSite />} />
                 <Route path='steakhouse' element={<SteakHouse/>} />
+                <Route path='anchoredai' element={<AnchoredAiPage/>} />
                 <Route path='dash' element={<Dash/>} />
                 <Route path='machinelearning' element={<MachineLearning/>} />
                 <Route path='databasedesign' element={<DatabaseDesign/>} />
@@ -51,6 +52,7 @@ function App() {
               <Route path="/djangopage" element={<DjangoPage />} />
               <Route path="/mypersonalsite" element={<MyPersonalSite />} />
               <Route path='/steakhouse' element={<SteakHouse/>} />
+              <Route path='/anchoredai' element={<AnchoredAiPage/>} />
               <Route path='/dash' element={<Dash/>} />
               <Route path="/machinelearning" element={<MachineLearning/>} />
               <Route path='/databasedesign' element={<DatabaseDesign/>} />

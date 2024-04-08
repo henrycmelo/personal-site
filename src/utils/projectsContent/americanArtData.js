@@ -27,7 +27,7 @@ export const americanArtData = [
     landingImage:landingProject,
     projectTitle:{
       title: "Enhancing User Experience for Better Donations on Support Page",
-      role: "UX researcher, user testing, UI designer",
+      role: "Product Designer collaborating with three teammates",
       tools: "Figma, Zoom, MiroBoard",
       dateInitial: "2022-10",
       dateFinal: "2022-12",
@@ -54,8 +54,8 @@ export const americanArtData = [
     },
     researchData: {
       subtitle: "Understanding the user target",
-      description: ` I initiated the project by investigating traits of users likely to donate. Using a give.org study on donor behavior, 
-                I developed a user profile focusing on generations with higher Art and Culture charity donations, considering education and employment status.`,
+      description: ` Our team initiated the project by investigating traits of users likely to donate. Using a give.org study on donor behavior, 
+                We developed a user profile focusing on generations with higher Art and Culture charity donations, considering education and employment status.`,
       data: [
         {
           icon: faChild,
@@ -88,7 +88,7 @@ export const americanArtData = [
     },
     analisisData: {
       type: "Affinity Diagram",
-      description: `I used the affinity diagram method to organize the data collected from the user testing sessions.`,
+      description: `We used the affinity diagram method to organize the data collected from the user testing sessions.`,
       data: [
         {
           icon: faChartBar,
@@ -203,8 +203,8 @@ export const americanArtData = [
     conclusionData: [
       {
         type: "Presentation",
-        description: `During a Zoom virtual meeting, I presented the final report to the client, encompassing the methodology and resulting recommendations. 
-        I thoroughly explained the process behind our recommendations, emphasizing their alignment with the client's objective 
+        description: `During a Zoom virtual meeting, We presented the final report to the client, encompassing the methodology and resulting recommendations. 
+        We thoroughly explained the process behind our recommendations, emphasizing their alignment with the client's objective 
         of enhancing the support page.`,
       },
       {
