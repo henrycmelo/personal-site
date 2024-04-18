@@ -43,6 +43,18 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                         </button>
                       </Link>
                     }
+                    {
+                      <button
+                        className={
+                          colorMode === "light"
+                            ? "button"
+                            : "hoverOtherProjects"
+                        }
+                        onClick={handleClick("projects")}
+                      >
+                        Work
+                      </button>
+                    }
 
                     {
                       <button
@@ -57,18 +69,7 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                       </button>
                     }
 
-                    {
-                      <button
-                        className={
-                          colorMode === "light"
-                            ? "button"
-                            : "hoverOtherProjects"
-                        }
-                        onClick={handleClick("projects")}
-                      >
-                        Work
-                      </button>
-                    }
+                    
 
                     {
                       <button
@@ -101,6 +102,19 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                         </button>
                       </Link>
                     }
+                     {
+                      <Link to="/projects">
+                        <button
+                          className={
+                            colorMode === "light"
+                              ? "button"
+                              : "hoverOtherProjects"
+                          }
+                        >
+                          Work
+                        </button>
+                      </Link>
+                    }
 
                     {
                       <Link to="/aboutme">
@@ -117,19 +131,7 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                       </Link>
                     }
 
-                    {
-                      <Link to="/projects">
-                        <button
-                          className={
-                            colorMode === "light"
-                              ? "button"
-                              : "hoverOtherProjects"
-                          }
-                        >
-                          Work
-                        </button>
-                      </Link>
-                    }
+                   
 
                     {
                       <Link to="/contactme">
