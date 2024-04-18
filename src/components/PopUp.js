@@ -30,6 +30,8 @@ import SecondaryButton from "./SecondaryButton";
           isOpen={isOpen}
           leastDestructiveRef={cancelRef}
           onClose={onClose}
+          isCentered
+        
           
           >
             <AlertDialogOverlay>
@@ -40,8 +42,8 @@ import SecondaryButton from "./SecondaryButton";
                 <AlertDialogBody textStyle="body" color={colorMode==="light" ? 'secondDark': 'dark'}>
                   Which resume would you like to see?
                 </AlertDialogBody>
-                <AlertDialogFooter>
-                  <HStack>
+                <AlertDialogFooter justifyContent={'center'} >
+                  <HStack >
                     <a
                         href={require("../document/softwareEng.pdf")}
                         rel="noreferrer"
@@ -59,7 +61,7 @@ import SecondaryButton from "./SecondaryButton";
                         
                       >
                         <SecondaryButton>
-                    UX Designer
+                    Product Designer
                   </SecondaryButton>
                         
                       </a> 

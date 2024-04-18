@@ -33,8 +33,8 @@ function Home() {
           <>
           <Header isHomePage /> 
           {showNavBar && <LandingSection /> }
-          {showNavBar&&<AboutMeSection isHomePage/>} 
           {showNavBar&&<ProjectsSection isHomePage />}
+          {showNavBar&&<AboutMeSection isHomePage/>} 
           {showNavBar&&<ContactMeSection isHomePage />}
           <footer>
           {showNavBar&&<Footer /> }

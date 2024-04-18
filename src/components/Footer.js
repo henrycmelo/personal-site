@@ -55,9 +55,8 @@ const Footer = () => {
               align={align}
               
             >
-              Crafting seamless user experiences and building robust, end-to-end
-              solutions - that's what I do as a UX designer and full-stack
-              developer
+              
+              Designing and building end-to-end solutions that are useful, usable, desirable, and accessible.
             </Text>
             </ScrollReveal>
           </GridItem>

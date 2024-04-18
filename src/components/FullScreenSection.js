@@ -9,7 +9,7 @@ const FullScreenSection = ({ children, isDarkBackground, ...boxProps }) => {
       alignItems="start"
       justifyContent="flex-start"
     >
-      <VStack maxWidth="100vw" {...boxProps}>
+      <VStack  maxWidth="100vw" {...boxProps}>
         {children}
       </VStack>
     </VStack>

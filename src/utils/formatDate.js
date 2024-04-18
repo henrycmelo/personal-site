@@ -9,7 +9,7 @@ export const formatDate=(date)=>{
     }
     return newDate.toLocaleDateString("default", {
       year: "numeric",
-      month: "long",
+      month: "short",
     });
   }
 

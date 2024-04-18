@@ -25,7 +25,7 @@ export const steakHouseData = [
     client: "The Steak House",
     landingImage:steakLanding,
     projectTitle:{
-        title:"Design a food menu app for a steakhouse",
+        title:"Designing a food app for a steakhouse",
         role:"Product designer",
         tools:"Figma, Zoom, Miroboard",
         date:"Dec 2021- July 2022",

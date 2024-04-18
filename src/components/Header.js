@@ -69,7 +69,7 @@ const Header = ({ isHomePage }) => {
           zIndex="overlay"
           alignItems="flex-start"
           width="100vw"
-          boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+          // boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         >
           <Box
             color={colorMode === "light" ? "dark" : "grayBoldDarkMode"}
@@ -116,6 +116,20 @@ const Header = ({ isHomePage }) => {
                         Home
                       </button>
                     </Link>
+                    {
+                      <button
+                        className={`${
+                          hasAnimated ? "" : "heading-animation-four-down"
+                        } ${
+                          colorMode === "light"
+                            ? "button"
+                            : "hoverOtherProjects"
+                        }`}
+                        onClick={handleClick("projects")}
+                      >
+                        Work
+                      </button>
+                    }
 
                     {
                       <button
@@ -131,20 +145,7 @@ const Header = ({ isHomePage }) => {
                         About
                       </button>
                     }
-                    {
-                      <button
-                        className={`${
-                          hasAnimated ? "" : "heading-animation-four-down"
-                        } ${
-                          colorMode === "light"
-                            ? "button"
-                            : "hoverOtherProjects"
-                        }`}
-                        onClick={handleClick("projects")}
-                      >
-                        Work
-                      </button>
-                    }
+                    
                     {
                       <button
                         className={`${
@@ -177,6 +178,21 @@ const Header = ({ isHomePage }) => {
                         Home
                       </button>
                     </Link>
+                    {
+                      <Link to="/projects">
+                        <button
+                          className={`${
+                            hasAnimated ? "" : "heading-animation-four-down"
+                          } ${
+                            colorMode === "light"
+                              ? "button"
+                              : "hoverOtherProjects"
+                          }`}
+                        >
+                          Work
+                        </button>
+                      </Link>
+                    }
 
                     {
                       <Link to="/aboutme">
@@ -194,21 +210,7 @@ const Header = ({ isHomePage }) => {
                         </button>
                       </Link>
                     }
-                    {
-                      <Link to="/projects">
-                        <button
-                          className={`${
-                            hasAnimated ? "" : "heading-animation-four-down"
-                          } ${
-                            colorMode === "light"
-                              ? "button"
-                              : "hoverOtherProjects"
-                          }`}
-                        >
-                          Work
-                        </button>
-                      </Link>
-                    }
+                   
                     {
                       <Link to="/contactme">
                         <button

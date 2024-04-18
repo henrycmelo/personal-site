@@ -7,6 +7,7 @@ import {
   Box,
   Stack,
   SimpleGrid,
+  Highlight,
 } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import { useAlertContext } from "../context/alertContext";
@@ -16,56 +17,50 @@ import { technologiesData, headShotData } from "../utils/dataAboutMe";
 
 
 
-const HighlightedText = ({ children }) => {
-  const {colorMode} = useAlertContext();
-  return(
-    <span style={{color:colorMode==="light" ? "#007183" : "#00A4BD"}}>
-      {children}
-    </span>
-  )
-}
-
 const Headshots = ({ headshots }) => {
   const { colorMode } = useAlertContext();
   return (
     <>
-    
-    {headshots.map((headshot, index) => (
-      <ScrollReveal key={index}>
-        <Image
-          key={index}
-          src={headshot.getImageSrc()}
-          alt={headshot.title}
-          boxSize={{ base: "lg", md: "sm", xl: "xs" }}
-          objectFit={"cover"}
-          objectPosition="50% 20%"
-          border="5px solid #272727"
-          opacity={colorMode === "light" ? "none" : "0.8"}
-        />
-      </ScrollReveal>
-    ))}
+      {headshots.map((headshot, index) => (
+        <ScrollReveal key={index}>
+          <Image
+            key={index}
+            src={headshot.getImageSrc()}
+            alt={headshot.title}
+            boxSize={{ base: "lg", md: "sm", xl: "xs" }}
+            objectFit={"cover"}
+            objectPosition="50% 20%"
+            border="5px solid #272727"
+            opacity={colorMode === "light" ? "none" : "0.8"}
+          />
+        </ScrollReveal>
+      ))}
     </>
-  )
-}
+  );
+};
 
-const Technologies=({technologies})=>{
-  return(
+const Technologies = ({ technologies }) => {
+  return (
     <>
-    <SimpleGrid columns={4} flexWrap='wrap' spacing={4}>
+      <SimpleGrid columns={4} flexWrap="wrap" spacing={4}>
         {technologies.map((technology, index) => (
-          <img key={index} src={badges[technology]} alt={technology} width="70px" />
+          <img
+            key={index}
+            src={badges[technology]}
+            alt={technology}
+            width="70px"
+          />
         ))}
-
-        </SimpleGrid>
+      </SimpleGrid>
     </>
-  )
-}
-const TextIntro=({children})=>{
-  const {colorMode} = useAlertContext();
-  return(
+  );
+};
+const TextIntro = ({ children }) => {
+  const { colorMode } = useAlertContext();
+  return (
     <>
-    <VStack>
-    <Text
+      <VStack>
+        <Text
           maxW="3xl"
           color={colorMode === "light" ? "gray" : "grayDarkMode"}
           size="sm"
@@ -73,53 +68,90 @@ const TextIntro=({children})=>{
         >
           {children}
         </Text>
-        <Technologies technologies={technologiesData}/>
-
-    </VStack>
+        <Technologies technologies={technologiesData} />
+      </VStack>
     </>
-    
-  )
-
-}
+  );
+};
 
 const AboutMeSection = ({ isHomePage }) => {
   const { direction, spacing, align, colorMode } = useAlertContext();
   const intro = (
-    <>  
-        <TextIntro>
-          Hey there, welcome to my world of code and chaos! I'm Henry, a certified
-          <HighlightedText> tech wizard with a knack for cooking up digital delights. </HighlightedText>
-          With a background in industrial engineering, I've decided to ditch the spreadsheets for some serious coding and design adventures.
-          <br />
-          <br />
-          I have already survived the wild ride of <HighlightedText>grad school at Pratt Institute,  where I became a guru in human-computer stuff. </HighlightedText> 
-          Picture me as Indiana Jones, but instead of a whip, I wield a keyboard and mouse with precision!
-          <br />
-          <br />
-          I'm still a newbie in the tech universe, I'm eager to tackle any challenge that comes my way. Whether it's front-end, back-end, design, 
-           or any tech in between, I'm your guy!
-          <br />
-          <br />
-          So, <HighlightedText>if you need a tech whiz to join your team, you're in luck!</HighlightedText> Let's mix up some digital magic together!
-          <br />
-          <br />
-          
-          Here's a sneak peek at my tech toolbox:
-          <br />
-          <br />
-        
-        
-        
+    <>
+      <TextIntro>
+        <Text>
+          <Highlight
+            query={["Engineering intern", "A personal trainer side business"]}
+            styles={{
+              px: "2",
+              py: "1",
+              rounded: "full",
+              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
+            }}
+          >
+            I initially started my career as an engineering intern at a
+            telecommunications company, collecting and analyzing data to improve
+            employee experience. In the meantime, I was running a personal
+            trainer side business that I had started during college.
+          </Highlight>
+        </Text>
+        <br />
+
+        <Text>
+          <Highlight
+            query={["Helping people and tech"]}
+            styles={{
+              px: "2",
+              py: "1",
+              rounded: "full",
+              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
+            }}
+          >
+            After completing my internship, I decided to work full-time on my
+            entrepreneurial pursuit to expand the business. During this
+            experience, I discovered two passions — helping people and tech.
+            First, it was very fulfilling to see how we were able to change a
+            lot of people's lives. And second, as part of this business, I
+            helped create an app for my clients, which sparked a high interest
+            in tech.
+          </Highlight>
+        </Text>
+        <br />
+
+        <Text>
+          <Highlight
+            query={["Master's in Information Experience Design"]}
+            styles={{
+              px: "2",
+              py: "1",
+              rounded: "full",
+              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
+            }}
+          >
+            Following these two interests, I decided to move to NY to pursue a
+            career in tech. I started by learning English and then pursuing a
+            Master's in Information Experience Design. Through this program, I
+            deepened my design and coding skills and had the opportunity to work
+            on interesting projects that proved that tech is a field I will
+            succeed in.
+          </Highlight>
+        </Text>
+
+        <br />
+
+        <Text>
+          These are a few technologies I know: 
+        </Text>
       </TextIntro>
     </>
   );
 
   return (
     <FullScreenSection
-      backgroundColor={colorMode === "light" ? "secondLight" : "darkDarkMode"}
-      alignItems={align}
+      backgroundColor={colorMode==='light'? "light":'dark'}
       spacing={8}
       width="100vw"
+      alignItems={'center'}
       pr={{ base: 8, md: 32 }}
       pl={{ base: 8, md: 32 }}
       pt={{ base: 8, md: 32 }}
@@ -131,6 +163,8 @@ const AboutMeSection = ({ isHomePage }) => {
           <Heading
             as="h1"
             id="aboutme-section"
+            alignItems={'center'}
+            justifyContent='center'
             color={colorMode === "light" ? "dark" : "light"}
           >
             About me
@@ -145,7 +179,6 @@ const AboutMeSection = ({ isHomePage }) => {
           </ScrollReveal>
 
           <Headshots headshots={headShotData} />
-          
         </Stack>
       </VStack>
     </FullScreenSection>

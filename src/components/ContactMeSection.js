@@ -18,7 +18,7 @@ import CustomizedButton from "./CustomizedButton";
 import ScrollReveal from "../hooks/ScrollReveal";
 
 const ContactMeSection = ({ isHomePage }) => {
-  const { onOpen, onClose, align, colorMode } = useAlertContext();
+  const { onOpen, onClose, colorMode } = useAlertContext();
   const [isLoading, setLoading] = useState(false);
   const responses = [
     {
@@ -93,7 +93,7 @@ const ContactMeSection = ({ isHomePage }) => {
     <FullScreenSection
       
       backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'} 
-      alignItems={align}
+      alignItems={'center'}
       spacing={8}
       width="100vw"
       pr={{ base: 8, md: 32 }}

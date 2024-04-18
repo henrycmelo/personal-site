@@ -22,10 +22,7 @@ const Cards = ({
   description,
   imageSrc,
   to,
-  badgeAlt,
-  badgeSrc,
   date,
-  role,
 }) => {
   const { colorMode } = useAlertContext();
 
@@ -36,42 +33,21 @@ const Cards = ({
       boxShadow="xl"
     >
       <CardBody>
-        <Flex alignItems="center">
+        <Flex alignItems="center" justifyContent={'right'}>
           {date ? (
-            <Badge
-              fontSize="2xs"
-              backgroundColor={
-                colorMode === "light" ? "yellow" : "blueDarkMode"
-              }
-              color={colorMode === "light" ? "dark" : "darkDarkMode"}
-              borderRadius="full"
+            <Text
+              fontSize="xs"
+             
+              color={colorMode === "light" ? "gray" : "grayDarkMode"}
               px="2"
               py="1"
               mb={2}
             >
               {formatDate(date)}
-            </Badge>
+            </Text>
           ) : null}
 
-          {role
-            ? role.map((role, index) => (
-                <Badge
-                  fontSize="2xs"
-                  key={index}
-                  backgroundColor={
-                    colorMode === "light" ? "secondDark" : "yellow"
-                  }
-                  color={colorMode === "light" ? "yellow" : "darkDarkMode"}
-                  borderRadius="full"
-                  px="2"
-                  py="1"
-                  mb={2}
-                  ml={2}
-                >
-                  {role}
-                </Badge>
-              ))
-            : null}
+         
         </Flex>
 
         <Box
@@ -128,19 +104,7 @@ const Cards = ({
             {description}
           </Text>
         </Stack>
-        <Flex
-          direction="row"
-          alignItems="flex-start"
-          flexWrap="wrap"
-          maxWidth="100%"
-          gap={2}
-        >
-          {badgeSrc
-            ? badgeSrc.map((badge, index) => (
-                <img key={index} src={badge} alt={badgeAlt} />
-              ))
-            : null}
-        </Flex>
+        
       </CardBody>
 
       <CardFooter justify="flex-end">
