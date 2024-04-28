@@ -9,7 +9,7 @@ import { useScrollLock } from "../hooks/useScrollLock";
 import { Link } from "react-router-dom";
 import "animate.css";
 import logoblue from "../images/hc_logo_blue.png";
-import PopUp from "./PopUp";
+import CustomizedButton from "./CustomizedButton";
 
 const Header = ({ isHomePage }) => {
   const { handleClick, colorMode, toggleColorMode } = useAlertContext();
@@ -161,7 +161,23 @@ const Header = ({ isHomePage }) => {
                         Contact
                       </button>
                     }
-                    <PopUp />
+                    {
+                      
+                        <a
+                          href={require("../document/uxdesigner.pdf")}
+                          rel="noreferrer"
+                          target="_blank"
+                          className={
+                            hasAnimated ? "" : "heading-animation-six-down"
+                          }
+                        >
+                          {" "}
+                          <CustomizedButton>RESUME</CustomizedButton>{" "}
+
+                        </a>
+                      
+                    }
+                    
                   </HStack>
                 ) : (
                   <HStack spacing={8} display={{ base: "none", md: "flex" }}>
@@ -227,7 +243,22 @@ const Header = ({ isHomePage }) => {
                         </button>
                       </Link>
                     }
-                    <PopUp />
+                    {
+                      
+                      <a
+                        href={require("../document/uxdesigner.pdf")}
+                        rel="noreferrer"
+                        target="_blank"
+                        className={
+                          hasAnimated ? "" : "heading-animation-six-down"
+                        }
+                      >
+                        {" "}
+                        <CustomizedButton>RESUME</CustomizedButton>{" "}
+
+                      </a>
+                    
+                  }
                   </HStack>
                 )}
                 <VStack spacing={8} display={{ base: "flex", md: "none" }}>

@@ -2,7 +2,7 @@ import { Box, HStack, VStack } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
 import { Link } from "react-router-dom";
 import React from "react";
-import PopUp from "./PopUp";
+import CustomizedButton from "./CustomizedButton";
 
 const SmallScreen = ({ className, children, isHomePage }) => {
   const { handleClick, colorMode } = useAlertContext();
@@ -69,8 +69,6 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                       </button>
                     }
 
-                    
-
                     {
                       <button
                         className={
@@ -85,7 +83,17 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                       </button>
                     }
 
-                    <PopUp />
+                    {
+                      <a
+                        href={require("../document/uxdesigner.pdf")}
+                        rel="noreferrer"
+                        target="_blank"
+                        
+                      >
+                        {" "}
+                        <CustomizedButton>RESUME</CustomizedButton>{" "}
+                      </a>
+                    }
                   </VStack>
                 ) : (
                   <VStack spacing={20}>
@@ -102,7 +110,7 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                         </button>
                       </Link>
                     }
-                     {
+                    {
                       <Link to="/projects">
                         <button
                           className={
@@ -131,8 +139,6 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                       </Link>
                     }
 
-                   
-
                     {
                       <Link to="/contactme">
                         <button
@@ -148,7 +154,17 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                       </Link>
                     }
 
-                    <PopUp />
+                    {
+                      <a
+                        href={require("../document/uxdesigner.pdf")}
+                        rel="noreferrer"
+                        target="_blank"
+                        
+                      >
+                        {" "}
+                        <CustomizedButton>RESUME</CustomizedButton>{" "}
+                      </a>
+                    }
                   </VStack>
                 )}
               </Box>

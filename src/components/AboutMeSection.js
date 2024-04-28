@@ -15,8 +15,6 @@ import ScrollReveal from "../hooks/ScrollReveal";
 import { badges } from "../utils/badges";
 import { technologiesData, headShotData } from "../utils/dataAboutMe";
 
-
-
 const Headshots = ({ headshots }) => {
   const { colorMode } = useAlertContext();
   return (
@@ -81,7 +79,7 @@ const AboutMeSection = ({ isHomePage }) => {
       <TextIntro>
         <Text>
           <Highlight
-            query={["Engineering intern", "A personal trainer side business"]}
+            query={["end-to-end designer", "Optimizing processes", "user experiences", "tough problems"]}
             styles={{
               px: "2",
               py: "1",
@@ -89,17 +87,17 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            I initially started my career as an engineering intern at a
-            telecommunications company, collecting and analyzing data to improve
-            employee experience. In the meantime, I was running a personal
-            trainer side business that I had started during college.
+            I am an end-to-end designer with over 11 years of experience in
+            optimizing processes to create better user experiences. I love
+            diving into tough problems and working closely with others to solve
+            them.
           </Highlight>
         </Text>
         <br />
 
         <Text>
           <Highlight
-            query={["Helping people and tech"]}
+            query={["ideation to implementation."]}
             styles={{
               px: "2",
               py: "1",
@@ -107,20 +105,17 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            After completing my internship, I decided to work full-time on my
-            entrepreneurial pursuit to expand the business. During this
-            experience, I discovered two passions — helping people and tech.
-            First, it was very fulfilling to see how we were able to change a
-            lot of people's lives. And second, as part of this business, I
-            helped create an app for my clients, which sparked a high interest
-            in tech.
+            Every day, I enjoy figuring out what users need, coming up with new
+            ideas, and making them real. Whether it’s drawing sketches or
+            fine-tuning prototypes, I am passionate about every step of the
+            design process from ideation to implementation.
           </Highlight>
         </Text>
         <br />
 
         <Text>
           <Highlight
-            query={["Master's in Information Experience Design"]}
+            query={["My background in engineering",  "master’s in human-computer interaction"]}
             styles={{
               px: "2",
               py: "1",
@@ -128,30 +123,61 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            Following these two interests, I decided to move to NY to pursue a
-            career in tech. I started by learning English and then pursuing a
-            Master's in Information Experience Design. Through this program, I
-            deepened my design and coding skills and had the opportunity to work
-            on interesting projects that proved that tech is a field I will
-            succeed in.
+            My background in engineering, focusing on digital experiences, gives
+            me a solid and systematic way of working. And my time during my
+            master’s in human-computer interaction taught me a lot about
+            teamwork and self-improvement.
           </Highlight>
         </Text>
 
         <br />
 
         <Text>
-          These are a few technologies I know: 
+          <Highlight
+            query={["learning something new"]}
+            styles={{
+              px: "2",
+              py: "1",
+              rounded: "full",
+              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
+            }}
+          >
+            Outside of work, I am all about sports. I played soccer in college,
+            and for the past years, I have been learning how to play tennis. I
+            am always up for learning something new.
+          </Highlight>
         </Text>
+
+        <br />
+
+        <Text>
+          <Highlight
+            query={["collaborative work"]}
+            styles={{
+              px: "2",
+              py: "1",
+              rounded: "full",
+              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
+            }}
+          >
+            I am here to create experiences through innovative solutions that make a
+            difference via collaborative work.
+          </Highlight>
+        </Text>
+
+        <br />
+
+        <Text>These are a few technologies I know:</Text>
       </TextIntro>
     </>
   );
 
   return (
     <FullScreenSection
-      backgroundColor={colorMode==='light'? "light":'dark'}
+      backgroundColor={colorMode === "light" ? "light" : "dark"}
       spacing={8}
       width="100vw"
-      alignItems={'center'}
+      alignItems={"center"}
       pr={{ base: 8, md: 32 }}
       pl={{ base: 8, md: 32 }}
       pt={{ base: 8, md: 32 }}
@@ -163,8 +189,8 @@ const AboutMeSection = ({ isHomePage }) => {
           <Heading
             as="h1"
             id="aboutme-section"
-            alignItems={'center'}
-            justifyContent='center'
+            alignItems={"center"}
+            justifyContent="center"
             color={colorMode === "light" ? "dark" : "light"}
           >
             About me
