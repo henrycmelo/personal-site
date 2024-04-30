@@ -79,7 +79,12 @@ const AboutMeSection = ({ isHomePage }) => {
       <TextIntro>
         <Text>
           <Highlight
-            query={["end-to-end designer", "Optimizing processes", "user experiences", "tough problems"]}
+            query={[
+              "end-to-end designer",
+              "Optimizing processes",
+              "user experiences",
+              "tough problems",
+            ]}
             styles={{
               px: "2",
               py: "1",
@@ -115,7 +120,10 @@ const AboutMeSection = ({ isHomePage }) => {
 
         <Text>
           <Highlight
-            query={["My background in engineering",  "master’s in human-computer interaction"]}
+            query={[
+              "My background in engineering",
+              "master’s in human-computer interaction",
+            ]}
             styles={{
               px: "2",
               py: "1",
@@ -127,6 +135,26 @@ const AboutMeSection = ({ isHomePage }) => {
             me a solid and systematic way of working. And my time during my
             master’s in human-computer interaction taught me a lot about
             teamwork and self-improvement.
+          </Highlight>
+        </Text>
+
+        <br />
+
+        <Text>
+          <Highlight
+            query={[
+              "Proficient in Python, TypeScript, and JavaScript"
+            ]}
+            styles={{
+              px: "2",
+              py: "1",
+              rounded: "full",
+              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
+            }}
+          >
+            Proficient in Python, TypeScript, and JavaScript, I bring a
+            versatile skill set to my design work, allowing for seamless
+            integration of design and development processes.
           </Highlight>
         </Text>
 
@@ -160,8 +188,8 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            I am here to create experiences through innovative solutions that make a
-            difference via collaborative work.
+            I am here to create experiences through innovative solutions that
+            make a difference via collaborative work.
           </Highlight>
         </Text>
 
