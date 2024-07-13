@@ -92,10 +92,9 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            I am an end-to-end designer with over 9 years of experience in
-            optimizing processes to create better user experiences. I love
-            diving into tough problems and working closely with others to solve
-            them.
+            I am an end-to-end designer with over 2+ years of experience in product design 
+            and 7+ years optimizing processes as a strategist to create better user experiences. 
+            I love diving into tough problems and working closely with others to solve them.
           </Highlight>
         </Text>
         <br />
