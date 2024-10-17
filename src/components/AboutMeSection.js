@@ -92,7 +92,7 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            I am an end-to-end designer with over 8+ years of experience, specializing in 
+            I am an end-to-end designer UX researcher with over 8+ years of experience, specializing in 
             data-driven solutions to create better user experiences. 
             I love diving into tough problems and working closely with others to solve them.
           </Highlight>
@@ -101,7 +101,7 @@ const AboutMeSection = ({ isHomePage }) => {
 
         <Text>
           <Highlight
-            query={["ideation to implementation."]}
+            query={["qualitative and quantitative research"]}
             styles={{
               px: "2",
               py: "1",
@@ -109,10 +109,10 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            Every day, I enjoy figuring out what users need, coming up with new
-            ideas, and making them real. Whether it’s drawing sketches or
-            fine-tuning prototypes, I am passionate about every step of the
-            design process from ideation to implementation.
+            Every day, I enjoy uncovering user needs through qualitative and quantitative research, 
+            generating innovative ideas, and bringing them to life. Whether I’m sketching concepts 
+            or fine-tuning prototypes, I am passionate about every step of the design process, from 
+            ideation to implementation.
           </Highlight>
         </Text>
         <br />
@@ -120,7 +120,7 @@ const AboutMeSection = ({ isHomePage }) => {
         <Text>
           <Highlight
             query={[
-              "My background in engineering",
+              "research",
               "master’s in human-computer interaction",
             ]}
             styles={{
@@ -130,7 +130,7 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            My background in engineering, focusing on digital experiences, gives
+            My background in research, focusing on digital experiences, gives
             me a solid and systematic way of working. And my time during my
             master’s in human-computer interaction taught me a lot about
             teamwork and self-improvement.
