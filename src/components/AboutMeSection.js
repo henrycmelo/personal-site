@@ -80,7 +80,7 @@ const AboutMeSection = ({ isHomePage }) => {
         <Text>
           <Highlight
             query={[
-              "end-to-end designer",
+              "end-to-end designer & UX researcher",
               "Optimizing processes",
               "user experiences",
               "tough problems",
@@ -92,7 +92,7 @@ const AboutMeSection = ({ isHomePage }) => {
               bg: colorMode === "light" ? "#FED766" : "#00A4BD",
             }}
           >
-            I am an end-to-end designer UX researcher with over 8+ years of experience, specializing in 
+            I am an end-to-end designer & UX researcher with over 8+ years of experience, specializing in 
             data-driven solutions to create better user experiences. 
             I love diving into tough problems and working closely with others to solve them.
           </Highlight>
