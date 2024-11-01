@@ -52,10 +52,27 @@ const AnchoredAiPage = () => {
               />
               <Research
                 backgroundColor={colorMode === "light" ? "light" : "dark"}
+                title={true} 
+                subtitle={item.researchSecondaryData.subtitle}
+                description={item.researchSecondaryData.description}
+                data={item.researchSecondaryData.data}
+              
+                
+              /> 
+               {/* <Research
+                backgroundColor={colorMode === "light" ? "light" : "dark"}
+                title={false}
+                subtitle={item.researchPrimaryData.subtitle}
+                description={item.researchPrimaryData.description}
+                data={item.researchPrimaryData.data}
+                
+              /> 
+              <Research
+                backgroundColor={colorMode === "light" ? "light" : "dark"}
                 subtitle={item.researchData.subtitle}
                 description={item.researchData.description}
                 data={item.researchData.data}
-              />
+              /> */}
 
               <Personas
                 backgroundColor={colorMode === "light" ? "secondLight" : "darkDarkMode"}

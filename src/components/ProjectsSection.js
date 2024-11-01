@@ -68,6 +68,7 @@ const ProjectsSection = ({ isHomePage }) => {
         ):( <Text>Loading...</Text>)
       ):
       projects? (projects.sort(sortByDate).map((project) => (
+        project.hide? null :
         <ScrollReveal key={project.title}><Cards
           key={project.title}
           title={project.title}

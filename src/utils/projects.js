@@ -14,6 +14,7 @@ const projects = [
       tools: [badges["python"], badges["django"], badges["html"], badges["css"], badges["bootstrap"], badges["amazonaws"], badges["heroku"]],
       id:'djangoimage',
       featured:false,
+      hide:true,
      
     },
     {
@@ -26,6 +27,7 @@ const projects = [
       tools: [badges["react"], badges["chakraui"], badges["html"], badges["css"], badges["javascript"], badges["netlify"]],
       path: '/mypersonalsite',
       featured: false,
+      hide:true,
       
     },
     {
@@ -38,6 +40,8 @@ const projects = [
       tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
       path: "/casestudyarchives",
       featured: true,
+      hide:false
+    
       
     },
     {
@@ -49,7 +53,8 @@ const projects = [
       date: "2022-07",
       tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
       path:"/steakhouse",
-      featured: true
+      featured: true,
+      hide:false
     },
     {
       title: "Generative AI App",
@@ -60,7 +65,8 @@ const projects = [
       date: "2023-12",
       tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
       path:"/anchoredai",
-      featured: true
+      featured: true,
+      hide:false,
     },
     {
       title:
@@ -74,6 +80,7 @@ const projects = [
       path: "/dash",
       id: "dash",
       featured:false,
+      hide:true,
     },
     {
       title:
@@ -87,6 +94,7 @@ const projects = [
       path: "/machinelearning",
       id: "machinelearning",
       featured: false,
+      hide:true,
     },
     {
       title:
@@ -99,7 +107,8 @@ const projects = [
       date: "2023-05",
       path: "/databasedesign",
       id: "databasedesign",
-      featured: true,
+      featured: false,
+      hide:true,
     },
   ];
   

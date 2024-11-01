@@ -6,24 +6,27 @@ import {
     List,
     ListItem,
     ListIcon,
+    HStack,
+    Highlight
   
   } from "@chakra-ui/react";
   import { useAlertContext } from "../context/alertContext";
   import ScrollReveal from "../hooks/ScrollReveal";
 
-const GridItemComponent = ({ icon, title, items, color }) => {
+const GridItemComponent = ({ icon, title, items, color,query }) => {
     const {  colorMode } = useAlertContext();
     return (
       <>
-        <GridItem>
-          <ScrollReveal>
-            {icon ? <FontAwesomeIcon icon={icon} size="4x" color="#FC9039" /> : null}
-  
-          </ScrollReveal>
+        <GridItem >
+         
         </GridItem>
         <GridItem>
           <ScrollReveal>
-            {title? <Text fontSize={{base:"lg", md:"2xl"}} textStyle="h6" textColor={color}>{title}</Text>:null}
+            <HStack align={'center'}>
+            {title? <Text fontSize={{base:"lg", md:"2xl"}}  align={'center'} textStyle="h6" textColor={color}>{title}</Text>:null}
+            {icon ? <FontAwesomeIcon icon={icon} size="2x"  color="#FC9039" /> : null}
+            </HStack>
+     
             
           </ScrollReveal>
         </GridItem>
@@ -31,10 +34,11 @@ const GridItemComponent = ({ icon, title, items, color }) => {
           <ScrollReveal>
             <List spacing={1} fontSize={{base:"lg", md:"2xl"}} textColor={color} textStyle="body">
               {items && items.map((item, index) => (
+                
                 <ListItem key={index}>
                   <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
-  
-                  {item}
+                  <Highlight ignoreCase query={query? query : null} styles={{  color:'inherit' }}>{item}</Highlight>
+                  
                 </ListItem>
               ))}
             </List>

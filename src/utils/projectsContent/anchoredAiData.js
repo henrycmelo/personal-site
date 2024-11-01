@@ -1,7 +1,9 @@
 import {
   faCalendarCheck,
   faTasks,
-  faHandshake
+  faHandshake,
+  faLightbulb,
+  faClipboardQuestion
 } from "@fortawesome/free-solid-svg-icons";
 import persona1 from "../../images/Anchored personas-1.png";
 import story from "../../images/anchored-story.png";
@@ -12,6 +14,7 @@ import refine1 from "../../images/refine1-anchored.png";
 import refine2 from "../../images/refine2-anchored.png";
 import watch from "../../images/anchored-watch.png"
 import hifiproto from "../../images/anchored-hifi.gif";
+
 
 
 
@@ -29,17 +32,67 @@ export const anchoredAiData= [
     },
     projectOverview: {
       description:
-      `is a concept created by the team that refers to the process of integrating a AI personalized assistant into a user's daily routines `,
-      challenge:
-      "Create an app that works on different devices and uses Artificial Intelligence.",
+      `In today’s fast-paced world, people struggle to manage their daily routines effectively, 
+      juggling tasks related to health, work, 
+      and personal life across multiple platforms and devices. 
+      Existing tools are often fragmented, leading to stress, lack of productivity, and difficulty maintaining a healthy balance. 
+      Additionally, users are increasingly concerned about the privacy and security of their personal data, especially when integrating AI solutions into their daily routines. `,
+      challenge:[
+        "Simplify daily management by creating a single, AI-driven tool that seamlessly integrates tasks across health, productivity, and personal scheduling.",
+        "Enhance well-being by using AI to provide personalized recommendations that reduce stress and improve health outcomes.",
+        "Ensure trust and security by designing a user-centered app that prioritizes data privacy, giving users control over their personal information.",
+        "Cross-device integration to create a seamless user experience, allowing users to manage their tasks and health across multiple devices, including wearables."
+
+      ]
+      ,
       solution:
-      "A smart tool that helps improve daily routines, with a focus on health and well-being.",
+      "A smart multi-device app that enhances daily routines by automating tasks and providing personalized reminders focused on health, productivity, and calendar integration.",
+      
+    },
+    researchSecondaryData: {
+      subtitle: "Secondary Research",
+      description:"To supplement our primary research, we explored data on the habits and routines of Americans in managing daily activities, health, and work-life balance:",
+      data:[
+        {
+          icon: faLightbulb,
+          iconTitle: "Key Findings",
+          items:[
+            "According to the American Psychological Association (APA), 75% of Americans experience regular stress, with 43% reporting that it negatively impacts their productivity and well-being.",
+            "A Gallup survey found that 60% of Americans struggle with maintaining a healthy work-life balance, leading to burnout and declining health.",
+            "75% of Americans use multiple devices (e.g., smartphones, laptops, wearables) daily, highlighting the need for seamless cross-device integration."
+
+          ],
+          // query:['75% of Americans experience regular stress', '0% of Americans struggle with maintaining a healthy work-life balance', '75% of Americans use multiple devices (e.g., smartphones, laptops, wearables) daily']
+        }],
+        
+
+    },
+    researchPrimaryData: {
+      subtitle: "Primary Research",
+      description:"To design a personalized AI assistant that truly integrates into users' daily lives, we conducted both surveys and user interviews with a diverse range of participants. Our goal was to understand their pain points, needs, and expectations from a tool focused on productivity, health, and well-being.",
+      data:[
+        {
+          icon: faClipboardQuestion,
+          iconTitle: "Methodology",
+          items:[
+            "Surveys: Gathered quantitative insights on how people manage daily tasks, stress, and personal health. This helped us identify broad patterns in how users interact with various tools and apps.",
+            "User Interviews: Through one-on-one interviews, we gained deeper qualitative insights. We used these to develop empathy maps and affinity diagrams, identifying key themes such as a strong desire for data privacy, simplified task management, and personalized health insights.",
+            "Competitive Analysis: Studied existing AI assistants and productivity tools to understand their strengths and weaknesses. This helped us identify opportunities for differentiation and innovation in our design.",
+            
+
+          ]
+        }
+     
+          
+        ]
+
     },
    
     researchData: {
-      subtitle: "Understanding the user target",
-      description: `We conducted a survey and user interviews to create empathy maps and affinity diagrams 
-              so we can further understand out users & solidify the unique value our product can provide.`,
+      subtitle: "Primary Research: Understanding User Needs",
+      description: `We started by conducting surveys and user interviews with potential users. This gave us insight into their daily routines, challenges with existing productivity tools, and their needs for a personalized assistant. 
+      Key insights focused on building trust and simplifying complex daily routines.`,
+      
       data: [
         {
           icon: faHandshake,

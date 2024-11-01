@@ -1,15 +1,18 @@
 import {
   Heading,
+  ListItem,
   Text,
   VStack,
+  List,
+  ListIcon
 } from "@chakra-ui/react";
 import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
 import ScrollReveal from "../hooks/ScrollReveal";
 import { useAlertContext } from "../context/alertContext";
+import { MdCheckCircle } from "react-icons/md";
 
 const ProjectOverview = ({
-  client,
   description,
   challenge,
   solution,
@@ -27,16 +30,17 @@ const ProjectOverview = ({
     >
      
         <VStack
-          alignItems={"center"}
-          justifyContent={"center"}
+          alignItems={"left"}
+          justifyContent={"left"}
           width={{ base: "80vw", md: "60vw" }}
         >
           <ScrollReveal>
             <Heading
               as="h2"
-              fontSize={{ base: "4xl", md: "6xl" }}
+              fontSize={{ base: "4xl", md: "5xl" }}
+              fontWeight={'thin'}
               paddingBottom={12}
-              align={"center"}
+              align={"left"}
             >
               PROJECT OVERVIEW
             </Heading>
@@ -49,7 +53,7 @@ const ProjectOverview = ({
               textColor={colorMode === "light" ? "blue" : "blueDarkMode"}
               paddingBottom={4}
             >
-              Client
+              Problem
             </Text>
           </ScrollReveal>
           <ScrollReveal>
@@ -57,10 +61,10 @@ const ProjectOverview = ({
               fontSize={{ base: "lg", md: "2xl" }}
               textStyle="body"
               textColor={colorMode === "light" ? "dark" : "light"}
-              textAlign={"center"}
+              textAlign={"left"}
               paddingBottom={8}
             >
-              <Text as="b">{client}</Text> {description}
+              {description}
             </Text>
           </ScrollReveal>
 
@@ -71,19 +75,29 @@ const ProjectOverview = ({
               textColor={colorMode === "light" ? "blue" : "blueDarkMode"}
               paddingBottom={4}
             >
-              Challenge
+              Objective
             </Text>
           </ScrollReveal>
           <ScrollReveal>
+          <List>
             <Text
               fontSize={{ base: "lg", md: "2xl" }}
               textStyle="body"
               textColor={colorMode === "light" ? "dark" : "light"}
-              textAlign={"center"}
+              textAlign={"left"}
               paddingBottom={8}
             >
-              {challenge}
+              
+                {challenge && challenge.map((item, index)=>(
+                  <ListItem key={index}>
+                    <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'}/>
+                      {item}
+                  </ListItem>
+                ))}
+
+            
             </Text>
+            </List>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -101,7 +115,7 @@ const ProjectOverview = ({
               fontSize={{ base: "lg", md: "2xl" }}
               textStyle="body"
               textColor={colorMode === "light" ? "dark" : "light"}
-              textAlign={"center"}
+              textAlign={"left"}
             >
               {solution}
             </Text>
