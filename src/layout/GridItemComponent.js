@@ -37,7 +37,7 @@ const GridItemComponent = ({ icon, title, items, color,query }) => {
                 
                 <ListItem key={index}>
                   <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
-                  <Highlight ignoreCase query={query? query : null} styles={{  color:'inherit' }}>{item}</Highlight>
+                  <Highlight ignoreCase query={query} styles={{  color:'inherit', fontWeight:'semibold' }}>{item}</Highlight>
                   
                 </ListItem>
               ))}

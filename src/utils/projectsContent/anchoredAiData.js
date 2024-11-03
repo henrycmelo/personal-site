@@ -14,6 +14,9 @@ import refine1 from "../../images/refine1-anchored.png";
 import refine2 from "../../images/refine2-anchored.png";
 import watch from "../../images/anchored-watch.png"
 import hifiproto from "../../images/anchored-hifi.gif";
+import googleAssistant from "../../images/googleAssistant.png";
+import siriLogo from "../../images/siriLogo.png";
+import todoistLogo from "../../images/todoistLogo.png";
 
 
 
@@ -64,6 +67,7 @@ export const anchoredAiData= [
           ],
           // query:['75% of Americans experience regular stress', '0% of Americans struggle with maintaining a healthy work-life balance', '75% of Americans use multiple devices (e.g., smartphones, laptops, wearables) daily']
         }],
+      conclusion:"This secondary research highlighted key areas where a tool like Anchored could provide real value—helping users reduce stress, stay productive, and improve their health by integrating their routines into a single platform."
         
 
     },
@@ -80,7 +84,8 @@ export const anchoredAiData= [
             "Competitive Analysis: Studied existing AI assistants and productivity tools to understand their strengths and weaknesses. This helped us identify opportunities for differentiation and innovation in our design.",
             
 
-          ]
+          ],
+          query:['Surveys', 'User Interviews', 'Competitive Analysis']
         }
      
           
@@ -89,7 +94,7 @@ export const anchoredAiData= [
     },
    
     researchData: {
-      subtitle: "Primary Research: Understanding User Needs",
+      subtitle: "Research Synthesis",
       description: `We started by conducting surveys and user interviews with potential users. This gave us insight into their daily routines, challenges with existing productivity tools, and their needs for a personalized assistant. 
       Key insights focused on building trust and simplifying complex daily routines.`,
       
@@ -111,6 +116,38 @@ export const anchoredAiData= [
         },
       ],
     },
+
+    competitiveAnalysisData: {
+      subtitle: "Competitive Analysis",
+      description: `To better understand the landscape, we analyzed three existing AI-powered apps that focus on daily routines, health, and productivity`,
+      
+      data: [
+        {
+          image: googleAssistant,
+          title: "Strengths",
+          items: ["Powerful AI capabilities with voice recognition and smart suggestions.", "Seamless integration with Google's ecosystem (Calendar, Maps, etc.).", "Cross-device functionality, including wearables, smartphones, and smart home devices."],
+          title2: "Weaknesses",
+          items2:['Lacks deep personalization tailored specifically to health and wellness.', 'Privacy concerns as users worry about data collection.', 'Overwhelming interface for those who only need specific features (not all users need every functionality).']
+
+        },
+        {
+          image: siriLogo,
+          title: "Strengths",
+          items: ["Excellent focus on health and well-being, with in-depth tracking of activity, heart rate, and sleep.", "Strong privacy and data security measures.", "Allows for automating tasks through Siri Shortcuts, integrating with other apps like Calendar."],
+          title2: "Weaknesses",
+          items2:['Limited integration outside of the Apple ecosystem (difficult for non-iPhone users to engage).', 'Not designed to manage complex daily routines or productivity in a cohesive manner.', 'Customization and personalization options are relatively basic and require manual input to set up automations.' ]
+        },
+        {
+          image: todoistLogo,
+          title: "Strengths",
+          items: ["Simple and intuitive task management interface, ideal for organizing daily tasks and projects.", "Cross-platform integration with various devices and apps.", "Great for productivity with customizable labels, due dates, and priorities."],
+          title2: "Weaknesses",
+          items2:['Lacks a focus on health and well-being, limiting its ability to address holistic life management.', 'No AI integration for automated suggestions or personalized insights.',  'Privacy concerns due to third-party integrations with data potentially being shared between platforms.']
+        },
+      ],
+      conclusion:"This competitive analysis helped us define Anchored's unique value proposition by focusing on creating a personalized, secure AI assistant that seamlessly integrates health and productivity into one platform, while ensuring cross-device functionality and ease of use."
+    },
+
     userPersonasData:{
       type: "Comprehending user needs",
       description: `We created a persona and a storyboard to visually outline how our potential user will interact with the product.`,

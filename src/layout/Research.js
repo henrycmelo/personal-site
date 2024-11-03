@@ -21,6 +21,7 @@ const Research = ({
   description,
   data,
   backgroundColor,
+  conclusion
  
 }) => {
   const {  colorMode } = useAlertContext();
@@ -87,6 +88,19 @@ const Research = ({
           ))}
           
         </Grid>
+        <ScrollReveal>
+          <Text
+            fontSize={{base:"lg", md:"2xl"}}
+            textStyle="body"
+            textColor={colorMode==='light'? "dark":'light'}
+            textAlign={"left"}
+            paddingBottom={8}
+            fontStyle={'italic'}
+            fontWeight={'bold'}
+          >
+            {conclusion || " "}
+          </Text>
+        </ScrollReveal>
       </VStack>
     </FullScreenSection>
   );

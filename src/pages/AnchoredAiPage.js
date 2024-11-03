@@ -12,6 +12,8 @@ import ButtonsBottom from "../layout/ButtonsBottom";
 import { useAlertContext } from "../context/alertContext";
 import { anchoredAiData } from "../utils/projectsContent/anchoredAiData";
 import Conclusion from "../layout/Conclusion";
+import CompetitiveAnalysis from "../layout/CompetitiveAnalysis";
+
 
 const AnchoredAiPage = () => {
   const {  colorMode } = useAlertContext();
@@ -56,10 +58,11 @@ const AnchoredAiPage = () => {
                 subtitle={item.researchSecondaryData.subtitle}
                 description={item.researchSecondaryData.description}
                 data={item.researchSecondaryData.data}
+                conclusion={item.researchSecondaryData.conclusion}
               
                 
               /> 
-               {/* <Research
+               <Research
                 backgroundColor={colorMode === "light" ? "light" : "dark"}
                 title={false}
                 subtitle={item.researchPrimaryData.subtitle}
@@ -72,7 +75,15 @@ const AnchoredAiPage = () => {
                 subtitle={item.researchData.subtitle}
                 description={item.researchData.description}
                 data={item.researchData.data}
-              /> */}
+              /> 
+
+              <CompetitiveAnalysis 
+                backgroundColor={colorMode === "light" ? "light" : "dark"}
+                subtitle={item.competitiveAnalysisData.subtitle}
+                description={item.competitiveAnalysisData.description}
+                data={item.competitiveAnalysisData.data}
+                conclusion={item.competitiveAnalysisData.conclusion}
+                />
 
               <Personas
                 backgroundColor={colorMode === "light" ? "secondLight" : "darkDarkMode"}
