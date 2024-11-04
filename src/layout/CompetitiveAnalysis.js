@@ -77,8 +77,8 @@ const CompetitiveAnalysis = ({
 
         <Grid
           templateColumns="repeat(3, 1fr)"
-          templateRows="repeat(2, 1fr)"
-          gap={1}
+          templateRows="repeat(2, 1/2fr)"
+          gap={12}
           align="left"
         >
           {data.map((item, index) => (
@@ -95,7 +95,7 @@ const CompetitiveAnalysis = ({
                 </Text>
                 <List
                   spacing={1}
-                  fontSize={{ base: "lg", md: "2xl" }}
+                  fontSize={{ base: "xs", md: "md" }}
                   textColor={color}
                   textStyle="body"
                   pb={8}
@@ -133,7 +133,7 @@ const CompetitiveAnalysis = ({
                 </Text>
                 <List
                   spacing={1}
-                  fontSize={{ base: "lg", md: "2xl" }}
+                  fontSize={{ base: "xs", md: "md" }}
                   textColor={color}
                   textStyle="body"
                 >

@@ -143,7 +143,7 @@ export const anchoredAiData= [
           items: ["Simple and intuitive task management interface, ideal for organizing daily tasks and projects.", "Cross-platform integration with various devices and apps.", "Great for productivity with customizable labels, due dates, and priorities."],
           title2: "Weaknesses",
           items2:['Lacks a focus on health and well-being, limiting its ability to address holistic life management.', 'No AI integration for automated suggestions or personalized insights.',  'Privacy concerns due to third-party integrations with data potentially being shared between platforms.']
-        },
+        }
       ],
       conclusion:"This competitive analysis helped us define Anchored's unique value proposition by focusing on creating a personalized, secure AI assistant that seamlessly integrates health and productivity into one platform, while ensuring cross-device functionality and ease of use."
     },
