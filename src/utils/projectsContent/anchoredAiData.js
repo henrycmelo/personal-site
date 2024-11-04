@@ -3,7 +3,7 @@ import {
   faTasks,
   faHandshake,
   faLightbulb,
-  faClipboardQuestion
+  faClipboardQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 import persona1 from "../../images/Anchored personas-1.png";
 import story from "../../images/anchored-story.png";
@@ -17,6 +17,9 @@ import hifiproto from "../../images/anchored-hifi.gif";
 import googleAssistant from "../../images/googleAssistant.png";
 import siriLogo from "../../images/siriLogo.png";
 import todoistLogo from "../../images/todoistLogo.png";
+import affinityDiagramAnchored from "../../images/affinityDiagramAnchored.jpg";
+
+
 
 
 
@@ -79,9 +82,10 @@ export const anchoredAiData= [
           icon: faClipboardQuestion,
           iconTitle: "Methodology",
           items:[
+            "Competitive Analysis: Studied existing AI assistants and productivity tools to understand their strengths and weaknesses. This helped us identify opportunities for differentiation and innovation in our design.",
             "Surveys: Gathered quantitative insights on how people manage daily tasks, stress, and personal health. This helped us identify broad patterns in how users interact with various tools and apps.",
             "User Interviews: Through one-on-one interviews, we gained deeper qualitative insights. We used these to develop empathy maps and affinity diagrams, identifying key themes such as a strong desire for data privacy, simplified task management, and personalized health insights.",
-            "Competitive Analysis: Studied existing AI assistants and productivity tools to understand their strengths and weaknesses. This helped us identify opportunities for differentiation and innovation in our design.",
+            
             
 
           ],
@@ -93,11 +97,10 @@ export const anchoredAiData= [
 
     },
    
-    researchData: {
+    
+    analisisData: {
       subtitle: "Research Synthesis",
-      description: `We started by conducting surveys and user interviews with potential users. This gave us insight into their daily routines, challenges with existing productivity tools, and their needs for a personalized assistant. 
-      Key insights focused on building trust and simplifying complex daily routines.`,
-      
+      description: `We began our research by conducting surveys and user interviews with potential users, gathering insights into their daily routines, challenges with current productivity tools, and specific needs for a personalized assistant. By organizing our findings into empathy maps and affinity diagrams, we identified key patterns and themes. These revealed essential insights, including the need for trust and data privacy, as well as a strong desire for a solution that simplifies complex daily routines with a personal touch.`,
       data: [
         {
           icon: faHandshake,
@@ -113,6 +116,12 @@ export const anchoredAiData= [
           icon: faTasks,
           iconTitle: "Health & Productivity",
           items: ["Notifications and home automation.", "Be reminded of important events", "A tool to help reduce stress"],
+        },
+      ],
+      images: [
+        {
+          imagePath: affinityDiagramAnchored,
+          description: "Affinity Diagram",
         },
       ],
     },

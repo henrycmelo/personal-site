@@ -20,24 +20,24 @@ const GridItemComponent = ({ icon, title, items, color,query }) => {
         <GridItem >
          
         </GridItem>
-        <GridItem>
+        <GridItem border="1px solid blue">
           <ScrollReveal>
             <HStack align={'center'}>
-            {title? <Text fontSize={{base:"lg", md:"2xl"}}  align={'center'} textStyle="h6" textColor={color}>{title}</Text>:null}
+            {title? <Text fontSize={{base:"lg", md:"2xl"}}   textStyle="h6" textColor={color}>{title}</Text>:null}
             {icon ? <FontAwesomeIcon icon={icon} size="2x"  color="#FC9039" /> : null}
             </HStack>
      
             
           </ScrollReveal>
-        </GridItem>
-        <GridItem pb={6}>
+        </GridItem >
+        <GridItem pb={6} border="1px solid yellow">
           <ScrollReveal>
-            <List spacing={1} fontSize={{base:"lg", md:"2xl"}} textColor={color} textStyle="body">
+            <List spacing={1} fontSize={{base:"sm", md:"md"}}  textColor={color} textStyle="body">
               {items && items.map((item, index) => (
                 
                 <ListItem key={index}>
                   <ListIcon as={MdCheckCircle} color={colorMode==='light'?'blue':'blueDarkMode'} />
-                  <Highlight ignoreCase query={query} styles={{  color:'inherit', fontWeight:'semibold' }}>{item}</Highlight>
+                  <Highlight ignoreCase query={query || ""} styles={{  color:'inherit', fontWeight:'semibold' }}>{item}</Highlight>
                   
                 </ListItem>
               ))}

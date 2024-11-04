@@ -17,7 +17,7 @@ import GridItemComponent from "./GridItemComponent";
 
 const Analyze = ({
   imageSrc,
-  type,
+  subtitle,
   description,
   backgroundColor,
   analisisData,
@@ -33,37 +33,27 @@ const Analyze = ({
       p={{ base: 8, md: 32 }}
     >
       <VStack
-        alignItems={"center"}
-        justifyContent={"center"}
+        align={"left"}
         width={{ base: "80vw", md: "60vw" }}
       >
-        <ScrollReveal>
-          <Heading
-            as="h2"
-            fontSize={{ base: "4xl", md: "6xl" }}
-            color={colorMode === "light" ? "dark" : "light"}
-            paddingBottom={12}
-            textAlign={"center"}
-          >
-            ANALYZE
-          </Heading>
-        </ScrollReveal>
+        
+          
         <ScrollReveal>
           <Text
-            align="center"
-            fontSize={{ base: "2xl", md: "4xl" }}
-            textStyle="h6"
-            textColor={colorMode === "light" ? "blue" : "blueDarkMode"}
-            paddingBottom={4}
+             align={'left'}
+             fontSize={{base:"2xl", md:"4xl"}}
+             textStyle="h6"
+             textColor={colorMode==='light'?'blue':'blueDarkMode'}
+             paddingBottom={4}
           >
-            {type}
+            {subtitle}
           </Text>
         </ScrollReveal>
         <Text
           fontSize={{ base: "lg", md: "2xl" }}
           textStyle="body"
           textColor={colorMode === "light" ? "dark" : "light"}
-          textAlign={"center"}
+          textAlign={"left"}
           paddingBottom={8}
         >
           {description}
@@ -73,17 +63,19 @@ const Analyze = ({
             templateColumns="repeat(1, 3fr)"
             templateRows="repeat(9,1/2fr)"
             gap={1}
-            align="center"
+            align={"left"}
             pb={8}
+            border="1px solid red" 
           >
             <ScrollReveal>
               {analisisData.map((item, index) =>(
                 <GridItemComponent
                   key={index}
                   icon={item.icon ? item.icon : ""}
-                  title={item.title ? item.title : ""}
+                  title={item.iconTitle ? item.iconTitle : ""}
                   color={colorMode === "light" ? "dark" : "light"}
                   items={item.items ? item.items : ""}
+                  border="1px solid blue"
                 />
               ))}
             </ScrollReveal>
