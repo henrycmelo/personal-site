@@ -14,6 +14,7 @@ import { anchoredAiData } from "../utils/projectsContent/anchoredAiData";
 import Conclusion from "../layout/Conclusion";
 import CompetitiveAnalysis from "../layout/CompetitiveAnalysis";
 import Analyze from "../layout/Analyze";
+import Define from "../layout/Define";
 
 const AnchoredAiPage = () => {
   const { colorMode } = useAlertContext();
@@ -88,6 +89,8 @@ const AnchoredAiPage = () => {
                 description={item.analisisData.description}
                 analisisData={item.analisisData.data}
                 imageData={item.analisisData.images}
+                titleConclusion={item.analisisData.titleConclusion}
+                conclusionInsights={item.analisisData.conclusionInsights}
               />
 
               <Personas
@@ -98,6 +101,15 @@ const AnchoredAiPage = () => {
                 description={item.userPersonasData.description}
                 userPersonasData={item.userPersonasData.images}
               />
+              <Define
+                backgroundColor={
+                  colorMode === "light" ? "secondLight" : "darkDarkMode"
+                }
+                type={item.defineData.type}
+                description={item.defineData.description}
+                userPersonasData={item.defineData.images}
+              />
+
               <StartingDesign
                 backgroundColor={colorMode === "light" ? "light" : "dark"}
                 subtitle="Starting the design"

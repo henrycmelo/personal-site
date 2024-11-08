@@ -30,27 +30,20 @@ const Personas = ({
     >
     
         <VStack
-          alignItems={"center"}
-          justifyContent={"center"}
+          alignItems={"left"}
+          justifyContent={"left"}
           width={{ base: "80vw", md: "60vw" }}
         >
-          <ScrollReveal>
-            <Heading
-              as="h2"
-              fontSize={{ base: "4xl", md: "6xl" }}
-              paddingBottom={12}
-            >
-              PERSONAS
-            </Heading>
-          </ScrollReveal>
+          
 
           <ScrollReveal>
           <Text
-            fontSize={{ base: "2xl", md: "4xl" }}
-            textStyle="h6"
-            textColor={colorMode === "light" ? "blue" : "blueDarkMode"}
-            paddingBottom={4}
-            align={"center"}
+             align={'left'}
+             fontSize={{base:"2xl", md:"4xl"}}
+             textStyle="h6"
+             textColor={colorMode==='light'?'blue':'blueDarkMode'}
+             paddingBottom={4}
+            
           >
             {type}
           </Text>
@@ -60,7 +53,7 @@ const Personas = ({
             fontSize={{ base: "lg", md: "2xl" }}
             textStyle="body"
             textColor={colorMode === "light" ? "dark" : "light"}
-            textAlign={"center"}
+            textAlign={"left"}
             paddingBottom={8}
           >
             {description}

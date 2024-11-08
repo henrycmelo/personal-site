@@ -37,7 +37,7 @@ const Research = ({
       <VStack alignItems={"left"} justifyContent={"left"} width={{base:'80vw', md:'60vw'}}>
         <ScrollReveal>
           <Heading as="h2" fontSize={{base:"4xl", md:"5xl"}} paddingBottom={12} fontWeight={'thin'}>
-            {title ? "RESEARCH": null}
+            {title ? "PHASE 1: RESEARCH": null}
           </Heading>
         </ScrollReveal>
 

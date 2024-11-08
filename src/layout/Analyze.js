@@ -22,6 +22,8 @@ const Analyze = ({
   backgroundColor,
   analisisData,
   imageData,
+  titleConclusion,
+  conclusionInsights
 }) => {
   const { colorMode } = useAlertContext();
   return (
@@ -59,27 +61,7 @@ const Analyze = ({
           {description}
         </Text>
         <ScrollReveal>
-          <Grid
-            templateColumns="repeat(1, 3fr)"
-            templateRows="repeat(9,1/2fr)"
-            gap={1}
-            align={"left"}
-            pb={8}
-            border="1px solid red" 
-          >
-            <ScrollReveal>
-              {analisisData.map((item, index) =>(
-                <GridItemComponent
-                  key={index}
-                  icon={item.icon ? item.icon : ""}
-                  title={item.iconTitle ? item.iconTitle : ""}
-                  color={colorMode === "light" ? "dark" : "light"}
-                  items={item.items ? item.items : ""}
-                  border="1px solid blue"
-                />
-              ))}
-            </ScrollReveal>
-          </Grid>
+          
 
           <Stack direction={{ base: "column", md: "column" }}>
             {imageData.map((item, index) => (
@@ -113,6 +95,42 @@ const Analyze = ({
               </Card>
             ))}
           </Stack>
+          <Grid
+            templateColumns="repeat(1, 3fr)"
+            templateRows="repeat(9,1/2fr)"
+            gap={1}
+            align={"center"}
+            pb={16}
+            pt={8}
+            
+          >
+            <Text fontSize={{base:"lg", md:"2xl"}}   textStyle="h6" color={colorMode === "light" ? "dark" : "light"}>{titleConclusion}</Text> 
+            <ScrollReveal>
+              {analisisData.map((item, index) =>(
+                <GridItemComponent
+                  key={index}
+                  icon={item.icon ? item.icon : ""}
+                  title={item.iconTitle ? item.iconTitle : ""}
+                  color={colorMode === "light" ? "dark" : "light"}
+                  items={item.items ? item.items : ""}
+                  alignTitle={'center'}
+                  
+                  
+                />
+              ))}
+            </ScrollReveal>
+          </Grid>
+          <Text
+          fontSize={{ base: "lg", md: "2xl" }}
+          textStyle="body"
+          textColor={colorMode === "light" ? "dark" : "light"}
+          textAlign={"left"}
+          paddingBottom={8}
+          fontStyle={"italic"}
+          fontWeight={"bold"}
+        >
+          {conclusionInsights || ""}
+        </Text>
         </ScrollReveal>
       </VStack>
     </FullScreenSection>

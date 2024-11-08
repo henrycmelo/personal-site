@@ -101,6 +101,8 @@ export const anchoredAiData= [
     analisisData: {
       subtitle: "Research Synthesis",
       description: `We began our research by conducting surveys and user interviews with potential users, gathering insights into their daily routines, challenges with current productivity tools, and specific needs for a personalized assistant. By organizing our findings into empathy maps and affinity diagrams, we identified key patterns and themes. These revealed essential insights, including the need for trust and data privacy, as well as a strong desire for a solution that simplifies complex daily routines with a personal touch.`,
+      titleConclusion:"User Needs & Key Insights: Building a Holistic Assistant",
+      conclusionInsights:"Our research highlighted that users prioritize safety, convenience, and comprehensive support. Trust is crucial, as users need assurance their information is secure. Calendar integration is also essential for efficient syncing, event automation, and centralized planning. For health and productivity, users seek intelligent notifications, home automation, and reminders to reduce stress and boost well-being. These insights guided our design strategy to create a personalized assistant that seamlessly fits into users' daily routines.",
       data: [
         {
           icon: faHandshake,
@@ -158,8 +160,8 @@ export const anchoredAiData= [
     },
 
     userPersonasData:{
-      type: "Comprehending user needs",
-      description: `We created a persona and a storyboard to visually outline how our potential user will interact with the product.`,
+      type: "User Personas: Comprehending User Needs",
+      description: `Based on my research, I developed a user persona to maintain user-focused design. Meet Emily Anderson, a psychology student living in Chicago with friends while working part-time at a retail store. Emily feels overwhelmed by school demands, struggles to complete assignments on time, and finds it difficult to coordinate with classmates. Her goals include maintaining high academic performance, improving time management, prioritizing self-care, and managing stress effectively. Throughout the project, I kept Emily’s needs and challenges at the forefront to ensure my designs supported her goals and addressed her pain points.`,
       images: [
         {
           imagePath: persona1,
@@ -173,6 +175,26 @@ export const anchoredAiData= [
       ],
 
     },
+
+    defineData:{
+      type: "Problem Definition",
+      description: `Busy students and young professionals, like Emily Anderson, often face challenges balancing academics, work, and personal well-being. They struggle with time management, coordinating schedules, and prioritizing self-care, leading to stress and burnout. Existing productivity tools often lack personalization and integration, making it difficult for users to streamline their daily routines and maintain efficiency.
+
+The challenge is to design a tool that not only assists with organization and task management but also supports overall health and well-being by seamlessly integrating with users’ daily activities and needs.`,
+      images: [
+        {
+          imagePath: persona1,
+          description: "User Persona 1",
+        },
+        {
+          imagePath: story,
+          description: "User Story Board",
+        },
+        
+      ],
+
+    },
+
     designData:[
       
       {
