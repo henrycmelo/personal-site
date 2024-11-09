@@ -107,7 +107,7 @@ const AnchoredAiPage = () => {
                 }
                 type={item.defineData.type}
                 description={item.defineData.description}
-                userPersonasData={item.defineData.images}
+                povStatements={item.defineData.pov}
               />
 
               <StartingDesign
