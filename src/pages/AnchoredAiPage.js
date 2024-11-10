@@ -108,6 +108,11 @@ const AnchoredAiPage = () => {
                 type={item.defineData.type}
                 description={item.defineData.description}
                 povStatements={item.defineData.pov}
+                hmwDescription={item.defineData.hmwDescription}
+                hmwStatements={item.defineData.hmw}
+                typeTwo={item.defineData.typeTwo}
+                descriptionTwo={item.defineData.descriptionTwo}
+                brainstormingData={item.defineData.brainstormingData}
               />
 
               <StartingDesign

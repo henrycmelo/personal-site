@@ -18,6 +18,10 @@ import googleAssistant from "../../images/googleAssistant.png";
 import siriLogo from "../../images/siriLogo.png";
 import todoistLogo from "../../images/todoistLogo.png";
 import affinityDiagramAnchored from "../../images/affinityDiagramAnchored.jpg";
+import anchoredBrainIndividual from "../../images/AnchoredBrainIndividual.png";
+import anchoredBrainsGroup from "../../images/anchoredBrainsGroup.png";
+
+
 
 export const anchoredAiData = [
   {
@@ -205,6 +209,28 @@ export const anchoredAiData = [
         "Working professionals need a secure, AI-powered platform that combines health tracking and productivity tools because existing solutions force them to switch between multiple apps, leading to decreased efficiency and work-life balance.",
         "Health-conscious users need a privacy-focused digital assistant that provides personalized wellness recommendations because current solutions either lack comprehensive health features or raise privacy concerns.",
       ],
+      hmwDescription:'Building upon our POV statements, we developed HMW questions to bridge the gap between problems and solutions. These questions are intentionally broad enough to encourage creative thinking while being specific enough to generate meaningful solutions. They serve as catalysts for our ideation phase and help maintain focus on user needs throughout the design process.',
+      hmw: [
+        'How might we create a secure AI assistant that simplifies daily routine management while protecting user privacy?',
+        'How might we seamlessly integrate health tracking and productivity features without overwhelming users?',
+        'How might we automate task management across devices while maintaining user control and transparency?',
+        'How might we provide personalized wellness recommendations without compromising data security?',
+        'How might we design an interface that adapts to different user needs while maintaining simplicity?'
+
+      ],
+      typeTwo:"Brainstorming: Generating Solutions",
+      descriptionTwo:'The brainstorming phase was structured to maximize creative potential while maintaining focus on our defined problems. We utilized both individual and group brainstorming techniques to leverage diverse perspectives and expertise. This dual approach allowed us to gather both deep individual insights and collaborative innovations.',
+      brainstormingData: [{
+        imagePath: anchoredBrainIndividual,
+        title: "Individual Brainstorming",
+        description: `Individual brainstorming sessions were conducted using the "Mind Mapping" technique, allowing for organic idea generation without group influence. This helped surface unique perspectives and innovative solutions that might have been lost in group dynamics.`
+      },
+      {
+        imagePath: anchoredBrainsGroup,
+        title: "Group Brainstorming",
+        description: `Group brainstorming sessions were conducted using the "Crazy 8s" technique, where each team member generated eight ideas in eight minutes. This rapid-fire approach encouraged creativity, collaboration, and diverse thinking, resulting in a wide range of potential solutions. Reaching consensus on the most promising ideas was a key outcome of these sessions.`
+      }
+    ]
     },
 
     designData: [
