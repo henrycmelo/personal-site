@@ -188,7 +188,7 @@ export const anchoredAiData = [
 
     userPersonasData: {
       type: "User Personas: Comprehending User Needs",
-      description: `Based on my research, I developed a user persona to maintain user-focused design. Meet Emily Anderson, a psychology student living in Chicago with friends while working part-time at a retail store. Emily feels overwhelmed by school demands, struggles to complete assignments on time, and finds it difficult to coordinate with classmates. Her goals include maintaining high academic performance, improving time management, prioritizing self-care, and managing stress effectively. Throughout the project, I kept Emily’s needs and challenges at the forefront to ensure my designs supported her goals and addressed her pain points.`,
+      description: `Based on our research, We developed a user persona to maintain user-focused design. Meet Emily Anderson, a psychology student living in Chicago with friends while working part-time at a retail store. Emily feels overwhelmed by school demands, struggles to complete assignments on time, and finds it difficult to coordinate with classmates. Her goals include maintaining high academic performance, improving time management, prioritizing self-care, and managing stress effectively. Throughout the project, We kept Emily’s needs and challenges at the forefront to ensure my designs supported her goals and addressed her pain points.`,
       images: [
         {
           imagePath: persona1,
@@ -203,19 +203,13 @@ export const anchoredAiData = [
 
     defineData: {
       type: "POV Statements & HMW Questions: Problem Definition",
-      description: `After synthesizing our research findings and developing empathy maps, we formulated POV statements to clearly articulate user needs and challenges. These statements combine three key elements: user, need, and insight. By framing our problem through the user's perspective, we ensure our solution addresses real pain points rather than assumed problems.`,
+      description: `After synthesizing our research findings and developing empathy maps, we formulated a POV statement to clearly articulate user needs and challenges. This statement combines three key elements: user, need, and insight. By framing our problem through the user's perspective, we ensure our solution addresses real pain points rather than assumed problems.`,
       pov: [
-        "Emily, a busy psychology student, needs an integrated AI assistant that simplifies her complex daily routines because her current fragmented approach to managing tasks, health, and schedules is causing stress and affecting her academic performance.",
-        "Working professionals need a secure, AI-powered platform that combines health tracking and productivity tools because existing solutions force them to switch between multiple apps, leading to decreased efficiency and work-life balance.",
-        "Health-conscious users need a privacy-focused digital assistant that provides personalized wellness recommendations because current solutions either lack comprehensive health features or raise privacy concerns.",
+        "Emily, a busy psychology student, needs a secure AI assistant that integrates routines, health tracking, and productivity tools because her fragmented approach across multiple apps causes stress and reduces academic performance.",
       ],
-      hmwDescription:'Building upon our POV statements, we developed HMW questions to bridge the gap between problems and solutions. These questions are intentionally broad enough to encourage creative thinking while being specific enough to generate meaningful solutions. They serve as catalysts for our ideation phase and help maintain focus on user needs throughout the design process.',
+      hmwDescription:'Building upon our POV statements, we developed a HMW question to bridge the gap between problems and solutions. This questions is intentionally broad enough to encourage creative thinking while being specific enough to generate meaningful solutions. It serves as catalysts for our ideation phase and help maintain focus on user needs throughout the design process.',
       hmw: [
-        'How might we create a secure AI assistant that simplifies daily routine management while protecting user privacy?',
-        'How might we seamlessly integrate health tracking and productivity features without overwhelming users?',
-        'How might we automate task management across devices while maintaining user control and transparency?',
-        'How might we provide personalized wellness recommendations without compromising data security?',
-        'How might we design an interface that adapts to different user needs while maintaining simplicity?'
+        'How might we create an AI assistant that manages daily routines, health, and tasks across devices while ensuring privacy, security, and an intuitive interface that provides personalized recommendations without overwhelming users?'
 
       ],
       typeTwo:"Brainstorming: Generating Solutions",
