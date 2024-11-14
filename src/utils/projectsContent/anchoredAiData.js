@@ -19,9 +19,7 @@ import siriLogo from "../../images/siriLogo.png";
 import todoistLogo from "../../images/todoistLogo.png";
 import affinityDiagramAnchored from "../../images/affinityDiagramAnchored.jpg";
 import anchoredBrainIndividual from "../../images/AnchoredBrainIndividual.png";
-import anchoredBrainsGroup from "../../images/anchoredBrainsGroup.png";
-
-
+import venDiagram from "../../images/venDiagram.png";
 
 export const anchoredAiData = [
   {
@@ -207,24 +205,49 @@ export const anchoredAiData = [
       pov: [
         "Emily, a busy psychology student, needs a secure AI assistant that integrates routines, health tracking, and productivity tools because her fragmented approach across multiple apps causes stress and reduces academic performance.",
       ],
-      hmwDescription:'Building upon our POV statements, we developed a HMW question to bridge the gap between problems and solutions. This questions is intentionally broad enough to encourage creative thinking while being specific enough to generate meaningful solutions. It serves as catalysts for our ideation phase and help maintain focus on user needs throughout the design process.',
+      hmwDescription:
+        "Building upon our POV statements, we developed a HMW question to bridge the gap between problems and solutions. This questions is intentionally broad enough to encourage creative thinking while being specific enough to generate meaningful solutions. It serves as catalysts for our ideation phase and help maintain focus on user needs throughout the design process.",
       hmw: [
-        'How might we create an AI assistant that manages daily routines, health, and tasks across devices while ensuring privacy, security, and an intuitive interface that provides personalized recommendations without overwhelming users?'
-
+        "How might we create an AI assistant that manages daily routines, health, and tasks across devices while ensuring privacy, security, and an intuitive interface that provides personalized recommendations without overwhelming users?",
       ],
-      typeTwo:"Brainstorming: Generating Solutions",
-      descriptionTwo:'The brainstorming phase was structured to maximize creative potential while maintaining focus on our defined problems. We utilized both individual and group brainstorming techniques to leverage diverse perspectives and expertise. This dual approach allowed us to gather both deep individual insights and collaborative innovations.',
-      brainstormingData: [{
-        imagePath: anchoredBrainIndividual,
-        title: "Individual Brainstorming",
-        description: `Individual brainstorming sessions were conducted using the "Mind Mapping" technique, allowing for organic idea generation without group influence. This helped surface unique perspectives and innovative solutions that might have been lost in group dynamics.`
-      },
-      {
-        imagePath: anchoredBrainsGroup,
-        title: "Group Brainstorming",
-        description: `Group brainstorming sessions were conducted using the "Crazy 8s" technique, where each team member generated eight ideas in eight minutes. This rapid-fire approach encouraged creativity, collaboration, and diverse thinking, resulting in a wide range of potential solutions. Reaching consensus on the most promising ideas was a key outcome of these sessions.`
-      }
-    ]
+      typeTwo: "Brainstorming: Generating Solutions",
+      descriptionTwo: `Building upon our POV statements and HMW questions, we initiated an extensive brainstorming phase to generate potential solutions. To ensure comprehensive idea generation, we employed the Mind Mapping technique - a visual thinking tool that helps connect and build upon ideas organically. This approach was particularly valuable for our project as it allowed us to explore the interconnections between AI capabilities, user needs, and privacy considerations. 
+      `,
+      brainstormingData: [
+        {
+          imagePath: anchoredBrainIndividual,
+          title: "Brainstorming solutions",
+          description: `The mind mapping exercise was conducted with our design team and stakeholders, focusing on four key areas: intelligent automation, seamless integration, health & productivity balance, and privacy & control. Below is our detailed mind map showcasing the relationships between different solution components and how they address our core user needs.`,
+        },
+      ],
+      typeThree: "Strategy",
+      descriptionThree:
+        `After completing our brainstorming sessions and analyzing the generated ideas, we needed to translate these creative solutions into an actionable strategy. Through a series of collaborative workshops with my teammates, we developed a strategic framework that would guide our product development. 
+        `,
+      strategyData: [
+        {
+          imagePath: venDiagram,
+          title: "Product Goals",
+          description: `This Venn diagram illustrates the strategic framework that guided our product development. By balancing user needs, technical feasibility, and business objectives, we ensured that our design decisions were grounded in a holistic understanding of the project requirements. This approach allowed us to create a product that not only met user expectations but also aligned with our team's capabilities and the company's goals.`,
+        },
+      ],
+      typeFour: "Product Roadmap",
+      descriptionFour: `With our goals established, we synthesized insights from our ideation phase and evaluated each potential solution based on three key criteria:`,
+      criteriaData:[
+        {
+          criteriaItems: [
+            "Alignment with product goals and user needs",
+            "Confidence level supported by research findings",
+            "Implementation effort and technical feasibility"],
+          criteriaSummary:'Based on this prioritization, we decided to move forward with implementing the P1 (Must-Have) features first:',
+          mustHaveItems:[
+            'AI-Powered Task Management',
+            "Cross-Device Synchronization",
+            "Privacy Control Center"
+          ]
+
+        }
+      ]
     },
 
     designData: [
