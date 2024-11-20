@@ -232,18 +232,18 @@ export const anchoredAiData = [
         },
       ],
       typeFour: "Product Roadmap",
-      descriptionFour: `With our goals established, we synthesized insights from our ideation phase and evaluated each potential solution based on three key criteria:`,
+      descriptionFour: `With our goals established, we synthesized insights from our ideation phase and evaluated each potential solution across our three core pillars: health tracking, productivity management, and calendar integration. Each feature was assessed based on:`,
       criteriaData:[
         {
           criteriaItems: [
             "Alignment with product goals and user needs",
-            "Confidence level supported by research findings",
-            "Implementation effort and technical feasibility"],
+            "Technical feasibility and integration requirements",
+            "Potential impact on user well-being and productivity"],
           criteriaSummary:'Based on this prioritization, we decided to move forward with implementing the P1 (Must-Have) features first:',
           mustHaveItems:[
-            'AI-Powered Task Management',
-            "Cross-Device Synchronization",
-            "Privacy Control Center"
+            'Core Health Tracking',
+            "Smart Calendar Integration",
+            "Essential Productivity Tools"
           ]
 
         }
