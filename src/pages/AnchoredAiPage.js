@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import LandingImage from "../layout/LandingImage";
-import ProjectTitle from "../layout/ProjectTitle";
-import ProjectOverview from "../layout/ProjectOverview";
-import Research from "../layout/Research";
-import Personas from "../layout/Personas";
+// import LandingImage from "../layout/LandingImage";
+// import ProjectTitle from "../layout/ProjectTitle";
+// import ProjectOverview from "../layout/ProjectOverview";
+// import Research from "../layout/Research";
+// import Personas from "../layout/Personas";
 import Loader from "../components/Loader";
-import StartingDesign from "../layout/StartingDesign";
-import ButtonsBottom from "../layout/ButtonsBottom";
+// import StartingDesign from "../layout/StartingDesign";
+// import ButtonsBottom from "../layout/ButtonsBottom";
 import { useAlertContext } from "../context/alertContext";
-import { anchoredAiData } from "../utils/projectsContent/anchoredAiData";
-import Conclusion from "../layout/Conclusion";
+// import { anchoredAiData } from "../utils/projectsContent/anchoredAiData";
+// import Conclusion from "../layout/Conclusion";
+import FullScreenSection from "../components/FullScreenSection";
+import FunnyLoader from "../components/FunnyLoader";
 
 const AnchoredAiPage = () => {
   const {  colorMode } = useAlertContext();
@@ -27,7 +29,21 @@ const AnchoredAiPage = () => {
       {isLoading? (<Loader/>):(
         <>
       <Header />
-      {anchoredAiData.map((item, index) => (
+      <FullScreenSection
+      backgroundColor={colorMode==='light'? "light":'dark'}
+      alignContent="center"
+      alignItems='center'
+      spacing={8}
+      width="100vw"
+      pt={48}
+      pl={{ base: 8, md: 32 }}
+      pb={32}
+      pr={{ base: 8, md: 32 }}
+      >
+        <FunnyLoader />
+        
+      </FullScreenSection>
+      {/* {anchoredAiData.map((item, index) => (
         <React.Fragment key={index}>
           <LandingImage
             imageSrc={item.landingImage}
@@ -96,7 +112,7 @@ const AnchoredAiPage = () => {
         path2="/projects"
         backgroundColor={colorMode==="light" ? "light" : "dark"}
       />
-
+ */}
 
      
 

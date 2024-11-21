@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ProjectOverview from "../layout/ProjectOverview";
-import CurrentUserInterface from "../layout/CurrentUserInterface";
-import Research from "../layout/Research";
-import UserTesting from "../layout/UserTesting";
-import Analyze from "../layout/Analyze";
-import Recommendations from "../layout/Recommendations";
-import Conclusion from "../layout/Conclusion";
-import ButtonsBottom from "../layout/ButtonsBottom";
-import ProjectTitle from "../layout/ProjectTitle";
+// import ProjectOverview from "../layout/ProjectOverview";
+// import CurrentUserInterface from "../layout/CurrentUserInterface";
+// import Research from "../layout/Research";
+// import UserTesting from "../layout/UserTesting";
+// import Analyze from "../layout/Analyze";
+// import Recommendations from "../layout/Recommendations";
+// import Conclusion from "../layout/Conclusion";
+// import ButtonsBottom from "../layout/ButtonsBottom";
+// import ProjectTitle from "../layout/ProjectTitle";
 import { useAlertContext } from "../context/alertContext";
 import Loader from "../components/Loader";
-import { americanArtData } from "../utils/projectsContent/americanArtData";
-import LandingImage from "../layout/LandingImage";
+// import { americanArtData } from "../utils/projectsContent/americanArtData";
+// import LandingImage from "../layout/LandingImage";
+import FullScreenSection from "../components/FullScreenSection";
+import FunnyLoader from "../components/FunnyLoader";
 
 /**
  * Renders the Case Study Archives page, which displays a collection of case studies.
@@ -37,8 +39,22 @@ const CaseStudyArchives = () => {
       ) : (
         <>
           <Header />
+          <FullScreenSection
+      backgroundColor={colorMode==='light'? "light":'dark'}
+      alignContent="center"
+      alignItems='center'
+      spacing={8}
+      width="100vw"
+      pt={48}
+      pl={{ base: 8, md: 32 }}
+      pb={32}
+      pr={{ base: 8, md: 32 }}
+      >
+        <FunnyLoader />
+        
+      </FullScreenSection>
   
-          {americanArtData.map((item, index) => (
+          {/* {americanArtData.map((item, index) => (
             <React.Fragment key={index}>
               <LandingImage
                 imageSrc={item.landingImage}
@@ -116,7 +132,7 @@ const CaseStudyArchives = () => {
             button2="View other projects"
             path2="/projects"
             backgroundColor={colorMode === "light" ? "light" : "dark"}
-          />
+          /> */}
 
           <Footer />
         </>

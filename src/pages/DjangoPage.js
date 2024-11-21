@@ -1,14 +1,16 @@
 import React, {useState, useEffect} from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
-import LandingImage from "../layout/LandingImage";
-import ProjectTitle from "../layout/ProjectTitle";
-import ButtonsBottom from "../layout/ButtonsBottom"
+// import Footer from "../components/Footer";
+// import LandingImage from "../layout/LandingImage";
+// import ProjectTitle from "../layout/ProjectTitle";
+// import ButtonsBottom from "../layout/ButtonsBottom"
 import { useAlertContext } from "../context/alertContext";
 import Loader from "../components/Loader";
-import { djangoPageData } from "../utils/projectsContent/djangoPageData";
-import ProjectOverviewProgamming from "../layout/ProjectOverviewProgramming";
-import StartingDesign from "../layout/StartingDesign";
+// import { djangoPageData } from "../utils/projectsContent/djangoPageData";
+// import ProjectOverviewProgamming from "../layout/ProjectOverviewProgramming";
+// import StartingDesign from "../layout/StartingDesign";
+import FullScreenSection from "../components/FullScreenSection";
+import FunnyLoader from "../components/FunnyLoader";
 
 
 
@@ -27,7 +29,21 @@ const DjangoPage = () => {
       {isLoading? (<Loader/>):(
         <>
           <Header />
-          {djangoPageData.map((project, index) => (
+          <FullScreenSection
+      backgroundColor={colorMode==='light'? "light":'dark'}
+      alignContent="center"
+      alignItems='center'
+      spacing={8}
+      width="100vw"
+      pt={48}
+      pl={{ base: 8, md: 32 }}
+      pb={32}
+      pr={{ base: 8, md: 32 }}
+      >
+        <FunnyLoader />
+        
+      </FullScreenSection>
+          {/* {djangoPageData.map((project, index) => (
             <React.Fragment key={index}>
               <LandingImage
                 imageSrc={project.landingImage}
@@ -66,9 +82,9 @@ const DjangoPage = () => {
                 href1={project.links.live}
                 href2={project.links.github}
               />
-              <Footer />
-            </React.Fragment>
-          ))}
+              <Footer /> */}
+            {/* </React.Fragment>
+          ))} */}
         </>
       )}
 

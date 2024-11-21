@@ -2,13 +2,15 @@ import React, {useState, useEffect} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useAlertContext } from "../context/alertContext";
-import LandingImage from "../layout/LandingImage";
-import ProjectTitle from "../layout/ProjectTitle";
-import ProjectOverviewProgamming from "../layout/ProjectOverviewProgramming";
-import StartingDesign from "../layout/StartingDesign";
-import ButtonsBottom from "../layout/ButtonsBottom";
+// import LandingImage from "../layout/LandingImage";
+// import ProjectTitle from "../layout/ProjectTitle";
+// import ProjectOverviewProgamming from "../layout/ProjectOverviewProgramming";
+// import StartingDesign from "../layout/StartingDesign";
+// import ButtonsBottom from "../layout/ButtonsBottom";
 import Loader from "../components/Loader";
-import { machineLearningData } from "../utils/projectsContent/machineLearningData";
+// import { machineLearningData } from "../utils/projectsContent/machineLearningData";
+import FullScreenSection from "../components/FullScreenSection";
+import FunnyLoader from "../components/FunnyLoader";
 
 const MachineLearning= () => {
   const { colorMode} = useAlertContext();
@@ -25,7 +27,21 @@ const MachineLearning= () => {
     ) : (
       <>
         <Header />
-        {machineLearningData.map((project, index) => (
+        <FullScreenSection
+      backgroundColor={colorMode==='light'? "light":'dark'}
+      alignContent="center"
+      alignItems='center'
+      spacing={8}
+      width="100vw"
+      pt={48}
+      pl={{ base: 8, md: 32 }}
+      pb={32}
+      pr={{ base: 8, md: 32 }}
+      >
+        <FunnyLoader />
+        
+      </FullScreenSection>
+        {/* {machineLearningData.map((project, index) => (
           <React.Fragment key={index}>
             <LandingImage
               imageSrc={project.landingImage}
@@ -63,10 +79,10 @@ const MachineLearning= () => {
               button2="View Github"
               href1={project.links.dataset}
               href2={project.links.github}
-            />
+            /> */}
             <Footer />
-          </React.Fragment>
-        ))}
+          {/* </React.Fragment>
+        ))} */}
       </>
       
     )}

@@ -1,14 +1,16 @@
 import React, {useState, useEffect} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import LandingImage from "../layout/LandingImage";
-import ProjectTitle from "../layout/ProjectTitle";
-import ButtonsBottom from "../layout/ButtonsBottom";
+// import LandingImage from "../layout/LandingImage";
+// import ProjectTitle from "../layout/ProjectTitle";
+// import ButtonsBottom from "../layout/ButtonsBottom";
 import Loader from "../components/Loader";
 import { useAlertContext } from "../context/alertContext";
-import { dashData } from "../utils/projectsContent/dashData";
-import ProjectOverviewProgamming from "../layout/ProjectOverviewProgramming";
-import StartingDesign from "../layout/StartingDesign";
+// import { dashData } from "../utils/projectsContent/dashData";
+// import ProjectOverviewProgamming from "../layout/ProjectOverviewProgramming";
+// import StartingDesign from "../layout/StartingDesign";
+import FullScreenSection from "../components/FullScreenSection";
+import FunnyLoader from "../components/FunnyLoader";
 
 const Dash = () => {
   const { colorMode} = useAlertContext();
@@ -26,7 +28,21 @@ const Dash = () => {
       ) : (
         <>
           <Header />
-          {dashData.map((project, index) => (
+          <FullScreenSection
+      backgroundColor={colorMode==='light'? "light":'dark'}
+      alignContent="center"
+      alignItems='center'
+      spacing={8}
+      width="100vw"
+      pt={48}
+      pl={{ base: 8, md: 32 }}
+      pb={32}
+      pr={{ base: 8, md: 32 }}
+      >
+        <FunnyLoader />
+        
+      </FullScreenSection>
+          {/* {dashData.map((project, index) => (
             <React.Fragment key={index}>
               <LandingImage
                 imageSrc={project.landingImage}
@@ -64,10 +80,10 @@ const Dash = () => {
                 button2="View Github"
                 href1={project.links.live}
                 href2={project.links.github}
-              />
+              /> */}
               <Footer />
-            </React.Fragment>
-          ))}
+            {/* </React.Fragment> */}
+          {/* ))} */}
         </>
       )}
 
