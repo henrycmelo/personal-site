@@ -25,14 +25,14 @@ const ProjectsSection = ({ isHomePage }) => {
 
   return (
     <FullScreenSection
-      layerStyle={colorMode==='light'?'normalBlue':'gradientBack'}
-      isDarkBackground
-      alignItems={'center'}
-      spacing={8}
-      width="100vw"
-      p={{ base: 8, md: 32 }}
+      
+      
+     isCentered
+     isDarkBackground
+
+    
     >
-      <ScrollReveal><Heading as="h1" id="projects-section" color={colorMode==='light'? "secondLight":'light'}>
+      <ScrollReveal><Heading as="h1" id="projects-section" >
        {isHomePage? "Featured Projects": ""  } 
       </Heading></ScrollReveal>
 

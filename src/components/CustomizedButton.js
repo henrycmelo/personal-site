@@ -4,13 +4,14 @@ import { useAlertContext } from "../context/alertContext";
 
 const CustomizedButton = ({ children, onClick, type, width }) => {
   const { colorMode } = useAlertContext();
+
   return (
     <>
-      {colorMode === "light" ? (
+       
         <Button
-          color= "secondDark"
+          color= "semantic.text.button"
           borderRadius="10px"
-          backgroundColor="yellow"
+          backgroundColor="semantic.background.button"
           fontWeight="800"
           p={6}
           textStyle="button"
@@ -20,27 +21,11 @@ const CustomizedButton = ({ children, onClick, type, width }) => {
           zIndex="0"
           width={width}
           _hover={{ bg: "#e5c25c", color: "dark" }}
+          textTransform={"uppercase"}
         >
           {children}
         </Button>
-      ) : (
-        <Button
-          color="dark"
-          borderRadius="10px"
-          backgroundColor="blueDarkMode"
-          fontWeight="800"
-          p={6}
-          textStyle="button"
-          onClick={onClick}
-          shadow="lg"
-          type={type}
-          zIndex="0"
-          width={width}
-          _hover={{ bg:'#66c8d7', color: "dark" }}
-        >
-          {children}
-        </Button>
-      )}
+      
     </>
   );
 };

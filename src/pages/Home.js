@@ -6,7 +6,6 @@ import ProjectsSection from "../components/ProjectsSection";
 import ContactMeSection from "../components/ContactMeSection";
 import Footer from "../components/Footer";
 import Alert from "../components/Alert";
-import Loader from '../components/Loader';
 
 
 
@@ -21,15 +20,10 @@ function Home() {
       setShowNavBar(true);
     }, 1500)
   }, []);
-
-  useEffect(()=>{
-    setTimeout(()=>{
-      setIsLoading(false);
-    }, 3000)
-  }, []);
+;
   return (
     <main>
-      {isLoading? (<Loader/>) : (
+      (
           <>
           <Header isHomePage /> 
           {showNavBar && <LandingSection /> }
@@ -43,7 +37,7 @@ function Home() {
 
           </>
 
-      )}
+      )
     </main>
         
      
