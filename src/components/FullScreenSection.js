@@ -23,7 +23,7 @@ const FullScreenSection = ({
       pb={32}
       pr={{ base: 8, md: 32 }}
     >
-      <VStack maxWidth="100vw" {...boxProps}>
+      <VStack  {...boxProps}>
         {children}
       </VStack>
     </VStack>

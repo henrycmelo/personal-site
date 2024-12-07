@@ -8,12 +8,9 @@ import Footer from "../components/Footer";
 import Alert from "../components/Alert";
 
 
-
-
-
 function Home() {
   const [showNavBar, setShowNavBar]=useState(false);
-  const [isLoading, setIsLoading]=useState(true)
+  
 
   useEffect(()=>{
     setTimeout(()=>{
@@ -23,21 +20,21 @@ function Home() {
 ;
   return (
     <main>
-      (
+      
           <>
           <Header isHomePage /> 
           {showNavBar && <LandingSection /> }
           {showNavBar&&<ProjectsSection isHomePage />}
-          {showNavBar&&<AboutMeSection isHomePage/>} 
-          {showNavBar&&<ContactMeSection isHomePage />}
+          {/* {showNavBar&&<AboutMeSection isHomePage/>} 
+          {showNavBar&&<ContactMeSection isHomePage />} */}
           <footer>
-          {showNavBar&&<Footer /> }
+          {/* {showNavBar&&<Footer /> } */}
           </footer>
           <Alert />
 
           </>
 
-      )
+      
     </main>
         
      
