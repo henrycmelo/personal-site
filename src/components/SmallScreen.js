@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import CustomizedButton from "./CustomizedButton";
 
-const SmallScreen = ({ className, children, isHomePage }) => {
+const SmallScreen = ({ className, children, isHomePage, menuItems }) => {
   const { handleClick, colorMode } = useAlertContext();
   return (
     <Box
@@ -14,7 +14,7 @@ const SmallScreen = ({ className, children, isHomePage }) => {
       zIndex="0"
       right="0"
       top="-32px"
-      backgroundColor="dark"
+      backgroundColor="semantic.background.primary"
       display={{ base: "flex", md: "none" }}
       alignItems="top"
       className={className}
@@ -28,151 +28,39 @@ const SmallScreen = ({ className, children, isHomePage }) => {
                 justifyContent="center"
                 alignItems="center"
               >
-                {isHomePage ? (
-                  <VStack spacing={20}>
-                    {
-                      <Link to="/">
-                        <button
-                          className={
-                            colorMode === "light"
-                              ? "button"
-                              : "hoverOtherProjects"
-                          }
-                        >
-                          Home
+                <VStack spacing={20}>
+                  {menuItems
+                    .filter((item) => item.label !== "Resume")
+                    .map((item, index) =>
+                      isHomePage ? (
+                        <button key={index} onClick={item.action}>
+                          {item.label}
                         </button>
-                      </Link>
-                    }
-                    {
-                      <button
-                        className={
-                          colorMode === "light"
-                            ? "button"
-                            : "hoverOtherProjects"
-                        }
-                        onClick={handleClick("projects")}
-                      >
-                        Work
-                      </button>
-                    }
+                      ) : (
+                        <Link to={item.path} key={index}>
+                          <button>{item.label}</button>
+                        </Link>
+                      )
+                    )}
 
-                    {
-                      <button
-                        className={
-                          colorMode === "light"
-                            ? "button"
-                            : "hoverOtherProjects"
-                        }
-                        onClick={handleClick("aboutme")}
-                      >
-                        About
-                      </button>
-                    }
-
-                    {
-                      <button
-                        className={
-                          colorMode === "light"
-                            ? "button"
-                            : "hoverOtherProjects"
-                        }
-                        onClick={handleClick("contactme")}
-                      >
-                        {" "}
-                        Contact
-                      </button>
-                    }
-
-                    {
+                  {menuItems
+                    .filter((item) => item.type === "link")
+                    .map((item, index) => (
                       <a
-                        href={require("../document/uxdesigner.pdf")}
-                        rel="noreferrer"
-                        target="_blank"
-                        
+                        key={index}
+                        href={item.href}
+                        target={item.target}
+                        rel={item.rel}
                       >
-                        {" "}
-                        <CustomizedButton>RESUME</CustomizedButton>{" "}
+                        <CustomizedButton>{item.label}</CustomizedButton>
                       </a>
-                    }
-                  </VStack>
-                ) : (
-                  <VStack spacing={20}>
-                    {
-                      <Link to="/">
-                        <button
-                          className={
-                            colorMode === "light"
-                              ? "button"
-                              : "hoverOtherProjects"
-                          }
-                        >
-                          Home
-                        </button>
-                      </Link>
-                    }
-                    {
-                      <Link to="/projects">
-                        <button
-                          className={
-                            colorMode === "light"
-                              ? "button"
-                              : "hoverOtherProjects"
-                          }
-                        >
-                          Work
-                        </button>
-                      </Link>
-                    }
-
-                    {
-                      <Link to="/aboutme">
-                        {" "}
-                        <button
-                          className={
-                            colorMode === "light"
-                              ? "button"
-                              : "hoverOtherProjects"
-                          }
-                        >
-                          About
-                        </button>
-                      </Link>
-                    }
-
-                    {
-                      <Link to="/contactme">
-                        <button
-                          className={
-                            colorMode === "light"
-                              ? "button"
-                              : "hoverOtherProjects"
-                          }
-                        >
-                          {" "}
-                          Contact
-                        </button>
-                      </Link>
-                    }
-
-                    {
-                      <a
-                        href={require("../document/uxdesigner.pdf")}
-                        rel="noreferrer"
-                        target="_blank"
-                        
-                      >
-                        {" "}
-                        <CustomizedButton>RESUME</CustomizedButton>{" "}
-                      </a>
-                    }
-                  </VStack>
-                )}
+                    ))}
+                </VStack>
               </Box>
             </nav>
           </VStack>
         </HStack>
       </Box>
-      {children}
     </Box>
   );
 };

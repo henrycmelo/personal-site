@@ -19,12 +19,46 @@ const Header = ({ isHomePage }) => {
   const { lockScroll, unlockScroll } = useScrollLock();
   const [hasAnimated, setHasAnimated] = useState(false);
 
+  const numberToWord = [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+  ];
+
   const menuItems = [
-    {label: "Home", path: isHomePage? null : "/", action: ()=>{}},
-    {label: "Case Studies" , path: isHomePage? null: "/projects", action: handleClick("projects")},
-    {label: "About Me", path: isHomePage? null:"/aboutme", action: handleClick("aboutme")},
-    {label: "Contact Me", path: isHomePage? null:"/contactme", action: handleClick("contactme")},
-  ]
+    { label: "Home", path: isHomePage ? null : "/", action: () => {} },
+    {
+      label: "Case Studies",
+      path: isHomePage ? null : "/projects",
+      action: handleClick("projects"),
+    },
+    {
+      label: "About Me",
+      path: isHomePage ? null : "/aboutme",
+      action: handleClick("aboutme"),
+    },
+    {
+      label: "Contact Me",
+      path: isHomePage ? null : "/contactme",
+      action: handleClick("contactme"),
+    },
+    
+  {
+    label: "Resume",
+    type: "link", // Custom type to identify this item
+    href: require("../document/uxdesigner.pdf"),
+    action: null, // No action required
+    target: "_blank",
+    rel: "noreferrer",
+  }
+  ];
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -92,203 +126,50 @@ const Header = ({ isHomePage }) => {
                   style={{ width: "82px", height: "82px" }}
                   className={hasAnimated ? "" : "heading-animation-down"}
                 />
-
-                
               </HStack>
             </nav>
             <nav>
-            <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-              {menuItems.map((item, index) => (
-                <button key={index} onClick={item.action}>
-                  {item.label}
-                </button>
-              ))}
-            </HStack>
+              <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+                {menuItems
+                .filter((item) => item.label !== "Resume")
+                .map((item, index) => {
+                  const animationClass = hasAnimated
+                    ? ""
+                    : `heading-animation-${numberToWord[index + 2]}-down`;
 
-              {isHomePage ? (
-                <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-                  
-                  <Link to="/">
+                  return isHomePage ? (
                     <button
-                      className={`${
-                        hasAnimated ? "" : "heading-animation-two-down"
-                      } ${
-                        colorMode === "light" ? "button" : "hoverOtherProjects"
-                      }`}
+                      key={index}
+                      onClick={item.action}
+                      className={animationClass}
                     >
-                      Home
+                      {item.label}
                     </button>
-                  </Link>
-                  {
-                    <button
-                      className={`${
-                        hasAnimated ? "" : "heading-animation-four-down"
-                      } ${
-                        colorMode === "light" ? "button" : "hoverOtherProjects"
-                      }`}
-                      onClick={handleClick("projects")}
-                    >
-                      Work
-                    </button>
-                  }
-
-                  {
-                    <button
-                      className={`${
-                        hasAnimated ? "" : "heading-animation-three-down"
-                      } ${
-                        colorMode === "light" ? "button" : "hoverOtherProjects"
-                      }`}
-                      onClick={handleClick("aboutme")}
-                    >
-                      About
-                    </button>
-                  }
-
-                  {
-                    <button
-                      className={`${
-                        hasAnimated ? "" : "heading-animation-five-down"
-                      } ${
-                        colorMode === "light" ? "button" : "hoverOtherProjects"
-                      }`}
-                      onClick={handleClick("contactme")}
-                    >
-                      {" "}
-                      Contact
-                    </button>
-                  }
-                  {
-                    <a
-                      href={require("../document/uxdesigner.pdf")}
-                      rel="noreferrer"
-                      target="_blank"
-                      className={
-                        hasAnimated ? "" : "heading-animation-six-down"
-                      }
-                    >
-                      {" "}
-                      <CustomizedButton>RESUME</CustomizedButton>{" "}
-                    </a>
-                  }
-                </HStack>
-              ) : (
-                <HStack spacing={8} display={{ base: "none", md: "flex" }}>
-                  <Link to="/">
-                    <button
-                      className={`${
-                        hasAnimated ? "" : "heading-animation-two-down"
-                      } ${
-                        colorMode === "light" ? "button" : "hoverOtherProjects"
-                      }`}
-                    >
-                      Home
-                    </button>
-                  </Link>
-                  {
-                    <Link to="/projects">
-                      <button
-                        className={`${
-                          hasAnimated ? "" : "heading-animation-four-down"
-                        } ${
-                          colorMode === "light"
-                            ? "button"
-                            : "hoverOtherProjects"
-                        }`}
-                      >
-                        Work
-                      </button>
+                  ) : (
+                    <Link to={item.path} key={index}>
+                      <button>{item.label}</button>
                     </Link>
-                  }
+                  );
+                })}
 
-                  {
-                    <Link to="/aboutme">
-                      {" "}
-                      <button
-                        className={`${
-                          hasAnimated ? "" : "heading-animation-three-down"
-                        } ${
-                          colorMode === "light"
-                            ? "button"
-                            : "hoverOtherProjects"
-                        }`}
-                      >
-                        About
-                      </button>
-                    </Link>
-                  }
+                {menuItems.filter((item) => item.type === "link").map((item, index) => (
+                  <a href={item.href} target={item.target} rel={item.rel}>
+                    <CustomizedButton>{item.label}</CustomizedButton>
+                  </a>
+                ))}
+                
+              </HStack>
 
-                  {
-                    <Link to="/contactme">
-                      <button
-                        className={`${
-                          hasAnimated ? "" : "heading-animation-five-down"
-                        } ${
-                          colorMode === "light"
-                            ? "button"
-                            : "hoverOtherProjects"
-                        }`}
-                      >
-                        {" "}
-                        Contact
-                      </button>
-                    </Link>
-                  }
-                  {
-                    <a
-                      href={require("../document/uxdesigner.pdf")}
-                      rel="noreferrer"
-                      target="_blank"
-                      className={
-                        hasAnimated ? "" : "heading-animation-six-down"
-                      }
-                    >
-                      {" "}
-                      <CustomizedButton>RESUME</CustomizedButton>{" "}
-                    </a>
-                  }
-                </HStack>
-              )}
-              <VStack spacing={8} display={{ base: "flex", md: "none" }}>
-                {" "}
-                {isOpen ? (
-                  <button
-                    className={
-                      colorMode === "light"
-                        ? "button-responsive"
-                        : "hoverOtherProjects"
-                    }
-                    onClick={handleToggle}
-                    style={{ zIndex: "100000" }}
-                  >
-                    <FontAwesomeIcon icon={faTimes} size="2xl" />
-                  </button>
-                ) : (
-                  <button
-                    className={
-                      colorMode === "light" ? "button" : "hoverOtherProjects"
-                    }
-                    onClick={handleToggle}
-                    style={{ zIndex: "100000" }}
-                  >
-                    <FontAwesomeIcon icon={faBars} size="2xl" id="icon" />
-                  </button>
-                )}{" "}
-                {isHomePage ? (
-                  <SmallScreen
-                    className={`${
-                      isOpen ? "removeTransition" : "addTransiton"
-                    }`}
-                    isHomePage
-                  />
-                ) : (
-                  <SmallScreen
-                    className={`${
-                      isOpen ? "removeTransition" : "addTransiton"
-                    }`}
-                  />
-                )}
-              </VStack>
+             {/* Small Screen Navigation */}
+
+             <VStack spacing={8} display={{ base: "flex", md: "none" }}>
+              <button onClick={handleToggle} style={{ zIndex: "100000" }}>
+                <FontAwesomeIcon icon={isOpen? faTimes : faBars} size="2xl" id={isOpen? "": "icon"} />
+              </button>
+              <SmallScreen className={`${isOpen ? "removeTransition" : "addTransiton"}`} {...(isHomePage && {isHomePage})} menuItems={menuItems}/>
+             </VStack>
+
+              
             </nav>
           </HStack>
         </Box>
