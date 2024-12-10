@@ -6,6 +6,7 @@ import ProjectsSection from "../components/ProjectsSection";
 import ContactMeSection from "../components/ContactMeSection";
 import Footer from "../components/Footer";
 import Alert from "../components/Alert";
+import CaseStudySection from '../components/CaseStudySection';
 
 
 function Home() {
@@ -24,7 +25,9 @@ function Home() {
           <>
           <Header isHomePage /> 
           {showNavBar && <LandingSection /> }
+          {showNavBar && <CaseStudySection /> }
           {showNavBar&&<ProjectsSection isHomePage />}
+          
           {/* {showNavBar&&<AboutMeSection isHomePage/>} 
           {showNavBar&&<ContactMeSection isHomePage />} */}
           <footer>

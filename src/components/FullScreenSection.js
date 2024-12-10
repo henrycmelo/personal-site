@@ -6,12 +6,13 @@ const FullScreenSection = ({
   children, 
   isCentered = false, 
   isDarkBackground = false,
+  isBlackBackground =false,
   isLanding = false, 
   ...boxProps 
 }) => {
   return (
     <VStack
-      backgroundColor={isDarkBackground ? "semantic.background.secondary" : "semantic.background.primary"}
+      backgroundColor={isDarkBackground ? "semantic.background.secondary" : isBlackBackground ? "semantic.background.button" : "semantic.background.primary"}
       alignItems={isCentered ? "center" : "start"}
       justifyContent={isCentered ? "center" : "flex-start"}
       textAlign={isCentered ? "center" : "start"}
@@ -22,8 +23,9 @@ const FullScreenSection = ({
       pl={{ base: 8, md: 32 }}
       pb={32}
       pr={{ base: 8, md: 32 }}
+      {...boxProps}
     >
-      <VStack  {...boxProps}>
+      <VStack  >
         {children}
       </VStack>
     </VStack>
