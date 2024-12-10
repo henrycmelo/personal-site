@@ -110,7 +110,7 @@ const Header = ({ isHomePage }) => {
           zIndex="overlay"
           alignItems="flex-start"
           width="100vw"
-          backgroundColor={"red"}
+          backgroundColor={"semantic.background.primary"}
         >
           <HStack
             px={10}
@@ -121,9 +121,9 @@ const Header = ({ isHomePage }) => {
             <nav>
               <HStack>
                 <img
-                  src={colorMode === "light" ? logoHenry : logoblue}
+                  src={logoHenry}
                   alt="logoHenry"
-                  style={{ width: "82px", height: "82px" }}
+                  style={{ width: "200px" }}
                   className={hasAnimated ? "" : "heading-animation-down"}
                 />
               </HStack>
@@ -153,7 +153,7 @@ const Header = ({ isHomePage }) => {
                 })}
 
                 {menuItems.filter((item) => item.type === "link").map((item, index) => (
-                  <a href={item.href} target={item.target} rel={item.rel}>
+                  <a href={item.href} target={item.target} rel={item.rel} key={index}>
                     <CustomizedButton>{item.label}</CustomizedButton>
                   </a>
                 ))}
