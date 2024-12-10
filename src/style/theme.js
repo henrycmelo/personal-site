@@ -54,7 +54,8 @@ const theme = extendTheme({
         primary: "#212529",
         secondary: "#495057",
         muted: "#6C757D",
-        button: "#F8F9FA"
+        button: "#F8F9FA",
+        hover:"#CED4DA"
       },
       border: "#CED4DA",
       divider: "#DEE2E6",

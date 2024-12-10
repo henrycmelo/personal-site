@@ -18,6 +18,12 @@ const Header = ({ isHomePage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { lockScroll, unlockScroll } = useScrollLock();
   const [hasAnimated, setHasAnimated] = useState(false);
+  const hoverStyle = {
+    color:"semantic.text.primary", textDecoration:"underline", fontWeight:"bold"
+  }
+  const hoverStyleDark = {
+    textDecoration:"underline", fontWeight:"bold"
+  }
 
   const numberToWord = [
     "one",
@@ -111,6 +117,7 @@ const Header = ({ isHomePage }) => {
           alignItems="flex-start"
           width="100vw"
           backgroundColor={"semantic.background.primary"}
+        
         >
           <HStack
             px={10}
@@ -129,7 +136,7 @@ const Header = ({ isHomePage }) => {
               </HStack>
             </nav>
             <nav>
-              <HStack spacing={8} display={{ base: "none", md: "flex" }}>
+              <HStack spacing={8} display={{ base: "none", md: "flex" }}  >
                 {menuItems
                 .filter((item) => item.label !== "Resume")
                 .map((item, index) => {
@@ -138,16 +145,28 @@ const Header = ({ isHomePage }) => {
                     : `heading-animation-${numberToWord[index + 2]}-down`;
 
                   return isHomePage ? (
-                    <button
+                    <Box
+                      as='button'
                       key={index}
                       onClick={item.action}
                       className={animationClass}
+                      color="semantic.text.secondary"
+                      _hover={hoverStyle}
                     >
                       {item.label}
-                    </button>
+                    </Box>
                   ) : (
                     <Link to={item.path} key={index}>
-                      <button>{item.label}</button>
+                      <Box
+                      as='button'
+                      key={index}
+                      onClick={item.action}
+                      className={animationClass}
+                      color="semantic.text.secondary"
+                      _hover={hoverStyle}
+                    >
+                      {item.label}
+                    </Box>
                     </Link>
                   );
                 })}
@@ -163,10 +182,11 @@ const Header = ({ isHomePage }) => {
              {/* Small Screen Navigation */}
 
              <VStack spacing={8} display={{ base: "flex", md: "none" }}>
-              <button onClick={handleToggle} style={{ zIndex: "100000" }}>
+              <Box as="button" onClick={handleToggle} style={{ zIndex: "100000" }} color={isOpen? "semantic.text.button" : "semantic.text.primary"}
+              _hover={hoverStyleDark}>
                 <FontAwesomeIcon icon={isOpen? faTimes : faBars} size="2xl" id={isOpen? "": "icon"} />
-              </button>
-              <SmallScreen className={`${isOpen ? "removeTransition" : "addTransiton"}`} {...(isHomePage && {isHomePage})} menuItems={menuItems}/>
+              </Box>
+              <SmallScreen className={`${isOpen ? "removeTransition" : "addTransiton"}`} {...(isHomePage && {isHomePage})} menuItems={menuItems} hoverStyle={hoverStyleDark}/>
              </VStack>
 
               

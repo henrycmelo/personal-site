@@ -3,9 +3,11 @@ import { useAlertContext } from "../context/alertContext";
 import { Link } from "react-router-dom";
 import React from "react";
 import CustomizedButton from "./CustomizedButton";
+import SecondaryButton from "./SecondaryButton";
 
-const SmallScreen = ({ className, children, isHomePage, menuItems }) => {
+const SmallScreen = ({ className, hoverStyle, isHomePage, menuItems }) => {
   const { handleClick, colorMode } = useAlertContext();
+  
   return (
     <Box
       height="100vh"
@@ -14,7 +16,7 @@ const SmallScreen = ({ className, children, isHomePage, menuItems }) => {
       zIndex="0"
       right="0"
       top="-32px"
-      backgroundColor="semantic.background.primary"
+      backgroundColor="semantic.background.button"
       display={{ base: "flex", md: "none" }}
       alignItems="top"
       className={className}
@@ -33,12 +35,16 @@ const SmallScreen = ({ className, children, isHomePage, menuItems }) => {
                     .filter((item) => item.label !== "Resume")
                     .map((item, index) =>
                       isHomePage ? (
-                        <button key={index} onClick={item.action}>
+                        <Box as='button'  color="semantic.text.button"
+                        _hover={hoverStyle} key={index} onClick={item.action}>
                           {item.label}
-                        </button>
+                        </Box>
                       ) : (
                         <Link to={item.path} key={index}>
-                          <button>{item.label}</button>
+                          <Box as='button'  color="semantic.text.button"
+                        _hover={hoverStyle} key={index} onClick={item.action}>
+                          {item.label}
+                        </Box>
                         </Link>
                       )
                     )}
@@ -52,7 +58,7 @@ const SmallScreen = ({ className, children, isHomePage, menuItems }) => {
                         target={item.target}
                         rel={item.rel}
                       >
-                        <CustomizedButton>{item.label}</CustomizedButton>
+                        <SecondaryButton>{item.label}</SecondaryButton>
                       </a>
                     ))}
                 </VStack>
