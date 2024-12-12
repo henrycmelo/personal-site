@@ -54,6 +54,22 @@ export const AlertProvider = ({ children }) => {
    
 }
 
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+const capitalizeEachWord = (string) => {
+  const words = string.split(' ');
+  
+  return words.map((word)=>{
+    return word[0].toUpperCase() + word.substring(1)
+  }).join(' ')
+
+
+  
+  
+
+}
   
  
 
@@ -71,7 +87,8 @@ export const AlertProvider = ({ children }) => {
         spacing,
         align,
         isLargerThanBase,
-       
+        capitalizeFirstLetter,
+        capitalizeEachWord,
         colorMode,
         toggleColorMode
         

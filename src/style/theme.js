@@ -30,7 +30,12 @@ const theme = extendTheme({
       lineHeight: { base: "20px", md: "24px" },
       fontWeight: "400",
     },
-  },
+    caption: {
+      fontSize: { base: "12px", md: "14px" },
+      lineHeight: { base: "16px", md: "20px" },
+      fontWeight: "400",
+  }
+},
   colors: {
     gray: {
       50: "#F8F9FA",
@@ -48,7 +53,8 @@ const theme = extendTheme({
         primary: "#F8F9FA",
         secondary: "#E9ECEF",
         tertiary: "#DEE2E6",
-        button: "#212529"
+        button: "#212529",
+        
       },
       text: {
         primary: "#212529",
@@ -59,6 +65,8 @@ const theme = extendTheme({
       },
       border: "#CED4DA",
       divider: "#DEE2E6",
+      accent:"#107c7c",
+      accentHover: "#399897"
     },
   },
 });

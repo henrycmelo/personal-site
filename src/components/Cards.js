@@ -8,111 +8,63 @@ import {
   Stack,
   Badge,
   Flex,
+  HStack,
   Box,
+  VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import SecondaryButton from "./SecondaryButton";
+import MuteButton from "./MuteButton";
 import { Link } from "react-router-dom";
-import { useAlertContext } from "../context/alertContext";
 import { formatDate } from "../utils/formatDate";
 import { isProjectDateRecent } from "../utils/recent";
+import { useAlertContext } from "../context/alertContext";
+import Badges from "./Badges";
 
-const Cards = ({
-  title,
-  description,
-  imageSrc,
-  to,
-  date,
-}) => {
-  const { colorMode } = useAlertContext();
+const Cards = ({ title, description, imageSrc, to, date }) => {
+  const { capitalizeEachWord } = useAlertContext();
 
   return (
-    <Card
-      maxW={["100%", "md"]}
-      backgroundColor={colorMode === "light" ? "light" : "dark"}
-      boxShadow="xl"
-    >
-      <CardBody>
-        <Flex alignItems="center" justifyContent={'right'}>
-          {date ? (
-            <Text
-              fontSize="xs"
-             
-              color={colorMode === "light" ? "gray" : "grayDarkMode"}
-              px="2"
-              py="1"
-              mb={2}
-            >
-              {formatDate(date)}
-            </Text>
-          ) : null}
-
-         
-        </Flex>
-
-        <Box
-          style={{
-            position: "relative",
-            display: "inline-block",
-            paddingTop: "20px",
-          }}
-        >
-          {date && isProjectDateRecent(date) ? (
-            <Badge
-              position="absolute"
-              right="-5px"
-              top="20px"
-              px="2"
-              py="1"
-              mb={2}
-              ml={2}
-              fontSize="2xs"
-              variant={colorMode === "light" ? "light" : "dark"}
-              borderRadius="full"
-              
-              
-            >
-              New
-            </Badge>
-          ) : null}
-          <Image
-            src={imageSrc}
-            alt={title}
-            objectFit="cover"
-            boxSize="100%"
-            h="auto"
-            borderRadius="5px"
-            backgroundColor={
-              colorMode === "light" ? "secondLight" : "darkDarkMode"
-            }
-          />
-        </Box>
-        <Stack mt="6" spacing="3">
-          <Heading
-            as="h6"
-            fontSize="xl"
-            color={colorMode === "light" ? "dark" : "light"}
-          >
-            {title}
-          </Heading>
-          <Text
-            m={4}
-            fontSize="md"
-            color={colorMode === "light" ? "gray" : "grayDarkMode"}
-            textStyle="body"
-          >
-            {description}
+    <Box border="1px solid red" color="semantic.text.button">
+      <VStack
+        border="1px solid blue"
+        m={8}
+        textAlign="start"
+        justifyContent={"flex-start"}
+        alignItems={"start"}
+      >
+        <Image
+          src="https://bit.ly/naruto-sage"
+          alt={title}
+          aspectRatio={4 / 3}
+          border="1px solid green"
+          borderRadius="30px"
+          w={{base:"100%", md:"80%"}}
+        />
+        <HStack>
+          <Text as="p" textStyle="caption" color="semantic.background.tertiary">
+            {formatDate(date)}
           </Text>
-        </Stack>
-        
-      </CardBody>
+          
+            <Badges colorScheme="green" borderRadius="full" px={2}>
+              UX Researcher
+            </Badges>
+          
 
-      <CardFooter justify="flex-end">
-        <Link to={to}>
-          <SecondaryButton>View Project</SecondaryButton>{" "}
-        </Link>
-      </CardFooter>
-    </Card>
+
+        </HStack>
+        <Text as="h3" textStyle="h2">
+          {capitalizeEachWord(title)}
+        </Text>
+        <Text as="p" textStyle="p" >
+          {description}
+        </Text>
+        <VStack pt={8}>
+          <Link to={to}>
+            <MuteButton isDarkBackground>view case study</MuteButton>{" "}
+          </Link>
+        </VStack>
+      </VStack>
+    </Box>
   );
 };
 

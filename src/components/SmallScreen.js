@@ -49,18 +49,7 @@ const SmallScreen = ({ className, hoverStyle, isHomePage, menuItems }) => {
                       )
                     )}
 
-                  {menuItems
-                    .filter((item) => item.type === "link")
-                    .map((item, index) => (
-                      <a
-                        key={index}
-                        href={item.href}
-                        target={item.target}
-                        rel={item.rel}
-                      >
-                        <SecondaryButton>{item.label}</SecondaryButton>
-                      </a>
-                    ))}
+                  
                 </VStack>
               </Box>
             </nav>

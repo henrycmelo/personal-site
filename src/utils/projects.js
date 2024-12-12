@@ -18,7 +18,7 @@ const projects = [
      
     },
     {
-      title: "Personal Website",
+      title: "personal website",
       description:
         "Building a React JS web app.",
       getImageSrc: () => require("../images/react.png"),

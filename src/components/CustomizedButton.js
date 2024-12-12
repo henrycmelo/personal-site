@@ -3,7 +3,7 @@ import { Button } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
 
 const CustomizedButton = ({ children, onClick, type, width }) => {
-  const { colorMode } = useAlertContext();
+
 
   return (
     <>
@@ -11,8 +11,8 @@ const CustomizedButton = ({ children, onClick, type, width }) => {
         <Button
           color= "semantic.text.button"
           borderRadius="10px"
-          border="1px solid #212529"
-          backgroundColor="semantic.background.button"
+          border="1px solid #107c7c"
+          backgroundColor="semantic.accent"
           fontWeight="800"
           p={6}
           textStyle="button"
@@ -21,7 +21,7 @@ const CustomizedButton = ({ children, onClick, type, width }) => {
           type={type}
           zIndex="0"
           width={width}
-          _hover={{ bg: "semantic.background.primary", color: "semantic.text.primary" }}
+          _hover={{ bg: "semantic.hover"   }}
           textTransform={"uppercase"}
         >
           {children}

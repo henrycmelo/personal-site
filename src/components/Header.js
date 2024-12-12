@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, HStack, VStack, Switch } from "@chakra-ui/react";
-import logoHenry from "../images/hc_logos_black.png";
+import logoHenry from "../images/hc_logo_grayHQ.png";
 import { useAlertContext } from "../context/alertContext";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -56,14 +56,7 @@ const Header = ({ isHomePage }) => {
       action: handleClick("contactme"),
     },
     
-  {
-    label: "Resume",
-    type: "link", // Custom type to identify this item
-    href: require("../document/uxdesigner.pdf"),
-    action: null, // No action required
-    target: "_blank",
-    rel: "noreferrer",
-  }
+ 
   ];
 
   const handleToggle = () => {
@@ -114,14 +107,15 @@ const Header = ({ isHomePage }) => {
           transitionDuration="0.3s"
           transitionTimingFunction="ease-in-out"
           zIndex="overlay"
-          alignItems="flex-start"
+         
           width="100vw"
           backgroundColor={"semantic.background.primary"}
         
         >
           <HStack
-            px={10}
+            pl={32}
             py={4}
+            pr={32}
             justifyContent="space-between"
             alignItems="center"
           >
@@ -171,11 +165,7 @@ const Header = ({ isHomePage }) => {
                   );
                 })}
 
-                {menuItems.filter((item) => item.type === "link").map((item, index) => (
-                  <a href={item.href} target={item.target} rel={item.rel} key={index}>
-                    <CustomizedButton>{item.label}</CustomizedButton>
-                  </a>
-                ))}
+               
                 
               </HStack>
 
