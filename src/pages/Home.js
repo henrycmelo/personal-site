@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import Alert from "../components/Alert";
 import CaseStudySection from '../components/CaseStudySection';
 import ReviewsCarousel from '../components/ReviewCrousel';
+import TimelineCareer from '../components/TimelineCareer';
 
 
 function Home() {
@@ -27,7 +28,8 @@ function Home() {
           <Header isHomePage /> 
           {showNavBar && <LandingSection /> }
           {showNavBar && <ReviewsCarousel />}
-          {showNavBar && <CaseStudySection /> }
+          {/* {showNavBar && <CaseStudySection /> } */}
+          {showNavBar && <TimelineCareer /> }
           {/* {showNavBar&&<ProjectsSection isHomePage />} */}
           
           {/* {showNavBar&&<AboutMeSection isHomePage/>} 

@@ -35,6 +35,12 @@ const theme = extendTheme({
       lineHeight: { base: "24px", sm: "28px", md: "32px" },
       fontWeight: "400",
     },
+    pbold:{
+      fontSize: { base: "16px", sm: "18px", md: "20px" },
+      lineHeight: { base: "24px", sm: "28px", md: "32px" },
+      fontWeight: "600",
+    },
+
     button: {
       fontSize: { base: "16px", md: "18px" },
       lineHeight: { base: "20px", md: "24px" },
@@ -44,7 +50,20 @@ const theme = extendTheme({
       fontSize: { base: "12px", md: "14px" },
       lineHeight: { base: "16px", md: "20px" },
       fontWeight: "400",
-  }
+   
+  },
+  captionbold: {
+    fontSize: { base: "12px", md: "14px" },
+    lineHeight: { base: "16px", md: "20px" },
+    fontWeight: "600",
+  },
+  muted: {
+    fontSize: { base: "12px", md: "14px" },
+    lineHeight: { base: "20px", md: "24px" },
+    fontWeight: "100",
+
+  },
+  
 },
   colors: {
     gray: {
