@@ -1,6 +1,16 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
+
+  styles:{
+    global: {
+      body: {
+        bg: "semantic.background.primary",
+        color: "semantic.text.primary",
+        fontFamily: "Aeonik",
+      },
+    },
+  },
     
   components: {
     // You can define specific component styles here if needed.

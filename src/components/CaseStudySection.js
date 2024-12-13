@@ -16,7 +16,7 @@ const CaseStudySection = () => {
   return (
     <FullScreenSection isBlackBackground  alignItems="stretch"
    >
-      <HStack justify={'space-between'} w={"100%"}>
+      <HStack justify={'center'} w={"100%"}>
         
         <Text
           as="h2"
@@ -26,9 +26,7 @@ const CaseStudySection = () => {
         >
           {titleText.toUpperCase()}
         </Text>
-        <SecondaryButton className="heading-animation-three">
-          View all case studies
-        </SecondaryButton>
+        
         
       </HStack>
       <VStack>

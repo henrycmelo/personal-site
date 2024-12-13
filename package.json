@@ -31,6 +31,7 @@
     "reaptcha": "^1.12.1",
     "recaptcha-v3": "^1.10.0",
     "reveal-on-scroll-react": "^0.0.6",
+    "swiper": "^11.1.15",
     "web-vitals": "^2.1.4",
     "wordcloud": "^1.2.2",
     "yup": "^1.0.2"

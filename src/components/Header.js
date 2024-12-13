@@ -107,15 +107,14 @@ const Header = ({ isHomePage }) => {
           transitionDuration="0.3s"
           transitionTimingFunction="ease-in-out"
           zIndex="overlay"
-         
           width="100vw"
           backgroundColor={"semantic.background.primary"}
         
         >
           <HStack
-            pl={32}
+            pl={{base:8, md:32}}
             py={4}
-            pr={32}
+            pr={{base:8, md:32}}
             justifyContent="space-between"
             alignItems="center"
           >

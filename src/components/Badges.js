@@ -6,14 +6,18 @@ const Badges= ({ children, onClick, isDarkBackground }) => {
   
   return (
     <>
-    
-      <Badge 
+
+      {children && children.map((child, index) => (
+        <Badge 
         backgroundColor="semantic.accent"
         color="semantic.background.primary"
         borderRadius="2px"
+        key={index}
         >
-      {children.toUpperCase()}
-      </Badge>
+          {child}
+        </Badge>
+      ))}
+      
       
  
 

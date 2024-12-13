@@ -20,7 +20,7 @@ import { isProjectDateRecent } from "../utils/recent";
 import { useAlertContext } from "../context/alertContext";
 import Badges from "./Badges";
 
-const Cards = ({ title, description, imageSrc, to, date }) => {
+const Cards = ({ title, description, imageSrc, to, date, role }) => {
   const { capitalizeEachWord } = useAlertContext();
 
   return (
@@ -46,7 +46,7 @@ const Cards = ({ title, description, imageSrc, to, date }) => {
           </Text>
           
             <Badges colorScheme="green" borderRadius="full" px={2}>
-              UX Researcher
+              {role || ""}
             </Badges>
           
 
