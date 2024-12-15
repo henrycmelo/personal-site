@@ -28,7 +28,7 @@ function Home() {
           <Header isHomePage /> 
           {showNavBar && <LandingSection /> }
           {showNavBar && <ReviewsCarousel />}
-          {/* {showNavBar && <CaseStudySection /> } */}
+          {showNavBar && <CaseStudySection /> }
           {showNavBar && <TimelineCareer /> }
           {/* {showNavBar&&<ProjectsSection isHomePage />} */}
           
