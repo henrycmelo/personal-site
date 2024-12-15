@@ -15,6 +15,7 @@ import {
   useTheme,
   HStack,
   Button,
+  Spinner,
 } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import { faAdd, faBriefcase, faChevronUp, faSchool, faUser, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
@@ -22,6 +23,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Badges from "./Badges"
 import { careerData } from "../utils/careerData";
 import { sortByDate } from "../utils/sortByDate";
+import { careerTimelineAPI } from "../api/careerTimelineApi";
 
 const TimelineCareer = () => {
   const titleText = "Career Timeline";
@@ -29,6 +31,29 @@ const TimelineCareer = () => {
   const secondaryColor = theme.colors.semantic.text.primary;
   const mutedColor = theme.colors.semantic.text.muted;
   const primaryColor = theme.colors.semantic.background.primary;
+
+
+  //API CALL
+  const [entries, setEntries] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // useEffect(() => {
+  //   const fetchTimeLine = async () => {
+  //     try {
+  //       const data = await careerTimelineAPI.getAllEntries();
+  //       setEntries(data);
+  //     } catch (err) {
+  //       setError(err.message);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   fetchTimeLine();
+  // }, []);
+
+  // if(isLoading) return <FullScreenSection><Spinner /> <Text as="h2">Loading...</Text></FullScreenSection>
+  // if(error) return <FullScreenSection> <Text as="h2">Error: {error}</Text></FullScreenSection>
 
   const [element, setElement] = useState([]);
   const [visibleCount, setVisibleCount] = useState(3);

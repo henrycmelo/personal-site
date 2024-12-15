@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, HStack, VStack, Switch } from "@chakra-ui/react";
+import { Box, HStack, VStack} from "@chakra-ui/react";
 import logoHenry from "../images/hc_logo_grayHQ.png";
 import { useAlertContext } from "../context/alertContext";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -8,11 +8,10 @@ import SmallScreen from "./SmallScreen";
 import { useScrollLock } from "../hooks/useScrollLock";
 import { Link } from "react-router-dom";
 import "animate.css";
-import logoblue from "../images/hc_logo_blue.png";
-import CustomizedButton from "./CustomizedButton";
+
 
 const Header = ({ isHomePage }) => {
-  const { handleClick, colorMode, toggleColorMode } = useAlertContext();
+  const { handleClick } = useAlertContext();
   const [previousScroll, setPreviousScroll] = useState(0);
   const [showMenu, setShowMenu] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
@@ -131,7 +130,7 @@ const Header = ({ isHomePage }) => {
             <nav>
               <HStack spacing={8} display={{ base: "none", md: "flex" }}  >
                 {menuItems
-                .filter((item) => item.label !== "Resume")
+                .filter((item) => item.label !== "socials")
                 .map((item, index) => {
                   const animationClass = hasAnimated
                     ? ""
