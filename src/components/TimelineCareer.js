@@ -6,24 +6,17 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import {
   Text,
-  Box,
-  Divider,
-  Circle,
   Stack,
-  Flex,
-  VStack,
   useTheme,
   HStack,
-  Button,
   Spinner,
 } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import { faAdd, faBriefcase, faChevronUp, faSchool, faUser, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
+import { faAdd, faBriefcase, faChevronUp, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Badges from "./Badges"
 import { sortByDate } from "../utils/sortByDate";
 import { careerTimelineAPI } from "../api/careerTimelineApi";
-import { load } from "recaptcha-v3";
 
 const TimelineCareer = () => {
   const titleText = "Career Timeline";
@@ -63,9 +56,6 @@ const TimelineCareer = () => {
     setVisibleEntries(prevElement => [...prevElement, ...nextEntries]);
   }
 
-  useEffect(() => {
-    loadMore();
-  }, [])
 
   const collapseAll = () => {
     setVisibleEntries(entries.slice(0, visibleCount));
