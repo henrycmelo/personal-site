@@ -21,9 +21,9 @@ import FullScreenSection from "./FullScreenSection";
 import { faAdd, faBriefcase, faChevronUp, faSchool, faUser, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Badges from "./Badges"
-import { careerData } from "../utils/careerData";
 import { sortByDate } from "../utils/sortByDate";
 import { careerTimelineAPI } from "../api/careerTimelineApi";
+import { load } from "recaptcha-v3";
 
 const TimelineCareer = () => {
   const titleText = "Career Timeline";
@@ -37,76 +37,82 @@ const TimelineCareer = () => {
   const [entries, setEntries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [visibleEntries, setVisibleEntries] = useState([]);
+  const [visibleCount] = useState(3);
 
-  // useEffect(() => {
-  //   const fetchTimeLine = async () => {
-  //     try {
-  //       const data = await careerTimelineAPI.getAllEntries();
-  //       setEntries(data);
-  //     } catch (err) {
-  //       setError(err.message);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   };
-  //   fetchTimeLine();
-  // }, []);
-
-  // if(isLoading) return <FullScreenSection><Spinner /> <Text as="h2">Loading...</Text></FullScreenSection>
-  // if(error) return <FullScreenSection> <Text as="h2">Error: {error}</Text></FullScreenSection>
-
-  const [element, setElement] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(3);
-
+  // Fetch data from Supabase
   useEffect(() => {
-    loadMore()
-  }, []);
+    const fetchTimeLine = async () => {
+      try {
+        const data = await careerTimelineAPI.getAllEntries();
+        setEntries(data);
+        setVisibleEntries(data.slice(0, visibleCount));
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchTimeLine();
+  }, [visibleCount]);
+
 
   const loadMore = () => {
-    const nextElements = careerData.sort(sortByDate).slice(element.length, element.length + visibleCount)
-    setElement(prevElement=> [...prevElement, ...nextElements])
+    const currentLength = visibleEntries.length;
+    const nextEntries = entries.sort(sortByDate).slice(currentLength, currentLength + visibleCount);
+    setVisibleEntries(prevElement => [...prevElement, ...nextEntries]);
   }
+
+  useEffect(() => {
+    loadMore();
+  }, [])
 
   const collapseAll = () => {
-    setElement([...element.slice(0,2)])
+    setVisibleEntries(entries.slice(0, visibleCount));
   }
 
-  const getTimeLineElement = () => {
-    return element.map((data, index) => (
-      <VerticalTimelineElement
-        key={index}
-        date={data.date}
+  if(isLoading) return <FullScreenSection><Spinner /> <Text as="h2">Loading...</Text></FullScreenSection>
+  if(error) return <FullScreenSection> <Text as="h2">Error: {error}</Text></FullScreenSection>
+ 
+  
+  const getTimeLineElements = () =>{
+    return visibleEntries.map((entry, index) => {
+
+      const iconName = entry.icon;
+      const icon = iconName === 'faUserGraduate' ? faUserGraduate : faBriefcase;
+
+      return (
+        <VerticalTimelineElement
+        key={entry.id || index}
+        date={entry.date}
         contentStyle={{background: primaryColor, color: secondaryColor}}
         iconStyle={{ background: mutedColor, color: primaryColor }}
-        icon={<FontAwesomeIcon icon={data.icon} />}
+        icon={<FontAwesomeIcon icon={icon} />}
       >
         
         <Stack>
           <Text as="h3" textStyle="captionbold" textAlign={'center'}>
-            {data.role}
+            {entry.role}
           </Text>
         </Stack>
         <Stack>
           <Text as="h4" textStyle="caption" textAlign={'center'}>
-            {data.company}
+            {entry.company}
           </Text>
         </Stack>
         <Stack textAlign={"start"}>
           <Text as="p" textStyle="caption">
-            {data.description}
+            {entry.description}
           </Text>
         </Stack>
         <HStack pt={4}>
-          <Badges>{data.tools}</Badges>
+          <Badges>{entry.tools}</Badges>
         </HStack>
       </VerticalTimelineElement>
-    ))
-  }
+      )
+      
+  })}
 
-
-
-  
-  
 
   return (
     <FullScreenSection isDarkBackground justifyContent='center' alignItems='center' >
@@ -114,21 +120,19 @@ const TimelineCareer = () => {
         {titleText.toUpperCase()}
       </Text>
       <VerticalTimeline lineColor={primaryColor}>
-        {getTimeLineElement()}
+        {getTimeLineElements()}
 
-        {element.length < careerData.length &&(
+        {visibleEntries.length < entries.length &&(
           <VerticalTimelineElement iconOnClick={loadMore} icon = {<FontAwesomeIcon icon={faAdd} />} iconStyle={{ background: secondaryColor, color: primaryColor, cursor:'pointer' }}/>
           
         )}
 
-        {element.length === careerData.length &&(
+        {visibleEntries.length=== entries.length && visibleEntries.length > visibleCount && (
           <VerticalTimelineElement iconOnClick={collapseAll} icon = {<FontAwesomeIcon icon={faChevronUp} />} iconStyle={{ background: primaryColor, color: secondaryColor, cursor:'pointer' }}/>
           
         )}
 
       </VerticalTimeline>
-        
-        
     </FullScreenSection>
   );
 };
