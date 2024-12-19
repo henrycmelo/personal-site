@@ -7,7 +7,7 @@ import ContactMeSection from "../components/ContactMeSection";
 import Footer from "../components/Footer";
 import Alert from "../components/Alert";
 import CaseStudySection from '../components/CaseStudySection';
-import ReviewsCarousel from '../components/ReviewCrousel';
+import ReviewsCarousel from '../components/ReviewCarousel';
 import TimelineCareer from '../components/TimelineCareer';
 
 

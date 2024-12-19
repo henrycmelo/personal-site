@@ -5,7 +5,7 @@ import { useAlertContext } from "../context/alertContext";
 import "animate.css";
 import { dataLanding } from "../utils/dataLanding";
 import CustomizedButton from "./CustomizedButton";
-import ReviewsCarousel from "./ReviewCrousel";
+import ReviewsCarousel from "./ReviewCarousel";
 
 const LandingSection = () => {
   const { colorMode } = useAlertContext();

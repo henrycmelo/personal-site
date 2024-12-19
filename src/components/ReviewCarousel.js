@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Box, Stack, Text, Spinner } from "@chakra-ui/react";
+import { Box, Stack, Text, Spinner, Button } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { reviewsAPI } from "../api/reviewsApi";
+import ButtonLink from "./ButtonLink";
 
 
 
@@ -18,6 +19,7 @@ function ReviewsCarousel() {
   const [review, setReview] = useState([]); 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showMore, setShowMore] = useState({});
 
   //api call
   useEffect(()=>{
@@ -33,6 +35,16 @@ function ReviewsCarousel() {
     }
     fetchReviews()
   },[])
+
+  const handleShowMore = (id) => {
+   setShowMore((prevState) =>({
+    ...prevState,
+    [id] : !prevState[id]
+   }))
+  }
+  
+  
+
 
  if (isLoading) return <Spinner />
   if (error) return <Text>{error}</Text>
@@ -73,8 +85,21 @@ function ReviewsCarousel() {
         {review.map((review, index) => (
           <SwiperSlide key={review.id || index}>
             <Stack gap={0} textStyle="caption" color={"semantic.text.primary"}>
+
               <Text as="p" textStyle="caption" color={"semantic.text.primary"}>
-                {review.content}
+                {showMore[review.id] ? (
+                  <>
+                    {review.content}
+                    <ButtonLink color='semantic.text.primary' textStyle="button" variant='link' onClick={()=>handleShowMore(review.id)}>Show Less</ButtonLink>
+                  
+                  </>
+                  ) : (
+                    <>
+                      {review.content.slice(0, 150)}...
+                       <ButtonLink color='semantic.text.primary' textStyle="caption" variant='link' onClick={()=>handleShowMore(review.id)}>View More</ButtonLink>
+                    </>
+                  )}
+
               </Text>
               <Text pt={2} as="p" textStyle='captionbold'>{review.reviewer_name}</Text>
             </Stack>
