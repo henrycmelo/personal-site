@@ -24,38 +24,40 @@ const Cards = ({ title, description, imageSrc, to, date, role }) => {
   const { capitalizeEachWord } = useAlertContext();
 
   return (
-    <Box border="1px solid red" color="semantic.text.button">
+    <Box  color="semantic.text.button">
       <VStack
-        border="1px solid blue"
         m={8}
         textAlign="start"
         justifyContent={"flex-start"}
         alignItems={"start"}
       >
-        <Image
-          src="https://bit.ly/naruto-sage"
-          alt={title}
-          aspectRatio={4 / 3}
-          border="1px solid green"
+         <Box
+          w={{ base: "4/3", md: "100%" }}
           borderRadius="30px"
-          w={{base:"100%", md:"80%"}}
-        />
-        <HStack>
+          overflow="hidden"
+          
+        >
+          <Image
+            src={imageSrc || "https://bit.ly/naruto-sage"}
+            alt={title}
+            objectFit="cover"
+            w="100%"
+          
+          />
+        </Box>
+        <HStack >
           <Text as="p" textStyle="caption" color="semantic.background.tertiary">
-            {formatDate(date)}
+            {date ? formatDate(date) : "No date available"}
           </Text>
-          
-            <Badges colorScheme="green" borderRadius="full" px={2}>
-              {role || ""}
-            </Badges>
-          
 
-
+          <Badges colorScheme="green" borderRadius="full" px={2}>
+            {role || ""}
+          </Badges>
         </HStack>
         <Text as="h3" textStyle="h2">
           {capitalizeEachWord(title)}
         </Text>
-        <Text as="p" textStyle="p" >
+        <Text as="p" textStyle="p">
           {description}
         </Text>
         <VStack pt={8}>

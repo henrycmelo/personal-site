@@ -1,17 +1,35 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import { useAlertContext } from "../context/alertContext";
 import "animate.css";
-import { dataLanding } from "../utils/dataLanding";
-import CustomizedButton from "./CustomizedButton";
-import SecondaryButton from "./SecondaryButton";
-import projects from "../utils/projects";
-import Cards from "./Cards";
+import { projectsAPI } from "../api/projectsApi";
+import Cards from "./Cards"
 
 const CaseStudySection = () => {
-  
   const titleText = "Case Studies";
+  const [projects, setProjects] =useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchProjects = async () =>{
+      try {
+        const data = await projectsAPI.getAllEntries();
+        console.log(data)
+        setProjects(data)
+  
+      } catch (err) {
+        setError(err.message)
+      } finally{
+        setIsLoading(false)
+      }
+    }
+  
+    fetchProjects()
+  }, [])
+
+  
+  
 
   return (
     <FullScreenSection isBlackBackground  alignItems="stretch"
@@ -31,8 +49,8 @@ const CaseStudySection = () => {
       </HStack>
       <VStack>
         {projects.map((project, index)=>(
-          <Cards key={index} title={project.title} description={project.description} imageSrc={project.getImageSrc()} role={Array.isArray(project.role)?(project.role.map((role) => role)) : (null)} date={project.date} badgeAlt={project.title} />
-        ))}
+          <Cards key={index} title={project.title} description={project.problem_statement} role={project.role} date={project.created_at} />
+        ))} 
       </VStack>
 
     </FullScreenSection>

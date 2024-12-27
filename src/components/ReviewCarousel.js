@@ -95,7 +95,7 @@ function ReviewsCarousel() {
                   </>
                   ) : (
                     <>
-                      {review.content.slice(0, 150)}...
+                      {review.content.slice(0, 100)}...
                        <ButtonLink color='semantic.text.primary' textStyle="caption" variant='link' onClick={()=>handleShowMore(review.id)}>View More</ButtonLink>
                     </>
                   )}
