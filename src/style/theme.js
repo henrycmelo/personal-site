@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import { dividerTheme } from "./divider";
 
 const theme = extendTheme({
 
@@ -14,6 +15,7 @@ const theme = extendTheme({
     
   components: {
     // You can define specific component styles here if needed.
+    Divider: dividerTheme,
   },
   fonts: {
     heading: "Aeonik",

@@ -6,7 +6,7 @@ import ContactMeSection from "../components/ContactMeSection";
 import Footer from "../components/Footer";
 import Alert from "../components/Alert";
 import { useAlertContext } from "../context/alertContext";
-import Loader from "../components/Loader";
+
 
 
 function ContactPage () {
@@ -19,10 +19,6 @@ function ContactPage () {
   }, []);
   return (
     <main>
-       {isLoading ? (
-        <Loader />
-      ) : (
-        <>
       <Header/>
       <FullScreenSection
         backgroundColor={colorMode==='light'? "light":'dark'}
@@ -66,8 +62,8 @@ function ContactPage () {
      
       <Footer />
       <Alert />
-      </>
-      )}
+     
+      
     </main>
   );
 }

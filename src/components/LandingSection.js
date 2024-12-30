@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, VStack, Text } from "@chakra-ui/react";
+import {  VStack, Text } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import { useAlertContext } from "../context/alertContext";
 import "animate.css";

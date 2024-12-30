@@ -38,7 +38,7 @@ const Cards = ({ title, description, imageSrc, to, date, role }) => {
           
         >
           <Image
-            src={imageSrc || "https://bit.ly/naruto-sage"}
+            src={imageSrc || "https://placehold.co/600x400"}
             alt={title}
             objectFit="cover"
             w="100%"

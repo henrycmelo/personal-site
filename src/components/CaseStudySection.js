@@ -49,7 +49,7 @@ const CaseStudySection = () => {
       </HStack>
       <VStack>
         {projects.map((project, index)=>(
-          <Cards key={index} title={project.title} description={project.problem_statement} role={project.role} date={project.created_at} />
+          <Cards key={index} title={project.title} description={project.problem_statement} role={project.role} date={project.created_at} to={'cianaresearch'} />
         ))} 
       </VStack>
 
