@@ -32,7 +32,7 @@ const CaseStudySection = () => {
   
 
   return (
-    <FullScreenSection isBlackBackground  alignItems="stretch"
+    <FullScreenSection isBlackBackground  alignItems="stretch" 
    >
       <HStack justify={'center'} w={"100%"}>
         

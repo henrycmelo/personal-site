@@ -44,7 +44,7 @@ const CianaResearch = () => {
       <Header />
 
       <FullScreenSection>
-        <VStack color="semantic.text.primary" alignItems="start">
+        <VStack color="semantic.text.primary" alignItems="start" pb={16}>
           <Text as="h1" textStyle={"h1"}>
             {" "}
             {capitalizeEachWord("digital Safety Workshops")}
@@ -53,7 +53,11 @@ const CianaResearch = () => {
             {" "}
             {capitalizeEachWord("UX research case study")}
           </Text>
-          <Text as="h3" textStyle={"caption"}>
+          <Text as="hp" textStyle={"p"}>
+            {" "}
+            {capitalizeEachWord("Empowering Parents in Corona, Queens with Digital Safety Knowledge")}
+          </Text>
+          <Text as="p" textStyle={"p"}>
             2024
           </Text>
           <Box
@@ -68,12 +72,24 @@ const CianaResearch = () => {
               w="100%"
             />
           </Box>
-          <Grid w={"100%"} templateColumns={{base:"1fr", md:"repeat(4, 1fr)"}} gap={{base:2, md:24}}>
+          <Grid w={"100%"} templateColumns={{base:"1fr", md:"repeat(5, 1fr)"}} gap={{base:2, md:24}}>
+          <GridItem w={{base: '50%', md:"100%"}}>
+              <VStack alignItems="start">
+                <Text as="p" textStyle="pbold">
+                  Client
+                </Text>
+                <Divider variant='thick'/>
+                <Text as="p" textStyle={"p"} >
+                Lorem ipsum dolor sit amet
+                </Text>
+              </VStack>
+            </GridItem>
             <GridItem w="100%">
               <VStack alignItems="start">
                 <Text as="p" textStyle="pbold">
                   Role
                 </Text>
+                <Divider variant='thick'/>
                 <Text as="p" textStyle={"p"} >
                 Lorem ipsum dolor sit amet
                 </Text>
@@ -84,6 +100,7 @@ const CianaResearch = () => {
                 <Text as="p" textStyle="pbold">
                   Duration
                 </Text>
+                <Divider variant='thick'/>
                 <Text as="p" textStyle={"p"}>
                 Lorem ipsum dolor sit amet
                 </Text>
@@ -94,8 +111,9 @@ const CianaResearch = () => {
                 <Text as="p" textStyle="pbold">
                   Tools
                 </Text>
+                <Divider variant='thick'/>
                 <Text as="p" textStyle={"p"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. 
+                Lorem ipsum dolor sit amet
                 </Text>
               </VStack>
             </GridItem>
@@ -105,25 +123,32 @@ const CianaResearch = () => {
                 <Text as="p" textStyle="pbold">
                   Skills
                 </Text>
+                <Divider variant='thick'/>
                 <Text as="p" textStyle={"p"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. nec massa
+                Lorem ipsum dolor sit amet
                 </Text>
               </VStack>
             </GridItem>
           </Grid>
         </VStack>
 
-        <Divider variant="thick" />
+        <Divider variant="section" />
+        
         <Grid
-          templateColumns={{base:"1fr", md:"200px 1fr"}}
+          templateColumns={{base:"1fr", md:"200px 10px 1fr"}}
           gap={6}
           height="100vh"
           alignItems="start"
           w={"100%"}
+          pt={4}
         >
           <Box display={{base:'none', md:'block'}} visibility={{base:'hidden', md:'visible'}}>
             <VerticalProgressBar sections={sections} />
+            
           </Box>
+          <Divider orientation="vertical" variant='thick' />
+          
+          
 
           <Box overflowY="scroll">
 
@@ -136,23 +161,24 @@ const CianaResearch = () => {
 
                   {/* Text Columns */}
                   <GridItem>
-                    <Box pb={4}>
+                  <Box pb={4}>
                       <Text textStyle='pbold' >
-                        {"Client".toUpperCase()}
-                      </Text>
-                      <Text textStyle='p'>
-                      Corona community, Queen, NY (The People’s Money grant by NYC Civic Engagement Commision)
-                      </Text>
-                    </Box>
-
-                    <Box pb={4}>
-                      <Text textStyle='pbold' >
-                        {"Challenge".toUpperCase()}
+                        {"Background".toUpperCase()}
                       </Text>
                       <Text textStyle='p' >
                       Evaluate and improve digital safety workshops' effectiveness for parents
                       </Text>
                     </Box>
+
+                    <Box pb={4}>
+                      <Text textStyle='pbold' >
+                        {"Relevance".toUpperCase()}
+                      </Text>
+                      <Text textStyle='p' >
+                      Evaluate and improve digital safety workshops' effectiveness for parents
+                      </Text>
+                    </Box>
+                    
 
                     <Box pb={4}>
                       <Text textStyle='pbold' >
@@ -179,7 +205,51 @@ const CianaResearch = () => {
                 </GridItem>
                 </Grid>
 
-                {/* Second Grip */}
+                {/* Quick stats */}
+
+                <Box backgroundColor={'red'} >
+                    <Grid templateColumns={{base:"1fr", md:"repeat(3, 1fr)"}}>
+                    <GridItem>
+                    <Box pb={4}>
+                      <Text textStyle='pbold' >
+                        {"Goal".toUpperCase()}
+                      </Text>
+                      <Text textStyle='p'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa
+                      </Text>
+                    </Box>
+
+                    
+                  </GridItem>
+
+                  {/* Text Column 2 */}
+                  <GridItem>
+                  <Box pb={4}>
+                      <Text textStyle='pbold' >
+                        {"Problem".toUpperCase()}
+                      </Text>
+                      <Text textStyle='p'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa
+                      </Text>
+                    </Box>
+                </GridItem>
+
+                {/* Text Column 4 */}
+                <GridItem>
+                  <Box pb={4}>
+                      <Text textStyle='pbold' >
+                        {"Problem".toUpperCase()}
+                      </Text>
+                      <Text textStyle='p'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa
+                      </Text>
+                    </Box>
+                </GridItem>
+                    </Grid>
+
+                </Box>
+
+                {/* Second Grid */}
 
                 <Grid templateColumns={{base:"1fr", md:"1fr 1fr"}}>
 
@@ -213,6 +283,7 @@ const CianaResearch = () => {
 
               </VStack>
             </Box>
+            <Divider variant="thick" />
           </Box>
         </Grid>
       </FullScreenSection>

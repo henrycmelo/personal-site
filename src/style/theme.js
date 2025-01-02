@@ -32,6 +32,11 @@ const theme = extendTheme({
       lineHeight: { base: "40px", sm: "44px", md: "50px", lg: "56px" },
       fontWeight: "400",
     },
+    h3: {
+      fontSize: { base: "28px", sm: "32px", md: "36px", lg: "40px" },
+      lineHeight: { base: "36px", sm: "40px", md: "44px", lg: "48px" },
+      fontWeight: "400",
+    },
     p: {
       fontSize: { base: "16px", sm: "18px", md: "20px" },
       lineHeight: { base: "24px", sm: "28px", md: "32px" },

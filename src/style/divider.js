@@ -2,14 +2,20 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
 const thick= defineStyle({
     borderWidth: '3px', 
-  borderStyle: 'solid', 
-  borderRadius: 10,
-  borderColor:'semantic.divider',
-  paddingTop:8,
-  width:"100vw"
+  borderStyle: 'solid',
+  borderColor:'semantic.text.primary',
+  
+  
 
 })
 
+const section= defineStyle({
+    borderWidth: '10px', 
+    borderStyle: 'double', 
+    borderColor:'semantic.text.primary',
+    width:"100vw"
+})
+
 export const dividerTheme = defineStyleConfig({
-    variants: { thick },
+    variants: { thick, section },
 })
