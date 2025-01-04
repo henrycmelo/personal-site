@@ -20,9 +20,11 @@ const FullScreenSection = ({
       width="100vw"
       height= {isLanding ? "75vh" : "auto"}
       pt={{base:48,md:'15vh'}}
-      pl={{ base: 8, md: 32 }}
-      pb={32}
-      pr={{ base: 8, md: 32 }}
+      pl={12}
+      pb={12}
+      pr={12}
+    
+      minHeight='100vh'
       {...boxProps}
     >
       <VStack  >

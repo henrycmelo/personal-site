@@ -4,6 +4,7 @@ const thick= defineStyle({
     borderWidth: '3px', 
   borderStyle: 'solid',
   borderColor:'semantic.text.primary',
+
   
   
 

@@ -37,7 +37,7 @@ const VerticalProgressBar = ({ sections }) => {
   }, [sections]);
 
   return (
-    <VStack position="sticky" top="20%" left="5%" zIndex="10">
+    <VStack position="sticky" top="20%" left="5%" zIndex="10" >
       {sections?.map((section) => (
         <Box
           textStyle="caption"
@@ -55,7 +55,8 @@ const VerticalProgressBar = ({ sections }) => {
           }
           cursor="pointer"
           transition={'background-color 0.3s'}
-          p={2}
+          py={2}
+          pl={12}
         >
           <Box>{section.label}</Box>
         </Box>

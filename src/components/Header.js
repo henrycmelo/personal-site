@@ -111,9 +111,9 @@ const Header = ({ isHomePage }) => {
         
         >
           <HStack
-            pl={{base:8, md:32}}
+            pl={{base:8, md:12}}
             py={4}
-            pr={{base:8, md:32}}
+            pr={{base:8, md:12}}
             justifyContent="space-between"
             alignItems="center"
           >
