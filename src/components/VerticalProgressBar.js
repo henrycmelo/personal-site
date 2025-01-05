@@ -51,7 +51,7 @@ const VerticalProgressBar = ({ sections }) => {
           }
           fontWeight={activeSection === section.id ? "bold" : "normal"}
           backgroundColor={
-            activeSection === section.id ? "semantic.accent" : "none"
+            activeSection === section.id ? "semantic.text.primary" : "none"
           }
           cursor="pointer"
           transition={'background-color 0.3s'}
