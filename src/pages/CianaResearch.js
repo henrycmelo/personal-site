@@ -21,11 +21,12 @@ import VerticalProgressBar from "../components/VerticalProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb, faListCheck, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import { MdCheckCircle } from "react-icons/md";
-import problemImage from "../assets/problem.svg"
-import goalImage from "../assets/goal.svg"
-import questionImage from '../assets/question.svg'
-import answerImage from '../assets/answer.svg'
-import Flowchart from "../components/FlowChart";
+import problemImage from "../assets/ciana_research/problem.svg"
+import goalImage from "../assets/ciana_research/goal.svg"
+import questionImage from '../assets/ciana_research/question.svg'
+import answerImage from '../assets/ciana_research/answer.svg'
+import gantChart from '../assets/ciana_research/ganttChart.png'
+
 
 
 const CianaResearch = () => {
@@ -478,9 +479,14 @@ const CianaResearch = () => {
                   backgroundColor={"semantic.background.secondary"}
                   w={"100%"}
                   p={12}
-                  minH={"50vh"}
+                  
                 >
-                    <Flowchart />
+                    <Text as='h2' textStyle={"pbold"} textAlign={'center'}>{"Process Breakdown".toUpperCase()}</Text>
+                    <Box >
+                        <Image src={gantChart} />
+                      </Box>
+                      <Text as='h2' textStyle={"caption"} textAlign={'center'}>Gantt chart created </Text>
+                    
                 </Box>
  
 
