@@ -36,6 +36,8 @@ const VerticalProgressBar = ({ sections }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [sections]);
 
+  
+
   return (
     <VStack position="sticky" top="20%" left="5%" zIndex="10" >
       {sections?.map((section) => (

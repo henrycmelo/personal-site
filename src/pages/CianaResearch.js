@@ -31,6 +31,11 @@ import questionImage from "../assets/ciana_research/question.svg";
 import answerImage from "../assets/ciana_research/answer.svg";
 import gantChart from "../assets/ciana_research/ganttChart.png";
 import DividerSection from "../components/DividerSection";
+import objectivesImage from "../assets/ciana_research/objectives.svg"
+import researchQuestionsImage from "../assets/ciana_research/researchquestions.svg"
+import targetAudienceImage from "../assets/ciana_research/targetaudience.svg"
+import methodologyImage from "../assets/ciana_research/methodology.svg"
+import toolsImage from "../assets/ciana_research/tools.svg"
 
 const CianaResearch = () => {
   const { capitalizeEachWord } = useAlertContext();
@@ -564,12 +569,106 @@ const CianaResearch = () => {
           <Divider variant="section" />
 
           {/* SECOND SECTION PLANNING OPEN*/}
-          <section>
+          <section >
             <Box id={findId("planning")}>
               <Box px={12}>
                 <DividerSection>Phase 1 </DividerSection>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Planning</Text>
+                  <Text as="p" textStyle="p" pb={4}>
+                    This section outlines the objectives, research questions, the target audience
+                    and methodology used to design the study. {" "}
+                  </Text>
+
+                    {/* Items */}
+                  <VStack alignItems="start">
+                    <Text as="p" textStyle={"pbold"}>
+                      Objectives
+                    </Text>
+                    <Flex gap={6}>
+
+                      <Image src={objectivesImage} alt="" w={"100px"} />
+                      <UnorderedList textStyle={"p"} pb={4}>
+                        <ListItem>
+                          Understand participant experiences, motivations, and
+                          frustrations.
+                        </ListItem>
+                        <ListItem>
+                          Identify key themes and areas for improvement in
+                          workshop delivery and content.
+                        </ListItem>
+                        <ListItem>
+                          Provide actionable recommendations for future
+                          workshops.
+                        </ListItem>
+                      </UnorderedList>
+                    </Flex>
+
+                    <Text as="p" textStyle={"pbold"}>
+                      Research questions
+                    </Text>
+                    <Flex gap={6}>
+                      <Image src={researchQuestionsImage} alt="" w={"100px"} />
+                      <UnorderedList textStyle={"p"} pb={4}>
+                        <ListItem>
+                        What motivated you to attend the digital safety workshop?
+                        </ListItem>
+                        <ListItem>
+                        What frustration did you have before and after the workshop?
+                        </ListItem>
+                        <ListItem>
+                        How would you change or improve your experience with the workshop?
+                        </ListItem>
+                      </UnorderedList>
+                    </Flex>
+
+                    <Text as="p" textStyle={"pbold"}>
+                      Target audience
+                    </Text>
+                    <Flex gap={6}>
+                      <Image src={targetAudienceImage} alt="" w={"100px"} />
+                      <Text as="p" textStyle='p'>The target audience for this research primarily consisted of Hispanic parents and guardians who participated in the digital safety workshops. These individuals were motivated by a strong desire to protect their children in an increasingly digital world, despite having limited access to technology themselves. Many of the participants faced challenges in understanding or implementing digital tools but were deeply invested in learning how to manage their children’s screen time, improve online security, and foster healthier digital habits.</Text>
+                    </Flex>
+
+                    <Text as="p" textStyle={"pbold"}>
+                      Methodology
+                    </Text>
+                    <Flex gap={6}>
+                      <Image src={methodologyImage} alt="" w={"100px"} />
+                      <UnorderedList textStyle={"p"} pb={4}>
+                        <ListItem>
+                        Post-workshop user interviews.
+                        </ListItem>
+                        <ListItem>
+                        Open-ended questions designed to explore motivations, benefits, frustrations, and suggestions.
+                        </ListItem>
+                        
+                      </UnorderedList>
+                    </Flex>
+
+                    <Text as="p" textStyle={"pbold"}>
+                      Tools & Tecniques
+                    </Text>
+                    <Flex gap={6}>
+                      <Image src={toolsImage} alt="" w={"100px"} />
+                      <UnorderedList textStyle={"p"} pb={4}>
+                        <ListItem>
+                            <HStack>
+                            <Text>Interview scripts for consistency using Google Docs.</Text> 
+                            <a href="https://docs.google.com/document/d/1wFE8wP12O8VIpqfgRvT70KguuOMoSqW5JLeGpY3ay60/edit?tab=t.0" target="_blank" rel="noreferrer"><Text as={'p'} textStyle={'p'} decoration={'underline'}>(View Script here.)</Text></a>
+
+                            </HStack>
+                            
+                        </ListItem>
+                        <ListItem>
+                        Recording tools for accurate transcription such as Zoom, IOS Recording App and Otter.
+                        </ListItem>
+                        <ListItem>
+                        Empathy maps and affinity diagrams for data synthesis in Figjam
+                        </ListItem>
+                      </UnorderedList>
+                    </Flex>
+                  </VStack>
                 </VStack>
               </Box>
             </Box>
@@ -580,7 +679,7 @@ const CianaResearch = () => {
 
           {/* THIRD SECTION DATA COLLECTION OPEN*/}
           <section>
-            <Box id={findId("planning")}>
+            <Box id={findId("datacollection")}>
               <Box px={12}>
                 <DividerSection>Phase 2 </DividerSection>
                 <VStack alignItems="start" pt={12}>
@@ -595,7 +694,7 @@ const CianaResearch = () => {
 
           {/* FOURTH SECTION ANALYSIS OPEN*/}
           <section>
-            <Box id={findId("planning")}>
+            <Box id={findId("analysis")}>
               <Box px={12}>
                 <DividerSection>Phase 3 </DividerSection>
                 <VStack alignItems="start" pt={12}>
