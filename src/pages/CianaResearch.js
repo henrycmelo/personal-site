@@ -36,6 +36,7 @@ import researchQuestionsImage from "../assets/ciana_research/researchquestions.s
 import targetAudienceImage from "../assets/ciana_research/targetaudience.svg"
 import methodologyImage from "../assets/ciana_research/methodology.svg"
 import toolsImage from "../assets/ciana_research/tools.svg"
+import recruitingImage from "../assets/ciana_research/recruiting.svg"
 
 const CianaResearch = () => {
   const { capitalizeEachWord } = useAlertContext();
@@ -569,24 +570,24 @@ const CianaResearch = () => {
           <Divider variant="section" />
 
           {/* SECOND SECTION PLANNING OPEN*/}
-          <section >
-            <Box id={findId("planning")}>
+          <section>
+            <Box id="planning">
               <Box px={12}>
                 <DividerSection>Phase 1 </DividerSection>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Planning</Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    This section outlines the objectives, research questions, the target audience
-                    and methodology used to design the study. {" "}
+                    This section outlines the objectives, research questions,
+                    the target audience and methodology used to design the
+                    study.{" "}
                   </Text>
 
-                    {/* Items */}
+                  {/* Items */}
                   <VStack alignItems="start">
                     <Text as="p" textStyle={"pbold"}>
                       Objectives
                     </Text>
                     <Flex gap={6}>
-
                       <Image src={objectivesImage} alt="" w={"100px"} />
                       <UnorderedList textStyle={"p"} pb={4}>
                         <ListItem>
@@ -611,13 +612,16 @@ const CianaResearch = () => {
                       <Image src={researchQuestionsImage} alt="" w={"100px"} />
                       <UnorderedList textStyle={"p"} pb={4}>
                         <ListItem>
-                        What motivated you to attend the digital safety workshop?
+                          What motivated you to attend the digital safety
+                          workshop?
                         </ListItem>
                         <ListItem>
-                        What frustration did you have before and after the workshop?
+                          What frustration did you have before and after the
+                          workshop?
                         </ListItem>
                         <ListItem>
-                        How would you change or improve your experience with the workshop?
+                          How would you change or improve your experience with
+                          the workshop?
                         </ListItem>
                       </UnorderedList>
                     </Flex>
@@ -627,7 +631,19 @@ const CianaResearch = () => {
                     </Text>
                     <Flex gap={6}>
                       <Image src={targetAudienceImage} alt="" w={"100px"} />
-                      <Text as="p" textStyle='p'>The target audience for this research primarily consisted of Hispanic parents and guardians who participated in the digital safety workshops. These individuals were motivated by a strong desire to protect their children in an increasingly digital world, despite having limited access to technology themselves. Many of the participants faced challenges in understanding or implementing digital tools but were deeply invested in learning how to manage their children’s screen time, improve online security, and foster healthier digital habits.</Text>
+                      <Text as="p" textStyle="p">
+                        The target audience for this research primarily
+                        consisted of Hispanic parents and guardians who
+                        participated in the digital safety workshops. These
+                        individuals were motivated by a strong desire to protect
+                        their children in an increasingly digital world, despite
+                        having limited access to technology themselves. Many of
+                        the participants faced challenges in understanding or
+                        implementing digital tools but were deeply invested in
+                        learning how to manage their children’s screen time,
+                        improve online security, and foster healthier digital
+                        habits.
+                      </Text>
                     </Flex>
 
                     <Text as="p" textStyle={"pbold"}>
@@ -636,13 +652,11 @@ const CianaResearch = () => {
                     <Flex gap={6}>
                       <Image src={methodologyImage} alt="" w={"100px"} />
                       <UnorderedList textStyle={"p"} pb={4}>
+                        <ListItem>Post-workshop user interviews.</ListItem>
                         <ListItem>
-                        Post-workshop user interviews.
+                          Open-ended questions designed to explore motivations,
+                          benefits, frustrations, and suggestions.
                         </ListItem>
-                        <ListItem>
-                        Open-ended questions designed to explore motivations, benefits, frustrations, and suggestions.
-                        </ListItem>
-                        
                       </UnorderedList>
                     </Flex>
 
@@ -653,18 +667,33 @@ const CianaResearch = () => {
                       <Image src={toolsImage} alt="" w={"100px"} />
                       <UnorderedList textStyle={"p"} pb={4}>
                         <ListItem>
-                            <HStack>
-                            <Text>Interview scripts for consistency using Google Docs.</Text> 
-                            <a href="https://docs.google.com/document/d/1wFE8wP12O8VIpqfgRvT70KguuOMoSqW5JLeGpY3ay60/edit?tab=t.0" target="_blank" rel="noreferrer"><Text as={'p'} textStyle={'p'} decoration={'underline'}>(View Script here.)</Text></a>
-
-                            </HStack>
-                            
+                          <HStack>
+                            <Text>
+                              Interview scripts for consistency using Google
+                              Docs.
+                            </Text>
+                            <a
+                              href="https://docs.google.com/document/d/1wFE8wP12O8VIpqfgRvT70KguuOMoSqW5JLeGpY3ay60/edit?tab=t.0"
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <Text
+                                as={"p"}
+                                textStyle={"p"}
+                                decoration={"underline"}
+                              >
+                                (View Script here.)
+                              </Text>
+                            </a>
+                          </HStack>
                         </ListItem>
                         <ListItem>
-                        Recording tools for accurate transcription such as Zoom, IOS Recording App and Otter.
+                          Recording tools for accurate transcription such as
+                          Zoom, IOS Recording App and Otter.
                         </ListItem>
                         <ListItem>
-                        Empathy maps and affinity diagrams for data synthesis in Figjam
+                          Empathy maps and affinity diagrams for data synthesis
+                          in Figjam
                         </ListItem>
                       </UnorderedList>
                     </Flex>
@@ -684,6 +713,84 @@ const CianaResearch = () => {
                 <DividerSection>Phase 2 </DividerSection>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Data Collection</Text>
+                  <Text as="p" textStyle="p" pb={4}>
+                    This section outlines the approach used to gather
+                    qualitative data from workshop participants, focusing on the
+                    methods of participant recruitment, the interview process,
+                    and the documentation of responses. The goal was to ensure a
+                    comprehensive collection of feedback that could be analyzed
+                    to improve future workshops.
+                  </Text>
+                  {/* Highlight */}
+                  <Box
+                    backgroundColor={"semantic.background.secondary"}
+                    w={"100%"}
+                    p={12}
+                  >
+                    <VStack alignItems="center">
+                      <Text as="i" textStyle="h3">
+                        “I think I learned how my son should be using a tablet.”
+                      </Text>
+                      <Text as="p" textStyle="p">
+                        - Workshop atendee
+                      </Text>
+                    </VStack>
+                  </Box>
+
+                  <Grid
+                    templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+                    gap={6}
+                    textAlign={"center"}
+                    pt={4}
+                  >
+                    <GridItem>
+                      <Box pb={4}>
+                        <Text textStyle="pbold" textAlign={"center"}>
+                          {"Recruiting".toUpperCase()}
+                        </Text>
+                        <Box boxSize={"400px"}>
+                          <Image src={recruitingImage} />
+                        </Box>
+                        <Text textStyle="p" textAlign={"left"}>
+                          Participants were recruited through phone calls and
+                          emails, which allowed for personalized outreach and
+                          provided an opportunity to address any questions about
+                          the study. Recruitment was aimed at parents who
+                          attended the digital safety workshops, with an
+                          emphasis on flexibility to accommodate their
+                          schedules.
+                        </Text>
+                      </Box>
+                    </GridItem>
+
+                    <GridItem>
+                      <Box pb={4}>
+                        <Text textStyle="pbold" textAlign={"center"}>
+                          {"Interviews".toUpperCase()}
+                        </Text>
+                        <Box boxSize={"400px"}>
+                          <Image src={recruitingImage} />
+                        </Box>
+                        <Text textStyle="p" textAlign={"left"}>
+                        Structured post-workshop interviews were conducted with open-ended questions to gather feedback on participants' experiences, motivations, and suggestions. Some participants were initially hesitant, fearing they might be quizzed, but were reassured that the goal was to collect feedback, not assess their knowledge. The interviews were recorded (with consent) and transcribed for accurate analysis to ensure detailed documentation for synthesis.
+                        </Text>
+                      </Box>
+                    </GridItem>
+
+                    <GridItem>
+                      <Box pb={4}>
+                        <Text textStyle="pbold" textAlign={"center"}>
+                          {"Documentation".toUpperCase()}
+                        </Text>
+                        <Box boxSize={"400px"}>
+                          <Image src={recruitingImage} />
+                        </Box>
+                        <Text textStyle="p" textAlign={"left"} >
+                        The interviews were recorded (with participant consent) and later transcribed for accurate analysis. This documentation ensured that every piece of feedback was captured in detail and could be referenced during the synthesis and analysis phases.
+                        </Text>
+                      </Box>
+                    </GridItem>
+                  </Grid>
                 </VStack>
               </Box>
             </Box>
