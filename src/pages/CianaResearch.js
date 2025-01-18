@@ -37,6 +37,13 @@ import targetAudienceImage from "../assets/ciana_research/targetaudience.svg"
 import methodologyImage from "../assets/ciana_research/methodology.svg"
 import toolsImage from "../assets/ciana_research/tools.svg"
 import recruitingImage from "../assets/ciana_research/recruiting.svg"
+import interviewImage from "../assets/ciana_research/interview.svg"
+import documentationImage from "../assets/ciana_research/documentation.svg"
+import sayImage from "../assets/ciana_research/say.png"
+import thinkImage from "../assets/ciana_research/think.png"
+import feelImage from "../assets/ciana_research/feel.png"
+import doesImage from "../assets/ciana_research/does.png"
+import OverlayImage from "../components/Overlay";
 
 const CianaResearch = () => {
   const { capitalizeEachWord } = useAlertContext();
@@ -748,7 +755,7 @@ const CianaResearch = () => {
                         <Text textStyle="pbold" textAlign={"center"}>
                           {"Recruiting".toUpperCase()}
                         </Text>
-                        <Box boxSize={"400px"}>
+                        <Box boxSize={"1fr"}>
                           <Image src={recruitingImage} />
                         </Box>
                         <Text textStyle="p" textAlign={"left"}>
@@ -768,8 +775,8 @@ const CianaResearch = () => {
                         <Text textStyle="pbold" textAlign={"center"}>
                           {"Interviews".toUpperCase()}
                         </Text>
-                        <Box boxSize={"400px"}>
-                          <Image src={recruitingImage} />
+                        <Box boxSize={"1fr"}>
+                          <Image src={interviewImage} />
                         </Box>
                         <Text textStyle="p" textAlign={"left"}>
                         Structured post-workshop interviews were conducted with open-ended questions to gather feedback on participants' experiences, motivations, and suggestions. Some participants were initially hesitant, fearing they might be quizzed, but were reassured that the goal was to collect feedback, not assess their knowledge. The interviews were recorded (with consent) and transcribed for accurate analysis to ensure detailed documentation for synthesis.
@@ -782,8 +789,8 @@ const CianaResearch = () => {
                         <Text textStyle="pbold" textAlign={"center"}>
                           {"Documentation".toUpperCase()}
                         </Text>
-                        <Box boxSize={"400px"}>
-                          <Image src={recruitingImage} />
+                        <Box boxSize={"1fr"}>
+                          <Image src={documentationImage} />
                         </Box>
                         <Text textStyle="p" textAlign={"left"} >
                         The interviews were recorded (with participant consent) and later transcribed for accurate analysis. This documentation ensured that every piece of feedback was captured in detail and could be referenced during the synthesis and analysis phases.
@@ -806,6 +813,69 @@ const CianaResearch = () => {
                 <DividerSection>Phase 3 </DividerSection>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Analysis</Text>
+                  <Text as="p" textStyle="p" pb={4}>
+                  The analysis phase utilized three complementary methods to synthesize the qualitative interview data. Empathy mapping visualized participant behaviors, quotes, thoughts, and feelings, while affinity diagramming grouped related insights to reveal patterns. These methods led to the identification of key themes around motivations, positive experiences, and improvement areas.
+                  </Text>
+
+                   {/* Content Empathy map and affinity diagram */}
+
+                  <VStack alignItems='start'>
+                    <Text as="p" textStyle={'pbold'}>
+                      Empathy Map
+                    </Text>
+                    <Text as="p" textStyle={'p'}>
+                    The empathy map visualized participant experiences across four dimensions: what parents said <Text as='i'> ("I wanted to learn more about parental controls")</Text>, thought (the workshop should be longer), did (attended workshops to improve her knowledge), and felt (frustated because there were a few things hard to understand). This mapping revealed the complex interplay between parents' explicit statements and their underlying needs around digital safety.
+                    </Text>
+                    <Grid templateColumns = {{base: '1fr', md: 'repeat(2, 1fr)'}} >
+                      <GridItem>
+                        <Box pb={4}>
+                        <Text textStyle="pbold" textAlign={"center"}>
+                          {"Say".toUpperCase()}
+                        </Text>
+                        <OverlayImage src={sayImage} alt="empathy map say" />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                      <Box pb={4}>
+                        <Text textStyle="pbold" textAlign={"center"}>
+                          {"Think".toUpperCase()}
+                        </Text>
+                        <OverlayImage src={thinkImage} alt='empathy map think' />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                      <Box pb={4}>
+                        <Text textStyle="pbold" textAlign={"center"}>
+                          {"Feel".toUpperCase()}
+                        </Text>
+                        
+                        <OverlayImage src={feelImage} alt="empathy map feel" />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                      <Box pb={4}>
+                        <Text textStyle="pbold" textAlign={"center"}>
+                          {"Does".toUpperCase()}
+                        </Text>
+                        <OverlayImage isGrayImage src={doesImage} alt="empathy map does" />
+                        </Box>
+                      </GridItem>
+                    </Grid>
+
+                    
+                  </VStack>
+
+                  <VStack alignItems='start'>
+                    <Text as="p" textStyle={'pbold'}>
+                      Affinity Diagram & Theme Identification
+                    </Text>
+                    <Text as="p" textStyle={'p'}>
+                    Through our affinity diagramming process, I organized the sticky notes from the empathy map into three main categories: Positive Feedback, Motivations/Goals, and Frustrations. Within each category, key themes emerged. Below are the themes identified with supporting participant quotes.
+                    </Text>
+                  </VStack>
                 </VStack>
               </Box>
             </Box>
