@@ -44,6 +44,18 @@ import thinkImage from "../assets/ciana_research/think.png"
 import feelImage from "../assets/ciana_research/feel.png"
 import doesImage from "../assets/ciana_research/does.png"
 import OverlayImage from "../components/Overlay";
+import clarityImage from "../assets/ciana_research/positive_clarity.png"
+import practicalImage from "../assets/ciana_research/positive_practical.png"
+import childImage from "../assets/ciana_research/motivation_child.png"
+import proactiveImage from "../assets/ciana_research/motivation_proactive.png"
+import reinforcingImage from "../assets/ciana_research/motivation_reinforcing.png"
+import schedulingImage from "../assets/ciana_research/frustration_scheduling.png"
+import technicalImage from "../assets/ciana_research/frustration_scheduling.png"
+import workshopImage from "../assets/ciana_research/frustration_workshop.png"
+import recommendationScheduleImage from "../assets/ciana_research/recommendation_schedule.svg"
+import recommendationContentImage from "../assets/ciana_research/recommendation_content.svg"
+import recommendationTechnicalImage from "../assets/ciana_research/recommendation_technical.svg"
+import recommendationKidsImage from "../assets/ciana_research/recomendation_kids.svg"
 
 const CianaResearch = () => {
   const { capitalizeEachWord } = useAlertContext();
@@ -342,7 +354,7 @@ const CianaResearch = () => {
                       {"Problem".toUpperCase()}
                     </Text>
                     <Box boxSize={"400px"}>
-                      <Image src={problemImage} />
+                      <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -779,7 +791,15 @@ const CianaResearch = () => {
                           <Image src={interviewImage} />
                         </Box>
                         <Text textStyle="p" textAlign={"left"}>
-                        Structured post-workshop interviews were conducted with open-ended questions to gather feedback on participants' experiences, motivations, and suggestions. Some participants were initially hesitant, fearing they might be quizzed, but were reassured that the goal was to collect feedback, not assess their knowledge. The interviews were recorded (with consent) and transcribed for accurate analysis to ensure detailed documentation for synthesis.
+                          Structured post-workshop interviews were conducted
+                          with open-ended questions to gather feedback on
+                          participants' experiences, motivations, and
+                          suggestions. Some participants were initially
+                          hesitant, fearing they might be quizzed, but were
+                          reassured that the goal was to collect feedback, not
+                          assess their knowledge. The interviews were recorded
+                          (with consent) and transcribed for accurate analysis
+                          to ensure detailed documentation for synthesis.
                         </Text>
                       </Box>
                     </GridItem>
@@ -792,8 +812,12 @@ const CianaResearch = () => {
                         <Box boxSize={"1fr"}>
                           <Image src={documentationImage} />
                         </Box>
-                        <Text textStyle="p" textAlign={"left"} >
-                        The interviews were recorded (with participant consent) and later transcribed for accurate analysis. This documentation ensured that every piece of feedback was captured in detail and could be referenced during the synthesis and analysis phases.
+                        <Text textStyle="p" textAlign={"left"}>
+                          The interviews were recorded (with participant
+                          consent) and later transcribed for accurate analysis.
+                          This documentation ensured that every piece of
+                          feedback was captured in detail and could be
+                          referenced during the synthesis and analysis phases.
                         </Text>
                       </Box>
                     </GridItem>
@@ -814,67 +838,198 @@ const CianaResearch = () => {
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Analysis</Text>
                   <Text as="p" textStyle="p" pb={4}>
-                  The analysis phase utilized three complementary methods to synthesize the qualitative interview data. Empathy mapping visualized participant behaviors, quotes, thoughts, and feelings, while affinity diagramming grouped related insights to reveal patterns. These methods led to the identification of key themes around motivations, positive experiences, and improvement areas.
+                    The analysis phase utilized three complementary methods to
+                    synthesize the qualitative interview data. Empathy mapping
+                    visualized participant behaviors, quotes, thoughts, and
+                    feelings, while affinity diagramming grouped related
+                    insights to reveal patterns. These methods led to the
+                    identification of key themes around motivations, positive
+                    experiences, and improvement areas.
                   </Text>
 
-                   {/* Content Empathy map and affinity diagram */}
+                  {/* Content Empathy map and affinity diagram */}
 
-                  <VStack alignItems='start'>
-                    <Text as="p" textStyle={'pbold'}>
+                  <VStack alignItems="start">
+                    <Text as="p" textStyle={"pbold"}>
                       Empathy Map
                     </Text>
-                    <Text as="p" textStyle={'p'}>
-                    The empathy map visualized participant experiences across four dimensions: what parents said <Text as='i'> ("I wanted to learn more about parental controls")</Text>, thought (the workshop should be longer), did (attended workshops to improve her knowledge), and felt (frustated because there were a few things hard to understand). This mapping revealed the complex interplay between parents' explicit statements and their underlying needs around digital safety.
+                    <Text as="p" textStyle={"p"}>
+                      The empathy map visualized participant experiences across
+                      four dimensions: what parents said{" "}
+                      <Text as="i">
+                        {" "}
+                        ("I wanted to learn more about parental controls")
+                      </Text>
+                      , thought (the workshop should be longer), did (attended
+                      workshops to improve her knowledge), and felt (frustated
+                      because there were a few things hard to understand). This
+                      mapping revealed the complex interplay between parents'
+                      explicit statements and their underlying needs around
+                      digital safety.
                     </Text>
-                    <Grid templateColumns = {{base: '1fr', md: 'repeat(2, 1fr)'}} >
+                    <Grid
+                      templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+                    >
                       <GridItem>
                         <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Say".toUpperCase()}
-                        </Text>
-                        <OverlayImage src={sayImage} alt="empathy map say" />
+                          <Text textStyle="pbold" textAlign={"center"}>
+                            {"Say".toUpperCase()}
+                          </Text>
+                          <OverlayImage src={sayImage} alt="empathy map say" />
                         </Box>
                       </GridItem>
 
                       <GridItem>
-                      <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Think".toUpperCase()}
-                        </Text>
-                        <OverlayImage src={thinkImage} alt='empathy map think' />
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign={"center"}>
+                            {"Think".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            src={thinkImage}
+                            alt="empathy map think"
+                          />
                         </Box>
                       </GridItem>
 
                       <GridItem>
-                      <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Feel".toUpperCase()}
-                        </Text>
-                        
-                        <OverlayImage src={feelImage} alt="empathy map feel" />
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign={"center"}>
+                            {"Feel".toUpperCase()}
+                          </Text>
+
+                          <OverlayImage
+                            src={feelImage}
+                            alt="empathy map feel"
+                          />
                         </Box>
                       </GridItem>
 
                       <GridItem>
-                      <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Does".toUpperCase()}
-                        </Text>
-                        <OverlayImage isGrayImage src={doesImage} alt="empathy map does" />
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign={"center"}>
+                            {"Does".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            isGrayImage
+                            src={doesImage}
+                            alt="empathy map does"
+                          />
                         </Box>
                       </GridItem>
                     </Grid>
-
-                    
                   </VStack>
 
-                  <VStack alignItems='start'>
-                    <Text as="p" textStyle={'pbold'}>
+                  <VStack alignItems="start">
+                    <Text as="p" textStyle={"pbold"}>
                       Affinity Diagram & Theme Identification
                     </Text>
-                    <Text as="p" textStyle={'p'}>
-                    Through our affinity diagramming process, I organized the sticky notes from the empathy map into three main categories: Positive Feedback, Motivations/Goals, and Frustrations. Within each category, key themes emerged. Below are the themes identified with supporting participant quotes.
+                    <Text as="p" textStyle={"p"}>
+                      Through our affinity diagramming process, I organized the
+                      sticky notes from the empathy map into three main
+                      categories: Positive Feedback, Motivations/Goals, and
+                      Frustrations. Within each category, key themes emerged.
+                      Below are the themes identified with supporting
+                      participant quotes.
                     </Text>
+
+                    <Grid
+                      templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+                      gap={6}
+                      pt={6}
+                    >
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center">
+                            {"CLARITY & IMPACT".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            src={clarityImage}
+                            alt="clarity Theme"
+                          />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center">
+                            {"PRACTICAL INSIGHTS & LEARNING OUTCOMES".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            src={practicalImage}
+                            alt="practical Theme"
+                          />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center">
+                            {"COMMITMENT TO CHILD DEVELOPMENT & SAFETY".toUpperCase()}
+                          </Text>
+                          <OverlayImage src={childImage} alt="child Theme" />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center">
+                            {"PROACTIVE DIGITAL PARENTING".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            src={proactiveImage}
+                            alt="proactive Theme"
+                          />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center">
+                            {"REINFORCING DIGITAL SAFETY FOR KIDS".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            src={reinforcingImage}
+                            alt="reinforcing Theme"
+                          />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center">
+                            {"SCHEDULING & ACCESIBILITY".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            src={schedulingImage}
+                            alt="scheduling Theme"
+                          />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center">
+                            {"TECHNICAL DIFFICULTIES & SETUP".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            src={technicalImage}
+                            alt="scheduling Theme"
+                          />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center">
+                            {"WORKSHOP DELIVERY & CONTENT".toUpperCase()}
+                          </Text>
+                          <OverlayImage
+                            src={workshopImage}
+                            alt="scheduling Theme"
+                          />
+                        </Box>
+                      </GridItem>
+                    </Grid>
                   </VStack>
                 </VStack>
               </Box>
@@ -889,14 +1044,127 @@ const CianaResearch = () => {
             <Box id={findId("synthesis")}>
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
-                <VStack alignItems="start" pt={12}>
+                <VStack alignItems="start" pt={12} pb={12}>
                   <Text textStyle="h2">Synthesis</Text>
+                  <Text as="p" textStyle="p" pb={4}>
+                    Through my analysis, clear patterns emerged leading to
+                    actionable recommendations for improving the digital safety
+                    workshops. Below are the fourt key recommendations based on
+                    participant feedback and identified themes, followed by our
+                    conclusion about the workshop's effectiveness and future
+                    direction.
+                  </Text>
+
+                  <VStack alignItems="start">
+                    <Text as="p" textStyle={"pbold"}>
+                      Recommendations
+                    </Text>
+
+                    <Grid
+                      templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+                      gap={6}
+                      pt={12}
+                      px={12}
+                    >
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign={"center"}>
+                            {"Flexible scheduling".toUpperCase()}
+                          </Text>
+                          <Box boxSize={"200px"} margin="0 auto">
+                            <Image
+                              src={recommendationScheduleImage}
+                              alt="calendar Illustration"
+                            />
+                          </Box>
+                          <Text textStyle="p">
+                            Offer workshops at various times to accommodate
+                            different schedules. Consider recording sessions for
+                            on-demand access.
+                          </Text>
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign={"center"}>
+                            {"Enhanced technical support".toUpperCase()}
+                          </Text>
+                          <Box boxSize={"200px"} margin="0 auto">
+                            <Image
+                              src={recommendationTechnicalImage}
+                              alt="laptop Illustration"
+                            />
+                          </Box>
+                          <Text textStyle="p">
+                          Provide follow-up materials and technical assistance to help participants apply what they have learned. Ensure all promised materials are sent right away.
+                          </Text>
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign={"center"}>
+                            {"Improved content delivery".toUpperCase()}
+                          </Text>
+                          <Box boxSize={"200px"} margin="0 auto">
+                            <Image
+                              src={recommendationContentImage}
+                              alt="laptop Illustration"
+                            />
+                          </Box>
+                          <Text textStyle="p">
+                          Incorporate more visual aids and interactive elements to engage participants and clarify complex topics. Consider live demonstrations for technical setups such as parental controls on their phone/tablet/laptop.
+                          </Text>
+                        </Box>
+                      </GridItem>
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign={"center"}>
+                            {"Target workshop for children:".toUpperCase()}
+                          </Text>
+                          <Box boxSize={"200px"} margin="0 auto">
+                            <Image
+                              src={recommendationKidsImage}
+                              alt="laptop Illustration"
+                            />
+                          </Box>
+                          <Text textStyle="p">
+                          Develop sessions specifically for children to reinforce the concepts taught to parents, ensuring the education about digital safety is for both children and their parents.
+                          </Text>
+                        </Box>
+                      </GridItem>
+                    </Grid>
+                  </VStack>
+
+                  <VStack alignItems="start">
+                    <Text as="p" textStyle={"pbold"}>
+                      Conclusion
+                    </Text>
+                    <Text as="p" textStyle={"p"}>
+                    The qualitative analysis of participant feedback highlights both the strengths and areas for improvements in our digital safety workshops. By addressing the identified frustrations and implementing the proposed recommendations, we can improve the overall effectiveness and satisfaction of our workshops, ultimately providing better support for parents and their children in navigating digital safety.
+                    </Text>
+                  </VStack>
                 </VStack>
               </Box>
             </Box>
           </section>
 
           {/* FIFTH SECTION SYNTHESIS CLOSE*/}
+          <Divider variant="section" />
+          {/* SIXTH SECTION REFLECTIONS OPEN*/}
+          <section>
+            <Box id={findId("synthesis")}>
+              <Box px={12}>
+                <DividerSection>Phase 4 </DividerSection>
+                <VStack alignItems="start" pt={12}>
+                  <Text textStyle="h2">Takeaways</Text>
+                </VStack>
+              </Box>
+            </Box>
+          </section>
+
+          {/* FIFTH SECTION REFLECTIONS CLOSE*/}
         </Box>
       </Grid>
     </>
