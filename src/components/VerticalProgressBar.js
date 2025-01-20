@@ -1,9 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Box, VStack } from "@chakra-ui/react";
 
 const VerticalProgressBar = ({ sections }) => {
   const [activeSection, setActiveSection] = useState("");
+  const contentRef = useRef(null);
+
+
+  //Find the scrollable container on the right
+  useEffect(() => {
+    // Look for the scrollable container - the Box with overflowY="auto"
+    //the data-scroll-container is added to the box
+
+    contentRef.current = document.querySelector('[data-scroll-container="true"]');
+  }, []);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -13,27 +23,52 @@ const VerticalProgressBar = ({ sections }) => {
     });
   };
 
+
   useEffect(() => {
-    const handleScroll = () => {
+    const container = contentRef.current
+
+    const handleScroll = (event) => {
+      if(!container) return
+      
       let currentSection = "";
+      const containerRect = container.getBoundingClientRect();
+      const triggerPoint = containerRect.top + (containerRect.height/3)
+      
+
       sections?.forEach((section) => {
         const element = document.getElementById(section.id);
         if (element) {
+
           const rect = element.getBoundingClientRect();
-          if (
-            rect.top <= window.innerHeight / 2 &&
-            rect.bottom >= window.innerHeight / 2
-          ) {
+
+          // Check if the element is in view relative to the container
+
+          if (rect.top <= triggerPoint && rect.bottom >= containerRect.top) {
             currentSection = section.id;
           }
         }
       });
+      
       setActiveSection(currentSection);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if(container){
+      // Add scroll listener to the container
+      container.addEventListener('scroll', handleScroll) // Without this, we wouldn't detect when someone scrolls inside the right content area
 
-    return () => window.removeEventListener("scroll", handleScroll);
+
+      handleScroll() //It ensures that the correct section is highlighted right when the page loads
+
+      window.addEventListener('scroll', handleScroll) //It's a safety net to catch all possible scroll scenarios
+    }
+
+    // Cleanup
+    return () =>{
+      if(container){
+        container.removeEventListener("scroll", handleScroll) 
+        window.removeEventListener('scroll', handleScroll) 
+      }
+    } 
   }, [sections]);
 
   

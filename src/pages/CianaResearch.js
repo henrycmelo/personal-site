@@ -31,33 +31,33 @@ import questionImage from "../assets/ciana_research/question.svg";
 import answerImage from "../assets/ciana_research/answer.svg";
 import gantChart from "../assets/ciana_research/ganttChart.png";
 import DividerSection from "../components/DividerSection";
-import objectivesImage from "../assets/ciana_research/objectives.svg"
-import researchQuestionsImage from "../assets/ciana_research/researchquestions.svg"
-import targetAudienceImage from "../assets/ciana_research/targetaudience.svg"
-import methodologyImage from "../assets/ciana_research/methodology.svg"
-import toolsImage from "../assets/ciana_research/tools.svg"
-import recruitingImage from "../assets/ciana_research/recruiting.svg"
-import interviewImage from "../assets/ciana_research/interview.svg"
-import documentationImage from "../assets/ciana_research/documentation.svg"
-import sayImage from "../assets/ciana_research/say.png"
-import thinkImage from "../assets/ciana_research/think.png"
-import feelImage from "../assets/ciana_research/feel.png"
-import doesImage from "../assets/ciana_research/does.png"
+import objectivesImage from "../assets/ciana_research/objectives.svg";
+import researchQuestionsImage from "../assets/ciana_research/researchquestions.svg";
+import targetAudienceImage from "../assets/ciana_research/targetaudience.svg";
+import methodologyImage from "../assets/ciana_research/methodology.svg";
+import toolsImage from "../assets/ciana_research/tools.svg";
+import recruitingImage from "../assets/ciana_research/recruiting.svg";
+import interviewImage from "../assets/ciana_research/interview.svg";
+import documentationImage from "../assets/ciana_research/documentation.svg";
+import sayImage from "../assets/ciana_research/say.png";
+import thinkImage from "../assets/ciana_research/think.png";
+import feelImage from "../assets/ciana_research/feel.png";
+import doesImage from "../assets/ciana_research/does.png";
 import OverlayImage from "../components/OverlayImage";
-import clarityImage from "../assets/ciana_research/positive_clarity.png"
-import practicalImage from "../assets/ciana_research/positive_practical.png"
-import childImage from "../assets/ciana_research/motivation_child.png"
-import proactiveImage from "../assets/ciana_research/motivation_proactive.png"
-import reinforcingImage from "../assets/ciana_research/motivation_reinforcing.png"
-import schedulingImage from "../assets/ciana_research/frustration_scheduling.png"
-import technicalImage from "../assets/ciana_research/frustration_scheduling.png"
-import workshopImage from "../assets/ciana_research/frustration_workshop.png"
-import recommendationScheduleImage from "../assets/ciana_research/recommendation_schedule.svg"
-import recommendationContentImage from "../assets/ciana_research/recommendation_content.svg"
-import recommendationTechnicalImage from "../assets/ciana_research/recommendation_technical.svg"
-import recommendationKidsImage from "../assets/ciana_research/recomendation_kids.svg"
-import cecLogo from "../assets/ciana_research/cecLogo.png"
-import cianaBanner from "../assets/ciana_research/cianaWorkshop.png"
+import clarityImage from "../assets/ciana_research/positive_clarity.png";
+import practicalImage from "../assets/ciana_research/positive_practical.png";
+import childImage from "../assets/ciana_research/motivation_child.png";
+import proactiveImage from "../assets/ciana_research/motivation_proactive.png";
+import reinforcingImage from "../assets/ciana_research/motivation_reinforcing.png";
+import schedulingImage from "../assets/ciana_research/frustration_scheduling.png";
+import technicalImage from "../assets/ciana_research/frustration_scheduling.png";
+import workshopImage from "../assets/ciana_research/frustration_workshop.png";
+import recommendationScheduleImage from "../assets/ciana_research/recommendation_schedule.svg";
+import recommendationContentImage from "../assets/ciana_research/recommendation_content.svg";
+import recommendationTechnicalImage from "../assets/ciana_research/recommendation_technical.svg";
+import recommendationKidsImage from "../assets/ciana_research/recomendation_kids.svg";
+import cecLogo from "../assets/ciana_research/cecLogo.png";
+import cianaBanner from "../assets/ciana_research/cianaWorkshop.png";
 
 const CianaResearch = () => {
   const { capitalizeEachWord } = useAlertContext();
@@ -67,11 +67,9 @@ const CianaResearch = () => {
     { id: "datacollection", label: "Data Collection" },
     { id: "analysis", label: "Analysis" },
     { id: "synthesis", label: "Synthesis" },
-    { id: "reflection", label: "Reflection & Takeaways" }
-    
+    { id: "reflection", label: "Reflection & Takeaways" },
   ];
 
- 
   return (
     <>
       <Header />
@@ -87,10 +85,14 @@ const CianaResearch = () => {
             {capitalizeEachWord("UX research case study")}
           </Text>
           <Text as="i" textStyle={"p"}>
-          How might we demonstrate the true value of digital safety workshops while ensuring they meet immigrant family needs?
+            How might we demonstrate the true value of digital safety workshops
+            while ensuring they meet immigrant family needs?
           </Text>
           <Text as="h3" textStyle={"caption"}>
-          <Text as='span' textStyle='captionbold'>ORGANIZATION - </Text> CIANA (Center for the Integration and Advancement of New Americans)
+            <Text as="span" textStyle="captionbold">
+              ORGANIZATION -{" "}
+            </Text>{" "}
+            CIANA (Center for the Integration and Advancement of New Americans)
           </Text>
           <Text as="p" textStyle={"caption"}>
             2024
@@ -115,7 +117,6 @@ const CianaResearch = () => {
             templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
             gap={{ base: 2, md: 24 }}
           >
-            
             <GridItem w="100%">
               <VStack alignItems="start">
                 <Text as="p" textStyle="pbold">
@@ -157,7 +158,8 @@ const CianaResearch = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                Research Planning • User Interviews • Synthesis Methods • Analysis & Documentation
+                  Research Planning • User Interviews • Synthesis Methods •
+                  Analysis & Documentation
                 </Text>
               </VStack>
             </GridItem>
@@ -186,12 +188,12 @@ const CianaResearch = () => {
         </Box>
         <Divider orientation="vertical" variant="thick" />
 
-        <Box overflowY="auto" height={"100%"}>
+        <Box overflowY="auto" height={"100%"} data-scroll-container='true'>
           {/* ALL CONTENT HERE */}
 
           {/* FIRST SECTION OVERVIEW*/}
           <section>
-            <Box id='theproject'>
+            <Box id="theproject">
               <Box px={12}>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Overview</Text>
@@ -207,7 +209,12 @@ const CianaResearch = () => {
                           {"Background".toUpperCase()}
                         </Text>
                         <Text textStyle="p">
-                        CIANA, a NYC non-profit serving new immigrants, received funding through "The People's Money" initiative to conduct digital safety workshops in Corona, Queens. The program needed to demonstrate its effectiveness and community impact for grant requirements.
+                          CIANA, a NYC non-profit serving new immigrants,
+                          received funding through "The People's Money"
+                          initiative to conduct digital safety workshops in
+                          Corona, Queens. The program needed to demonstrate its
+                          effectiveness and community impact for grant
+                          requirements.
                         </Text>
                       </Box>
 
@@ -216,7 +223,11 @@ const CianaResearch = () => {
                           {"Relevance".toUpperCase()}
                         </Text>
                         <Text textStyle="p">
-                        Parents in immigrant communities face growing challenges in protecting their children online. These workshops provide crucial digital safety support where resources are limited, making it essential to understand and improve their effectiveness.
+                          Parents in immigrant communities face growing
+                          challenges in protecting their children online. These
+                          workshops provide crucial digital safety support where
+                          resources are limited, making it essential to
+                          understand and improve their effectiveness.
                         </Text>
                       </Box>
 
@@ -225,23 +236,25 @@ const CianaResearch = () => {
                           {"My impact".toUpperCase()}
                         </Text>
                         <Text textStyle="p">
-                        I worked as a UX researcher to evaluate CIANA's workshops through parent interviews, using synthesis tools to develop evidence-based recommendations for grant reporting and program improvements.
+                          I worked as a UX researcher to evaluate CIANA's
+                          workshops through parent interviews, using synthesis
+                          tools to develop evidence-based recommendations for
+                          grant reporting and program improvements.
                         </Text>
                       </Box>
                     </GridItem>
 
                     {/* image Column */}
-                    <GridItem display="flex" 
-    justifyContent="center" 
-    alignItems="center">
-                      <Box  >
+                    <GridItem
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                    >
+                      <Box>
                         <OverlayImage
                           src={cecLogo}
                           alt="NYC Civic Engagement Logo"
                           objectFit="cover"
-                           
-                          
-                          
                         />
                       </Box>
                     </GridItem>
@@ -336,7 +349,13 @@ const CianaResearch = () => {
                       <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
-                    The digital safety workshops needed a way to demonstrate their effectiveness and impact for grant reporting while ensuring they truly met diverse community needs. The initial quantitative survey approach wasn't capturing the depth of parent experiences and program value, limiting our ability to make meaningful improvements and justify continued funding.
+                      The digital safety workshops needed a way to demonstrate
+                      their effectiveness and impact for grant reporting while
+                      ensuring they truly met diverse community needs. The
+                      initial quantitative survey approach wasn't capturing the
+                      depth of parent experiences and program value, limiting
+                      our ability to make meaningful improvements and justify
+                      continued funding.
                     </Text>
                   </Box>
                 </GridItem>
@@ -351,7 +370,11 @@ const CianaResearch = () => {
                       <Image src={goalImage} />
                     </Box>
                     <Text textStyle="p">
-                    To evaluate and optimize digital safety workshops through qualitative UX research, gathering rich insights about participant experiences that would both demonstrate program impact for grant requirements and identify concrete opportunities for improvement.
+                      To evaluate and optimize digital safety workshops through
+                      qualitative UX research, gathering rich insights about
+                      participant experiences that would both demonstrate
+                      program impact for grant requirements and identify
+                      concrete opportunities for improvement.
                     </Text>
                   </Box>
                 </GridItem>
@@ -686,7 +709,7 @@ const CianaResearch = () => {
 
           {/* THIRD SECTION DATA COLLECTION OPEN*/}
           <section>
-            <Box id='datacollection'>
+            <Box id="datacollection">
               <Box px={12}>
                 <DividerSection>Phase 2 </DividerSection>
                 <VStack alignItems="start" pt={12}>
@@ -791,7 +814,7 @@ const CianaResearch = () => {
 
           {/* FOURTH SECTION ANALYSIS OPEN*/}
           <section>
-            <Box id='analysis'>
+            <Box id="analysis">
               <Box px={12}>
                 <DividerSection>Phase 3 </DividerSection>
                 <VStack alignItems="start" pt={12}>
@@ -1000,7 +1023,7 @@ const CianaResearch = () => {
 
           {/* FIFTH SECTION SYNTHESIS OPEN*/}
           <section>
-            <Box id='synthesis'>
+            <Box id="synthesis">
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
                 <VStack alignItems="start" pt={12} pb={12}>
@@ -1129,7 +1152,7 @@ const CianaResearch = () => {
           <Divider variant="section" />
           {/* SIXTH SECTION REFLECTIONS OPEN*/}
           <section>
-            <Box id='reflection'>
+            <Box id="reflection">
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
                 <VStack alignItems="start" pt={12}>
@@ -1144,38 +1167,55 @@ const CianaResearch = () => {
                   <UnorderedList textStyle={"p"} pb={4}>
                     <ListItem>
                       <Text as="p" textStyle={"p"}>
-                      <Text as='span' textStyle='pbold'>Qualitative insights reveal deeper understanding - </Text>
-                       Our shift from quantitative surveys to qualitative interviews proved crucial in uncovering the real needs and challenges of parents. This taught me that sometimes the most valuable insights come from listening to personal stories rather than just collecting metrics.
-                       </Text>
-
+                        <Text as="span" textStyle="pbold">
+                          Qualitative insights reveal deeper understanding -{" "}
+                        </Text>
+                        Our shift from quantitative surveys to qualitative
+                        interviews proved crucial in uncovering the real needs
+                        and challenges of parents. This taught me that sometimes
+                        the most valuable insights come from listening to
+                        personal stories rather than just collecting metrics.
+                      </Text>
                     </ListItem>
 
                     <ListItem>
                       <Text as="p" textStyle={"p"}>
-                      <Text as='span' textStyle='pbold'>Flexibility in research methods is key  - </Text>
-                      Learning to adapt and choose the right research method for the context was essential. Post-workshop interviews provided richer insights into parent experiences than surveys would have, showing me how different research approaches can lead to different types of understanding.
-                       </Text>
-
+                        <Text as="span" textStyle="pbold">
+                          Flexibility in research methods is key -{" "}
+                        </Text>
+                        Learning to adapt and choose the right research method
+                        for the context was essential. Post-workshop interviews
+                        provided richer insights into parent experiences than
+                        surveys would have, showing me how different research
+                        approaches can lead to different types of understanding.
+                      </Text>
                     </ListItem>
 
                     <ListItem>
                       <Text as="p" textStyle={"p"}>
-                      <Text as='span' textStyle='pbold'>Community needs drive research direction  - </Text>
-                      The research revealed how community context shapes program effectiveness. Understanding parents' scheduling constraints, technical challenges, and cultural perspectives helped develop more relevant and accessible workshop recommendations.
-                       </Text>
-
+                        <Text as="span" textStyle="pbold">
+                          Community needs drive research direction -{" "}
+                        </Text>
+                        The research revealed how community context shapes
+                        program effectiveness. Understanding parents' scheduling
+                        constraints, technical challenges, and cultural
+                        perspectives helped develop more relevant and accessible
+                        workshop recommendations.
+                      </Text>
                     </ListItem>
 
                     <ListItem>
                       <Text as="p" textStyle={"p"}>
-                      <Text as='span' textStyle='pbold'>Research synthesis tools enhance understanding  - </Text>
-                      Using empathy maps and affinity diagrams taught me how to transform individual feedback into actionable insights. These tools helped bridge the gap between raw data and meaningful recommendations.
-                       </Text>
-
+                        <Text as="span" textStyle="pbold">
+                          Research synthesis tools enhance understanding -{" "}
+                        </Text>
+                        Using empathy maps and affinity diagrams taught me how
+                        to transform individual feedback into actionable
+                        insights. These tools helped bridge the gap between raw
+                        data and meaningful recommendations.
+                      </Text>
                     </ListItem>
-
                   </UnorderedList>
-                  
                 </VStack>
               </Box>
             </Box>
