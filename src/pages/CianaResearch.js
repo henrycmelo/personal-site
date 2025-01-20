@@ -43,7 +43,7 @@ import sayImage from "../assets/ciana_research/say.png"
 import thinkImage from "../assets/ciana_research/think.png"
 import feelImage from "../assets/ciana_research/feel.png"
 import doesImage from "../assets/ciana_research/does.png"
-import OverlayImage from "../components/Overlay";
+import OverlayImage from "../components/OverlayImage";
 import clarityImage from "../assets/ciana_research/positive_clarity.png"
 import practicalImage from "../assets/ciana_research/positive_practical.png"
 import childImage from "../assets/ciana_research/motivation_child.png"
@@ -56,6 +56,8 @@ import recommendationScheduleImage from "../assets/ciana_research/recommendation
 import recommendationContentImage from "../assets/ciana_research/recommendation_content.svg"
 import recommendationTechnicalImage from "../assets/ciana_research/recommendation_technical.svg"
 import recommendationKidsImage from "../assets/ciana_research/recomendation_kids.svg"
+import cecLogo from "../assets/ciana_research/cecLogo.png"
+import cianaBanner from "../assets/ciana_research/cianaWorkshop.png"
 
 const CianaResearch = () => {
   const { capitalizeEachWord } = useAlertContext();
@@ -65,25 +67,11 @@ const CianaResearch = () => {
     { id: "datacollection", label: "Data Collection" },
     { id: "analysis", label: "Analysis" },
     { id: "synthesis", label: "Synthesis" },
+    { id: "reflection", label: "Reflection & Takeaways" }
     
   ];
 
-  const findId = (label) => {
-    if (!sections) {
-      throw new Error("Section array is not defined");
-    }
-
-    const sectionObject = sections.find(
-      (section) => section.label?.toLowerCase() === label.toLowerCase()
-    );
-
-    if (!sectionObject) {
-      console.error(`No section found for label: ${label}`);
-      return null;
-    }
-
-    return sectionObject.id;
-  };
+ 
   return (
     <>
       <Header />
@@ -92,50 +80,42 @@ const CianaResearch = () => {
         <VStack color="semantic.text.primary" alignItems="start" pb={16}>
           <Text as="h1" textStyle={"h1"}>
             {" "}
-            {capitalizeEachWord("digital Safety Workshops")}
+            {capitalizeEachWord("Impact Through Community Voices")}
           </Text>
           <Text as="h2" textStyle={"h2"}>
             {" "}
             {capitalizeEachWord("UX research case study")}
           </Text>
-          <Text as="hp" textStyle={"p"}>
-            {" "}
-            {capitalizeEachWord(
-              "Empowering Parents in Corona, Queens with Digital Safety Knowledge"
-            )}
+          <Text as="i" textStyle={"p"}>
+          How might we demonstrate the true value of digital safety workshops while ensuring they meet immigrant family needs?
           </Text>
-          <Text as="p" textStyle={"p"}>
+          <Text as="h3" textStyle={"caption"}>
+          <Text as='span' textStyle='captionbold'>ORGANIZATION - </Text> CIANA (Center for the Integration and Advancement of New Americans)
+          </Text>
+          <Text as="p" textStyle={"caption"}>
             2024
           </Text>
           <Box
             w={{ base: "4/3", md: "100%" }}
             borderRadius="30px"
             overflow="hidden"
-            h={"30%"}
+            h="300px"
           >
-            <Image
-              src={"https://dummyimage.com/1280x400/fff/aaa"}
+            <OverlayImage
+              src={cianaBanner}
               alt="cianalogo"
               objectFit="cover"
+              objectPosition="center"
               w="100%"
+              h="100%"
             />
           </Box>
           <Grid
             w={"100%"}
-            templateColumns={{ base: "1fr", md: "repeat(5, 1fr)" }}
+            templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
             gap={{ base: 2, md: 24 }}
           >
-            <GridItem w={{ base: "50%", md: "100%" }}>
-              <VStack alignItems="start">
-                <Text as="p" textStyle="pbold">
-                  Client
-                </Text>
-                <Divider variant="thick" />
-                <Text as="p" textStyle={"p"}>
-                  Lorem ipsum dolor sit amet
-                </Text>
-              </VStack>
-            </GridItem>
+            
             <GridItem w="100%">
               <VStack alignItems="start">
                 <Text as="p" textStyle="pbold">
@@ -143,7 +123,7 @@ const CianaResearch = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  Lorem ipsum dolor sit amet
+                  Lead UX Researcher
                 </Text>
               </VStack>
             </GridItem>
@@ -154,7 +134,7 @@ const CianaResearch = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  Lorem ipsum dolor sit amet
+                  8 Weeks
                 </Text>
               </VStack>
             </GridItem>
@@ -165,7 +145,7 @@ const CianaResearch = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  Lorem ipsum dolor sit amet
+                  Google Suite • Zoom • Otter • IOS Recording App • FigJam
                 </Text>
               </VStack>
             </GridItem>
@@ -177,7 +157,7 @@ const CianaResearch = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  Lorem ipsum dolor sit amet
+                Research Planning • User Interviews • Synthesis Methods • Analysis & Documentation
                 </Text>
               </VStack>
             </GridItem>
@@ -211,7 +191,7 @@ const CianaResearch = () => {
 
           {/* FIRST SECTION OVERVIEW*/}
           <section>
-            <Box id={findId("the project")}>
+            <Box id='theproject'>
               <Box px={12}>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Overview</Text>
@@ -227,8 +207,7 @@ const CianaResearch = () => {
                           {"Background".toUpperCase()}
                         </Text>
                         <Text textStyle="p">
-                          Evaluate and improve digital safety workshops'
-                          effectiveness for parents
+                        CIANA, a NYC non-profit serving new immigrants, received funding through "The People's Money" initiative to conduct digital safety workshops in Corona, Queens. The program needed to demonstrate its effectiveness and community impact for grant requirements.
                         </Text>
                       </Box>
 
@@ -237,8 +216,7 @@ const CianaResearch = () => {
                           {"Relevance".toUpperCase()}
                         </Text>
                         <Text textStyle="p">
-                          Evaluate and improve digital safety workshops'
-                          effectiveness for parents
+                        Parents in immigrant communities face growing challenges in protecting their children online. These workshops provide crucial digital safety support where resources are limited, making it essential to understand and improve their effectiveness.
                         </Text>
                       </Box>
 
@@ -247,22 +225,23 @@ const CianaResearch = () => {
                           {"My impact".toUpperCase()}
                         </Text>
                         <Text textStyle="p">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Nam hendrerit nisi sed sollicitudin
-                          pellentesque.
+                        I worked as a UX researcher to evaluate CIANA's workshops through parent interviews, using synthesis tools to develop evidence-based recommendations for grant reporting and program improvements.
                         </Text>
                       </Box>
                     </GridItem>
 
                     {/* image Column */}
-                    <GridItem>
-                      <Box>
-                        <Image
-                          src="https://bit.ly/naruto-sage"
-                          alt="Placeholder"
+                    <GridItem display="flex" 
+    justifyContent="center" 
+    alignItems="center">
+                      <Box  >
+                        <OverlayImage
+                          src={cecLogo}
+                          alt="NYC Civic Engagement Logo"
                           objectFit="cover"
-                          width="100%"
-                          height="100%" // Makes the image fill the available space
+                           
+                          
+                          
                         />
                       </Box>
                     </GridItem>
@@ -357,12 +336,7 @@ const CianaResearch = () => {
                       <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nam hendrerit nisi sed sollicitudin pellentesque. Nunc
-                      posuere purus rhoncus pulvinar aliquam. Ut aliquet
-                      tristique nisl vitae volutpat. Nulla aliquet porttitor
-                      venenatis. Donec a dui et dui fringilla consectetur id nec
-                      massa
+                    The digital safety workshops needed a way to demonstrate their effectiveness and impact for grant reporting while ensuring they truly met diverse community needs. The initial quantitative survey approach wasn't capturing the depth of parent experiences and program value, limiting our ability to make meaningful improvements and justify continued funding.
                     </Text>
                   </Box>
                 </GridItem>
@@ -376,24 +350,9 @@ const CianaResearch = () => {
                     <Box boxSize={"400px"}>
                       <Image src={goalImage} />
                     </Box>
-                    <List textStyle={"p"}>
-                      <ListItem>
-                        <ListIcon
-                          as={MdCheckCircle}
-                          color={"semantic.text.primary"}
-                        />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nam hendrerit nisi sed sollicitudin pellentesque.
-                      </ListItem>
-                      <ListItem>
-                        <ListIcon
-                          as={MdCheckCircle}
-                          color={"semantic.text.primary"}
-                        />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nam hendrerit nisi sed sollicitudin pellentesque.
-                      </ListItem>
-                    </List>
+                    <Text textStyle="p">
+                    To evaluate and optimize digital safety workshops through qualitative UX research, gathering rich insights about participant experiences that would both demonstrate program impact for grant requirements and identify concrete opportunities for improvement.
+                    </Text>
                   </Box>
                 </GridItem>
               </Grid>
@@ -727,7 +686,7 @@ const CianaResearch = () => {
 
           {/* THIRD SECTION DATA COLLECTION OPEN*/}
           <section>
-            <Box id={findId("datacollection")}>
+            <Box id='datacollection'>
               <Box px={12}>
                 <DividerSection>Phase 2 </DividerSection>
                 <VStack alignItems="start" pt={12}>
@@ -832,7 +791,7 @@ const CianaResearch = () => {
 
           {/* FOURTH SECTION ANALYSIS OPEN*/}
           <section>
-            <Box id={findId("analysis")}>
+            <Box id='analysis'>
               <Box px={12}>
                 <DividerSection>Phase 3 </DividerSection>
                 <VStack alignItems="start" pt={12}>
@@ -1041,7 +1000,7 @@ const CianaResearch = () => {
 
           {/* FIFTH SECTION SYNTHESIS OPEN*/}
           <section>
-            <Box id={findId("synthesis")}>
+            <Box id='synthesis'>
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
                 <VStack alignItems="start" pt={12} pb={12}>
@@ -1097,7 +1056,9 @@ const CianaResearch = () => {
                             />
                           </Box>
                           <Text textStyle="p">
-                          Provide follow-up materials and technical assistance to help participants apply what they have learned. Ensure all promised materials are sent right away.
+                            Provide follow-up materials and technical assistance
+                            to help participants apply what they have learned.
+                            Ensure all promised materials are sent right away.
                           </Text>
                         </Box>
                       </GridItem>
@@ -1114,7 +1075,11 @@ const CianaResearch = () => {
                             />
                           </Box>
                           <Text textStyle="p">
-                          Incorporate more visual aids and interactive elements to engage participants and clarify complex topics. Consider live demonstrations for technical setups such as parental controls on their phone/tablet/laptop.
+                            Incorporate more visual aids and interactive
+                            elements to engage participants and clarify complex
+                            topics. Consider live demonstrations for technical
+                            setups such as parental controls on their
+                            phone/tablet/laptop.
                           </Text>
                         </Box>
                       </GridItem>
@@ -1130,7 +1095,10 @@ const CianaResearch = () => {
                             />
                           </Box>
                           <Text textStyle="p">
-                          Develop sessions specifically for children to reinforce the concepts taught to parents, ensuring the education about digital safety is for both children and their parents.
+                            Develop sessions specifically for children to
+                            reinforce the concepts taught to parents, ensuring
+                            the education about digital safety is for both
+                            children and their parents.
                           </Text>
                         </Box>
                       </GridItem>
@@ -1142,7 +1110,14 @@ const CianaResearch = () => {
                       Conclusion
                     </Text>
                     <Text as="p" textStyle={"p"}>
-                    The qualitative analysis of participant feedback highlights both the strengths and areas for improvements in our digital safety workshops. By addressing the identified frustrations and implementing the proposed recommendations, we can improve the overall effectiveness and satisfaction of our workshops, ultimately providing better support for parents and their children in navigating digital safety.
+                      The qualitative analysis of participant feedback
+                      highlights both the strengths and areas for improvements
+                      in our digital safety workshops. By addressing the
+                      identified frustrations and implementing the proposed
+                      recommendations, we can improve the overall effectiveness
+                      and satisfaction of our workshops, ultimately providing
+                      better support for parents and their children in
+                      navigating digital safety.
                     </Text>
                   </VStack>
                 </VStack>
@@ -1154,11 +1129,53 @@ const CianaResearch = () => {
           <Divider variant="section" />
           {/* SIXTH SECTION REFLECTIONS OPEN*/}
           <section>
-            <Box id={findId("synthesis")}>
+            <Box id='reflection'>
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Takeaways</Text>
+                  <Text as="p" textStyle={"p"}>
+                    I feel fortunate to have had the opportunity to work on
+                    digital safety workshops that directly impact parents in the
+                    Corona, Queens community. Through this experience, I learned
+                    several valuable lessons:
+                  </Text>
+
+                  <UnorderedList textStyle={"p"} pb={4}>
+                    <ListItem>
+                      <Text as="p" textStyle={"p"}>
+                      <Text as='span' textStyle='pbold'>Qualitative insights reveal deeper understanding - </Text>
+                       Our shift from quantitative surveys to qualitative interviews proved crucial in uncovering the real needs and challenges of parents. This taught me that sometimes the most valuable insights come from listening to personal stories rather than just collecting metrics.
+                       </Text>
+
+                    </ListItem>
+
+                    <ListItem>
+                      <Text as="p" textStyle={"p"}>
+                      <Text as='span' textStyle='pbold'>Flexibility in research methods is key  - </Text>
+                      Learning to adapt and choose the right research method for the context was essential. Post-workshop interviews provided richer insights into parent experiences than surveys would have, showing me how different research approaches can lead to different types of understanding.
+                       </Text>
+
+                    </ListItem>
+
+                    <ListItem>
+                      <Text as="p" textStyle={"p"}>
+                      <Text as='span' textStyle='pbold'>Community needs drive research direction  - </Text>
+                      The research revealed how community context shapes program effectiveness. Understanding parents' scheduling constraints, technical challenges, and cultural perspectives helped develop more relevant and accessible workshop recommendations.
+                       </Text>
+
+                    </ListItem>
+
+                    <ListItem>
+                      <Text as="p" textStyle={"p"}>
+                      <Text as='span' textStyle='pbold'>Research synthesis tools enhance understanding  - </Text>
+                      Using empathy maps and affinity diagrams taught me how to transform individual feedback into actionable insights. These tools helped bridge the gap between raw data and meaningful recommendations.
+                       </Text>
+
+                    </ListItem>
+
+                  </UnorderedList>
+                  
                 </VStack>
               </Box>
             </Box>
