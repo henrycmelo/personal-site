@@ -24,7 +24,7 @@ function Home() {
     <main>
       
           <>
-          <Header isHomePage /> 
+          {/* <Header isHomePage />  */}
           {showNavBar && <LandingSection /> }
           {showNavBar && <ReviewsCarousel />}
           {showNavBar && <CaseStudySection /> }

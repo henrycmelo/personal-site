@@ -75,7 +75,7 @@ const CianaResearch = () => {
       <Header />
 
       <FullScreenSection>
-        <VStack color="semantic.text.primary" alignItems="start" pb={16}>
+        <VStack color="semantic.text.primary" alignItems="start" pb={6}>
           <Text as="h1" textStyle={"h1"}>
             {" "}
             {capitalizeEachWord("Impact Through Community Voices")}
@@ -170,7 +170,7 @@ const CianaResearch = () => {
       <Divider variant="section" />
 
       <Grid
-        templateColumns={{ base: "1fr", md: "250px 3px 1fr" }}
+        templateColumns={{ base: "1fr", md: "320px 3px 1fr" }}
         height="100vh"
         alignItems="start"
         w={"100%"}

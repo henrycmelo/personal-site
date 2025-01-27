@@ -24,7 +24,7 @@ const FullScreenSection = ({
       pb={12}
       pr={12}
     
-      minHeight='100vh'
+      minHeight='600px'
       {...boxProps}
     >
       <VStack  >

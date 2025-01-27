@@ -100,7 +100,7 @@ const theme = extendTheme({
         hover:"#CED4DA"
       },
       border: "#CED4DA",
-      divider: "#DEE2E6",
+      divider: "#495057",
       accent:"#107c7c",
       accentHover: "#399897"
     },

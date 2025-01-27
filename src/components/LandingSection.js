@@ -1,43 +1,72 @@
 import React from "react";
-import {  VStack, Text } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import { useAlertContext } from "../context/alertContext";
 import "animate.css";
 import { dataLanding } from "../utils/dataLanding";
 import CustomizedButton from "./CustomizedButton";
+import VerticalProgressBar from "./VerticalProgressBar";
+import {
+  Box,
+  VStack,
+  Text,
+  Image,
+  Grid,
+  GridItem,
+  Divider,
+  HStack,
+  List,
+  ListItem,
+  ListIcon,
+  UnorderedList,
+  Flex,
+  Stack
+} from "@chakra-ui/react";
+import { faBriefcase, faComment, faEnvelope, faHome, faUser } from "@fortawesome/free-solid-svg-icons";
+import Footer from "./Footer";
 
 const LandingSection = () => {
-  const { colorMode } = useAlertContext();
+  const sections = [
+    { id: "home", label: "Home", icon:faHome },
+    { id: "project", label: "Projects", icon:faBriefcase },
+    { id: "reviews", label: "What people say about me", icon:faComment },
+    { id: "career", label: "Career timeline", icon:faUser },
+    { id: "contact", label: "contact", icon:faEnvelope },
+    
+  ]
 
   return (
-    <FullScreenSection isCentered isLanding>
-      <VStack>
-        
-        <Text
-          as="h1"
-          color="semantic.text.primary"
-          textStyle="h1"
-          className="heading-animation-two"
+    <Grid
+        templateColumns={{ base: "1fr", md: "320px 3px 1fr" }}
+        height="100vh"
+        alignItems="start"
+        w={"100%"}
+        overflow={"hidden"}
+      >
+        <Stack
+          display={{ base: "none", md: "block" }}
+          visibility={{ base: "hidden", md: "visible" }}
+          position={"sticky"}
+          height="fit-content"
+          spacing={48}
+          
+          
         >
-          {dataLanding.bio1}
-        </Text>
-        <Text
-          as="h2"
-          color="semantic.text.secondary"
-          textStyle="h2"
-          pb="0.3em"
-          className="heading-animation-three"
-        >
-          {dataLanding.bio2}
-        </Text>
-        <CustomizedButton>
-          {dataLanding.buttonText}
-        </CustomizedButton>
-      </VStack>
-      
-    
-    </FullScreenSection>
-  );
+          <VerticalProgressBar isHomePage sections={sections} />
+          
+        </Stack>
+        <Divider orientation="vertical" variant="thick" />
+
+        <Box overflowY="auto" height={"100%"} data-scroll-container='true'>
+          {/* ALL CONTENT HERE */}
+
+         
+          <section>
+            <Box id="home"></Box>
+          </section>
+            </Box>
+            </Grid>
+
+  )
 };
 
 export default LandingSection;
