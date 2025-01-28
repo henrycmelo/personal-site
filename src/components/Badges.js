@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Badge, Wrap, WrapItem } from "@chakra-ui/react";
-import { useAlertContext } from "../context/alertContext";
 
-const Badges= ({ children, onClick, isDarkBackground }) => {
+const Badges= ({ children }) => {
   const childrenArray = Array.isArray(children) ? children : [children]
   
   return (
@@ -11,7 +10,7 @@ const Badges= ({ children, onClick, isDarkBackground }) => {
       {childrenArray && childrenArray.map((child, index) => (
         <WrapItem>
         <Badge 
-        backgroundColor="semantic.accent"
+        backgroundColor="gray.600"
         color="semantic.background.primary"
         borderRadius="2px"
         key={index}

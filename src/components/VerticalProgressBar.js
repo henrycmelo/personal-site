@@ -87,11 +87,11 @@ const VerticalProgressBar = ({ sections, isHomePage}) => {
       {isHomePage ? (
         <>
           <VStack position="sticky" left="5%" zIndex="10" height={'100vh'} >
-            <HStack p={6}>
+            <HStack py={12}>
               <Avatar name="Henry" src={headshot} objectFit="cover" />
               <Box>
                 <Text as="p" textStyle="pbold">
-                  Henry Castillo
+                  Henry C. Melo
                 </Text>
                 <Text as="p" textStyle="caption" color="gray.600">
                   Product Designer/ UX Researcher

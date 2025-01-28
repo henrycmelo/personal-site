@@ -96,7 +96,7 @@ const theme = extendTheme({
         primary: "#212529",
         secondary: "#495057",
         muted: "#6C757D",
-        button: "#F8F9FA",
+        button: "#495057",
         hover:"#CED4DA"
       },
       border: "#CED4DA",

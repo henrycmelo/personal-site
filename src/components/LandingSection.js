@@ -23,11 +23,17 @@ import {
 } from "@chakra-ui/react";
 import { faBriefcase, faComment, faEnvelope, faHome, faUser } from "@fortawesome/free-solid-svg-icons";
 import Footer from "./Footer";
+import LandingText from "./LandingText";
+import DividerSection from "./DividerSection";
+import ProjectSection from "./ProjectSection";
+import ReviewsCarousel from "./ReviewCarousel";
+import TimelineCareer from "./TimelineCareer";
+
 
 const LandingSection = () => {
   const sections = [
     { id: "home", label: "Home", icon:faHome },
-    { id: "project", label: "Projects", icon:faBriefcase },
+    { id: "projects", label: "Projects", icon:faBriefcase },
     { id: "reviews", label: "What people say about me", icon:faComment },
     { id: "career", label: "Career timeline", icon:faUser },
     { id: "contact", label: "contact", icon:faEnvelope },
@@ -61,7 +67,31 @@ const LandingSection = () => {
 
          
           <section>
-            <Box id="home"></Box>
+            <Box id="home" py={24} px={12}>
+              <LandingText />    
+            </Box>
+          </section>
+          <Divider variant={'dividerSection'}/>
+          <section>
+            <Box id="projects" py={24} px={12}>
+              <ProjectSection />    
+            </Box>
+          </section>
+
+          <Divider variant={'dividerSection'}/>
+
+          <section>
+            <Box id="reviews"  py={24} px={12}>
+            <ReviewsCarousel />    
+            </Box>
+          </section>
+
+          <Divider variant={'dividerSection'}/>
+
+          <section>
+            <Box id="career"  py={24} px={12} >
+            <TimelineCareer />   
+            </Box>
           </section>
             </Box>
             </Grid>

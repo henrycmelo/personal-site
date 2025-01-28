@@ -24,46 +24,34 @@ const Cards = ({ title, description, imageSrc, to, date, role }) => {
   const { capitalizeEachWord } = useAlertContext();
 
   return (
-    <Box  color="semantic.text.button">
+    <Box color="semantic.text.button" border={'1px solid red'}>
       <VStack
         m={8}
         textAlign="start"
         justifyContent={"flex-start"}
         alignItems={"start"}
       >
-         <Box
-          w={{ base: "4/3", md: "100%" }}
-          borderRadius="30px"
-          overflow="hidden"
-          
-        >
+        <Box w={{ base: "4/3", md: "100%" }} overflow="hidden">
           <Image
             src={imageSrc || "https://placehold.co/600x400"}
             alt={title}
             objectFit="cover"
             w="100%"
-          
           />
         </Box>
-        <HStack >
-          <Text as="p" textStyle="caption" color="semantic.background.tertiary">
-            {date ? formatDate(date) : "No date available"}
-          </Text>
-
-          <Badges colorScheme="green" borderRadius="full" px={2}>
+        <HStack>
+          <Badges borderRadius="full" px={2}>
             {role || ""}
           </Badges>
         </HStack>
-        <Text as="h3" textStyle="h2">
+        <Text as="p" textStyle="p">
           {capitalizeEachWord(title)}
         </Text>
-        <Text as="p" textStyle="p">
+        <Text as="p" textStyle="caption">
           {description}
         </Text>
         <VStack pt={8}>
-          <Link to={to}>
-            <MuteButton isDarkBackground>view case study</MuteButton>{" "}
-          </Link>
+          <Link to={to}></Link>
         </VStack>
       </VStack>
     </Box>

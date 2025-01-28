@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Box, Stack, Text, Spinner, Button } from "@chakra-ui/react";
@@ -10,55 +10,56 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { reviewsAPI } from "../api/reviewsApi";
 import ButtonLink from "./ButtonLink";
-
-
+import MuteButton from "./MuteButton";
 
 function ReviewsCarousel() {
-  const {capitalizeEachWord} = useAlertContext();
+  const { capitalizeEachWord } = useAlertContext();
   const titleText = "What poeple say about me";
-  const [review, setReview] = useState([]); 
+  const [review, setReview] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showMore, setShowMore] = useState({});
 
   //api call
-  useEffect(()=>{
-    const fetchReviews = async () =>{
-      try{
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
         const data = await reviewsAPI.getAllEntries();
-        setReview(data)
-      } catch (err){
-        setError(err.message)
+        setReview(data);
+      } catch (err) {
+        setError(err.message);
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
-    }
-    fetchReviews()
-  },[])
+    };
+    fetchReviews();
+  }, []);
 
   const handleShowMore = (id) => {
-   setShowMore((prevState) =>({
-    ...prevState,
-    [id] : !prevState[id]
-   }))
-  }
-  
-  
+    setShowMore((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
 
+  if (isLoading) return <Spinner />;
+  if (error) return <Text>{error}</Text>;
 
- if (isLoading) return <Spinner />
-  if (error) return <Text>{error}</Text>
- 
   return (
-    <Box bg="semantic.background.secondary" pt={4} pb={16}>
-      <Text
-        as="h2"
-        color="semantic.text.primary"
-        textStyle="p"
-        textAlign={"center"}
-      >
-        {capitalizeEachWord(titleText)}
+    <Box
+      bg="transparent"
+      pt={4}
+      pb={16}
+      sx={{
+        ".swiper-button-prev, .swiper-button-next": { color: "gray.600" },
+        ".swiper-pagination-bullet": { backgroundColor: "semantic.text.muted" },
+        ".swiper-pagination-bullet-active": { backgroundColor: "gray.600" },
+      }}
+    >
+      <Text as="h2" textStyle={"h2"} pb={6}>
+        {capitalizeEachWord(titleText)}{" "}
       </Text>
+
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
@@ -85,36 +86,45 @@ function ReviewsCarousel() {
         {review.map((review, index) => (
           <SwiperSlide key={review.id || index}>
             <Stack gap={0} textStyle="caption" color={"semantic.text.primary"}>
-
               <Text as="p" textStyle="caption" color={"semantic.text.primary"}>
                 {showMore[review.id] ? (
                   <>
                     {review.content}
-                    <ButtonLink color='semantic.text.primary' textStyle="button" variant='link' onClick={()=>handleShowMore(review.id)}>Show Less</ButtonLink>
-                  
+                    <ButtonLink
+                      color="semantic.text.primary"
+                      textStyle="button"
+                      variant="link"
+                      onClick={() => handleShowMore(review.id)}
+                    >
+                      Show Less
+                    </ButtonLink>
                   </>
-                  ) : (
-                    <>
-                      {review.content.slice(0, 100)}...
-                       <ButtonLink color='semantic.text.primary' textStyle="caption" variant='link' onClick={()=>handleShowMore(review.id)}>View More</ButtonLink>
-                    </>
-                  )}
-
+                ) : (
+                  <>
+                    {review.content.slice(0, 100)}...
+                    <ButtonLink
+                      color="semantic.text.primary"
+                      textStyle="caption"
+                      variant="link"
+                      onClick={() => handleShowMore(review.id)}
+                    >
+                      View More
+                    </ButtonLink>
+                  </>
+                )}
               </Text>
-              <Text pt={2} as="p" textStyle='captionbold'>{review.reviewer_name}</Text>
+              <Text pt={2} as="p" textStyle="captionbold">
+                {review.reviewer_name}
+              </Text>
             </Stack>
             <Stack>
-              <Text as="p">
-                {review.reviewer_role}
-              </Text>
+              <Text as="p">{review.reviewer_role}</Text>
             </Stack>
             <Stack>
-              <Text as="p">
-                {review.company}
-              </Text>
+              <Text as="p">{review.company}</Text>
             </Stack>
 
-            <Stack color='semantic.text.muted'>
+            <Stack>
               <a href={review.linkedin_url} target="_blank" rel="noreferrer">
                 <FontAwesomeIcon size="xl" icon={faLinkedin} />
               </a>
@@ -122,6 +132,11 @@ function ReviewsCarousel() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <Box py={6}>
+        <Text as='p' textStyle={"p"}>If you've worked me in any way, I'll invite you to leave a review</Text>
+        <MuteButton>Leave a review</MuteButton>
+      </Box>
     </Box>
   );
 }

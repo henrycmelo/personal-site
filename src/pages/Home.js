@@ -24,18 +24,11 @@ function Home() {
     <main>
       
           <>
-          {/* <Header isHomePage />  */}
-          {showNavBar && <LandingSection /> }
-          {showNavBar && <ReviewsCarousel />}
-          {showNavBar && <CaseStudySection /> }
-          {showNavBar && <TimelineCareer /> }
-          {/* {showNavBar&&<ProjectsSection isHomePage />} */}
           
-          {/* {showNavBar&&<AboutMeSection isHomePage/>} 
-          {showNavBar&&<ContactMeSection isHomePage />} */}
-          <footer>
-          {/* {showNavBar&&<Footer /> } */}
-          </footer>
+           <LandingSection /> 
+        
+          
+       
           <Alert />
 
           </>
