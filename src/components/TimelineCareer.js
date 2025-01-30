@@ -18,9 +18,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Badges from "./Badges"
 import { sortByDate } from "../utils/sortByDate";
 import { careerTimelineAPI } from "../api/careerTimelineApi";
+import { useAlertContext } from "../context/alertContext";
 
 const TimelineCareer = () => {
-  const titleText = "Career Timeline";
+  const { capitalizeEachWord } = useAlertContext();
+  const titleText = capitalizeEachWord("Career Timeline");
   const theme = useTheme();
   const secondaryColor = theme.colors.semantic.text.primary;
   const mutedColor = theme.colors.semantic.text.secondary;
@@ -109,7 +111,7 @@ const TimelineCareer = () => {
   return (
     <Box>
       <Text as="h2" textStyle="h2" pb={6}>
-        {titleText.toUpperCase()}
+        {titleText}
       </Text>
       <VerticalTimeline lineColor={mutedColor}>
         {getTimeLineElements()}

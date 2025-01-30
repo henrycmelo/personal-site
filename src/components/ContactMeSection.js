@@ -10,15 +10,17 @@ import {
   Textarea,
   VStack,
   Spinner,
+  Text
 } from "@chakra-ui/react";
 import * as Yup from "yup";
-import FullScreenSection from "./FullScreenSection";
 import { useAlertContext } from "../context/alertContext";
 import CustomizedButton from "./CustomizedButton";
 import ScrollReveal from "../hooks/ScrollReveal";
 
 const ContactMeSection = ({ isHomePage }) => {
-  const { onOpen, onClose, colorMode } = useAlertContext();
+  
+  const { onOpen, onClose, colorMode, capitalizeEachWord } = useAlertContext();
+  const titleText = capitalizeEachWord("Drop me a message!");
   const [isLoading, setLoading] = useState(false);
   const responses = [
     {
@@ -90,24 +92,13 @@ const ContactMeSection = ({ isHomePage }) => {
   });
 
   return (
-    <FullScreenSection
-      
-      backgroundColor={colorMode==='light'? "secondLight":'darkDarkMode'} 
-      alignItems={'center'}
-      spacing={8}
-      width="100vw"
-      pr={{ base: 8, md: 32 }}
-      pl={{ base: 8, md: 32 }}
-      pt={{ base: 8, md: 32 }}
-      pb={{ base: 32, md: 32 }}>
-        
-      {isHomePage && (
-        <ScrollReveal><Heading as="h1" id="contactme-section" color={colorMode==='light'? "dark":'light'}>
-          Contact me
-        </Heading></ScrollReveal>
-      )}
-      <VStack w="100%" alignItems="start" justifyContent="flex-start" color={colorMode==='light'? "dark":'light'}>
-        <Box p={6} rounded="md" w="100%">
+    <Box>
+      <Text as="h2" textStyle={"h2"} pb={6}>
+              {titleText}{" "}
+      </Text>
+       
+      <VStack w="100%" alignItems="start" justifyContent="flex-start" >
+        <Box p={6}  w="100%">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -120,7 +111,7 @@ const ContactMeSection = ({ isHomePage }) => {
           >
             <input type="hidden" name="contact" value="contact" />
 
-            <VStack spacing={4}>
+            <VStack spacing={4} color='gray.600' >
               <FormControl
                 isInvalid={
                   formik.touched.firstName && formik.errors.firstName
@@ -128,18 +119,17 @@ const ContactMeSection = ({ isHomePage }) => {
                     : false
                 }
               >
-                <ScrollReveal><FormLabel htmlFor="firstName" textStyle="body">
+               <FormLabel htmlFor="firstName" textStyle="p">
                   Name
-                </FormLabel></ScrollReveal>
-                <ScrollReveal><Input
+                </FormLabel>
+                <Input
                   id="firstName"
                   name="firstName"
-                  borderColor={colorMode==='light'? "blue":'grayDarkMode'}
-                  borderWidth="2px"
-                  focusBorderColor={colorMode==='light'? "yellow":'blue'}
+                  placeholder="Your full name"
+                  variant='customInput'
                   {...formik.getFieldProps("firstName")}
                 />
-                </ScrollReveal>
+                
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
               <FormControl
@@ -154,9 +144,8 @@ const ContactMeSection = ({ isHomePage }) => {
                   id="email"
                   name="email"
                   type="email"
-                  borderColor={colorMode==='light'? "blue":'grayDarkMode'}
-                  borderWidth="2px"
-                  focusBorderColor={colorMode==='light'? "yellow":'blue'}
+                  placeholder="Your@email.com"
+                  variant='customInput'
                   {...formik.getFieldProps("email")}
                 />
                 </ScrollReveal>
@@ -175,9 +164,8 @@ const ContactMeSection = ({ isHomePage }) => {
                   id="comment"
                   name="comment"
                   height={250}
-                  borderColor={colorMode==='light'? "blue":'grayDarkMode'}
-                  borderWidth="2px"
-                  focusBorderColor={colorMode==='light'? "yellow":'blue'}
+                  placeholder="Write something meaningful...."
+                  variant='customInput'
                   {...formik.getFieldProps("comment")}
                 /></ScrollReveal>
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
@@ -201,7 +189,7 @@ const ContactMeSection = ({ isHomePage }) => {
           </form>
         </Box>
       </VStack>
-    </FullScreenSection>
+    </Box>
   );
 };
 

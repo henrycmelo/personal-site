@@ -28,6 +28,7 @@ import DividerSection from "./DividerSection";
 import ProjectSection from "./ProjectSection";
 import ReviewsCarousel from "./ReviewCarousel";
 import TimelineCareer from "./TimelineCareer";
+import ContactMeSection from "./ContactMeSection";
 
 
 const LandingSection = () => {
@@ -91,6 +92,13 @@ const LandingSection = () => {
           <section>
             <Box id="career"  py={24} px={12} >
             <TimelineCareer />   
+            </Box>
+          </section>
+          <Divider variant={'dividerSection'}/>
+
+          <section>
+            <Box id="contact"  py={24} px={12} >
+            <ContactMeSection />
             </Box>
           </section>
             </Box>
