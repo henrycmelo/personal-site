@@ -19,7 +19,7 @@ const MuteButton = ({ children, onClick, }) => {
       textStyle="button"
       onClick={onClick}
       shadow="lg"
-      _hover={{ bg: "semantic.text.muted",  }}
+      _hover={{ bg: "semantic.background.secondary", color:'semantic.text.primary'  }}
     >
       {capitalizeFirstLetter(children)}
     </Button>

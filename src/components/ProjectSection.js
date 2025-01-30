@@ -31,14 +31,14 @@ const ProjectSection = () => {
 
   return (
     <Box>
-      <Text as="h2" textStyle={"h2"}>
+      <Text as="h2" textStyle={"h2"} pb={6}>
         {titleText}{" "}
       </Text>
 
       <Grid
         w={"100%"}
         templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
-        gap={{ base: 2, md: 6 }}
+        gap={{ base: 6, md: 6 }}
       >
         {projects.map((project, index) => (
           <GridItem>
@@ -54,7 +54,7 @@ const ProjectSection = () => {
         ))}
       </Grid>
 
-      <MuteButton>More about me </MuteButton>
+      
     </Box>
   );
 };

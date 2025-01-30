@@ -11,7 +11,7 @@ const projects = [
     role:[role["UX Researcher"], role["UI/UX Designer"]],
     date: "2022-12",
     tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
-    path: "/casestudyarchives",
+    path: "/cianaresearch",
     featured: true,
     hide:false
   

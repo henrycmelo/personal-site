@@ -133,8 +133,8 @@ function ReviewsCarousel() {
         ))}
       </Swiper>
 
-      <Box py={6}>
-        <Text as='p' textStyle={"p"}>If you've worked me in any way, I'll invite you to leave a review</Text>
+      <Box py={6} >
+        <Text as='p' textStyle={"p"} pb={2}>If you've worked me in any way, I'll invite you to leave a review</Text>
         <MuteButton>Leave a review</MuteButton>
       </Box>
     </Box>

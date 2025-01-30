@@ -10,6 +10,7 @@ import {
   useTheme,
   HStack,
   Spinner,
+  Box,
 } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import { faAdd, faBriefcase, faChevronUp, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
@@ -22,7 +23,7 @@ const TimelineCareer = () => {
   const titleText = "Career Timeline";
   const theme = useTheme();
   const secondaryColor = theme.colors.semantic.text.primary;
-  const mutedColor = theme.colors.semantic.text.muted;
+  const mutedColor = theme.colors.semantic.text.secondary;
   const primaryColor = theme.colors.semantic.background.primary;
 
 
@@ -75,9 +76,10 @@ const TimelineCareer = () => {
         <VerticalTimelineElement
         key={entry.id || index}
         date={entry.date}
-        contentStyle={{background: primaryColor, color: secondaryColor}}
+        contentStyle={{background:"transparent", color: secondaryColor, border:"solid #495057"}}
         iconStyle={{ background: mutedColor, color: primaryColor }}
         icon={<FontAwesomeIcon icon={icon} />}
+        contentArrowStyle={{ borderRight: '7px solid  #495057' }}
       >
         
         <Stack>
@@ -105,11 +107,11 @@ const TimelineCareer = () => {
 
 
   return (
-    <FullScreenSection isDarkBackground justifyContent='center' alignItems='center' >
-      <Text as="h2" textStyle="h2">
+    <Box>
+      <Text as="h2" textStyle="h2" pb={6}>
         {titleText.toUpperCase()}
       </Text>
-      <VerticalTimeline lineColor={primaryColor}>
+      <VerticalTimeline lineColor={mutedColor}>
         {getTimeLineElements()}
 
         {visibleEntries.length < entries.length &&(
@@ -123,7 +125,7 @@ const TimelineCareer = () => {
         )}
 
       </VerticalTimeline>
-    </FullScreenSection>
+    </Box>
   );
 };
 

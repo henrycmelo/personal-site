@@ -24,7 +24,14 @@ const Cards = ({ title, description, imageSrc, to, date, role }) => {
   const { capitalizeEachWord } = useAlertContext();
 
   return (
-    <Box color="semantic.text.button" border={'1px solid red'}>
+    <Link to={to}>
+    <Box
+      color="semantic.text.button"
+      border={"1px solid #495057"}
+      boxShadow={"rgba(149, 157, 165, 0.2) 0px 8px 24px "}
+      transition="transform 0.3s ease-in-out"
+      _hover={{ transform: "scale(1.05)", cursor: "pointer" }}
+    >
       <VStack
         m={8}
         textAlign="start"
@@ -39,22 +46,21 @@ const Cards = ({ title, description, imageSrc, to, date, role }) => {
             w="100%"
           />
         </Box>
-        <HStack>
-          <Badges borderRadius="full" px={2}>
-            {role || ""}
-          </Badges>
-        </HStack>
         <Text as="p" textStyle="p">
           {capitalizeEachWord(title)}
         </Text>
         <Text as="p" textStyle="caption">
           {description}
         </Text>
-        <VStack pt={8}>
-          <Link to={to}></Link>
-        </VStack>
+        <HStack>
+          <Badges borderRadius="full" px={2}>
+            {role || ""}
+          </Badges>
+        </HStack>
+        
       </VStack>
     </Box>
+    </Link>
   );
 };
 
