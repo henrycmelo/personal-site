@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import socialsData from "../utils/socialsData";
 
-const VerticalProgressBar = ({ sections, isHomePage}) => {
+const VerticalProgressBar = ({ sections, isHomePage }) => {
   const [activeSection, setActiveSection] = useState("");
   const contentRef = useRef(null);
 
@@ -86,7 +86,7 @@ const VerticalProgressBar = ({ sections, isHomePage}) => {
     <>
       {isHomePage ? (
         <>
-          <VStack position="sticky" left="5%" zIndex="10" height={'100vh'} >
+          <VStack position="sticky" left="5%" zIndex="10" height={"100vh"} spacing={0}>
             <HStack py={12}>
               <Avatar name="Henry" src={headshot} objectFit="cover" />
               <Box>
@@ -126,22 +126,24 @@ const VerticalProgressBar = ({ sections, isHomePage}) => {
                   <FontAwesomeIcon icon={section.icon} size="xl" />
                   <span>{section.label}</span>
                 </Box>
-                
               </Box>
             ))}
             <Spacer />
 
-            <Divider variant='thick' />
-            <Stack direction={'row'} p={6} gap={12} color='gray.600'>
-              {socialsData.map((icons, index)=>(
-                <a key={index} href={icons.url} target="_blank" rel="noopener noreferrer"
-                title={icons.url}>
+            <Divider variant="thick" />
+            <Stack direction={"row"} p={6} gap={12} color="gray.600" style={{ lineHeight: 0 }}>
+              {socialsData.map((icons, index) => (
+                <a
+                  key={index}
+                  href={icons.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={icons.url}
+                  style={{ lineHeight: 0 }}
+                >
                   <FontAwesomeIcon icon={icons.icon} size="2x" />
-
                 </a>
-                
               ))}
-              
             </Stack>
           </VStack>
         </>

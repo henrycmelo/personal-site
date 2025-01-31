@@ -101,6 +101,14 @@ const LandingSection = () => {
             <ContactMeSection />
             </Box>
           </section>
+
+          
+          <Divider variant="thick" />
+          <footer>
+            <Box   >
+            <Footer />
+            </Box>
+          </footer>
             </Box>
             </Grid>
 

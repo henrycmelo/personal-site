@@ -9,7 +9,7 @@ const CustomizedButton = ({ children, onClick, type, width }) => {
     <>
        
         <Button
-          color= "semantic.text.button"
+          color= "semantic.background.primary"
           borderRadius="10px"
           border="1px solid #107c7c"
           backgroundColor="semantic.text.primary"
@@ -22,7 +22,7 @@ const CustomizedButton = ({ children, onClick, type, width }) => {
           zIndex="0"
           width={width}
           _hover={{ bg: "semantic.text.secondary"   }}
-          textTransform={"uppercase"}
+          textTransform='capitalize'
         >
           {children}
         </Button>

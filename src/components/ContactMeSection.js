@@ -5,12 +5,11 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Heading,
   Input,
   Textarea,
   VStack,
   Spinner,
-  Text
+  Text,
 } from "@chakra-ui/react";
 import * as Yup from "yup";
 import { useAlertContext } from "../context/alertContext";
@@ -18,8 +17,7 @@ import CustomizedButton from "./CustomizedButton";
 import ScrollReveal from "../hooks/ScrollReveal";
 
 const ContactMeSection = ({ isHomePage }) => {
-  
-  const { onOpen, onClose, colorMode, capitalizeEachWord } = useAlertContext();
+  const { onOpen, onClose, capitalizeEachWord } = useAlertContext();
   const titleText = capitalizeEachWord("Drop me a message!");
   const [isLoading, setLoading] = useState(false);
   const responses = [
@@ -94,11 +92,11 @@ const ContactMeSection = ({ isHomePage }) => {
   return (
     <Box>
       <Text as="h2" textStyle={"h2"} pb={6}>
-              {titleText}{" "}
+        {titleText}{" "}
       </Text>
-       
-      <VStack w="100%" alignItems="start" justifyContent="flex-start" >
-        <Box p={6}  w="100%">
+
+      <VStack w="100%" alignItems="start" justifyContent="flex-start">
+        <Box p={6} w="100%">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -111,7 +109,7 @@ const ContactMeSection = ({ isHomePage }) => {
           >
             <input type="hidden" name="contact" value="contact" />
 
-            <VStack spacing={4} color='gray.600' >
+            <VStack spacing={4} color="gray.600">
               <FormControl
                 isInvalid={
                   formik.touched.firstName && formik.errors.firstName
@@ -119,17 +117,17 @@ const ContactMeSection = ({ isHomePage }) => {
                     : false
                 }
               >
-               <FormLabel htmlFor="firstName" textStyle="p">
+                <FormLabel htmlFor="firstName" textStyle="p">
                   Name
                 </FormLabel>
                 <Input
                   id="firstName"
                   name="firstName"
                   placeholder="Your full name"
-                  variant='customInput'
+                  variant="customInput"
                   {...formik.getFieldProps("firstName")}
                 />
-                
+
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
               <FormControl
@@ -137,17 +135,20 @@ const ContactMeSection = ({ isHomePage }) => {
                   formik.touched.email && formik.errors.email ? true : false
                 }
               >
-                <ScrollReveal><FormLabel htmlFor="email" textStyle="body">
-                  Email Address
-                </FormLabel></ScrollReveal>
-                <ScrollReveal><Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Your@email.com"
-                  variant='customInput'
-                  {...formik.getFieldProps("email")}
-                />
+                <ScrollReveal>
+                  <FormLabel htmlFor="email" textStyle="body">
+                    Email Address
+                  </FormLabel>
+                </ScrollReveal>
+                <ScrollReveal>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Your@email.com"
+                    variant="customInput"
+                    {...formik.getFieldProps("email")}
+                  />
                 </ScrollReveal>
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
@@ -157,24 +158,20 @@ const ContactMeSection = ({ isHomePage }) => {
                   formik.touched.comment && formik.errors.comment ? true : false
                 }
               >
-                <ScrollReveal><FormLabel htmlFor="comment" textStyle="body">
+                <FormLabel htmlFor="comment" textStyle="body">
                   Your message
-                </FormLabel></ScrollReveal>
-                <ScrollReveal><Textarea
+                </FormLabel>
+                <Textarea
                   id="comment"
                   name="comment"
                   height={250}
                   placeholder="Write something meaningful...."
-                  variant='customInput'
+                  variant="customTextarea"
                   {...formik.getFieldProps("comment")}
-                /></ScrollReveal>
+                />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
-              <CustomizedButton
-                type="submit"
-                width="full"
-                disabled={isLoading}
-              ><ScrollReveal>
+              <CustomizedButton type="submit" width="full" disabled={isLoading}>
                 {isLoading ? (
                   <div>
                     Submitting...
@@ -182,9 +179,8 @@ const ContactMeSection = ({ isHomePage }) => {
                   </div>
                 ) : (
                   "Submit"
-                )}</ScrollReveal>
+                )}
               </CustomizedButton>
-              
             </VStack>
           </form>
         </Box>

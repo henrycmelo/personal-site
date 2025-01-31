@@ -12,6 +12,13 @@ const customInput = definePartsStyle({
         _focus:{
             borderColor:'semantic.text.primary',
             boxShadow: '0 0 0 2px #212529 '
+        },
+        _placeholder:{
+            color:'gray.400'
+        },
+        _invalid:{
+            borderColor: 'red',
+            boxShadow: '0 0 0 1px red',
         }
 
     }

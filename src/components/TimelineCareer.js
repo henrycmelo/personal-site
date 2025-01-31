@@ -122,7 +122,7 @@ const TimelineCareer = () => {
         )}
 
         {visibleEntries.length=== entries.length && visibleEntries.length > visibleCount && (
-          <VerticalTimelineElement iconOnClick={collapseAll} icon = {<FontAwesomeIcon icon={faChevronUp} />} iconStyle={{ background: primaryColor, color: secondaryColor, cursor:'pointer' }}/>
+          <VerticalTimelineElement iconOnClick={collapseAll} icon = {<FontAwesomeIcon icon={faChevronUp} />} iconStyle={{ background: primaryColor, color: secondaryColor, cursor:'pointer', borderColor: mutedColor, boxShadow:'0 0 0 2px #495057' }}/>
           
         )}
 
