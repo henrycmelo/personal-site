@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Button } from "@chakra-ui/react";
-import { useAlertContext } from "../context/alertContext";
+
 
 const MuteButton = ({ children, onClick, }) => {
 
-  const {capitalizeFirstLetter} = useAlertContext()
+  
   
   return (
     <>
@@ -19,9 +19,10 @@ const MuteButton = ({ children, onClick, }) => {
       textStyle="button"
       onClick={onClick}
       shadow="lg"
+      textTransform='capitalize'
       _hover={{ bg: "semantic.background.secondary", color:'semantic.text.primary'  }}
     >
-      {capitalizeFirstLetter(children)}
+      {children}
     </Button>
 
 

@@ -1,24 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import {
   Box,
   VStack,
   Divider,
   Avatar,
-  AvatarBadge,
-  HStack,
   Text,
   Spacer,
   Stack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
-import headshot from "../images/headshot.jpg";
+import headShot from "../images/avatar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
 import socialsData from "../utils/socialsData";
-
+import { useAlertContext } from "../context/alertContext";
 const VerticalProgressBar = ({ sections, isHomePage }) => {
   const [activeSection, setActiveSection] = useState("");
   const contentRef = useRef(null);
+  const showLabel = useBreakpointValue({base:false, lg:true})
+  const {capitalizeFirstLetter} = useAlertContext()
 
   //Find the scrollable container on the right
   useEffect(() => {
@@ -87,17 +86,17 @@ const VerticalProgressBar = ({ sections, isHomePage }) => {
       {isHomePage ? (
         <>
           <VStack position="sticky" left="5%" zIndex="10" height={"100vh"} spacing={0}>
-            <HStack py={12}>
-              <Avatar name="Henry" src={headshot} objectFit="cover" />
-              <Box>
+            <Stack direction={{base:'column', lg:'row'}} py={12} align={'center'} textTransform='capitalize'>
+              <Avatar name="Henry" src={headShot} objectFit="cover" />
+              <Box textAlign={{base:'center', lg:"left"}}>
                 <Text as="p" textStyle="pbold">
                   Henry C. Melo
                 </Text>
                 <Text as="p" textStyle="caption" color="gray.600">
-                  Product Designer/ UX Researcher
+                  Product Designer/ UX researcher
                 </Text>
               </Box>
-            </HStack>
+            </Stack>
 
             <Divider variant="thick" />
             {sections?.map((section) => (
@@ -120,18 +119,21 @@ const VerticalProgressBar = ({ sections, isHomePage }) => {
                 cursor="pointer"
                 transition={"background-color 0.3s"}
                 py={6}
-                pl={12}
+                px={6}
+                display={'flex'}
+                justifyContent={{base:"center",  lg:'start'}}
+                align={{base:"center",  lg:'start'}}
               >
-                <Box display="flex" alignItems="center" gap={2}>
+                <Box display="flex"  align="center" gap={2} textTransform='capitalize'>
                   <FontAwesomeIcon icon={section.icon} size="xl" />
-                  <span>{section.label}</span>
+                  {showLabel && <span display={{ base: "none" }}>{section.label}</span>}
                 </Box>
               </Box>
             ))}
             <Spacer />
 
             <Divider variant="thick" />
-            <Stack direction={"row"} p={6} gap={12} color="gray.600" style={{ lineHeight: 0 }}>
+            <Stack direction={{base:'column',md:"row"}} p={6} gap={12} color="gray.600" style={{ lineHeight: 0 }}>
               {socialsData.map((icons, index) => (
                 <a
                   key={index}
@@ -169,7 +171,7 @@ const VerticalProgressBar = ({ sections, isHomePage }) => {
               py={6}
               pl={12}
             >
-              <Box>{section.label}</Box>
+              <Box >{section.label}</Box>
             </Box>
           ))}
         </VStack>

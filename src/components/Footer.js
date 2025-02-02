@@ -1,19 +1,10 @@
 import React from "react";
 import {
-  Heading,
   Text,
-  Grid,
-  GridItem,
-  Divider,
   Stack,
   Box,
-  HStack,
 } from "@chakra-ui/react";
-import { useAlertContext } from "../context/alertContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import FullScreenSection from "./FullScreenSection";
-import ScrollReveal from "../hooks/ScrollReveal";
-import socialsData from "../utils/socialsData";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {

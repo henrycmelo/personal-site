@@ -1,240 +1,124 @@
 import React from "react";
 import {
-  Heading,
-  VStack,
   Text,
   Image,
   Box,
-  Stack,
-  SimpleGrid,
-  Highlight,
+  Grid,
+  GridItem,
+  Avatar,
+  IconButton,
+  HStack,
+  VStack,
 } from "@chakra-ui/react";
-import FullScreenSection from "./FullScreenSection";
 import { useAlertContext } from "../context/alertContext";
-import ScrollReveal from "../hooks/ScrollReveal";
-import { badges } from "../utils/badges";
-import { technologiesData, headShotData } from "../utils/dataAboutMe";
+import rafaHenry from "../images/rafa.JPG";
+import {
+  faHeart,
+  faComment,
+  faPaperPlane,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import headShot from "../images/avatar.jpg";
 
-const Headshots = ({ headshots }) => {
-  const { colorMode } = useAlertContext();
-  return (
-    <>
-      {headshots.map((headshot, index) => (
-        <ScrollReveal key={index}>
-          <Image
-            key={index}
-            src={headshot.getImageSrc()}
-            alt={headshot.title}
-            boxSize={{ base: "lg", md: "sm", xl: "xs" }}
-            objectFit={"cover"}
-            objectPosition="50% 20%"
-            border="5px solid #272727"
-            opacity={colorMode === "light" ? "none" : "0.8"}
-          />
-        </ScrollReveal>
-      ))}
-    </>
-  );
-};
-
-const Technologies = ({ technologies }) => {
-  return (
-    <>
-      <SimpleGrid columns={4} flexWrap="wrap" spacing={4}>
-        {technologies.map((technology, index) => (
-          <img
-            key={index}
-            src={badges[technology]}
-            alt={technology}
-            width="70px"
-          />
-        ))}
-      </SimpleGrid>
-    </>
-  );
-};
-const TextIntro = ({ children }) => {
-  const { colorMode } = useAlertContext();
-  return (
-    <>
-      <VStack>
-        <Text
-          maxW="3xl"
-          color={colorMode === "light" ? "gray" : "grayDarkMode"}
-          size="sm"
-          textStyle="body"
-        >
-          {children}
-        </Text>
-        <Technologies technologies={technologiesData} />
-      </VStack>
-    </>
-  );
-};
-
-const AboutMeSection = ({ isHomePage }) => {
-  const { direction, spacing, align, colorMode } = useAlertContext();
-  const intro = (
-    <>
-      <TextIntro>
-        <Text>
-          <Highlight
-            query={[
-              "end-to-end designer & UX researcher",
-              "Optimizing processes",
-              "user experiences",
-              "tough problems",
-            ]}
-            styles={{
-              px: "2",
-              py: "1",
-              rounded: "full",
-              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
-            }}
-          >
-            I am an end-to-end designer & UX researcher with over 8+ years of experience, specializing in 
-            data-driven solutions to create better user experiences. 
-            I love diving into tough problems and working closely with others to solve them.
-          </Highlight>
-        </Text>
-        <br />
-
-        <Text>
-          <Highlight
-            query={["qualitative and quantitative research"]}
-            styles={{
-              px: "2",
-              py: "1",
-              rounded: "full",
-              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
-            }}
-          >
-            Every day, I enjoy uncovering user needs through qualitative and quantitative research, 
-            generating innovative ideas, and bringing them to life. Whether I’m sketching concepts 
-            or fine-tuning prototypes, I am passionate about every step of the design process, from 
-            ideation to implementation.
-          </Highlight>
-        </Text>
-        <br />
-
-        <Text>
-          <Highlight
-            query={[
-              "research",
-              "master’s in human-computer interaction",
-            ]}
-            styles={{
-              px: "2",
-              py: "1",
-              rounded: "full",
-              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
-            }}
-          >
-            My background in research, focusing on digital experiences, gives
-            me a solid and systematic way of working. And my time during my
-            master’s in human-computer interaction taught me a lot about
-            teamwork and self-improvement.
-          </Highlight>
-        </Text>
-
-        <br />
-
-        <Text>
-          <Highlight
-            query={[
-              "Proficient in Python, TypeScript, and JavaScript"
-            ]}
-            styles={{
-              px: "2",
-              py: "1",
-              rounded: "full",
-              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
-            }}
-          >
-            Proficient in Python, TypeScript, and JavaScript, I bring a
-            versatile skill set to my design work, allowing for seamless
-            integration of design and development processes.
-          </Highlight>
-        </Text>
-
-        <br />
-
-        <Text>
-          <Highlight
-            query={["learning something new"]}
-            styles={{
-              px: "2",
-              py: "1",
-              rounded: "full",
-              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
-            }}
-          >
-            Outside of work, I am all about sports. I played soccer in college,
-            and for the past years, I have been learning how to play tennis. I
-            am always up for learning something new.
-          </Highlight>
-        </Text>
-
-        <br />
-
-        <Text>
-          <Highlight
-            query={["collaborative work"]}
-            styles={{
-              px: "2",
-              py: "1",
-              rounded: "full",
-              bg: colorMode === "light" ? "#FED766" : "#00A4BD",
-            }}
-          >
-            I am here to create experiences through innovative solutions that
-            make a difference via collaborative work.
-          </Highlight>
-        </Text>
-
-        <br />
-
-        <Text>These are a few technologies I know:</Text>
-      </TextIntro>
-    </>
-  );
+const AboutMeSection = () => {
+  const { capitalizeEachWord } = useAlertContext();
+  const titleText = capitalizeEachWord("About me");
+  const aboutSections = [
+    {
+      title: "How I Found My Way Into UX",
+      text: "My journey into UX started in an unexpected place—fitness. A few years ago, I built and launched a fitness app that quickly gained interest and a growing user base. Through that experience, I realized my real passion wasn’t just fitness—it was understanding user needs and crafting experiences that truly worked. That spark led me to dive into UX, eventually earning a Master's in Information Experience Design (HCI) at Pratt Institute—best decision ever.",
+    },
+    {
+      title: "Blending Engineering & Design Thinking",
+      text: "With a background in industrial engineering, I’ve always loved breaking down complex problems. That analytical mindset now helps me design intuitive user experiences that feel effortless for users. Today, I bring that same approach to my work at CIANA, where we empower immigrant communities in NYC. I’m focused on improving our education programs, ensuring they are more accessible and impactful. It’s inspiring to see how thoughtful design can enhance learning experiences and create new opportunities for those who need them most.",
+    },
+    {
+      title: "Beyond UX: Tennis, Food, and NYC",
+      text: "When I’m not designing, you’ll find me on the tennis court—yes, I’m a die-hard Nadal fan (so much so that I named my dog Rafa!). Outside of UX and sports, I’m on a constant mission to uncover NYC’s best hidden food gems. There’s always a new restaurant to try, and discovering those hidden spots has become a bit of an obsession.",
+    },
+  ];
 
   return (
-    <FullScreenSection
-      backgroundColor={colorMode === "light" ? "light" : "dark"}
-      spacing={8}
-      width="100vw"
-      alignItems={"center"}
-      pr={{ base: 8, md: 32 }}
-      pl={{ base: 8, md: 32 }}
-      pt={{ base: 8, md: 32 }}
-      pb={{ base: 32, md: 32 }}
-    >
-      {isHomePage && (
-        <ScrollReveal>
-          {" "}
-          <Heading
-            as="h1"
-            id="aboutme-section"
-            alignItems={"center"}
-            justifyContent="center"
-            color={colorMode === "light" ? "dark" : "light"}
+    <Box>
+      <Text as="h2" textStyle={"h2"} pb={6}>
+        {titleText}{" "}
+      </Text>
+      <Grid
+        w={"100%"}
+        templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
+        gap={{ base: 6, md: 6 }}
+      >
+        <GridItem>
+          {aboutSections.map((section, index) => (
+            <Box key={index} mb={6} color="gray.600">
+              <Text as="p" textStyle={"pbold"} mb={2}>
+                {section.title}
+              </Text>
+
+              <Text key={index} as="p" textStyle={"p"}>
+                {section.text}
+              </Text>
+            </Box>
+          ))}
+        </GridItem>
+        <GridItem>
+          {/* <Image src={rafaHenry} alt='photo of a dog with Henry' /> */}
+          <Box
+            maxW="400px"
+            borderRadius="lg"
+            overflow="hidden"
+            boxShadow="md"
+            bg="white"
           >
-            About me
-          </Heading>{" "}
-        </ScrollReveal>
-      )}
+            {/* Profile Header */}
+            <HStack p={4} spacing={3} alignItems="center">
+              <Avatar src={headShot} alt="Profile" name="Henry"  />
+              <Text textStyle={"captionbold"}>henrycmelo</Text>
+            </HStack>
 
-      <VStack alignItems={align} justifyContent="center">
-        <Stack direction={direction} spacing={spacing}>
-          <ScrollReveal>
-            <Box color={colorMode === "light" ? "dark" : "light"}>{intro}</Box>
-          </ScrollReveal>
+            {/* Post Image */}
 
-          <Headshots headshots={headShotData} />
-        </Stack>
-      </VStack>
-    </FullScreenSection>
+            <Image
+              src={rafaHenry}
+              alt="Post"
+              objectFit="cover"
+              boxSize="400px"
+            />
+
+            {/* Action Buttons */}
+            <HStack p={4} spacing={4}>
+              <IconButton
+                icon={<FontAwesomeIcon icon={faHeart} />}
+                aria-label="Like"
+                variant="ghost"
+                fontSize="20px"
+                color={"red"}
+              />
+              <IconButton
+                icon={<FontAwesomeIcon icon={faComment} />}
+                aria-label="Comment"
+                variant="ghost"
+                fontSize="20px"
+              />
+              <IconButton
+                icon={<FontAwesomeIcon icon={faPaperPlane} />}
+                aria-label="Share"
+                variant="ghost"
+                fontSize="20px"
+              />
+            </HStack>
+
+            {/* Post Caption */}
+            <VStack align="start" p={4}>
+              <Text textStyle={"captionbold"}>henrycmelo</Text>
+              <Text textStyle={"caption"}>
+                Enjoying some quality time with my dog Rafa! 🐾❤️
+              </Text>
+            </VStack>
+          </Box>
+        </GridItem>
+      </Grid>
+    </Box>
   );
 };
 

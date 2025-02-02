@@ -1,4 +1,4 @@
-import { extendTheme, Textarea } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 import { dividerTheme } from "./divider";
 import { inputTheme } from "./input";
 import { textareaTheme } from "./textarea";
@@ -14,6 +14,7 @@ const theme = extendTheme({
       },
     },
   },
+ 
     
   components: {
     // You can define specific component styles here if needed.
