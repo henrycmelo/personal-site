@@ -13,11 +13,13 @@ import headShot from "../images/avatar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import socialsData from "../utils/socialsData";
 import { useAlertContext } from "../context/alertContext";
-const VerticalProgressBar = ({ sections, isHomePage }) => {
+const VerticalProgressBar = ({ sections, isHomePage, isOtherPage }) => {
   const [activeSection, setActiveSection] = useState("");
   const contentRef = useRef(null);
-  const showLabel = useBreakpointValue({base:false, lg:true})
-  const {capitalizeFirstLetter} = useAlertContext()
+  const showLabel = useBreakpointValue({ base: false, lg: true });
+  const { capitalizeFirstLetter, handleClick, handlePath } = useAlertContext();
+
+  
 
   //Find the scrollable container on the right
   useEffect(() => {
@@ -85,10 +87,21 @@ const VerticalProgressBar = ({ sections, isHomePage }) => {
     <>
       {isHomePage ? (
         <>
-          <VStack position="sticky" left="5%" zIndex="10" height={"100vh"} spacing={0}>
-            <Stack direction={{base:'column', lg:'row'}} py={12} align={'center'} textTransform='capitalize'>
+          <VStack
+            position="sticky"
+            left="5%"
+            zIndex="10"
+            height={"100vh"}
+            spacing={0}
+          >
+            <Stack
+              direction={{ base: "column", lg: "row" }}
+              py={12}
+              align={"center"}
+              textTransform="capitalize"
+            >
               <Avatar name="Henry" src={headShot} objectFit="cover" />
-              <Box textAlign={{base:'center', lg:"left"}}>
+              <Box textAlign={{ base: "center", lg: "left" }}>
                 <Text as="p" textStyle="pbold">
                   Henry C. Melo
                 </Text>
@@ -104,7 +117,13 @@ const VerticalProgressBar = ({ sections, isHomePage }) => {
                 textStyle="caption"
                 w={"100%"}
                 key={section.id}
-                onClick={() => scrollToSection(section.id)}
+                onClick={() => {
+                  if (isOtherPage) {
+                    handlePath(section.path); // Navigate to the path on other pages
+                  } else {
+                    scrollToSection(section.id); // Scroll to the section on the homepage
+                  }
+                }}
                 color={
                   activeSection === section.id
                     ? "semantic.background.primary"
@@ -120,20 +139,33 @@ const VerticalProgressBar = ({ sections, isHomePage }) => {
                 transition={"background-color 0.3s"}
                 py={6}
                 px={6}
-                display={'flex'}
-                justifyContent={{base:"center",  lg:'start'}}
-                align={{base:"center",  lg:'start'}}
+                display={"flex"}
+                justifyContent={{ base: "center", lg: "start" }}
+                align={{ base: "center", lg: "start" }}
               >
-                <Box display="flex"  align="center" gap={2} textTransform='capitalize'>
+                <Box
+                  display="flex"
+                  align="center"
+                  gap={2}
+                  textTransform="capitalize"
+                >
                   <FontAwesomeIcon icon={section.icon} size="xl" />
-                  {showLabel && <span display={{ base: "none" }}>{section.label}</span>}
+                  {showLabel && (
+                    <span display={{ base: "none" }}>{section.label}</span>
+                  )}
                 </Box>
               </Box>
             ))}
             <Spacer />
 
             <Divider variant="thick" />
-            <Stack direction={{base:'column',md:"row"}} p={6} gap={12} color="gray.600" style={{ lineHeight: 0 }}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              p={6}
+              gap={12}
+              color="gray.600"
+              style={{ lineHeight: 0 }}
+            >
               {socialsData.map((icons, index) => (
                 <a
                   key={index}
@@ -151,6 +183,19 @@ const VerticalProgressBar = ({ sections, isHomePage }) => {
         </>
       ) : (
         <VStack position="sticky" top="20%" left="5%" zIndex="10">
+          <Text
+              fontSize="sm"
+              color="gray.500"
+              textStyle={'caption'}
+              textAlign="center"
+              px={6}
+              py={2}
+            >
+              Click to advance to a specific section{" "}
+              <Text as='span' textStyle='caption' fontStyle='italic'>
+                or just scroll down
+              </Text> 
+            </Text>
           {sections?.map((section) => (
             <Box
               textStyle="caption"
@@ -169,9 +214,22 @@ const VerticalProgressBar = ({ sections, isHomePage }) => {
               cursor="pointer"
               transition={"background-color 0.3s"}
               py={6}
-              pl={12}
+              px={6}
+              display={"flex"}
+              justifyContent={{ base: "center", lg: "start" }}
+              align={{ base: "center", lg: "start" }}
             >
-              <Box >{section.label}</Box>
+              <Box
+                display="flex"
+                align="center"
+                gap={2}
+                textTransform="capitalize"
+              >
+                <FontAwesomeIcon icon={section.icon} size="xl" />
+                {showLabel && (
+                  <span display={{ base: "none" }}>{section.label}</span>
+                )}
+              </Box>
             </Box>
           ))}
         </VStack>

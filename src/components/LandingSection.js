@@ -8,7 +8,6 @@ import {
   Stack,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { faBriefcase, faComment, faEnvelope, faFolderOpen, faHome, faUser } from "@fortawesome/free-solid-svg-icons";
 import Footer from "./Footer";
 import LandingText from "./LandingText";
 import ProjectSection from "./ProjectSection";
@@ -17,19 +16,12 @@ import TimelineCareer from "./TimelineCareer";
 import ContactMeSection from "./ContactMeSection";
 import AboutMeSection from "./AboutMeSection";
 import ResponsiveMenu from "./ResponsiveMenu";
+import { useAlertContext } from "../context/alertContext";
 
 
 const LandingSection = () => {
   const showMenu = useBreakpointValue({base:false, md:true})
-  const sections = [
-    { id: "home", label: "Home", icon:faHome },
-    { id: "projects", label: "Projects", icon:faFolderOpen },
-    { id: "reviews", label: "What people say about me", icon:faComment },
-    { id: "career", label: "Career timeline", icon:faBriefcase },
-    { id: "aboutme", label: "about me", icon:faUser },
-    { id: "contact", label: "contact", icon:faEnvelope },
-    
-  ]
+  const {sections}  = useAlertContext()
 
   return (
     <Grid
@@ -54,7 +46,7 @@ const LandingSection = () => {
           
         </Stack>
         ):(
-        <ResponsiveMenu sections={sections} /> 
+        <ResponsiveMenu isHomePage sections={sections} /> 
         )}
 
         

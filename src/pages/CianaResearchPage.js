@@ -20,8 +20,13 @@ import { useAlertContext } from "../context/alertContext";
 import VerticalProgressBar from "../components/VerticalProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCalendarCheck,
+  faChartLine,
+  faDatabase,
+  faFileAlt,
   faLightbulb,
   faListCheck,
+  faPuzzlePiece,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { MdCheckCircle } from "react-icons/md";
@@ -58,23 +63,24 @@ import recommendationTechnicalImage from "../assets/ciana_research/recommendatio
 import recommendationKidsImage from "../assets/ciana_research/recomendation_kids.svg";
 import cecLogo from "../assets/ciana_research/cecLogo.png";
 import cianaBanner from "../assets/ciana_research/cianaWorkshop.png";
+import ResponsiveMenu from "../components/ResponsiveMenu";
 
-const CianaResearch = () => {
-  const { capitalizeEachWord } = useAlertContext();
-  const sections = [
-    { id: "theproject", label: "The Project" },
-    { id: "planning", label: "Planning" },
-    { id: "datacollection", label: "Data Collection" },
-    { id: "analysis", label: "Analysis" },
-    { id: "synthesis", label: "Synthesis" },
-    { id: "reflection", label: "Reflection & Takeaways" },
+const CianaResearchPage = () => {
+  const { capitalizeEachWord, sections } = useAlertContext();
+  const sectionsProject = [
+    { id: "theproject", label: "The Project Brief", icon:faFileAlt },
+    { id: "planning", label: "Planning", icon: faCalendarCheck },
+    { id: "datacollection", label: "Data Collection", icon: faDatabase },
+    { id: "analysis", label: "Analysis", icon:faChartLine },
+    { id: "synthesis", label: "Synthesis", icon:faPuzzlePiece },
+    { id: "reflection", label: "Reflection & Takeaways", icon: faLightbulb },
   ];
 
   return (
     <>
-      <Header />
+      <ResponsiveMenu sections={sections} />
 
-      <FullScreenSection>
+      <Box py={24} px={12}>
         <VStack color="semantic.text.primary" alignItems="start" pb={6}>
           <Text as="h1" textStyle={"h1"}>
             {" "}
@@ -94,12 +100,9 @@ const CianaResearch = () => {
             </Text>{" "}
             CIANA (Center for the Integration and Advancement of New Americans)
           </Text>
-          <Text as="p" textStyle={"caption"}>
-            2024
-          </Text>
+         
           <Box
-            w={{ base: "4/3", md: "100%" }}
-            borderRadius="30px"
+            w={{ base: "100%", md: "100%" }}
             overflow="hidden"
             h="300px"
           >
@@ -165,7 +168,7 @@ const CianaResearch = () => {
             </GridItem>
           </Grid>
         </VStack>
-      </FullScreenSection>
+      </Box>
 
       <Divider variant="section" />
 
@@ -184,7 +187,7 @@ const CianaResearch = () => {
           height="fit-content"
           pt={12}
         >
-          <VerticalProgressBar sections={sections} />
+          <VerticalProgressBar sections={sectionsProject} />
         </Box>
         <Divider orientation="vertical" variant="thick" />
 
@@ -1228,4 +1231,4 @@ const CianaResearch = () => {
   );
 };
 
-export default CianaResearch;
+export default CianaResearchPage;
