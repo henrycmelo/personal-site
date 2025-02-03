@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   VStack,
@@ -19,24 +19,17 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import headShot from "../images/avatar.jpg";
 import { useAlertContext } from "../context/alertContext";
 
-const ResponsiveMenu = ({ sections, isHomePage }) => {
+const ResponsiveMenu = ({ sections, isHomePage, isOtherPage }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { handleClick, handlePath } = useAlertContext();
-  const handleSectionClick = (id, path) => {
-    if (isHomePage) {
-      handleClick(id);
-    } else {
-      handlePath(path);
-    }
-    onClose();
-  };
+  
 
   return (
-    <Box as='nav' position="relative" >
+    <Box as='nav' position="relative" boxShadow={'dark-lg'}>
       {/* Mobile Header */}
       <Box
         
-        position="absolute"
+        position="fixed"
         top="0"
         left="0"
         right="0"
@@ -81,7 +74,14 @@ const ResponsiveMenu = ({ sections, isHomePage }) => {
                     py={4}
                     px={6}
                     cursor="pointer"
-                    onClick={() => handleSectionClick(section.id, section.path)}
+                    onClick={() => {
+                      if (isOtherPage) {
+                        handlePath(section.path); // Navigate to the path on other pages
+                      } else {
+                        handleClick(section.id); // Scroll to the section on the homepage
+                      }
+                      onClose()
+                    }}
                     textStyle="caption"
                     _hover={{
                       bg: "semantic.text.primary",

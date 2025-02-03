@@ -46,6 +46,7 @@ function ReviewsCarousel() {
   if (error) return <Text>{error}</Text>;
 
   return (
+    
     <Box
       bg="transparent"
       pt={4}

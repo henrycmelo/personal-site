@@ -18,9 +18,9 @@ export const AlertProvider = ({ children }) => {
       { id: "home", label: "Home", icon:faHome, path:"/" },
       { id: "projects", label: "Projects", icon:faFolderOpen, path:'projects' },
       { id: "reviews", label: "What people say about me", icon:faComment, path:'reviews' },
-      { id: "career", label: "Career timeline", icon:faBriefcase },
-      { id: "aboutme", label: "about me", icon:faUser },
-      { id: "contact", label: "contact", icon:faEnvelope },
+      { id: "career", label: "Career timeline", icon:faBriefcase, path:'career' },
+      { id: "aboutme", label: "about me", icon:faUser, path:'aboutme' },
+      { id: "contact", label: "contact", icon:faEnvelope, path:'contact' },
       
     ]
 

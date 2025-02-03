@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Box, Grid, GridItem, HStack, Text, VStack } from "@chakra-ui/react";
+// import React, { useState, useEffect } from "react";
+import { Box, Grid, GridItem,Text} from "@chakra-ui/react";
 import "animate.css";
 import { useAlertContext } from "../context/alertContext";
-import { projectsAPI } from "../api/projectsApi";
+// import { projectsAPI } from "../api/projectsApi";
 import Cards from "./Cards";
-import MuteButton from "./MuteButton";
 import projects from "../utils/projects";
 const ProjectSection = () => {
   const { capitalizeEachWord } = useAlertContext();
@@ -47,7 +46,7 @@ const ProjectSection = () => {
               title={project.title}
               description={project.description}
               role={project.role}
-              to={"cianaresearch"}
+              path={"projects/cianaresearch"}
               imageSrc={project.getImageSrc()}
             />
           </GridItem>

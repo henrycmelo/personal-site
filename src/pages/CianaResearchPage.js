@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
-import FullScreenSection from "../components/FullScreenSection";
+import React from "react";
 import {
   Box,
   VStack,
@@ -10,9 +8,8 @@ import {
   GridItem,
   Divider,
   HStack,
-  List,
+
   ListItem,
-  ListIcon,
   UnorderedList,
   Flex,
 } from "@chakra-ui/react";
@@ -29,7 +26,7 @@ import {
   faPuzzlePiece,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
-import { MdCheckCircle } from "react-icons/md";
+
 import problemImage from "../assets/ciana_research/problem.svg";
 import goalImage from "../assets/ciana_research/goal.svg";
 import questionImage from "../assets/ciana_research/question.svg";
@@ -78,7 +75,7 @@ const CianaResearchPage = () => {
 
   return (
     <>
-      <ResponsiveMenu sections={sections} />
+      <ResponsiveMenu isOtherPage sections={sections} />
 
       <Box py={24} px={12}>
         <VStack color="semantic.text.primary" alignItems="start" pb={6}>

@@ -1,71 +1,69 @@
-import React, {useState, useEffect} from "react";
-import FullScreenSection from "../components/FullScreenSection";
-import { Heading, VStack, Text } from "@chakra-ui/react";
-import Header from "../components/Header";
-import ContactMeSection from "../components/ContactMeSection";
-import Footer from "../components/Footer";
-import Alert from "../components/Alert";
+import React from "react";
+import "animate.css";
+import {
+  Grid,
+  useBreakpointValue,
+  Stack,
+  Box,
+  Divider,
+  Spacer,
+} from "@chakra-ui/react";
+import ResponsiveMenu from "../components/ResponsiveMenu";
 import { useAlertContext } from "../context/alertContext";
+import VerticalProgressBar from "../components/VerticalProgressBar";
+import Footer from "../components/Footer";
+import ContactMeSection from "../components/ContactMeSection";
 
-
-
-function ContactPage () {
-  const {  colorMode} = useAlertContext();
-  const [isLoading, setIsLoading]=useState(true)
-  useEffect(()=>{
-    setTimeout(()=>{
-      setIsLoading(false);
-    }, 1500)
-  }, []);
+const ContactPage = () => {
+  const showMenu = useBreakpointValue({ base: false, md: true });
+  const { sections } = useAlertContext();
   return (
-    <main>
-      <Header/>
-      <FullScreenSection
-        backgroundColor={colorMode==='light'? "light":'dark'}
-        alignContent="center"
-        alignItems='center'
-        spacing={8}
-        width="100vw"
-        pt={48}
-        pl={{ base: 8, md: 32 }}
-        pb={32}
-        pr={{ base: 8, md: 32 }}
-      >
-        <VStack alignItems="start" justifyContent="left">
-          <Heading
-            color={colorMode==='light'? "dark":'light'}
-            size={{ base: "3xl", md: "4xl" }}
-            textStyle="h2"
-          >
-            Contact Me
-          </Heading>
-        </VStack>
-      </FullScreenSection>
-      <FullScreenSection
-        layerStyle={colorMode==='light'?'normalDark':'gradientBack'}
-       color='light'
-        alignItems={"center"}
-        spacing={8}
-        width="100vw"
-        p={{ base: 8, md: 32 }}
-      >
-         <VStack alignItems={"center"} justifyContent={"center"}>
-          <Text textStyle="body" fontSize={"xl"} align={"center"}>
-          Get in touch with me to discuss your project and see how we can work together. 
-          Fill out the contact form or send me an email at <a href="mailto:hcasti40@pratt.edu" style={{ color: colorMode==='light'? "#007183" : '#00A4BD'}}>hcasti40@pratt.edu </a> 
-          and I'll get back to you as soon as possible.
-          </Text>
-          </VStack>
+    <Grid
+      templateColumns={{
+        base: "1fr",
+        md: "230px 3px 1fr",
+        lg: "320px 3px 1fr",
+      }}
+      height="100vh"
+      alignItems="start"
+      w={"100%"}
+      overflow={"hidden"}
+    >
+      {showMenu ? (
+        <Stack
+          display={{ base: "none", md: "block" }}
+          visibility={{ base: "hidden", md: "visible" }}
+          position={"sticky"}
+          height="fit-content"
+          spacing={48}
+        >
+          <VerticalProgressBar isHomePage isOtherPage sections={sections} />
+        </Stack>
+      ) : (
+        <ResponsiveMenu isHomePage isOtherPage sections={sections} />
+      )}
 
-      </FullScreenSection>
-      <ContactMeSection />
-     
-      <Footer />
-      <Alert />
-     
-      
-    </main>
+      <Divider orientation="vertical" variant="thick" />
+
+      <Box overflowY="auto" height={"100vh"} data-scroll-container="true" display="flex" flexDirection={'column'}>
+        {/* ALL CONTENT HERE */}
+        <section>
+          <Box id="contact" py={24} px={12}>
+            <ContactMeSection />
+          </Box>
+          
+        </section>
+        <Spacer />
+        
+        <Divider variant="thick" />
+        <footer>
+          <Box>
+            <Footer />
+          </Box>
+        </footer>
+      </Box>
+    </Grid>
   );
-}
+};
 
 export default ContactPage;

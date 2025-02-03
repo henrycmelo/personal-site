@@ -1,36 +1,26 @@
 import {
-  Heading,
   Image,
   Text,
-  Card,
-  CardBody,
-  CardFooter,
-  Stack,
-  Badge,
-  Flex,
   HStack,
   Box,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import MuteButton from "./MuteButton";
-import { Link } from "react-router-dom";
-import { formatDate } from "../utils/formatDate";
-import { isProjectDateRecent } from "../utils/recent";
 import { useAlertContext } from "../context/alertContext";
 import Badges from "./Badges";
 
-const Cards = ({ title, description, imageSrc, to, date, role }) => {
-  const { capitalizeEachWord } = useAlertContext();
+const Cards = ({ title, description, imageSrc, path, role }) => {
+  const { capitalizeEachWord, handlePath } = useAlertContext();
 
   return (
-    <Link to={to}>
+    
     <Box
       color="semantic.text.button"
       border={"1px solid #495057"}
       boxShadow={"rgba(149, 157, 165, 0.2) 0px 8px 24px "}
       transition="transform 0.3s ease-in-out"
       _hover={{ transform: "scale(1.05)", cursor: "pointer" }}
+      onClick={()=>handlePath(path)}
     >
       <VStack
         m={8}
@@ -60,7 +50,7 @@ const Cards = ({ title, description, imageSrc, to, date, role }) => {
         
       </VStack>
     </Box>
-    </Link>
+    
   );
 };
 

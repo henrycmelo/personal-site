@@ -12,9 +12,9 @@ import ResponsiveMenu from "../components/ResponsiveMenu";
 import { useAlertContext } from "../context/alertContext";
 import VerticalProgressBar from "../components/VerticalProgressBar";
 import Footer from "../components/Footer";
-import ReviewsCarousel from "../components/ReviewCarousel";
+import TimelineCareer from "../components/TimelineCareer";
 
-const ReviewCarouselPage = () => {
+const CareerTimelinePage = () => {
   const showMenu = useBreakpointValue({ base: false, md: true });
   const { sections } = useAlertContext();
   return (
@@ -48,8 +48,8 @@ const ReviewCarouselPage = () => {
       <Box overflowY="auto" height={"100vh"} data-scroll-container="true" display="flex" flexDirection={'column'}>
         {/* ALL CONTENT HERE */}
         <section>
-          <Box id="reviews" py={24} px={12}>
-            <ReviewsCarousel />
+          <Box id="career" py={24} px={12}>
+            <TimelineCareer />
           </Box>
           
         </section>
@@ -66,4 +66,4 @@ const ReviewCarouselPage = () => {
   );
 };
 
-export default ReviewCarouselPage;
+export default CareerTimelinePage;

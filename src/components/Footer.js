@@ -13,7 +13,7 @@ const Footer = () => {
   return (
 
       
-      <Box p={6} >
+      <Box p={6} mt="auto"  >
         <Stack direction={{base:'column', md:'row'}} justify='space-between' alignItems={'center'}  color="gray.600" as={'p'} textStyle={'caption'} align='' mt={2}>
           <Text>© Copyright {year}</Text>
           <Text >

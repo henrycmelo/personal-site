@@ -43,18 +43,18 @@ const projects = [
       featured: true,
       hide:false
     },
-    {
-      title: "Generative AI App",
-      description:
-        "Using AI to help with daily routines.", 
-      getImageSrc: () => require("../assets/ciana_research/cianaWorkshop.png"),
-      role:[role["Product Designer"]],
-      date: "2023-12",
-      tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
-      path:"/anchoredai",
-      featured: true,
-      hide:false,
-    },
+    // {
+    //   title: "Generative AI App",
+    //   description:
+    //     "Using AI to help with daily routines.", 
+    //   getImageSrc: () => require("../assets/ciana_research/cianaWorkshop.png"),
+    //   role:[role["Product Designer"]],
+    //   date: "2023-12",
+    //   tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
+    //   path:"/anchoredai",
+    //   featured: true,
+    //   hide:false,
+    // },
     
     
   ];

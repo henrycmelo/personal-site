@@ -6,6 +6,7 @@ import {
   Stack,
   Box,
   Divider,
+  Spacer,
 } from "@chakra-ui/react";
 import ResponsiveMenu from "../components/ResponsiveMenu";
 import { useAlertContext } from "../context/alertContext";
@@ -39,18 +40,20 @@ const ReviewCarouselPage = () => {
           <VerticalProgressBar isHomePage isOtherPage sections={sections} />
         </Stack>
       ) : (
-        <ResponsiveMenu isHomePage sections={sections} />
+        <ResponsiveMenu isHomePage isOtherPage sections={sections} />
       )}
 
       <Divider orientation="vertical" variant="thick" />
 
-      <Box overflowY="auto" height={"100%"} data-scroll-container="true">
+      <Box overflowY="auto" height={"100vh"} data-scroll-container="true" display="flex"
+  flexDirection="column">
         {/* ALL CONTENT HERE */}
         <section>
           <Box id="projects" py={24} px={12}>
             <ProjectSection />
           </Box>
         </section>
+        <Spacer />
         <Divider variant="thick" />
         <footer>
           <Box>
