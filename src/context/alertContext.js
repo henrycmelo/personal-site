@@ -1,10 +1,11 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import { useScrollLock } from "../hooks/useScrollLock";
-import { useMediaQuery } from "@chakra-ui/react";
+import { createContext, useContext, useState } from "react";
+import { faBriefcase, faComment, faEnvelope, faFolderOpen, faHome, faUser } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const AlertContext = createContext(undefined);
 
 export const AlertProvider = ({ children }) => {
+  const navigate  = useNavigate()
   const [state, setState] = useState({
     isOpen: false,
     // Type can be either "success" or "error"
@@ -12,52 +13,42 @@ export const AlertProvider = ({ children }) => {
     // Message to be displayed, can be any string
     message: "",
   });
-  const { unlockScroll } = useScrollLock();
 
-  const handleClick = (anchor) => () => {
-    const id = `${anchor}-section`;
-    const element = document.getElementById(id);
+  const sections = [
+      { id: "home", label: "Home", icon:faHome, path:"/" },
+      { id: "projects", label: "Projects", icon:faFolderOpen, path:'projects' },
+      { id: "reviews", label: "What people say about me", icon:faComment, path:'reviews' },
+      { id: "career", label: "Career timeline", icon:faBriefcase, path:'career' },
+      { id: "aboutme", label: "about me", icon:faUser, path:'aboutme' },
+      { id: "contact", label: "contact", icon:faEnvelope, path:'contact' },
+      
+    ]
 
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      unlockScroll();
-    }
+  const handleClick = (id) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
-  
 
-  const [isLargerThanBase] = useMediaQuery('(min-width: 769px)');
-  const [direction, setDirection] = useState('row');
-  const [spacing, setSpacing] = useState(20);
-  const [align, setAlign] = useState('flex-start');
+  const handlePath = (path) =>{
+    navigate(path)
+  }
 
-  useEffect(() => {
-    setDirection(isLargerThanBase ? 'row' : 'column');
-    setSpacing(isLargerThanBase ? 20 : 16);
-    setAlign(isLargerThanBase ? 'flex-start' : 'center');
-  }, [isLargerThanBase]);
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 
-  
+  const capitalizeEachWord = (string) => {
+    const words = string.split(" ");
 
-  
-  const [colorMode, setColorMode]=useState('dark');
-
-  const toggleColorMode=()=>{
-    if (colorMode==='light'){
-        setColorMode('dark')
-    }
-    else {
-        setColorMode('light')
-    }
-   
-}
-
-  
- 
-
- 
+    return words
+      .map((word) => {
+        return word[0].toUpperCase() + word.substring(1);
+      })
+      .join(" ");
+  };
 
   return (
     <AlertContext.Provider
@@ -67,14 +58,10 @@ export const AlertProvider = ({ children }) => {
           setState({ isOpen: true, type, message, error }),
         onClose: () => setState({ isOpen: false, type: "", message: "" }),
         handleClick,
-        direction,
-        spacing,
-        align,
-        isLargerThanBase,
-       
-        colorMode,
-        toggleColorMode
-        
+        capitalizeFirstLetter,
+        capitalizeEachWord,
+        sections,
+        handlePath
       }}
     >
       {children}

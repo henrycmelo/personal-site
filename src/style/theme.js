@@ -1,120 +1,115 @@
-import { extendTheme } from "@chakra-ui/react"
-import { switchTheme } from "./Switch"
-
-
-const config = {
-    initialColorMode: 'dark',
-    useSystemColorMode: false,
-  }
-
+import { extendTheme } from "@chakra-ui/react";
+import { dividerTheme } from "./divider";
+import { inputTheme } from "./input";
+import { textareaTheme } from "./textarea";
 
 const theme = extendTheme({
-    config,
-    components: { 
-        Switch: switchTheme,
-        Badge:{
-            
-            variants:{
-                light:{
-                    bg:'transparent',
-                    color:'blue',
-                    variant:'outline',
-                    border:"1px solid #007183"
-                },
-                dark:{
-                    bg:'transparent',
-                    color:'blueDarkMode',
-                    variant:'outline',
-                    border:"1px solid #00A4BD"
-                },
-                
-            },
-            defaultProps:{
-                variant:'solid'
-            }
-        },
-        
-    },
-    fonts: {
-        heading: "'Open Sans', sans-serif"
-    },
-  
 
-  
-    textStyles: {
-        h2: {
-            fontFamily: "'Open Sans', sans-serif",
-            fontStyle: 'normal',
-            fontWeight: '700',
-            lineHeight: '80px',
-            letterSpacing: '-0.25px'
-        },
-        h3: {
-            fontFamily: "'Open Sans', sans-serif",
-            fontStyle: 'normal',
-            fontWeight: '700',
-            lineHeight: '65px'
-        },
-        h6: {
-            fontFamily: "'Open Sans', sans-serif",
-            fontStyle: 'normal',
-            fontWeight: '600',
-            lineHeight: '40px',
-            letterSpacing: '0.15px'
-        },
-        button: {
-            fontFamily: `'Monserrat', sans-serif`,
-            fontStyle: 'normal',
-            fontWeight: '800',
-            lineHeight: '17px',
-            letterSpacing: '1.25px'
-        },
-        body: {
-            fontFamily: `'Monserrat', sans-serif`,
-            fontStyle: 'normal',
-            fontWeight: '400',
-            lineHeight: '200%',
-            letterSpacing: '0.5px'
-        }
+  styles:{
+    global: {
+      body: {
+        bg: "semantic.background.primary",
+        color: "semantic.text.primary",
+        fontFamily: "Aeonik",
+      },
     },
-    colors: {
-        light: '#EFF1F3',
-        dark: '#272727',
-        blue: '#007183',
-        yellow: '#FED766',
-        gray: '#696773',
-        secondLight: '#E8EBED',
-        secondDark: '#5A5863',
-        blueDarkMode:"#00A4BD",
-        grayDarkMode:"#C3C3C3",
-        grayBoldDarkMode:"#909BA3",
-        darkDarkMode:'#232323',
-      
-
-        
-      
-},
-    layerStyles:{
-        gradientBack:{
-            bg:'radial-gradient(circle, rgba(54,76,82,1) 0%, rgba(35,35,35,1) 100%)'
-
-      
-        },
-        normalBlue:{
-            bg:'#007183'
-        },
-        normalDark:{
-            bg:'#272727'
-        }
-       
-    },
-
-    
-   
+  },
  
     
-})
+  components: {
+    // You can define specific component styles here if needed.
+    Divider: dividerTheme,
+    Input: inputTheme,
+    Textarea: textareaTheme
+  },
+  fonts: {
+    heading: "Aeonik",
+    body: "Aeonik",
+  },
+  textStyles: {
+    h1: {
+      fontSize: { base: "40px", sm: "48px", md: "56px", lg: "72px" },
+      lineHeight: { base: "48px", sm: "56px", md: "64px", lg: "80px" },
+      fontWeight: "800",
+    },
+    h2: {
+      fontSize: { base: "32px", sm: "36px", md: "42px", lg: "48px" },
+      lineHeight: { base: "40px", sm: "44px", md: "50px", lg: "56px" },
+      fontWeight: "400",
+    },
+    h3: {
+      fontSize: { base: "28px", sm: "32px", md: "36px", lg: "40px" },
+      lineHeight: { base: "36px", sm: "40px", md: "44px", lg: "48px" },
+      fontWeight: "400",
+    },
+    p: {
+      fontSize: { base: "16px", sm: "18px", md: "20px" },
+      lineHeight: { base: "24px", sm: "28px", md: "32px" },
+      fontWeight: "400",
+    },
+    pbold:{
+      fontSize: { base: "16px", sm: "18px", md: "20px" },
+      lineHeight: { base: "24px", sm: "28px", md: "32px" },
+      fontWeight: "600",
+    },
 
-export default theme
+    button: {
+      fontSize: { base: "16px", md: "18px" },
+      lineHeight: { base: "20px", md: "24px" },
+      fontWeight: "400",
+    },
+    caption: {
+      fontSize: { base: "12px", md: "14px" },
+      lineHeight: { base: "16px", md: "20px" },
+      fontWeight: "400",
+   
+  },
+  captionbold: {
+    fontSize: { base: "12px", md: "14px" },
+    lineHeight: { base: "16px", md: "20px" },
+    fontWeight: "600",
+  },
+  muted: {
+    fontSize: { base: "12px", md: "14px" },
+    lineHeight: { base: "20px", md: "24px" },
+    fontWeight: "100",
 
+  },
+  
+},
+  colors: {
+    gray: {
+      50: "#F8F9FA",
+      100: "#E9ECEF",
+      200: "#DEE2E6",
+      300: "#CED4DA",
+      400: "#ADB5BD",
+      500: "#6C757D",
+      600: "#495057",
+      700: "#343A40",
+      800: "#212529",
+    },
+    semantic: {
+      background: {
+        primary: "#F8F9FA",
+        secondary: "#E9ECEF",
+        tertiary: "#DEE2E6",
+        button: "#212529",
+        
+      },
+      text: {
+        primary: "#212529",
+        secondary: "#495057",
+        muted: "#6C757D",
+        button: "#495057",
+        hover:"#CED4DA"
+      },
+      border: "#CED4DA",
+      divider: "#495057",
+      accent:"#107c7c",
+      accentHover: "#399897"
+    },
+  },
+});
 
+export default theme;

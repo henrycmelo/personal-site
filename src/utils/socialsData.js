@@ -2,16 +2,16 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const socialsData = [
-    { id: "faEnvelope", icon: faEnvelope, url: "mailto: hcasti40@pratt.edu" },
+    { id: "faEnvelope", icon: faEnvelope, url: "mailto: henry.melo.contact@gmail.com" },
     {
       id: "faGithub",
       icon: faGithub,
-      url: "https://github.com/henrycastillome",
+      url: "https://github.com/henrycmelo",
     },
     {
       id: "faLinkedin",
       icon: faLinkedin,
-      url: "https://www.linkedin.com/in/henry--castillo/",
+      url: "https://www.linkedin.com/in/henry--melo/",
     },
   ];
 

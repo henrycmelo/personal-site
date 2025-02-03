@@ -1,118 +1,56 @@
 import {
-  Heading,
   Image,
   Text,
-  Card,
-  CardBody,
-  CardFooter,
-  Stack,
-  Badge,
-  Flex,
+  HStack,
   Box,
+  VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import SecondaryButton from "./SecondaryButton";
-import { Link } from "react-router-dom";
 import { useAlertContext } from "../context/alertContext";
-import { formatDate } from "../utils/formatDate";
-import { isProjectDateRecent } from "../utils/recent";
+import Badges from "./Badges";
 
-const Cards = ({
-  title,
-  description,
-  imageSrc,
-  to,
-  date,
-}) => {
-  const { colorMode } = useAlertContext();
+const Cards = ({ title, description, imageSrc, path, role }) => {
+  const { capitalizeEachWord, handlePath } = useAlertContext();
 
   return (
-    <Card
-      maxW={["100%", "md"]}
-      backgroundColor={colorMode === "light" ? "light" : "dark"}
-      boxShadow="xl"
+    
+    <Box
+      color="semantic.text.button"
+      border={"1px solid #495057"}
+      boxShadow={"rgba(149, 157, 165, 0.2) 0px 8px 24px "}
+      transition="transform 0.3s ease-in-out"
+      _hover={{ transform: "scale(1.05)", cursor: "pointer" }}
+      onClick={()=>handlePath(path)}
     >
-      <CardBody>
-        <Flex alignItems="center" justifyContent={'right'}>
-          {date ? (
-            <Text
-              fontSize="xs"
-             
-              color={colorMode === "light" ? "gray" : "grayDarkMode"}
-              px="2"
-              py="1"
-              mb={2}
-            >
-              {formatDate(date)}
-            </Text>
-          ) : null}
-
-         
-        </Flex>
-
-        <Box
-          style={{
-            position: "relative",
-            display: "inline-block",
-            paddingTop: "20px",
-          }}
-        >
-          {date && isProjectDateRecent(date) ? (
-            <Badge
-              position="absolute"
-              right="-5px"
-              top="20px"
-              px="2"
-              py="1"
-              mb={2}
-              ml={2}
-              fontSize="2xs"
-              variant={colorMode === "light" ? "light" : "dark"}
-              borderRadius="full"
-              
-              
-            >
-              New
-            </Badge>
-          ) : null}
+      <VStack
+        m={8}
+        textAlign="start"
+        justifyContent={"flex-start"}
+        alignItems={"start"}
+      >
+        <Box w={{ base: "4/3", md: "100%" }} overflow="hidden">
           <Image
-            src={imageSrc}
+            src={imageSrc || "https://placehold.co/600x400"}
             alt={title}
             objectFit="cover"
-            boxSize="100%"
-            h="auto"
-            borderRadius="5px"
-            backgroundColor={
-              colorMode === "light" ? "secondLight" : "darkDarkMode"
-            }
+            w="100%"
           />
         </Box>
-        <Stack mt="6" spacing="3">
-          <Heading
-            as="h6"
-            fontSize="xl"
-            color={colorMode === "light" ? "dark" : "light"}
-          >
-            {title}
-          </Heading>
-          <Text
-            m={4}
-            fontSize="md"
-            color={colorMode === "light" ? "gray" : "grayDarkMode"}
-            textStyle="body"
-          >
-            {description}
-          </Text>
-        </Stack>
+        <Text as="p" textStyle="p">
+          {capitalizeEachWord(title)}
+        </Text>
+        <Text as="p" textStyle="caption">
+          {description}
+        </Text>
+        <HStack>
+          <Badges borderRadius="full" px={2}>
+            {role || ""}
+          </Badges>
+        </HStack>
         
-      </CardBody>
-
-      <CardFooter justify="flex-end">
-        <Link to={to}>
-          <SecondaryButton>View Project</SecondaryButton>{" "}
-        </Link>
-      </CardFooter>
-    </Card>
+      </VStack>
+    </Box>
+    
   );
 };
 
