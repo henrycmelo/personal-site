@@ -17,7 +17,7 @@ const VerticalProgressBar = ({ sections, isHomePage, isOtherPage }) => {
   const [activeSection, setActiveSection] = useState("");
   const contentRef = useRef(null);
   const showLabel = useBreakpointValue({ base: false, lg: true });
-  const { capitalizeFirstLetter, handleClick, handlePath } = useAlertContext();
+  const {  handlePath } = useAlertContext();
 
   
 

@@ -12,7 +12,6 @@ import {
   Spinner,
   Box,
 } from "@chakra-ui/react";
-import FullScreenSection from "./FullScreenSection";
 import { faAdd, faBriefcase, faChevronUp, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Badges from "./Badges"
@@ -64,8 +63,8 @@ const TimelineCareer = () => {
     setVisibleEntries(entries.slice(0, visibleCount));
   }
 
-  if(isLoading) return <FullScreenSection><Spinner /> <Text as="h2">Loading...</Text></FullScreenSection>
-  if(error) return <FullScreenSection> <Text as="h2">Error: {error}</Text></FullScreenSection>
+  if(isLoading) return <Box><Spinner /> <Text as="h2">Loading...</Text></Box>
+  if(error) return <Box> <Text as="h2">Error: {error}</Text></Box>
  
   
   const getTimeLineElements = () =>{

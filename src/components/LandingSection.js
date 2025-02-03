@@ -17,6 +17,7 @@ import ContactMeSection from "./ContactMeSection";
 import AboutMeSection from "./AboutMeSection";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { useAlertContext } from "../context/alertContext";
+import Alert from "./Alert"
 
 
 const LandingSection = () => {
@@ -108,6 +109,7 @@ const LandingSection = () => {
             </Box>
           </footer>
             </Box>
+            <Alert/>
             </Grid>
 
   )

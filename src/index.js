@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
-import ScrollToTop from './hooks/ScrollToTop';
 import { ColorModeScript } from '@chakra-ui/react'
 import theme from "./style/theme"
 
@@ -14,7 +13,6 @@ import theme from "./style/theme"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-    <ScrollToTop />
     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <App />
   </Router>

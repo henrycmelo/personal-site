@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Box, Stack, Text, Spinner, Button } from "@chakra-ui/react";
+import { Box, Stack, Text, Spinner} from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
 import "swiper/css";
 import "swiper/css/navigation";

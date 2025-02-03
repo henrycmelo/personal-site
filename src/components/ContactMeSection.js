@@ -14,7 +14,7 @@ import {
 import * as Yup from "yup";
 import { useAlertContext } from "../context/alertContext";
 import CustomizedButton from "./CustomizedButton";
-import ScrollReveal from "../hooks/ScrollReveal";
+
 
 const ContactMeSection = ({ isHomePage }) => {
   const { onOpen, onClose, capitalizeEachWord } = useAlertContext();
@@ -135,12 +135,12 @@ const ContactMeSection = ({ isHomePage }) => {
                   formik.touched.email && formik.errors.email ? true : false
                 }
               >
-                <ScrollReveal>
+                
                   <FormLabel htmlFor="email" textStyle="body">
                     Email Address
                   </FormLabel>
-                </ScrollReveal>
-                <ScrollReveal>
+               
+                
                   <Input
                     id="email"
                     name="email"
@@ -149,7 +149,7 @@ const ContactMeSection = ({ isHomePage }) => {
                     variant="customInput"
                     {...formik.getFieldProps("email")}
                   />
-                </ScrollReveal>
+                
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
 
