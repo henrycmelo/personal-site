@@ -59,13 +59,13 @@ const LandingSection = () => {
 
          
           <section>
-            <Box id="home" py={24} px={12}>
+            <Box id="home" py={16} px={12}>
               <LandingText />    
             </Box>
           </section>
           <Divider variant={'dividerSection'}/>
           <section>
-            <Box id="projects" py={24} px={12}>
+            <Box id="projects" py={16} px={12}>
               <ProjectSection />    
             </Box>
           </section>
@@ -73,7 +73,7 @@ const LandingSection = () => {
           <Divider variant={'dividerSection'}/>
 
           <section>
-            <Box id="reviews"  py={24} px={12}>
+            <Box id="reviews"  py={16} px={12}>
             <ReviewsCarousel />    
             </Box>
           </section>
@@ -81,14 +81,14 @@ const LandingSection = () => {
           <Divider variant={'dividerSection'}/>
 
           <section>
-            <Box id="career"  py={24} px={12} >
+            <Box id="career"  py={16} px={12} >
             <TimelineCareer />   
             </Box>
           </section>
           <Divider variant={'dividerSection'}/>
 
           <section>
-            <Box id="aboutme"  py={24} px={12} >
+            <Box id="aboutme"  py={16} px={12} >
               <AboutMeSection />
               
             </Box>
@@ -96,7 +96,7 @@ const LandingSection = () => {
           <Divider variant={'dividerSection'}/>
 
           <section>
-            <Box id="contact"  py={24} px={12} >
+            <Box id="contact"  py={16} px={12} >
             <ContactMeSection />
             </Box>
           </section>

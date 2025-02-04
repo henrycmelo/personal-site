@@ -36,18 +36,21 @@ const ProjectSection = () => {
 
       <Grid
         w={"100%"}
-        templateColumns={{ base: "1fr", xl: "repeat(3, 1fr)" }}
+        templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
         gap={{ base: 6, md: 6 }}
       >
         {projects.map((project, index) => (
+          
           <GridItem>
             <Cards
               key={index}
               title={project.title}
               description={project.description}
-              role={project.role}
+              keywords={project.keywords}
               path={"projects/cianaresearch"}
               imageSrc={project.getImageSrc()}
+              logoSrc={project.getLogosSrc()}
+              type={project.type}
             />
           </GridItem>
         ))}
