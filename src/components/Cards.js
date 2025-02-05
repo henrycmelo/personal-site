@@ -50,7 +50,7 @@ const Cards = ({ title, description, imageSrc, path, keywords, logoSrc,type}) =>
         <Text as="p" textStyle="caption" >
           {type?.toUpperCase()}
         </Text>
-        <Box height="5em" overflow="hidden"> {/* Fixed height for 2 lines */}
+        <Box height="4.5em" overflow="hidden"> {/* Fixed height for 2 lines */}
           <Text 
             as="p" 
             textStyle="pbold"

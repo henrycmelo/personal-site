@@ -36,30 +36,18 @@ const projects = [
       
     },
     {
-      title: "SteakHouse App",
+      title: "Elevating Restaurant Online Order Experience with mobile App",
       description:
-        "Designing a food app ordering system.",
-        getImageSrc: () => require("../images/AAAAAAA1.png"),
+        "Led end-to-end transformation of a premium steakhouse's digital ordering, from UX research to design system and tested high-fidelity prototype. Synthesized insights from user research to deliver intuitive features that transformed the ordering experience.",
+        getImageSrc: () => require("../assets/steakhouse/uicardstakhouse.png"),
         getLogosSrc: () => [
-          require("../assets/ciana_research/cecLogo.png"),
-          require("../assets/ciana_research/cianaLogo.png"),
+          require("../assets/steakhouse/metropolitan-grill-high-resolution-logo-grayscale-transparent.png"),
+          require("../assets/archives/dxcenterlogo_color.png"),
         ],
-        keywords:['Research Planning', 'User Interviews', "Synthesis Methods", "Data Analysis"],
+        keywords:['UX/UI Design', 'User Research', 'Wireframing', "Design Systems", "Prototyping", "User Testing"],
         path: "/cianaresearch",
-    },
-    // {
-    //   title: "Generative AI App",
-    //   description:
-    //     "Using AI to help with daily routines.", 
-    //   getImageSrc: () => require("../assets/ciana_research/cianaWorkshop.png"),
-    //   role:[role["Product Designer"]],
-    //   date: "2023-12",
-    //   tools: [badges["figma"], badges["miroboard"], badges["zoom"]],
-    //   path:"/anchoredai",
-    //   featured: true,
-    //   hide:false,
-    // },
-    
+        type:'Product Design / Mobile UX'
+      }
     
   ];
   

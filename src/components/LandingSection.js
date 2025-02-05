@@ -59,7 +59,7 @@ const LandingSection = () => {
 
          
           <section>
-            <Box id="home" py={16} px={12}>
+            <Box id="home" pb={16} px={12} pt={{base:32, md: 16}}>
               <LandingText />    
             </Box>
           </section>
