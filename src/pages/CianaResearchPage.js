@@ -87,12 +87,12 @@ const CianaResearchPage = () => {
             {" "}
             {capitalizeEachWord("UX research case study")}
           </Text>
-          <Text as="i" textStyle={"p"}>
+          <Text as="i" textStyle={"p"} color='gray.600'>
             How might we demonstrate the true value of digital safety workshops
             while ensuring they meet immigrant family needs?
           </Text>
-          <Text as="h3" textStyle={"caption"}>
-            <Text as="span" textStyle="captionbold">
+          <Text as="h3" textStyle={"caption"} color='gray.600'>
+            <Text as="span" textStyle="captionbold" color='semantic.text.primary'>
               ORGANIZATION -{" "}
             </Text>{" "}
             CIANA (Center for the Integration and Advancement of New Americans)
@@ -105,7 +105,7 @@ const CianaResearchPage = () => {
           >
             <OverlayImage
               src={cianaBanner}
-              alt="cianalogo"
+              alt="cianabanner"
               objectFit="cover"
               objectPosition="center"
               w="100%"
@@ -116,21 +116,22 @@ const CianaResearchPage = () => {
             w={"100%"}
             templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
             gap={{ base: 2, md: 24 }}
+            color='gray.600'
           >
             <GridItem w="100%">
               <VStack alignItems="start">
-                <Text as="p" textStyle="pbold">
+                <Text as="p" textStyle="pbold" color='semantic.text.primary'>
                   Role
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  Lead UX Researcher
+                  UX Researcher
                 </Text>
               </VStack>
             </GridItem>
             <GridItem w="100%">
               <VStack alignItems="start">
-                <Text as="p" textStyle="pbold">
+                <Text as="p" textStyle="pbold" color='semantic.text.primary'>
                   Duration
                 </Text>
                 <Divider variant="thick" />
@@ -141,7 +142,7 @@ const CianaResearchPage = () => {
             </GridItem>
             <GridItem w="100%">
               <VStack alignItems="start">
-                <Text as="p" textStyle="pbold">
+                <Text as="p" textStyle="pbold" color='semantic.text.primary'>
                   Tools
                 </Text>
                 <Divider variant="thick" />
@@ -153,7 +154,7 @@ const CianaResearchPage = () => {
 
             <GridItem w="100%">
               <VStack alignItems="start">
-                <Text as="p" textStyle="pbold">
+                <Text as="p" textStyle="pbold" color='semantic.text.primary'>
                   Skills
                 </Text>
                 <Divider variant="thick" />
@@ -201,12 +202,13 @@ const CianaResearchPage = () => {
                   <Grid
                     templateColumns={{ base: "1fr", md: "1fr 1fr" }}
                     gap={6}
+                    color='gray.600' 
                   >
                     {/* Text Columns */}
                     <GridItem>
                       <Box pb={4}>
-                        <Text textStyle="pbold">
-                          {"Background".toUpperCase()}
+                        <Text textStyle="pbold" textTransform={'uppercase'} color='semantic.text.primary'>
+                          Background
                         </Text>
                         <Text textStyle="p">
                           CIANA, a NYC non-profit serving new immigrants,
@@ -219,8 +221,8 @@ const CianaResearchPage = () => {
                       </Box>
 
                       <Box pb={4}>
-                        <Text textStyle="pbold">
-                          {"Relevance".toUpperCase()}
+                        <Text textStyle="pbold" textTransform={'uppercase'} color='semantic.text.primary'>
+                          Relevance
                         </Text>
                         <Text textStyle="p">
                           Parents in immigrant communities face growing
@@ -232,8 +234,8 @@ const CianaResearchPage = () => {
                       </Box>
 
                       <Box pb={4}>
-                        <Text textStyle="pbold">
-                          {"My impact".toUpperCase()}
+                        <Text textStyle="pbold" textTransform={'uppercase'} color='semantic.text.primary'>
+                          My impact
                         </Text>
                         <Text textStyle="p">
                           I worked as a UX researcher to evaluate CIANA's
@@ -268,21 +270,23 @@ const CianaResearchPage = () => {
                 backgroundColor={"semantic.background.secondary"}
                 w={"100%"}
                 p={12}
+                
               >
                 <VStack alignItems="center">
-                  <Text textStyle="h2">Quick Stats</Text>
+                  <Text textStyle="h2" >Quick Stats</Text>
 
                   <Grid
                     templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
                     gap={6}
                     textAlign={"center"}
+                    color='gray.600'
                   >
                     <GridItem>
                       <Box pb={4}>
                         <HStack
-                          color={"semantic.text.primary"}
                           align={"center"}
                           justifyContent={"center"}
+                          color='semantic.text.primary'
                         >
                           <FontAwesomeIcon icon={faUserGroup} size="xl" />
                           <Text as="p" textStyle="h3">
@@ -290,7 +294,7 @@ const CianaResearchPage = () => {
                           </Text>
                         </HStack>
 
-                        <Text textStyle="p">{"Total Interviews"}</Text>
+                        <Text textStyle="p" textTransform='capitalize'>Total interviews</Text>
                       </Box>
                     </GridItem>
 
@@ -298,16 +302,16 @@ const CianaResearchPage = () => {
                     <GridItem>
                       <Box pb={4}>
                         <HStack
-                          color={"primary"}
                           align={"center"}
                           justifyContent={"center"}
+                          color='semantic.text.primary'
                         >
                           <FontAwesomeIcon icon={faListCheck} size="xl" />
                           <Text as="p" textStyle="h3">
                             8
                           </Text>
                         </HStack>
-                        <Text textStyle="p">{"Identified themes"}</Text>
+                        <Text textStyle="p" textTransform='capitalize'>Identified themes</Text>
                       </Box>
                     </GridItem>
 
@@ -315,16 +319,16 @@ const CianaResearchPage = () => {
                     <GridItem>
                       <Box pb={4}>
                         <HStack
-                          color={"primary"}
                           align={"center"}
                           justifyContent={"center"}
+                          color='semantic.text.primary'
                         >
                           <FontAwesomeIcon icon={faLightbulb} size="xl" />
                           <Text as="p" textStyle="h3">
                             4
                           </Text>
                         </HStack>
-                        <Text textStyle="p">{"Recommendations"}</Text>
+                        <Text textStyle="p" textTransform='capitalize'>Recommendations</Text>
                       </Box>
                     </GridItem>
                   </Grid>
@@ -338,12 +342,13 @@ const CianaResearchPage = () => {
                 gap={6}
                 pt={12}
                 px={12}
+                color={'gray.600'}
               >
                 {/* Text Column 1 */}
                 <GridItem>
                   <Box pb={4}>
-                    <Text textStyle="pbold" textAlign={"center"}>
-                      {"Problem".toUpperCase()}
+                    <Text textStyle="pbold" textAlign={"center"} textTransform={'uppercase'} color='semantic.text.primary'>
+                      Problem
                     </Text>
                     <Box boxSize={"400px"}>
                       <Image src={problemImage} alt="problem Illustration" />
@@ -363,8 +368,8 @@ const CianaResearchPage = () => {
                 {/* Text Column 2 */}
                 <GridItem>
                   <Box pb={4}>
-                    <Text textStyle="pbold" textAlign={"center"}>
-                      {"Goal".toUpperCase()}
+                    <Text textStyle="pbold" textAlign={"center"} textTransform={'uppercase'} color='semantic.text.primary'>
+                      Goal
                     </Text>
                     <Box boxSize={"400px"}>
                       <Image src={goalImage} />
@@ -382,10 +387,10 @@ const CianaResearchPage = () => {
 
               {/* How research change */}
 
-              <Box w={"100%"} p={12}>
-                <Text as="h2" textStyle={"pbold"} pb={4}>
+              <Box w={"100%"} p={12} color={'gray.600'}>
+                <Text as="h2" textStyle={"pbold"} pb={4} textTransform={'uppercase'} color='semantic.text.primary'>
                   {" "}
-                  {"how research changed the problem direction".toUpperCase()}
+                  how research changed the problem direction
                 </Text>
                 <Text as="p" textStyle={"p"}>
                   {" "}
@@ -414,11 +419,12 @@ const CianaResearchPage = () => {
                   <Grid
                     templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
                     gap={6}
+                    color='gray.600'
                   >
                     <GridItem>
                       <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Question".toUpperCase()}
+                        <Text textStyle="pbold" textAlign={"center"} color='semantic.text.primary' textTransform={'uppercase'}>
+                          Question
                         </Text>
                         <Box boxSize={"400px"}>
                           <Image src={questionImage} />
@@ -434,8 +440,8 @@ const CianaResearchPage = () => {
                     {/* Text Column 2 */}
                     <GridItem>
                       <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Answer".toUpperCase()}
+                        <Text textStyle="pbold" textAlign={"center"} color='semantic.text.primary' textTransform={'uppercase'}>
+                          Answer
                         </Text>
                         <Box boxSize={"400px"}>
                           <Image src={answerImage} />
@@ -455,10 +461,10 @@ const CianaResearchPage = () => {
 
               {/* IMPACT OPEN */}
 
-              <Box w={"100%"} p={12}>
-                <Text as="h2" textStyle={"pbold"} pb={4}>
+              <Box w={"100%"} p={12} color='gray.600'>
+                <Text as="h2" textStyle={"pbold"} pb={4}  color='semantic.text.primary' textTransform={'uppercase'}>
                   {" "}
-                  {"impact".toUpperCase()}
+                  impact
                 </Text>
                 <Text as="p" textStyle={"p"} pb={4}>
                   {" "}
@@ -499,7 +505,7 @@ const CianaResearchPage = () => {
                   </ListItem>
                 </UnorderedList>
 
-                <Text as="p" textStyle={"pbold"}>
+                <Text as="p" textStyle={"pbold"} >
                   Program impact:
                 </Text>
                 <UnorderedList textStyle={"p"} pb={4}>
@@ -515,10 +521,10 @@ const CianaResearchPage = () => {
 
               {/* Process */}
 
-              <Box w={"100%"} p={12}>
-                <Text as="h2" textStyle={"pbold"} pb={4}>
+              <Box w={"100%"} p={12} color='gray.600'>
+                <Text as="h2" textStyle={"pbold"} pb={4}  color='semantic.text.primary' textTransform={'uppercase'}>
                   {" "}
-                  {"process".toUpperCase()}
+                  process
                 </Text>
                 <Text as="p" textStyle={"p"} pb={4}>
                   {" "}
@@ -542,9 +548,10 @@ const CianaResearchPage = () => {
                 backgroundColor="semantic.background.secondary"
                 w="100%"
                 p={12}
+                color='gray.600'
               >
-                <Text as="h2" textStyle="pbold" textAlign="center" mb={6}>
-                  {"Process Breakdown".toUpperCase()}
+                <Text as="h2" textStyle="pbold" textAlign="center" mb={6}  color='semantic.text.primary' textTransform={'uppercase'}>
+                  Process Breakdown
                 </Text>
                 <figure>
                   <Box mb={3}>
@@ -575,9 +582,9 @@ const CianaResearchPage = () => {
             <Box id="planning">
               <Box px={12}>
                 <DividerSection>Phase 1 </DividerSection>
-                <VStack alignItems="start" pt={12}>
-                  <Text textStyle="h2">Planning</Text>
-                  <Text as="p" textStyle="p" pb={4}>
+                <VStack alignItems="start" pt={12} color='gray.600'>
+                  <Text textStyle="h2" color='semantic.text.primary'>Planning</Text>
+                  <Text as="p" textStyle="p" pb={4} >
                     This section outlines the objectives, research questions,
                     the target audience and methodology used to design the
                     study.{" "}
@@ -585,7 +592,7 @@ const CianaResearchPage = () => {
 
                   {/* Items */}
                   <VStack alignItems="start">
-                    <Text as="p" textStyle={"pbold"}>
+                    <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Objectives
                     </Text>
                     <Flex gap={6}>
@@ -606,7 +613,7 @@ const CianaResearchPage = () => {
                       </UnorderedList>
                     </Flex>
 
-                    <Text as="p" textStyle={"pbold"}>
+                    <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Research questions
                     </Text>
                     <Flex gap={6}>
@@ -627,7 +634,7 @@ const CianaResearchPage = () => {
                       </UnorderedList>
                     </Flex>
 
-                    <Text as="p" textStyle={"pbold"}>
+                    <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Target audience
                     </Text>
                     <Flex gap={6}>
@@ -647,7 +654,7 @@ const CianaResearchPage = () => {
                       </Text>
                     </Flex>
 
-                    <Text as="p" textStyle={"pbold"}>
+                    <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Methodology
                     </Text>
                     <Flex gap={6}>
@@ -661,7 +668,7 @@ const CianaResearchPage = () => {
                       </UnorderedList>
                     </Flex>
 
-                    <Text as="p" textStyle={"pbold"}>
+                    <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Tools & Tecniques
                     </Text>
                     <Flex gap={6}>
@@ -712,8 +719,8 @@ const CianaResearchPage = () => {
             <Box id="datacollection">
               <Box px={12}>
                 <DividerSection>Phase 2 </DividerSection>
-                <VStack alignItems="start" pt={12}>
-                  <Text textStyle="h2">Data Collection</Text>
+                <VStack alignItems="start" pt={12} color='gray.600'>
+                  <Text textStyle="h2" color='semantic.text.primary'>Data Collection</Text>
                   <Text as="p" textStyle="p" pb={4}>
                     This section outlines the approach used to gather
                     qualitative data from workshop participants, focusing on the
@@ -729,7 +736,7 @@ const CianaResearchPage = () => {
                     p={12}
                   >
                     <VStack alignItems="center">
-                      <Text as="i" textStyle="h3">
+                      <Text as="i" textStyle="h3" color={'semantic.text.primary'}>
                         “I think I learned how my son should be using a tablet.”
                       </Text>
                       <Text as="p" textStyle="p">
@@ -746,8 +753,8 @@ const CianaResearchPage = () => {
                   >
                     <GridItem>
                       <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Recruiting".toUpperCase()}
+                        <Text textStyle="pbold" textAlign={"center"}  color='semantic.text.primary' textTransform={'uppercase'}>
+                          Recruiting
                         </Text>
                         <Box boxSize={"1fr"}>
                           <Image src={recruitingImage} />
@@ -766,8 +773,8 @@ const CianaResearchPage = () => {
 
                     <GridItem>
                       <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Interviews".toUpperCase()}
+                        <Text textStyle="pbold" textAlign={"center"}  color='semantic.text.primary' textTransform={'uppercase'}>
+                          Interviews
                         </Text>
                         <Box boxSize={"1fr"}>
                           <Image src={interviewImage} />
@@ -788,8 +795,8 @@ const CianaResearchPage = () => {
 
                     <GridItem>
                       <Box pb={4}>
-                        <Text textStyle="pbold" textAlign={"center"}>
-                          {"Documentation".toUpperCase()}
+                        <Text textStyle="pbold" textAlign={"center"}  color='semantic.text.primary' textTransform={'uppercase'}>
+                          Documentation
                         </Text>
                         <Box boxSize={"1fr"}>
                           <Image src={documentationImage} />
@@ -817,8 +824,8 @@ const CianaResearchPage = () => {
             <Box id="analysis">
               <Box px={12}>
                 <DividerSection>Phase 3 </DividerSection>
-                <VStack alignItems="start" pt={12}>
-                  <Text textStyle="h2">Analysis</Text>
+                <VStack alignItems="start" pt={12} color='gray.600'>
+                  <Text textStyle="h2" color='semantic.text.primary'>Analysis</Text>
                   <Text as="p" textStyle="p" pb={4}>
                     The analysis phase utilized three complementary methods to
                     synthesize the qualitative interview data. Empathy mapping
@@ -832,7 +839,7 @@ const CianaResearchPage = () => {
                   {/* Content Empathy map and affinity diagram */}
 
                   <VStack alignItems="start">
-                    <Text as="p" textStyle={"pbold"}>
+                    <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Empathy Map
                     </Text>
                     <Text as="p" textStyle={"p"}>
@@ -854,8 +861,8 @@ const CianaResearchPage = () => {
                     >
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign={"center"}>
-                            {"Say".toUpperCase()}
+                          <Text textStyle="pbold" textAlign={"center"}  textTransform={'capitalize'}>
+                            Say
                           </Text>
                           <OverlayImage src={sayImage} alt="empathy map say" />
                         </Box>
@@ -863,8 +870,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign={"center"}>
-                            {"Think".toUpperCase()}
+                          <Text textStyle="pbold" textAlign={"center"} textTransform={'capitalize'}>
+                            Think
                           </Text>
                           <OverlayImage
                             src={thinkImage}
@@ -875,8 +882,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign={"center"}>
-                            {"Feel".toUpperCase()}
+                          <Text textStyle="pbold" textAlign={"center"} textTransform={'capitalize'}>
+                            Feel
                           </Text>
 
                           <OverlayImage
@@ -888,8 +895,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign={"center"}>
-                            {"Does".toUpperCase()}
+                          <Text textStyle="pbold" textAlign={"center"} textTransform={'capitalize'}>
+                            Does
                           </Text>
                           <OverlayImage
                             isGrayImage
@@ -902,7 +909,7 @@ const CianaResearchPage = () => {
                   </VStack>
 
                   <VStack alignItems="start">
-                    <Text as="p" textStyle={"pbold"}>
+                    <Text as="p" textStyle={"pbold"} textTransform={'uppercase'} color='semantic.text.primary'>
                       Affinity Diagram & Theme Identification
                     </Text>
                     <Text as="p" textStyle={"p"}>
@@ -921,8 +928,8 @@ const CianaResearchPage = () => {
                     >
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign="center">
-                            {"CLARITY & IMPACT".toUpperCase()}
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                            Clarity & impact
                           </Text>
                           <OverlayImage
                             src={clarityImage}
@@ -933,8 +940,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign="center">
-                            {"PRACTICAL INSIGHTS & LEARNING OUTCOMES".toUpperCase()}
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                            practical insights & learning outcomes
                           </Text>
                           <OverlayImage
                             src={practicalImage}
@@ -945,8 +952,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign="center">
-                            {"COMMITMENT TO CHILD DEVELOPMENT & SAFETY".toUpperCase()}
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                            commitment to child development & safety
                           </Text>
                           <OverlayImage src={childImage} alt="child Theme" />
                         </Box>
@@ -954,8 +961,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign="center">
-                            {"PROACTIVE DIGITAL PARENTING".toUpperCase()}
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                            proactive digital parenting
                           </Text>
                           <OverlayImage
                             src={proactiveImage}
@@ -966,8 +973,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign="center">
-                            {"REINFORCING DIGITAL SAFETY FOR KIDS".toUpperCase()}
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                            reinforcing digital safety for kids
                           </Text>
                           <OverlayImage
                             src={reinforcingImage}
@@ -978,8 +985,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign="center">
-                            {"SCHEDULING & ACCESIBILITY".toUpperCase()}
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                            scheduling & accessibility
                           </Text>
                           <OverlayImage
                             src={schedulingImage}
@@ -990,8 +997,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign="center">
-                            {"TECHNICAL DIFFICULTIES & SETUP".toUpperCase()}
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                            technical difficulties & setup
                           </Text>
                           <OverlayImage
                             src={technicalImage}
@@ -1002,8 +1009,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign="center">
-                            {"WORKSHOP DELIVERY & CONTENT".toUpperCase()}
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                            workshop delivery & content
                           </Text>
                           <OverlayImage
                             src={workshopImage}
@@ -1026,8 +1033,8 @@ const CianaResearchPage = () => {
             <Box id="synthesis">
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
-                <VStack alignItems="start" pt={12} pb={12}>
-                  <Text textStyle="h2">Synthesis</Text>
+                <VStack alignItems="start" pt={12} pb={12} color='gray.600'>
+                  <Text textStyle="h2" color='semantic.text.primary'>Synthesis</Text>
                   <Text as="p" textStyle="p" pb={4}>
                     Through my analysis, clear patterns emerged leading to
                     actionable recommendations for improving the digital safety
@@ -1037,8 +1044,8 @@ const CianaResearchPage = () => {
                     direction.
                   </Text>
 
-                  <VStack alignItems="start">
-                    <Text as="p" textStyle={"pbold"}>
+                  <VStack alignItems="start" >
+                    <Text as="p" textStyle={"pbold"} color='semantic.text.primary' textTransform={'uppercase'}>
                       Recommendations
                     </Text>
 
@@ -1050,8 +1057,8 @@ const CianaResearchPage = () => {
                     >
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign={"center"}>
-                            {"Flexible scheduling".toUpperCase()}
+                          <Text textStyle="pbold" textAlign={"center"} textTransform={'capitalize'}>
+                            Flexible scheduling
                           </Text>
                           <Box boxSize={"200px"} margin="0 auto">
                             <Image
@@ -1069,8 +1076,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign={"center"}>
-                            {"Enhanced technical support".toUpperCase()}
+                          <Text textStyle="pbold" textAlign={"center"} textTransform={'capitalize'}>
+                            Enhanced technical support
                           </Text>
                           <Box boxSize={"200px"} margin="0 auto">
                             <Image
@@ -1088,8 +1095,8 @@ const CianaResearchPage = () => {
 
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign={"center"}>
-                            {"Improved content delivery".toUpperCase()}
+                          <Text textStyle="pbold" textAlign={"center"} textTransform={'capitalize'}>
+                            Improved content delivery
                           </Text>
                           <Box boxSize={"200px"} margin="0 auto">
                             <Image
@@ -1108,8 +1115,8 @@ const CianaResearchPage = () => {
                       </GridItem>
                       <GridItem>
                         <Box pb={4}>
-                          <Text textStyle="pbold" textAlign={"center"}>
-                            {"Target workshop for children:".toUpperCase()}
+                          <Text textStyle="pbold" textAlign={"center"} textTransform={'capitalize'}>
+                            Target workshop for children
                           </Text>
                           <Box boxSize={"200px"} margin="0 auto">
                             <Image
@@ -1129,7 +1136,7 @@ const CianaResearchPage = () => {
                   </VStack>
 
                   <VStack alignItems="start">
-                    <Text as="p" textStyle={"pbold"}>
+                    <Text as="p" textStyle={"pbold"} textTransform={'uppercase'} color='semantic.text.primary'>
                       Conclusion
                     </Text>
                     <Text as="p" textStyle={"p"}>
@@ -1155,8 +1162,8 @@ const CianaResearchPage = () => {
             <Box id="reflection">
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
-                <VStack alignItems="start" pt={12}>
-                  <Text textStyle="h2">Takeaways</Text>
+                <VStack alignItems="start" pt={12} color='gray.600'>
+                  <Text textStyle="h2" color='semantic.text.primary'>Takeaways</Text>
                   <Text as="p" textStyle={"p"}>
                     I feel fortunate to have had the opportunity to work on
                     digital safety workshops that directly impact parents in the
