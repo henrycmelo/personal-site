@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { AlertProvider } from "./context/alertContext";
 import theme from "../src/style/theme.js";
 import CianaResearchPage from "./pages/CianaResearchPage.js";
+import SteakHousePage from "./pages/SteakHousePage.js";
 import LandingSection from "./components/LandingSection.js";
 import ProjectSectionPage from "./pages/ProjectSectionPage.js";
 import ReviewCarouselPage from "./pages/ReviewCarouselPage.js";
@@ -18,8 +19,8 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingSection />} />
             <Route path="/projects/cianaresearch" element={<CianaResearchPage />} />
-            <Route path="/projects" element={<ProjectSectionPage />} >
-            </Route>
+            <Route path="/projects" element={<ProjectSectionPage />} />
+            <Route path="/projects/steakhouse" element={<SteakHousePage />} />
             <Route path="/reviews" element={<ReviewCarouselPage />} />
             <Route path="/career" element={<CareerTimelinePage />} />
             <Route path="/aboutme" element={<AboutmePage />} />

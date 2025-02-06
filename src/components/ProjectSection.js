@@ -47,7 +47,7 @@ const ProjectSection = () => {
               title={project.title}
               description={project.description}
               keywords={project.keywords}
-              path={"projects/cianaresearch"}
+              path={project.path}
               imageSrc={project.getImageSrc()}
               logoSrc={project.getLogosSrc()}
               type={project.type}

@@ -13,7 +13,7 @@ const projects = [
       require("../assets/ciana_research/cianaLogo.png"),
     ],
     keywords:['Research Planning', 'User Interviews', "Synthesis Methods", "Data Analysis"],
-    path: "/cianaresearch",
+    path: "/projects/cianaresearch",
     type:'UX Research / Design Strategy'
 
   
@@ -45,7 +45,7 @@ const projects = [
           require("../assets/archives/dxcenterlogo_color.png"),
         ],
         keywords:['UX/UI Design', 'User Research', 'Wireframing', "Design Systems", "Prototyping", "User Testing"],
-        path: "/cianaresearch",
+        path: "/projects/steakhouse",
         type:'Product Design / Mobile UX'
       }
     
