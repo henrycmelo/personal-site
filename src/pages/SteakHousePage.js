@@ -40,7 +40,7 @@ import {
 import problemImage from "../assets/steakhouse/Question.svg";
 import goalImage from "../assets/steakhouse/Checklist.svg";
 import questionImage from "../assets/ciana_research/question.svg";
-import answerImage from "../assets/ciana_research/answer.svg";
+import processImage from "../assets/steakhouse/process.png";
 import gantChart from "../assets/ciana_research/ganttChart.png";
 import DividerSection from "../components/DividerSection";
 import objectivesImage from "../assets/ciana_research/objectives.svg";
@@ -72,6 +72,7 @@ import cecLogo from "../assets/ciana_research/cecLogo.png";
 import banner from "../assets/steakhouse/steakhousebanner.png";
 import ResponsiveMenu from "../components/ResponsiveMenu";
 import MuteButton from "../components/MuteButton";
+import mockupBrief from "../assets/steakhouse/steakhousemockup.png"
 
 const SteakHousePage = () => {
   const { sections } = useAlertContext();
@@ -457,10 +458,14 @@ const SteakHousePage = () => {
                   >
                     Process
                   </Text>
-                  <Box boxSize={"400px"}>
-                    <Image src={questionImage} />
+                  <Box>
+                    <Image src={processImage} />
+                    <figcaption>
+                      <Text as="p" textStyle="caption" textAlign="center">
+                        Figure 1: UX Design process approach
+                      </Text>
+                    </figcaption>
                   </Box>
-                  
                 </VStack>
               </Box>
 
@@ -477,124 +482,124 @@ const SteakHousePage = () => {
                   textTransform={"uppercase"}
                 >
                   {" "}
-                  impact
+                  Minimum Viable Product (MVP)
                 </Text>
                 <Text as="p" textStyle={"p"} pb={4}>
                   {" "}
-                  The research changed the strategic direction of the workshops
-                  from a quantitative metrics-focused approach to one that
-                  deeply understands parent needs and community context. This
-                  shift provides:
+                  The initial release focuses on core ordering functionality to
+                  provide immediate value and reduce third-party platform
+                  dependency. Starting with essential features allows quick
+                  market entry while gathering user feedback for future
+                  iterations.
                 </Text>
-                <Text as="p" textStyle={"pbold"}>
-                  Research impact:
+                <Text
+                  as="p"
+                  textStyle={"pbold"}
+                  color="semantic.text.primary"
+                  textTransform={"uppercase"}
+                  pb={4}
+                >
+                  project goals
                 </Text>
-                <UnorderedList textStyle={"p"} pb={4}>
-                  <ListItem>
-                    Evidence-based recommendations that support grant
-                    requirements
-                  </ListItem>
-                  <ListItem>
-                    Rich qualitative insights that inform program improvements
-                  </ListItem>
-                  <ListItem>
-                    Clear framework for expanding to other communities
-                  </ListItem>
-                </UnorderedList>
+                <Grid
+                  templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+                  gap={6}
+                  color="gray.600"
+                  pb={12}
+                >
+                  <GridItem>
+                    <Box pb={4}>
+                      <Text
+                        as="p"
+                        textStyle={"pbold"}
+                        textTransform={"capitalize"}
+                      >
+                        Restaurant Localization
+                      </Text>
+                      <UnorderedList textStyle={"p"} >
+                        <ListItem>
+                          Find nearest locations and view custom menus
+                        </ListItem>
+                        <ListItem>
+                          Display location-specific pricing and availability
+                        </ListItem>
+                      </UnorderedList>
+                    </Box>
 
-                <Text as="p" textStyle={"pbold"}>
-                  Community impact:
-                </Text>
-                <UnorderedList textStyle={"p"} pb={4}>
-                  <ListItem>
-                    Parents gain practical digital safety knowledge and
-                    implementation skills
-                  </ListItem>
-                  <ListItem>
-                    Improved workshop accessibility through schedule flexibility
-                  </ListItem>
-                  <ListItem>
-                    Enhanced cultural relevance in content delivery
-                  </ListItem>
-                </UnorderedList>
+                    <Box >
+                      <Text
+                        as="p"
+                        textStyle={"pbold"}
+                        textTransform={"capitalize"}
+                      >
+                        Order Modification System
+                      </Text>
+                      <UnorderedList textStyle={"p"} >
+                        <ListItem>
+                        Customize meal preferences and special requests
+                        </ListItem>
+                        <ListItem>
+                        Edit orders before final confirmation
+                        </ListItem>
+                      </UnorderedList>
+                    </Box>
 
-                <Text as="p" textStyle={"pbold"}>
-                  Program impact:
-                </Text>
-                <UnorderedList textStyle={"p"} pb={4}>
-                  <ListItem>
-                    Tangible pathway for workshop improvements
-                  </ListItem>
-                  <ListItem>Strong case for continued funding</ListItem>
-                  <ListItem>Framework for community expansion</ListItem>
-                </UnorderedList>
+                    <Box >
+                      <Text
+                        as="p"
+                        textStyle={"pbold"}
+                        textTransform={"capitalize"}
+                      >
+                        Order Tracking
+                      </Text>
+                      <UnorderedList textStyle={"p"} >
+                        <ListItem>
+                        Real-time status updates
+                        </ListItem>
+                        <ListItem>
+                        Estimated preparation times
+                        </ListItem>
+                        <ListItem>
+                        Push notifications for order changes
+                        </ListItem>
+                      </UnorderedList>
+                    </Box>
+
+                    <Box >
+                      <Text
+                        as="p"
+                        textStyle={"pbold"}
+                        textTransform={"capitalize"}
+                      >
+                        Streamlined Checkout
+                      </Text>
+                      <UnorderedList textStyle={"p"} >
+                        <ListItem>
+                        Save multiple payment methods & address
+                        </ListItem>
+                        <ListItem>
+                        Quick reorder from order history
+                        </ListItem>
+                    
+                      </UnorderedList>
+                    </Box>
+                  </GridItem>
+
+                  <GridItem>
+                    <Box display={'flex'} justifyContent={'center'}  >
+                      <Image src={mockupBrief} alt='mockup' height={"auto"} maxHeight={'500px'} objectFit={'contain'}   />
+                    </Box>
+                  </GridItem>
+                </Grid>
+
+              
               </Box>
 
               {/* {'IMPACT CLOSE'} */}
 
               {/* Process */}
 
-              <Box w={"100%"} p={12} color="gray.600">
-                <Text
-                  as="h2"
-                  textStyle={"pbold"}
-                  pb={4}
-                  color="semantic.text.primary"
-                  textTransform={"uppercase"}
-                >
-                  {" "}
-                  process
-                </Text>
-                <Text as="p" textStyle={"p"} pb={4}>
-                  {" "}
-                  The research process began with planning and research design,
-                  focusing on understanding workshop effectiveness through
-                  participant experiences. We conducted post-workshop interviews
-                  with 7 parents, ensuring a systematic approach to data
-                  collection. Each interview was documented and analyzed using
-                  qualitative research methods. Through empathy mapping, we
-                  organized participant feedback, emotions, and needs. The
-                  affinity diagram helped identify patterns and themes across
-                  interviews. These insights were then synthesized into
-                  actionable recommendations, supporting both grant reporting
-                  requirements and future program improvements.
-                </Text>
-              </Box>
-
-              {/* PROCESS IMAGE OPEN */}
-
-              <Box
-                backgroundColor="semantic.background.secondary"
-                w="100%"
-                p={12}
-                color="gray.600"
-              >
-                <Text
-                  as="h2"
-                  textStyle="pbold"
-                  textAlign="center"
-                  mb={6}
-                  color="semantic.text.primary"
-                  textTransform={"uppercase"}
-                >
-                  Process Breakdown
-                </Text>
-                <figure>
-                  <Box mb={3}>
-                    <Image
-                      src={gantChart}
-                      alt="Research Process Gantt Chart showing 8-week timeline of planning, data collection, analysis, and synthesis phases with dependencies and milestones"
-                    />
-                  </Box>
-                  <figcaption>
-                    <Text as="p" textStyle="caption" textAlign="center">
-                      Figure 1: Timeline of the 8-week qualitative research
-                      process, showing dependencies between research phases and
-                      key milestones
-                    </Text>
-                  </figcaption>
-                </figure>
-              </Box>
+             
 
               {/* PROCESS IMAGE CLOSE */}
             </Box>
