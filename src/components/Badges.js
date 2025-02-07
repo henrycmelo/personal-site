@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Badge, Wrap, WrapItem } from "@chakra-ui/react";
 
-const Badges= ({ children }) => {
+const Badges= ({ children, ...props }) => {
   const childrenArray = Array.isArray(children) ? children : [children]
   
   return (
@@ -14,7 +14,7 @@ const Badges= ({ children }) => {
         color="semantic.background.primary"
         borderRadius="2px"
         key={index}
-        
+        {...props}
         >
           {child}
         </Badge>

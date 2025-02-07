@@ -83,6 +83,9 @@ import ResponsiveMenu from "../components/ResponsiveMenu";
 import MuteButton from "../components/MuteButton";
 import mockupBrief from "../assets/steakhouse/steakhousemockup.png"
 import CompetitiveAnalysis from "../components/CompetitiveAnalysis";
+import UserPersona from "../components/PersonasSection";
+import PersonasSection from "../components/PersonasSection";
+import personas from "../assets/steakhouse/data/personas";
 
 const SteakHousePage = () => {
   const { sections } = useAlertContext();
@@ -681,7 +684,7 @@ const SteakHousePage = () => {
                         </Text>
                       </a>
                     </HStack>
-                    <Flex gap={6} flexDirection={{base:'column', lg:'row'}}>
+                    <Flex gap={6} flexDirection={{ base: "column", lg: "row" }}>
                       <Image
                         src={interview}
                         alt="interview Illustration"
@@ -772,7 +775,12 @@ const SteakHousePage = () => {
                         competitive analysis
                       </Text>
                       <Text as="p" textStyle="p" pb={4}>
-                      To understand the current market landscape, I analyzed both direct competitors (premium restaurant apps) and indirect competitors (food delivery platforms). The analysis focused on user experience, feature sets, and business models to identify opportunities for differentiation.
+                        To understand the current market landscape, I analyzed
+                        both direct competitors (premium restaurant apps) and
+                        indirect competitors (food delivery platforms). The
+                        analysis focused on user experience, feature sets, and
+                        business models to identify opportunities for
+                        differentiation.
                       </Text>
                       <CompetitiveAnalysis competitors={competitors} />
                       <Text
@@ -782,32 +790,38 @@ const SteakHousePage = () => {
                       >
                         market opportunity
                       </Text>
-                      <Flex gap={6} alignItems="center" >
-                      <Image src={market} alt="market illustration" w={"100px"} />
-                      <Box textStyle={"p"} pb={4} display="flex" alignItems="center">
-                      <Text as="p" textStyle="p" pb={4}>
-                        Based on this analysis, there's a clear opportunity to
-                        combine premium restaurant quality with the technical
-                        convenience of delivery platforms, while eliminating
-                        high fees and maintaining food quality.
-                      </Text>
-                      </Box>
-                    </Flex>
-                      
+                      <Flex gap={6} alignItems="center">
+                        <Image
+                          src={market}
+                          alt="market illustration"
+                          w={"100px"}
+                        />
+                        <Box textStyle={"p"} display="flex" alignItems="center">
+                          <Text as="p" textStyle="p">
+                            Based on this analysis, there's a clear opportunity
+                            to combine premium restaurant quality with the
+                            technical convenience of delivery platforms, while
+                            eliminating high fees and maintaining food quality.
+                          </Text>
+                        </Box>
+                      </Flex>
                     </VStack>
-                    
                   </VStack>
 
-                  <VStack alignItems="start">
-                  <Text
-                        as="p"
-                        textStyle={"pbold"}
-                        color="semantic.text.primary"
-                        textTransform={"uppercase"}
-                      >
-                        personas
-                      </Text>
+                  <VStack alignItems="start" pt={4}>
+                    <Text
+                      as="p"
+                      textStyle={"pbold"}
+                      color="semantic.text.primary"
+                      textTransform={"uppercase"}
+                    >
+                      user personas
+                    </Text>
 
+                    <Text as="p" textStyle="p" pb={4}>
+                    Based on user interviews and survey data, I developed two distinct personas representing our core user groups. These personas helped guide design decisions and feature prioritization throughout the project.
+                    </Text>
+                    <PersonasSection personas={personas} />
                   </VStack>
                 </VStack>
               </Box>
