@@ -13,7 +13,8 @@ import {
   UnorderedList,
   Flex,
   Spinner,
-  AspectRatio
+  AspectRatio,
+  List
 } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
 import VerticalProgressBar from "../components/VerticalProgressBar";
@@ -34,11 +35,16 @@ import {
   faRocket,
   faUserGroup,
   faZap,
-  faThumbsUp
+  faThumbsUp,
+  faPhone,
+  faMobile,
+  faSackDollar,
+  faClock
 } from "@fortawesome/free-solid-svg-icons";
 
 import problemImage from "../assets/steakhouse/Question.svg";
 import goalImage from "../assets/steakhouse/Checklist.svg";
+import interview from "../assets/steakhouse/interview.svg"
 import questionImage from "../assets/ciana_research/question.svg";
 import processImage from "../assets/steakhouse/process.png";
 import gantChart from "../assets/ciana_research/ganttChart.png";
@@ -173,7 +179,7 @@ const SteakHousePage = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  Figma • Zoom • Otter • UserTesting.com • Miro
+                  Figma • Zoom • Otter • UserTesting.com • Miro • Google Suite
                 </Text>
               </VStack>
             </GridItem>
@@ -186,7 +192,7 @@ const SteakHousePage = () => {
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
                   User Research • Wireframing • Prototyping • User Testing •
-                  Visual Design
+                  Visual Design • Surveys
                 </Text>
               </VStack>
             </GridItem>
@@ -516,7 +522,7 @@ const SteakHousePage = () => {
                       >
                         Restaurant Localization
                       </Text>
-                      <UnorderedList textStyle={"p"} >
+                      <UnorderedList textStyle={"p"}>
                         <ListItem>
                           Find nearest locations and view custom menus
                         </ListItem>
@@ -526,7 +532,7 @@ const SteakHousePage = () => {
                       </UnorderedList>
                     </Box>
 
-                    <Box >
+                    <Box>
                       <Text
                         as="p"
                         textStyle={"pbold"}
@@ -534,17 +540,17 @@ const SteakHousePage = () => {
                       >
                         Order Modification System
                       </Text>
-                      <UnorderedList textStyle={"p"} >
+                      <UnorderedList textStyle={"p"}>
                         <ListItem>
-                        Customize meal preferences and special requests
+                          Customize meal preferences and special requests
                         </ListItem>
                         <ListItem>
-                        Edit orders before final confirmation
+                          Edit orders before final confirmation
                         </ListItem>
                       </UnorderedList>
                     </Box>
 
-                    <Box >
+                    <Box>
                       <Text
                         as="p"
                         textStyle={"pbold"}
@@ -552,20 +558,16 @@ const SteakHousePage = () => {
                       >
                         Order Tracking
                       </Text>
-                      <UnorderedList textStyle={"p"} >
+                      <UnorderedList textStyle={"p"}>
+                        <ListItem>Real-time status updates</ListItem>
+                        <ListItem>Estimated preparation times</ListItem>
                         <ListItem>
-                        Real-time status updates
-                        </ListItem>
-                        <ListItem>
-                        Estimated preparation times
-                        </ListItem>
-                        <ListItem>
-                        Push notifications for order changes
+                          Push notifications for order changes
                         </ListItem>
                       </UnorderedList>
                     </Box>
 
-                    <Box >
+                    <Box>
                       <Text
                         as="p"
                         textStyle={"pbold"}
@@ -573,33 +575,32 @@ const SteakHousePage = () => {
                       >
                         Streamlined Checkout
                       </Text>
-                      <UnorderedList textStyle={"p"} >
+                      <UnorderedList textStyle={"p"}>
                         <ListItem>
-                        Save multiple payment methods & address
+                          Save multiple payment methods & address
                         </ListItem>
-                        <ListItem>
-                        Quick reorder from order history
-                        </ListItem>
-                    
+                        <ListItem>Quick reorder from order history</ListItem>
                       </UnorderedList>
                     </Box>
                   </GridItem>
 
                   <GridItem>
-                    <Box display={'flex'} justifyContent={'center'}  >
-                      <Image src={mockupBrief} alt='mockup' height={"auto"} maxHeight={'500px'} objectFit={'contain'}   />
+                    <Box display={"flex"} justifyContent={"center"}>
+                      <Image
+                        src={mockupBrief}
+                        alt="mockup"
+                        height={"auto"}
+                        maxHeight={"500px"}
+                        objectFit={"contain"}
+                      />
                     </Box>
                   </GridItem>
                 </Grid>
-
-              
               </Box>
 
               {/* {'IMPACT CLOSE'} */}
 
               {/* Process */}
-
-             
 
               {/* PROCESS IMAGE CLOSE */}
             </Box>
@@ -610,17 +611,22 @@ const SteakHousePage = () => {
 
           {/* SECOND SECTION PLANNING OPEN*/}
           <section>
-            <Box id="planning">
+            <Box id="understanding">
               <Box px={12}>
                 <DividerSection>Phase 1 </DividerSection>
                 <VStack alignItems="start" pt={12} color="gray.600">
-                  <Text textStyle="h2" color="semantic.text.primary">
-                    Planning
+                  <Text
+                    textStyle="h2"
+                    color="semantic.text.primary"
+                    textTransform={"capitalize"}
+                  >
+                    understanding the user
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    This section outlines the objectives, research questions,
-                    the target audience and methodology used to design the
-                    study.{" "}
+                    My research phase focused on understanding user behaviors,
+                    pain points, and expectations in the premium dining space.
+                    This phase included conducting interviews, competitive
+                    analysis, creating user personas, and journey mapping.
                   </Text>
 
                   {/* Items */}
@@ -631,23 +637,105 @@ const SteakHousePage = () => {
                       color="semantic.text.primary"
                       textTransform={"uppercase"}
                     >
-                      Objectives
+                      user interviews
                     </Text>
+                    <Text as="p" textStyle="p" pb={4}>
+                      Conducted in-depth interviews with 5 target users who
+                      frequently order from high-end restaurants, supplemented
+                      with a survey of 50 potential users. The research focused
+                      on understanding ordering habits, platform preferences,
+                      and pain points.
+                    </Text>
+                    <HStack>
+                      <a href='https://docs.google.com/document/d/1_bSvOb4faRBJYChBRK_NEP-MLRGCa-rKMXR8q6mRnuk/edit?tab=t.0#heading=h.8cpmn7co03qe' target="_blank" rel='noreferrer'>
+                      <Text as='p' textStyle={'p'} decoration={'underline'} textTransform={'capitalize'}>
+                        View Interview script
+                      </Text>
+                      </a>
+                      <Text>•</Text>
+                      <a href='https://docs.google.com/forms/d/e/1FAIpQLSd8DqP5SgzPKancNsTKjiiPY6tROzt2gcNHvwdfWJTbPA-1bA/viewform' target="_blank" rel='noreferrer'>
+                      <Text as='p' textStyle={'p'} decoration={'underline'} textTransform={'capitalize'}>
+                        View survey questions
+                      </Text>
+                      </a>
+                    </HStack>
                     <Flex gap={6}>
-                      <Image src={objectivesImage} alt="" w={"100px"} />
-                      <UnorderedList textStyle={"p"} pb={4}>
-                        <ListItem>
-                          Understand participant experiences, motivations, and
-                          frustrations.
+                      <Image
+                        src={interview}
+                        alt="interview Illustration"
+                        w={"300px"}
+                      />
+                      <UnorderedList
+                        listStyleType={"none"}
+                        textStyle={"p"}
+                        pb={4}
+                      >
+                        <Text
+                          as="p"
+                          textStyle={"pbold"}
+                          textTransform={"capitalize"}
+                          pb={4}
+                        >
+                          Key findings
+                        </Text>
+                        <ListItem >
+                          <FontAwesomeIcon icon={faMobile} size="sm" />
+                          {" "}
+                          <Text as='i' textStyle={'pbold'}>80% of users abandon orders due to complex
+                          modification systems</Text>
+                          
+                          <UnorderedList textStyle={"p"} pb={4}>
+                            <ListItem >
+                              {" "}
+                              Users struggle with current platforms' limited
+                              customization options
+                            </ListItem>
+                            <ListItem>
+                              Special requests are often mishandled or
+                              overlooked
+                            </ListItem>
+                            <ListItem>
+                              Lack of clear confirmation for modifications
+                            </ListItem>
+                          </UnorderedList>
                         </ListItem>
+
                         <ListItem>
-                          Identify key themes and areas for improvement in
-                          workshop delivery and content.
+                          <FontAwesomeIcon icon={faSackDollar} size="sm" />
+                          {" "}
+                          <Text as='i' textStyle={'pbold'}>73% of users prefer ordering directly from restaurants </Text>
+                          <UnorderedList textStyle={"p"} pb={4}>
+                            <ListItem>
+                              {" "}
+                              High delivery platform fees are a major concern
+                            </ListItem>
+                            <ListItem>
+                            Users want to support restaurants directly
+                            </ListItem>
+                            <ListItem>
+                            Quality assurance is higher with direct ordering
+                            </ListItem>
+                          </UnorderedList>
                         </ListItem>
+
                         <ListItem>
-                          Provide actionable recommendations for future
-                          workshops.
+                          <FontAwesomeIcon icon={faClock} size="sm"/>
+                          {" "}
+                          <Text as='i' textStyle={'pbold'}>65% value real-time order tracking </Text>
+                          <UnorderedList textStyle={"p"} pb={4}>
+                            <ListItem>
+                              {" "}
+                              Current platforms provide limited status updates
+                            </ListItem>
+                            <ListItem>
+                            Users want accurate preparation time estimates
+                            </ListItem>
+                            <ListItem>
+                            Clear communication about delays is essential
+                            </ListItem>
+                          </UnorderedList>
                         </ListItem>
+                        
                       </UnorderedList>
                     </Flex>
 
