@@ -15,8 +15,10 @@ import {
   Spinner,
   AspectRatio,
   List
+  
 } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
+import competitors from '../assets/steakhouse/data/competitors';
 import VerticalProgressBar from "../components/VerticalProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -55,6 +57,7 @@ import targetAudienceImage from "../assets/ciana_research/targetaudience.svg";
 import methodologyImage from "../assets/ciana_research/methodology.svg";
 import toolsImage from "../assets/ciana_research/tools.svg";
 import recruitingImage from "../assets/ciana_research/recruiting.svg";
+import market from "../assets/steakhouse/market.svg"
 import interviewImage from "../assets/ciana_research/interview.svg";
 import documentationImage from "../assets/ciana_research/documentation.svg";
 import sayImage from "../assets/ciana_research/say.png";
@@ -79,6 +82,7 @@ import banner from "../assets/steakhouse/steakhousebanner.png";
 import ResponsiveMenu from "../components/ResponsiveMenu";
 import MuteButton from "../components/MuteButton";
 import mockupBrief from "../assets/steakhouse/steakhousemockup.png"
+import CompetitiveAnalysis from "../components/CompetitiveAnalysis";
 
 const SteakHousePage = () => {
   const { sections } = useAlertContext();
@@ -647,19 +651,37 @@ const SteakHousePage = () => {
                       and pain points.
                     </Text>
                     <HStack>
-                      <a href='https://docs.google.com/document/d/1_bSvOb4faRBJYChBRK_NEP-MLRGCa-rKMXR8q6mRnuk/edit?tab=t.0#heading=h.8cpmn7co03qe' target="_blank" rel='noreferrer'>
-                      <Text as='p' textStyle={'p'} decoration={'underline'} textTransform={'capitalize'}>
-                        View Interview script
-                      </Text>
+                      <a
+                        href="https://docs.google.com/document/d/1_bSvOb4faRBJYChBRK_NEP-MLRGCa-rKMXR8q6mRnuk/edit?tab=t.0#heading=h.8cpmn7co03qe"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Text
+                          as="p"
+                          textStyle={"p"}
+                          decoration={"underline"}
+                          textTransform={"capitalize"}
+                        >
+                          View Interview script
+                        </Text>
                       </a>
                       <Text>•</Text>
-                      <a href='https://docs.google.com/forms/d/e/1FAIpQLSd8DqP5SgzPKancNsTKjiiPY6tROzt2gcNHvwdfWJTbPA-1bA/viewform' target="_blank" rel='noreferrer'>
-                      <Text as='p' textStyle={'p'} decoration={'underline'} textTransform={'capitalize'}>
-                        View survey questions
-                      </Text>
+                      <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSd8DqP5SgzPKancNsTKjiiPY6tROzt2gcNHvwdfWJTbPA-1bA/viewform"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Text
+                          as="p"
+                          textStyle={"p"}
+                          decoration={"underline"}
+                          textTransform={"capitalize"}
+                        >
+                          View survey questions
+                        </Text>
                       </a>
                     </HStack>
-                    <Flex gap={6}>
+                    <Flex gap={6} flexDirection={{base:'column', lg:'row'}}>
                       <Image
                         src={interview}
                         alt="interview Illustration"
@@ -678,14 +700,14 @@ const SteakHousePage = () => {
                         >
                           Key findings
                         </Text>
-                        <ListItem >
-                          <FontAwesomeIcon icon={faMobile} size="sm" />
-                          {" "}
-                          <Text as='i' textStyle={'pbold'}>80% of users abandon orders due to complex
-                          modification systems</Text>
-                          
+                        <ListItem>
+                          <FontAwesomeIcon icon={faMobile} size="sm" />{" "}
+                          <Text as="i" textStyle={"pbold"}>
+                            80% of users abandon orders due to complex
+                            modification systems
+                          </Text>
                           <UnorderedList textStyle={"p"} pb={4}>
-                            <ListItem >
+                            <ListItem>
                               {" "}
                               Users struggle with current platforms' limited
                               customization options
@@ -701,156 +723,91 @@ const SteakHousePage = () => {
                         </ListItem>
 
                         <ListItem>
-                          <FontAwesomeIcon icon={faSackDollar} size="sm" />
-                          {" "}
-                          <Text as='i' textStyle={'pbold'}>73% of users prefer ordering directly from restaurants </Text>
+                          <FontAwesomeIcon icon={faSackDollar} size="sm" />{" "}
+                          <Text as="i" textStyle={"pbold"}>
+                            73% of users prefer ordering directly from
+                            restaurants{" "}
+                          </Text>
                           <UnorderedList textStyle={"p"} pb={4}>
                             <ListItem>
                               {" "}
                               High delivery platform fees are a major concern
                             </ListItem>
                             <ListItem>
-                            Users want to support restaurants directly
+                              Users want to support restaurants directly
                             </ListItem>
                             <ListItem>
-                            Quality assurance is higher with direct ordering
+                              Quality assurance is higher with direct ordering
                             </ListItem>
                           </UnorderedList>
                         </ListItem>
 
                         <ListItem>
-                          <FontAwesomeIcon icon={faClock} size="sm"/>
-                          {" "}
-                          <Text as='i' textStyle={'pbold'}>65% value real-time order tracking </Text>
+                          <FontAwesomeIcon icon={faClock} size="sm" />{" "}
+                          <Text as="i" textStyle={"pbold"}>
+                            65% value real-time order tracking{" "}
+                          </Text>
                           <UnorderedList textStyle={"p"} pb={4}>
                             <ListItem>
                               {" "}
                               Current platforms provide limited status updates
                             </ListItem>
                             <ListItem>
-                            Users want accurate preparation time estimates
+                              Users want accurate preparation time estimates
                             </ListItem>
                             <ListItem>
-                            Clear communication about delays is essential
+                              Clear communication about delays is essential
                             </ListItem>
                           </UnorderedList>
                         </ListItem>
-                        
                       </UnorderedList>
                     </Flex>
-
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      Research questions
-                    </Text>
-                    <Flex gap={6}>
-                      <Image src={researchQuestionsImage} alt="" w={"100px"} />
-                      <UnorderedList textStyle={"p"} pb={4}>
-                        <ListItem>
-                          What motivated you to attend the digital safety
-                          workshop?
-                        </ListItem>
-                        <ListItem>
-                          What frustration did you have before and after the
-                          workshop?
-                        </ListItem>
-                        <ListItem>
-                          How would you change or improve your experience with
-                          the workshop?
-                        </ListItem>
-                      </UnorderedList>
-                    </Flex>
-
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      Target audience
-                    </Text>
-                    <Flex gap={6}>
-                      <Image src={targetAudienceImage} alt="" w={"100px"} />
-                      <Text as="p" textStyle="p">
-                        The target audience for this research primarily
-                        consisted of Hispanic parents and guardians who
-                        participated in the digital safety workshops. These
-                        individuals were motivated by a strong desire to protect
-                        their children in an increasingly digital world, despite
-                        having limited access to technology themselves. Many of
-                        the participants faced challenges in understanding or
-                        implementing digital tools but were deeply invested in
-                        learning how to manage their children’s screen time,
-                        improve online security, and foster healthier digital
-                        habits.
+                    <VStack alignItems="start">
+                      <Text
+                        as="p"
+                        textStyle={"pbold"}
+                        color="semantic.text.primary"
+                        textTransform={"uppercase"}
+                      >
+                        competitive analysis
                       </Text>
+                      <Text as="p" textStyle="p" pb={4}>
+                      To understand the current market landscape, I analyzed both direct competitors (premium restaurant apps) and indirect competitors (food delivery platforms). The analysis focused on user experience, feature sets, and business models to identify opportunities for differentiation.
+                      </Text>
+                      <CompetitiveAnalysis competitors={competitors} />
+                      <Text
+                        as="p"
+                        textStyle={"pbold"}
+                        textTransform={"capitalize"}
+                      >
+                        market opportunity
+                      </Text>
+                      <Flex gap={6} alignItems="center" >
+                      <Image src={market} alt="market illustration" w={"100px"} />
+                      <Box textStyle={"p"} pb={4} display="flex" alignItems="center">
+                      <Text as="p" textStyle="p" pb={4}>
+                        Based on this analysis, there's a clear opportunity to
+                        combine premium restaurant quality with the technical
+                        convenience of delivery platforms, while eliminating
+                        high fees and maintaining food quality.
+                      </Text>
+                      </Box>
                     </Flex>
+                      
+                    </VStack>
+                    
+                  </VStack>
 
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      Methodology
-                    </Text>
-                    <Flex gap={6}>
-                      <Image src={methodologyImage} alt="" w={"100px"} />
-                      <UnorderedList textStyle={"p"} pb={4}>
-                        <ListItem>Post-workshop user interviews.</ListItem>
-                        <ListItem>
-                          Open-ended questions designed to explore motivations,
-                          benefits, frustrations, and suggestions.
-                        </ListItem>
-                      </UnorderedList>
-                    </Flex>
+                  <VStack alignItems="start">
+                  <Text
+                        as="p"
+                        textStyle={"pbold"}
+                        color="semantic.text.primary"
+                        textTransform={"uppercase"}
+                      >
+                        personas
+                      </Text>
 
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      Tools & Tecniques
-                    </Text>
-                    <Flex gap={6}>
-                      <Image src={toolsImage} alt="" w={"100px"} />
-                      <UnorderedList textStyle={"p"} pb={4}>
-                        <ListItem>
-                          <HStack>
-                            <Text>
-                              Interview scripts for consistency using Google
-                              Docs.
-                            </Text>
-                            <a
-                              href="https://docs.google.com/document/d/1wFE8wP12O8VIpqfgRvT70KguuOMoSqW5JLeGpY3ay60/edit?tab=t.0"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              <Text
-                                as={"p"}
-                                textStyle={"p"}
-                                decoration={"underline"}
-                              >
-                                (View Script here.)
-                              </Text>
-                            </a>
-                          </HStack>
-                        </ListItem>
-                        <ListItem>
-                          Recording tools for accurate transcription such as
-                          Zoom, IOS Recording App and Otter.
-                        </ListItem>
-                        <ListItem>
-                          Empathy maps and affinity diagrams for data synthesis
-                          in Figjam
-                        </ListItem>
-                      </UnorderedList>
-                    </Flex>
                   </VStack>
                 </VStack>
               </Box>
