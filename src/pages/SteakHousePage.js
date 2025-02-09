@@ -86,6 +86,7 @@ import CompetitiveAnalysis from "../components/CompetitiveAnalysis";
 import UserPersona from "../components/PersonasSection";
 import PersonasSection from "../components/PersonasSection";
 import personas from "../assets/steakhouse/data/personas";
+import JourneyMap from "../components/JourneyMap";
 
 const SteakHousePage = () => {
   const { sections } = useAlertContext();
@@ -408,7 +409,7 @@ const SteakHousePage = () => {
               >
                 {/* Text Column 1 */}
                 <GridItem>
-                  <Box pb={4} >
+                  <Box pb={4}>
                     <Text
                       textStyle="pbold"
                       textAlign={"center"}
@@ -417,7 +418,7 @@ const SteakHousePage = () => {
                     >
                       Problem
                     </Text>
-                    <Box boxSize={"400px"} mx='auto'>
+                    <Box boxSize={"400px"} mx="auto">
                       <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
@@ -442,7 +443,7 @@ const SteakHousePage = () => {
                     >
                       Goal
                     </Text>
-                    <Box boxSize={"400px"} mx='auto'>
+                    <Box boxSize={"400px"} mx="auto">
                       <Image src={goalImage} />
                     </Box>
                     <Text textStyle="p">
@@ -515,15 +516,17 @@ const SteakHousePage = () => {
                   project goals
                 </Text>
                 <Grid
-                  templateColumns={{ base: "1fr", lg:"1fr 1fr", "2xl": "0.5fr 1fr" }}
+                  templateColumns={{
+                    base: "1fr",
+                    lg: "1fr 1fr",
+                    "2xl": "0.5fr 1fr",
+                  }}
                   gap={6}
                   color="gray.600"
                   pb={12}
-                 
                 >
-                  <GridItem  >
-                    
-                    <Box pb={4} >
+                  <GridItem>
+                    <Box pb={4}>
                       <Text
                         as="p"
                         textStyle={"pbold"}
@@ -594,7 +597,7 @@ const SteakHousePage = () => {
                   </GridItem>
 
                   <GridItem>
-                    <Box display={"flex"} justifyContent="center" >
+                    <Box display={"flex"} justifyContent="center">
                       <Image
                         src={mockupBrief}
                         alt="mockup"
@@ -790,62 +793,78 @@ const SteakHousePage = () => {
                     </GridItem>
                   </Grid>
                 </VStack>
-                
               </Box>
 
               {/* Key Findings  Close*/}
               <Box px={12}>
-              <VStack alignItems="start" pt={12}>
-                <Text
-                  as="p"
-                  textStyle={"pbold"}
-                  color="semantic.text.primary"
-                  textTransform={"uppercase"}
-                >
-                  competitive analysis
-                </Text>
-                <Text as="p" textStyle="p" pb={4}>
-                  To understand the current market landscape, I analyzed both
-                  direct competitors (premium restaurant apps) and indirect
-                  competitors (food delivery platforms). The analysis focused on
-                  user experience, feature sets, and business models to identify
-                  opportunities for differentiation.
-                </Text>
-                <CompetitiveAnalysis competitors={competitors} />
-                <Text as="p" textStyle={"pbold"} textTransform={"capitalize"}>
-                  market opportunity
-                </Text>
-                <Flex gap={6} alignItems="center">
-                  <Image src={market} alt="market illustration" w={"100px"} />
-                  <Box textStyle={"p"} display="flex" alignItems="center">
-                    <Text as="p" textStyle="p">
-                      Based on this analysis, there's a clear opportunity to
-                      combine premium restaurant quality with the technical
-                      convenience of delivery platforms, while eliminating high
-                      fees and maintaining food quality.
-                    </Text>
-                  </Box>
-                </Flex>
-
-                <VStack alignItems="start" pt={4}>
+                <VStack alignItems="start" pt={12}>
                   <Text
                     as="p"
                     textStyle={"pbold"}
                     color="semantic.text.primary"
                     textTransform={"uppercase"}
                   >
-                    user personas
+                    competitive analysis
                   </Text>
-
                   <Text as="p" textStyle="p" pb={4}>
-                    Based on user interviews and survey data, I developed two
-                    distinct personas representing our core user groups. These
-                    personas helped guide design decisions and feature
-                    prioritization throughout the project.
+                    To understand the current market landscape, I analyzed both
+                    direct competitors (premium restaurant apps) and indirect
+                    competitors (food delivery platforms). The analysis focused
+                    on user experience, feature sets, and business models to
+                    identify opportunities for differentiation.
                   </Text>
-                  <PersonasSection personas={personas} />
+                  <CompetitiveAnalysis competitors={competitors} />
+                  <Text as="p" textStyle={"pbold"} textTransform={"capitalize"}>
+                    market opportunity
+                  </Text>
+                  <Flex gap={6} alignItems="center">
+                    <Image src={market} alt="market illustration" w={"100px"} />
+                    <Box textStyle={"p"} display="flex" alignItems="center">
+                      <Text as="p" textStyle="p">
+                        Based on this analysis, there's a clear opportunity to
+                        combine premium restaurant quality with the technical
+                        convenience of delivery platforms, while eliminating
+                        high fees and maintaining food quality.
+                      </Text>
+                    </Box>
+                  </Flex>
+
+                  <VStack alignItems="start" pt={4}>
+                    <Text
+                      as="p"
+                      textStyle={"pbold"}
+                      color="semantic.text.primary"
+                      textTransform={"uppercase"}
+                    >
+                      user personas
+                    </Text>
+
+                    <Text as="p" textStyle="p" pb={4}>
+                      Based on user interviews and survey data, I developed two
+                      distinct personas representing our core user groups. These
+                      personas helped guide design decisions and feature
+                      prioritization throughout the project.
+                    </Text>
+                    <PersonasSection personas={personas} />
+                  </VStack>
                 </VStack>
-              </VStack>
+              </Box>
+              <Box px={12}>
+                <VStack alignItems="start" pt={12}>
+                  <Text
+                    as="p"
+                    textStyle={"pbold"}
+                    color="semantic.text.primary"
+                    textTransform={"uppercase"}
+                  >
+                    Journey Map
+                  </Text>
+                  <Text as="p" textStyle="p" pb={4}>
+                    Mapping the current ordering experience to identify pain
+                    points and opportunities for improvement.
+                  </Text>
+                  <JourneyMap />
+                </VStack>
               </Box>
             </Box>
           </section>
