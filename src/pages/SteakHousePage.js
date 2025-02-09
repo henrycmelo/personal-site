@@ -45,8 +45,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import problemImage from "../assets/steakhouse/Question.svg";
+import evolutiionImage from "../assets/steakhouse/evolution.svg"
 import goalImage from "../assets/steakhouse/Checklist.svg";
 import interview from "../assets/steakhouse/interview.svg"
+import testingImage from "../assets/steakhouse/testing.svg"
 import questionImage from "../assets/ciana_research/question.svg";
 import processImage from "../assets/steakhouse/process.png";
 import gantChart from "../assets/ciana_research/ganttChart.png";
@@ -61,6 +63,7 @@ import market from "../assets/steakhouse/market.svg"
 import interviewImage from "../assets/ciana_research/interview.svg";
 import documentationImage from "../assets/ciana_research/documentation.svg";
 import sayImage from "../assets/ciana_research/say.png";
+import decisionImage from "../assets/steakhouse/Decision.svg"
 import thinkImage from "../assets/ciana_research/think.png";
 import feelImage from "../assets/ciana_research/feel.png";
 import doesImage from "../assets/ciana_research/does.png";
@@ -87,6 +90,10 @@ import UserPersona from "../components/PersonasSection";
 import PersonasSection from "../components/PersonasSection";
 import personas from "../assets/steakhouse/data/personas";
 import JourneyMap from "../components/JourneyMap";
+import PaperWireframes from "../components/PaperWireFrames";
+import DigitalWireframes from "../components/DigitalWireframes";
+import digitalWireframes from "../assets/steakhouse/data/digitalWireframes";
+import LofiPrototype from "../components/LofiPrototype";
 
 const SteakHousePage = () => {
   const { sections } = useAlertContext();
@@ -874,122 +881,187 @@ const SteakHousePage = () => {
 
           {/* THIRD SECTION DATA COLLECTION OPEN*/}
           <section>
-            <Box id="datacollection">
+            <Box id="starting">
               <Box px={12}>
                 <DividerSection>Phase 2 </DividerSection>
                 <VStack alignItems="start" pt={12} color="gray.600">
-                  <Text textStyle="h2" color="semantic.text.primary">
-                    Data Collection
+                  <Text
+                    textStyle="h2"
+                    color="semantic.text.primary"
+                    textTransform={"capitalize"}
+                  >
+                    starting the design
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    This section outlines the approach used to gather
-                    qualitative data from workshop participants, focusing on the
-                    methods of participant recruitment, the interview process,
-                    and the documentation of responses. The goal was to ensure a
-                    comprehensive collection of feedback that could be analyzed
-                    to improve future workshops.
+                    After conducting user research and identifying key
+                    opportunities, I began the design process with paper
+                    wireframes. This phase focused on rapidly exploring
+                    different concepts and layouts before moving into digital
+                    wireframes and prototypes. The design process included:
                   </Text>
-                  {/* Highlight */}
-                  <Box
-                    backgroundColor={"semantic.background.secondary"}
-                    w={"100%"}
-                    p={12}
-                  >
-                    <VStack alignItems="center">
-                      <Text
-                        as="i"
-                        textStyle="h3"
-                        color={"semantic.text.primary"}
-                      >
-                        “I think I learned how my son should be using a tablet.”
-                      </Text>
-                      <Text as="p" textStyle="p">
-                        - Workshop atendee
-                      </Text>
-                    </VStack>
-                  </Box>
 
-                  <Grid
-                    templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
-                    gap={6}
-                    textAlign={"center"}
-                    pt={4}
-                  >
-                    <GridItem>
-                      <Box pb={4}>
-                        <Text
-                          textStyle="pbold"
-                          textAlign={"center"}
-                          color="semantic.text.primary"
-                          textTransform={"uppercase"}
-                        >
-                          Recruiting
-                        </Text>
-                        <Box boxSize={"1fr"}>
-                          <Image src={recruitingImage} />
-                        </Box>
-                        <Text textStyle="p" textAlign={"left"}>
-                          Participants were recruited through phone calls and
-                          emails, which allowed for personalized outreach and
-                          provided an opportunity to address any questions about
-                          the study. Recruitment was aimed at parents who
-                          attended the digital safety workshops, with an
-                          emphasis on flexibility to accommodate their
-                          schedules.
-                        </Text>
-                      </Box>
-                    </GridItem>
+                  {/* paper */}
+                  <VStack alignItems="start">
+                    <Text
+                      as="p"
+                      textStyle={"pbold"}
+                      color="semantic.text.primary"
+                      textTransform={"uppercase"}
+                    >
+                      paper wireframes
+                    </Text>
+                    <Text as="p" textStyle="p" pb={4}>
+                      Using the Crazy 8 method, I explored different approaches
+                      to the main ordering interface. After sketching five
+                      variations, I refined the most promising concept that best
+                      addressed user needs and business goals.
+                    </Text>
+                    <PaperWireframes />
+                    <Box
+                      backgroundColor={"semantic.background.secondary"}
+                      w={"100%"}
+                      p={12}
+                    >
+                      <VStack >
+                        <Box display='flex' justifyContent={'center'}>
+                        <Image src={decisionImage} alt="market illustration" w={"100px"} />
 
-                    <GridItem>
-                      <Box pb={4}>
-                        <Text
-                          textStyle="pbold"
-                          textAlign={"center"}
-                          color="semantic.text.primary"
-                          textTransform={"uppercase"}
-                        >
-                          Interviews
-                        </Text>
-                        <Box boxSize={"1fr"}>
-                          <Image src={interviewImage} />
                         </Box>
-                        <Text textStyle="p" textAlign={"left"}>
-                          Structured post-workshop interviews were conducted
-                          with open-ended questions to gather feedback on
-                          participants' experiences, motivations, and
-                          suggestions. Some participants were initially
-                          hesitant, fearing they might be quizzed, but were
-                          reassured that the goal was to collect feedback, not
-                          assess their knowledge. The interviews were recorded
-                          (with consent) and transcribed for accurate analysis
-                          to ensure detailed documentation for synthesis.
+                      
+                        <Text
+                          as="p"
+                          textStyle={"pbold"}
+                          textTransform={"capitalize"}
+                        >
+                          Design decisions
                         </Text>
-                      </Box>
-                    </GridItem>
+                        <Text as="p" textStyle="p">
+                          After exploring multiple layouts, I selected and
+                          refined the most effective design that prioritized
+                          easy location selection and clear menu navigation.
+                          This approach best addressed our users' need for quick
+                          and efficient ordering.
+                        </Text>
+                      </VStack>
+                    </Box>
+                  </VStack>
 
-                    <GridItem>
-                      <Box pb={4}>
-                        <Text
-                          textStyle="pbold"
-                          textAlign={"center"}
-                          color="semantic.text.primary"
-                          textTransform={"uppercase"}
-                        >
-                          Documentation
-                        </Text>
-                        <Box boxSize={"1fr"}>
-                          <Image src={documentationImage} />
+                  <VStack alignItems="start" pt={4}>
+                    <Text
+                      as="p"
+                      textStyle={"pbold"}
+                      color="semantic.text.primary"
+                      textTransform={"uppercase"}
+                    >
+                      Digital wireframes
+                    </Text>
+                    <Text as="p" textStyle="p" pb={4}>
+                    Taking the refined paper concepts into Figma, I created detailed digital wireframes to establish clear user flows and interface hierarchy. These wireframes focused on implementing key features identified during user research while maintaining simplicity and usability.
+                    </Text>
+                    <DigitalWireframes digital={digitalWireframes} />
+                    <Box
+                      backgroundColor={"semantic.background.secondary"}
+                      w={"100%"}
+                      p={12}
+                    >
+                      <VStack >
+                        <Box display='flex' justifyContent={'center'}>
+                        <Image src={evolutiionImage} alt="evolution iamage" w={"100px"} />
+
                         </Box>
-                        <Text textStyle="p" textAlign={"left"}>
-                          The interviews were recorded (with participant
-                          consent) and later transcribed for accurate analysis.
-                          This documentation ensured that every piece of
-                          feedback was captured in detail and could be
-                          referenced during the synthesis and analysis phases.
+                      
+                        <Text
+                          as="p"
+                          textStyle={"pbold"}
+                          textTransform={"capitalize"}
+                        >
+                          Design evolution
                         </Text>
-                      </Box>
-                    </GridItem>
-                  </Grid>
+                        <Text as="p" textStyle="p">
+                        The digital wireframes expanded upon the paper concepts, adding detailed interactions and refined user flows. Key improvements included enhanced location filtering, streamlined customization options, and clearer order tracking visualization.
+                        </Text>
+                      </VStack>
+                    </Box>
+                  </VStack>
+
+                  <VStack alignItems="start" pt={4}>
+                    <Text
+                      as="p"
+                      textStyle={"pbold"}
+                      color="semantic.text.primary"
+                      textTransform={"uppercase"}
+                    >
+                      Low-fidelity prototype
+                    </Text>
+                    <Text as="p" textStyle="p" pb={4}>
+                    I created a clickable prototype in Figma to test the core user flows and gather feedback on the basic interface structure. This helped validate our design direction before moving into high-fidelity designs.
+                    </Text>
+                    <LofiPrototype />
+                    <Box
+                      backgroundColor={"semantic.background.secondary"}
+                      w={"100%"}
+                      p={12}
+                    >
+                      <VStack >
+                        <Box display='flex' justifyContent={'center'}>
+                        <Image src={testingImage} alt="evolution iamage" w={"100px"} />
+
+                        </Box>
+                      
+                        <Text
+                          as="p"
+                          textStyle={"pbold"}
+                          textTransform={"capitalize"}
+                        >
+                          Prototype Testing
+                        </Text>
+                        <Text as="p" textStyle="p">
+                        This low-fidelity prototype connected key screens to create a clickable experience, allowing us to test the core functionalities of location selection, menu customization, and checkout process. User feedback from these tests informed our next design iterations.
+                        </Text>
+                      </VStack>
+                    </Box>
+                  </VStack>
+
+                  <VStack alignItems="start" pt={4}>
+                    <Text
+                      as="p"
+                      textStyle={"pbold"}
+                      color="semantic.text.primary"
+                      textTransform={"uppercase"}
+                    >
+                      Usability study
+                    </Text>
+                    <Text as="p" textStyle="p" pb={4}>
+                    I created a clickable prototype in Figma to test the core user flows and gather feedback on the basic interface structure. This helped validate our design direction before moving into high-fidelity designs.
+                    </Text>
+                    <LofiPrototype />
+                    <Box
+                      backgroundColor={"semantic.background.secondary"}
+                      w={"100%"}
+                      p={12}
+                    >
+                      <VStack >
+                        <Box display='flex' justifyContent={'center'}>
+                        <Image src={testingImage} alt="evolution iamage" w={"100px"} />
+
+                        </Box>
+                      
+                        <Text
+                          as="p"
+                          textStyle={"pbold"}
+                          textTransform={"capitalize"}
+                        >
+                          Prototype Testing
+                        </Text>
+                        <Text as="p" textStyle="p">
+                        This low-fidelity prototype connected key screens to create a clickable experience, allowing us to test the core functionalities of location selection, menu customization, and checkout process. User feedback from these tests informed our next design iterations.
+                        </Text>
+                      </VStack>
+                    </Box>
+                  </VStack>
+
+
+                  
                 </VStack>
               </Box>
             </Box>
