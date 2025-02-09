@@ -46,7 +46,7 @@ const AboutMeSection = () => {
       <Grid
         w={"100%"}
         templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
-        gap={{ base: 6, md: 6 }}
+        gap={{ base: 6, md: 6, '2xl':24 }}
       >
         <GridItem>
           {aboutSections.map((section, index) => (
@@ -61,7 +61,7 @@ const AboutMeSection = () => {
             </Box>
           ))}
         </GridItem>
-        <GridItem>
+        <GridItem >
           {/* <Image src={rafaHenry} alt='photo of a dog with Henry' /> */}
           <Box
             maxW="400px"
@@ -69,6 +69,7 @@ const AboutMeSection = () => {
             overflow="hidden"
             boxShadow="md"
             bg="white"
+            
           >
             {/* Profile Header */}
             <HStack p={4} spacing={3} alignItems="center">

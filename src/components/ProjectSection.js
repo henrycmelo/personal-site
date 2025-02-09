@@ -36,7 +36,7 @@ const ProjectSection = () => {
 
       <Grid
         w={"100%"}
-        templateColumns={{ base: "1fr", xl: "repeat(2, 1fr)" }}
+        templateColumns={{ base: "1fr", lg:"repeat(2, 1fr)", '2xl': "repeat(3, 1fr)" }}
         gap={{ base: 6, md: 6 }}
       >
         {projects.map((project, index) => (
