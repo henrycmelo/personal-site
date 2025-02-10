@@ -19,7 +19,8 @@ const customInput = definePartsStyle({
         _invalid:{
             borderColor: 'red',
             boxShadow: '0 0 0 1px red',
-        }
+        },
+       
 
     }
     

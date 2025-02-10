@@ -4,6 +4,19 @@ import { badges } from "./badges";
 
 const projects = [
   {
+    title: "Elevating Restaurant Online Order Experience with mobile App",
+    description:
+      "Led the end-to-end redesign of a steakhouse's digital ordering experience, transforming traditional dining into an intuitive mobile platform that eliminates third-party dependencies while maintaining the premium brand experience.",
+      getImageSrc: () => require("../assets/steakhouse/uicardstakhouse.png"),
+      getLogosSrc: () => [
+        require("../assets/steakhouse/metropolitan-grill-high-resolution-logo-grayscale-transparent.png"),
+        require("../assets/archives/dxcenterlogo_color.png"),
+      ],
+      keywords:['UX/UI Design', 'User Research', 'Wireframing', "Design Systems", "Prototyping", "User Testing"],
+      path: "/projects/steakhouse",
+      type:'Product Design / Mobile UX'
+    },
+  {
     title: "From Metrics to Meaning: Digital Safety Impact Study",
     description:
       "Transformed basic workshop surveys into compelling human stories through UX research with immigrant families. Uncovered critical insights that secured grant funding and enhanced digital safety education for underserved communities.",
@@ -30,24 +43,11 @@ const projects = [
           require("../assets/archives/dxcenterlogo_color.png"),
         ],
         keywords:['User Research', 'Heuristic Evaluation', "Information Architecture", "Competitive Analysis", "user Testing"],
-        path: "/cianaresearch",
+        path: "/projects/aaa",
         type:'Usability testing / Visual design '
     
       
-    },
-    {
-      title: "Elevating Restaurant Online Order Experience with mobile App",
-      description:
-        "Led end-to-end transformation of a premium steakhouse's digital ordering, from UX research to design system and tested high-fidelity prototype. Synthesized insights from user research to deliver intuitive features that transformed the ordering experience.",
-        getImageSrc: () => require("../assets/steakhouse/uicardstakhouse.png"),
-        getLogosSrc: () => [
-          require("../assets/steakhouse/metropolitan-grill-high-resolution-logo-grayscale-transparent.png"),
-          require("../assets/archives/dxcenterlogo_color.png"),
-        ],
-        keywords:['UX/UI Design', 'User Research', 'Wireframing', "Design Systems", "Prototyping", "User Testing"],
-        path: "/projects/steakhouse",
-        type:'Product Design / Mobile UX'
-      }
+    }
     
   ];
   

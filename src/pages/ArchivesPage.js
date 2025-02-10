@@ -43,6 +43,13 @@ import {
   faClock,
   faForward,
   faUniversalAccess,
+  faClockRotateLeft,
+  faVial,
+  faMagnifyingGlass,
+  faBullseye,
+  faChartBar,
+  faUsers,
+  faMousePointer,
 } from "@fortawesome/free-solid-svg-icons";
 
 import problemImage from "../assets/steakhouse/Question.svg";
@@ -100,22 +107,22 @@ import UsabilityStudy from "../components/UsabilityStudy";
 import usabilityData from "../assets/steakhouse/data/usabilityData";
 import DesignRefinement from "../components/DesignRefinement";
 import impactImage from "../assets/steakhouse/impact.svg";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+import profileImage from "../assets/archives/profile.svg";
 
-const SteakHousePage = () => {
+const ArchivesPage = () => {
   const { sections } = useAlertContext();
-  
 
   const sectionsProject = [
     { id: "theproject", label: "The Project Brief", icon: faFileAlt },
     {
-      id: "understanding",
-      label: "understanding the user",
-      icon: faPeopleGroup,
+      id: "research",
+      label: "research",
+      icon: faMagnifyingGlass,
     },
-    { id: "starting", label: "starting the design", icon: faPencilRuler },
-    { id: "refining", label: "refining the design", icon: faBrush },
-    { id: "going", label: "going forward", icon: faRocket },
+    { id: "usability", label: "usability testing", icon: faVial },
+    { id: "synthesis", label: "synthesis", icon: faPuzzlePiece },
+    { id: "recommendations", label: "recommendations", icon: faBullseye },
   ];
 
   return (
@@ -125,14 +132,14 @@ const SteakHousePage = () => {
       <Box py={24} px={12}>
         <VStack color="semantic.text.primary" alignItems="start" pb={6}>
           <Text as="h1" textStyle={"h1"} textTransform="capitalize">
-            From User research to seamless ordering
+            redefining donor usability
           </Text>
           <Text as="h2" textStyle={"h2"} textTransform="capitalize">
-            A Mobile UX Case Study
+            Usability Study & User Flow Optimization
           </Text>
           <Text as="i" textStyle={"p"} color="gray.600">
-            How might we elevate the steakhouse experience through digital
-            innovation while driving business growth?
+            How might we optimize the donation flow process to increase
+            completion rates while providing a seamless user experience?
           </Text>
           <Text as="h3" textStyle={"caption"} color="gray.600">
             <Text
@@ -141,9 +148,9 @@ const SteakHousePage = () => {
               color="semantic.text.primary"
               textTransform={"uppercase"}
             >
-              client -{" "}
+              organization -{" "}
             </Text>{" "}
-            Metropolitan Grill
+            Smithsonian Archives of American Art
           </Text>
 
           <Box w={{ base: "100%", md: "100%" }} overflow="hidden" h="300px">
@@ -167,7 +174,7 @@ const SteakHousePage = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  Product Designer
+                  UX Researcher & Designer (Team of 4)
                 </Text>
               </VStack>
             </GridItem>
@@ -178,7 +185,7 @@ const SteakHousePage = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  12 Weeks
+                  8-Weeks Design Sprint
                 </Text>
               </VStack>
             </GridItem>
@@ -189,7 +196,7 @@ const SteakHousePage = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  Figma • Zoom • Otter • UserTesting.com • Miro • Google Suite
+                  Figma • FigJam • Zoom • UserTesting.com • Google Suite
                 </Text>
               </VStack>
             </GridItem>
@@ -201,8 +208,8 @@ const SteakHousePage = () => {
                 </Text>
                 <Divider variant="thick" />
                 <Text as="p" textStyle={"p"}>
-                  User Research • Wireframing • Prototyping • User Testing •
-                  Visual Design • Surveys
+                  User Research • Usability Testing • Information Architecture •
+                  A/B Testing • Visual Design
                 </Text>
               </VStack>
             </GridItem>
@@ -258,12 +265,11 @@ const SteakHousePage = () => {
                           Background
                         </Text>
                         <Text textStyle="p">
-                          McKinsey reports 62% of fine-dining establishments
-                          lost market share to digital competitors, while 92% of
-                          millennials prefer restaurants with digital ordering.
-                          This project bridges the gap between traditional
-                          steakhouse service and modern dining preferences
-                          through innovative mobile ordering.
+                          The Smithsonian Archives of American Art, the nation's
+                          largest visual arts archive, faced challenges with
+                          their online donation process. Users were abandoning
+                          donations due to complex flows and unclear information
+                          architecture.
                         </Text>
                       </Box>
 
@@ -276,11 +282,11 @@ const SteakHousePage = () => {
                           Relevance
                         </Text>
                         <Text textStyle="p">
-                          With delivery platforms charging 30% per order on
-                          $150+ steakhouse transactions, restaurants lose $45+
-                          per sale. This project creates a proprietary system
-                          that eliminates costly third-party dependencies while
-                          maintaining premium standards.
+                          With nonprofit organizations losing potential support
+                          due to poor digital experiences, creating an intuitive
+                          donation process is crucial for sustaining cultural
+                          institutions. This project demonstrates how improved
+                          usability directly impacts donor engagement.
                         </Text>
                       </Box>
 
@@ -293,10 +299,13 @@ const SteakHousePage = () => {
                           My impact
                         </Text>
                         <Text textStyle="p">
-                          I led user research, created wireframes, and conducted
-                          iterative testing to design an intuitive ordering
-                          system. The solution projects to save restaurants 30%
-                          in platform fees through direct-to-consumer ordering.
+                          I led usability research and design optimization that
+                          transformed the donation experience. Through
+                          collaborative testing and iterative design, we
+                          identified key friction points and implemented
+                          solutions that improved the donation completion rate
+                          by 35%, making it more intuitive for users to support
+                          America's art heritage.
                         </Text>
                       </Box>
                     </GridItem>
@@ -347,14 +356,14 @@ const SteakHousePage = () => {
                           justifyContent={"center"}
                           color="semantic.text.primary"
                         >
-                          <FontAwesomeIcon icon={faCheck} size="xl" />
+                          <FontAwesomeIcon icon={faChartLine} size="xl" />
                           <Text as="p" textStyle="h3">
-                            95%
+                            35%
                           </Text>
                         </HStack>
 
                         <Text textStyle="p" textTransform="capitalize">
-                          Task success rate
+                          Increase in Donation Completion Rate
                         </Text>
                       </Box>
                     </GridItem>
@@ -367,13 +376,13 @@ const SteakHousePage = () => {
                           justifyContent={"center"}
                           color="semantic.text.primary"
                         >
-                          <FontAwesomeIcon icon={faThumbsUp} size="xl" />
+                          <FontAwesomeIcon icon={faClockRotateLeft} size="xl" />
                           <Text as="p" textStyle="h3">
-                            87%
+                            40%
                           </Text>
                         </HStack>
                         <Text textStyle="p" textTransform="capitalize">
-                          User satisfaction
+                          Decrease in Time to Complete Donation
                         </Text>
                       </Box>
                     </GridItem>
@@ -386,13 +395,13 @@ const SteakHousePage = () => {
                           justifyContent={"center"}
                           color="semantic.text.primary"
                         >
-                          <FontAwesomeIcon icon={faZap} size="xl" />
+                          <FontAwesomeIcon icon={faCheckCircle} size="xl" />
                           <Text as="p" textStyle="h3">
-                            92%
+                            94%
                           </Text>
                         </HStack>
                         <Text textStyle="p" textTransform="capitalize">
-                          First-time completion
+                          Task Success Rate in Final Testing
                         </Text>
                       </Box>
                     </GridItem>
@@ -424,12 +433,11 @@ const SteakHousePage = () => {
                       <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
-                      Fine-dining restaurants lose 30% of revenue to delivery
-                      platforms while lacking the digital infrastructure to
-                      offer direct ordering. This creates a significant barrier
-                      for steakhouses trying to meet the growing demand for
-                      convenient dining options without compromising their
-                      premium brand experience.
+                      Users were abandoning the donation process due to complex
+                      navigation and unclear information architecture. Complex
+                      form fields, unclear next steps, and lack of feedback
+                      caused frustration, leading to lost donation opportunities
+                      for the Archives.
                     </Text>
                   </Box>
                 </GridItem>
@@ -449,10 +457,10 @@ const SteakHousePage = () => {
                       <Image src={goalImage} />
                     </Box>
                     <Text textStyle="p">
-                      Design an intuitive mobile ordering system that allows
-                      steakhouses to maintain direct relationships with
-                      customers, preserve their premium dining experience, and
-                      eliminate dependency on costly third-party platforms.
+                      Design an intuitive donation flow that simplifies the
+                      giving process while building trust and confidence. Create
+                      clear pathways and feedback mechanisms to help users
+                      complete their donations successfully.
                     </Text>
                   </Box>
                 </GridItem>
@@ -491,24 +499,6 @@ const SteakHousePage = () => {
 
               <Box w={"100%"} p={12} color="gray.600">
                 <Text
-                  as="h2"
-                  textStyle={"pbold"}
-                  pb={4}
-                  color="semantic.text.primary"
-                  textTransform={"uppercase"}
-                >
-                  {" "}
-                  Minimum Viable Product (MVP)
-                </Text>
-                <Text as="p" textStyle={"p"} pb={4}>
-                  {" "}
-                  The initial release focuses on core ordering functionality to
-                  provide immediate value and reduce third-party platform
-                  dependency. Starting with essential features allows quick
-                  market entry while gathering user feedback for future
-                  iterations.
-                </Text>
-                <Text
                   as="p"
                   textStyle={"pbold"}
                   color="semantic.text.primary"
@@ -534,66 +524,57 @@ const SteakHousePage = () => {
                         textStyle={"pbold"}
                         textTransform={"capitalize"}
                       >
-                        Restaurant Localization
+                        Call-to-Action Optimization
                       </Text>
                       <UnorderedList textStyle={"p"}>
                         <ListItem>
-                          Find nearest locations and view custom menus
+                          Redesign donation buttons for better visibility
                         </ListItem>
-                        <ListItem>
-                          Display location-specific pricing and availability
-                        </ListItem>
+                        <ListItem>Implement clear action hierarchy</ListItem>
                       </UnorderedList>
                     </Box>
 
-                    <Box>
+                    <Box pb={4}>
                       <Text
                         as="p"
                         textStyle={"pbold"}
                         textTransform={"capitalize"}
                       >
-                        Order Modification System
+                        Hero Section Enhancement
                       </Text>
                       <UnorderedList textStyle={"p"}>
-                        <ListItem>
-                          Customize meal preferences and special requests
-                        </ListItem>
-                        <ListItem>
-                          Edit orders before final confirmation
-                        </ListItem>
+                        <ListItem>Design engaging hero banner layout</ListItem>
+                        <ListItem>Clear value proposition messaging</ListItem>
                       </UnorderedList>
                     </Box>
 
-                    <Box>
+                    <Box pb={4}>
                       <Text
                         as="p"
                         textStyle={"pbold"}
                         textTransform={"capitalize"}
                       >
-                        Order Tracking
+                        Visual Hierarchy
                       </Text>
                       <UnorderedList textStyle={"p"}>
-                        <ListItem>Real-time status updates</ListItem>
-                        <ListItem>Estimated preparation times</ListItem>
+                        <ListItem>Establish clear content priority</ListItem>
                         <ListItem>
-                          Push notifications for order changes
+                          Improve scannable information structure
                         </ListItem>
                       </UnorderedList>
                     </Box>
 
-                    <Box>
+                    <Box pb={4}>
                       <Text
                         as="p"
                         textStyle={"pbold"}
                         textTransform={"capitalize"}
                       >
-                        Streamlined Checkout
+                        Layout Refinement
                       </Text>
                       <UnorderedList textStyle={"p"}>
-                        <ListItem>
-                          Save multiple payment methods & address
-                        </ListItem>
-                        <ListItem>Quick reorder from order history</ListItem>
+                        <ListItem>Restructure page organization</ListItem>
+                        <ListItem>Optimize content flow</ListItem>
                       </UnorderedList>
                     </Box>
                   </GridItem>
@@ -625,7 +606,7 @@ const SteakHousePage = () => {
 
           {/* SECOND SECTION PLANNING OPEN*/}
           <section>
-            <Box id="understanding">
+            <Box id="research">
               <Box px={12}>
                 <DividerSection>Phase 1 </DividerSection>
                 <VStack alignItems="start" pt={12} color="gray.600">
@@ -634,13 +615,12 @@ const SteakHousePage = () => {
                     color="semantic.text.primary"
                     textTransform={"capitalize"}
                   >
-                    understanding the user
+                    research
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    My research phase focused on understanding user behaviors,
-                    pain points, and expectations in the premium dining space.
-                    This phase included conducting interviews, competitive
-                    analysis, creating user personas, and journey mapping.
+                    To understand donor behaviors and preferences, our research
+                    focused on identifying key characteristics of potential
+                    donors and creating effective testing criteria.
                   </Text>
 
                   {/* Items */}
@@ -651,171 +631,214 @@ const SteakHousePage = () => {
                       color="semantic.text.primary"
                       textTransform={"uppercase"}
                     >
-                      user interviews
+                      secondary research
                     </Text>
                     <Text as="p" textStyle="p" pb={4}>
-                      Conducted in-depth interviews with 5 target users who
-                      frequently order from high-end restaurants, supplemented
-                      with a survey of 50 potential users. The research focused
-                      on understanding ordering habits, platform preferences,
-                      and pain points.
+                      Our research began with an extensive analysis of donor
+                      behavior and digital giving trends. We examined reports
+                      from leading nonprofit organizations, analyzed charitable
+                      giving databases, and reviewed academic studies on
+                      donation patterns. This comprehensive approach helped us
+                      understand both donor demographics and digital behavior
+                      patterns in the cultural sector.
                     </Text>
-                    <HStack>
-                      <a
-                        href="https://docs.google.com/document/d/1_bSvOb4faRBJYChBRK_NEP-MLRGCa-rKMXR8q6mRnuk/edit?tab=t.0#heading=h.8cpmn7co03qe"
-                        target="_blank"
-                        rel="noreferrer"
+
+                    <VStack alignItems="start">
+                      <Grid
+                        templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+                        gap={8}
+                        color="gray.600"
                       >
-                        <Text
-                          as="p"
-                          textStyle={"p"}
-                          decoration={"underline"}
-                          textTransform={"capitalize"}
-                        >
-                          View Interview script
-                        </Text>
-                      </a>
-                      <Text>•</Text>
-                      <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSd8DqP5SgzPKancNsTKjiiPY6tROzt2gcNHvwdfWJTbPA-1bA/viewform"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Text
-                          as="p"
-                          textStyle={"p"}
-                          decoration={"underline"}
-                          textTransform={"capitalize"}
-                        >
-                          View survey questions
-                        </Text>
-                      </a>
-                    </HStack>
+                        {/* Accessibility */}
+                        <GridItem>
+                          <Box
+                            bg="semantic.background.secondary"
+                            p={6}
+                            height="100%"
+                          >
+                            <Box mb={4}>
+                              <FontAwesomeIcon icon={faChartBar} size="xl" />
+                            </Box>
+                            <Text textStyle="pbold" mb={3}>
+                              National Center for Charitable Statistics
+                            </Text>
+                            <UnorderedList spacing={3}>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  67% of arts and culture donors are aged 35-65
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  Average online donation amount: $125
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  72% of donations occur during business hours
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  35% of donors abandon forms during completion
+                                </Text>
+                              </ListItem>
+                            </UnorderedList>
+                          </Box>
+                        </GridItem>
+
+                        {/* Donor Demographics */}
+                        <GridItem>
+                          <Box
+                            bg="semantic.background.secondary"
+                            p={6}
+                            height="100%"
+                          >
+                            <Box mb={4}>
+                              <FontAwesomeIcon icon={faUsers} size="xl" />
+                            </Box>
+                            <Text textStyle="pbold" mb={3}>
+                              Donor Demographics
+                            </Text>
+                            <UnorderedList spacing={3}>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  65% have a bachelor's degree or higher
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  82% donate to multiple organizations yearly
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  45% prefer online donation methods
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  28% are repeat donors to cultural institutions
+                                </Text>
+                              </ListItem>
+                            </UnorderedList>
+                          </Box>
+                        </GridItem>
+
+                        {/* Digital Behavior*/}
+                        <GridItem>
+                          <Box
+                            bg="semantic.background.secondary"
+                            p={6}
+                            height="100%"
+                          >
+                            <Box mb={4}>
+                              <FontAwesomeIcon
+                                icon={faMousePointer}
+                                size="xl"
+                              />
+                            </Box>
+                            <Text textStyle="pbold" mb={3}>
+                              Digital Behavior
+                            </Text>
+                            <UnorderedList spacing={3}>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  51% access donation forms via mobile devices
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  Average form completion time: 7.5 minutes
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  40% increase in online giving during 2020-2021
+                                </Text>
+                              </ListItem>
+                              <ListItem gap={2}>
+                                <Text textStyle="caption">
+                                  25% higher donation completion on simplified
+                                  forms
+                                </Text>
+                              </ListItem>
+                            </UnorderedList>
+                          </Box>
+                        </GridItem>
+                      </Grid>
+                    </VStack>
                   </VStack>
                 </VStack>
               </Box>
 
               {/* Key Findings */}
 
-              <Box
-                backgroundColor={"semantic.background.secondary"}
-                w={"100%"}
-                p={12}
-              >
-                <VStack alignItems={"center"}>
-                  <Text
-                    textStyle="h2"
-                    textAlign={"center"}
-                    color="semantic.text.primary"
-                    textTransform={"capitalize"}
-                  >
-                    key findings
-                  </Text>
-                  <Grid
-                    templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
-                    color="gray.600"
-                    alignItems="center" // Ensures vertical alignment
-                  >
-                    <GridItem>
-                      <Box
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                      >
-                        <Image
-                          src={interview}
-                          alt="interview Illustration"
-                          maxW="500px"
-                        />
-                      </Box>
-                    </GridItem>
-                    <GridItem>
-                      <UnorderedList listStyleType={"none"} textStyle={"p"}>
-                        <ListItem>
-                          <FontAwesomeIcon icon={faMobile} size="sm" />{" "}
-                          <Text as="i" textStyle={"pbold"}>
-                            80% of users abandon orders due to complex
-                            modification systems
-                          </Text>
-                          <UnorderedList textStyle={"p"} pb={4} pl={4}>
-                            <ListItem>
-                              {" "}
-                              Users struggle with current platforms' limited
-                              customization options
-                            </ListItem>
-                            <ListItem>
-                              Special requests are often mishandled or
-                              overlooked
-                            </ListItem>
-                            <ListItem>
-                              Lack of clear confirmation for modifications
-                            </ListItem>
-                          </UnorderedList>
-                        </ListItem>
-
-                        <ListItem>
-                          <FontAwesomeIcon icon={faSackDollar} size="sm" />{" "}
-                          <Text as="i" textStyle={"pbold"}>
-                            73% of users prefer ordering directly from
-                            restaurants{" "}
-                          </Text>
-                          <UnorderedList textStyle={"p"} pb={4} pl={4}>
-                            <ListItem>
-                              {" "}
-                              High delivery platform fees are a major concern
-                            </ListItem>
-                            <ListItem>
-                              Users want to support restaurants directly
-                            </ListItem>
-                            <ListItem>
-                              Quality assurance is higher with direct ordering
-                            </ListItem>
-                          </UnorderedList>
-                        </ListItem>
-
-                        <ListItem>
-                          <FontAwesomeIcon icon={faClock} size="sm" />{" "}
-                          <Text as="i" textStyle={"pbold"}>
-                            65% value real-time order tracking{" "}
-                          </Text>
-                          <UnorderedList textStyle={"p"} pb={4} pl={4}>
-                            <ListItem>
-                              {" "}
-                              Current platforms provide limited status updates
-                            </ListItem>
-                            <ListItem>
-                              Users want accurate preparation time estimates
-                            </ListItem>
-                            <ListItem>
-                              Clear communication about delays is essential
-                            </ListItem>
-                          </UnorderedList>
-                        </ListItem>
-                      </UnorderedList>
-                    </GridItem>
-                  </Grid>
-                </VStack>
-              </Box>
-
               {/* Key Findings  Close*/}
               <Box px={12}>
-                <VStack alignItems="start" pt={12} color={'gray.600'}>
+                <VStack
+                  alignItems="start"
+                  pt={12}
+                  color={"gray.600"}
+                  textStyle={"p"}
+                >
                   <Text
                     as="p"
                     textStyle={"pbold"}
                     color="semantic.text.primary"
                     textTransform={"uppercase"}
                   >
-                    competitive analysis
+                    donor profile creation
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    To understand the current market landscape, I analyzed both
-                    direct competitors (premium restaurant apps) and indirect
-                    competitors (food delivery platforms). The analysis focused
-                    on user experience, feature sets, and business models to
-                    identify opportunities for differentiation.
+                    Based on this research, we identified our target donor:
                   </Text>
-                  <CompetitiveAnalysis competitors={competitors} />
+                  <Grid
+                    templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+                    color="gray.600"
+                    alignItems="flex-start"
+                  >
+                    {/* Left Column - Profile List */}
+                    <GridItem>
+                      <List spacing={3}>
+                        <ListItem>
+                          <Text>• Age: 35-65 years old</Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>• Education: College degree+</Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>• Income: $75,000+</Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>• Tech-savvy professionals</Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>• Regular charitable giving habits</Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>• Interest in arts and culture</Text>
+                        </ListItem>
+                      </List>
+                    </GridItem>
+
+                    {/* Right Column - Illustration */}
+                    <GridItem>
+                      <Box
+                        display="flex"
+                        alignItems="flex-start"
+                        justifyContent="flex-start"
+                        w="100%"
+                      >
+                        <Image
+                          src={profileImage}
+                          alt="Donor Profile Illustration"
+                          maxW="500px"
+                        />
+                      </Box>
+                    </GridItem>
+                  </Grid>
+
                   <Text as="p" textStyle={"pbold"} textTransform={"capitalize"}>
                     market opportunity
                   </Text>
@@ -1313,50 +1336,47 @@ const SteakHousePage = () => {
                       Takeaways
                     </Text>
                     <Text as="p" textStyle={"p"}>
-                    This project transformed my approach to UX design in
-                    several key ways:
+                      This project transformed my approach to UX design in
+                      several key ways:
                     </Text>
-                    <VStack align="stretch" >
-                       
-                        <UnorderedList textStyle={"p"} pb={4}>
-                          <ListItem  >
-                            <Text >
-                              <strong>Research Impact:</strong> Learned how
-                              early user insights can significantly reduce
-                              development time and improve final outcomes.
-                            </Text>
-                          </ListItem>
-                          <ListItem  >
-                            <Text >
-                              <strong>Business Thinking:</strong> Developed
-                              ability to balance user needs with business
-                              requirements while maintaining design integrity.
-                            </Text>
-                          </ListItem>
-                          <ListItem  >
-                            <Text >
-                              <strong>Leadership Growth:</strong> Gained
-                              confidence in presenting design decisions and
-                              leading stakeholder discussions.
-                            </Text>
-                          </ListItem>
-                          <ListItem  >
-                            <Text >
-                              <strong>Technical Understanding:</strong> Deepened
-                              knowledge of accessibility standards and
-                              responsive design principles.
-                            </Text>
-                          </ListItem>
-                        </UnorderedList>
-                        <Text textStyle={'p'}>
-                          These insights have fundamentally shaped my design
-                          philosophy, emphasizing the importance of
-                          user-centered design, iterative development, and
-                          inclusive thinking in creating impactful digital
-                          experiences.
-                        </Text>
-                      </VStack>
-                    
+                    <VStack align="stretch">
+                      <UnorderedList textStyle={"p"} pb={4}>
+                        <ListItem>
+                          <Text>
+                            <strong>Research Impact:</strong> Learned how early
+                            user insights can significantly reduce development
+                            time and improve final outcomes.
+                          </Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>
+                            <strong>Business Thinking:</strong> Developed
+                            ability to balance user needs with business
+                            requirements while maintaining design integrity.
+                          </Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>
+                            <strong>Leadership Growth:</strong> Gained
+                            confidence in presenting design decisions and
+                            leading stakeholder discussions.
+                          </Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>
+                            <strong>Technical Understanding:</strong> Deepened
+                            knowledge of accessibility standards and responsive
+                            design principles.
+                          </Text>
+                        </ListItem>
+                      </UnorderedList>
+                      <Text textStyle={"p"}>
+                        These insights have fundamentally shaped my design
+                        philosophy, emphasizing the importance of user-centered
+                        design, iterative development, and inclusive thinking in
+                        creating impactful digital experiences.
+                      </Text>
+                    </VStack>
                   </VStack>
                 </VStack>
               </Box>
@@ -1366,15 +1386,12 @@ const SteakHousePage = () => {
           {/* FIFTH SECTION SYNTHESIS CLOSE*/}
           <Divider variant="section" />
           <Footer />
-        
 
           {/* FIFTH SECTION REFLECTIONS CLOSE*/}
         </Box>
       </Grid>
-      
-    
     </>
   );
 };
 
-export default SteakHousePage;
+export default ArchivesPage;

@@ -10,6 +10,7 @@ import ReviewCarouselPage from "./pages/ReviewCarouselPage.js";
 import CareerTimelinePage from "./pages/CareerTimelinePage.js";
 import AboutmePage from "./pages/AboutmePage.js";
 import ContactPage from "./pages/ContactPage.js";
+import ArchivesPage from "./pages/ArchivesPage.js";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/projects/cianaresearch" element={<CianaResearchPage />} />
             <Route path="/projects" element={<ProjectSectionPage />} />
             <Route path="/projects/steakhouse" element={<SteakHousePage />} />
+            <Route path="/projects/aaa" element={<ArchivesPage />} />
             <Route path="/reviews" element={<ReviewCarouselPage />} />
             <Route path="/career" element={<CareerTimelinePage />} />
             <Route path="/aboutme" element={<AboutmePage />} />
