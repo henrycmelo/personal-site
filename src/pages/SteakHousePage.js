@@ -14,11 +14,10 @@ import {
   Flex,
   Spinner,
   AspectRatio,
-  List
-  
+  List,
 } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
-import competitors from '../assets/steakhouse/data/competitors';
+import competitors from "../assets/steakhouse/data/competitors";
 import VerticalProgressBar from "../components/VerticalProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -41,29 +40,32 @@ import {
   faPhone,
   faMobile,
   faSackDollar,
-  faClock
+  faClock,
+  faForward,
+  faUniversalAccess,
 } from "@fortawesome/free-solid-svg-icons";
 
 import problemImage from "../assets/steakhouse/Question.svg";
-import evolutiionImage from "../assets/steakhouse/evolution.svg"
+import evolutiionImage from "../assets/steakhouse/evolution.svg";
 import goalImage from "../assets/steakhouse/Checklist.svg";
-import interview from "../assets/steakhouse/interview.svg"
-import testingImage from "../assets/steakhouse/testing.svg"
+import interview from "../assets/steakhouse/interview.svg";
+import testingImage from "../assets/steakhouse/testing.svg";
 import questionImage from "../assets/ciana_research/question.svg";
 import processImage from "../assets/steakhouse/process.png";
 import gantChart from "../assets/ciana_research/ganttChart.png";
 import DividerSection from "../components/DividerSection";
 import objectivesImage from "../assets/ciana_research/objectives.svg";
 import researchQuestionsImage from "../assets/ciana_research/researchquestions.svg";
+import keyImage from "../assets/steakhouse/key.svg";
 import targetAudienceImage from "../assets/ciana_research/targetaudience.svg";
 import methodologyImage from "../assets/ciana_research/methodology.svg";
 import toolsImage from "../assets/ciana_research/tools.svg";
 import recruitingImage from "../assets/ciana_research/recruiting.svg";
-import market from "../assets/steakhouse/market.svg"
+import market from "../assets/steakhouse/market.svg";
 import interviewImage from "../assets/ciana_research/interview.svg";
 import documentationImage from "../assets/ciana_research/documentation.svg";
 import sayImage from "../assets/ciana_research/say.png";
-import decisionImage from "../assets/steakhouse/Decision.svg"
+import decisionImage from "../assets/steakhouse/Decision.svg";
 import thinkImage from "../assets/ciana_research/think.png";
 import feelImage from "../assets/ciana_research/feel.png";
 import doesImage from "../assets/ciana_research/does.png";
@@ -84,7 +86,7 @@ import cecLogo from "../assets/ciana_research/cecLogo.png";
 import banner from "../assets/steakhouse/steakhousebanner.png";
 import ResponsiveMenu from "../components/ResponsiveMenu";
 import MuteButton from "../components/MuteButton";
-import mockupBrief from "../assets/steakhouse/steakhousemockup.png"
+import mockupBrief from "../assets/steakhouse/steakhousemockup.png";
 import CompetitiveAnalysis from "../components/CompetitiveAnalysis";
 import UserPersona from "../components/PersonasSection";
 import PersonasSection from "../components/PersonasSection";
@@ -94,6 +96,11 @@ import PaperWireframes from "../components/PaperWireFrames";
 import DigitalWireframes from "../components/DigitalWireframes";
 import digitalWireframes from "../assets/steakhouse/data/digitalWireframes";
 import LofiPrototype from "../components/LofiPrototype";
+import UsabilityStudy from "../components/UsabilityStudy";
+import usabilityData from "../assets/steakhouse/data/usabilityData";
+import DesignRefinement from "../components/DesignRefinement";
+import impactImage from "../assets/steakhouse/impact.svg";
+import Footer from "../components/Footer"
 
 const SteakHousePage = () => {
   const { sections } = useAlertContext();
@@ -921,13 +928,17 @@ const SteakHousePage = () => {
                       backgroundColor={"semantic.background.secondary"}
                       w={"100%"}
                       p={12}
+                      boxShadow={"md"}
                     >
-                      <VStack >
-                        <Box display='flex' justifyContent={'center'}>
-                        <Image src={decisionImage} alt="market illustration" w={"100px"} />
-
+                      <VStack>
+                        <Box display="flex" justifyContent={"center"}>
+                          <Image
+                            src={decisionImage}
+                            alt="market illustration"
+                            w={"100px"}
+                          />
                         </Box>
-                      
+
                         <Text
                           as="p"
                           textStyle={"pbold"}
@@ -956,20 +967,28 @@ const SteakHousePage = () => {
                       Digital wireframes
                     </Text>
                     <Text as="p" textStyle="p" pb={4}>
-                    Taking the refined paper concepts into Figma, I created detailed digital wireframes to establish clear user flows and interface hierarchy. These wireframes focused on implementing key features identified during user research while maintaining simplicity and usability.
+                      Taking the refined paper concepts into Figma, I created
+                      detailed digital wireframes to establish clear user flows
+                      and interface hierarchy. These wireframes focused on
+                      implementing key features identified during user research
+                      while maintaining simplicity and usability.
                     </Text>
                     <DigitalWireframes digital={digitalWireframes} />
                     <Box
                       backgroundColor={"semantic.background.secondary"}
                       w={"100%"}
                       p={12}
+                      boxShadow={"md"}
                     >
-                      <VStack >
-                        <Box display='flex' justifyContent={'center'}>
-                        <Image src={evolutiionImage} alt="evolution iamage" w={"100px"} />
-
+                      <VStack>
+                        <Box display="flex" justifyContent={"center"}>
+                          <Image
+                            src={evolutiionImage}
+                            alt="evolution iamage"
+                            w={"100px"}
+                          />
                         </Box>
-                      
+
                         <Text
                           as="p"
                           textStyle={"pbold"}
@@ -978,7 +997,11 @@ const SteakHousePage = () => {
                           Design evolution
                         </Text>
                         <Text as="p" textStyle="p">
-                        The digital wireframes expanded upon the paper concepts, adding detailed interactions and refined user flows. Key improvements included enhanced location filtering, streamlined customization options, and clearer order tracking visualization.
+                          The digital wireframes expanded upon the paper
+                          concepts, adding detailed interactions and refined
+                          user flows. Key improvements included enhanced
+                          location filtering, streamlined customization options,
+                          and clearer order tracking visualization.
                         </Text>
                       </VStack>
                     </Box>
@@ -994,20 +1017,27 @@ const SteakHousePage = () => {
                       Low-fidelity prototype
                     </Text>
                     <Text as="p" textStyle="p" pb={4}>
-                    I created a clickable prototype in Figma to test the core user flows and gather feedback on the basic interface structure. This helped validate our design direction before moving into high-fidelity designs.
+                      I created a clickable prototype in Figma to test the core
+                      user flows and gather feedback on the basic interface
+                      structure. This helped validate our design direction
+                      before moving into high-fidelity designs.
                     </Text>
                     <LofiPrototype />
                     <Box
                       backgroundColor={"semantic.background.secondary"}
                       w={"100%"}
                       p={12}
+                      boxShadow={"md"}
                     >
-                      <VStack >
-                        <Box display='flex' justifyContent={'center'}>
-                        <Image src={testingImage} alt="evolution iamage" w={"100px"} />
-
+                      <VStack>
+                        <Box display="flex" justifyContent={"center"}>
+                          <Image
+                            src={testingImage}
+                            alt="evolution iamage"
+                            w={"100px"}
+                          />
                         </Box>
-                      
+
                         <Text
                           as="p"
                           textStyle={"pbold"}
@@ -1016,13 +1046,17 @@ const SteakHousePage = () => {
                           Prototype Testing
                         </Text>
                         <Text as="p" textStyle="p">
-                        This low-fidelity prototype connected key screens to create a clickable experience, allowing us to test the core functionalities of location selection, menu customization, and checkout process. User feedback from these tests informed our next design iterations.
+                          This low-fidelity prototype connected key screens to
+                          create a clickable experience, allowing us to test the
+                          core functionalities of location selection, menu
+                          customization, and checkout process. User feedback
+                          from these tests informed our next design iterations.
                         </Text>
                       </VStack>
                     </Box>
                   </VStack>
 
-                  <VStack alignItems="start" pt={4}>
+                  <VStack alignItems="start" py={4}>
                     <Text
                       as="p"
                       textStyle={"pbold"}
@@ -1032,36 +1066,43 @@ const SteakHousePage = () => {
                       Usability study
                     </Text>
                     <Text as="p" textStyle="p" pb={4}>
-                    I created a clickable prototype in Figma to test the core user flows and gather feedback on the basic interface structure. This helped validate our design direction before moving into high-fidelity designs.
+                      Conducted two rounds of usability studies with 6
+                      participants per round. The findings helped identify key
+                      areas for improvement in the ordering experience.
                     </Text>
-                    <LofiPrototype />
+                    <UsabilityStudy usabilityData={usabilityData} />
                     <Box
                       backgroundColor={"semantic.background.secondary"}
                       w={"100%"}
                       p={12}
+                      boxShadow={"md"}
                     >
-                      <VStack >
-                        <Box display='flex' justifyContent={'center'}>
-                        <Image src={testingImage} alt="evolution iamage" w={"100px"} />
-
+                      <VStack>
+                        <Box display="flex" justifyContent={"center"}>
+                          <Image
+                            src={keyImage}
+                            alt="evolution iamage"
+                            w={"100px"}
+                          />
                         </Box>
-                      
+
                         <Text
                           as="p"
                           textStyle={"pbold"}
                           textTransform={"capitalize"}
                         >
-                          Prototype Testing
+                          Key Improvements
                         </Text>
                         <Text as="p" textStyle="p">
-                        This low-fidelity prototype connected key screens to create a clickable experience, allowing us to test the core functionalities of location selection, menu customization, and checkout process. User feedback from these tests informed our next design iterations.
+                          After implementing changes based on Round 1 feedback,
+                          Round 2 testing showed significant improvements in
+                          user navigation and task completion. The refined
+                          interface led to better understanding of customization
+                          options and a more confident checkout process.
                         </Text>
                       </VStack>
                     </Box>
                   </VStack>
-
-
-                  
                 </VStack>
               </Box>
             </Box>
@@ -1072,264 +1113,67 @@ const SteakHousePage = () => {
 
           {/* FOURTH SECTION ANALYSIS OPEN*/}
           <section>
-            <Box id="analysis">
+            <Box id="refining">
               <Box px={12}>
                 <DividerSection>Phase 3 </DividerSection>
                 <VStack alignItems="start" pt={12} color="gray.600">
-                  <Text textStyle="h2" color="semantic.text.primary">
-                    Analysis
+                  <Text
+                    textStyle="h2"
+                    color="semantic.text.primary"
+                    textTransform={"capitalize"}
+                  >
+                    refining the design
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    The analysis phase utilized three complementary methods to
-                    synthesize the qualitative interview data. Empathy mapping
-                    visualized participant behaviors, quotes, thoughts, and
-                    feelings, while affinity diagramming grouped related
-                    insights to reveal patterns. These methods led to the
-                    identification of key themes around motivations, positive
-                    experiences, and improvement areas.
+                    Through two rounds of usability testing and iteration, the
+                    design evolved from a basic ordering system to an intuitive
+                    dining experience that puts users' needs first.
                   </Text>
 
                   {/* Content Empathy map and affinity diagram */}
 
-                  <VStack alignItems="start">
+                  <VStack alignItems="start" py={4}>
                     <Text
                       as="p"
                       textStyle={"pbold"}
                       color="semantic.text.primary"
                       textTransform={"uppercase"}
+                      pb={4}
                     >
-                      Empathy Map
+                      mockups
                     </Text>
-                    <Text as="p" textStyle={"p"}>
-                      The empathy map visualized participant experiences across
-                      four dimensions: what parents said{" "}
-                      <Text as="i">
-                        {" "}
-                        ("I wanted to learn more about parental controls")
-                      </Text>
-                      , thought (the workshop should be longer), did (attended
-                      workshops to improve her knowledge), and felt (frustated
-                      because there were a few things hard to understand). This
-                      mapping revealed the complex interplay between parents'
-                      explicit statements and their underlying needs around
-                      digital safety.
-                    </Text>
-                    <Grid
-                      templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+                    <DesignRefinement />
+                    <Box
+                      backgroundColor={"semantic.background.secondary"}
+                      w={"100%"}
+                      p={12}
+                      boxShadow={"md"}
                     >
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign={"center"}
-                            textTransform={"capitalize"}
-                          >
-                            Say
-                          </Text>
-                          <OverlayImage src={sayImage} alt="empathy map say" />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign={"center"}
-                            textTransform={"capitalize"}
-                          >
-                            Think
-                          </Text>
-                          <OverlayImage
-                            src={thinkImage}
-                            alt="empathy map think"
+                      <VStack>
+                        <Box display="flex" justifyContent={"center"}>
+                          <Image
+                            src={impactImage}
+                            alt="evolution iamage"
+                            w={"100px"}
                           />
                         </Box>
-                      </GridItem>
 
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign={"center"}
-                            textTransform={"capitalize"}
-                          >
-                            Feel
-                          </Text>
-
-                          <OverlayImage
-                            src={feelImage}
-                            alt="empathy map feel"
-                          />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign={"center"}
-                            textTransform={"capitalize"}
-                          >
-                            Does
-                          </Text>
-                          <OverlayImage
-                            isGrayImage
-                            src={doesImage}
-                            alt="empathy map does"
-                          />
-                        </Box>
-                      </GridItem>
-                    </Grid>
-                  </VStack>
-
-                  <VStack alignItems="start">
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      textTransform={"uppercase"}
-                      color="semantic.text.primary"
-                    >
-                      Affinity Diagram & Theme Identification
-                    </Text>
-                    <Text as="p" textStyle={"p"}>
-                      Through our affinity diagramming process, I organized the
-                      sticky notes from the empathy map into three main
-                      categories: Positive Feedback, Motivations/Goals, and
-                      Frustrations. Within each category, key themes emerged.
-                      Below are the themes identified with supporting
-                      participant quotes.
-                    </Text>
-
-                    <Grid
-                      templateColumns={{ base: "1fr", md: "1fr 1fr" }}
-                      gap={6}
-                      pt={6}
-                    >
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign="center"
-                            textTransform={"capitalize"}
-                          >
-                            Clarity & impact
-                          </Text>
-                          <OverlayImage
-                            src={clarityImage}
-                            alt="clarity Theme"
-                          />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign="center"
-                            textTransform={"capitalize"}
-                          >
-                            practical insights & learning outcomes
-                          </Text>
-                          <OverlayImage
-                            src={practicalImage}
-                            alt="practical Theme"
-                          />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign="center"
-                            textTransform={"capitalize"}
-                          >
-                            commitment to child development & safety
-                          </Text>
-                          <OverlayImage src={childImage} alt="child Theme" />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign="center"
-                            textTransform={"capitalize"}
-                          >
-                            proactive digital parenting
-                          </Text>
-                          <OverlayImage
-                            src={proactiveImage}
-                            alt="proactive Theme"
-                          />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign="center"
-                            textTransform={"capitalize"}
-                          >
-                            reinforcing digital safety for kids
-                          </Text>
-                          <OverlayImage
-                            src={reinforcingImage}
-                            alt="reinforcing Theme"
-                          />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign="center"
-                            textTransform={"capitalize"}
-                          >
-                            scheduling & accessibility
-                          </Text>
-                          <OverlayImage
-                            src={schedulingImage}
-                            alt="scheduling Theme"
-                          />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign="center"
-                            textTransform={"capitalize"}
-                          >
-                            technical difficulties & setup
-                          </Text>
-                          <OverlayImage
-                            src={technicalImage}
-                            alt="scheduling Theme"
-                          />
-                        </Box>
-                      </GridItem>
-
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign="center"
-                            textTransform={"capitalize"}
-                          >
-                            workshop delivery & content
-                          </Text>
-                          <OverlayImage
-                            src={workshopImage}
-                            alt="scheduling Theme"
-                          />
-                        </Box>
-                      </GridItem>
-                    </Grid>
+                        <Text
+                          as="p"
+                          textStyle={"pbold"}
+                          textTransform={"capitalize"}
+                        >
+                          Design Impact
+                        </Text>
+                        <Text as="p" textStyle="p">
+                          Through iterative design and user testing, I created
+                          an intuitive ordering system that significantly
+                          improved the user experience. The final design
+                          successfully addresses key user pain points while
+                          maintaining the premium feel of the steakhouse brand.
+                        </Text>
+                      </VStack>
+                    </Box>
                   </VStack>
                 </VStack>
               </Box>
@@ -1341,153 +1185,190 @@ const SteakHousePage = () => {
 
           {/* FIFTH SECTION SYNTHESIS OPEN*/}
           <section>
-            <Box id="synthesis">
+            <Box id="going">
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
                 <VStack alignItems="start" pt={12} pb={12} color="gray.600">
-                  <Text textStyle="h2" color="semantic.text.primary">
-                    Synthesis
+                  <Text
+                    textStyle="h2"
+                    color="semantic.text.primary"
+                    textTransform="capitalize"
+                  >
+                    going forward
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    Through my analysis, clear patterns emerged leading to
-                    actionable recommendations for improving the digital safety
-                    workshops. Below are the fourt key recommendations based on
-                    participant feedback and identified themes, followed by our
-                    conclusion about the workshop's effectiveness and future
-                    direction.
+                    This project provided valuable insights about user-centered
+                    design and the importance of iterative development in
+                    creating impactful solutions.
                   </Text>
 
                   <VStack alignItems="start">
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      Recommendations
-                    </Text>
-
                     <Grid
-                      templateColumns={{ base: "1fr", md: "1fr 1fr" }}
-                      gap={6}
-                      pt={12}
-                      px={12}
+                      templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+                      gap={8}
+                      color="gray.600"
                     >
+                      {/* Accessibility */}
                       <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign={"center"}
-                            textTransform={"capitalize"}
-                          >
-                            Flexible scheduling
-                          </Text>
-                          <Box boxSize={"200px"} margin="0 auto">
-                            <Image
-                              src={recommendationScheduleImage}
-                              alt="calendar Illustration"
+                        <Box
+                          bg="semantic.background.secondary"
+                          p={6}
+                          height="100%"
+                        >
+                          <Box mb={4}>
+                            <FontAwesomeIcon
+                              icon={faUniversalAccess}
+                              size="xl"
                             />
                           </Box>
-                          <Text textStyle="p">
-                            Offer workshops at various times to accommodate
-                            different schedules. Consider recording sessions for
-                            on-demand access.
+                          <Text textStyle="pbold" mb={3}>
+                            Accessibility Considerations
                           </Text>
+                          <UnorderedList spacing={3}>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                WCAG 2.1 compliant design system
+                              </Text>
+                            </ListItem>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                Screen reader optimization
+                              </Text>
+                            </ListItem>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                Keyboard navigation support
+                              </Text>
+                            </ListItem>
+                          </UnorderedList>
                         </Box>
                       </GridItem>
 
+                      {/* Key Learnings */}
                       <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign={"center"}
-                            textTransform={"capitalize"}
-                          >
-                            Enhanced technical support
-                          </Text>
-                          <Box boxSize={"200px"} margin="0 auto">
-                            <Image
-                              src={recommendationTechnicalImage}
-                              alt="laptop Illustration"
-                            />
+                        <Box
+                          bg="semantic.background.secondary"
+                          p={6}
+                          height="100%"
+                        >
+                          <Box mb={4}>
+                            <FontAwesomeIcon icon={faLightbulb} size="xl" />
                           </Box>
-                          <Text textStyle="p">
-                            Provide follow-up materials and technical assistance
-                            to help participants apply what they have learned.
-                            Ensure all promised materials are sent right away.
+                          <Text textStyle="pbold" mb={3}>
+                            Key Learnings
                           </Text>
+                          <UnorderedList spacing={3}>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                Balancing business requirements with user needs
+                                creates the most effective solutions
+                              </Text>
+                            </ListItem>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                Early user testing saves development time and
+                                improves final outcomes
+                              </Text>
+                            </ListItem>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                Designing for accessibility from the start
+                                benefits all users
+                              </Text>
+                            </ListItem>
+                          </UnorderedList>
                         </Box>
                       </GridItem>
 
+                      {/* Next Steps */}
                       <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign={"center"}
-                            textTransform={"capitalize"}
-                          >
-                            Improved content delivery
-                          </Text>
-                          <Box boxSize={"200px"} margin="0 auto">
-                            <Image
-                              src={recommendationContentImage}
-                              alt="laptop Illustration"
-                            />
+                        <Box
+                          bg="semantic.background.secondary"
+                          p={6}
+                          height="100%"
+                        >
+                          <Box mb={4}>
+                            <FontAwesomeIcon icon={faForward} size="xl" />
                           </Box>
-                          <Text textStyle="p">
-                            Incorporate more visual aids and interactive
-                            elements to engage participants and clarify complex
-                            topics. Consider live demonstrations for technical
-                            setups such as parental controls on their
-                            phone/tablet/laptop.
+                          <Text textStyle="pbold" mb={3}>
+                            Next Steps
                           </Text>
-                        </Box>
-                      </GridItem>
-                      <GridItem>
-                        <Box pb={4}>
-                          <Text
-                            textStyle="pbold"
-                            textAlign={"center"}
-                            textTransform={"capitalize"}
-                          >
-                            Target workshop for children
-                          </Text>
-                          <Box boxSize={"200px"} margin="0 auto">
-                            <Image
-                              src={recommendationKidsImage}
-                              alt="laptop Illustration"
-                            />
-                          </Box>
-                          <Text textStyle="p">
-                            Develop sessions specifically for children to
-                            reinforce the concepts taught to parents, ensuring
-                            the education about digital safety is for both
-                            children and their parents.
-                          </Text>
+                          <UnorderedList spacing={3}>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                Develop personalized recommendation system
+                              </Text>
+                            </ListItem>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                Implement loyalty program features
+                              </Text>
+                            </ListItem>
+                            <ListItem gap={2}>
+                              <Text textStyle="caption">
+                                Add multi-language support
+                              </Text>
+                            </ListItem>
+                          </UnorderedList>
                         </Box>
                       </GridItem>
                     </Grid>
                   </VStack>
 
-                  <VStack alignItems="start">
+                  <VStack alignItems="start" py={12}>
                     <Text
                       as="p"
                       textStyle={"pbold"}
                       textTransform={"uppercase"}
                       color="semantic.text.primary"
                     >
-                      Conclusion
+                      Takeaways
                     </Text>
                     <Text as="p" textStyle={"p"}>
-                      The qualitative analysis of participant feedback
-                      highlights both the strengths and areas for improvements
-                      in our digital safety workshops. By addressing the
-                      identified frustrations and implementing the proposed
-                      recommendations, we can improve the overall effectiveness
-                      and satisfaction of our workshops, ultimately providing
-                      better support for parents and their children in
-                      navigating digital safety.
+                    This project transformed my approach to UX design in
+                    several key ways:
                     </Text>
+                    <VStack align="stretch" >
+                       
+                        <UnorderedList textStyle={"p"} pb={4}>
+                          <ListItem  >
+                            <Text >
+                              <strong>Research Impact:</strong> Learned how
+                              early user insights can significantly reduce
+                              development time and improve final outcomes.
+                            </Text>
+                          </ListItem>
+                          <ListItem  >
+                            <Text >
+                              <strong>Business Thinking:</strong> Developed
+                              ability to balance user needs with business
+                              requirements while maintaining design integrity.
+                            </Text>
+                          </ListItem>
+                          <ListItem  >
+                            <Text >
+                              <strong>Leadership Growth:</strong> Gained
+                              confidence in presenting design decisions and
+                              leading stakeholder discussions.
+                            </Text>
+                          </ListItem>
+                          <ListItem  >
+                            <Text >
+                              <strong>Technical Understanding:</strong> Deepened
+                              knowledge of accessibility standards and
+                              responsive design principles.
+                            </Text>
+                          </ListItem>
+                        </UnorderedList>
+                        <Text textStyle={'p'}>
+                          These insights have fundamentally shaped my design
+                          philosophy, emphasizing the importance of
+                          user-centered design, iterative development, and
+                          inclusive thinking in creating impactful digital
+                          experiences.
+                        </Text>
+                      </VStack>
+                    
                   </VStack>
                 </VStack>
               </Box>
@@ -1496,82 +1377,14 @@ const SteakHousePage = () => {
 
           {/* FIFTH SECTION SYNTHESIS CLOSE*/}
           <Divider variant="section" />
-          {/* SIXTH SECTION REFLECTIONS OPEN*/}
-          <section>
-            <Box id="reflection">
-              <Box px={12}>
-                <DividerSection>Phase 4 </DividerSection>
-                <VStack alignItems="start" pt={12} color="gray.600">
-                  <Text textStyle="h2" color="semantic.text.primary">
-                    Takeaways
-                  </Text>
-                  <Text as="p" textStyle={"p"}>
-                    I feel fortunate to have had the opportunity to work on
-                    digital safety workshops that directly impact parents in the
-                    Corona, Queens community. Through this experience, I learned
-                    several valuable lessons:
-                  </Text>
-
-                  <UnorderedList textStyle={"p"} pb={4}>
-                    <ListItem>
-                      <Text as="p" textStyle={"p"}>
-                        <Text as="span" textStyle="pbold">
-                          Qualitative insights reveal deeper understanding -{" "}
-                        </Text>
-                        Our shift from quantitative surveys to qualitative
-                        interviews proved crucial in uncovering the real needs
-                        and challenges of parents. This taught me that sometimes
-                        the most valuable insights come from listening to
-                        personal stories rather than just collecting metrics.
-                      </Text>
-                    </ListItem>
-
-                    <ListItem>
-                      <Text as="p" textStyle={"p"}>
-                        <Text as="span" textStyle="pbold">
-                          Flexibility in research methods is key -{" "}
-                        </Text>
-                        Learning to adapt and choose the right research method
-                        for the context was essential. Post-workshop interviews
-                        provided richer insights into parent experiences than
-                        surveys would have, showing me how different research
-                        approaches can lead to different types of understanding.
-                      </Text>
-                    </ListItem>
-
-                    <ListItem>
-                      <Text as="p" textStyle={"p"}>
-                        <Text as="span" textStyle="pbold">
-                          Community needs drive research direction -{" "}
-                        </Text>
-                        The research revealed how community context shapes
-                        program effectiveness. Understanding parents' scheduling
-                        constraints, technical challenges, and cultural
-                        perspectives helped develop more relevant and accessible
-                        workshop recommendations.
-                      </Text>
-                    </ListItem>
-
-                    <ListItem>
-                      <Text as="p" textStyle={"p"}>
-                        <Text as="span" textStyle="pbold">
-                          Research synthesis tools enhance understanding -{" "}
-                        </Text>
-                        Using empathy maps and affinity diagrams taught me how
-                        to transform individual feedback into actionable
-                        insights. These tools helped bridge the gap between raw
-                        data and meaningful recommendations.
-                      </Text>
-                    </ListItem>
-                  </UnorderedList>
-                </VStack>
-              </Box>
-            </Box>
-          </section>
+          <Footer />
+        
 
           {/* FIFTH SECTION REFLECTIONS CLOSE*/}
         </Box>
       </Grid>
+      
+    
     </>
   );
 };
