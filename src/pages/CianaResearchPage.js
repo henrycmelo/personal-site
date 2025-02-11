@@ -422,7 +422,10 @@ const CianaResearchPage = () => {
                     color='gray.600'
                   >
                     <GridItem>
-                      <Box pb={4}>
+                      <Box pb={4} display="flex" 
+                        flexDirection="column" 
+                        alignItems="center" 
+                        justifyContent="center">
                         <Text textStyle="pbold" textAlign={"center"} color='semantic.text.primary' textTransform={'uppercase'}>
                           Question
                         </Text>
@@ -439,7 +442,11 @@ const CianaResearchPage = () => {
 
                     {/* Text Column 2 */}
                     <GridItem>
-                      <Box pb={4}>
+                      <Box pb={4} 
+      display="flex" 
+      flexDirection="column" 
+      alignItems="center" 
+      justifyContent="center">
                         <Text textStyle="pbold" textAlign={"center"} color='semantic.text.primary' textTransform={'uppercase'}>
                           Answer
                         </Text>

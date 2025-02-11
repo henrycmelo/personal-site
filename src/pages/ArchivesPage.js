@@ -50,11 +50,16 @@ import {
   faChartBar,
   faUsers,
   faMousePointer,
+  faHandHoldingUsd,
+  faCreditCard,
+  faSearchLocation,
+  faCompass,
 } from "@fortawesome/free-solid-svg-icons";
 
 import problemImage from "../assets/steakhouse/Question.svg";
 import evolutiionImage from "../assets/steakhouse/evolution.svg";
 import goalImage from "../assets/steakhouse/Checklist.svg";
+import recruitImage from "../assets/archives/recruit.svg"
 import interview from "../assets/steakhouse/interview.svg";
 import testingImage from "../assets/steakhouse/testing.svg";
 import questionImage from "../assets/ciana_research/question.svg";
@@ -109,6 +114,13 @@ import DesignRefinement from "../components/DesignRefinement";
 import impactImage from "../assets/steakhouse/impact.svg";
 import Footer from "../components/Footer";
 import profileImage from "../assets/archives/profile.svg";
+import userTestingLogo from "../assets/archives/usertesting.svg"
+import userTestingImage from "../assets/archives/testing.svg"
+import UsabilityMetrics from "../components/UsabilityMetrics";
+import ctaImage from "../assets/archives/ctasticky.png"
+import heroImage from "../assets/archives/herosticky.png"
+import visualImage from "../assets/archives/visualsticky.png"
+import layoutImage from "../assets/archives/layoutsticky.png"
 
 const ArchivesPage = () => {
   const { sections } = useAlertContext();
@@ -604,7 +616,7 @@ const ArchivesPage = () => {
           {/* FIRST SECTION CLOSE */}
           <Divider variant="section" />
 
-          {/* SECOND SECTION PLANNING OPEN*/}
+          {/* SECOND SECTION RESEARCH OPEN*/}
           <section>
             <Box id="research">
               <Box px={12}>
@@ -774,121 +786,191 @@ const ArchivesPage = () => {
 
               {/* Key Findings */}
 
-              {/* Key Findings  Close*/}
-              <Box px={12}>
-                <VStack
-                  alignItems="start"
-                  pt={12}
-                  color={"gray.600"}
-                  textStyle={"p"}
+              <Box p={12}>
+                <Grid
+                  templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+                  gap={6}
+                  color="gray.600"
                 >
+                  <GridItem>
+                    <Box
+                      pb={4}
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Text
+                        textStyle="pbold"
+                        color="semantic.text.primary"
+                        textTransform={"uppercase"}
+                      >
+                        donor profile creation
+                      </Text>
+                      <Box boxSize={"400px"}>
+                        <Image src={profileImage} />
+                      </Box>
+
+                      <Text as="p" textStyle="pbold">
+                        Based on this research, we identified our target donor:
+                      </Text>
+                      <UnorderedList
+                        spacing={3}
+                        textStyle={"p"}
+                        alignSelf="flex-start"
+                        pb={4}
+                      >
+                        <ListItem>Age: 35-65 years old</ListItem>
+                        <ListItem>Education: College degree+</ListItem>
+                        <ListItem>Income: $75,000+</ListItem>
+                        <ListItem>Tech-savvy professionals</ListItem>
+                        <ListItem>Regular charitable giving habits</ListItem>
+                        <ListItem>Interest in arts and culture</ListItem>
+                      </UnorderedList>
+                    </Box>
+                  </GridItem>
+
+                  {/* Text Column 2 */}
+                  <GridItem>
+                    <Box
+                      pb={4}
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <Text
+                        textStyle="pbold"
+                        textAlign={"center"}
+                        color="semantic.text.primary"
+                        textTransform={"uppercase"}
+                      >
+                        Screening & Recruitment
+                      </Text>
+                      <Box boxSize={"400px"}>
+                        <Image src={recruitImage} />
+                      </Box>
+                      <Text as="p" textStyle="pbold">
+                        Created screening criteria to match identified donor
+                        profile:
+                      </Text>
+                      <UnorderedList
+                        spacing={3}
+                        textStyle="p"
+                        alignSelf="flex-start"
+                        pb={4}
+                      >
+                        <ListItem>
+                          Must have donated online in past 12 months
+                        </ListItem>
+                        <ListItem>
+                          Regular interaction with cultural institutions
+                        </ListItem>
+                        <ListItem>
+                          Comfortable with digital transactions
+                        </ListItem>
+                        <ListItem>Mix of first-time and repeat donors</ListItem>
+                      </UnorderedList>
+                    </Box>
+                  </GridItem>
+                </Grid>
+
+                <VStack alignItems="start">
                   <Text
                     as="p"
                     textStyle={"pbold"}
                     color="semantic.text.primary"
                     textTransform={"uppercase"}
                   >
-                    donor profile creation
+                    Screening Process Development
                   </Text>
-                  <Text as="p" textStyle="p" pb={4}>
-                    Based on this research, we identified our target donor:
+                  <Text as="p" textStyle="p">
+                    Developed a comprehensive screening questionnaire to
+                    identify participants who matched our target donor profile.
+                    The questionnaire was structured in sections to ensure
+                    thorough participant screening:
                   </Text>
-                  <Grid
-                    templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
-                    color="gray.600"
-                    alignItems="flex-start"
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScYzFCW2I8QsShj7lbau4GReLowXljwmnw0weZAC1z3W_x8xA/viewform?usp=header"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {/* Left Column - Profile List */}
-                    <GridItem>
-                      <List spacing={3}>
-                        <ListItem>
-                          <Text>• Age: 35-65 years old</Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>• Education: College degree+</Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>• Income: $75,000+</Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>• Tech-savvy professionals</Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>• Regular charitable giving habits</Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>• Interest in arts and culture</Text>
-                        </ListItem>
-                      </List>
-                    </GridItem>
+                    <Text
+                      as={"p"}
+                      textStyle={"p"}
+                      decoration={"underline"}
+                      pb={4}
+                    >
+                      (View Screening Form)
+                    </Text>
+                  </a>
+                  <UnorderedList spacing={4}>
+                    <ListItem>
+                      <Text textStyle="p">
+                        {" "}
+                        <Text as="span" textStyle="pbold">
+                          Demographics Validation:{" "}
+                        </Text>
+                        Age range, education level, and income brackets to match
+                        donor profile.
+                      </Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text textStyle="p">
+                        {" "}
+                        <Text as="span" textStyle="pbold">
+                          Donation Behavior:{" "}
+                        </Text>{" "}
+                        Previous online donation experience, frequency, and
+                        typical donation amounts.
+                      </Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text textStyle="p">
+                        {" "}
+                        <Text as="span" textStyle="pbold">
+                          Arts Engagement:{" "}
+                        </Text>
+                        Interest in arts and culture, frequency of museum
+                        visits, and engagement with cultural institutions.
+                      </Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text textStyle="p">
+                        {" "}
+                        <Text as="span" textStyle="pbold">
+                          Technical Proficiency:{" "}
+                        </Text>
+                        Comfort level with online transactions and digital
+                        platforms.
+                      </Text>
+                    </ListItem>
+                  </UnorderedList>
 
-                    {/* Right Column - Illustration */}
-                    <GridItem>
-                      <Box
-                        display="flex"
-                        alignItems="flex-start"
-                        justifyContent="flex-start"
-                        w="100%"
-                      >
-                        <Image
-                          src={profileImage}
-                          alt="Donor Profile Illustration"
-                          maxW="500px"
-                        />
-                      </Box>
-                    </GridItem>
-                  </Grid>
-
-                  <Text as="p" textStyle={"pbold"} textTransform={"capitalize"}>
-                    market opportunity
+                  <Text
+                    as="p"
+                    textStyle={"pbold"}
+                    color="semantic.text.primary"
+                    textTransform={"uppercase"}
+                    pt={12}
+                  >
+                    Recruitment platform
                   </Text>
                   <Flex gap={6} alignItems="center">
-                    <Image src={market} alt="market illustration" w={"100px"} />
+                    <OverlayImage
+                      src={userTestingLogo}
+                      alt="market illustration"
+                      maxW={"100px"}
+                    />
                     <Box textStyle={"p"} display="flex" alignItems="center">
                       <Text as="p" textStyle="p">
-                        Based on this analysis, there's a clear opportunity to
-                        combine premium restaurant quality with the technical
-                        convenience of delivery platforms, while eliminating
-                        high fees and maintaining food quality.
+                        We leveraged UserTesting.com's professional testing
+                        panel to recruit qualified participants who matched our
+                        target donor profile. The platform provided robust
+                        screening capabilities and automated scheduling tools.
                       </Text>
                     </Box>
                   </Flex>
-
-                  <VStack alignItems="start" pt={4}>
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      user personas
-                    </Text>
-
-                    <Text as="p" textStyle="p" pb={4}>
-                      Based on user interviews and survey data, I developed two
-                      distinct personas representing our core user groups. These
-                      personas helped guide design decisions and feature
-                      prioritization throughout the project.
-                    </Text>
-                    <PersonasSection personas={personas} />
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box px={12}>
-                <VStack alignItems="start" pt={12}>
-                  <Text
-                    as="p"
-                    textStyle={"pbold"}
-                    color="semantic.text.primary"
-                    textTransform={"uppercase"}
-                  >
-                    Journey Map
-                  </Text>
-                  <Text as="p" textStyle="p" pb={4}>
-                    Mapping the current ordering experience to identify pain
-                    points and opportunities for improvement.
-                  </Text>
-                  <JourneyMap />
                 </VStack>
               </Box>
             </Box>
@@ -899,7 +981,7 @@ const ArchivesPage = () => {
 
           {/* THIRD SECTION DATA COLLECTION OPEN*/}
           <section>
-            <Box id="starting">
+            <Box id="usability">
               <Box px={12}>
                 <DividerSection>Phase 2 </DividerSection>
                 <VStack alignItems="start" pt={12} color="gray.600">
@@ -908,212 +990,225 @@ const ArchivesPage = () => {
                     color="semantic.text.primary"
                     textTransform={"capitalize"}
                   >
-                    starting the design
+                    usability testing
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    After conducting user research and identifying key
-                    opportunities, I began the design process with paper
-                    wireframes. This phase focused on rapidly exploring
-                    different concepts and layouts before moving into digital
-                    wireframes and prototypes. The design process included:
+                    Conducted remote moderated usability testing sessions to
+                    evaluate the donation flow and identify opportunities for
+                    improvement. Each session was recorded for detailed
+                    analysis.
+                  </Text>
+                </VStack>
+              </Box>
+              <Box
+                backgroundColor={"semantic.background.secondary"}
+                w={"100%"}
+                p={12}
+                color={"gray.600"}
+              >
+                <VStack alignItems="center">
+                  <Text
+                    textStyle="pbold"
+                    textAlign={"center"}
+                    textTransform={"uppercase"}
+                    color="semantic.text.primary"
+                  >
+                    Remote usability testing session via UserTesting.com
                   </Text>
 
-                  {/* paper */}
-                  <VStack alignItems="start">
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      paper wireframes
-                    </Text>
-                    <Text as="p" textStyle="p" pb={4}>
-                      Using the Crazy 8 method, I explored different approaches
-                      to the main ordering interface. After sketching five
-                      variations, I refined the most promising concept that best
-                      addressed user needs and business goals.
-                    </Text>
-                    <PaperWireframes />
-                    <Box
-                      backgroundColor={"semantic.background.secondary"}
-                      w={"100%"}
-                      p={12}
-                      boxShadow={"md"}
-                    >
-                      <VStack>
-                        <Box display="flex" justifyContent={"center"}>
-                          <Image
-                            src={decisionImage}
-                            alt="market illustration"
-                            w={"100px"}
-                          />
+                  <Grid
+                    templateColumns={{ base: "1fr", md: "3fr 2fr" }}
+                    gap={8}
+                    alignItems={"center"}
+                  >
+                    {/* Testing Details */}
+                    <GridItem>
+                      <Box p={6}>
+                        <UnorderedList spacing={4}>
+                          <ListItem>
+                            <Text textStyle="p">
+                              <Text as="span" textStyle="pbold">
+                                Participants:{" "}
+                              </Text>
+                              8 qualified donors matching target user profile
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="p">
+                              <Text as="span" textStyle="pbold">
+                                Session Format:{" "}
+                              </Text>
+                              30-minute remote moderated sessions via
+                              UserTesting.com
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="p">
+                              <Text as="span" textStyle="pbold">
+                                Testing Scope:{" "}
+                              </Text>
+                              End-to-end donation flow from homepage to
+                              confirmation
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="p">
+                              <Text as="span" textStyle="pbold">
+                                Data Collection:{" "}
+                              </Text>
+                              Session recordings, think-aloud feedback, task
+                              completion metrics
+                            </Text>
+                          </ListItem>
+                        </UnorderedList>
+                      </Box>
+                    </GridItem>
+
+                    {/* Supporting Image */}
+                    <GridItem>
+                      <Box height="100%">
+                        <Image
+                          src={userTestingImage}
+                          alt="Usability Testing Session"
+                          width="100%"
+                          height="auto"
+                          objectFit="cover"
+                        />
+                      </Box>
+                    </GridItem>
+                  </Grid>
+                </VStack>
+              </Box>
+
+              <Box px={12}>
+                <VStack alignItems="start" py={12} color="gray.600">
+                  <Text
+                    as="p"
+                    textStyle={"pbold"}
+                    color="semantic.text.primary"
+                    textTransform={"uppercase"}
+                  >
+                    tasks scenarios
+                  </Text>
+                  <Text as="p" textStyle="p">
+                    Participants were asked to complete three core tasks that
+                    represent key user journeys in the donation process:
+                  </Text>
+                  <Grid
+                    templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+                    gap={8}
+                    color="gray.600"
+                  >
+                    {/* Task 1 */}
+                    <GridItem>
+                      <Box
+                        bg="semantic.background.secondary"
+                        p={6}
+                        height="100%"
+                      >
+                        <Box mb={4}>
+                          <FontAwesomeIcon icon={faCompass} size="xl" />
                         </Box>
-
-                        <Text
-                          as="p"
-                          textStyle={"pbold"}
-                          textTransform={"capitalize"}
-                        >
-                          Design decisions
+                        <Text textStyle="pbold" mb={3}>
+                          Task 1: Homepage Donation
                         </Text>
-                        <Text as="p" textStyle="p">
-                          After exploring multiple layouts, I selected and
-                          refined the most effective design that prioritized
-                          easy location selection and clear menu navigation.
-                          This approach best addressed our users' need for quick
-                          and efficient ordering.
-                        </Text>
-                      </VStack>
-                    </Box>
-                  </VStack>
+                        <UnorderedList spacing={3}>
+                          <ListItem>
+                            <Text textStyle="caption">
+                              "Starting from the homepage, find and begin the
+                              donation process."
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="caption">
+                              Locate donation button
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="caption">
+                              Navigate to donation form
+                            </Text>
+                          </ListItem>
+                        </UnorderedList>
+                      </Box>
+                    </GridItem>
 
-                  <VStack alignItems="start" pt={4}>
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      Digital wireframes
-                    </Text>
-                    <Text as="p" textStyle="p" pb={4}>
-                      Taking the refined paper concepts into Figma, I created
-                      detailed digital wireframes to establish clear user flows
-                      and interface hierarchy. These wireframes focused on
-                      implementing key features identified during user research
-                      while maintaining simplicity and usability.
-                    </Text>
-                    <DigitalWireframes digital={digitalWireframes} />
-                    <Box
-                      backgroundColor={"semantic.background.secondary"}
-                      w={"100%"}
-                      p={12}
-                      boxShadow={"md"}
-                    >
-                      <VStack>
-                        <Box display="flex" justifyContent={"center"}>
-                          <Image
-                            src={evolutiionImage}
-                            alt="evolution iamage"
-                            w={"100px"}
-                          />
+                    {/* Task 2 */}
+                    <GridItem>
+                      <Box
+                        bg="semantic.background.secondary"
+                        p={6}
+                        height="100%"
+                      >
+                        <Box mb={4}>
+                          <FontAwesomeIcon icon={faHandHoldingUsd} size="xl" />
                         </Box>
-
-                        <Text
-                          as="p"
-                          textStyle={"pbold"}
-                          textTransform={"capitalize"}
-                        >
-                          Design evolution
+                        <Text textStyle="pbold" mb={3}>
+                          Task 2: Donation Amount
                         </Text>
-                        <Text as="p" textStyle="p">
-                          The digital wireframes expanded upon the paper
-                          concepts, adding detailed interactions and refined
-                          user flows. Key improvements included enhanced
-                          location filtering, streamlined customization options,
-                          and clearer order tracking visualization.
-                        </Text>
-                      </VStack>
-                    </Box>
-                  </VStack>
+                        <UnorderedList spacing={3}>
+                          <ListItem>
+                            <Text textStyle="caption">
+                              "Select a donation amount and any additional
+                              options."
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="caption">
+                              Choose donation amount
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="caption">
+                              Review giving options
+                            </Text>
+                          </ListItem>
+                        </UnorderedList>
+                      </Box>
+                    </GridItem>
 
-                  <VStack alignItems="start" pt={4}>
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      Low-fidelity prototype
-                    </Text>
-                    <Text as="p" textStyle="p" pb={4}>
-                      I created a clickable prototype in Figma to test the core
-                      user flows and gather feedback on the basic interface
-                      structure. This helped validate our design direction
-                      before moving into high-fidelity designs.
-                    </Text>
-                    <LofiPrototype />
-                    <Box
-                      backgroundColor={"semantic.background.secondary"}
-                      w={"100%"}
-                      p={12}
-                      boxShadow={"md"}
-                    >
-                      <VStack>
-                        <Box display="flex" justifyContent={"center"}>
-                          <Image
-                            src={testingImage}
-                            alt="evolution iamage"
-                            w={"100px"}
-                          />
+                    {/* Task 3 */}
+                    <GridItem>
+                      <Box
+                        bg="semantic.background.secondary"
+                        p={6}
+                        height="100%"
+                      >
+                        <Box mb={4}>
+                          <FontAwesomeIcon icon={faCreditCard} size="xl" />
                         </Box>
-
-                        <Text
-                          as="p"
-                          textStyle={"pbold"}
-                          textTransform={"capitalize"}
-                        >
-                          Prototype Testing
+                        <Text textStyle="pbold" mb={3}>
+                          Task 3: Complete Checkout
                         </Text>
-                        <Text as="p" textStyle="p">
-                          This low-fidelity prototype connected key screens to
-                          create a clickable experience, allowing us to test the
-                          core functionalities of location selection, menu
-                          customization, and checkout process. User feedback
-                          from these tests informed our next design iterations.
-                        </Text>
-                      </VStack>
-                    </Box>
-                  </VStack>
-
-                  <VStack alignItems="start" py={4}>
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      color="semantic.text.primary"
-                      textTransform={"uppercase"}
-                    >
-                      Usability study
-                    </Text>
-                    <Text as="p" textStyle="p" pb={4}>
-                      Conducted two rounds of usability studies with 6
-                      participants per round. The findings helped identify key
-                      areas for improvement in the ordering experience.
-                    </Text>
-                    <UsabilityStudy usabilityData={usabilityData} />
-                    <Box
-                      backgroundColor={"semantic.background.secondary"}
-                      w={"100%"}
-                      p={12}
-                      boxShadow={"md"}
-                    >
-                      <VStack>
-                        <Box display="flex" justifyContent={"center"}>
-                          <Image
-                            src={keyImage}
-                            alt="evolution iamage"
-                            w={"100px"}
-                          />
-                        </Box>
-
-                        <Text
-                          as="p"
-                          textStyle={"pbold"}
-                          textTransform={"capitalize"}
-                        >
-                          Key Improvements
-                        </Text>
-                        <Text as="p" textStyle="p">
-                          After implementing changes based on Round 1 feedback,
-                          Round 2 testing showed significant improvements in
-                          user navigation and task completion. The refined
-                          interface led to better understanding of customization
-                          options and a more confident checkout process.
-                        </Text>
-                      </VStack>
-                    </Box>
-                  </VStack>
+                        <UnorderedList spacing={3}>
+                          <ListItem>
+                            <Text textStyle="caption">
+                              "Complete the donation process including payment
+                              information."
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="caption">
+                              Fill payment details
+                            </Text>
+                          </ListItem>
+                          <ListItem>
+                            <Text textStyle="caption">Review and confirm</Text>
+                          </ListItem>
+                        </UnorderedList>
+                      </Box>
+                    </GridItem>
+                  </Grid>
+                  <Text as="p" textStyle={"pbold"} textTransform={"capitalize"}>
+                  Initial Usability Test Results
+                  </Text>
+                  <Text as="p" textStyle="p">
+                    Each task was evaluated based on completion rate, time on
+                    task, and error rate. Participants were encouraged to think
+                    aloud, providing qualitative feedback throughout the
+                    process.
+                  </Text>
+                  <UsabilityMetrics />
                 </VStack>
               </Box>
             </Box>
@@ -1124,7 +1219,7 @@ const ArchivesPage = () => {
 
           {/* FOURTH SECTION ANALYSIS OPEN*/}
           <section>
-            <Box id="refining">
+            <Box id="synthesis">
               <Box px={12}>
                 <DividerSection>Phase 3 </DividerSection>
                 <VStack alignItems="start" pt={12} color="gray.600">
@@ -1133,15 +1228,66 @@ const ArchivesPage = () => {
                     color="semantic.text.primary"
                     textTransform={"capitalize"}
                   >
-                    refining the design
+                    synthesis
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    Through two rounds of usability testing and iteration, the
-                    design evolved from a basic ordering system to an intuitive
-                    dining experience that puts users' needs first.
+                  Using FigJam's digital whiteboard, our team collaboratively analyzed the usability test findings. We created virtual sticky notes for each observation from the testing sessions, gathering over 150 data points. Through remote brainstorming sessions, we grouped these notes into related clusters, identifying emerging patterns and pain points. This affinity mapping exercise helped us transform individual user insights into actionable themes that would guide our design decisions.
                   </Text>
-
                   {/* Content Empathy map and affinity diagram */}
+                  <Grid
+                      templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+                      gap={6}
+                      pt={6}
+                    >
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                          Call-to-Action Visibility
+                          </Text>
+                          <OverlayImage
+                            src={ctaImage}
+                            alt="call-to-action Theme"
+                          />
+                        </Box>
+                      </GridItem>
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                          Hero Section Issues
+                          </Text>
+                          <OverlayImage
+                            src={heroImage}
+                            alt="hero section Theme"
+                          />
+                        </Box>
+                      </GridItem>
+
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                          Visual Hierarchy Problems
+                          </Text>
+                          <OverlayImage
+                            src={visualImage}
+                            alt="visual Theme"
+                          />
+                        </Box>
+                      </GridItem>
+                      <GridItem>
+                        <Box pb={4}>
+                          <Text textStyle="pbold" textAlign="center" textTransform={'capitalize'}>
+                          Layout Navigation
+                          </Text>
+                          <OverlayImage
+                            src={layoutImage}
+                            alt="layout Theme"
+                          />
+                        </Box>
+                      </GridItem>
+
+                  </Grid>
+
+                  
 
                   <VStack alignItems="start" py={4}>
                     <Text
