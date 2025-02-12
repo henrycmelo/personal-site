@@ -1,12 +1,10 @@
 import React from 'react';
 import {
   Box,
-  VStack,
   Grid,
   GridItem,
   Text,
   List,
-  ListItem,
   HStack,
 } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

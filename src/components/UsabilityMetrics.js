@@ -1,7 +1,5 @@
 import React from "react";
-import { Box, Text, VStack, Grid, GridItem, Flex, Image } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { Box, Text, VStack, Grid, GridItem, Image } from "@chakra-ui/react";
 import errorImage from "../assets/archives/error.svg"
 
 const UsabilityMetric = ({ number, label }) => (

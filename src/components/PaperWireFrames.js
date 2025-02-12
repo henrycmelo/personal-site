@@ -3,12 +3,10 @@ import {
   Box,
   Grid,
   GridItem,
-  Heading,
   Text,
   Image,
   VStack,
   HStack,
-  Tag
 } from '@chakra-ui/react';
 import paperwireframe1 from "../assets/steakhouse/paperwireframe1.png"
 import paperwireframe2 from "../assets/steakhouse/paperwireframe2.png"

@@ -3,12 +3,10 @@ import {
   Box,
   Grid,
   GridItem,
-  Heading,
   Text,
   Image,
   VStack,
   HStack,
-  Tag,
   Divider
 } from '@chakra-ui/react';
 import Badges from './Badges';

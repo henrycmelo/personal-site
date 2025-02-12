@@ -10,10 +10,8 @@ import {
   HStack,
   List,
   ListItem,
-  Tag,
-  Divider
 } from '@chakra-ui/react';
-import { faUser, faBriefcase, faMapPin, faClock, faQuoteLeft, faBirthdayCake, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faMapPin, faQuoteLeft, faBirthdayCake, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Badges from './Badges';
 

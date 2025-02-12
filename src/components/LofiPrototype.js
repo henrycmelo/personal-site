@@ -2,13 +2,11 @@ import React from "react";
 import {
   Box,
   VStack,
-  Heading,
   Text,
   Image,
   AspectRatio,
   List,
   ListItem,
-  ListIcon,
   GridItem,
   Grid,
 } from "@chakra-ui/react";
@@ -81,7 +79,7 @@ const LofiPrototype = () => {
                   </List>
                   <AspectRatio ratio={9 / 16} maxH={"650px"}>
                     <iframe
-                      id="figma-iframe"
+                      title="figma-iframe"
                       style={{
                         border: "1px solid rgba(0, 0, 0, 0.1)",
                       }}
