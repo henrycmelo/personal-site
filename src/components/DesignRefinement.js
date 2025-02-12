@@ -6,7 +6,6 @@ import {
   GridItem,
   Text,
   Image,
-  Divider,
   AspectRatio,
   List,
   ListItem,
@@ -169,7 +168,7 @@ const DesignRefinement = () => {
           </List>
           <AspectRatio ratio={9 / 16} maxH={"650px"}>
             <iframe
-              id="figma-iframe"
+              title="figma-iframe"
               style={{
                 border: "1px solid rgba(0, 0, 0, 0.1)",
               }}
