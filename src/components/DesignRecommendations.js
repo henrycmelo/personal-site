@@ -3,12 +3,10 @@ import {
   Box,
   Grid,
   GridItem,
-  Heading,
   Text,
   Image,
   VStack,
   HStack,
-  Tag,
   Divider,
   Flex
 } from '@chakra-ui/react';
@@ -16,14 +14,14 @@ import Badges from './Badges';
 
 const DesignRecommendations = ({recommendations}) => {
   return (
-    <Box p={8} maxW="container.xl" color={'gray.600'}>
+    <Box   color={'gray.600'}>
       <VStack align="stretch" spacing={8}>
         <Grid templateColumns={{base: "1fr", md: "1fr"}} gap={8}>
           {recommendations.map((recommendation, index) => (
             <GridItem key={index}>
               <VStack align="stretch" spacing={6}>
-                <Heading size="md" textAlign="center">{recommendation.title}</Heading>
-                <Text textAlign="center" mb={4}>{recommendation.description}</Text>
+                <Text as='p' textStyle={'pbold'} textAlign={{base:"left", md:"center"}}>{recommendation.title}</Text>
+                <Text as='p' textStyle='p' textAlign={{base:"left", md:"center"}} mb={4}>{recommendation.description}</Text>
                 
                 <Flex 
                   direction={{base: "column", md: "row"}} 
@@ -33,7 +31,7 @@ const DesignRecommendations = ({recommendations}) => {
                 >
                   {/* Before Image */}
                   <Box flex={1} w="100%">
-                    <Text textAlign="center" mb={2} fontWeight="bold">Before</Text>
+                    <Text textAlign="center" mb={2} textStyle={'caption'}>Before</Text>
                     <Box maxW="500px" mx="auto">
                       <Image
                         src={recommendation.beforeImage}
@@ -41,16 +39,13 @@ const DesignRecommendations = ({recommendations}) => {
                         w="100%"
                         h="auto"
                         objectFit="contain"
-                        border="1px solid"
-                        borderColor="gray.200"
-                        boxShadow="md"
                       />
                     </Box>
                   </Box>
 
                   {/* After Image */}
                   <Box flex={1} w="100%">
-                    <Text textAlign="center" mb={2} fontWeight="bold">After</Text>
+                    <Text textAlign="center" mb={2} textStyle={'caption'}>After</Text>
                     <Box maxW="500px" mx="auto">
                       <Image
                         src={recommendation.afterImage}
@@ -58,9 +53,6 @@ const DesignRecommendations = ({recommendations}) => {
                         w="100%"
                         h="auto"
                         objectFit="contain"
-                        border="1px solid"
-                        borderColor="gray.200"
-                        boxShadow="md"
                       />
                     </Box>
                   </Box>
@@ -80,7 +72,10 @@ const DesignRecommendations = ({recommendations}) => {
                   </HStack>
                 </Box>
 
-                <Divider variant={'dividerSection'} my={4}/>
+                {/* Only show divider if it's not the last element */}
+                {index !== recommendations.length - 1 && (
+                  <Divider variant={'dividerSection'} my={4}/>
+                )}
               </VStack>
             </GridItem>
           ))}

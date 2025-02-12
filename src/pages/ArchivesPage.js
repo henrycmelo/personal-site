@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   VStack,
@@ -8,41 +8,20 @@ import {
   GridItem,
   Divider,
   HStack,
-  Button,
   ListItem,
   UnorderedList,
   Flex,
-  Spinner,
-  AspectRatio,
-  List,
 } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
-import competitors from "../assets/steakhouse/data/competitors";
 import VerticalProgressBar from "../components/VerticalProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBrush,
-  faCalendarCheck,
+
   faChartLine,
-  faCheck,
   faCheckCircle,
-  faDatabase,
   faFileAlt,
   faLightbulb,
-  faListCheck,
-  faPencilRuler,
-  faPeopleGroup,
   faPuzzlePiece,
-  faRocket,
-  faUserGroup,
-  faZap,
-  faThumbsUp,
-  faPhone,
-  faMobile,
-  faSackDollar,
-  faClock,
-  faForward,
-  faUniversalAccess,
   faClockRotateLeft,
   faVial,
   faMagnifyingGlass,
@@ -52,7 +31,6 @@ import {
   faMousePointer,
   faHandHoldingUsd,
   faCreditCard,
-  faSearchLocation,
   faCompass,
   faLocationDot,
   faWandMagicSparkles,
@@ -61,72 +39,28 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import problemImage from "../assets/steakhouse/Question.svg";
-import evolutiionImage from "../assets/steakhouse/evolution.svg";
 import goalImage from "../assets/steakhouse/Checklist.svg";
-import recruitImage from "../assets/archives/recruit.svg"
-import interview from "../assets/steakhouse/interview.svg";
-import testingImage from "../assets/steakhouse/testing.svg";
-import questionImage from "../assets/ciana_research/question.svg";
+import recruitImage from "../assets/archives/recruit.svg";
 import processImage from "../assets/steakhouse/process.png";
-import gantChart from "../assets/ciana_research/ganttChart.png";
 import DividerSection from "../components/DividerSection";
-import objectivesImage from "../assets/ciana_research/objectives.svg";
-import researchQuestionsImage from "../assets/ciana_research/researchquestions.svg";
-import keyImage from "../assets/steakhouse/key.svg";
-import targetAudienceImage from "../assets/ciana_research/targetaudience.svg";
-import methodologyImage from "../assets/ciana_research/methodology.svg";
-import toolsImage from "../assets/ciana_research/tools.svg";
-import recruitingImage from "../assets/ciana_research/recruiting.svg";
-import market from "../assets/steakhouse/market.svg";
-import interviewImage from "../assets/ciana_research/interview.svg";
-import documentationImage from "../assets/ciana_research/documentation.svg";
-import sayImage from "../assets/ciana_research/say.png";
-import decisionImage from "../assets/steakhouse/Decision.svg";
-import thinkImage from "../assets/ciana_research/think.png";
-import feelImage from "../assets/ciana_research/feel.png";
-import doesImage from "../assets/ciana_research/does.png";
 import OverlayImage from "../components/OverlayImage";
-import clarityImage from "../assets/ciana_research/positive_clarity.png";
-import practicalImage from "../assets/ciana_research/positive_practical.png";
-import childImage from "../assets/ciana_research/motivation_child.png";
-import proactiveImage from "../assets/ciana_research/motivation_proactive.png";
-import reinforcingImage from "../assets/ciana_research/motivation_reinforcing.png";
-import schedulingImage from "../assets/ciana_research/frustration_scheduling.png";
-import technicalImage from "../assets/ciana_research/frustration_scheduling.png";
-import workshopImage from "../assets/ciana_research/frustration_workshop.png";
-import recommendationScheduleImage from "../assets/ciana_research/recommendation_schedule.svg";
-import recommendationContentImage from "../assets/ciana_research/recommendation_content.svg";
-import recommendationTechnicalImage from "../assets/ciana_research/recommendation_technical.svg";
-import recommendationKidsImage from "../assets/ciana_research/recomendation_kids.svg";
-import cecLogo from "../assets/ciana_research/cecLogo.png";
-import banner from "../assets/steakhouse/steakhousebanner.png";
 import ResponsiveMenu from "../components/ResponsiveMenu";
-import MuteButton from "../components/MuteButton";
-import mockupBrief from "../assets/steakhouse/steakhousemockup.png";
-import CompetitiveAnalysis from "../components/CompetitiveAnalysis";
-import UserPersona from "../components/PersonasSection";
-import PersonasSection from "../components/PersonasSection";
-import personas from "../assets/steakhouse/data/personas";
-import JourneyMap from "../components/JourneyMap";
-import PaperWireframes from "../components/PaperWireFrames";
-import DigitalWireframes from "../components/DigitalWireframes";
-import digitalWireframes from "../assets/steakhouse/data/digitalWireframes";
-import LofiPrototype from "../components/LofiPrototype";
-import UsabilityStudy from "../components/UsabilityStudy";
-import usabilityData from "../assets/steakhouse/data/usabilityData";
-import DesignRefinement from "../components/DesignRefinement";
-import impactImage from "../assets/steakhouse/impact.svg";
 import Footer from "../components/Footer";
 import profileImage from "../assets/archives/profile.svg";
-import userTestingLogo from "../assets/archives/usertesting.svg"
-import userTestingImage from "../assets/archives/testing.svg"
+import userTestingLogo from "../assets/archives/usertesting.svg";
+import userTestingImage from "../assets/archives/testing.svg";
 import UsabilityMetrics from "../components/UsabilityMetrics";
-import ctaImage from "../assets/archives/ctasticky.png"
-import heroImage from "../assets/archives/herosticky.png"
-import visualImage from "../assets/archives/visualsticky.png"
-import layoutImage from "../assets/archives/layoutsticky.png"
+import ctaImage from "../assets/archives/ctasticky.png";
+import heroImage from "../assets/archives/herosticky.png";
+import visualImage from "../assets/archives/visualsticky.png";
+import layoutImage from "../assets/archives/layoutsticky.png";
 import DesignRecommendations from "../components/DesignRecommendations";
 import designRecommendations from "../assets/archives/data/designRecommendations";
+import UsabilityResults from "../components/UsabilityResults";
+import finalPresentationImage from "../assets/archives/finalpresentation.png"
+import heroMockup from "../assets/archives/buttonsafter.png"
+import heroMockup2 from "../assets/archives/hero.png"
+import banner from "../assets/archives/banner.png"
 
 const ArchivesPage = () => {
   const { sections } = useAlertContext();
@@ -141,6 +75,8 @@ const ArchivesPage = () => {
     { id: "usability", label: "usability testing", icon: faVial },
     { id: "synthesis", label: "synthesis", icon: faPuzzlePiece },
     { id: "recommendations", label: "recommendations", icon: faBullseye },
+    { id: "second", label: "Usability testing final round", icon: faVial },
+    { id: "takeaway", label: "Reflection & Takeaways", icon: faLightbulb },
   ];
 
   return (
@@ -171,12 +107,13 @@ const ArchivesPage = () => {
             Smithsonian Archives of American Art
           </Text>
 
-          <Box w={{ base: "100%", md: "100%" }} overflow="hidden" h="300px">
+          <Box w={{ base: "100%", md: "100%" }} overflow="hidden" maxH="300px" >
             <Image
               src={banner}
               alt="banner"
               objectFit="contain"
-              objectPosition="center"
+   
+              
             />
           </Box>
           <Grid
@@ -283,7 +220,21 @@ const ArchivesPage = () => {
                           Background
                         </Text>
                         <Text textStyle="p">
-                          The Smithsonian Archives of American Art, the nation's
+                          <a
+                            href="https://www.aaa.si.edu/support"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Text
+                              as={"span"}
+                
+                              decoration={"underline"}
+                              pb={4}
+                            >
+                              The Smithsonian Archives of American Art {""}
+                            </Text>
+                          </a>
+                          , the nation's
                           largest visual arts archive, faced challenges with
                           their online donation process. Users were abandoning
                           donations due to complex flows and unclear information
@@ -331,20 +282,12 @@ const ArchivesPage = () => {
                     {/* image Column */}
                     <GridItem display="flex" justifyContent="center">
                       <Box pb={4}>
-                        <Text textStyle="pbold">
-                          Interact with the prototype and complete an order!
-                        </Text>
-
-                        <AspectRatio ratio={9 / 16} maxH={"650px"}>
-                          <iframe
-                            id="figma-iframe"
-                            style={{
-                              border: "1px solid rgba(0, 0, 0, 0.1)",
-                            }}
-                            src="https://embed.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=502%2C578%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1184%3A9872&show-proto-sidebar=0&embed-host=share&hide-ui=1"
-                            allowFullScreen
-                          ></iframe>
-                        </AspectRatio>
+                        <Box maxW={"650px"}>
+                          <Image
+                            src={heroMockup}
+                            alt="mockup Archives of American Art"
+                          />
+                        </Box>
                       </Box>
                     </GridItem>
                   </Grid>
@@ -600,7 +543,7 @@ const ArchivesPage = () => {
                   <GridItem>
                     <Box display={"flex"} justifyContent="center">
                       <Image
-                        src={mockupBrief}
+                        src={heroMockup2}
                         alt="mockup"
                         height={"auto"}
                         maxHeight={"500px"}
@@ -1328,153 +1271,149 @@ const ArchivesPage = () => {
                       reveal critical design considerations for optimizing
                       donation experience.
                     </Text>
-                    <Box maxW="container.xl">
-                      <Grid
-                        templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
-                        gap={8}
-                        color="gray.600"
-                      >
-                        <GridItem>
-                          <Box
-                            bg="semantic.background.secondary"
-                            p={6}
-                            height="100%"
-                          >
-                            <Box mb={4}>
-                              <FontAwesomeIcon icon={faLocationDot} size="xl" />
-                            </Box>
-                            <Text textStyle="pbold" mb={3}>
-                              Call-to-Action Placement
-                            </Text>
-                            <UnorderedList spacing={3}>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Donation button needs prominent placement
-                                  above the fold
-                                </Text>
-                              </ListItem>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Users expect consistent button location across
-                                  pages
-                                </Text>
-                              </ListItem>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Clear visual distinction needed for primary
-                                  actions
-                                </Text>
-                              </ListItem>
-                            </UnorderedList>
+                  </VStack>
+                  <VStack align="stretch" spacing={8} w="100%">
+                    <Grid
+                      templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+                      gap={8}
+                      color="gray.600"
+                    >
+                      <GridItem>
+                        <Box
+                          bg="semantic.background.secondary"
+                          p={6}
+                          height="100%"
+                        >
+                          <Box mb={4}>
+                            <FontAwesomeIcon icon={faLocationDot} size="xl" />
                           </Box>
-                        </GridItem>
+                          <Text textStyle="pbold" mb={3}>
+                            Call-to-Action Placement
+                          </Text>
+                          <UnorderedList spacing={3}>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Donation button needs prominent placement above
+                                the fold
+                              </Text>
+                            </ListItem>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Users expect consistent button location across
+                                pages
+                              </Text>
+                            </ListItem>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Clear visual distinction needed for primary
+                                actions
+                              </Text>
+                            </ListItem>
+                          </UnorderedList>
+                        </Box>
+                      </GridItem>
 
-                        <GridItem>
-                          <Box
-                            bg="semantic.background.secondary"
-                            p={6}
-                            height="100%"
-                          >
-                            <Box mb={4}>
-                              <FontAwesomeIcon
-                                icon={faWandMagicSparkles}
-                                size="xl"
-                              />
-                            </Box>
-                            <Text textStyle="pbold" mb={3}>
-                              Hero Section Impact
-                            </Text>
-                            <UnorderedList spacing={3}>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Value proposition must be immediately clear
-                                </Text>
-                              </ListItem>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Content needs stronger emotional connection
-                                </Text>
-                              </ListItem>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Visual hierarchy should guide to donation
-                                  action
-                                </Text>
-                              </ListItem>
-                            </UnorderedList>
+                      <GridItem>
+                        <Box
+                          bg="semantic.background.secondary"
+                          p={6}
+                          height="100%"
+                        >
+                          <Box mb={4}>
+                            <FontAwesomeIcon
+                              icon={faWandMagicSparkles}
+                              size="xl"
+                            />
                           </Box>
-                        </GridItem>
+                          <Text textStyle="pbold" mb={3}>
+                            Hero Section Impact
+                          </Text>
+                          <UnorderedList spacing={3}>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Value proposition must be immediately clear
+                              </Text>
+                            </ListItem>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Content needs stronger emotional connection
+                              </Text>
+                            </ListItem>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Visual hierarchy should guide to donation action
+                              </Text>
+                            </ListItem>
+                          </UnorderedList>
+                        </Box>
+                      </GridItem>
 
-                        <GridItem>
-                          <Box
-                            bg="semantic.background.secondary"
-                            p={6}
-                            height="100%"
-                          >
-                            <Box mb={4}>
-                              <FontAwesomeIcon icon={faLayerGroup} size="xl" />
-                            </Box>
-                            <Text textStyle="pbold" mb={3}>
-                              Content Hierarchy
-                            </Text>
-                            <UnorderedList spacing={3}>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Important information needs clear visual
-                                  emphasis
-                                </Text>
-                              </ListItem>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Donation options require better
-                                  differentiation
-                                </Text>
-                              </ListItem>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Progress indicators essential for user
-                                  orientation
-                                </Text>
-                              </ListItem>
-                            </UnorderedList>
+                      <GridItem>
+                        <Box
+                          bg="semantic.background.secondary"
+                          p={6}
+                          height="100%"
+                        >
+                          <Box mb={4}>
+                            <FontAwesomeIcon icon={faLayerGroup} size="xl" />
                           </Box>
-                        </GridItem>
+                          <Text textStyle="pbold" mb={3}>
+                            Content Hierarchy
+                          </Text>
+                          <UnorderedList spacing={3}>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Important information needs clear visual
+                                emphasis
+                              </Text>
+                            </ListItem>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Donation options require better differentiation
+                              </Text>
+                            </ListItem>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Progress indicators essential for user
+                                orientation
+                              </Text>
+                            </ListItem>
+                          </UnorderedList>
+                        </Box>
+                      </GridItem>
 
-                        <GridItem>
-                          <Box
-                            bg="semantic.background.secondary"
-                            p={6}
-                            height="100%"
-                          >
-                            <Box mb={4}>
-                              <FontAwesomeIcon icon={faPenRuler} size="xl" />
-                            </Box>
-                            <Text textStyle="pbold" mb={3}>
-                              Layout Structure
-                            </Text>
-                            <UnorderedList spacing={3}>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Streamlined navigation path to donation form
-                                </Text>
-                              </ListItem>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Logical grouping of related information
-                                </Text>
-                              </ListItem>
-                              <ListItem>
-                                <Text textStyle="caption">
-                                  Simplified form layout with clear sections
-                                </Text>
-                              </ListItem>
-                            </UnorderedList>
+                      <GridItem>
+                        <Box
+                          bg="semantic.background.secondary"
+                          p={6}
+                          height="100%"
+                        >
+                          <Box mb={4}>
+                            <FontAwesomeIcon icon={faPenRuler} size="xl" />
                           </Box>
-                        </GridItem>
-                      </Grid>
-                    </Box>
-
-                  
+                          <Text textStyle="pbold" mb={3}>
+                            Layout Structure
+                          </Text>
+                          <UnorderedList spacing={3}>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Streamlined navigation path to donation form
+                              </Text>
+                            </ListItem>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Logical grouping of related information
+                              </Text>
+                            </ListItem>
+                            <ListItem>
+                              <Text textStyle="caption">
+                                Simplified form layout with clear sections
+                              </Text>
+                            </ListItem>
+                          </UnorderedList>
+                        </Box>
+                      </GridItem>
+                    </Grid>
                   </VStack>
                 </VStack>
               </Box>
@@ -1495,7 +1434,7 @@ const ArchivesPage = () => {
                     color="semantic.text.primary"
                     textTransform="capitalize"
                   >
-                   Recommendations
+                    Recommendations
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
                     This project provided valuable insights about user-centered
@@ -1503,173 +1442,11 @@ const ArchivesPage = () => {
                     creating impactful solutions.
                   </Text>
 
-                  <DesignRecommendations recommendations={designRecommendations} />
+                  <DesignRecommendations
+                    recommendations={designRecommendations}
+                  />
 
-                  <VStack alignItems="start">
-                    <Grid
-                      templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
-                      gap={8}
-                      color="gray.600"
-                    >
-                      {/* Accessibility */}
-                      <GridItem>
-                        <Box
-                          bg="semantic.background.secondary"
-                          p={6}
-                          height="100%"
-                        >
-                          <Box mb={4}>
-                            <FontAwesomeIcon
-                              icon={faUniversalAccess}
-                              size="xl"
-                            />
-                          </Box>
-                          <Text textStyle="pbold" mb={3}>
-                            Accessibility Considerations
-                          </Text>
-                          <UnorderedList spacing={3}>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                WCAG 2.1 compliant design system
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Screen reader optimization
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Keyboard navigation support
-                              </Text>
-                            </ListItem>
-                          </UnorderedList>
-                        </Box>
-                      </GridItem>
-
-                      {/* Key Learnings */}
-                      <GridItem>
-                        <Box
-                          bg="semantic.background.secondary"
-                          p={6}
-                          height="100%"
-                        >
-                          <Box mb={4}>
-                            <FontAwesomeIcon icon={faLightbulb} size="xl" />
-                          </Box>
-                          <Text textStyle="pbold" mb={3}>
-                            Key Learnings
-                          </Text>
-                          <UnorderedList spacing={3}>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Balancing business requirements with user needs
-                                creates the most effective solutions
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Early user testing saves development time and
-                                improves final outcomes
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Designing for accessibility from the start
-                                benefits all users
-                              </Text>
-                            </ListItem>
-                          </UnorderedList>
-                        </Box>
-                      </GridItem>
-
-                      {/* Next Steps */}
-                      <GridItem>
-                        <Box
-                          bg="semantic.background.secondary"
-                          p={6}
-                          height="100%"
-                        >
-                          <Box mb={4}>
-                            <FontAwesomeIcon icon={faForward} size="xl" />
-                          </Box>
-                          <Text textStyle="pbold" mb={3}>
-                            Next Steps
-                          </Text>
-                          <UnorderedList spacing={3}>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Develop personalized recommendation system
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Implement loyalty program features
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Add multi-language support
-                              </Text>
-                            </ListItem>
-                          </UnorderedList>
-                        </Box>
-                      </GridItem>
-                    </Grid>
-                  </VStack>
-
-                  <VStack alignItems="start" py={12}>
-                    <Text
-                      as="p"
-                      textStyle={"pbold"}
-                      textTransform={"uppercase"}
-                      color="semantic.text.primary"
-                    >
-                      Takeaways
-                    </Text>
-                    <Text as="p" textStyle={"p"}>
-                      This project transformed my approach to UX design in
-                      several key ways:
-                    </Text>
-                    <VStack align="stretch">
-                      <UnorderedList textStyle={"p"} pb={4}>
-                        <ListItem>
-                          <Text>
-                            <strong>Research Impact:</strong> Learned how early
-                            user insights can significantly reduce development
-                            time and improve final outcomes.
-                          </Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>
-                            <strong>Business Thinking:</strong> Developed
-                            ability to balance user needs with business
-                            requirements while maintaining design integrity.
-                          </Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>
-                            <strong>Leadership Growth:</strong> Gained
-                            confidence in presenting design decisions and
-                            leading stakeholder discussions.
-                          </Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>
-                            <strong>Technical Understanding:</strong> Deepened
-                            knowledge of accessibility standards and responsive
-                            design principles.
-                          </Text>
-                        </ListItem>
-                      </UnorderedList>
-                      <Text textStyle={"p"}>
-                        These insights have fundamentally shaped my design
-                        philosophy, emphasizing the importance of user-centered
-                        design, iterative development, and inclusive thinking in
-                        creating impactful digital experiences.
-                      </Text>
-                    </VStack>
-                  </VStack>
+                  <VStack alignItems="start"></VStack>
                 </VStack>
               </Box>
             </Box>
@@ -1679,134 +1456,25 @@ const ArchivesPage = () => {
 
           {/* FIFTH SECTION RECOMMENDATIONS OPEN*/}
           <section>
-            <Box id="recommendations">
+            <Box id="second">
               <Box px={12}>
-                <DividerSection>Phase 4 </DividerSection>
+                <DividerSection>Phase 5</DividerSection>
                 <VStack alignItems="start" pt={12} pb={12} color="gray.600">
                   <Text
                     textStyle="h2"
                     color="semantic.text.primary"
                     textTransform="capitalize"
                   >
-                   Recommendations
+                    Usabiliy testing results
                   </Text>
                   <Text as="p" textStyle="p" pb={4}>
-                    This project provided valuable insights about user-centered
-                    design and the importance of iterative development in
-                    creating impactful solutions.
+                    Comparison of initial and final usability testing results
+                    showing significant improvements across key metrics with the
+                    recommendations suggested.
                   </Text>
 
                   <VStack alignItems="start">
-                    <Grid
-                      templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
-                      gap={8}
-                      color="gray.600"
-                    >
-                      {/* Accessibility */}
-                      <GridItem>
-                        <Box
-                          bg="semantic.background.secondary"
-                          p={6}
-                          height="100%"
-                        >
-                          <Box mb={4}>
-                            <FontAwesomeIcon
-                              icon={faUniversalAccess}
-                              size="xl"
-                            />
-                          </Box>
-                          <Text textStyle="pbold" mb={3}>
-                            Accessibility Considerations
-                          </Text>
-                          <UnorderedList spacing={3}>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                WCAG 2.1 compliant design system
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Screen reader optimization
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Keyboard navigation support
-                              </Text>
-                            </ListItem>
-                          </UnorderedList>
-                        </Box>
-                      </GridItem>
-
-                      {/* Key Learnings */}
-                      <GridItem>
-                        <Box
-                          bg="semantic.background.secondary"
-                          p={6}
-                          height="100%"
-                        >
-                          <Box mb={4}>
-                            <FontAwesomeIcon icon={faLightbulb} size="xl" />
-                          </Box>
-                          <Text textStyle="pbold" mb={3}>
-                            Key Learnings
-                          </Text>
-                          <UnorderedList spacing={3}>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Balancing business requirements with user needs
-                                creates the most effective solutions
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Early user testing saves development time and
-                                improves final outcomes
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Designing for accessibility from the start
-                                benefits all users
-                              </Text>
-                            </ListItem>
-                          </UnorderedList>
-                        </Box>
-                      </GridItem>
-
-                      {/* Next Steps */}
-                      <GridItem>
-                        <Box
-                          bg="semantic.background.secondary"
-                          p={6}
-                          height="100%"
-                        >
-                          <Box mb={4}>
-                            <FontAwesomeIcon icon={faForward} size="xl" />
-                          </Box>
-                          <Text textStyle="pbold" mb={3}>
-                            Next Steps
-                          </Text>
-                          <UnorderedList spacing={3}>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Develop personalized recommendation system
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Implement loyalty program features
-                              </Text>
-                            </ListItem>
-                            <ListItem gap={2}>
-                              <Text textStyle="caption">
-                                Add multi-language support
-                              </Text>
-                            </ListItem>
-                          </UnorderedList>
-                        </Box>
-                      </GridItem>
-                    </Grid>
+                    <UsabilityResults />
                   </VStack>
 
                   <VStack alignItems="start" py={12}>
@@ -1816,50 +1484,21 @@ const ArchivesPage = () => {
                       textTransform={"uppercase"}
                       color="semantic.text.primary"
                     >
-                      Takeaways
+                      conclusion
                     </Text>
                     <Text as="p" textStyle={"p"}>
-                      This project transformed my approach to UX design in
-                      several key ways:
+                      The final usability testing results validate the
+                      effectiveness of our design improvements, showing
+                      substantial gains in both user experience and task
+                      completion metrics. The increase in SUS score from 48 to
+                      82, combined with a 35% higher donation completion rate
+                      and 40% faster completion time, demonstrates that our
+                      redesigned interface successfully streamlines the donation
+                      process while maintaining accessibility and user
+                      satisfaction. These improvements establish a solid
+                      foundation for future platform development and enhanced
+                      donor engagement.
                     </Text>
-                    <VStack align="stretch">
-                      <UnorderedList textStyle={"p"} pb={4}>
-                        <ListItem>
-                          <Text>
-                            <strong>Research Impact:</strong> Learned how early
-                            user insights can significantly reduce development
-                            time and improve final outcomes.
-                          </Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>
-                            <strong>Business Thinking:</strong> Developed
-                            ability to balance user needs with business
-                            requirements while maintaining design integrity.
-                          </Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>
-                            <strong>Leadership Growth:</strong> Gained
-                            confidence in presenting design decisions and
-                            leading stakeholder discussions.
-                          </Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>
-                            <strong>Technical Understanding:</strong> Deepened
-                            knowledge of accessibility standards and responsive
-                            design principles.
-                          </Text>
-                        </ListItem>
-                      </UnorderedList>
-                      <Text textStyle={"p"}>
-                        These insights have fundamentally shaped my design
-                        philosophy, emphasizing the importance of user-centered
-                        design, iterative development, and inclusive thinking in
-                        creating impactful digital experiences.
-                      </Text>
-                    </VStack>
                   </VStack>
                 </VStack>
               </Box>
@@ -1868,6 +1507,95 @@ const ArchivesPage = () => {
 
           {/* FIFTH SECTION SYNTHESIS CLOSE*/}
           <Divider variant="section" />
+
+          <section>
+            <Box id="takeaway">
+              <Box px={12}>
+                <DividerSection>Phase 6</DividerSection>
+                <VStack alignItems="start" pt={12} pb={12} color="gray.600">
+                  <Text
+                    textStyle="h2"
+                    color="semantic.text.primary"
+                    textTransform="capitalize"
+                  >
+                    Reflection & Takeaways
+                  </Text>
+                  <Text as="p" textStyle="p" pb={4}>
+                    Leading the redesign of the Archives of American Art's
+                    donation platform presented unique challenges in balancing
+                    the institution's cultural significance with modern user
+                    experience needs. The project required careful consideration
+                    of both the Archives' historical context and the
+                    expectations of contemporary donors. Working closely with
+                    the Archives' team and stakeholders provided valuable
+                    insights into how digital solutions can enhance cultural
+                    preservation while maintaining accessibility and ease of
+                    use.
+                  </Text>
+                  <UnorderedList textStyle={"p"} pb={4}>
+                    <ListItem>
+                      <Text>
+                        <strong>Data-Driven Design:</strong> Discovered how
+                        quantitative usability metrics combined with qualitative
+                        donor feedback can guide design decisions that respect
+                        both the Archives' mission and user needs.
+                      </Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text>
+                        <strong>Stakeholder Collaboration:</strong> Enhanced
+                        skills in communicating design rationale to cultural
+                        institution stakeholders and working closely with
+                        developers to implement accessibility features that
+                        serve a diverse donor base.
+                      </Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text>
+                        <strong>Technical Integration:</strong> Gained valuable
+                        experience in implementing UI card patterns and
+                        optimization techniques while maintaining consistency
+                        with the Smithsonian's design system standards.
+                      </Text>
+                    </ListItem>
+                    <ListItem>
+                      <Text>
+                        <strong>User-Centric Approach:</strong> Strengthened
+                        understanding of cultural institution donor behaviors
+                        and how to optimize interfaces to encourage support for
+                        art historical preservation.
+                      </Text>
+                    </ListItem>
+                  </UnorderedList>
+                  <Text textStyle={"p"}>
+                    This project reinforced the importance of balancing
+                    institutional heritage with modern digital solutions. The
+                    significant improvements in user metrics demonstrate how
+                    thoughtful design decisions can enhance the donation
+                    experience while honoring the Archives of American Art's
+                    mission to collect, preserve, and share the nation's
+                    artistic legacy.
+                  </Text>
+                </VStack>
+
+                <Box pb={12}>
+                  <Image
+                    src={finalPresentationImage}
+                    alt="screenshot of a final presentation"
+                  />
+                  <figcaption>
+                    <Text as="p" textStyle="caption" textAlign="center" pt={4}>
+                      Final presentation with stakeholders
+                    </Text>
+                  </figcaption>
+                </Box>
+              </Box>
+            </Box>
+          </section>
+
+          {/* FIFTH SECTION SYNTHESIS CLOSE*/}
+          <Divider variant="section" />
+
           <Footer />
 
           {/* FIFTH SECTION REFLECTIONS CLOSE*/}

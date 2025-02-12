@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   VStack,
@@ -8,13 +8,10 @@ import {
   GridItem,
   Divider,
   HStack,
-  Button,
   ListItem,
   UnorderedList,
   Flex,
-  Spinner,
   AspectRatio,
-  List,
 } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
 import competitors from "../assets/steakhouse/data/competitors";
@@ -22,22 +19,14 @@ import VerticalProgressBar from "../components/VerticalProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBrush,
-  faCalendarCheck,
-  faChartLine,
   faCheck,
-  faCheckCircle,
-  faDatabase,
   faFileAlt,
   faLightbulb,
-  faListCheck,
   faPencilRuler,
   faPeopleGroup,
-  faPuzzlePiece,
   faRocket,
-  faUserGroup,
   faZap,
   faThumbsUp,
-  faPhone,
   faMobile,
   faSackDollar,
   faClock,
@@ -50,45 +39,15 @@ import evolutiionImage from "../assets/steakhouse/evolution.svg";
 import goalImage from "../assets/steakhouse/Checklist.svg";
 import interview from "../assets/steakhouse/interview.svg";
 import testingImage from "../assets/steakhouse/testing.svg";
-import questionImage from "../assets/ciana_research/question.svg";
 import processImage from "../assets/steakhouse/process.png";
-import gantChart from "../assets/ciana_research/ganttChart.png";
 import DividerSection from "../components/DividerSection";
-import objectivesImage from "../assets/ciana_research/objectives.svg";
-import researchQuestionsImage from "../assets/ciana_research/researchquestions.svg";
 import keyImage from "../assets/steakhouse/key.svg";
-import targetAudienceImage from "../assets/ciana_research/targetaudience.svg";
-import methodologyImage from "../assets/ciana_research/methodology.svg";
-import toolsImage from "../assets/ciana_research/tools.svg";
-import recruitingImage from "../assets/ciana_research/recruiting.svg";
 import market from "../assets/steakhouse/market.svg";
-import interviewImage from "../assets/ciana_research/interview.svg";
-import documentationImage from "../assets/ciana_research/documentation.svg";
-import sayImage from "../assets/ciana_research/say.png";
 import decisionImage from "../assets/steakhouse/Decision.svg";
-import thinkImage from "../assets/ciana_research/think.png";
-import feelImage from "../assets/ciana_research/feel.png";
-import doesImage from "../assets/ciana_research/does.png";
-import OverlayImage from "../components/OverlayImage";
-import clarityImage from "../assets/ciana_research/positive_clarity.png";
-import practicalImage from "../assets/ciana_research/positive_practical.png";
-import childImage from "../assets/ciana_research/motivation_child.png";
-import proactiveImage from "../assets/ciana_research/motivation_proactive.png";
-import reinforcingImage from "../assets/ciana_research/motivation_reinforcing.png";
-import schedulingImage from "../assets/ciana_research/frustration_scheduling.png";
-import technicalImage from "../assets/ciana_research/frustration_scheduling.png";
-import workshopImage from "../assets/ciana_research/frustration_workshop.png";
-import recommendationScheduleImage from "../assets/ciana_research/recommendation_schedule.svg";
-import recommendationContentImage from "../assets/ciana_research/recommendation_content.svg";
-import recommendationTechnicalImage from "../assets/ciana_research/recommendation_technical.svg";
-import recommendationKidsImage from "../assets/ciana_research/recomendation_kids.svg";
-import cecLogo from "../assets/ciana_research/cecLogo.png";
 import banner from "../assets/steakhouse/steakhousebanner.png";
 import ResponsiveMenu from "../components/ResponsiveMenu";
-import MuteButton from "../components/MuteButton";
 import mockupBrief from "../assets/steakhouse/steakhousemockup.png";
 import CompetitiveAnalysis from "../components/CompetitiveAnalysis";
-import UserPersona from "../components/PersonasSection";
 import PersonasSection from "../components/PersonasSection";
 import personas from "../assets/steakhouse/data/personas";
 import JourneyMap from "../components/JourneyMap";
@@ -146,12 +105,13 @@ const SteakHousePage = () => {
             Metropolitan Grill
           </Text>
 
-          <Box w={{ base: "100%", md: "100%" }} overflow="hidden" h="300px">
+          <Box w={{ base: "100%", md: "100%" }} overflow="hidden" maxH={'300px'}>
             <Image
               src={banner}
               alt="banner"
               objectFit="contain"
               objectPosition="center"
+              
             />
           </Box>
           <Grid
@@ -310,7 +270,7 @@ const SteakHousePage = () => {
 
                         <AspectRatio ratio={9 / 16} maxH={"650px"}>
                           <iframe
-                            id="figma-iframe"
+                            title="figma-prototype"
                             style={{
                               border: "1px solid rgba(0, 0, 0, 0.1)",
                             }}

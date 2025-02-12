@@ -61,6 +61,7 @@ import recommendationKidsImage from "../assets/ciana_research/recomendation_kids
 import cecLogo from "../assets/ciana_research/cecLogo.png";
 import cianaBanner from "../assets/ciana_research/cianaWorkshop.png";
 import ResponsiveMenu from "../components/ResponsiveMenu";
+import Footer from "../components/Footer";
 
 const CianaResearchPage = () => {
   const { capitalizeEachWord, sections } = useAlertContext();
@@ -1234,6 +1235,10 @@ const CianaResearchPage = () => {
               </Box>
             </Box>
           </section>
+
+          <Divider variant='section' />
+
+          <Footer />
 
           {/* FIFTH SECTION REFLECTIONS CLOSE*/}
         </Box>
