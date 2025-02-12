@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { reviewsAPI } from "../api/reviewsApi";
 import ButtonLink from "./ButtonLink";
-import MuteButton from "./MuteButton";
+// import MuteButton from "./MuteButton";
 
 function ReviewsCarousel() {
   const { capitalizeEachWord } = useAlertContext();
