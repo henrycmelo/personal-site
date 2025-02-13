@@ -22,6 +22,9 @@ import mockup3Image from "../assets/steakhouse/mockup3.png";
 
 
 const DesignRefinement = () => {
+  const [figmaURL] = React.useState(
+    "https://embed.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=502%2C578%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1184%3A9872&show-proto-sidebar=0&embed-host=share&hide-ui=1"
+  );
   return (
     <Box w={"100%"} color="gray.600">
       <VStack align="stretch" spacing={12}>
@@ -166,16 +169,23 @@ const DesignRefinement = () => {
               <Text textStyle="caption">Complete the checkout process</Text>
             </ListItem>
           </List>
-          <AspectRatio ratio={9 / 16} maxH={"650px"} w={"50%"} mx='auto'>
+          <Box overflow="hidden">
+          <AspectRatio ratio={9 / 16} maxH={"650px"} w={"50%"} mx='auto' >
             <iframe
-              title="figma-iframe"
+              title="hifi prototype"
+              key="figma-embed"
               style={{
                 border: "1px solid rgba(0, 0, 0, 0.1)",
+               
               }}
-              src="https://embed.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=502%2C578%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1184%3A9872&show-proto-sidebar=0&embed-host=share&hide-ui=1"
-              allowFullScreen
+              src={figmaURL}
+             
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+    
             ></iframe>
           </AspectRatio>
+          </Box>
         </Box>
 
         {/* Impact Summary */}

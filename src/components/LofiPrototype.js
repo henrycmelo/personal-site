@@ -79,7 +79,7 @@ const LofiPrototype = () => {
                   </List>
                   <AspectRatio ratio={9 / 16} maxH={"650px"}>
                     <iframe
-                      title="figma-iframe"
+                      title="low-fidelity"
                       style={{
                         border: "1px solid rgba(0, 0, 0, 0.1)",
                       }}

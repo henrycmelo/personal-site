@@ -682,11 +682,12 @@ const SteakHousePage = () => {
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
+                        maxW={'300px'} 
                       >
                         <Image
                           src={interview}
                           alt="interview Illustration"
-                          maxW="500px"
+                      
                         />
                       </Box>
                     </GridItem>
