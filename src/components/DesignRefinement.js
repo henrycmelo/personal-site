@@ -166,7 +166,7 @@ const DesignRefinement = () => {
               <Text textStyle="caption">Complete the checkout process</Text>
             </ListItem>
           </List>
-          <AspectRatio ratio={9 / 16} maxH={"650px"}>
+          <AspectRatio ratio={9 / 16} maxH={"650px"} w={"50%"} mx='auto'>
             <iframe
               title="figma-iframe"
               style={{

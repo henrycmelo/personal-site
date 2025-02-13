@@ -81,7 +81,7 @@ const SteakHousePage = () => {
     <>
       <ResponsiveMenu isOtherPage sections={sections} />
 
-      <Box py={24} px={12}>
+      <Box py={24} px={12} >
         <VStack color="semantic.text.primary" alignItems="start" pb={6}>
           <Text as="h1" textStyle={"h1"} textTransform="capitalize">
             From User research to seamless ordering
@@ -196,7 +196,7 @@ const SteakHousePage = () => {
 
           {/* FIRST SECTION OVERVIEW*/}
           <section>
-            <Box id="theproject">
+            <Box id="theproject" >
               <Box px={12}>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Overview</Text>
@@ -1135,7 +1135,7 @@ const SteakHousePage = () => {
 
           {/* FIFTH SECTION SYNTHESIS OPEN*/}
           <section>
-            <Box id="going">
+            <Box id="going" >
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
                 <VStack alignItems="start" pt={12} pb={12} color="gray.600">
@@ -1332,7 +1332,9 @@ const SteakHousePage = () => {
 
           {/* FIFTH SECTION REFLECTIONS CLOSE*/}
         </Box>
+        
       </Grid>
+      
       
     
     </>
