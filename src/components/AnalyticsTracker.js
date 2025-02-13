@@ -176,10 +176,14 @@ const AnalyticsDashboard = () => {
                       <Td>
                         {data.visitors && data.visitors.length > 0 ? (
                           <Text fontSize="sm">
-                            {data.visitors.slice(-1)[0].location.city}, 
-                            {data.visitors.slice(-1)[0].location.country}
+                            {data.visitors.slice(-1)[0].location?.city || 'Unknown'}, 
+                            {data.visitors.slice(-1)[0].location?.country || 'Unknown'}
                           </Text>
-                        ) : 'Unknown'}
+                        ) : (
+                          <Text fontSize="sm" color="gray.500">
+                            Location pending...
+                          </Text>
+                        )}
                       </Td>
                     </Tr>
                   ))}
