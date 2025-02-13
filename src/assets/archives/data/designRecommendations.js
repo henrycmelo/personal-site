@@ -13,10 +13,10 @@ const designRecommendations = [
       beforeImage: ctaBefore,
       afterImage: ctaAfter,
       keyFeatures: [
-        "Position above the fold",
-        "Accent color implementation for better visibility",
-        "Consistent location across pages",
-        "Clear visual differentiation through color contrast"
+        "Above-the-fold placement",
+        "Accent color visibility",
+        "Consistent positioning",
+        "Strong color contrast"
       ]
     },
     {
@@ -25,9 +25,9 @@ const designRecommendations = [
       beforeImage: ctaBefore,
       afterImage: heroAfter,
       keyFeatures: [
-        "Clear, concise value proposition",
-        "Emotional storytelling elements",
-        "Direct visual path to donation action"
+        "Clear value proposition",
+        "Emotional storytelling",
+        "Direct donation path"
       ]
     },
     {
@@ -36,11 +36,11 @@ const designRecommendations = [
       beforeImage: hierarchyBefore,
       afterImage: hierarchyAfter,
       keyFeatures: [
-        "UI card implementation for content organization",
-        "Emphasize key information through card hierarchy",
-        "Differentiate donation options with distinct card styles",
-        "Integrated progress indicators",
-        "Consistent spacing and padding within cards"
+        "UI cards for organization",
+        "Emphasized key info",
+        "Distinct donation options",
+        "Progress indicators",
+        "Consistent spacing"
       ]
     },
     {
@@ -49,10 +49,10 @@ const designRecommendations = [
       beforeImage: layoutbefore,
       afterImage: layoutAfter,
       keyFeatures: [
-        "Direct path to donation form",
-        "Logical content grouping",
-        "Simplified, clear form layout",
-        "Future consideration for F-pattern implementation"
+        "Direct donation path",
+        "Logical content flow",
+        "Simplified form layout",
+        "Future F-pattern use"
       ]
     }
 ];

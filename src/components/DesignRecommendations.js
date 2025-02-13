@@ -6,20 +6,21 @@ import {
   Text,
   Image,
   VStack,
-  HStack,
   Divider,
-  Flex
+  Flex,
+  Wrap,
+  WrapItem
 } from '@chakra-ui/react';
 import Badges from './Badges';
 
 const DesignRecommendations = ({recommendations}) => {
   return (
-    <Box   color={'gray.600'}>
-      <VStack align="stretch" spacing={8}>
-        <Grid templateColumns={{base: "1fr", md: "1fr"}} gap={8}>
+    <Box   color={'gray.600'} w='100%'>
+
+        <Grid templateColumns={{base: "1fr", md: "1fr"}} gap={8} >
           {recommendations.map((recommendation, index) => (
-            <GridItem key={index}>
-              <VStack align="stretch" spacing={6}>
+            <GridItem key={index}  >
+              <VStack align="stretch" spacing={6}  >
                 <Text as='p' textStyle={'pbold'} textAlign={{base:"left", md:"center"}}>{recommendation.title}</Text>
                 <Text as='p' textStyle='p' textAlign={{base:"left", md:"center"}} mb={4}>{recommendation.description}</Text>
                 
@@ -28,11 +29,12 @@ const DesignRecommendations = ({recommendations}) => {
                   justify="space-between" 
                   align="start" 
                   gap={6}
+            
                 >
                   {/* Before Image */}
                   <Box flex={1} w="100%">
                     <Text textAlign="center" mb={2} textStyle={'caption'}>Before</Text>
-                    <Box maxW="500px" mx="auto">
+                    <Box maxW={{base:"400px", md:"500px"}} mx="auto">
                       <Image
                         src={recommendation.beforeImage}
                         alt={`${recommendation.title} - Before`}
@@ -46,7 +48,7 @@ const DesignRecommendations = ({recommendations}) => {
                   {/* After Image */}
                   <Box flex={1} w="100%">
                     <Text textAlign="center" mb={2} textStyle={'caption'}>After</Text>
-                    <Box maxW="500px" mx="auto">
+                    <Box maxW={{base:"400px", md:"500px"}} mx="auto">
                       <Image
                         src={recommendation.afterImage}
                         alt={`${recommendation.title} - After`}
@@ -63,13 +65,15 @@ const DesignRecommendations = ({recommendations}) => {
                   <Text as='p' textAlign="center" textStyle={'captionbold'} mb={2}>
                     Key Features:
                   </Text>
-                  <HStack justify="center" wrap="wrap" spacing={2}>
+                  <Wrap justify="center" spacing={2}>
                     {recommendation.keyFeatures.map((feature, idx) => (
-                      <Badges key={idx} size="sm" colorScheme="blue">
+                        <WrapItem>
+                      <Badges key={idx} size="sm" >
                         {feature}
                       </Badges>
+                      </WrapItem>
                     ))}
-                  </HStack>
+                  </Wrap>
                 </Box>
 
                 {/* Only show divider if it's not the last element */}
@@ -80,7 +84,7 @@ const DesignRecommendations = ({recommendations}) => {
             </GridItem>
           ))}
         </Grid>
-      </VStack>
+      
     </Box>
   );
 };

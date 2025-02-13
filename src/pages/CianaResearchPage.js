@@ -59,7 +59,7 @@ import recommendationContentImage from "../assets/ciana_research/recommendation_
 import recommendationTechnicalImage from "../assets/ciana_research/recommendation_technical.svg";
 import recommendationKidsImage from "../assets/ciana_research/recomendation_kids.svg";
 import cecLogo from "../assets/ciana_research/cecLogo.png";
-import cianaBanner from "../assets/ciana_research/cianaWorkshop.png";
+import cianaBanner from "../assets/ciana_research/banner.png";
 import ResponsiveMenu from "../components/ResponsiveMenu";
 import Footer from "../components/Footer";
 
@@ -102,15 +102,13 @@ const CianaResearchPage = () => {
           <Box
             w={{ base: "100%", md: "100%" }}
             overflow="hidden"
-            h="300px"
+            maxH={'400px'}
           >
-            <OverlayImage
+            <Image
               src={cianaBanner}
               alt="cianabanner"
-              objectFit="cover"
+              objectFit="contain"
               objectPosition="center"
-              w="100%"
-              h="100%"
             />
           </Box>
           <Grid
@@ -351,7 +349,7 @@ const CianaResearchPage = () => {
                     <Text textStyle="pbold" textAlign={"center"} textTransform={'uppercase'} color='semantic.text.primary'>
                       Problem
                     </Text>
-                    <Box boxSize={"400px"}>
+                    <Box maxW='100%' mx="auto">
                       <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
@@ -372,7 +370,7 @@ const CianaResearchPage = () => {
                     <Text textStyle="pbold" textAlign={"center"} textTransform={'uppercase'} color='semantic.text.primary'>
                       Goal
                     </Text>
-                    <Box boxSize={"400px"}>
+                    <Box maxW='100%' mx="auto">
                       <Image src={goalImage} />
                     </Box>
                     <Text textStyle="p">
@@ -423,14 +421,11 @@ const CianaResearchPage = () => {
                     color='gray.600'
                   >
                     <GridItem>
-                      <Box pb={4} display="flex" 
-                        flexDirection="column" 
-                        alignItems="center" 
-                        justifyContent="center">
+                      <Box pb={4} >
                         <Text textStyle="pbold" textAlign={"center"} color='semantic.text.primary' textTransform={'uppercase'}>
                           Question
                         </Text>
-                        <Box boxSize={"400px"}>
+                        <Box maxW='100%' mx="auto">
                           <Image src={questionImage} />
                         </Box>
                         <Text textStyle="p">
@@ -443,15 +438,11 @@ const CianaResearchPage = () => {
 
                     {/* Text Column 2 */}
                     <GridItem>
-                      <Box pb={4} 
-      display="flex" 
-      flexDirection="column" 
-      alignItems="center" 
-      justifyContent="center">
+                      <Box pb={4} >
                         <Text textStyle="pbold" textAlign={"center"} color='semantic.text.primary' textTransform={'uppercase'}>
                           Answer
                         </Text>
-                        <Box boxSize={"400px"}>
+                        <Box maxW='100%' mx="auto">
                           <Image src={answerImage} />
                         </Box>
                         <Text textStyle="p">
@@ -603,7 +594,7 @@ const CianaResearchPage = () => {
                     <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Objectives
                     </Text>
-                    <Flex gap={6}>
+                    <Flex gap={6} flexDirection={{base:'column', md:'row'}}>
                       <Image src={objectivesImage} alt="" w={"100px"} />
                       <UnorderedList textStyle={"p"} pb={4}>
                         <ListItem>
@@ -624,7 +615,7 @@ const CianaResearchPage = () => {
                     <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Research questions
                     </Text>
-                    <Flex gap={6}>
+                    <Flex gap={6} flexDirection={{base:'column', md:'row'}}>
                       <Image src={researchQuestionsImage} alt="" w={"100px"} />
                       <UnorderedList textStyle={"p"} pb={4}>
                         <ListItem>
@@ -645,7 +636,7 @@ const CianaResearchPage = () => {
                     <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Target audience
                     </Text>
-                    <Flex gap={6}>
+                    <Flex gap={6} flexDirection={{base:'column', md:'row'}}>
                       <Image src={targetAudienceImage} alt="" w={"100px"} />
                       <Text as="p" textStyle="p">
                         The target audience for this research primarily
@@ -665,7 +656,7 @@ const CianaResearchPage = () => {
                     <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Methodology
                     </Text>
-                    <Flex gap={6}>
+                    <Flex gap={6} flexDirection={{base:'column', md:'row'}}>
                       <Image src={methodologyImage} alt="" w={"100px"} />
                       <UnorderedList textStyle={"p"} pb={4}>
                         <ListItem>Post-workshop user interviews.</ListItem>
@@ -679,28 +670,29 @@ const CianaResearchPage = () => {
                     <Text as="p" textStyle={"pbold"}  color='semantic.text.primary' textTransform={'uppercase'}>
                       Tools & Tecniques
                     </Text>
-                    <Flex gap={6}>
+                    <Flex gap={6} flexDirection={{base:'column', md:'row'}}>
                       <Image src={toolsImage} alt="" w={"100px"} />
                       <UnorderedList textStyle={"p"} pb={4}>
                         <ListItem>
                           <HStack>
                             <Text>
                               Interview scripts for consistency using Google
-                              Docs.
-                            </Text>
-                            <a
+                              Docs {""} 
+                              <a
                               href="https://docs.google.com/document/d/1wFE8wP12O8VIpqfgRvT70KguuOMoSqW5JLeGpY3ay60/edit?tab=t.0"
                               target="_blank"
                               rel="noreferrer"
                             >
                               <Text
-                                as={"p"}
+                                as={"span"}
                                 textStyle={"p"}
                                 decoration={"underline"}
                               >
-                                (View Script here.)
+                                (View Script here).
                               </Text>
                             </a>
+                            </Text>
+                          
                           </HStack>
                         </ListItem>
                         <ListItem>
@@ -865,7 +857,7 @@ const CianaResearchPage = () => {
                       digital safety.
                     </Text>
                     <Grid
-                      templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+                      templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} 
                     >
                       <GridItem>
                         <Box pb={4}>

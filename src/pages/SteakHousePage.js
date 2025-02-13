@@ -361,13 +361,14 @@ const SteakHousePage = () => {
               </Box>
 
               {/* Problem & Goal */}
-
+            
               <Grid
                 templateColumns={{ base: "1fr", md: "1fr 1fr" }}
                 gap={6}
                 pt={12}
                 px={12}
                 color={"gray.600"}
+                
               >
                 {/* Text Column 1 */}
                 <GridItem>
@@ -380,7 +381,7 @@ const SteakHousePage = () => {
                     >
                       Problem
                     </Text>
-                    <Box boxSize={"400px"} mx="auto">
+                    <Box maxW='300px' mx="auto" >
                       <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
@@ -405,7 +406,7 @@ const SteakHousePage = () => {
                     >
                       Goal
                     </Text>
-                    <Box boxSize={"400px"} mx="auto">
+                    <Box maxW='300px' mx="auto" >
                       <Image src={goalImage} />
                     </Box>
                     <Text textStyle="p">
@@ -620,7 +621,7 @@ const SteakHousePage = () => {
                       on understanding ordering habits, platform preferences,
                       and pain points.
                     </Text>
-                    <HStack>
+                    <HStack pb={12}>
                       <a
                         href="https://docs.google.com/document/d/1_bSvOb4faRBJYChBRK_NEP-MLRGCa-rKMXR8q6mRnuk/edit?tab=t.0#heading=h.8cpmn7co03qe"
                         target="_blank"

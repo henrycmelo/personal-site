@@ -38,10 +38,10 @@ import {
   faPenRuler,
 } from "@fortawesome/free-solid-svg-icons";
 
-import problemImage from "../assets/steakhouse/Question.svg";
-import goalImage from "../assets/steakhouse/Checklist.svg";
+import problemImage from "../assets/archives/problem.svg";
+import goalImage from "../assets/archives/goal.svg";
 import recruitImage from "../assets/archives/recruit.svg";
-import processImage from "../assets/steakhouse/process.png";
+import processImage from "../assets/archives/process.png";
 import DividerSection from "../components/DividerSection";
 import OverlayImage from "../components/OverlayImage";
 import ResponsiveMenu from "../components/ResponsiveMenu";
@@ -390,7 +390,7 @@ const ArchivesPage = () => {
                     >
                       Problem
                     </Text>
-                    <Box boxSize={"400px"} mx="auto">
+                    <Box maxW={'300px'} mx="auto">
                       <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
@@ -414,7 +414,7 @@ const ArchivesPage = () => {
                     >
                       Goal
                     </Text>
-                    <Box boxSize={"400px"} mx="auto">
+                    <Box maxW={'300px'} mx="auto">
                       <Image src={goalImage} />
                     </Box>
                     <Text textStyle="p">
@@ -447,7 +447,7 @@ const ArchivesPage = () => {
                     <Image src={processImage} />
                     <figcaption>
                       <Text as="p" textStyle="caption" textAlign="center">
-                        Figure 1: UX Design process approach
+                        Figure 1: Usability Study Process
                       </Text>
                     </figcaption>
                   </Box>
@@ -756,7 +756,7 @@ const ArchivesPage = () => {
                       >
                         donor profile creation
                       </Text>
-                      <Box boxSize={"400px"}>
+                      <Box maxW={'300px'} mx="auto">
                         <Image src={profileImage} />
                       </Box>
 
@@ -796,7 +796,7 @@ const ArchivesPage = () => {
                       >
                         Screening & Recruitment
                       </Text>
-                      <Box boxSize={"400px"}>
+                      <Box maxW={'300px'} mx="auto">
                         <Image src={recruitImage} />
                       </Box>
                       <Text as="p" textStyle="pbold">
@@ -1446,7 +1446,7 @@ const ArchivesPage = () => {
                     recommendations={designRecommendations}
                   />
 
-                  <VStack alignItems="start"></VStack>
+                  
                 </VStack>
               </Box>
             </Box>
