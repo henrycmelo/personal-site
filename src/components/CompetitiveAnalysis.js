@@ -8,7 +8,6 @@ import {
   ListItem,
   VStack,
   HStack,
-  Container,
   UnorderedList
 } from '@chakra-ui/react';
 
@@ -17,8 +16,8 @@ import {
 const CompetitiveAnalysis = ({competitors}) => {
   
   return (
-    <Container maxW="container.xl" p={8}>
-      <VStack spacing={8} align="stretch">
+    
+      <VStack spacing={8} align="stretch" w="100%">
         
         
         <Grid 
@@ -79,7 +78,7 @@ const CompetitiveAnalysis = ({competitors}) => {
           ))}
         </Grid>
       </VStack>
-    </Container>
+    
   );
 };
 

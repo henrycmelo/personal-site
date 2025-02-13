@@ -191,7 +191,7 @@ const SteakHousePage = () => {
         </Box>
         <Divider orientation="vertical" variant="thick" />
 
-        <Box overflowY="auto" height={"100%"} data-scroll-container="true">
+        <Box overflowY="auto" height={"100%"} data-scroll-container="true" >
           {/* ALL CONTENT HERE */}
 
           {/* FIRST SECTION OVERVIEW*/}
@@ -1065,7 +1065,7 @@ const SteakHousePage = () => {
             <Box id="refining">
               <Box px={12}>
                 <DividerSection>Phase 3 </DividerSection>
-                <VStack alignItems="start" pt={12} color="gray.600">
+                <VStack alignItems="start" pt={12} color="gray.600" pb={12}>
                   <Text
                     textStyle="h2"
                     color="semantic.text.primary"
@@ -1081,7 +1081,7 @@ const SteakHousePage = () => {
 
                   {/* Content Empathy map and affinity diagram */}
 
-                  <VStack alignItems="start" py={4}>
+                  <VStack alignItems="stretch" py={4} >
                     <Text
                       as="p"
                       textStyle={"pbold"}
@@ -1097,6 +1097,7 @@ const SteakHousePage = () => {
                       w={"100%"}
                       p={12}
                       boxShadow={"md"}
+                      
                     >
                       <VStack>
                         <Box display="flex" justifyContent={"center"}>

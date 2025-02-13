@@ -6,8 +6,8 @@ import {
   Text,
   Image,
   VStack,
-  HStack,
-  Divider
+  WrapItem,
+  Wrap,
 } from '@chakra-ui/react';
 import Badges from './Badges';
 
@@ -15,10 +15,10 @@ import Badges from './Badges';
 
 const DigitalWireframes = ({digital}) => {
   return (
-    <Box p={8} maxW="container.xl" color={'gray.600'}>
+    <Box w="100%" color={'gray.600'} pb={8}>
       <VStack align="stretch" spacing={8}>
         
-        <Grid templateColumns={{base: "1fr", md: "repeat(3, 1fr)"}} gap={8}>
+        <Grid templateColumns={{base: "1fr", md:"repeat(2, 1fr)", '2xl': "repeat(3, 1fr)"}} gap={8} align='center'>
           {digital.map((screen, index) => (
             <GridItem key={index}>
               <VStack align="stretch" spacing={4}>
@@ -36,18 +36,22 @@ const DigitalWireframes = ({digital}) => {
                   <Text as='p' textStyle={'caption'}>
                     {screen.description}
                   </Text>
-                  <Divider variant={'dividerSection'}/>
+                  
                   <Box>
                     <Text as='p' textStyle={'captionbold'} mb={2}>
                       Key Features:
                     </Text>
-                    <HStack wrap="wrap" spacing={2}>
+                    <Wrap justify="center" spacing={2}>
                       {screen.keyFeatures.map((feature, idx) => (
-                        <Badges key={idx} size="sm" colorScheme="blue">
+                        <WrapItem>
+                            <Badges key={idx} size="sm" >
                           {feature}
                         </Badges>
+
+                        </WrapItem>
+                        
                       ))}
-                    </HStack>
+                    </Wrap>
                   </Box>
                 </VStack>
               </VStack>

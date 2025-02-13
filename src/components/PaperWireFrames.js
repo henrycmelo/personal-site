@@ -14,11 +14,11 @@ import Badges from './Badges';
 
 const PaperWireframes = () => {
   return (
-    <Box p={8} maxW="container.xl" color={'gray.600'}>
+    <Box w={"100%"} color={'gray.600'} pb={8}>
       <VStack align="stretch" spacing={8}>
         
 
-        <Grid templateColumns={{base: "1fr", md: "repeat(2, 1fr)"}} gap={8}>
+        <Grid templateColumns={{base: "1fr", md: "repeat(2, 1fr)"}} gap={8} align='center'>
           {/* Crazy 8 Sketches */}
           <GridItem>
             <VStack align="stretch" spacing={4}>
@@ -38,7 +38,7 @@ const PaperWireframes = () => {
                 <Text textStyle={'caption'} >
                   Five quick sketches exploring different approaches to the main ordering interface.
                 </Text>
-                <HStack wrap="wrap" spacing={2} mt={2}>
+                <HStack justify={'center'} spacing={2} mt={2}>
                 <Badges bg='semantic.background.secondary' color='gray.600' >Location Selection</Badges>
                 <Badges bg='semantic.background.secondary' color='gray.600' >Menu View</Badges>
                 <Badges bg='semantic.background.secondary' color='gray.600' >Order Flow</Badges>
@@ -65,7 +65,7 @@ const PaperWireframes = () => {
                 <Text textStyle={'caption'} >
                   The final paper wireframe incorporating the best elements from the initial concepts.
                 </Text>
-                <HStack wrap="wrap" spacing={2} mt={2}>
+                <HStack justify={'center'} spacing={2} mt={2}>
                   <Badges>Selected Design</Badges>
                   <Badges>Ready for Digital</Badges>
                 </HStack>

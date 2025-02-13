@@ -17,7 +17,7 @@ import orderSucces from "../assets/steakhouse/ordersucces.png";
 
 const LofiPrototype = () => {
   return (
-    <Box maxW="container.xl">
+    <Box w="100%">
       <VStack align="stretch" spacing={8}>
         {/* Flow Diagram */}
         <Box w="100%">

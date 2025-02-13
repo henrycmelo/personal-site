@@ -17,7 +17,7 @@ import Badges from './Badges';
 
 const PersonasSection = ({personas}) => {
   return (
-    <Box  maxW="container.xl" >
+    <Box  w="100%">
       
       {personas.map((persona, index) => (
         <Grid

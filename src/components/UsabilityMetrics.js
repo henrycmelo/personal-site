@@ -4,7 +4,7 @@ import errorImage from "../assets/archives/error.svg"
 
 const UsabilityMetric = ({ number, label }) => (
   <VStack spacing={2} align="center" color="gray.600">
-    <Text fontSize="4xl" fontWeight="bold">
+    <Text textStyle={'pbold'}>
       {number}
     </Text>
     <Text textStyle="caption" textAlign="center">
@@ -15,7 +15,7 @@ const UsabilityMetric = ({ number, label }) => (
 
 const UsabilityMetrics = () => {
   return (
-    <Box maxW="container.xl">
+    <Box w="100%" >
       <Grid
         templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
         gap={8}
@@ -50,7 +50,7 @@ const UsabilityMetrics = () => {
         p={6}
         boxShadow={"md"}
       >
-        <VStack>
+        <VStack >
           <Box display="flex" justifyContent={"center"}>
             <Image src={errorImage} alt="error illustration" maxW={"100px"} />
           </Box>

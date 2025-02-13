@@ -15,14 +15,14 @@ import journeyData from '../assets/steakhouse/data/journey';
 
 const JourneyMap = () => {
   return (
-    <Box p={8} maxW="container.xl" color={'gray.600'}>
+    <Box w="100%" color={'gray.600'} pb={8}>
       <VStack align="stretch" spacing={8}>
 
         <Grid
           templateColumns={{base:"1fr", xl:"repeat(5, 1fr)"}}
           gap={4}
           overflowX="auto"
-          p={4}
+         
         >
           {journeyData.phases.map((phase, index) => (
             <GridItem key={index}>

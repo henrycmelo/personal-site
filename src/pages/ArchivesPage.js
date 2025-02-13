@@ -477,6 +477,7 @@ const ArchivesPage = () => {
                   gap={6}
                   color="gray.600"
                   pb={12}
+                  
                 >
                   <GridItem>
                     <Box pb={4}>
@@ -604,7 +605,7 @@ const ArchivesPage = () => {
                       patterns in the cultural sector.
                     </Text>
 
-                    <VStack alignItems="start">
+                    <VStack alignItems="stretch" w="100%" >
                       <Grid
                         templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
                         gap={8}
@@ -760,21 +761,22 @@ const ArchivesPage = () => {
                         <Image src={profileImage} />
                       </Box>
 
-                      <Text as="p" textStyle="pbold">
-                        Based on this research, we identified our target donor:
-                      </Text>
+                      
                       <UnorderedList
                         spacing={3}
                         textStyle={"p"}
-                        alignSelf="flex-start"
                         pb={4}
+                       
                       >
-                        <ListItem>Age: 35-65 years old</ListItem>
-                        <ListItem>Education: College degree+</ListItem>
-                        <ListItem>Income: $75,000+</ListItem>
-                        <ListItem>Tech-savvy professionals</ListItem>
-                        <ListItem>Regular charitable giving habits</ListItem>
-                        <ListItem>Interest in arts and culture</ListItem>
+                        <Text as="p" textStyle="pbold">
+                        Based on this research, we identified our target donor:
+                      </Text>
+                        <ListItem ml={8}>Age: 35-65 years old</ListItem>
+                        <ListItem ml={8}>Education: College degree+</ListItem>
+                        <ListItem ml={8}>Income: $75,000+</ListItem>
+                        <ListItem ml={8}>Tech-savvy professionals</ListItem>
+                        <ListItem ml={8}>Regular charitable giving habits</ListItem>
+                        <ListItem ml={8}>Interest in arts and culture</ListItem>
                       </UnorderedList>
                     </Box>
                   </GridItem>
@@ -799,26 +801,27 @@ const ArchivesPage = () => {
                       <Box maxW={'300px'} mx="auto">
                         <Image src={recruitImage} />
                       </Box>
-                      <Text as="p" textStyle="pbold">
-                        Created screening criteria to match identified donor
-                        profile:
-                      </Text>
+                      
                       <UnorderedList
                         spacing={3}
                         textStyle="p"
-                        alignSelf="flex-start"
+                        
                         pb={4}
                       >
-                        <ListItem>
+                        <Text as="p" textStyle="pbold">
+                        Created screening criteria to match identified donor
+                        profile:
+                      </Text>
+                        <ListItem ml={8}>
                           Must have donated online in past 12 months
                         </ListItem>
-                        <ListItem>
+                        <ListItem ml={8}>
                           Regular interaction with cultural institutions
                         </ListItem>
-                        <ListItem>
+                        <ListItem ml={8}>
                           Comfortable with digital transactions
-                        </ListItem>
-                        <ListItem>Mix of first-time and repeat donors</ListItem>
+                        </ListItem >
+                        <ListItem ml={8}>Mix of first-time and repeat donors</ListItem>
                       </UnorderedList>
                     </Box>
                   </GridItem>
@@ -1578,10 +1581,12 @@ const ArchivesPage = () => {
                   </Text>
                 </VStack>
 
-                <Box pb={12}>
+                <Box pb={12}  display={'flex'}  flexDirection="column"  justifyContent={'center'}>
                   <Image
                     src={finalPresentationImage}
                     alt="screenshot of a final presentation"
+                    
+
                   />
                   <figcaption>
                     <Text as="p" textStyle="caption" textAlign="center" pt={4}>

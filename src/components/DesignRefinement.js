@@ -23,7 +23,7 @@ import mockup3Image from "../assets/steakhouse/mockup3.png";
 
 const DesignRefinement = () => {
   return (
-    <Box maxW="container.xl" color="gray.600">
+    <Box w={"100%"} color="gray.600">
       <VStack align="stretch" spacing={12}>
         {/* First Iteration */}
         <Box>
