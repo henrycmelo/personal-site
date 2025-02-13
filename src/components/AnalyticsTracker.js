@@ -19,109 +19,182 @@ import {
 import { useLocation } from 'react-router-dom';
 
 const AnalyticsTracker = () => {
-  const location = useLocation();
+    const location = useLocation();
   
-  useEffect(() => {
-    // Initialize or get analytics data
-    const initAnalytics = () => {
-      let analytics = localStorage.getItem('portfolioAnalytics');
-      if (!analytics) {
-        analytics = {
-          pathVisits: {},
-          elementClicks: {},
-          totalTimeSpent: 0,
-        };
-      } else {
-        analytics = JSON.parse(analytics);
-        // Ensure all required objects exist
-        if (!analytics.pathVisits) analytics.pathVisits = {};
-        if (!analytics.elementClicks) analytics.elementClicks = {};
-        if (typeof analytics.totalTimeSpent !== 'number') analytics.totalTimeSpent = 0;
-      }
-      return analytics;
-    };
-
-    const trackPageVisit = () => {
-      const analytics = initAnalytics();
-      const path = window.location.pathname;
-      
-      // Initialize this specific path if it doesn't exist
-      if (!analytics.pathVisits[path]) {
-        analytics.pathVisits[path] = {
-          count: 0,
-          lastVisit: null
-        };
-      }
-      
-      // Update the visit count and timestamp
-      analytics.pathVisits[path].count += 1;
-      analytics.pathVisits[path].lastVisit = new Date().toISOString();
-      
-      localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
-    };
-
-    const trackClick = (e) => {
-      const analytics = initAnalytics();
-      const path = window.location.pathname;
-      
-      // Get detailed element information
-      const element = e.target;
-      const elementType = element.tagName.toLowerCase();
-      const elementId = element.id;
-      const elementText = element.textContent?.trim();
-      const dataAction = element.getAttribute('data-action');
-      
-      // Create a detailed click identifier
-      const clickInfo = {
-        path: path,
-        type: elementType,
-        identifier: dataAction || elementText || elementId || 'unknown',
-        timestamp: new Date().toISOString()
+    useEffect(() => {
+      // Initialize analytics data structure
+      const initAnalytics = () => {
+        let analytics = localStorage.getItem('portfolioAnalytics');
+        if (!analytics) {
+          // Create new analytics object with all required properties
+          analytics = {
+            pathVisits: {},
+            elementClicks: {},
+            totalTimeSpent: 0
+          };
+        } else {
+          try {
+            analytics = JSON.parse(analytics);
+            // Ensure all required properties exist
+            if (!analytics.pathVisits) analytics.pathVisits = {};
+            if (!analytics.elementClicks) analytics.elementClicks = {};
+            if (typeof analytics.totalTimeSpent !== 'number') analytics.totalTimeSpent = 0;
+            
+            // Ensure visitors array exists for all paths
+            Object.keys(analytics.pathVisits).forEach(path => {
+              if (!analytics.pathVisits[path].visitors) {
+                analytics.pathVisits[path].visitors = [];
+              }
+            });
+          } catch (error) {
+            console.error('Error parsing analytics:', error);
+            // Reset analytics if parsing fails
+            analytics = {
+              pathVisits: {},
+              elementClicks: {},
+              totalTimeSpent: 0
+            };
+          }
+        }
+        return analytics;
       };
-      
-      // Create a unique key for this type of click
-      const clickKey = `${path}::${dataAction || elementText || elementType}`;
-      
-      // Initialize or increment click counter
-      if (!analytics.elementClicks[clickKey]) {
-        analytics.elementClicks[clickKey] = {
-          count: 0,
-          details: clickInfo
+  
+      // Function to get visitor's location
+      const getVisitorLocation = async () => {
+        // Development environment check
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          console.log('Development environment detected - using mock location');
+          return {
+            city: 'Development',
+            region: 'Local',
+            country: 'Testing',
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+          };
+        }
+  
+        try {
+          // Use HTTPS for the API request since Netlify uses HTTPS
+          const response = await fetch('https://ipapi.co/json/');
+          const data = await response.json();
+          console.log('Location data received:', data);
+  
+          if (!data.error) {
+            return {
+              city: data.city,
+              region: data.region,
+              country: data.country_name,
+              timezone: data.timezone
+            };
+          } else {
+            console.error('IP API returned error:', data.message);
+            return null;
+          }
+        } catch (error) {
+          console.error('Error fetching location:', error);
+          return null;
+        }
+      };
+  
+      // Function to track page visits
+      const trackPageVisit = async () => {
+        const analytics = initAnalytics();
+        const path = location.pathname;
+        
+        // Get visitor location when they visit
+        const visitorLocation = await getVisitorLocation();
+        console.log('Visitor location:', visitorLocation); // Debug log
+        
+        // Make sure pathVisits exists
+        if (!analytics.pathVisits) {
+          analytics.pathVisits = {};
+        }
+        
+        // Initialize path data with all required properties
+        if (!analytics.pathVisits[path]) {
+          analytics.pathVisits[path] = {
+            count: 0,
+            lastVisit: null,
+            visitors: [] // Initialize empty visitors array
+          };
+        }
+        
+        // Make sure visitors array exists (for backward compatibility)
+        if (!analytics.pathVisits[path].visitors) {
+          analytics.pathVisits[path].visitors = [];
+        }
+        
+        // Update visit information
+        analytics.pathVisits[path].count += 1;
+        analytics.pathVisits[path].lastVisit = new Date().toISOString();
+        
+        // Add visitor location if available
+        if (visitorLocation) {
+          analytics.pathVisits[path].visitors.push({
+            timestamp: new Date().toISOString(),
+            location: visitorLocation
+          });
+        }
+        
+        localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
+      };
+  
+      // Function to track clicks
+      const trackClick = (e) => {
+        const analytics = initAnalytics();
+        const path = location.pathname;
+        
+        const element = e.target;
+        const elementType = element.tagName.toLowerCase();
+        const elementId = element.id;
+        const elementText = element.textContent?.trim();
+        const dataAction = element.getAttribute('data-action');
+        
+        const clickInfo = {
+          path: path,
+          type: elementType,
+          identifier: dataAction || elementText || elementId || 'unknown',
+          timestamp: new Date().toISOString()
         };
-      }
-      
-      analytics.elementClicks[clickKey].count += 1;
-      analytics.elementClicks[clickKey].lastClick = new Date().toISOString();
-      
-      localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
-    };
-
-    // Track time spent
-    let startTime = new Date();
-    const trackTimeSpent = () => {
-      const analytics = initAnalytics();
-      const endTime = new Date();
-      const timeSpent = (endTime - startTime) / 1000;
-      
-      analytics.totalTimeSpent += timeSpent;
-      localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
-    };
-
-    // Set up event listeners
-    document.addEventListener('click', trackClick);
-    window.addEventListener('beforeunload', trackTimeSpent);
-    
-    // Track page visit whenever location changes
-    trackPageVisit();
-
-    return () => {
-      document.removeEventListener('click', trackClick);
-      window.removeEventListener('beforeunload', trackTimeSpent);
-    };
-  }, [location.pathname]); // Re-run effect when pathname changes
-
-  return null;
-};
+        
+        const clickKey = `${path}::${dataAction || elementText || elementType}`;
+        
+        if (!analytics.elementClicks[clickKey]) {
+          analytics.elementClicks[clickKey] = {
+            count: 0,
+            details: clickInfo
+          };
+        }
+        
+        analytics.elementClicks[clickKey].count += 1;
+        analytics.elementClicks[clickKey].lastClick = new Date().toISOString();
+        
+        localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
+      };
+  
+      // Track time spent
+      let startTime = new Date();
+      const trackTimeSpent = () => {
+        const analytics = initAnalytics();
+        const endTime = new Date();
+        const timeSpent = (endTime - startTime) / 1000;
+        
+        analytics.totalTimeSpent += timeSpent;
+        localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
+      };
+  
+      // Set up event listeners and track initial visit
+      document.addEventListener('click', trackClick);
+      window.addEventListener('beforeunload', trackTimeSpent);
+      trackPageVisit(); // This makes the API call via getVisitorLocation
+  
+      return () => {
+        document.removeEventListener('click', trackClick);
+        window.removeEventListener('beforeunload', trackTimeSpent);
+      };
+    }, [location.pathname]); // Re-run when path changes
+  
+    return null;
+  };
 
 const AnalyticsDashboard = () => {
   const [analytics, setAnalytics] = React.useState(null);
