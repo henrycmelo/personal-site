@@ -11,13 +11,15 @@ import CareerTimelinePage from "./pages/CareerTimelinePage.js";
 import AboutmePage from "./pages/AboutmePage.js";
 import ContactPage from "./pages/ContactPage.js";
 import ArchivesPage from "./pages/ArchivesPage.js";
-
+import { AnalyticsTracker, AnalyticsDashboard } from "../src/components/AnalyticsTracker.js"
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <AlertProvider>
         <main>
+        <AnalyticsTracker /> 
           <Routes>
+          
             <Route path="/" element={<LandingSection />} />
             <Route path="/projects/cianaresearch" element={<CianaResearchPage />} />
             <Route path="/projects" element={<ProjectSectionPage />} />
@@ -27,6 +29,7 @@ function App() {
             <Route path="/career" element={<CareerTimelinePage />} />
             <Route path="/aboutme" element={<AboutmePage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/admin/analytics" element={<AnalyticsDashboard />} />
           </Routes>
         </main>
         

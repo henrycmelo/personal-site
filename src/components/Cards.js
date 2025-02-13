@@ -23,6 +23,8 @@ const Cards = ({ title, description, imageSrc, path, keywords, logoSrc,type}) =>
       _hover={{ transform: "scale(1.05)", cursor: "pointer" }}
       onClick={()=>handlePath(path)}
       maxW={'lg'}
+      data-action={`View Project: ${title}`} 
+     
     >
       <VStack
         m={8}

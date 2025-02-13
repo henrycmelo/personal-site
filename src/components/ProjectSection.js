@@ -51,6 +51,7 @@ const ProjectSection = () => {
               imageSrc={project.getImageSrc()}
               logoSrc={project.getLogosSrc()}
               type={project.type}
+               
             />
           </GridItem>
         ))}
