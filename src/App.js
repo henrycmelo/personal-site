@@ -12,9 +12,13 @@ import AboutmePage from "./pages/AboutmePage.js";
 import ContactPage from "./pages/ContactPage.js";
 import ArchivesPage from "./pages/ArchivesPage.js";
 import { AnalyticsTracker, AnalyticsDashboard } from "../src/components/AnalyticsTracker.js"
+import { AuthProvider } from "./context/AuthContext.js";
+import { LoginPage } from "./components/LoginPage.js";
+import { ProtectedRoute } from "./components/ProtectedRoute.js";
 function App() {
   return (
     <ChakraProvider theme={theme}>
+      <AuthProvider>
       <AlertProvider>
         <main>
         <AnalyticsTracker /> 
@@ -29,11 +33,20 @@ function App() {
             <Route path="/career" element={<CareerTimelinePage />} />
             <Route path="/aboutme" element={<AboutmePage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/admin/analytics" element={<AnalyticsDashboard />} />
+            <Route path="/admin/login" element={<LoginPage />} />
+            <Route
+                path="/admin/analytics"
+                element={
+                  <ProtectedRoute>
+                    <AnalyticsDashboard />
+                  </ProtectedRoute>
+                }
+              />
           </Routes>
         </main>
         
       </AlertProvider>
+      </AuthProvider>
     </ChakraProvider>
   );
 }

@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
+  Box,
+  Button,
   Container,
   Heading,
   SimpleGrid,
@@ -15,135 +18,148 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react';
-
-import { useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock, faX } from '@fortawesome/free-solid-svg-icons';
 
 const AnalyticsTracker = () => {
-    const location = useLocation();
-  
-    useEffect(() => {
-      // Initialize analytics data structure
-      const initAnalytics = () => {
-        let analytics = localStorage.getItem('portfolioAnalytics');
-        if (!analytics) {
-          // Create new analytics object with all required properties
+  const location = useLocation();
+
+  useEffect(() => {
+    const initAnalytics = () => {
+      let analytics = localStorage.getItem('portfolioAnalytics');
+      if (!analytics) {
+        analytics = {
+          pathVisits: {},
+          elementClicks: {},
+          totalTimeSpent: 0
+        };
+      } else {
+        try {
+          analytics = JSON.parse(analytics);
+          if (!analytics.pathVisits) analytics.pathVisits = {};
+          if (!analytics.elementClicks) analytics.elementClicks = {};
+          if (typeof analytics.totalTimeSpent !== 'number') analytics.totalTimeSpent = 0;
+          
+          Object.keys(analytics.pathVisits).forEach(path => {
+            if (!analytics.pathVisits[path].visitors) {
+              analytics.pathVisits[path].visitors = [];
+            }
+          });
+        } catch (error) {
           analytics = {
             pathVisits: {},
             elementClicks: {},
             totalTimeSpent: 0
           };
-        } else {
-          try {
-            analytics = JSON.parse(analytics);
-            // Ensure all required properties exist
-            if (!analytics.pathVisits) analytics.pathVisits = {};
-            if (!analytics.elementClicks) analytics.elementClicks = {};
-            if (typeof analytics.totalTimeSpent !== 'number') analytics.totalTimeSpent = 0;
-            
-            // Ensure visitors array exists for all paths
-            Object.keys(analytics.pathVisits).forEach(path => {
-              if (!analytics.pathVisits[path].visitors) {
-                analytics.pathVisits[path].visitors = [];
-              }
-            });
-          } catch (error) {
-            console.error('Error parsing analytics:', error);
-            // Reset analytics if parsing fails
-            analytics = {
-              pathVisits: {},
-              elementClicks: {},
-              totalTimeSpent: 0
-            };
-          }
         }
-        return analytics;
-      };
-  
-      // Function to get visitor's location
-      const getVisitorLocation = async () => {
-        // Development environment check
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-          console.log('Development environment detected - using mock location');
+      }
+      return analytics;
+    };
+
+    const getVisitorLocation = async () => {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        return {
+          city: 'Development',
+          region: 'Local',
+          country: 'Testing',
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        };
+      }
+
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+
+        if (!data.error) {
           return {
-            city: 'Development',
-            region: 'Local',
-            country: 'Testing',
+            city: data.city || 'Unknown City',
+            region: data.region || 'Unknown Region',
+            country: data.country_name || 'Unknown Country',
+            timezone: data.timezone || 'Unknown Timezone'
+          };
+        } else {
+          return {
+            city: 'Unknown',
+            region: 'Unknown',
+            country: 'Unknown',
             timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
           };
         }
-  
-        try {
-          // Use HTTPS for the API request since Netlify uses HTTPS
-          const response = await fetch('https://ipapi.co/json/');
-          const data = await response.json();
-          console.log('Location data received:', data);
-  
-          if (!data.error) {
-            return {
-              city: data.city,
-              region: data.region,
-              country: data.country_name,
-              timezone: data.timezone
-            };
-          } else {
-            console.error('IP API returned error:', data.message);
-            return null;
-          }
-        } catch (error) {
-          console.error('Error fetching location:', error);
-          return null;
-        }
-      };
-  
-      // Function to track page visits
-      const trackPageVisit = async () => {
+      } catch (error) {
+        return {
+          city: 'Error',
+          region: 'Error',
+          country: 'Error',
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        };
+      }
+    };
+
+    const trackPageVisit = async () => {
+      try {
         const analytics = initAnalytics();
         const path = location.pathname;
-        
-        // Get visitor location when they visit
         const visitorLocation = await getVisitorLocation();
-        console.log('Visitor location:', visitorLocation); // Debug log
         
-        // Make sure pathVisits exists
         if (!analytics.pathVisits) {
           analytics.pathVisits = {};
         }
         
-        // Initialize path data with all required properties
         if (!analytics.pathVisits[path]) {
           analytics.pathVisits[path] = {
             count: 0,
             lastVisit: null,
-            visitors: [] // Initialize empty visitors array
+            visitors: []
           };
         }
         
-        // Make sure visitors array exists (for backward compatibility)
-        if (!analytics.pathVisits[path].visitors) {
-          analytics.pathVisits[path].visitors = [];
-        }
-        
-        // Update visit information
         analytics.pathVisits[path].count += 1;
         analytics.pathVisits[path].lastVisit = new Date().toISOString();
         
-        // Add visitor location if available
-        if (visitorLocation) {
-          analytics.pathVisits[path].visitors.push({
-            timestamp: new Date().toISOString(),
-            location: visitorLocation
-          });
-        }
+        analytics.pathVisits[path].visitors.push({
+          timestamp: new Date().toISOString(),
+          location: visitorLocation
+        });
         
         localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
-      };
-  
-      // Function to track clicks
-      const trackClick = (e) => {
+      } catch (error) { }
+    };
+
+    const isMobileDevice = () => {
+      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    };
+
+    const trackInteraction = (e) => {
+      if (e.type === 'touchstart' && isMobileDevice()) {
+        window._lastTouchPosition = {
+          x: e.touches[0].clientX,
+          y: e.touches[0].clientY
+        };
+        return;
+      }
+
+      if (e.type === 'touchend' && isMobileDevice()) {
+        if (window._lastTouchPosition) {
+          const touch = e.changedTouches[0];
+          const moveX = Math.abs(touch.clientX - window._lastTouchPosition.x);
+          const moveY = Math.abs(touch.clientY - window._lastTouchPosition.y);
+          
+          if (moveX > 10 || moveY > 10) {
+            return;
+          }
+        }
+      }
+
+      try {
         const analytics = initAnalytics();
         const path = location.pathname;
-        
         const element = e.target;
+        
         const elementType = element.tagName.toLowerCase();
         const elementId = element.id;
         const elementText = element.textContent?.trim();
@@ -153,10 +169,15 @@ const AnalyticsTracker = () => {
           path: path,
           type: elementType,
           identifier: dataAction || elementText || elementId || 'unknown',
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          deviceType: isMobileDevice() ? 'mobile' : 'desktop'
         };
         
         const clickKey = `${path}::${dataAction || elementText || elementType}`;
+        
+        if (!analytics.elementClicks) {
+          analytics.elementClicks = {};
+        }
         
         if (!analytics.elementClicks[clickKey]) {
           analytics.elementClicks[clickKey] = {
@@ -169,36 +190,42 @@ const AnalyticsTracker = () => {
         analytics.elementClicks[clickKey].lastClick = new Date().toISOString();
         
         localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
-      };
-  
-      // Track time spent
-      let startTime = new Date();
-      const trackTimeSpent = () => {
+      } catch (error) { }
+    };
+
+    let startTime = new Date();
+    const trackTimeSpent = () => {
+      try {
         const analytics = initAnalytics();
         const endTime = new Date();
         const timeSpent = (endTime - startTime) / 1000;
         
         analytics.totalTimeSpent += timeSpent;
         localStorage.setItem('portfolioAnalytics', JSON.stringify(analytics));
-      };
-  
-      // Set up event listeners and track initial visit
-      document.addEventListener('click', trackClick);
-      window.addEventListener('beforeunload', trackTimeSpent);
-      trackPageVisit(); // This makes the API call via getVisitorLocation
-  
-      return () => {
-        document.removeEventListener('click', trackClick);
-        window.removeEventListener('beforeunload', trackTimeSpent);
-      };
-    }, [location.pathname]); // Re-run when path changes
-  
-    return null;
-  };
+      } catch (error) { }
+    };
+
+    document.addEventListener('click', trackInteraction, true);
+    document.addEventListener('touchstart', trackInteraction, true);
+    document.addEventListener('touchend', trackInteraction, true);
+    window.addEventListener('beforeunload', trackTimeSpent);
+    trackPageVisit();
+
+    return () => {
+      document.removeEventListener('click', trackInteraction, true);
+      document.removeEventListener('touchstart', trackInteraction, true);
+      document.removeEventListener('touchend', trackInteraction, true);
+      window.removeEventListener('beforeunload', trackTimeSpent);
+    };
+  }, [location.pathname]);
+
+  return null;
+};
 
 const AnalyticsDashboard = () => {
   const [analytics, setAnalytics] = React.useState(null);
   const bgColor = useColorModeValue('white', 'gray.800');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadData = () => {
@@ -211,19 +238,52 @@ const AnalyticsDashboard = () => {
     };
 
     loadData();
-    const interval = setInterval(loadData, 5000); // Refresh every 5 seconds
+    const interval = setInterval(loadData, 5000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleReset = () => {
+    if (window.confirm('Are you sure you want to reset all analytics data? This cannot be undone.')) {
+      localStorage.removeItem('portfolioAnalytics');
+      setAnalytics({
+        pathVisits: {},
+        elementClicks: {},
+        totalTimeSpent: 0
+      });
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('analyticsAuth');
+    navigate('/admin/login');
+  };
 
   if (!analytics) return null;
 
   return (
     <Container maxW="container.xl" py={8}>
-      <Heading mb={6}>Portfolio Analytics</Heading>
+      <Box display="flex" justifyContent="space-between" alignItems="center" mb={6}>
+        <Heading>Portfolio Analytics</Heading>
+        <Button
+          colorScheme="red"
+          size="sm"
+          onClick={handleReset}
+          leftIcon={<FontAwesomeIcon icon={faX}/>}
+        >
+          Reset Analytics
+        </Button>
+        <Button
+            colorScheme="gray"
+            size="sm"
+            onClick={handleLogout}
+            leftIcon={<FontAwesomeIcon icon={faLock} />}
+          >
+            Logout
+          </Button>
+      </Box>
       
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-        {/* Page Visits */}
         <Card bg={bgColor}>
           <CardHeader>
             <Heading size="md">Page Visits</Heading>
@@ -265,7 +325,6 @@ const AnalyticsDashboard = () => {
           </CardBody>
         </Card>
 
-        {/* Click Analytics */}
         <Card bg={bgColor}>
           <CardHeader>
             <Heading size="md">Element Interactions</Heading>
@@ -287,6 +346,11 @@ const AnalyticsDashboard = () => {
                       <Td>
                         <Text fontSize="sm" isTruncated maxW="200px">
                           {data.details.identifier}
+                          {data.details.deviceType && (
+                            <Text as="span" color="gray.500" ml={2}>
+                              ({data.details.deviceType})
+                            </Text>
+                          )}
                         </Text>
                       </Td>
                       <Td>
