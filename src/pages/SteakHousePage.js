@@ -12,6 +12,8 @@ import {
   UnorderedList,
   Flex,
   AspectRatio,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 import { useAlertContext } from "../context/alertContext";
 import competitors from "../assets/steakhouse/data/competitors";
@@ -60,9 +62,13 @@ import usabilityData from "../assets/steakhouse/data/usabilityData";
 import DesignRefinement from "../components/DesignRefinement";
 import impactImage from "../assets/steakhouse/impact.svg";
 import Footer from "../components/Footer"
+import { Link } from "react-router-dom";
+import mockupOverview from "../assets/steakhouse/mockup1.png"
+
 
 const SteakHousePage = () => {
   const { sections } = useAlertContext();
+  const prototypeUrl = "https://embed.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=502%2C578%2C0.5&scaling=scale-down&starting-point-node-id=1184%3A9872&show-proto-sidebar=0&embed-host=share&hide-ui=1"
   
 
   const sectionsProject = [
@@ -81,7 +87,7 @@ const SteakHousePage = () => {
     <>
       <ResponsiveMenu isOtherPage sections={sections} />
 
-      <Box py={24} px={12} >
+      <Box py={24} px={12}>
         <VStack color="semantic.text.primary" alignItems="start" pb={6}>
           <Text as="h1" textStyle={"h1"} textTransform="capitalize">
             From User research to seamless ordering
@@ -105,13 +111,16 @@ const SteakHousePage = () => {
             Metropolitan Grill
           </Text>
 
-          <Box w={{ base: "100%", md: "100%" }} overflow="hidden" maxH={'300px'}>
+          <Box
+            w={{ base: "100%", md: "100%" }}
+            overflow="hidden"
+            maxH={"300px"}
+          >
             <Image
               src={banner}
               alt="banner"
               objectFit="contain"
               objectPosition="center"
-              
             />
           </Box>
           <Grid
@@ -191,12 +200,12 @@ const SteakHousePage = () => {
         </Box>
         <Divider orientation="vertical" variant="thick" />
 
-        <Box overflowY="auto" height={"100%"} data-scroll-container="true" >
+        <Box overflowY="auto" height={"100%"} data-scroll-container="true">
           {/* ALL CONTENT HERE */}
 
           {/* FIRST SECTION OVERVIEW*/}
           <section>
-            <Box id="theproject" >
+            <Box id="theproject">
               <Box px={12}>
                 <VStack alignItems="start" pt={12}>
                   <Text textStyle="h2">Overview</Text>
@@ -264,20 +273,62 @@ const SteakHousePage = () => {
                     {/* image Column */}
                     <GridItem display="flex" justifyContent="center">
                       <Box pb={4}>
-                        <Text textStyle="pbold">
-                          Interact with the prototype and complete an order!
-                        </Text>
+                        <Show above="md">
+                          <Text textStyle="pbold" mb={4}>
+                            Interact with the prototype and complete an order!
+                          </Text>
+                        </Show>
 
-                        <AspectRatio ratio={9 / 16} maxH={"650px"}>
-                          <iframe
-                            title="figma-prototype"
-                            style={{
-                              border: "1px solid rgba(0, 0, 0, 0.1)",
-                            }}
-                            src="https://embed.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=502%2C578%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1184%3A9872&show-proto-sidebar=0&embed-host=share&hide-ui=1"
-                            allowFullScreen
-                          ></iframe>
-                        </AspectRatio>
+                        {/* Mobile Text */}
+                        <Hide above="md">
+                          <Text textStyle="pbold" mb={4}>
+                            Click below to try the prototype!
+                          </Text>
+                          <a
+                            href={prototypeUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Text
+                              as="p"
+                              textStyle="p"
+                              decoration="underline"
+                              textTransform="capitalize"
+                              mt={2}
+                            >
+                              Click here to start
+                            </Text>
+                          </a>
+                        </Hide>
+
+                        {/* Desktop: Show Prototype */}
+                        <Show above="md">
+                          <AspectRatio ratio={9 / 16} maxH="650px">
+                            <iframe
+                              title="figma-prototype"
+                              src={prototypeUrl}
+                              style={{
+                                border: "1px solid rgba(0, 0, 0, 0.1)",
+                                width: "100%",
+                              }}
+                              allowFullScreen
+                            />
+                          </AspectRatio>
+                        </Show>
+
+                        {/* Mobile: Show Image with Link */}
+                        <Hide above="md">
+                          <Link href={prototypeUrl} isExternal>
+                           
+                              <Image
+                                src={mockupOverview} // Replace with your mockup image path
+                                alt="Steakhouse Prototype Mockup"
+                                objectFit="cover"
+                               
+                              />
+                          
+                          </Link>
+                        </Hide>
                       </Box>
                     </GridItem>
                   </Grid>
@@ -361,14 +412,13 @@ const SteakHousePage = () => {
               </Box>
 
               {/* Problem & Goal */}
-            
+
               <Grid
                 templateColumns={{ base: "1fr", md: "1fr 1fr" }}
                 gap={6}
                 pt={12}
                 px={12}
                 color={"gray.600"}
-                
               >
                 {/* Text Column 1 */}
                 <GridItem>
@@ -381,7 +431,7 @@ const SteakHousePage = () => {
                     >
                       Problem
                     </Text>
-                    <Box maxW='300px' mx="auto" >
+                    <Box maxW="300px" mx="auto">
                       <Image src={problemImage} alt="problem Illustration" />
                     </Box>
                     <Text textStyle="p">
@@ -406,7 +456,7 @@ const SteakHousePage = () => {
                     >
                       Goal
                     </Text>
-                    <Box maxW='300px' mx="auto" >
+                    <Box maxW="300px" mx="auto">
                       <Image src={goalImage} />
                     </Box>
                     <Text textStyle="p">
@@ -682,13 +732,9 @@ const SteakHousePage = () => {
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
-                        maxW={'300px'} 
+                        maxW={"300px"}
                       >
-                        <Image
-                          src={interview}
-                          alt="interview Illustration"
-                      
-                        />
+                        <Image src={interview} alt="interview Illustration" />
                       </Box>
                     </GridItem>
                     <GridItem>
@@ -761,7 +807,7 @@ const SteakHousePage = () => {
 
               {/* Key Findings  Close*/}
               <Box px={12}>
-                <VStack alignItems="start" pt={12} color={'gray.600'}>
+                <VStack alignItems="start" pt={12} color={"gray.600"}>
                   <Text
                     as="p"
                     textStyle={"pbold"}
@@ -1082,7 +1128,7 @@ const SteakHousePage = () => {
 
                   {/* Content Empathy map and affinity diagram */}
 
-                  <VStack alignItems="stretch" py={4} >
+                  <VStack alignItems="stretch" py={4}>
                     <Text
                       as="p"
                       textStyle={"pbold"}
@@ -1098,7 +1144,6 @@ const SteakHousePage = () => {
                       w={"100%"}
                       p={12}
                       boxShadow={"md"}
-                      
                     >
                       <VStack>
                         <Box display="flex" justifyContent={"center"}>
@@ -1136,7 +1181,7 @@ const SteakHousePage = () => {
 
           {/* FIFTH SECTION SYNTHESIS OPEN*/}
           <section>
-            <Box id="going" >
+            <Box id="going">
               <Box px={12}>
                 <DividerSection>Phase 4 </DividerSection>
                 <VStack alignItems="start" pt={12} pb={12} color="gray.600">
@@ -1276,50 +1321,47 @@ const SteakHousePage = () => {
                       Takeaways
                     </Text>
                     <Text as="p" textStyle={"p"}>
-                    This project transformed my approach to UX design in
-                    several key ways:
+                      This project transformed my approach to UX design in
+                      several key ways:
                     </Text>
-                    <VStack align="stretch" >
-                       
-                        <UnorderedList textStyle={"p"} pb={4}>
-                          <ListItem  >
-                            <Text >
-                              <strong>Research Impact:</strong> Learned how
-                              early user insights can significantly reduce
-                              development time and improve final outcomes.
-                            </Text>
-                          </ListItem>
-                          <ListItem  >
-                            <Text >
-                              <strong>Business Thinking:</strong> Developed
-                              ability to balance user needs with business
-                              requirements while maintaining design integrity.
-                            </Text>
-                          </ListItem>
-                          <ListItem  >
-                            <Text >
-                              <strong>Leadership Growth:</strong> Gained
-                              confidence in presenting design decisions and
-                              leading stakeholder discussions.
-                            </Text>
-                          </ListItem>
-                          <ListItem  >
-                            <Text >
-                              <strong>Technical Understanding:</strong> Deepened
-                              knowledge of accessibility standards and
-                              responsive design principles.
-                            </Text>
-                          </ListItem>
-                        </UnorderedList>
-                        <Text textStyle={'p'}>
-                          These insights have fundamentally shaped my design
-                          philosophy, emphasizing the importance of
-                          user-centered design, iterative development, and
-                          inclusive thinking in creating impactful digital
-                          experiences.
-                        </Text>
-                      </VStack>
-                    
+                    <VStack align="stretch">
+                      <UnorderedList textStyle={"p"} pb={4}>
+                        <ListItem>
+                          <Text>
+                            <strong>Research Impact:</strong> Learned how early
+                            user insights can significantly reduce development
+                            time and improve final outcomes.
+                          </Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>
+                            <strong>Business Thinking:</strong> Developed
+                            ability to balance user needs with business
+                            requirements while maintaining design integrity.
+                          </Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>
+                            <strong>Leadership Growth:</strong> Gained
+                            confidence in presenting design decisions and
+                            leading stakeholder discussions.
+                          </Text>
+                        </ListItem>
+                        <ListItem>
+                          <Text>
+                            <strong>Technical Understanding:</strong> Deepened
+                            knowledge of accessibility standards and responsive
+                            design principles.
+                          </Text>
+                        </ListItem>
+                      </UnorderedList>
+                      <Text textStyle={"p"}>
+                        These insights have fundamentally shaped my design
+                        philosophy, emphasizing the importance of user-centered
+                        design, iterative development, and inclusive thinking in
+                        creating impactful digital experiences.
+                      </Text>
+                    </VStack>
                   </VStack>
                 </VStack>
               </Box>
@@ -1329,15 +1371,10 @@ const SteakHousePage = () => {
           {/* FIFTH SECTION SYNTHESIS CLOSE*/}
           <Divider variant="section" />
           <Footer />
-        
 
           {/* FIFTH SECTION REFLECTIONS CLOSE*/}
         </Box>
-        
       </Grid>
-      
-      
-    
     </>
   );
 };

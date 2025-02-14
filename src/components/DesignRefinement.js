@@ -9,6 +9,8 @@ import {
   AspectRatio,
   List,
   ListItem,
+  Hide,
+  Show,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -20,13 +22,12 @@ import mockupImage from "../assets/steakhouse/mockup1.png";
 import mockup2Image from "../assets/steakhouse/mockup2.png";
 import mockup3Image from "../assets/steakhouse/mockup3.png";
 
-
 const DesignRefinement = () => {
-  const [figmaURL] = React.useState(
-    "https://embed.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=502%2C578%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1184%3A9872&show-proto-sidebar=0&embed-host=share&hide-ui=1"
-  );
+  const prototypeUrl =
+    "https://embed.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=502%2C578%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1184%3A9872&show-proto-sidebar=0&embed-host=share&hide-ui=1";
+
   return (
-    <Box w={"100%"} color="gray.600">
+    <Box w={"100%"} color="gray.600" pb={12}>
       <VStack align="stretch" spacing={12}>
         {/* First Iteration */}
         <Box>
@@ -100,7 +101,7 @@ const DesignRefinement = () => {
 
         {/* Key Screens */}
         <Box>
-          <Text as="p" textStyle="pbold" mb={6}>
+          <Text as="p" textStyle="pbold" mb={6} >
             Key Screens
           </Text>
           <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
@@ -169,27 +170,38 @@ const DesignRefinement = () => {
               <Text textStyle="caption">Complete the checkout process</Text>
             </ListItem>
           </List>
-          <Box overflow="hidden">
-          <AspectRatio ratio={9 / 16} maxH={"650px"} w={"50%"} mx='auto' >
-            <iframe
-              title="hifi prototype"
-              key="figma-embed"
-              style={{
-                border: "1px solid rgba(0, 0, 0, 0.1)",
-               
-              }}
-              src={figmaURL}
-             
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin"
-    
-            ></iframe>
-          </AspectRatio>
-          </Box>
+          <Hide above="md">
+            <Text textStyle="pbold" mb={4}>
+              Click below to try the prototype!
+            </Text>
+            <a href={prototypeUrl} target="_blank" rel="noreferrer">
+              <Text
+                as="p"
+                textStyle="p"
+                decoration="underline"
+                textTransform="capitalize"
+                mt={2}
+              >
+                Click here to start
+              </Text>
+            </a>
+          </Hide>
+          <Show above="md">
+            <AspectRatio ratio={9 / 16} maxH="650px">
+              <iframe
+                title="figma-prototype"
+                src={prototypeUrl}
+                style={{
+                  border: "1px solid rgba(0, 0, 0, 0.1)",
+                  width: "100%",
+                }}
+                allowFullScreen
+              />
+            </AspectRatio>
+          </Show>
         </Box>
 
         {/* Impact Summary */}
-       
       </VStack>
     </Box>
   );
