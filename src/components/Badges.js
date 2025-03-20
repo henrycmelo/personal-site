@@ -8,12 +8,12 @@ const Badges= ({ children, ...props }) => {
     <Wrap>
 
       {childrenArray && childrenArray.map((child, index) => (
-        <WrapItem>
+        <WrapItem key={index}>
         <Badge 
         backgroundColor="gray.600"
         color="semantic.background.primary"
         borderRadius="2px"
-        key={index}
+        
         {...props}
         >
           {child}

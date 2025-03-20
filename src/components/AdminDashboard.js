@@ -92,7 +92,7 @@ const AdminDashboard = () => {
   // Fetch data on component mount
   useEffect(() => {
     fetchData();
-  }, []);
+}, []);
 
   const handleLogout = () => {
     logout();

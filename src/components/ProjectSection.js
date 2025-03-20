@@ -41,9 +41,9 @@ const ProjectSection = () => {
       >
         {projects.map((project, index) => (
           
-          <GridItem>
+          <GridItem key={index}>
             <Cards
-              key={index}
+              
               title={project.title}
               description={project.description}
               keywords={project.keywords}
