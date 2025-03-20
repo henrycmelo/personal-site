@@ -22,7 +22,7 @@ import {
     const handleSubmit = (e) => {
       e.preventDefault();
       if (login(password)) {
-        navigate('/admin/analytics');
+        navigate('/admin/dashboard');
       } else {
         toast({
           title: 'Error',

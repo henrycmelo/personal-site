@@ -39,6 +39,7 @@
     "reactflow": "^11.11.4",
     "reaptcha": "^1.12.1",
     "recaptcha-v3": "^1.10.0",
+    "resend": "^4.1.2",
     "reveal-on-scroll-react": "^0.0.6",
     "swiper": "^11.1.15",
     "web-vitals": "^2.1.4",
@@ -70,9 +71,7 @@
     ]
   },
   "devDependencies": {
-
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "vite": "^6.0.3"
-
   }
 }

@@ -10,12 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { reviewsAPI } from "../api/reviewsApi";
 import ButtonLink from "./ButtonLink";
-// import MuteButton from "./MuteButton";
+import MuteButton from "./MuteButton";
 
 function ReviewsCarousel() {
-  const { capitalizeEachWord } = useAlertContext();
-  const titleText = "What poeple say about me";
-  const [review, setReview] = useState([]);
+  const { capitalizeEachWord, handlePath } = useAlertContext();
+  const titleText = "What people say about me";
+  const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showMore, setShowMore] = useState({});
@@ -25,7 +25,9 @@ function ReviewsCarousel() {
     const fetchReviews = async () => {
       try {
         const data = await reviewsAPI.getAllEntries();
-        setReview(data);
+        // Filter to only show approved reviews
+        const approvedReviews = data.filter(review => review.status === "approved");
+        setReviews(approvedReviews);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -45,8 +47,10 @@ function ReviewsCarousel() {
   if (isLoading) return <Spinner />;
   if (error) return <Text>{error}</Text>;
 
+  // Don't render the carousel if there are no approved reviews
+  const hasReviews = reviews.length > 0;
+
   return (
-    
     <Box
       bg="transparent"
       pt={4}
@@ -61,83 +65,93 @@ function ReviewsCarousel() {
         {capitalizeEachWord(titleText)}{" "}
       </Text>
 
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        speed={5000}
-        loop={true}
-        breakpoints={{
-          640: {
-            slidesPerView: 1,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        }}
-        className="pb-12"
-      >
-        {review.map((review, index) => (
-          <SwiperSlide key={review.id || index}>
-            <Stack gap={0} textStyle="caption" color={"semantic.text.primary"}>
-              <Text as="p" textStyle="caption" color={"semantic.text.primary"}>
-                {showMore[review.id] ? (
-                  <>
-                    {review.content}
-                    <ButtonLink
-                      color="semantic.text.primary"
-                      textStyle="button"
-                      variant="link"
-                      onClick={() => handleShowMore(review.id)}
-                    >
-                      Show Less
-                    </ButtonLink>
-                  </>
-                ) : (
-                  <>
-                    {review.content.slice(0, 100)}...
-                    <ButtonLink
-                      color="semantic.text.primary"
-                      textStyle="caption"
-                      variant="link"
-                      onClick={() => handleShowMore(review.id)}
-                    >
-                      View More
-                    </ButtonLink>
-                  </>
-                )}
-              </Text>
-              <Text pt={2} as="p" textStyle="captionbold">
-                {review.reviewer_name}
-              </Text>
-            </Stack>
-            <Stack>
-              <Text as="p">{review.reviewer_role}</Text>
-            </Stack>
-            <Stack>
-              <Text as="p">{review.company}</Text>
-            </Stack>
+      {hasReviews ? (
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          speed={5000}
+          loop={true}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+          className="pb-12"
+        >
+          {reviews.map((review, index) => (
+            <SwiperSlide key={review.id || index}>
+              <Stack gap={0} textStyle="caption" color={"semantic.text.primary"}>
+                <Text as="p" textStyle="caption" color={"semantic.text.primary"}>
+                  {showMore[review.id] ? (
+                    <>
+                      {review.content}
+                      <ButtonLink
+                        color="semantic.text.primary"
+                        textStyle="button"
+                        variant="link"
+                        onClick={() => handleShowMore(review.id)}
+                      >
+                        Show Less
+                      </ButtonLink>
+                    </>
+                  ) : (
+                    <>
+                      {review.content.slice(0, 100)}...
+                      <ButtonLink
+                        color="semantic.text.primary"
+                        textStyle="caption"
+                        variant="link"
+                        onClick={() => handleShowMore(review.id)}
+                      >
+                        View More
+                      </ButtonLink>
+                    </>
+                  )}
+                </Text>
+                <Text pt={2} as="p" textStyle="captionbold">
+                  {review.reviewer_name}
+                </Text>
+              </Stack>
+              <Stack>
+                <Text as="p">{review.reviewer_role}</Text>
+              </Stack>
+              <Stack>
+                <Text as="p">{review.company}</Text>
+              </Stack>
 
-            <Stack>
-              <a href={review.linkedin_url} target="_blank" rel="noreferrer">
-                <FontAwesomeIcon size="xl" icon={faLinkedin} />
-              </a>
-            </Stack>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+              {review.linkedin_url && (
+                <Stack>
+                  <a href={review.linkedin_url} target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon size="xl" icon={faLinkedin} />
+                  </a>
+                </Stack>
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <Text as="p" textStyle="p" pb={6} color="gray.600">
+          No reviews to display yet. Be the first to share your experience!
+        </Text>
+      )}
 
-      {/* <Box py={6} >
-        <Text as='p' textStyle={"p"} pb={2} color='gray.600'>If you've worked me in any way, I'll invite you to leave a review</Text>
-        <MuteButton>Leave a review</MuteButton>
-      </Box> */}
+      <Box py={6}>
+        <Text as='p' textStyle={"p"} pb={2} color='gray.600'>
+          Have we worked together? Please contact me to request an invitation code, then you can leave a review.
+        </Text>
+        <MuteButton onClick={()=>handlePath('reviews/leavereview')}>Leave a review</MuteButton>
+      </Box>
     </Box>
   );
 }
