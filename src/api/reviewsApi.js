@@ -68,7 +68,7 @@ approveReview: async (reviewId) => {
 rejectReview: async (reviewId) => {
     const {data, error} = await supabase
         .from('reviews')
-        .update({ status: 'rejected' })
+        .delete()
         .eq('id', reviewId);
         
     if (error) throw error;

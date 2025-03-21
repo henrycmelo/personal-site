@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Box,
@@ -59,40 +59,37 @@ const AdminDashboard = () => {
   const { logout } = useAuth();
 
   // Function to fetch all data
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
-    
     try {
-      // Fetch reviews using reviewsAPI
-      const reviewsData = await reviewsAPI.getAllEntries();
-      setReviews(reviewsData || []);
-      
-      // Fetch career timeline
-      const { data: timelineData, error: timelineError } = await supabase
-        .from('career_timeline')
-        .select('*')
-        .order('date', { ascending: false });
-        
-      if (timelineError) throw timelineError;
-      setTimeline(timelineData || []);
+        const reviewsData = await reviewsAPI.getAllEntries();
+        setReviews(reviewsData || []);
+
+        const { data: timelineData, error: timelineError } = await supabase
+            .from('career_timeline')
+            .select('*')
+            .order('date', { ascending: false });
+
+        if (timelineError) throw timelineError;
+        setTimeline(timelineData || []);
     } catch (error) {
-      console.error('Error fetching data:', error);
-      toast({
-        title: 'Error loading data',
-        description: error.message,
-        status: 'error',
-        duration: 5000,
-        isClosable: true,
-      });
+        console.error('Error fetching data:', error);
+        toast({
+            title: 'Error loading data',
+            description: error.message,
+            status: 'error',
+            duration: 5000,
+            isClosable: true,
+        });
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
-  };
+}, [toast]);
 
   // Fetch data on component mount
   useEffect(() => {
     fetchData();
-}, []);
+}, [fetchData]);
 
   const handleLogout = () => {
     logout();
@@ -126,12 +123,12 @@ const AdminDashboard = () => {
   };
 
   const rejectReview = async (id) => {
+    const isConfirmed = window.confirm("Are you sure you want to delete this review?");
+    if (!isConfirmed) return;
     try {
       await reviewsAPI.rejectReview(id);
       
-      setReviews(reviews.map(review => 
-        review.id === id ? { ...review, status: 'rejected' } : review
-      ));
+      setReviews(reviews.filter(review => review.id !== id));
       
       toast({
         title: 'Review rejected',
