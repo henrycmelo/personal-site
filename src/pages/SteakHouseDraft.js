@@ -28,7 +28,7 @@ import {
   Tag,
   TagLabel,
 } from "@chakra-ui/react";
-
+import mockupImage from "../assets/steakhouse/mockup1.png";
 import { useAlertContext } from "../context/alertContext";
 import competitors from "../assets/steakhouse/data/competitors";
 import VerticalProgressBar from "../components/VerticalProgressBar";
@@ -56,6 +56,9 @@ import {
   faArrowDown91,
   faArrowsDownToLine,
   faHandPointDown,
+  faMapMarkedAlt,
+  faEdit,
+  faCreditCard,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   FiArrowRight,
@@ -286,7 +289,6 @@ const SteakHousePage = () => {
                     </ListItem>
                   </List>
                 </Box>
-                
 
                 {/* Solution Section */}
                 <Box color="gray.600">
@@ -470,10 +472,10 @@ const SteakHousePage = () => {
                   </Tag>
                 </Flex>
 
-                <Divider variant='regular'/>
+                <Divider variant="regular" />
 
                 {/* Approach Section */}
-                <Box pt={2}  borderColor="gray.200">
+                <Box pt={2} borderColor="gray.200">
                   <Text textStyle={"pbold"} color="semantic.accent" py={2}>
                     Approach
                   </Text>
@@ -525,34 +527,32 @@ const SteakHousePage = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        // backgroundColor={"semantic.background.secondary"}
         w={"100%"}
         p={24}
-        textAlign="center" 
+        textAlign="center"
       >
         <Text textStyle="h3" color="semantic.text.primary">
           Read the full case study below
         </Text>
-        <Text textStyle="p" color="gray.600" >
+        <Text textStyle="p" color="gray.600">
           Explore the detailed process, user research insights, and design
           decisions
         </Text>
         <Text textStyle="caption" color="gray.500" pb={4}>
           5 mins read
         </Text>
-        <Box onClick={() => handleClick("theproject")} cursor='pointer'>
-        <FontAwesomeIcon icon={faHandPointDown} size="2x"  />
+        <Box onClick={() => handleClick("theproject")} cursor="pointer">
+          <FontAwesomeIcon icon={faHandPointDown} size="2x" />
         </Box>
-        
       </Box>
       <Divider variant="dividerSection" />
       <Box position="relative" overflow="hidden" pt={16} px={12}>
-      <Container maxW="1200px" py={10}>
+        <Container maxW="1200px" py={10}>
           <Flex direction={{ base: "column", lg: "row" }} gap={8}>
             {/* Left Side - Problem, Solution, Results */}
             <Box flex="3" minW={{ base: "100%", lg: "60%" }}>
               <VStack align="stretch" spacing={10}>
-                {/* Problem Section */}
+                {/* Overview Section */}
                 <Box color="gray.600">
                   <Heading
                     textStyle="pbold"
@@ -560,162 +560,333 @@ const SteakHousePage = () => {
                     color="semantic.text.primary"
                     pb={4}
                   >
-                    Problem
+                    Overview
                   </Heading>
-                  <Text textStyle="p">
-                    Fine-dining restaurants lose 30% of revenue to delivery
-                    platforms while lacking digital infrastructure for direct
-                    ordering, compromising their premium brand experience.
-                  </Text>
-                  <List spacing={2} mt={4} color="semantic.text.primary">
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faExclamationTriangle}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">
-                        30% revenue loss to third parties
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      Background
+                    </Text>
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                        McKinsey reports 62% of fine-dining establishments lost
+                        market share to digital competitors, while 92% of
+                        millennials prefer restaurants with digital ordering.
+                        This project bridges the gap between traditional
+                        steakhouse service and modern dining preferences through
+                        innovative mobile ordering.
                       </Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faExclamationTriangle}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">Lack of digital ownership</Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faExclamationTriangle}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">Compromised brand experience</Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faExclamationTriangle}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">
-                        Customer relationship fragmentation
+                    </Box>
+                  </Box>
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      Relevance
+                    </Text>
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                        As consumer behavior continues to favor digital
+                        convenience, restaurants must adapt to maintain direct
+                        relationships with customers. The gap between premium
+                        dining experiences and digital accessibility represents
+                        a critical business challenge.
                       </Text>
-                    </ListItem>
-                  </List>
+                    </Box>
+                  </Box>
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      My Impact
+                    </Text>
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                        I led user research, created wireframes, and conducted
+                        iterative testing to design an intuitive ordering
+                        system. Beginning with contextual interviews of staff
+                        and diners, I mapped the existing experience to identify
+                        key pain points. My design process involved
+                        collaborative sketching sessions, rapid prototyping in
+                        Figma, and weekly user testing with Metropolitan Grill's
+                        regular customers.
+                      </Text>
+                    </Box>
+                  </Box>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    pb={4}
+                  >
+                    <Image
+                      src={mockupImage}
+                      alt="Location selection screen"
+                      height={"auto"}
+                      maxHeight={"600px"}
+                    />
+                    <Text as="p" textStyle="caption" textAlign="center" mt={2}>
+                      Main screen showing location selection interface
+                    </Text>
+                  </Box>
                 </Box>
-                
-
-                {/* Solution Section */}
-                <Box color="gray.600">
-                  <Heading
-                    textStyle="pbold"
-                    textTransform={"capitalize"}
-                    color="semantic.text.primary"
-                    pb={4}
+                <Box
+                  rounded="lg"
+                  width="full"
+                  border="1px"
+                  borderColor="semantic.divider"
+                  p={{ base: 8, md: 12 }}
+                >
+                  <Box textAlign="center">
+                    <Heading
+                      textStyle="pbold"
+                      textTransform={"capitalize"}
+                      color="semantic.text.primary"
+                    >
+                      Quick Stats
+                    </Heading>
+                    <Text textStyle={"caption"} color="gray.600">
+                      Usability testing results overview
+                    </Text>
+                  </Box>
+                  <SimpleGrid
+                    columns={{ base: 1, md: 3 }}
+                    spacing={6}
+                    textAlign="center"
+                    textTransform="capitalize"
                   >
-                    Solution
-                  </Heading>
-
-                  <Text textStyle="p">
-                    An intuitive mobile ordering system allowing steakhouses to
-                    maintain direct customer relationships while preserving
-                    their premium dining experience.
-                  </Text>
-                  <List spacing={2} mt={4} color="semantic.text.primary">
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faCheckCircle}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">
-                        Custom-branded mobile experience
+                    <Box>
+                      <Text textStyle={"h3bold"} color="semantic.accent">
+                        95%
                       </Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faCheckCircle}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">Streamlined ordering flow</Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faCheckCircle}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">Direct customer relationship</Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faCheckCircle}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">Premium service features</Text>
-                    </ListItem>
-                  </List>
+                      <Text textStyle={"caption"} color="gray.600">
+                        first-time completion rate
+                      </Text>
+                    </Box>
+                    <Box>
+                      <Text textStyle={"h3bold"} color="semantic.accent">
+                        87%
+                      </Text>
+                      <Text textStyle={"caption"} color="gray.600">
+                        user satisfaction
+                      </Text>
+                    </Box>
+                    <Box>
+                      <Text textStyle={"h3bold"} color="semantic.accent">
+                        92%
+                      </Text>
+                      <Text textStyle={"caption"} color="gray.600">
+                        first-time completion
+                      </Text>
+                    </Box>
+                  </SimpleGrid>
                 </Box>
 
-                {/* Results Section */}
-                <Box color="gray.600">
-                  <Heading
+                {/* MVP */}
+
+                <Box pb={4}>
+                  <Text
                     textStyle="pbold"
-                    textTransform={"capitalize"}
-                    color="semantic.text.primary"
-                    pb={4}
+                    textTransform="uppercase"
+                    color="gray.600"
+                    pb={3}
+                    as="h3"
                   >
-                    Results
-                  </Heading>
-
-                  <Text fontSize="lg" mb={4}>
-                    The solution projects to save restaurants 30% in platform
-                    fees with remarkably high user satisfaction and task
-                    completion rates.
+                    Minimum Viable Product (MVP)
                   </Text>
+                  <Box
+                    pl={5}
+                    py={4}
+                    borderLeftWidth="2px"
+                    borderLeftColor="semantic.background.tertiary"
+                  >
+                    <Text textStyle="p">
+                      The initial release focuses on core ordering functionality
+                      to provide immediate value and reduce third-party platform
+                      dependency. Starting with essential features allows quick
+                      market entry while gathering user feedback for future
+                      iterations.
+                    </Text>
+                  </Box>
+                </Box>
+                <Box pb={4}>
+                  <SimpleGrid
+                    columns={{ base: 1, md: 4 }}
+                    spacing={6}
+                    textAlign="center"
+                    textTransform="capitalize"
+                  >
+                    <Box
+                      bg="semantic.background.secondary"
+                      p={4}
+                      borderRadius="lg"
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <FontAwesomeIcon
+                        icon={faMapMarkedAlt}
+                        color="#107c7c"
+                        size="2xl"
+                      />
+                      <Text
+                        textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase"
+                        py={4}
+                      >
+                        Restaurant Localization
+                      </Text>
+                    </Box>
 
-                  <List spacing={2} mt={4} color="semantic.text.primary">
-                    <ListItem display="flex" alignItems="center">
+                    <Box
+                      bg="semantic.background.secondary"
+                      p={4}
+                      borderRadius="lg"
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
                       <FontAwesomeIcon
-                        icon={faStar}
-                        style={{ marginRight: "8px" }}
+                        icon={faEdit}
+                        color="#107c7c"
+                        size="2xl"
                       />
-                      <Text color="gray.600">95% task success rate</Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">87% user satisfaction</Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">
-                        92% first-time completion rate
+                      <Text
+                        textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase"
+                        py={4}
+                      >
+                        Order Modification System
                       </Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
+                    </Box>
+
+                    <Box
+                      bg="semantic.background.secondary"
+                      p={4}
+                      borderRadius="lg"
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
                       <FontAwesomeIcon
-                        icon={faStar}
-                        style={{ marginRight: "8px" }}
+                        icon={faClock}
+                        color="#107c7c"
+                        size="2xl"
                       />
-                      <Text color="gray.600">$45K+ in fee savings</Text>
-                    </ListItem>
-                    <ListItem display="flex" alignItems="center">
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        style={{ marginRight: "8px" }}
-                      />
-                      <Text color="gray.600">
-                        Direct customer data ownership
+                      <Text
+                        textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase"
+                        py={4}
+                      >
+                        Order Tracking
                       </Text>
-                    </ListItem>
-                  </List>
+                    </Box>
+
+                    <Box
+                      bg="semantic.background.secondary"
+                      p={4}
+                      borderRadius="lg"
+                      display="flex"
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <FontAwesomeIcon
+                        icon={faCreditCard}
+                        color="#107c7c"
+                        size="2xl"
+                      />
+                      <Text
+                        textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase"
+                        py={4}
+                      >
+                        Streamlined Checkout
+                      </Text>
+                    </Box>
+                  </SimpleGrid>
+                  <Text as="p" textStyle="caption" textAlign="center" mt={2}>
+                    Key features
+                  </Text>
+                </Box>
+
+                {/* Process */}
+
+                <Box pb={4}>
+                  <Text
+                    textStyle="pbold"
+                    textTransform="uppercase"
+                    color="gray.600"
+                    pb={3}
+                    as="h3"
+                  >
+                    Process
+                  </Text>
+                  <Box
+                    pl={5}
+                    py={4}
+                    borderLeftWidth="2px"
+                    borderLeftColor="semantic.background.tertiary"
+                  >
+                    <Text textStyle="p">
+                      The design process followed a user-centered approach,
+                      starting with research to understand user needs and pain
+                      points. This was followed by ideation, prototyping, and
+                      iterative testing to refine the solution.
+                    </Text>
+                  </Box>
+                  <Box pt={4} textAlign="center">
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    border="1px"
+                    borderColor="semantic.divider"
+                    p={{ base: 8, md: 12 }}
+                  >
+                    <Image src={processImage} />
+                    <Text textStyle={"caption"} color="gray.600">
+                      My UX design process approach
+                    </Text>
+                  </Box>
+                  </Box>
                 </Box>
               </VStack>
             </Box>
-            
 
             {/* Right Side - My Role & Approach Card */}
             <Card
@@ -787,10 +958,10 @@ const SteakHousePage = () => {
                   </Tag>
                 </Flex>
 
-                <Divider variant='regular'/>
+                <Divider variant="regular" />
 
                 {/* Approach Section */}
-                <Box pt={2}  borderColor="gray.200">
+                <Box pt={2} borderColor="gray.200">
                   <Text textStyle={"pbold"} color="semantic.accent" py={2}>
                     Approach
                   </Text>
@@ -834,10 +1005,7 @@ const SteakHousePage = () => {
             </Card>
           </Flex>
         </Container>
-
       </Box>
-
-      
 
       <Divider variant="section" />
 
