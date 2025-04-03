@@ -27,6 +27,7 @@ import {
   List,
   Tag,
   TagLabel,
+  Highlight
 } from "@chakra-ui/react";
 import mockupImage from "../assets/steakhouse/mockup1.png";
 import { useAlertContext } from "../context/alertContext";
@@ -551,7 +552,7 @@ const SteakHousePage = () => {
           <Flex direction={{ base: "column", lg: "row" }} gap={8}>
             {/* Left Side - Problem, Solution, Results */}
             <Box flex="3" minW={{ base: "100%", lg: "60%" }}>
-              <VStack align="stretch" spacing={10}>
+              <VStack align="stretch" spacing={10} pb={12}>
                 {/* Overview Section */}
                 <Box color="gray.600">
                   <Heading
@@ -661,8 +662,8 @@ const SteakHousePage = () => {
                 <Box
                   rounded="lg"
                   width="full"
-                  border="1px"
-                  borderColor="semantic.divider"
+                  bg='semantic.background.secondary'
+                
                   p={{ base: 8, md: 12 }}
                 >
                   <Box textAlign="center">
@@ -871,21 +872,968 @@ const SteakHousePage = () => {
                     </Text>
                   </Box>
                   <Box pt={4} textAlign="center">
-                  <Box
-                    rounded="lg"
-                    width="full"
-                    border="1px"
-                    borderColor="semantic.divider"
-                    p={{ base: 8, md: 12 }}
-                  >
-                    <Image src={processImage} />
-                    <Text textStyle={"caption"} color="gray.600">
-                      My UX design process approach
-                    </Text>
-                  </Box>
+                    <Box
+                      rounded="lg"
+                      width="full"
+                      bg='semantic.background.secondary'
+                      p={{ base: 8, md: 12 }}
+                    >
+                      <Image src={processImage} />
+                      <Text textStyle={"caption"} color="gray.600">
+                        My UX design process approach
+                      </Text>
+                    </Box>
                   </Box>
                 </Box>
               </VStack>
+              <DividerSection icon={faPeopleGroup} />
+
+              <VStack align="stretch" spacing={10} pt={12}>
+                {/* phase 1 Section */}
+                <Box color="gray.600">
+                  <Heading
+                    textStyle="pbold"
+                    textTransform={"capitalize"}
+                    color="semantic.text.primary"
+                    pb={4}
+                  >
+                    phase 1: understanding the user
+                  </Heading>
+                  <Text as="p" textStyle="p" pb={4}>
+                    My research phase focused on understanding user behaviors,
+                    pain points, and expectations in the premium dining space.
+                    This phase included conducting interviews, competitive
+                    analysis, creating user personas, and journey mapping.
+                  </Text>
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      user interviews
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                        Conducted in-depth interviews with 5 target users who
+                        frequently order from high-end restaurants, supplemented
+                        with a survey of 50 potential users. The research
+                        focused on understanding ordering habits, platform
+                        preferences, and pain points.
+                      </Text>
+                      <HStack>
+                        <a
+                          href="https://docs.google.com/document/d/1_bSvOb4faRBJYChBRK_NEP-MLRGCa-rKMXR8q6mRnuk/edit?tab=t.0#heading=h.8cpmn7co03qe"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Text
+                            as="p"
+                            textStyle={"p"}
+                            decoration={"underline"}
+                            textTransform={"capitalize"}
+                          >
+                            View Interview script
+                          </Text>
+                        </a>
+                        <Text>•</Text>
+                        <a
+                          href="https://docs.google.com/forms/d/e/1FAIpQLSd8DqP5SgzPKancNsTKjiiPY6tROzt2gcNHvwdfWJTbPA-1bA/viewform"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Text
+                            as="p"
+                            textStyle={"p"}
+                            decoration={"underline"}
+                            textTransform={"capitalize"}
+                          >
+                            View survey questions
+                          </Text>
+                        </a>
+                      </HStack>
+                    </Box>
+                  </Box>
+                </Box>
+                {/* Key Findings */}
+                <Box
+                  rounded="lg"
+                  width="full"
+                  bg='semantic.background.secondary'
+                  p={{ base: 8, md: 12 }}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                >
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    width="100%"
+                  >
+                    <Image
+                      src={interview}
+                      alt="interview Illustration"
+                      maxW="100px"
+                    />
+                  </Box>
+                  <Box textAlign="center">
+                    <Heading
+                      textStyle="pbold"
+                      textTransform={"capitalize"}
+                      color="semantic.text.primary"
+                    >
+                      Key findings
+                    </Heading>
+                    <Text textStyle={"caption"} color="gray.600">
+                      Research results overview
+                    </Text>
+                  </Box>
+                  <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+                    {/* Finding 1 */}
+                    <VStack align="center" spacing={4}>
+                      <Text textStyle="h3bold" color="semantic.accent">
+                        80%
+                      </Text>
+                      <Text
+                        textStyle="caption"
+                        color="gray.600"
+                        textTransform="capitalize"
+                        textAlign="center"
+                      >
+                        of users abandon orders due to complex modification
+                        systems
+                      </Text>
+                      <Divider variant={"regular"} />
+                      <UnorderedList
+                        spacing={2}
+                        alignSelf="start"
+                        pl={4}
+                        mt={2}
+                        textStyle={"caption"}
+                        color="gray.600"
+                      >
+                        <ListItem>
+                          Users struggle with current platforms' limited
+                          customization options
+                        </ListItem>
+                        <ListItem>
+                          Special requests are often mishandled or overlooked
+                        </ListItem>
+                        <ListItem>
+                          Lack of clear confirmation for modifications
+                        </ListItem>
+                      </UnorderedList>
+                    </VStack>
+
+                    {/* Finding 2 */}
+                    <VStack align="center" spacing={4}>
+                      <Text textStyle="h3bold" color="semantic.accent">
+                        73%
+                      </Text>
+                      <Text
+                        textStyle="caption"
+                        color="gray.600"
+                        textTransform="capitalize"
+                        textAlign="center"
+                      >
+                        of users prefer ordering directly from restaurants
+                      </Text>
+                      <Divider variant={"regular"} />
+                      <UnorderedList
+                        spacing={2}
+                        alignSelf="start"
+                        pl={4}
+                        mt={2}
+                        textStyle={"caption"}
+                        color="gray.600"
+                      >
+                        <ListItem>
+                          High delivery platform fees are a major concern
+                        </ListItem>
+                        <ListItem>
+                          Users want to support restaurants directly
+                        </ListItem>
+                        <ListItem>
+                          Quality assurance is higher with direct ordering
+                        </ListItem>
+                      </UnorderedList>
+                    </VStack>
+
+                    {/* Finding 3 */}
+                    <VStack align="center" spacing={4}>
+                      <Text textStyle="h3bold" color="semantic.accent">
+                        65%
+                      </Text>
+                      <Text
+                        textStyle="caption"
+                        color="gray.600"
+                        textTransform="capitalize"
+                        textAlign="center"
+                      >
+                        of users value real-time order tracking
+                      </Text>
+                      <Divider variant={"regular"} />
+                      <UnorderedList
+                        spacing={2}
+                        alignSelf="start"
+                        pl={4}
+                        mt={2}
+                        textStyle={"caption"}
+                        color="gray.600"
+                      >
+                        <ListItem>
+                          Current platforms provide limited status updates
+                        </ListItem>
+                        <ListItem>
+                          Users want accurate preparation time estimates
+                        </ListItem>
+                        <ListItem>
+                          Clear communication about delays is essential
+                        </ListItem>
+                      </UnorderedList>
+                    </VStack>
+                  </SimpleGrid>
+                </Box>
+
+                {/* Competitive analysis */}
+
+                <Box pb={4}>
+                  <Text
+                    textStyle="pbold"
+                    textTransform="uppercase"
+                    color="gray.600"
+                    pb={3}
+                    as="h3"
+                  >
+                    competitive analysis
+                  </Text>
+
+                  <Box
+                    pl={5}
+                    py={4}
+                    borderLeftWidth="2px"
+                    borderLeftColor="semantic.background.tertiary"
+                  >
+                    <Text textStyle="p">
+                      To understand the current market landscape, I analyzed
+                      both direct competitors (premium restaurant apps) and
+                      indirect competitors (food delivery platforms). The
+                      analysis focused on user experience, feature sets, and
+                      business models to identify opportunities for
+                      differentiation.
+                    </Text>
+                  </Box>
+                  <CompetitiveAnalysis competitors={competitors} />
+
+                  {/*Market Opportunity */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    bg="semantic.background.secondary"
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={market}
+                        alt="interview Illustration"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        market opportunity
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      Based on this analysis, there's a clear opportunity to combine premium restaurant quality with the technical convenience of delivery platforms, while eliminating high fees and maintaining food quality.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                </Box>
+
+                {/* Personas */}
+
+                <Box pb={3}>
+                  <Text
+                    textStyle="pbold"
+                    textTransform="uppercase"
+                    color="gray.600"
+                    pb={3}
+                    as="h3"
+                  >
+                    User personas
+                  </Text>
+
+                  <Box
+                    pl={5}
+                    py={4}
+                    borderLeftWidth="2px"
+                    borderLeftColor="semantic.background.tertiary"
+                  >
+                    <Text textStyle="p">
+                    Based on user interviews and survey data, I developed two distinct personas representing our core user groups. These personas helped guide design decisions and feature prioritization throughout the project.
+                    </Text>
+                  </Box>
+                  <PersonasSection personas={personas} />
+
+                 
+                </Box>
+
+                 {/* user journey */}
+
+                 <Box pb={4}>
+                  <Text
+                    textStyle="pbold"
+                    textTransform="uppercase"
+                    color="gray.600"
+                    pb={3}
+                    as="h3"
+                  >
+                    Journey Map
+                  </Text>
+
+                  <Box
+                    pl={5}
+                    py={4}
+                    borderLeftWidth="2px"
+                    borderLeftColor="semantic.background.tertiary"
+                  >
+                    <Text textStyle="p">
+                    Mapping the current ordering experience to identify pain
+                    points and opportunities for improvement.
+                    </Text>
+                  </Box>
+                  <JourneyMap />
+
+                 
+                </Box>
+              </VStack>
+              <DividerSection icon={faPencilRuler} />
+
+              <VStack align="stretch" spacing={10} pt={12}>
+                {/* phase 2 Section */}
+                <Box color="gray.600">
+                  <Heading
+                    textStyle="pbold"
+                    textTransform={"capitalize"}
+                    color="semantic.text.primary"
+                    pb={4}
+                  >
+                    phase 2: starting the design
+                  </Heading>
+                  <Text as="p" textStyle="p" pb={4}>
+                  After conducting user research and identifying key opportunities, I began the design process with paper wireframes. This phase focused on rapidly exploring different concepts and layouts before moving into digital wireframes and prototypes. The design process included:
+                  </Text>
+
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      paper wireframes
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                      Using the Crazy 8 method, I explored different approaches to the main ordering interface. After sketching five variations, I refined the most promising concept that best addressed user needs and business goals.
+                      </Text>
+                      
+                    </Box>
+                    <PaperWireframes />
+                    {/*Design Decisions */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    bg={'semantic.background.secondary'}
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={decisionImage}
+                        alt="Decision Illustration"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        Design decisions
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      After exploring multiple layouts, I selected and
+                          refined the most effective design that prioritized
+                          easy location selection and clear menu navigation.
+                          This approach best addressed our users' need for quick
+                          and efficient ordering.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                  </Box>
+
+                
+                  
+
+
+                  </Box>
+                    {/* Digital wireframes */}
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      digital wireframes
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                      Taking the refined paper concepts into Figma, I created detailed digital wireframes to establish clear user flows and interface hierarchy. These wireframes focused on implementing key features identified during user research while maintaining simplicity and usability.
+                      </Text>
+                      
+                    </Box>
+                    <DigitalWireframes digital={digitalWireframes} />
+                    {/*Design Evolution */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    bg={'semantic.background.secondary'}
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={evolutiionImage}
+                        alt="evolution image"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        Design evolution
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      The digital wireframes expanded upon the paper
+                          concepts, adding detailed interactions and refined
+                          user flows. Key improvements included enhanced
+                          location filtering, streamlined customization options,
+                          and clearer order tracking visualization.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                  </Box>
+
+                  {/* Low FI Prototype */}
+                 
+                   <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      Low-fidelity prototype
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                      I created a clickable prototype in Figma to test the core
+                      user flows and gather feedback on the basic interface
+                      structure. This helped validate our design direction
+                      before moving into high-fidelity designs.
+                      </Text>
+                      
+                    </Box>
+                    <LofiPrototype />
+                    {/*Prototype testing */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    // border="1px"
+                    // borderColor="semantic.divider"
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    bg='semantic.background.secondary'
+                    
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={testingImage}
+                        alt="evolution image"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        prototype testing
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      This low-fidelity prototype connected key screens to
+                          create a clickable experience, allowing us to test the
+                          core functionalities of location selection, menu
+                          customization, and checkout process. User feedback
+                          from these tests informed our next design iterations.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                  </Box>
+
+                  {/*Test*/}
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      Usability study
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                      Conducted two rounds of usability studies with 5
+                      participants per round. The findings helped identify key
+                      areas for improvement in the ordering experience.
+                      </Text>
+                      
+                    </Box>
+                    <UsabilityStudy usabilityData={usabilityData} />
+                    {/*Key Improvments */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    bg='semantic.background.secondary'
+                    
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={keyImage}
+                        alt="key image"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        Key Improvements
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      After implementing changes based on Round 1 feedback,
+                          Round 2 testing showed significant improvements in
+                          user navigation and task completion. The refined
+                          interface led to better understanding of customization
+                          options and a more confident checkout process.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                  </Box>
+
+
+                  </VStack>
+
+                  <DividerSection icon={faBrush} />
+
+              <VStack align="stretch" spacing={10} pt={12}>
+                {/* phase 3 Section */}
+                <Box color="gray.600">
+                  <Heading
+                    textStyle="pbold"
+                    textTransform={"capitalize"}
+                    color="semantic.text.primary"
+                    pb={4}
+                  >
+                    phase 3: refining the design
+                  </Heading>
+                  <Text as="p" textStyle="p" pb={4}>
+                  Through two rounds of usability testing and iteration, the design evolved from a basic ordering system to an intuitive dining experience that puts users' needs first.
+                  </Text>
+
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      mockups
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                      The final mockups incorporated feedback from usability
+                      testing, focusing on enhancing the user experience and 
+                      </Text>
+                      
+                    </Box>
+                    <PaperWireframes />
+                    {/*Design Decisions */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    bg={'semantic.background.secondary'}
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={decisionImage}
+                        alt="Decision Illustration"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        Design decisions
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      After exploring multiple layouts, I selected and
+                          refined the most effective design that prioritized
+                          easy location selection and clear menu navigation.
+                          This approach best addressed our users' need for quick
+                          and efficient ordering.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                  </Box>
+
+                
+                  
+
+
+                  </Box>
+                    {/* Digital wireframes */}
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      digital wireframes
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                      Taking the refined paper concepts into Figma, I created detailed digital wireframes to establish clear user flows and interface hierarchy. These wireframes focused on implementing key features identified during user research while maintaining simplicity and usability.
+                      </Text>
+                      
+                    </Box>
+                    <DigitalWireframes digital={digitalWireframes} />
+                    {/*Design Evolution */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    bg={'semantic.background.secondary'}
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={evolutiionImage}
+                        alt="evolution image"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        Design evolution
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      The digital wireframes expanded upon the paper
+                          concepts, adding detailed interactions and refined
+                          user flows. Key improvements included enhanced
+                          location filtering, streamlined customization options,
+                          and clearer order tracking visualization.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                  </Box>
+
+                  {/* Low FI Prototype */}
+                 
+                   <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      Low-fidelity prototype
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                      I created a clickable prototype in Figma to test the core
+                      user flows and gather feedback on the basic interface
+                      structure. This helped validate our design direction
+                      before moving into high-fidelity designs.
+                      </Text>
+                      
+                    </Box>
+                    <LofiPrototype />
+                    {/*Prototype testing */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    // border="1px"
+                    // borderColor="semantic.divider"
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    bg='semantic.background.secondary'
+                    
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={testingImage}
+                        alt="evolution image"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        prototype testing
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      This low-fidelity prototype connected key screens to
+                          create a clickable experience, allowing us to test the
+                          core functionalities of location selection, menu
+                          customization, and checkout process. User feedback
+                          from these tests informed our next design iterations.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                  </Box>
+
+                  {/*Test*/}
+                  <Box pb={4}>
+                    <Text
+                      textStyle="pbold"
+                      textTransform="uppercase"
+                      color="gray.600"
+                      pb={3}
+                      as="h3"
+                    >
+                      Usability study
+                    </Text>
+
+                    <Box
+                      pl={5}
+                      py={4}
+                      borderLeftWidth="2px"
+                      borderLeftColor="semantic.background.tertiary"
+                    >
+                      <Text textStyle="p">
+                      Conducted two rounds of usability studies with 5
+                      participants per round. The findings helped identify key
+                      areas for improvement in the ordering experience.
+                      </Text>
+                      
+                    </Box>
+                    <UsabilityStudy usabilityData={usabilityData} />
+                    {/*Key Improvments */}
+                  <Box
+                    rounded="lg"
+                    width="full"
+                    p={{ base: 8, md: 12 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    bg='semantic.background.secondary'
+                    
+                  >
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      width="100%"
+                    >
+                      <Image
+                        src={keyImage}
+                        alt="key image"
+                        maxW="100px"
+                      />
+                    </Box>
+                    <Box textAlign="center">
+                      <Heading
+                        textStyle="pbold"
+                        textTransform={"capitalize"}
+                        color="semantic.text.primary"
+                      >
+                        Key Improvements
+                      </Heading>
+                      
+                      <Text textStyle={"caption"} color="gray.600">
+                      After implementing changes based on Round 1 feedback,
+                          Round 2 testing showed significant improvements in
+                          user navigation and task completion. The refined
+                          interface led to better understanding of customization
+                          options and a more confident checkout process.
+                      </Text>
+                      
+                    </Box>
+                  </Box>
+                  </Box>
+
+
+                  </VStack>
             </Box>
 
             {/* Right Side - My Role & Approach Card */}
@@ -1966,7 +2914,7 @@ const SteakHousePage = () => {
                     dining experience that puts users' needs first.
                   </Text>
 
-                  {/* Content Empathy map and affinity diagram */}
+                 
 
                   <VStack alignItems="stretch" py={4}>
                     <Text
