@@ -110,7 +110,7 @@ const FloatingMenu = ({ sections,  onToggle }) => {
           <Flex
             justify="center"
             align="center"
-            bg="semantic.text.primary"
+            bg="semantic.accent"
             color="semantic.background.primary"
             p={3}
             borderTopRadius="lg"
@@ -119,7 +119,8 @@ const FloatingMenu = ({ sections,  onToggle }) => {
           >
             {isOpen ? (
               <Flex width="100%" justify="space-between" align="center">
-                <Text fontWeight="bold" fontSize="sm">
+                <Text textStyle={"captionbold"}
+                textTransform="uppercase">
                   Navigation
                 </Text>
                 <IconButton
@@ -128,6 +129,7 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                   variant="ghost"
                   color="semantic.background.primary"
                   aria-label="Minimize menu"
+                  _hover={{ bg:'semantic.lightAccent', color:'gray.600'}}
                 />
               </Flex>
             ) : (
@@ -137,6 +139,7 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                 variant="ghost"
                 color="semantic.background.primary"
                 aria-label="Expand menu"
+                _hover={{ bg:'semantic.lightAccent', color:'gray.600'}}
               />
             )}
           </Flex>
@@ -145,8 +148,10 @@ const FloatingMenu = ({ sections,  onToggle }) => {
             <Box p={4}>
               <Text
                 textStyle={"caption"}
-                color="gray.600"
+                
                 mb={4}
+                fontSize="sm"
+              color="gray.500"
               >
                 Click to navigate to a section
               </Text>
@@ -159,11 +164,11 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                     color={
                       activeSection === section.id
                         ? "semantic.background.primary"
-                        : "semantic.divider"
+                      : "gray.600"
                     }
                     fontWeight={activeSection === section.id ? "bold" : "normal"}
                     backgroundColor={
-                      activeSection === section.id ? "semantic.text.primary" : "none"
+                      activeSection === section.id ?"gray.600" : "transparent"
                     }
                     cursor="pointer"
                     transition={"all 0.3s"}
@@ -172,6 +177,7 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                     borderRadius="md"
                     display={"flex"}
                     alignItems="center"
+                    _hover={{ bg:'gray.600', color:'semantic.background.primary'}}
                   >
                     <Flex align="center" gap={3}>
                       <FontAwesomeIcon icon={section.icon} />
@@ -190,11 +196,11 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                   color={
                     activeSection === section.id
                       ? "semantic.background.primary"
-                      : "semantic.text.primary"
+                      : "gray.600"
                   }
                   fontWeight={activeSection === section.id ? "bold" : "normal"}
                   backgroundColor={
-                    activeSection === section.id ? "semantic.text.primary" : "transparent"
+                    activeSection === section.id ? "gray.600" : "transparent"
                   }
                   cursor="pointer"
                   transition={"all 0.3s"}
@@ -203,6 +209,7 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                   display={"flex"}
                   justifyContent="center"
                   alignItems="center"
+                  _hover={{ bg:'gray.600', color:'semantic.background.primary', cursor:"pointer"}}
                 >
                   <FontAwesomeIcon icon={section.icon} />
                 </Box>

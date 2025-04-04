@@ -1843,9 +1843,11 @@ const SteakHousePage = () => {
                     </Box>
                   </Box>
                 </Box>
+
+                
               </VStack>
               </CaseStudyLayout>
-
+              
            
          
       </Box>
