@@ -42,6 +42,11 @@ const theme = extendTheme({
       lineHeight: { base: "36px", sm: "40px", md: "44px", lg: "48px" },
       fontWeight: "400",
     },
+    h3bold: {
+      fontSize: { base: "28px", sm: "32px", md: "36px", lg: "40px" },
+      lineHeight: { base: "36px", sm: "40px", md: "44px", lg: "48px" },
+      fontWeight: "600",
+    },
     p: {
       fontSize: { base: "16px", sm: "18px", md: "20px" },
       lineHeight: { base: "24px", sm: "28px", md: "32px" },
@@ -106,8 +111,14 @@ const theme = extendTheme({
       },
       border: "#CED4DA",
       divider: "#495057",
-      accent:"#107c7c",
-      accentHover: "#399897"
+      accent:"#107c7c", //teal
+      lightAccent: "#e6f2f2", // Light teal background
+      mediumAccent:"#b3dddd", // for some borders
+      status: {
+        success: "#228B67",   // Green
+        warning: "#E0A800",   // Yellow
+        error: "#B23A48",     // Red
+      }
     },
   },
 });

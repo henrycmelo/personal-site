@@ -1,16 +1,22 @@
-import { Flex, Text, Divider } from "@chakra-ui/react";
+import { Box, Divider, AbsoluteCenter, Circle } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const DividerSection = ({ children }) => {
-    const text = children?.toUpperCase()
+const DividerSection = ({ icon }) => {
   return (
-    <Flex align="center" pt={12}>
-      <Divider variant={"dividerSection"} flex={1} />
-      <Text padding="2" ml={2} textStyle={'caption'} >
-        {text?(text):("")}
-      </Text>
-      <Divider variant={"dividerSection"} flex={10} />
-    </Flex>
+    <Box position="relative" py="10" textStyle={"caption"}>
+      <Divider variant="section" />
+      <AbsoluteCenter bg="semantic.background.primary" px="4">
+        <Circle
+          size={"60px"}
+          bg="semantic.background.secondary"
+          color="semantic.accent"
+          
+        >
+          <FontAwesomeIcon icon={icon ? icon : ""} size="2xl" />
+        </Circle>
+      </AbsoluteCenter>
+    </Box>
   );
 };
 

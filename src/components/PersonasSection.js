@@ -17,18 +17,19 @@ import Badges from './Badges';
 
 const PersonasSection = ({personas}) => {
   return (
-    <Box  w="100%">
+    <Box  w="100%" pt={8} >
       
       {personas.map((persona, index) => (
         <Grid
           key={index}
           templateColumns={{ base: "1fr", md: "300px 1fr" }}
           gap={8}
-          mb={12}
+          mb={2}
           bg={'semantic.background.secondary'}
           p={12}
           color={'gray.600'}
           textStyle={'caption'}
+          borderRadius="lg"
         >
           {/* Left Column */}
           <GridItem>
@@ -41,7 +42,7 @@ const PersonasSection = ({personas}) => {
               />
               
               <VStack align="stretch" spacing={4}>
-                <Heading size="lg">{persona.name}</Heading>
+                <Heading size="lg" color='semantic.accent'>{persona.name}</Heading>
                 <HStack>
                   <FontAwesomeIcon icon={faBriefcase} />
                   <Text>{persona.occupation}</Text>

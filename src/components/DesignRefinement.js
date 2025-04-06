@@ -27,11 +27,13 @@ const DesignRefinement = () => {
     "https://embed.figma.com/proto/jTg5y0K73FjmiGZxtmegGA/My-project-(steakhouse)?page-id=1184%3A9871&node-id=1184-9872&viewport=502%2C578%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1184%3A9872&show-proto-sidebar=0&embed-host=share&hide-ui=1";
 
   return (
-    <Box w={"100%"} color="gray.600" pb={12}>
+    <Box w={"100%"} color="gray.600" py={8}>
       <VStack align="stretch" spacing={12}>
         {/* First Iteration */}
         <Box>
-          <Text as="p" textStyle="pbold" mb={6}>
+          <Text textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase" mb={6}>
             First Design Iteration
           </Text>
           <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={8} mb={8}>
@@ -66,7 +68,9 @@ const DesignRefinement = () => {
 
         {/* Second Iteration */}
         <Box>
-          <Text as="p" textStyle="pbold" mb={6}>
+          <Text textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase" mb={6}>
             Final Design Iteration
           </Text>
           <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={8} mb={8}>
@@ -101,7 +105,9 @@ const DesignRefinement = () => {
 
         {/* Key Screens */}
         <Box>
-          <Text as="p" textStyle="pbold" mb={6} >
+          <Text textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase" mb={6}>
             Key Screens
           </Text>
           <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
@@ -146,32 +152,36 @@ const DesignRefinement = () => {
 
         {/* High Fidelity Prototype */}
         <Box>
-          <Text as="p" textStyle="pbold" mb={4}>
+          <Text textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase" >
             Final Interactive Prototype
           </Text>
-          <Text textStyle="p" mb={6}>
+          <Text textStyle="p" mb={6} color="semantic.text.primary">
             Complete these tasks to experience the refined ordering flow:
           </Text>
-          <List spacing={3} mb={6}>
+          <List spacing={3} mb={6} color='gray.600'>
             <ListItem display="flex" alignItems="center" gap={2}>
-              <FontAwesomeIcon icon={faArrowRight} />
+              <FontAwesomeIcon icon={faArrowRight} color="#107c7c" />
               <Text textStyle="caption">
                 Find the nearest steakhouse location
               </Text>
             </ListItem>
             <ListItem display="flex" alignItems="center" gap={2}>
-              <FontAwesomeIcon icon={faArrowRight} />
+              <FontAwesomeIcon icon={faArrowRight}  color="#107c7c"/>
               <Text textStyle="caption">
                 Customize and order a ribeye steak
               </Text>
             </ListItem>
             <ListItem display="flex" alignItems="center" gap={2}>
-              <FontAwesomeIcon icon={faArrowRight} />
+              <FontAwesomeIcon icon={faArrowRight} color="#107c7c"/>
               <Text textStyle="caption">Complete the checkout process</Text>
             </ListItem>
           </List>
           <Hide above="md">
-            <Text textStyle="pbold" mb={4}>
+            <Text textStyle={"captionbold"}
+                color="semantic.text.primary"
+                textTransform="uppercase" mb={4}>
               Click below to try the prototype!
             </Text>
             <a href={prototypeUrl} target="_blank" rel="noreferrer">
@@ -181,6 +191,7 @@ const DesignRefinement = () => {
                 decoration="underline"
                 textTransform="capitalize"
                 mt={2}
+                color='semantic.accent'
               >
                 Click here to start
               </Text>

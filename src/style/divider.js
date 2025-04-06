@@ -9,11 +9,12 @@ const thick= defineStyle({
 })
 
 const section= defineStyle({
-    borderWidth: '10px', 
+    borderWidth: '5px', 
     borderStyle: 'double', 
-    borderColor:'semantic.divider',
+    borderColor:'gray.600',
     width:"100vw",
     opacity:""
+    
 })
 
 const dividerSection = defineStyle({
@@ -24,6 +25,14 @@ const dividerSection = defineStyle({
 
 })
 
+const regular= defineStyle({
+    borderWidth:"1px",
+    borderStyle:'solid',
+    borderColor:'semantic.background.tertiary',
+    opacity:""
+
+})
+
 export const dividerTheme = defineStyleConfig({
-    variants: { thick, section, dividerSection },
+    variants: { thick, section, dividerSection, regular },
 })

@@ -17,7 +17,7 @@ const CompetitiveAnalysis = ({competitors}) => {
   
   return (
     
-      <VStack spacing={8} align="stretch" w="100%">
+      <VStack spacing={8} align="stretch" w="100%" py={8}>
         
         
         <Grid 
@@ -29,9 +29,10 @@ const CompetitiveAnalysis = ({competitors}) => {
             <GridItem 
               key={index}
               p={6}
-             
-              
-              bg="semantic.background.secondary"
+              borderRadius="lg"
+             shadow={'md'}
+              border="1px"
+                    borderColor="semantic.divider"
              
             >
               <VStack align="stretch" spacing={4}>
@@ -43,11 +44,11 @@ const CompetitiveAnalysis = ({competitors}) => {
                     objectFit="cover"
                     borderRadius="full"
                   />
-                  <Text as='p' textStyle={'pbold'} textTransform={'capitalize'}>{competitor.name}</Text>
+                  <Text as='p' textStyle={'pbold'} textTransform={'capitalize'} color='semantic.accent'>{competitor.name}</Text>
                 </HStack>
 
                 <Box textStyle={'caption'}>
-                  <Text textStyle={'captionbold'}   mb={2}>
+                  <Text  textStyle={'captionbold'}   mb={2}>
                     Strengths
                   </Text>
                   <UnorderedList spacing={2}>

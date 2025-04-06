@@ -52,7 +52,7 @@ const FloatingMenu = ({ sections,  onToggle }) => {
         if (!sections || sections.length === 0) return;
   
         let currentSection = "";
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+        // Removed unused scrollPosition variable
         
         // Find which section is currently in view
         sections.forEach((section) => {

@@ -12,15 +12,15 @@ import { faCircleXmark, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
 
 const FindingItem = ({ title, description, isSuccess }) => (
-  <HStack align={'flex-start'} color={'gray.600'}>
+  <HStack align={'flex-start'} color={'semantic.text.primary'} >
     <FontAwesomeIcon 
       icon={isSuccess ? faCircleCheck : faCircleXmark}
-      color={'gray.600'}
+      color="#107c7c"
       style={{ marginTop: "10px" }}
     />
     <Box>
-      <Text textStyle="p">{title}</Text>
-      <Text textStyle="caption">{description}</Text>
+      <Text textStyle="p" >{title}</Text>
+      <Text textStyle="caption" color={'gray.600'}>{description}</Text>
     </Box>
   </HStack>
 );
@@ -28,7 +28,9 @@ const FindingItem = ({ title, description, isSuccess }) => (
 const FindingsRound = ({ title, findings, isSuccess }) => (
   <GridItem>
     <Box   height="100%">
-      <Text as="p" textStyle="pbold" mb={4} textTransform="capitalize">
+      <Text textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase" pb={4}>
         {title}
       </Text>
       <List spacing={4}>
@@ -47,7 +49,7 @@ const FindingsRound = ({ title, findings, isSuccess }) => (
 
 const UsabilityStudy = ({usabilityData}) => {
   return (
-    <Box maxW="container.xl" pb={4}>
+    <Box maxW="container.xl" py={8}>
 
         <Grid templateColumns={{base: "1fr", md: "1fr 1fr"}} gap={8} >
           <FindingsRound 

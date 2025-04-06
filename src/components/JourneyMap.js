@@ -15,7 +15,7 @@ import journeyData from '../assets/steakhouse/data/journey';
 
 const JourneyMap = () => {
   return (
-    <Box w="100%" color={'gray.600'} pb={8}>
+    <Box w="100%" color={'gray.600'} py={8}>
       <VStack align="stretch" spacing={8}>
 
         <Grid
@@ -32,12 +32,15 @@ const JourneyMap = () => {
                 p={4} 
                 h="100%"
                 spacing={4}
+                rounded="lg"
               >
                 <VStack>
-                  <Box color="semantic.text.primary">
-                    <FontAwesomeIcon icon={phase.icon} />
+                  <Box color="semantic.accent" >
+                    <FontAwesomeIcon icon={phase.icon} size="xl" />
                   </Box>
-                  <Text textStyle={'pbold'} textAlign="center" textTransform={'capitalize'}>{phase.stage}</Text>
+                  <Text textStyle={"captionbold"}
+                        color="semantic.text.primary"
+                        textTransform="uppercase">{phase.stage}</Text>
                 </VStack>
 
                 <Divider variant={'dividerSection'} />
