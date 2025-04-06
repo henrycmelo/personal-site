@@ -564,7 +564,7 @@ const SteakHousePage = () => {
                     Parents in immigrant communities face growing challenges in
                     protecting their children online. These workshops provide
                     crucial digital safety support where resources are limited,
-                    making it essential to understand and improve their
+                    making it essential to understand and improve their effectiveness.
                   </Text>
                 </Box>
               </Box>
@@ -739,7 +739,8 @@ const SteakHousePage = () => {
                         <Heading
                           textStyle="pbold"
                           textTransform={"capitalize"}
-                          color="semantic.text.primary"
+                          color="semantic.accent"
+                          pb={2}
                         >
                           Question
                         </Heading>
@@ -779,7 +780,8 @@ const SteakHousePage = () => {
                         <Heading
                           textStyle="pbold"
                           textTransform={"capitalize"}
-                          color="semantic.text.primary"
+                          color="semantic.accent"
+                          pb={2}
                         >
                           Answer
                         </Heading>
@@ -1021,7 +1023,8 @@ const SteakHousePage = () => {
                   <Heading
                     textStyle="pbold"
                     textTransform={"capitalize"}
-                    color="semantic.text.primary"
+                    color="semantic.accent"
+                    pb={2}
                   >
                     Target audience
                   </Heading>
@@ -1176,7 +1179,7 @@ const SteakHousePage = () => {
               >
                 phase 3: analysis
               </Heading>
-              <Text as="p" textStyle="p" pb={4}></Text>
+              <Text as="p" textStyle="p" pb={4}>The analysis was conducted by first creating empathy maps, followed by synthesizing the findings using an affinity diagram. </Text>
 
               <Box pb={4}>
                 <Text
@@ -1209,6 +1212,7 @@ const SteakHousePage = () => {
                     explicit statements and their underlying needs around
                     digital safety.
                   </Text>
+                </Box>
                 </Box>
                 <Box pb={4}>
                   <Grid
@@ -1332,7 +1336,9 @@ const SteakHousePage = () => {
                     quotes.
                   </Text>
                 </Box>
-                <Box pb={4}>
+                
+            
+                <Box py={4}>
                   <Grid
                     templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
                     gap={6}
@@ -1517,8 +1523,8 @@ const SteakHousePage = () => {
                     </GridItem>
                   </Grid>
                 </Box>
-              </Box>
-            </Box>
+                </Box>
+              
           </VStack>
 
           <DividerSection icon={faPuzzlePiece} />
@@ -1542,33 +1548,7 @@ const SteakHousePage = () => {
                 conclusion about the workshop's effectiveness and future
                 direction.
               </Text>
-              <Box pb={4}>
-                <Text
-                  textStyle="pbold"
-                  textTransform="uppercase"
-                  color="gray.600"
-                  pb={3}
-                  as="h3"
-                >
-                  Affinity Diagram & Theme Identification
-                </Text>
-
-                <Box
-                  pl={5}
-                  py={4}
-                  borderLeftWidth="2px"
-                  borderLeftColor="semantic.background.tertiary"
-                >
-                  <Text textStyle="p">
-                    Through our affinity diagramming process, I organized the
-                    sticky notes from the empathy map into three main
-                    categories: Positive Feedback, Motivations/Goals, and
-                    Frustrations. Within each category, key themes emerged.
-                    Below are the themes identified with supporting participant
-                    quotes.
-                  </Text>
-                </Box>
-              </Box>
+              
             </Box>
             <Box pb={4} w="100%" color={"gray.600"}>
               <VStack align="stretch" spacing={8}>
@@ -1603,7 +1583,8 @@ const SteakHousePage = () => {
                         <Heading
                           textStyle="pbold"
                           textTransform={"capitalize"}
-                          color="semantic.text.primary"
+                          color="semantic.accent"
+                          pb={2}
                         >
                           Flexible scheduling
                         </Heading>
@@ -1643,7 +1624,8 @@ const SteakHousePage = () => {
                         <Heading
                           textStyle="pbold"
                           textTransform={"capitalize"}
-                          color="semantic.text.primary"
+                          color="semantic.accent"
+                          pb={2}
                         >
                           technical support
                         </Heading>
@@ -1681,7 +1663,8 @@ const SteakHousePage = () => {
                         <Heading
                           textStyle="pbold"
                           textTransform={"capitalize"}
-                          color="semantic.text.primary"
+                          color="semantic.accent"
+                          pb={2}
                         >
                           content delivery
                         </Heading>
@@ -1720,7 +1703,8 @@ const SteakHousePage = () => {
                         <Heading
                           textStyle="pbold"
                           textTransform={"capitalize"}
-                          color="semantic.text.primary"
+                          color="semantic.accent"
+                          pb={2}
                         >
                           Targeted sessions
                         </Heading>

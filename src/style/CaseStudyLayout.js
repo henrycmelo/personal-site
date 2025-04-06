@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { 
   Flex, 
   Box,
   Container,
-  Text
 } from "@chakra-ui/react";
 import FloatingMenu from "../components/FloatingMenu";
 
 const CaseStudyLayout = ({ children, sections }) => {
-  // State to track if the menu is open or closed
-  const [isMenuExpanded, setIsMenuExpanded] = useState(false);
   
-  // Function to handle menu toggle from the NavigationMenu component
-  const handleMenuToggle = (isOpen) => {
-    setIsMenuExpanded(isOpen);
-  };
 
   return (
     <Container maxW="1200px" py={10}>
@@ -48,7 +41,7 @@ const CaseStudyLayout = ({ children, sections }) => {
           
           <FloatingMenu
             sections={sections}
-            onToggle={handleMenuToggle}
+            
           />
         </Box>
       </Flex>

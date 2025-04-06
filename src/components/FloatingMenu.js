@@ -7,85 +7,89 @@ import {
   Card,
   CardBody,
   Flex,
-  useDisclosure
+  useDisclosure,
+  Tooltip,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-const FloatingMenu = ({ sections,  onToggle }) => {
-    const [activeSection, setActiveSection] = useState("");
-    const { isOpen, onToggle: internalToggle } = useDisclosure({ defaultIsOpen: false });
-    const contentRef = useRef(null);
-  
-    // Handle toggle and notify parent component
-    const handleToggle = () => {
-      internalToggle();
-      if (onToggle) {
-        onToggle(!isOpen);
+const FloatingMenu = ({ sections, onToggle }) => {
+  const [activeSection, setActiveSection] = useState("");
+  const { isOpen, onToggle: internalToggle } = useDisclosure({
+    defaultIsOpen: false,
+  });
+  const contentRef = useRef(null);
+
+  // Handle toggle and notify parent component
+  const handleToggle = () => {
+    internalToggle();
+    if (onToggle) {
+      onToggle(!isOpen);
+    }
+  };
+
+  // Find the scrollable container on the right
+  useEffect(() => {
+    contentRef.current = document.querySelector(
+      '[data-scroll-container="true"]'
+    );
+  }, []);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = -120; // Offset in pixels (negative value means scroll higher)
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    const container = contentRef.current || window;
+
+    const handleScroll = () => {
+      if (!sections || sections.length === 0) return;
+
+      let currentSection = "";
+      // Removed unused scrollPosition variable
+
+      // Find which section is currently in view
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const offset = 200; // Adjust this offset as needed
+
+          // Check if the element is in view
+          if (rect.top <= offset && rect.bottom >= offset) {
+            currentSection = section.id;
+          }
+        }
+      });
+
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
       }
     };
-  
-    // Find the scrollable container on the right
-    useEffect(() => {
-      contentRef.current = document.querySelector(
-        '[data-scroll-container="true"]'
-      );
-    }, []);
-  
-    const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-          const yOffset = -120; // Offset in pixels (negative value means scroll higher)
-          const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          
-          window.scrollTo({
-            top: y,
-            behavior: "smooth"
-          });
-        }
+
+    // Add scroll event listeners
+    container.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+
+    // Initial check
+    handleScroll();
+
+    // Cleanup
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  
-    useEffect(() => {
-      const container = contentRef.current || window;
-      
-      const handleScroll = () => {
-        if (!sections || sections.length === 0) return;
-  
-        let currentSection = "";
-        // Removed unused scrollPosition variable
-        
-        // Find which section is currently in view
-        sections.forEach((section) => {
-          const element = document.getElementById(section.id);
-          if (element) {
-            const rect = element.getBoundingClientRect();
-            const offset = 200; // Adjust this offset as needed
-            
-            // Check if the element is in view
-            if (rect.top <= offset && rect.bottom >= offset) {
-              currentSection = section.id;
-            }
-          }
-        });
-        
-        if (currentSection !== activeSection) {
-          setActiveSection(currentSection);
-        }
-      };
-  
-      // Add scroll event listeners
-      container.addEventListener("scroll", handleScroll);
-      window.addEventListener("scroll", handleScroll);
-      
-      // Initial check
-      handleScroll();
-      
-      // Cleanup
-      return () => {
-        container.removeEventListener("scroll", handleScroll);
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, [sections, activeSection]);
+  }, [sections, activeSection]);
 
   return (
     <Box
@@ -119,8 +123,7 @@ const FloatingMenu = ({ sections,  onToggle }) => {
           >
             {isOpen ? (
               <Flex width="100%" justify="space-between" align="center">
-                <Text textStyle={"captionbold"}
-                textTransform="uppercase">
+                <Text textStyle={"captionbold"} textTransform="uppercase">
                   Navigation
                 </Text>
                 <IconButton
@@ -129,7 +132,7 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                   variant="ghost"
                   color="semantic.background.primary"
                   aria-label="Minimize menu"
-                  _hover={{ bg:'semantic.lightAccent', color:'gray.600'}}
+                  _hover={{ bg: "semantic.lightAccent", color: "gray.600" }}
                 />
               </Flex>
             ) : (
@@ -139,20 +142,14 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                 variant="ghost"
                 color="semantic.background.primary"
                 aria-label="Expand menu"
-                _hover={{ bg:'semantic.lightAccent', color:'gray.600'}}
+                _hover={{ bg: "semantic.lightAccent", color: "gray.600" }}
               />
             )}
           </Flex>
 
           {isOpen ? (
             <Box p={4}>
-              <Text
-                textStyle={"caption"}
-                
-                mb={4}
-                fontSize="sm"
-              color="gray.500"
-              >
+              <Text textStyle={"caption"} mb={4} fontSize="sm" color="gray.500">
                 Click to navigate to a section
               </Text>
 
@@ -164,11 +161,13 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                     color={
                       activeSection === section.id
                         ? "semantic.background.primary"
-                      : "gray.600"
+                        : "gray.600"
                     }
-                    fontWeight={activeSection === section.id ? "bold" : "normal"}
+                    fontWeight={
+                      activeSection === section.id ? "bold" : "normal"
+                    }
                     backgroundColor={
-                      activeSection === section.id ?"gray.600" : "transparent"
+                      activeSection === section.id ? "gray.600" : "transparent"
                     }
                     cursor="pointer"
                     transition={"all 0.3s"}
@@ -177,7 +176,10 @@ const FloatingMenu = ({ sections,  onToggle }) => {
                     borderRadius="md"
                     display={"flex"}
                     alignItems="center"
-                    _hover={{ bg:'gray.600', color:'semantic.background.primary'}}
+                    _hover={{
+                      bg: "gray.600",
+                      color: "semantic.background.primary",
+                    }}
                   >
                     <Flex align="center" gap={3}>
                       <FontAwesomeIcon icon={section.icon} />
@@ -190,29 +192,43 @@ const FloatingMenu = ({ sections,  onToggle }) => {
           ) : (
             <VStack spacing={1} align="stretch" p={2}>
               {sections?.map((section) => (
-                <Box
+                <Tooltip
                   key={section.id}
-                  onClick={() => scrollToSection(section.id)}
-                  color={
-                    activeSection === section.id
-                      ? "semantic.background.primary"
-                      : "gray.600"
-                  }
-                  fontWeight={activeSection === section.id ? "bold" : "normal"}
-                  backgroundColor={
-                    activeSection === section.id ? "gray.600" : "transparent"
-                  }
-                  cursor="pointer"
-                  transition={"all 0.3s"}
-                  py={3}
-                  borderRadius="md"
-                  display={"flex"}
-                  justifyContent="center"
-                  alignItems="center"
-                  _hover={{ bg:'gray.600', color:'semantic.background.primary', cursor:"pointer"}}
+                  label={section.label}
+                  textTransform={"uppercase"}
+                  fontSize="xs"
+                  hasArrow
+                  placement="right"
                 >
-                  <FontAwesomeIcon icon={section.icon} />
-                </Box>
+                  <Box
+                    onClick={() => scrollToSection(section.id)}
+                    color={
+                      activeSection === section.id
+                        ? "semantic.background.primary"
+                        : "gray.600"
+                    }
+                    fontWeight={
+                      activeSection === section.id ? "bold" : "normal"
+                    }
+                    backgroundColor={
+                      activeSection === section.id ? "gray.600" : "transparent"
+                    }
+                    cursor="pointer"
+                    transition="all 0.3s"
+                    py={3}
+                    borderRadius="md"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    _hover={{
+                      bg: "gray.600",
+                      color: "semantic.background.primary",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <FontAwesomeIcon icon={section.icon} />
+                  </Box>
+                </Tooltip>
               ))}
             </VStack>
           )}

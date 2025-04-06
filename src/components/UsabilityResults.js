@@ -22,13 +22,17 @@ const MetricCard = ({ title, initial, final, improvement, icon }) => {
       bg="semantic.background.secondary" 
       p={6} 
       color={'gray.600'}
+      rounded="lg"
       
     >
       <HStack justify="space-between" mb={4}>
-        <Text textStyle={'pbold'}>
+        <Text textStyle={"captionbold"}
+                      color="semantic.text.primary"
+                      textTransform="uppercase"
+                      textAlign={"center"}>
           {title}
         </Text>
-        <Icon as={icon}  boxSize={5} />
+        <Icon as={icon}  boxSize={5} color={'semantic.accent'} />
       </HStack>
       <Grid templateColumns="repeat(3, 1fr)" gap={4}>
         <Box>
@@ -51,7 +55,7 @@ const MetricCard = ({ title, initial, final, improvement, icon }) => {
           <Text textStyle={'caption'}  mb={1}>
             Change
           </Text>
-          <Text textStyle={'pbold'}>
+          <Text textStyle={'pbold'} color={'semantic.accent'}>
             {improvement}
           </Text>
         </Box>
@@ -66,14 +70,18 @@ const ImprovementCard = ({ value, metric, description }) => {
     bg="semantic.background.secondary" 
     p={6} 
     color={'gray.600'}
+    rounded="lg"
     >
-      <HStack mb={2}>
+      <HStack mb={2} color='semantic.accent'>
         <Icon as={FaArrowUp}  boxSize={4} />
-        <Text textStyle={'pbold'}>
+        <Text textStyle={'pbold'} >
           {value}
         </Text>
       </HStack>
-      <Text textStyle={'pbold'} mb={2}>
+      <Text textStyle={"captionbold"}
+                      color="semantic.text.primary"
+                      textTransform="uppercase"
+                       mb={2}>
         {metric}
       </Text>
       <Text textStyle={'caption'}>

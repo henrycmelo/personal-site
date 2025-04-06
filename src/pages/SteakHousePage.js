@@ -637,6 +637,7 @@ const SteakHousePage = () => {
                   textStyle="pbold"
                   textTransform={"capitalize"}
                   color="semantic.text.primary"
+                  
                 >
                   Quick Stats
                 </Heading>
@@ -947,7 +948,8 @@ const SteakHousePage = () => {
                 <Heading
                   textStyle="pbold"
                   textTransform={"capitalize"}
-                  color="semantic.text.primary"
+                  color="semantic.accent"
+                  pb={2}
                 >
                   Key findings
                 </Heading>
@@ -1116,7 +1118,8 @@ const SteakHousePage = () => {
                   <Heading
                     textStyle="pbold"
                     textTransform={"capitalize"}
-                    color="semantic.text.primary"
+                    color="semantic.accent"
+                    pb={2}
                   >
                     market opportunity
                   </Heading>
@@ -1259,7 +1262,8 @@ const SteakHousePage = () => {
                     <Heading
                       textStyle="pbold"
                       textTransform={"capitalize"}
-                      color="semantic.text.primary"
+                      color="semantic.accent"
+                      pb={2}
                     >
                       Design decisions
                     </Heading>
@@ -1328,7 +1332,8 @@ const SteakHousePage = () => {
                   <Heading
                     textStyle="pbold"
                     textTransform={"capitalize"}
-                    color="semantic.text.primary"
+                    color="semantic.accent"
+                    pb={2}
                   >
                     Design evolution
                   </Heading>
@@ -1399,7 +1404,8 @@ const SteakHousePage = () => {
                   <Heading
                     textStyle="pbold"
                     textTransform={"capitalize"}
-                    color="semantic.text.primary"
+                    color="semantic.accent"
+                    pb={2}
                   >
                     prototype testing
                   </Heading>
@@ -1462,7 +1468,8 @@ const SteakHousePage = () => {
                   <Heading
                     textStyle="pbold"
                     textTransform={"capitalize"}
-                    color="semantic.text.primary"
+                    color="semantic.accent"
+                    pb={2}
                   >
                     Key Improvements
                   </Heading>
@@ -1549,7 +1556,8 @@ const SteakHousePage = () => {
                     <Heading
                       textStyle="pbold"
                       textTransform={"capitalize"}
-                      color="semantic.text.primary"
+                      color="semantic.accent"
+                      pb={2}
                     >
                       Design Impact
                     </Heading>

@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, Text, VStack, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Box, Text, VStack, Grid, GridItem, Image, Heading } from "@chakra-ui/react";
 import errorImage from "../assets/archives/error.svg"
 
 const UsabilityMetric = ({ number, label }) => (
   <VStack spacing={2} align="center" color="gray.600">
-    <Text textStyle={'pbold'}>
+    <Text textStyle={'pbold'} color={'semantic.accent'}>
       {number}
     </Text>
     <Text textStyle="caption" textAlign="center">
@@ -19,50 +19,86 @@ const UsabilityMetrics = () => {
       <Grid
         templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
         gap={8}
-        py={6}
+        pb={8}
+       
       >
-        <GridItem>
+        <GridItem
+        p={6}
+        borderRadius="lg"
+        shadow={"md"}
+        border="1px"
+        borderColor="semantic.divider"
+        >
           <UsabilityMetric 
             number="48" 
             label="SUS Score (Below average usability)"
           />
         </GridItem>
-        <GridItem>
+        <GridItem
+        p={6}
+        borderRadius="lg"
+        shadow={"md"}
+        border="1px"
+        borderColor="semantic.divider">
           <UsabilityMetric
             number="45%"
             label="Users struggled to locate the donation button"
           />
         </GridItem>
-        <GridItem>
+        <GridItem
+        p={6}
+        borderRadius="lg"
+        shadow={"md"}
+        border="1px"
+        borderColor="semantic.divider">
           <UsabilityMetric
             number="8.5m"
             label="Average time to complete donation"
           />
         </GridItem>
-        <GridItem>
+        <GridItem
+        p={6}
+        borderRadius="lg"
+        shadow={"md"}
+        border="1px"
+        borderColor="semantic.divider">
           <UsabilityMetric number="70%" label="Users encountered form errors" />
         </GridItem>
       </Grid>
 
       <Box
-        backgroundColor={"semantic.background.secondary"}
-        w={"100%"}
-        p={6}
-        boxShadow={"md"}
+        rounded="lg"
+        width="full"
+        bg="semantic.background.secondary"
+        p={{ base: 8, md: 12 }}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
       >
-        <VStack >
-          <Box display="flex" justifyContent={"center"}>
+        
+          <Box display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  width="100%">
             <Image src={errorImage} alt="error illustration" maxW={"100px"} />
           </Box>
+          <Box textAlign="center">
+                            <Heading
+                              textStyle="pbold"
+                              textTransform={"capitalize"}
+                              color="semantic.accent"
+                              pb={2}
+                            >
+                              Usability issues
+                            </Heading>
+          
+                            <Text textStyle={"caption"} color="gray.600">
+                            Initial testing revealed significant usability issues in the donation flow, 
+                            with users struggling to complete basic tasks and experiencing high error rates.
+                            </Text>
+                          </Box>
 
-          <Text as="p" textStyle={"pbold"} textTransform={"capitalize"}>
-            Usability issues
-          </Text>
-          <Text as="p" textStyle="p">
-          Initial testing revealed significant usability issues in the donation flow, 
-          with users struggling to complete basic tasks and experiencing high error rates.
-          </Text>
-        </VStack>
+        
       </Box>
     </Box>
   );

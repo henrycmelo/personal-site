@@ -10,7 +10,7 @@ import {
   Wrap,
   Tag,
 } from "@chakra-ui/react";
-import Badges from "./Badges";
+
 
 const DigitalWireframes = ({ digital }) => {
   return (
