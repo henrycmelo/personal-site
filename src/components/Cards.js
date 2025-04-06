@@ -75,7 +75,7 @@ const Cards = ({ title, description, imageSrc, path, keywords, logoSrc,type}) =>
           </Text>
         </Box>
         <HStack height='4em' >
-          <Badges borderRadius="full" px={2} >
+          <Badges  >
             {keywords || ""}
           </Badges>
         </HStack>

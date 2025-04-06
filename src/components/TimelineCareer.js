@@ -26,6 +26,7 @@ const TimelineCareer = () => {
   const secondaryColor = theme.colors.semantic.text.primary;
   const mutedColor = theme.colors.semantic.text.secondary;
   const primaryColor = theme.colors.semantic.background.primary;
+  const accentColor = theme.colors.semantic.accent;
 
 
   //API CALL
@@ -78,7 +79,7 @@ const TimelineCareer = () => {
         key={entry.id || index}
         date={entry.date}
         contentStyle={{background:"transparent", color: secondaryColor, border:"solid #495057"}}
-        iconStyle={{ background: mutedColor, color: primaryColor }}
+        iconStyle={{ background: accentColor, color: primaryColor }}
         icon={<FontAwesomeIcon icon={icon} />}
         contentArrowStyle={{ borderRight: '7px solid  #495057' }}
       >

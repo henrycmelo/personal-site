@@ -10,10 +10,12 @@ const Badges= ({ children, ...props }) => {
       {childrenArray && childrenArray.map((child, index) => (
         <WrapItem key={index}>
         <Badge 
-        backgroundColor="gray.600"
-        color="semantic.background.primary"
-        borderRadius="2px"
         
+        color="semantic.background.secondary"
+        bg='gray.600'
+      
+        borderRadius="md" 
+      
         {...props}
         >
           {child}

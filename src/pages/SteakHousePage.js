@@ -626,6 +626,7 @@ const SteakHousePage = () => {
                 </Box>
               </HStack>
             </Box>
+
             <Box
               rounded="lg"
               width="full"
@@ -704,13 +705,14 @@ const SteakHousePage = () => {
                   iterations.
                 </Text>
               </Box>
-            </Box>
+            
             <Box pb={4}>
               <SimpleGrid
                 columns={{ base: 1, md: 4 }}
                 spacing={6}
                 textAlign="center"
                 textTransform="capitalize"
+                py={4}
               >
                 <Box
                   bg="semantic.background.secondary"
@@ -803,6 +805,7 @@ const SteakHousePage = () => {
               <Text as="p" textStyle="caption" textAlign="center" mt={2}>
                 Key features
               </Text>
+              </Box>
             </Box>
 
             {/* Process */}
@@ -921,7 +924,7 @@ const SteakHousePage = () => {
                   </HStack>
                 </Box>
               </Box>
-            </Box>
+            
             {/* Key Findings */}
             <Box
               rounded="lg"
@@ -1061,6 +1064,7 @@ const SteakHousePage = () => {
                   </UnorderedList>
                 </VStack>
               </SimpleGrid>
+            </Box>
             </Box>
 
             {/* Competitive analysis */}
@@ -1593,7 +1597,7 @@ const SteakHousePage = () => {
                 design and the importance of iterative development in creating
                 impactful solutions.
               </Text>
-              <Box w="100%" color={"gray.600"} py={8}>
+              <Box w="100%" color={"gray.600"} py={4}>
                 <VStack align="stretch" spacing={8}>
                   <Grid
                     templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
@@ -1739,6 +1743,7 @@ const SteakHousePage = () => {
                   </Grid>
                 </VStack>
               </Box>
+              </Box>
 
               <Box pb={4}>
                 <Text
@@ -1761,8 +1766,8 @@ const SteakHousePage = () => {
                     This project transformed my approach to UX design in several
                     key ways:
                   </Text>
-                  <VStack align="stretch">
-                    <UnorderedList textStyle={"p"} pb={4}>
+                  <VStack align="stretch" color={'gray.600'}>
+                    <UnorderedList textStyle={"p"} pb={4} >
                       <ListItem>
                         <Text>
                           <strong>Research Impact:</strong> Learned how early
@@ -1801,7 +1806,7 @@ const SteakHousePage = () => {
                   </VStack>
                 </Box>
               </Box>
-            </Box>
+            
           </VStack>
         </CaseStudyLayout>
       </Box>

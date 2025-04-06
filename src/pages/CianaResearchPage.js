@@ -705,8 +705,8 @@ const SteakHousePage = () => {
                   metrics.
                 </Text>
               </Box>
-            </Box>
-            <Box pb={4} w="100%" color={"gray.600"}>
+            
+            <Box py={4} w="100%" color={"gray.600"}>
               <VStack align="stretch" spacing={8}>
                 <Grid
                   templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
@@ -796,6 +796,7 @@ const SteakHousePage = () => {
                   </GridItem>
                 </Grid>
               </VStack>
+            </Box>
             </Box>
 
             {/* Process */}
@@ -1168,7 +1169,7 @@ const SteakHousePage = () => {
 
           <DividerSection icon={faChartLine} />
 
-          <VStack align="stretch" spacing={10} pt={12} id="analysis">
+          <VStack align="stretch" spacing={10} py={12} id="analysis">
             {/* phase 3 Section */}
             <Box color="gray.600">
               <Heading
@@ -1327,7 +1328,7 @@ const SteakHousePage = () => {
                   borderLeftWidth="2px"
                   borderLeftColor="semantic.background.tertiary"
                 >
-                  <Text textStyle="p">
+                  <Text textStyle="p" color='gray.600'>
                     Through our affinity diagramming process, I organized the
                     sticky notes from the empathy map into three main
                     categories: Positive Feedback, Motivations/Goals, and
@@ -1529,7 +1530,7 @@ const SteakHousePage = () => {
 
           <DividerSection icon={faPuzzlePiece} />
 
-          <VStack align="stretch" spacing={10} pt={12} id="synthesis">
+          <VStack align="stretch" spacing={10} py={12} id="synthesis">
             {/* phase 3 Section */}
             <Box color="gray.600">
               <Heading
@@ -1752,7 +1753,7 @@ const SteakHousePage = () => {
             </Box>
           </VStack>
           <DividerSection icon={faLightbulb} />
-          <VStack align="stretch" spacing={10} pt={12} id="reflection">
+          <VStack align="stretch" spacing={10} py={12} id="reflection">
             {/* phase 5 Section */}
             <Box color="gray.600">
               <Heading

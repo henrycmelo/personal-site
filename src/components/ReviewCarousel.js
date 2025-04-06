@@ -119,7 +119,7 @@ function ReviewsCarousel() {
                     </>
                   )}
                 </Text>
-                <Text pt={2} as="p" textStyle="captionbold">
+                <Text pt={2} as="p" textStyle="captionbold" >
                   {review.reviewer_name}
                 </Text>
               </Stack>
@@ -131,7 +131,7 @@ function ReviewsCarousel() {
               </Stack>
 
               {review.linkedin_url && (
-                <Stack>
+                <Stack color='semantic.accent' >
                   <a href={review.linkedin_url} target="_blank" rel="noreferrer">
                     <FontAwesomeIcon size="xl" icon={faLinkedin} />
                   </a>

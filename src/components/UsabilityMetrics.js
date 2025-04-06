@@ -15,7 +15,7 @@ const UsabilityMetric = ({ number, label }) => (
 
 const UsabilityMetrics = () => {
   return (
-    <Box w="100%" >
+    <Box w="100%" py={4}>
       <Grid
         templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
         gap={8}

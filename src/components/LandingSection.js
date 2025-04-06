@@ -104,7 +104,7 @@ const LandingSection = () => {
           
           <Divider variant="thick" />
           <footer>
-            <Box   >
+            <Box mt={1}   >
             <Footer />
             </Box>
           </footer>

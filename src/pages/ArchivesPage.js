@@ -736,14 +736,16 @@ const SteakHousePage = () => {
                   iterations.
                 </Text>
               </Box>
-            </Box>
+            
 
-            <Box pb={4}>
+            
               <SimpleGrid
                 columns={{ base: 1, md: 4 }}
                 spacing={6}
                 textAlign="center"
                 textTransform="capitalize"
+                my={4}
+                
               >
                 <Box
                   bg="semantic.background.secondary"
@@ -934,7 +936,7 @@ const SteakHousePage = () => {
                     cultural sector.
                   </Text>
                 </Box>
-              </Box>
+              
 
               <Box w="100%" color={"gray.600"} py={8}>
                 <VStack align="stretch" spacing={8}>
@@ -1106,6 +1108,7 @@ const SteakHousePage = () => {
                   </Grid>
                 </VStack>
               </Box>
+              </Box>
 
               <Box pb={4}>
                 <Text
@@ -1241,6 +1244,7 @@ const SteakHousePage = () => {
                   </Grid>
                 </VStack>
               </Box>
+              </Box>
 
               <Box pb={4}>
                 <Text
@@ -1277,7 +1281,7 @@ const SteakHousePage = () => {
                     </a>
                   </Text>
                 </Box>
-              </Box>
+              
 
               <Box
                 rounded="lg"
@@ -1287,6 +1291,7 @@ const SteakHousePage = () => {
                 display="flex"
                 flexDirection="column"
                 alignItems="center"
+                my={4}
               >
                 <Box
                   display="flex"
@@ -1318,7 +1323,8 @@ const SteakHousePage = () => {
                   </Text>
                 </Box>
               </Box>
-            </Box>
+              </Box>
+            
           </VStack>
           <DividerSection icon={faVial} />
 
@@ -1338,7 +1344,7 @@ const SteakHousePage = () => {
                 evaluate the donation flow and identify opportunities for
                 improvement. Each session was recorded for detailed analysis.
               </Text>
-            </Box>
+            
 
             <Box
               rounded="lg"
@@ -1381,6 +1387,7 @@ const SteakHousePage = () => {
                 </Text>
               </Box>
             </Box>
+            </Box>
 
             <Box pb={4}>
               <Text
@@ -1399,14 +1406,14 @@ const SteakHousePage = () => {
                 borderLeftWidth="2px"
                 borderLeftColor="semantic.background.tertiary"
               >
-                <Text textStyle="p">
+                <Text textStyle="p" color='gray.600'>
                   Participants were asked to complete three core tasks that
                   represent key user journeys in the donation process:
                 </Text>
               </Box>
-            </Box>
+            
 
-            <Box w="100%" color={"gray.600"} pb={8}>
+            <Box w="100%" color={"gray.600"} pt ={4} >
               <VStack align="stretch" spacing={8}>
                 <Grid
                   templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
@@ -1544,6 +1551,7 @@ const SteakHousePage = () => {
                 </Grid>
               </VStack>
             </Box>
+            </Box>
             <Box pb={4}>
               <Text
                 textStyle="pbold"
@@ -1561,14 +1569,15 @@ const SteakHousePage = () => {
                 borderLeftWidth="2px"
                 borderLeftColor="semantic.background.tertiary"
               >
-                <Text textStyle="p">
+                <Text textStyle="p" color='gray.600'>
                   Each task was evaluated based on completion rate, time on
                   task, and error rate. Participants were encouraged to think
                   aloud, providing qualitative feedback throughout the process.
                 </Text>
               </Box>
+              <UsabilityMetrics />
             </Box>
-            <UsabilityMetrics />
+            
           </VStack>
 
           <DividerSection icon={faPuzzlePiece} />
@@ -1607,7 +1616,7 @@ const SteakHousePage = () => {
                 borderLeftWidth="2px"
                 borderLeftColor="semantic.background.tertiary"
               >
-                <Text textStyle="p">
+                <Text textStyle="p" color='gray.600'>
                   Through remote brainstorming sessions, we grouped these notes
                   into related clusters, identifying emerging patterns and pain
                   points. This affinity mapping exercise helped us transform
@@ -1615,12 +1624,13 @@ const SteakHousePage = () => {
                   guide our design decisions.
                 </Text>
               </Box>
-            </Box>
+            
 
-            <Box pb={4}>
+            
               <Grid
                 templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
                 gap={6}
+                my={4}
               >
                 <GridItem
                   p={6}
@@ -1722,7 +1732,7 @@ const SteakHousePage = () => {
                 borderLeftWidth="2px"
                 borderLeftColor="semantic.background.tertiary"
               >
-                <Text textStyle="p">
+                <Text textStyle="p" color='gray.600'>
                   Following the comprehensive affinity diagram exercise, this
                   key findings analysis distills the synthesized user experience
                   data into strategic, actionable insights. By clustering and
@@ -1731,9 +1741,9 @@ const SteakHousePage = () => {
                   design considerations for optimizing donation experience.
                 </Text>
               </Box>
-            </Box>
+            
 
-            <Box w="100%" color={"gray.600"} pb={8}>
+            <Box w="100%" color={"gray.600"} py={4}>
               <VStack align="stretch" spacing={8}>
                 <Grid
                   templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
@@ -1920,6 +1930,7 @@ const SteakHousePage = () => {
                   </GridItem>
                 </Grid>
               </VStack>
+            </Box>
             </Box>
           </VStack>
 

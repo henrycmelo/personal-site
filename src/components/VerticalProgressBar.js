@@ -17,9 +17,7 @@ const VerticalProgressBar = ({ sections, isHomePage, isOtherPage }) => {
   const [activeSection, setActiveSection] = useState("");
   const contentRef = useRef(null);
   const showLabel = useBreakpointValue({ base: false, lg: true });
-  const {  handlePath } = useAlertContext();
-
-  
+  const { handlePath } = useAlertContext();
 
   //Find the scrollable container on the right
   useEffect(() => {
@@ -99,6 +97,9 @@ const VerticalProgressBar = ({ sections, isHomePage, isOtherPage }) => {
               py={12}
               align={"center"}
               textTransform="capitalize"
+      
+              w="90%"
+              
             >
               <Avatar name="Henry" src={headShot} objectFit="cover" />
               <Box textAlign={{ base: "center", lg: "left" }}>
@@ -106,7 +107,7 @@ const VerticalProgressBar = ({ sections, isHomePage, isOtherPage }) => {
                   Henry C. Melo
                 </Text>
                 <Text as="p" textStyle="caption" color="gray.600">
-                  Product Designer/ UX researcher
+                  Product & UX Designer
                 </Text>
               </Box>
             </Stack>
@@ -184,18 +185,18 @@ const VerticalProgressBar = ({ sections, isHomePage, isOtherPage }) => {
       ) : (
         <VStack position="sticky" top="20%" left="5%" zIndex="10">
           <Text
-              fontSize="sm"
-              color="gray.500"
-              textStyle={'caption'}
-              textAlign="center"
-              px={6}
-              py={2}
-            >
-              Click to advance to a specific section{" "}
-              <Text as='span' textStyle='caption' fontStyle='italic'>
-                or just scroll down
-              </Text> 
+            fontSize="sm"
+            color="gray.500"
+            textStyle={"caption"}
+            textAlign="center"
+            px={6}
+            py={2}
+          >
+            Click to advance to a specific section{" "}
+            <Text as="span" textStyle="caption" fontStyle="italic">
+              or just scroll down
             </Text>
+          </Text>
           {sections?.map((section) => (
             <Box
               textStyle="caption"
