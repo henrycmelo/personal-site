@@ -183,7 +183,7 @@ const FloatingMenu = ({ sections, onToggle }) => {
                   >
                     <Flex align="center" gap={3}>
                       <FontAwesomeIcon icon={section.icon} />
-                      <Text fontSize="sm">{section.label}</Text>
+                      <Text fontSize="sm" textTransform={'capitalize'}>{section.label}</Text>
                     </Flex>
                   </Box>
                 ))}
