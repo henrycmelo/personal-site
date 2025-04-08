@@ -44,7 +44,7 @@ const ResponsiveMenu = ({ sections, isHomePage, isOtherPage }) => {
                 Henry C. Melo
               </Text>
               <Text as="p" textStyle="caption" color="gray.600">
-                Product Designer/ UX researcher
+              Product & UX Designer
               </Text>
             </Box>
           </HStack>

@@ -16,7 +16,8 @@ import { LoginPage } from "./components/LoginPage.js";
 import { ProtectedRoute } from "./components/ProtectedRoute.js";
 import LeaveReviewPage from "./pages/LeaveReviewPage.js";
 import { AdminDashboard } from "./components/AdminDashboard.js";
-import SteakHouseDraft from "./pages/SteakHouseDraft.js";
+import FortyMinutesPage from "./pages/FortyMinutesPage.js";
+
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -30,7 +31,7 @@ function App() {
             <Route path="/projects/cianaresearch" element={<CianaResearchPage />} />
             <Route path="/projects" element={<ProjectSectionPage />} />
             <Route path="/projects/steakhouse" element={<SteakHousePage />} />
-            <Route path="/projects/steakhousedraft" element={<SteakHouseDraft />} />
+            <Route path="/projects/fortyminutes" element={<FortyMinutesPage />} />
             <Route path="/projects/aaa" element={<ArchivesPage />} />
             <Route path="/reviews" element={<ReviewCarouselPage />} />
             <Route path="/reviews/leavereview" element={<LeaveReviewPage />} />

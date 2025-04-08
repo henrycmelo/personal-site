@@ -1762,7 +1762,7 @@ const SteakHousePage = () => {
                   borderLeftWidth="2px"
                   borderLeftColor="semantic.background.tertiary"
                 >
-                  <Text textStyle="p">
+                  <Text textStyle="p" color='gray.600'>
                     This project transformed my approach to UX design in several
                     key ways:
                   </Text>
