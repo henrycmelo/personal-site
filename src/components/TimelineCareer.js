@@ -12,7 +12,7 @@ import {
   Spinner,
   Box,
 } from "@chakra-ui/react";
-import { faAdd, faBriefcase, faChevronUp, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
+import { faAdd, faBriefcase, faChevronUp, faUserGraduate, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Badges from "./Badges"
 import { sortByDate } from "../utils/sortByDate";
@@ -72,7 +72,14 @@ const TimelineCareer = () => {
     return visibleEntries.map((entry, index) => {
 
       const iconName = entry.icon;
-      const icon = iconName === 'faUserGraduate' ? faUserGraduate : faBriefcase;
+      let icon;
+      if (iconName === 'faUserGraduate') {
+        icon = faUserGraduate;
+      } else if (iconName === 'faHandHoldingHeart') {
+        icon = faHandHoldingHeart;
+      } else {
+        icon = faBriefcase;
+      }
 
       return (
         <VerticalTimelineElement

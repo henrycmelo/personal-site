@@ -2,8 +2,25 @@
 
 
 const projects = [
+  
   {
-    title: "Designing for Busy People: Transforming Manual Booking into a Digital Experience",
+    title: "From Metrics to Impact: Digital Safety for Immigrant Families",
+    description:
+      "Created interactive data dashboards that secured $150K in funding and improved program participation by 40%. Made digital services accessible to non-English speaking families.",
+    getImageSrc: () => require("../assets/ciana_research/uicardciana.png"),
+    getLogosSrc: () => [
+      require("../assets/ciana_research/cecLogo.png"),
+      require("../assets/ciana_research/cianaLogo.png"),
+    ],
+    keywords:['Research Planning', 'User Interviews', "Synthesis Methods", "Data Analysis"],
+    path: "/projects/cianaresearch",
+    type:'UX Research / Design Strategy'
+
+  
+    
+  },
+  {
+    title: "From Manual Operations to $258K Revenue: Logistics Optimization",
     description:
       "Founded and led UX/UI design for 40minutes, a fitness marketplace app that transformed a tedious 30-minute+ booking process into an instant digital experience. This innovation facilitated over 37,440 training sessions and generated $258K in annual revenue.",
     getImageSrc: () => require("../assets/40minutes/uicard.png"),
@@ -43,23 +60,7 @@ const projects = [
       keywords:['UX/UI Design', 'User Research', 'Wireframing', "Design Systems", "Prototyping", "User Testing"],
       path: "/projects/steakhouse",
       type:'Product Design / Mobile UX'
-    },
-  {
-    title: "From Metrics to Meaning: Digital Safety Impact Study",
-    description:
-      "Transformed basic workshop surveys into compelling human stories through UX research with immigrant families. Uncovered critical insights that secured grant funding and enhanced digital safety education for underserved communities.",
-    getImageSrc: () => require("../assets/ciana_research/uicardciana.png"),
-    getLogosSrc: () => [
-      require("../assets/ciana_research/cecLogo.png"),
-      require("../assets/ciana_research/cianaLogo.png"),
-    ],
-    keywords:['Research Planning', 'User Interviews', "Synthesis Methods", "Data Analysis"],
-    path: "/projects/cianaresearch",
-    type:'UX Research / Design Strategy'
-
-  
-    
-  }
+    }
     
   ];
   

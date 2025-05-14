@@ -729,11 +729,7 @@ const SteakHousePage = () => {
                 borderLeftColor="semantic.background.tertiary"
               >
                 <Text textStyle="p" color="gray.600">
-                  The initial release focuses on core ordering functionality to
-                  provide immediate value and reduce third-party platform
-                  dependency. Starting with essential features allows quick
-                  market entry while gathering user feedback for future
-                  iterations.
+                  The project aimed to gather and analyze both quantitative and qualitative data to help the team develop informed solutions based on user insights. These solutions were intended to::
                 </Text>
               </Box>
             
@@ -1263,7 +1259,7 @@ const SteakHousePage = () => {
                   borderLeftWidth="2px"
                   borderLeftColor="semantic.background.tertiary"
                 >
-                  <Text textStyle="p">
+                  <Text textStyle="p" color={"gray.600"}>
                     Developed a comprehensive screening questionnaire to
                     identify participants who matched our target donor profile.
                     The questionnaire was structured in sections to ensure

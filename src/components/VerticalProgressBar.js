@@ -101,13 +101,13 @@ const VerticalProgressBar = ({ sections, isHomePage, isOtherPage }) => {
               w="90%"
               
             >
-              <Avatar name="Henry" src={headShot} objectFit="cover" />
+              <Avatar name="Henry Melo" src={headShot} objectFit="cover" aria-label="Profile photo of Henry C. Melo, Product Designer and UX Researcher" />
               <Box textAlign={{ base: "center", lg: "left" }}>
                 <Text as="p" textStyle="pbold">
                   Henry C. Melo
                 </Text>
                 <Text as="p" textStyle="caption" color="gray.600">
-                  Product & UX Designer
+                  Product Designer | M.S HCI & UX 
                 </Text>
               </Box>
             </Stack>
