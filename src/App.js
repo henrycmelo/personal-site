@@ -17,7 +17,7 @@ import { ProtectedRoute } from "./components/ProtectedRoute.js";
 import LeaveReviewPage from "./pages/LeaveReviewPage.js";
 import { AdminDashboard } from "./components/AdminDashboard.js";
 import FortyMinutesPage from "./pages/FortyMinutesPage.js";
-
+import CapsuleArticle from "./pages/CapsuleArticle.js";
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -32,6 +32,7 @@ function App() {
             <Route path="/projects" element={<ProjectSectionPage />} />
             <Route path="/projects/steakhouse" element={<SteakHousePage />} />
             <Route path="/projects/fortyminutes" element={<FortyMinutesPage />} />
+            <Route path="/projects/capsule" element={<CapsuleArticle/>} />
             <Route path="/projects/aaa" element={<ArchivesPage />} />
             <Route path="/reviews" element={<ReviewCarouselPage />} />
             <Route path="/reviews/leavereview" element={<LeaveReviewPage />} />
