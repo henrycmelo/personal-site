@@ -73,6 +73,8 @@ import {
   faMapLocation,
   faBoxesStacked,
   faTools,
+  faTimes,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import DividerSection from "../components/DividerSection";
 import banner from "../assets/40minutes/banner.png";
@@ -124,7 +126,8 @@ const CapsuleArticle = () => {
             textShadow="0 2px 4px rgba(0,0,0,0.8)"
           >
             <Text as="span" textStyle={"pbold"}>
-              Own the Last Mile
+              How a Simple User Confirmation Could Transform Delivery Success
+              Rates
             </Text>
 
             <Text
@@ -134,7 +137,8 @@ const CapsuleArticle = () => {
               mb={8}
               fontWeight="bold"
             >
-              Why Capsule's Core Business Deserves Proprietary Technology
+              Improving Capsule's Delivery Efficiency: A UX Critique of
+              Third-Party Dependencies and Missed Opportunities
             </Text>
           </Container>
         </Box>
@@ -154,11 +158,10 @@ const CapsuleArticle = () => {
             >
               <Box>
                 <Text textStyle={"pbold"} color="semantic.accent" mb={2}>
-                  Field Research
+                  Research Type
                 </Text>
-                <Text textStyle="pbold">Capsule Pharmacy</Text>
-                <Text textStyle={"caption"} color="gray.600">
-                  Courier Division
+                <Text textStyle="pbold">
+                  Operational Analysis & Field Experience
                 </Text>
               </Box>
 
@@ -169,10 +172,11 @@ const CapsuleArticle = () => {
                   mb={2}
                   textTransform={"capitalize"}
                 >
-                  Discovery scope
+                  Core Issue
                 </Text>
                 <Text color="gray.600">
-                  5 months as medication courier across Brooklyn neigborhoods
+                  Customer forgetting scheduled deliveries due to the lack of
+                  pre-delivery confirmation system.
                 </Text>
               </Box>
 
@@ -188,18 +192,18 @@ const CapsuleArticle = () => {
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
                   <Box>
                     <Text textStyle={"h3bold"} color="semantic.accent">
-                      12
+                      72+
                     </Text>
                     <Text textStyle={"caption"} color="gray.600">
-                      minutes saved per courier shift
+                      minutes saved per shift
                     </Text>
                   </Box>
                   <Box>
                     <Text textStyle={"h3bold"} color="semantic.accent">
-                      14%+
+                      12+
                     </Text>
                     <Text textStyle={"caption"} color="gray.600">
-                      increased delivery capacity
+                      increased deliveries per shift
                     </Text>
                   </Box>
                 </SimpleGrid>
@@ -220,105 +224,35 @@ const CapsuleArticle = () => {
                 color="semantic.text.primary"
                 pb={4}
               >
-                Context
+                Introduction
               </Heading>
-              <Text textStyle="p">
-                Capsule Pharmacy operates a growing medication delivery service
-                across New York City, using a hub-based system with couriers on
-                bikes and in cars. As a leading digital pharmacy, they've built
-                excellent customer-facing technology for prescription
-                management, but rely on third-party software for their delivery
-                operations:
+              <Text textStyle="p" mb={4}>
+                Capsule has transformed the pharmacy experience with its
+                digital-first approach and convenient home delivery. As a
+                direct-to-consumer pharmacy, delivery isn't just a feature—it's
+                fundamental to their business model and brand promise. Yet
+                curiously, Capsule relies entirely on third-party applications
+                to execute this core function.
               </Text>
-              <Grid
-                templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
-                gap={4}
+              <Text textStyle="p">
+                This case study examines the operational gaps created by
+                Capsule's dependence on external delivery platforms,
+                particularly Onfleet, and proposes a critical UX intervention
+                that could significantly improve delivery success rates.
+              </Text>
+              <Box
+                borderLeftWidth="2px"
+                borderColor="semantic.background.tertiary"
+                p={4}
                 my={4}
               >
-                {/* Time-consuming booking process */}
-                <GridItem>
-                  <VStack
-                    align="stretch"
-                    bg="semantic.background.secondary"
-                    p={4}
-                    h="100%"
-                    spacing={4}
-                    rounded="lg"
-                  >
-                    <VStack>
-                      <Box color="semantic.accent">
-                        <Image
-                          src={onfleetImage}
-                          alt="Simplicity Illustration"
-                          maxW="100px"
-                        />
-                      </Box>
-                    </VStack>
-                    <Divider variant={"dividerSection"} />
-
-                    <Text textStyle="caption">
-                      Primary courier app for routing, delivery confirmation,
-                      gps and chat with dipatchers
-                    </Text>
-                  </VStack>
-                </GridItem>
-
-                <GridItem>
-                  <VStack
-                    align="stretch"
-                    bg="semantic.background.secondary"
-                    p={4}
-                    h="100%"
-                    spacing={4}
-                    rounded="lg"
-                  >
-                    <VStack>
-                      <Box color="semantic.accent">
-                        <Image
-                          src={paycomImage}
-                          alt="Simplicity Illustration"
-                          maxW="100px"
-                        />
-                      </Box>
-                    </VStack>
-                    <Divider variant={"dividerSection"} />
-
-                    <Text textStyle="caption">
-                      Separate system for courier time tracking, payroll and
-                      management
-                    </Text>
-                  </VStack>
-                </GridItem>
-                <GridItem>
-                  <VStack
-                    align="stretch"
-                    bg="semantic.background.secondary"
-                    p={4}
-                    h="100%"
-                    spacing={4}
-                    rounded="lg"
-                  >
-                    <VStack>
-                      <Box color="semantic.accent">
-                        <Image
-                          src={capsuleImage}
-                          alt="Simplicity Illustration"
-                          maxW="100px"
-                        />
-                      </Box>
-                    </VStack>
-                    <Divider variant={"dividerSection"} />
-
-                    <Text textStyle="caption">
-                      Calls between couriers and dispatch when issues arise
-                    </Text>
-                  </VStack>
-                </GridItem>
-              </Grid>
-              <Text textStyle={"p"}>
-                This fragmented system creates friction that impacts couriers,
-                customers, and operational efficiency.
-              </Text>
+                <Text color="gray.600" fontStyle="italic">
+                  “My perspective on this issue comes from a unique vantage
+                  point: I worked as a Capsule courier for the past few months,
+                  experiencing their operational challenges firsthand while
+                  delivering medications across Brooklyn neighborhoods.”
+                </Text>
+              </Box>
             </Box>
 
             <Box color="gray.600" spacing={10}>
@@ -328,125 +262,259 @@ const CapsuleArticle = () => {
                 color="semantic.text.primary"
                 pb={4}
               >
-                My approach: Becoming a Courier
+                How Capsule Operates: A Fragmented Delivery Ecosystem
               </Heading>
               <Text textStyle="p">
-                As a product designer passionate about logistics systems, I took
-                an unconventional approach to research: I became a medication
-                courier for Capsule Pharmacy. Working evenings delivering
-                medications across Brooklyn neighborhoods revealed critical
-                inefficiencies in their delivery operations that a purpose-built
-                application could solve.
+                Despite being a technology-forward pharmacy, Capsule's delivery
+                operations rely on a patchwork of third-party services:
               </Text>
-              <Grid
-                templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
-                gap={4}
+            </Box>
+
+            <Grid
+  templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+  gap={4}
+>
+  {/* Capsule: Prescription Management */}
+  <GridItem>
+    <VStack
+      align="stretch"
+      bg="semantic.background.secondary"
+      p={4}
+      h="100%"
+      spacing={4}
+      rounded="lg"
+    >
+      <VStack>
+        <Box color="semantic.accent">
+          <Image
+            src={capsuleImage}
+            alt="Capsule Logo"
+            maxW="100px"
+          />
+        </Box>
+        <Text
+                                      textStyle={"captionbold"}
+                                      color="semantic.text.primary"
+                                      textTransform="uppercase"
+                                    >Prescription Management</Text>
+      </VStack>
+      <Divider variant="dividerSection" />
+
+      <UnorderedList spacing={3}>
+        <ListItem>
+          <Text textStyle="caption">Proprietary app for prescription ordering</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">Customer profiles and medication management</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">No integrated delivery confirmation system</Text>
+        </ListItem>
+      </UnorderedList>
+    </VStack>
+  </GridItem>
+
+  {/* Onfleet: Delivery Management */}
+  <GridItem>
+    <VStack
+      align="stretch"
+      bg="semantic.background.secondary"
+      p={4}
+      h="100%"
+      spacing={4}
+      rounded="lg"
+    >
+      <VStack>
+        <Box color="semantic.accent">
+          <Image
+            src={onfleetImage}
+            alt="Onfleet Logo"
+            maxW="100px"
+          />
+        </Box>
+        <Text
+                                      textStyle={"captionbold"}
+                                      color="semantic.text.primary"
+                                      textTransform="uppercase"
+                                    >Delivery Management</Text>
+      </VStack>
+      <Divider variant="dividerSection" />
+
+      <UnorderedList spacing={3}>
+        <ListItem>
+          <Text textStyle="caption">Third-party routing and delivery software</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">Task assignment and delivery confirmation</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">No access to pharmacy system data</Text>
+        </ListItem>
+      </UnorderedList>
+    </VStack>
+  </GridItem>
+
+  {/* Paycom: Courier Management */}
+  <GridItem>
+    <VStack
+      align="stretch"
+      bg="semantic.background.secondary"
+      p={4}
+      h="100%"
+      spacing={4}
+      rounded="lg"
+    >
+      <VStack>
+        <Box color="semantic.accent">
+          <Image
+            src={paycomImage}
+            alt="Paycom Logo"
+            maxW="100px"
+          />
+        </Box>
+        <Text
+                                      textStyle={"captionbold"}
+                                      color="semantic.text.primary"
+                                      textTransform="uppercase"
+                                    >Courier Management</Text>
+      </VStack>
+      <Divider variant="dividerSection" />
+
+      <UnorderedList spacing={3}>
+        <ListItem>
+          <Text textStyle="caption">Separate system for courier scheduling and time tracking</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">No integration with delivery platforms</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">Disconnected from customer communication</Text>
+        </ListItem>
+      </UnorderedList>
+    </VStack>
+  </GridItem>
+</Grid>
+
+            <Text textStyle={"p"}>
+              This fragmentation creates a critical disconnect between Capsule's customer-facing prescription service and its physical delivery operations—an unusual choice for a company whose primary value proposition is convenient medication delivery.
+            </Text>
+
+            <Box color="gray.600" spacing={10}>
+              <Heading
+                textStyle="pbold"
+                textTransform={"capitalize"}
+                color="semantic.text.primary"
+                pb={4}
+              >
+                Operational Assessment: What's Working vs. What's Not
+              </Heading>
+              
+              <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={4}>
+  {/* WHAT'S WORKING */}
+  <GridItem>
+    <VStack
+      align="stretch"
+      bg="semantic.background.secondary"
+      p={4}
+      h="100%"
+      spacing={4}
+      rounded="lg"
+    >
+      <VStack>
+        <Box color="green.500">
+          <FontAwesomeIcon icon={faCheck} size="xl" />
+        </Box>
+        <Text
+          textStyle={"captionbold"}
+          color="semantic.text.primary"
+          textTransform="uppercase"
+        >
+          What's Working
+        </Text>
+      </VStack>
+      <Divider variant="dividerSection" />
+
+      <UnorderedList spacing={3}>
+        <ListItem>
+          <Text textStyle="caption">Quick and easy prescription scheduling</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">Reliable prescription filling</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">Timely dispatch via Onfleet</Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">Professional courier service</Text>
+        </ListItem>
+      </UnorderedList>
+    </VStack>
+  </GridItem>
+
+  {/* WHAT'S NOT WORKING */}
+  <GridItem>
+    <VStack
+      align="stretch"
+      bg="semantic.background.secondary"
+      p={4}
+      h="100%"
+      spacing={4}
+      rounded="lg"
+    >
+      <VStack>
+        <Box color="red.500">
+          <FontAwesomeIcon icon={faTimes} size="xl" />
+        </Box>
+        <Text
+          textStyle={"captionbold"}
+          color="semantic.text.primary"
+          textTransform="uppercase"
+        >
+          What's Not Working
+        </Text>
+      </VStack>
+      <Divider variant="dividerSection" />
+
+      <UnorderedList spacing={3}>
+        <ListItem>
+          <Text textStyle="caption">
+            High rate of failed deliveries (1–2 per shift per driver)
+          </Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">
+            Customers often unaware or forget scheduled deliveries
+          </Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">
+            No pre-delivery customer confirmation mechanism
+          </Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">
+            Inefficient routing for bikers
+          </Text>
+        </ListItem>
+        <ListItem>
+          <Text textStyle="caption">
+            Skipping orders is not available in onfleet to come back later when cusomters ask to wait
+          </Text>
+        </ListItem>
+      </UnorderedList>
+    </VStack>
+  </GridItem>
+</Grid>
+<Box
+                borderLeftWidth="2px"
+                borderColor="semantic.background.tertiary"
+                p={4}
                 my={4}
               >
-                {/* Time-consuming booking process */}
-                <GridItem>
-                  <VStack
-                    align="stretch"
-                    bg="semantic.background.secondary"
-                    p={4}
-                    h="100%"
-                    spacing={4}
-                    rounded="lg"
-                  >
-                    <VStack>
-                      <Box color="semantic.accent">
-                        <FontAwesomeIcon icon={faMapLocation} size="xl" />
-                      </Box>
-                      <Text
-                        textStyle={"captionbold"}
-                        color="semantic.text.primary"
-                        textTransform="uppercase"
-                      >
-                        Delivery area
-                      </Text>
-                     
-                    </VStack>
-                    <Divider variant={"dividerSection"} />
-
-                    
-                   
-                        <Text textStyle="caption">
-                          Williamsburg, Bushwick, Bed-Stuy, Crown Heights, Clinton Hill, Greenpoint, Astoria, Long Isand City, Sunny Side.
-                        </Text>
-                      
-                    
-                  </VStack>
-                </GridItem>
-                <GridItem>
-                  <VStack
-                    align="stretch"
-                    bg="semantic.background.secondary"
-                    p={4}
-                    h="100%"
-                    spacing={4}
-                    rounded="lg"
-                  >
-                    <VStack>
-                      <Box color="semantic.accent">
-                        <FontAwesomeIcon icon={faBoxesStacked} size="xl" />
-                      </Box>
-                      <Text
-                        textStyle={"captionbold"}
-                        color="semantic.text.primary"
-                        textTransform="uppercase"
-                      >
-                        Workload
-                      </Text>
-                     
-                    </VStack>
-                    <Divider variant={"dividerSection"} />
-
-                    
-                   
-                        <Text textStyle="caption">
-                          25-50 deliveries per shift in two windows: 6-8pm and 8-10pm.
-                        </Text>
-                      
-                    
-                  </VStack>
-                </GridItem>
-
-                <GridItem>
-                  <VStack
-                    align="stretch"
-                    bg="semantic.background.secondary"
-                    p={4}
-                    h="100%"
-                    spacing={4}
-                    rounded="lg"
-                  >
-                    <VStack>
-                      <Box color="semantic.accent">
-                        <FontAwesomeIcon icon={faTools} size="xl" />
-                      </Box>
-                      <Text
-                        textStyle={"captionbold"}
-                        color="semantic.text.primary"
-                        textTransform="uppercase"
-                      >
-                        Tools used
-                      </Text>
-                     
-                    </VStack>
-                    <Divider variant={"dividerSection"} />
-
-                    
-                   
-                        <Text textStyle="caption">
-                          Onfleet app for tasks and paycom for time tracking. 
-                        </Text>
-                      
-                    
-                  </VStack>
-                </GridItem>
-
-               
-              </Grid>
+                <Text color="gray.600" fontStyle="italic">
+                  During my time as a courier, approximately 9 out of 10 deliveries failed due to customers not being home when they scheduled their delivery.
+                </Text>
+              </Box>
             </Box>
           </VStack>
         </CaseStudyLayout>
