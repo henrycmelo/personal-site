@@ -95,6 +95,7 @@ import { FaArrowUp } from "react-icons/fa";
 import onfleetImage from "../assets/capsule/onfleet.png";
 import paycomImage from "../assets/capsule/paycom.png";
 import capsuleImage from "../assets/capsule/capsule.png";
+import userFlowOnfleet from "../assets/capsule/userflow_onfleet.png"
 
 const CapsuleArticle = () => {
   const { sections, handleClick } = useAlertContext();
@@ -276,11 +277,12 @@ const CapsuleArticle = () => {
                 Despite being a technology-forward pharmacy, Capsule's delivery
                 operations rely on a patchwork of third-party services:
               </Text>
-            </Box>
+           
 
             <Grid
               templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
               gap={4}
+              my={4}
             >
               {/* Capsule: Prescription Management */}
               <GridItem>
@@ -423,13 +425,22 @@ const CapsuleArticle = () => {
               </GridItem>
             </Grid>
 
-            <Text textStyle={"p"}>
+            <Text textStyle={"p"} mb={4}>
               This fragmentation creates a critical disconnect between Capsule's
               customer-facing prescription service and its physical delivery
               operations—an unusual choice for a company whose primary value
               proposition is convenient medication delivery.
             </Text>
 
+            <Image
+                                        src={userFlowOnfleet}
+                                        alt="User Flow OnFleet"
+                                        maxW="800px"
+                                      />
+                                      <Text as="p" textStyle="caption" textAlign="center" >
+                      Courier User Flow to Complete a Task
+                    </Text>
+ </Box>
             <Box color="gray.600" spacing={10}>
               <Heading
                 textStyle="pbold"
