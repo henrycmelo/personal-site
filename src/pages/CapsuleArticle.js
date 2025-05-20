@@ -96,6 +96,9 @@ import onfleetImage from "../assets/capsule/onfleet.png";
 import paycomImage from "../assets/capsule/paycom.png";
 import capsuleImage from "../assets/capsule/capsule.png";
 import userFlowOnfleet from "../assets/capsule/userflow_onfleet.png"
+import introPicture from "../assets/capsule/intropictures.png"
+import capsuleUserFlow from "../assets/capsule/capsuleuserflow.png"
+import capsuleAfterDelivery from "../assets/capsule/afterdeliveryscreens.png"
 
 const CapsuleArticle = () => {
   const { sections, handleClick } = useAlertContext();
@@ -262,6 +265,16 @@ const CapsuleArticle = () => {
                   delivering medications across Brooklyn neighborhoods.”
                 </Text>
               </Box>
+              <Image
+                                        src={introPicture}
+                                        alt="Pictures of Capsule Hub Williamsburg"
+                                        w="100%"
+  maxW={{ base: "100%", md: "800px" }}
+  h="auto"
+                                      />
+                                      <Text as="p" textStyle="caption" textAlign="center" >
+                      Capsule's Williamsburg Hub
+                    </Text>
             </Box>
 
             <Box color="gray.600" spacing={10}>
@@ -435,7 +448,9 @@ const CapsuleArticle = () => {
             <Image
                                         src={userFlowOnfleet}
                                         alt="User Flow OnFleet"
-                                        maxW="800px"
+                                        w="100%"
+  maxW={{ base: "100%", md: "800px" }}
+  h="auto"
                                       />
                                       <Text as="p" textStyle="caption" textAlign="center" >
                       Courier User Flow to Complete a Task
@@ -584,12 +599,31 @@ const CapsuleArticle = () => {
                 Experiencing the Customer Journey Firsthand
               </Heading>
               <Text textStyle="p" mb={4}>
-                To understand the customer experience, I ordered medications through Capsule while also working as a courier. The disconnect between the prescription and delivery experiences became immediately apparent:
+                To understand the customer experience, I ordered medications through Capsule and find the root of the problem. The disconnect between the prescription and delivery experiences became immediately apparent:
               </Text>
-              <Image src="https://placehold.co/600x400" alt='mockups' mb={4}/>
-              <Text textStyle="p">
-                The critical gap: While I could easily schedule a delivery for later in the week, Capsule never confirmed if I would actually be home during the selected time window until the courier was already on the way.
+               <Image
+                                        src={capsuleUserFlow}
+                                        alt="User Flow OnFleet"
+                                        w="100%"
+  maxW={{ base: "100%", md: "800px" }}
+  h="auto"
+                                      />
+                                      <Text as="p" textStyle="caption" textAlign="center" >
+                      Customer User Flow
+                    </Text>
+              <Text textStyle="p" mt={4}>
+                The critical gap: While I could easily schedule a delivery for later in the week, Capsule never confirmed if I would actually be home during the selected time window until the courier was already on the way. These were the messages I received a few minutes before courier's arrival
               </Text>
+              <Image
+                                        src={capsuleAfterDelivery}
+                                        alt="User Flow Capsule"
+                                        w="100%"
+  maxW={{ base: "100%", md: "800px" }}
+  h="auto"
+                                      />
+                                      <Text as="p" textStyle="caption" textAlign="center" >
+                      Text Messages Received by Capsule
+                    </Text>
             </Box>
 
             <Box color="gray.600" spacing={10}>
