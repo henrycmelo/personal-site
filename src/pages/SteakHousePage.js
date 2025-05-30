@@ -84,23 +84,26 @@ const SteakHousePage = () => {
   return (
     <>
       <ResponsiveMenu isOtherPage sections={sections} />
-      <Box position="relative" overflow="hidden" pt={32} px={12}>
+      <Box position="relative" overflow="hidden">
         {/* Hero section with dark background and centered headline */}
         <Box
           bg={`linear-gradient(rgba(73,80,87,0.5), rgba(73,80,87,0.8)), url(${banner})`}
-          bgSize={"cover"}
+         bgSize={"cover"}
           color="semantic.background.primary"
           bgPosition="center"
           bgRepeat="no-repeat"
           py={20}
           px={4}
+          minH="70vh"
+          display="flex"
+          alignItems="center"
         >
           <Container
             maxW="container.xl"
             textAlign="center"
             textShadow="0 2px 4px rgba(0,0,0,0.8)"
           >
-            <Text as="span" textStyle={"pbold"}>
+            <Text as="span" textStyle={"pbold"} letterSpacing="wider" mb={6} textTransform="uppercase" fontSize={{ base: "sm", md: "md" }}>
               A mobile UX Case Study
             </Text>
 

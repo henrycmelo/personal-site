@@ -7,72 +7,19 @@ import {
   Grid,
   GridItem,
   Divider,
-  HStack,
   ListItem,
   UnorderedList,
-  Flex,
   SimpleGrid,
   Heading,
   Container,
-  Card,
-  CardBody,
-  List,
-  Tag,
-  Highlight,
-  Icon,
 } from "@chakra-ui/react";
-import mockupBrief from "../assets/40minutes/initial.png";
-import groupImage from "../assets/40minutes/group.jpg";
-import mockupImage from "../assets/40minutes/home.png";
-import mockupClientTrainerImage from "../assets/40minutes/login.png";
-import mockupLogin from "../assets/40minutes/login2.png";
-import mockupSchedule from "../assets/40minutes/step1.png";
-import mockupPickTrainer from "../assets/40minutes/step2.png";
-import mockupConfirmation from "../assets/40minutes/step3.png";
-import speedImage from "../assets/40minutes/speed.svg";
-import clarityImage from "../assets/40minutes/clarity.svg";
-import simpleImage from "../assets/40minutes/simple.svg";
-import processImage from "../assets/40minutes/booking.png";
-import classImage from "../assets/40minutes/classtracking.png";
-import cancelImage from "../assets/40minutes/cancellations.png";
-import DigitalWireframes from "../components/DigitalWireframes";
-import digitalWireframes from "../assets/40minutes/data/digitalWireframes";
 import { useAlertContext } from "../context/alertContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFileAlt,
-  faLightbulb,
-  faExclamationTriangle,
-  faCheckCircle,
-  faStar,
-  faHandPointDown,
   faChartLine,
-  faMagnifyingGlass,
-  faUsers,
-  faCompass,
   faClock,
-  faHeart,
-  faExpandArrowsAlt,
   faShieldAlt,
-  faBolt,
   faSmile,
-  faComments,
-  faBug,
-  faStopwatch,
-  faClipboardList,
-  faUserCog,
-  faBoxOpen,
-  faCalendarPlus,
-  faCalendarAlt,
-  faBuilding,
-  faRedo,
-  faPencilRuler,
-  faSitemap,
-  faMobilePhone,
-  faLocationPin,
-  faMapLocation,
-  faBoxesStacked,
-  faTools,
   faTimes,
   faCheck,
   faPuzzlePiece,
@@ -80,18 +27,17 @@ import {
   faBan,
   faMoneyBillWave,
   faRoute,
-  faMap,
-  faCode,
   faGaugeHigh,
+  faCircleInfo,
+  faDiagramProject,
+  faBalanceScale,
+  faUserGear,
+  faBell,
+  faTriangleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
-import DividerSection from "../components/DividerSection";
-import banner from "../assets/40minutes/banner.png";
 import ResponsiveMenu from "../components/ResponsiveMenu";
 import Footer from "../components/Footer";
 import CaseStudyLayout from "../style/CaseStudyLayout";
-import OverlayImage from "../components/OverlayImage";
-import Badges from "../components/Badges";
-import { FaArrowUp } from "react-icons/fa";
 import onfleetImage from "../assets/capsule/onfleet.png";
 import paycomImage from "../assets/capsule/paycom.png";
 import capsuleImage from "../assets/capsule/capsule.png";
@@ -102,45 +48,49 @@ import capsuleAfterDelivery from "../assets/capsule/afterdeliveryscreens.png";
 import pushNotifications from "../assets/capsule/push_notifications.png";
 import userFlowYes from "../assets/capsule/user_flow_yes.png";
 import userFlowReSchedule from "../assets/capsule/user_flow_reschedule.png";
-import heroImage from "../assets/capsule/herocapsule.png"
+import heroImage from "../assets/capsule/herocapsule.jpg"
 const CapsuleArticle = () => {
-  const { sections, handleClick } = useAlertContext();
+  const { sections } = useAlertContext();
 
   const sectionsProject = [
-    { id: "theproject", label: "The Project Brief", icon: faFileAlt },
+    { id: "introduction", label: "Introduction", icon: faCircleInfo },
     {
-      id: "research",
-      label: "research",
-      icon: faMagnifyingGlass,
+      id: "operations",
+      label: "How Capsule Operates",
+      icon: faDiagramProject,
     },
-    { id: "strategy", label: "Design Principles & Strategy", icon: faCompass },
-    { id: "ux", label: "UX Design process", icon: faSitemap },
-    { id: "solutions", label: "Key Design Solutions", icon: faPencilRuler },
-    { id: "results", label: "Results & Impact", icon: faChartLine },
-    { id: "iterations", label: "Iterations & Improvements", icon: faRedo },
-    { id: "lessons", label: "Lessons Learned", icon: faLightbulb },
+    { id: "assessment", label: "Operational Assessment", icon: faBalanceScale },
+    { id: "customer", label: "Experiencing the Customer Journey Firsthand", icon: faRoute },
+    { id: "critique", label: "The Fundamental Critique", icon: faUserGear },
+    { id: "issue", label: "The Primary Issue", icon: faTriangleExclamation },
+    { id: "opportunity", label: "The UX Opportunity", icon: faBell },
+    { id: "conclusion", label: "Business Case & Conclusion", icon: faChartLine },
   ];
 
   return (
     <>
       <ResponsiveMenu isOtherPage sections={sections} />
-      <Box position="relative" overflow="hidden" pt={32} px={12}>
+      <Box position="relative" overflow="hidden">
         {/* Hero section with dark background and centered headline */}
         <Box
           bg={`linear-gradient(rgba(73,80,87,0.5), rgba(73,80,87,0.8)), url(${heroImage})`}
-          bgSize={'cover'}
+          bgSize={"cover"}
           color="semantic.background.primary"
           bgPosition="center"
           bgRepeat="no-repeat"
           py={20}
           px={4}
+          minH="70vh"
+          display="flex"
+          alignItems="center"
         >
           <Container
             maxW="container.xl"
             textAlign="center"
             textShadow="0 2px 4px rgba(0,0,0,0.8)"
+            
           >
-            <Text as="span" textStyle={"pbold"}>
+            <Text as="span" textStyle={"pbold"} letterSpacing="wider" mb={6} textTransform="uppercase" fontSize={{ base: "sm", md: "md" }}>
               How a Simple User Confirmation Could Transform Delivery Success
               Rates
             </Text>
@@ -151,6 +101,7 @@ const CapsuleArticle = () => {
               lineHeight="1.2"
               mb={8}
               fontWeight="bold"
+              
             >
               Improving Capsule's Delivery Efficiency: A UX Critique of
               Third-Party Dependencies and Missed Opportunities
@@ -232,7 +183,7 @@ const CapsuleArticle = () => {
         <CaseStudyLayout sections={sectionsProject}>
           <VStack align={"stretch"} spacing={10}>
             {/* Text start here */}
-            <Box color="gray.600" spacing={10}>
+            <Box color="gray.600" spacing={10} id="introduction">
               <Heading
                 textStyle="pbold"
                 textTransform={"capitalize"}
@@ -280,7 +231,7 @@ const CapsuleArticle = () => {
               </Text>
             </Box>
 
-            <Box color="gray.600" spacing={10}>
+            <Box color="gray.600" spacing={10} id="operations">
               <Heading
                 textStyle="pbold"
                 textTransform={"capitalize"}
@@ -463,7 +414,7 @@ const CapsuleArticle = () => {
                 Courier User Flow to Complete a Task
               </Text>
             </Box>
-            <Box color="gray.600" spacing={10}>
+            <Box color="gray.600" spacing={10} id="assessment">
               <Heading
                 textStyle="pbold"
                 textTransform={"capitalize"}
@@ -589,14 +540,12 @@ const CapsuleArticle = () => {
                 my={4}
               >
                 <Text color="gray.600" fontStyle="italic">
-                  During my time as a courier, approximately 9 out of 10
-                  deliveries failed due to customers not being home when they
-                  scheduled their delivery.
+                  During my time as a courier, approximately 9 out of 10 failed deliveries occurred because customers were not home at their scheduled delivery time.
                 </Text>
               </Box>
             </Box>
 
-            <Box color="gray.600" spacing={10}>
+            <Box color="gray.600" spacing={10} id="customer">
               <Heading
                 textStyle="pbold"
                 textTransform={"capitalize"}
@@ -640,7 +589,7 @@ const CapsuleArticle = () => {
               </Text>
             </Box>
 
-            <Box color="gray.600" spacing={10}>
+            <Box color="gray.600" spacing={10} id="critique">
               <Heading
                 textStyle="pbold"
                 textTransform={"capitalize"}
@@ -815,7 +764,7 @@ const CapsuleArticle = () => {
               </Box>
             </Box>
 
-            <Box color="gray.600" spacing={10}>
+            <Box color="gray.600" spacing={10} id="issue">
               <Heading
                 textStyle="pbold"
                 textTransform={"capitalize"}
@@ -929,7 +878,7 @@ const CapsuleArticle = () => {
                 confirmation mechanism.
               </Text>
             </Box>
-            <Box color="gray.600" spacing={10}>
+            <Box color="gray.600" spacing={10} id="opportunity">
               <Heading
                 textStyle="pbold"
                 textTransform={"capitalize"}
@@ -939,40 +888,7 @@ const CapsuleArticle = () => {
                 The UX Opportunity: Delivery Confirmation by Nudging the User
               </Heading>
               <Text textStyle="p" mb={4}>
-                The solution to this problem doesn't require rebuilding
-                Capsule's entire delivery system, but rather introducing a
-                critical touchpoint between the prescription and delivery
-                experiences:
-              </Text>
-              <Image
-                src={pushNotifications}
-                alt="Push Notifications Capsule"
-                w="100%"
-                maxW={{ base: "100%", md: "800px" }}
-                h="auto"
-              />
-              <Text as="p" textStyle="caption" textAlign="center" mb={4}>
-                Push Notications
-              </Text>
-              <Image
-                src={userFlowYes}
-                alt="Push Notifications Capsule"
-                w="100%"
-                maxW={{ base: "100%", md: "800px" }}
-                h="auto"
-              />
-              <Text as="p" textStyle="caption" textAlign="center" mb={4}>
-                User Flow to Confirm
-              </Text>
-              <Image
-                src={userFlowReSchedule}
-                alt="Push Notifications Capsule"
-                w="100%"
-                maxW={{ base: "100%", md: "800px" }}
-                h="auto"
-              />
-              <Text as="p" textStyle="caption" textAlign="center" mb={8}>
-                User Flow to Reschedule
+                The solution to this problem doesn’t require rebuilding Capsule’s entire delivery system. Instead, it involves introducing a critical touchpoint between the prescription and delivery experiences:
               </Text>
               <Grid
                 templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
@@ -1005,7 +921,8 @@ const CapsuleArticle = () => {
                     <UnorderedList spacing={3}>
                       <ListItem>
                         <Text textStyle="caption">
-                          Send confirmation the night before, the same day and when the order is out for delivery
+                          Send confirmation the night before, the same day and
+                          when the order is out for delivery
                         </Text>
                       </ListItem>
                       <ListItem>
@@ -1013,7 +930,6 @@ const CapsuleArticle = () => {
                           Allow user to confirm or reschedule delivery
                         </Text>
                       </ListItem>
-                      
                     </UnorderedList>
                   </VStack>
                 </GridItem>
@@ -1051,7 +967,8 @@ const CapsuleArticle = () => {
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Skip unavailable customers and continue with the next orders
+                          Skip unavailable customers and continue with the next
+                          orders
                         </Text>
                       </ListItem>
                       <ListItem>
@@ -1107,6 +1024,60 @@ const CapsuleArticle = () => {
                 </GridItem>
               </Grid>
 
+              <Text
+                                textStyle="pbold"
+                                textTransform="uppercase"
+                                color="gray.600"
+                                mt={8}
+                                textAlign="center"
+                                as="h3"
+                              >
+                                Push notifications
+                              </Text>
+
+              <Image
+                src={pushNotifications}
+                alt="Push Notifications Capsule"
+                w="100%"
+                maxW={{ base: "100%", md: "800px" }}
+                h="auto"
+              />
+              <Text
+                                textStyle="pbold"
+                                textTransform="uppercase"
+                                color="gray.600"
+                                mt={8}
+                                textAlign="center"
+                                as="h3"
+                              >
+                                User Flow to confirm
+                              </Text>
+              <Image
+                src={userFlowYes}
+                alt="Push Notifications Capsule"
+                w="100%"
+                maxW={{ base: "100%", md: "800px" }}
+                h="auto"
+              />
+              <Text
+                                textStyle="pbold"
+                                textTransform="uppercase"
+                                color="gray.600"
+                                mt={8}
+                                textAlign="center"
+                                as="h3"
+                              >
+                                User Flow to reschedule
+                              </Text>
+              <Image
+                src={userFlowReSchedule}
+                alt="Push Notifications Capsule"
+                w="100%"
+                maxW={{ base: "100%", md: "800px" }}
+                h="auto"
+              />
+             
+              
               <Box
                 borderLeftWidth="2px"
                 borderColor="semantic.background.tertiary"
@@ -1121,129 +1092,8 @@ const CapsuleArticle = () => {
               </Box>
             </Box>
 
-            <Box color="gray.600" spacing={10}>
-              <Heading
-                textStyle="pbold"
-                textTransform={"capitalize"}
-                color="semantic.text.primary"
-                pb={4}
-              >
-                Implementation Considerations
-              </Heading>
-              <Text textStyle="p" mb={4}>
-                While this solution is conceptually simple, implementing it
-                within Capsule's fragmented technology ecosystem would require
-                specific integrations:
-              </Text>
-              <Image src="https://placehold.co/600x400" alt="mockups" mb={4} />
-              <Grid
-                templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
-                gap={4}
-              >
-                {/* TECHNICAL REQUIREMENTS */}
-                <GridItem>
-                  <VStack
-                    align="stretch"
-                    bg="semantic.background.secondary"
-                    p={4}
-                    spacing={4}
-                    rounded="lg"
-                  >
-                    <VStack>
-                      <Box color="blue.700">
-                        <FontAwesomeIcon icon={faCode} size="xl" />
-                      </Box>
-                      <Text
-                        textStyle="captionbold"
-                        color="semantic.text.primary"
-                        textTransform="uppercase"
-                      >
-                        Technical Requirements
-                      </Text>
-                    </VStack>
-                    <Divider variant="dividerSection" />
-
-                    <UnorderedList spacing={3}>
-                      <ListItem>
-                        <Text textStyle="caption">
-                          API integration between Capsule app and Onfleet
-                        </Text>
-                      </ListItem>
-                      <ListItem>
-                        <Text textStyle="caption">
-                          Customer response handling system
-                        </Text>
-                      </ListItem>
-                      <ListItem>
-                        <Text textStyle="caption">
-                          Route re-optimization capability
-                        </Text>
-                      </ListItem>
-                      <ListItem>
-                        <Text textStyle="caption">
-                          Notification scheduling system
-                        </Text>
-                      </ListItem>
-                    </UnorderedList>
-                  </VStack>
-                </GridItem>
-
-                {/* PHASED APPROACH */}
-                <GridItem>
-                  <VStack
-                    align="stretch"
-                    bg="semantic.background.secondary"
-                    p={4}
-                    spacing={4}
-                    rounded="lg"
-                  >
-                    <VStack>
-                      <Box color="purple.700">
-                        <FontAwesomeIcon icon={faMap} size="xl" />
-                      </Box>
-                      <Text
-                        textStyle="captionbold"
-                        color="semantic.text.primary"
-                        textTransform="uppercase"
-                      >
-                        Phased Approach
-                      </Text>
-                    </VStack>
-                    <Divider variant="dividerSection" />
-
-                    <UnorderedList spacing={3}>
-                      <ListItem>
-                        <Text textStyle="caption">
-                          Phase 1: Implement basic confirmation notification
-                        </Text>
-                      </ListItem>
-                      <ListItem>
-                        <Text textStyle="caption">
-                          Phase 2: Add rescheduling functionality
-                        </Text>
-                      </ListItem>
-                      <ListItem>
-                        <Text textStyle="caption">
-                          Phase 3: Integrate with courier routing in real time
-                        </Text>
-                      </ListItem>
-                      <ListItem>
-                        <Text textStyle="caption">
-                          Phase 4: Develop proprietary delivery platform
-                        </Text>
-                      </ListItem>
-                    </UnorderedList>
-                  </VStack>
-                </GridItem>
-              </Grid>
-              <Text textStyle="p" mb={4}>
-                This integration could serve as a first step toward a more
-                comprehensive proprietary delivery solution that would allow
-                Capsule to fully own this critical aspect of their customer
-                experience.
-              </Text>
-            </Box>
-            <Box color="gray.600" spacing={10}>
+            
+            <Box color="gray.600" spacing={10} id="conclusion">
               <Heading
                 textStyle="pbold"
                 textTransform={"capitalize"}
@@ -1255,14 +1105,6 @@ const CapsuleArticle = () => {
               <Text textStyle="p" mb={4}>
                 The business case for implementing a delivery confirmation
                 system is compelling:
-              </Text>
-              <Text textStyle="p" mb={4}>
-                Ultimately, this case demonstrates how a relatively simple UX
-                intervention at a critical touchpoint can address significant
-                operational inefficiencies. For Capsule to fully deliver on its
-                brand promise, it should consider this an initial step toward
-                developing a proprietary delivery platform that integrates
-                seamlessly with its prescription management system.
               </Text>
               <Grid
                 templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
@@ -1330,7 +1172,8 @@ const CapsuleArticle = () => {
                   <UnorderedList spacing={3}>
                     <ListItem>
                       <Text textStyle="caption">
-                        12 minutes saved per prevented failed delivery per shift per courier
+                        12 minutes saved per prevented failed delivery per shift
+                        per courier
                       </Text>
                     </ListItem>
                     <ListItem>
@@ -1384,6 +1227,15 @@ const CapsuleArticle = () => {
                   </UnorderedList>
                 </VStack>
               </Grid>
+              <Text textStyle="p" my={4}>
+                Ultimately, this case demonstrates how a relatively simple UX
+                intervention at a critical touchpoint can address significant
+                operational inefficiencies. For Capsule to fully deliver on its
+                brand promise, it should consider this an initial step toward
+                developing a proprietary delivery platform that integrates
+                seamlessly with its prescription management system.
+              </Text>
+              
               <Text textStyle="p" my={4}>
                 While third-party solutions like Onfleet provide immediate
                 functionality, Capsule's long-term competitive advantage will
