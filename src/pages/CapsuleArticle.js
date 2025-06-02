@@ -526,7 +526,7 @@ const CapsuleArticle = () => {
                       <ListItem>
                         <Text textStyle="caption">
                           Skipping orders is not available in onfleet to come
-                          back later when cusomters ask to wait
+                          back later when customers ask to wait
                         </Text>
                       </ListItem>
                     </UnorderedList>

@@ -2,7 +2,21 @@
 
 
 const projects = [
+  {
+    title: "Improving Capsule's Delivery Efficiency: A UX Critique of Third-Party Dependencies",
+    description:
+      "Conducted field research to identify inefficiencies for the delivery service and the UX opportunities to reduce failed deliveries by 50-70% through simple delivery confirmation interventions.",
+    getImageSrc: () => require("../assets/capsule/capsuleui.png"),
+    getLogosSrc: () => [
+      require("../assets/capsule/capsulelogo.png"),
+    ],
+    keywords:['Field Research', 'Delivery Systems', "UX Strategy", "Process Optimization", "User Experience"],
+    path: "/projects/capsule",
+    type:'Field Study / Operational Analysis'
+
   
+    
+  },
   {
     title: "From Metrics to Impact: Digital Safety for Immigrant Families",
     description:
