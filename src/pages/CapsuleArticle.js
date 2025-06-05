@@ -49,6 +49,7 @@ import pushNotifications from "../assets/capsule/push_notifications.png";
 import userFlowYes from "../assets/capsule/user_flow_yes.png";
 import userFlowReSchedule from "../assets/capsule/user_flow_reschedule.png";
 import heroImage from "../assets/capsule/herocapsule.jpg"
+import doormanImage from "../assets/capsule/user_flow_doorman.png"
 const CapsuleArticle = () => {
   const { sections } = useAlertContext();
 
@@ -281,17 +282,17 @@ const CapsuleArticle = () => {
                     <UnorderedList spacing={3}>
                       <ListItem>
                         <Text textStyle="caption">
-                          Proprietary app for prescription ordering
+                          Proprietary app for prescription ordering.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Customer profiles and medication management
+                          Customer profiles and medication management.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          No integrated delivery confirmation system
+                          No integrated delivery confirmation system.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -329,17 +330,17 @@ const CapsuleArticle = () => {
                     <UnorderedList spacing={3}>
                       <ListItem>
                         <Text textStyle="caption">
-                          Third-party routing and delivery software
+                          Third-party routing and delivery software.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Task assignment and delivery confirmation
+                          Task assignment and delivery confirmation.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          No access to pharmacy system data
+                          No access to pharmacy system data.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -378,17 +379,17 @@ const CapsuleArticle = () => {
                       <ListItem>
                         <Text textStyle="caption">
                           Separate system for courier scheduling and time
-                          tracking
+                          tracking.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          No integration with delivery platforms
+                          No integration with delivery platforms.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Disconnected from customer communication
+                          Disconnected from customer communication.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -455,22 +456,22 @@ const CapsuleArticle = () => {
                     <UnorderedList spacing={3}>
                       <ListItem>
                         <Text textStyle="caption">
-                          Quick and easy prescription scheduling
+                          Quick and easy prescription scheduling.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Reliable prescription filling
+                          Reliable prescription filling.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Timely dispatch via Onfleet
+                          Timely dispatch via Onfleet.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Professional courier service
+                          Professional courier service.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -505,28 +506,28 @@ const CapsuleArticle = () => {
                       <ListItem>
                         <Text textStyle="caption">
                           High rate of failed deliveries (1–2 per shift per
-                          driver)
+                          driver).
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Customers often unaware or forget scheduled deliveries
+                          Customers often unaware or forget scheduled deliveries.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          No pre-delivery customer confirmation mechanism
+                          No pre-delivery customer confirmation mechanism.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Inefficient routing for bikers
+                          Inefficient routing for bikers.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
                           Skipping orders is not available in onfleet to come
-                          back later when customers ask to wait
+                          back later when customers ask to wait.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -636,7 +637,7 @@ const CapsuleArticle = () => {
                       <ListItem>
                         <Text textStyle="caption">
                           No data flow between customer app and delivery
-                          systems. For example if a user reschedule and the
+                          systems. For example if a user reschedules and the
                           order is out for delivery, a dispatcher has to remove
                           the task manually from courier tasks.
                         </Text>
@@ -730,19 +731,19 @@ const CapsuleArticle = () => {
                         <Text textStyle="caption">
                           Cannot customize delivery features for
                           medication-specific needs such as urgent or come back
-                          later
+                          later.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Reliant on Onfleet's routing system
+                          Reliant on Onfleet's routing system.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
                           Unable to build competitive advantage through delivery
                           to improve user experience both - customers and
-                          couriers
+                          couriers.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -810,18 +811,18 @@ const CapsuleArticle = () => {
                     <UnorderedList spacing={3}>
                       <ListItem>
                         <Text textStyle="caption">
-                          5–10 minutes wasted per failed delivery attempt
+                          5–10 minutes wasted per failed delivery attempt.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Another 10–15 minutes for return to hub
+                          Another 10–15 minutes for return to hub.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
                           ~25 minutes of courier capacity wasted per failed
-                          delivery
+                          delivery.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -854,18 +855,18 @@ const CapsuleArticle = () => {
                     <UnorderedList spacing={3}>
                       <ListItem>
                         <Text textStyle="caption">
-                          Return trip to hub for failed deliveries
+                          Return trip to hub for failed deliveries.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Rescheduling administrative costs
+                          Rescheduling administrative costs.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
                           Customer satisfaction impact and potential lost
-                          business
+                          business.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -922,12 +923,12 @@ const CapsuleArticle = () => {
                       <ListItem>
                         <Text textStyle="caption">
                           Send confirmation the night before, the same day and
-                          when the order is out for delivery
+                          when the order is out for delivery.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Allow user to confirm or reschedule delivery
+                          Allow user to confirm or reschedule delivery.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -962,18 +963,18 @@ const CapsuleArticle = () => {
                       <ListItem>
                         <Text textStyle="caption">
                           Allow for route replanning if customer won't be
-                          available
+                          available.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
                           Skip unavailable customers and continue with the next
-                          orders
+                          orders.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Reduce wasted courier time
+                          Reduce wasted courier time.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -1006,17 +1007,17 @@ const CapsuleArticle = () => {
                     <UnorderedList spacing={3}>
                       <ListItem>
                         <Text textStyle="caption">
-                          Provides reminder of upcoming delivery
+                          Provides reminder of upcoming delivery.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Gives customers to confirm or reschedule
+                          Gives customers to confirm or reschedule.
                         </Text>
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Creates accountability for being available
+                          Creates accountability for being available.
                         </Text>
                       </ListItem>
                     </UnorderedList>
@@ -1034,6 +1035,7 @@ const CapsuleArticle = () => {
                               >
                                 Push notifications
                               </Text>
+                              
 
               <Image
                 src={pushNotifications}
@@ -1072,6 +1074,25 @@ const CapsuleArticle = () => {
               <Image
                 src={userFlowReSchedule}
                 alt="Push Notifications Capsule"
+                w="100%"
+                maxW={{ base: "100%", md: "800px" }}
+                h="auto"
+              />
+
+              <Text
+                                textStyle="pbold"
+                                textTransform="uppercase"
+                                color="gray.600"
+                                mt={8}
+                                textAlign="center"
+                                as="h3"
+                              >
+                                Doorman Delivery Selected
+                              </Text>
+                              
+              <Image
+                src={doormanImage}
+                alt="Doorman user flow"
                 w="100%"
                 maxW={{ base: "100%", md: "800px" }}
                 h="auto"
@@ -1134,15 +1155,15 @@ const CapsuleArticle = () => {
                   <UnorderedList spacing={3}>
                     <ListItem>
                       <Text textStyle="caption">
-                        Potential 50-70% reduction in failed deliveries
+                        Potential 50-70% reduction in failed deliveries.
                       </Text>
                     </ListItem>
                     <ListItem>
-                      <Text textStyle="caption">Reduce in waste time</Text>
+                      <Text textStyle="caption">Reduce wasted time.</Text>
                     </ListItem>
                     <ListItem>
                       <Text textStyle="caption">
-                        Lower rescheduling administrative costs
+                        Lower rescheduling administrative costs.
                       </Text>
                     </ListItem>
                   </UnorderedList>
@@ -1173,16 +1194,16 @@ const CapsuleArticle = () => {
                     <ListItem>
                       <Text textStyle="caption">
                         12 minutes saved per prevented failed delivery per shift
-                        per courier
+                        per courier.
                       </Text>
                     </ListItem>
                     <ListItem>
                       <Text textStyle="caption">
-                        More deliveries per courier per shift
+                        More deliveries per courier per shift.
                       </Text>
                     </ListItem>
                     <ListItem>
-                      <Text textStyle="caption">Better route optimization</Text>
+                      <Text textStyle="caption">Better route optimization.</Text>
                     </ListItem>
                   </UnorderedList>
                 </VStack>
@@ -1211,17 +1232,17 @@ const CapsuleArticle = () => {
                   <UnorderedList spacing={3}>
                     <ListItem>
                       <Text textStyle="caption">
-                        More reliable delivery experience than competitors
+                        More reliable delivery experience than competitors.
                       </Text>
                     </ListItem>
                     <ListItem>
                       <Text textStyle="caption">
-                        First step toward fully owning the delivery experience
+                        First step toward fully owning the delivery experience.
                       </Text>
                     </ListItem>
                     <ListItem>
                       <Text textStyle="caption">
-                        Enhanced customer satisfaction and loyalty
+                        Enhanced customer satisfaction and loyalty.
                       </Text>
                     </ListItem>
                   </UnorderedList>
