@@ -1087,8 +1087,18 @@ const CapsuleArticle = () => {
                                 textAlign="center"
                                 as="h3"
                               >
-                                Doorman Delivery Selected
+                                Doorman Delivery Selected  <Text
+                                textStyle="p"
+                              textTransform="lowercase"
+                                color="gray.600"
+                          
+                                textAlign="center"
+                                as="span"
+                              >
+                                (Reminder only the same day)
                               </Text>
+                              </Text>
+                              
                               
               <Image
                 src={doormanImage}
