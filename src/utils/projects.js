@@ -56,7 +56,7 @@ const projects = [
           require("../assets/archives/AAAlogo.png"),
           require("../assets/archives/dxcenterlogo_color.png"),
         ],
-        keywords:['User Research', 'Heuristic Evaluation', "Information Architecture", "Competitive Analysis", "user Testing"],
+        keywords:['User Research', 'Heuristic Evaluation', "Information Architecture", "Competitive Analysis"],
         path: "/projects/aaa",
         type:'Usability testing / Visual design '
     
