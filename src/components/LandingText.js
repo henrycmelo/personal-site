@@ -12,10 +12,10 @@ const LandingText = () => {
             <Text fontSize="md" color="gray.600">Hi, I'm Henry 👋</Text>
             <Heading as="h1" textStyle='h1' size="3xl" lineHeight="1.1">
                 Designing Digital Solutions for
-                <Text as="span" color="semantic.accent"> Logistics, Transport & Civic Tech</Text>
+                <Text as="span" color="semantic.accent"> Healthcare, Fintech & Social Impact</Text>
             </Heading>
             <Text fontSize="lg" color="gray.600">
-                I help organizations move faster, smarter, and more efficiently.
+            I help organizations deliver better patient outcomes, streamline financial workflows, and create accessible digital experiences.
             </Text>
             
             <HStack spacing={4}>

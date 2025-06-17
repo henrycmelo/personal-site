@@ -3,16 +3,16 @@
 
 const projects = [
   {
-    title: "Improving Capsule's Delivery Efficiency: A UX Critique of Third-Party Dependencies",
+    title: "Improving Capsule's Delivery Efficiency",
     description:
       "Conducted field research to identify inefficiencies for the delivery service and the UX opportunities to reduce failed deliveries by 50-70% through simple delivery confirmation interventions.",
     getImageSrc: () => require("../assets/capsule/capsuleui.png"),
     getLogosSrc: () => [
       require("../assets/capsule/capsulelogo.png"),
     ],
-    keywords:['Field Research', 'Delivery Systems', "UX Strategy", "Process Optimization", "User Experience"],
+    keywords:['Field Research', 'Healthcare Delivery', "UX Strategy", "Process Optimization", "User Experience"],
     path: "/projects/capsule",
-    type:'Field Study / Operational Analysis'
+    type:'Field Research / Healthcare UX'
 
   
     
@@ -26,46 +26,46 @@ const projects = [
       require("../assets/ciana_research/cecLogo.png"),
       require("../assets/ciana_research/cianaLogo.png"),
     ],
-    keywords:['Research Planning', 'User Interviews', "Synthesis Methods", "Data Analysis"],
+    keywords:['Research Planning', 'User Interviews', "Data Visualization", "Accessibility Design"],
     path: "/projects/cianaresearch",
-    type:'UX Research / Design Strategy'
+    type:'UX Research / Social Impact'
 
   
     
   },
   {
-    title: "From Manual Operations to $258K Revenue: Logistics Optimization",
+    title: "From Manual Operations To $258K Revenue: Payment & Booking",
     description:
-      "Founded and led UX/UI design for 40minutes, a fitness marketplace app that transformed a tedious 30-minute+ booking process into an instant digital experience. This innovation facilitated over 37,440 training sessions and generated $258K in annual revenue.",
+      "Founded and led UX/UI design for 40minutes, a fitness marketplace app that transformed a tedious 30-minute+ booking and payment process into an instant digital experience.",
     getImageSrc: () => require("../assets/40minutes/uicard.png"),
     getLogosSrc: () => [
       require("../assets/40minutes/Asset 3LOGO (1).png")
     ],
-    keywords: ['UX/UI Design', 'User Research', 'Process Optimization', 'Booking Systems', 'Mobile App'],
+    keywords: ['Payment Systems', 'Financial UX', 'Process Optimization', 'Booking Systems', 'Mobile Transactions'],
     path: "/projects/fortyminutes",
-    type: 'Product Design / Fitness App'
+    type: 'Product Design / Fintech'
 },
 
     {
       title: "Optimizing Donation Experience through research & usability testing",
       description:
-        "Redesigned the donation journey for the Smithsonian Archives of American Art, enhancing information architecture and user flows. Led end-to-end design process that improved donor engagement for America's largest visual arts archive.",
+        "Redesigned the donation journey for the Smithsonian Archives of American Art, enhancing information architecture and user flows. ",
         getImageSrc: () => require("../assets/archives/uicardaaa.png"),
         getLogosSrc: () => [
           require("../assets/archives/AAAlogo2.png"),
           require("../assets/archives/AAAlogo.png"),
           require("../assets/archives/dxcenterlogo_color.png"),
         ],
-        keywords:['User Research', 'Heuristic Evaluation', "Information Architecture", "Competitive Analysis"],
+        keywords:['User Research', 'Financial Workflows', "Information Architecture", "Donation Systems"],
         path: "/projects/aaa",
-        type:'Usability testing / Visual design '
+        type:'Usability testing / Donation Experience '
     
       
     },
   {
     title: "Elevating Restaurant Online Order Experience with mobile App",
     description:
-      "Led the end-to-end redesign of a steakhouse's digital ordering experience, transforming traditional dining into an intuitive mobile platform that eliminates third-party dependencies while maintaining the premium brand experience.",
+      "Led the end-to-end redesign of a steakhouse's digital ordering experience, transforming traditional dining into an intuitive mobile platform that eliminates third-party dependencies.",
       getImageSrc: () => require("../assets/steakhouse/uicardstakhouse.png"),
       getLogosSrc: () => [
         require("../assets/steakhouse/metropolitan-grill-high-resolution-logo-grayscale-transparent.png"),
