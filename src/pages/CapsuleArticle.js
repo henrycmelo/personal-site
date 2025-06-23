@@ -38,9 +38,9 @@ import {
 import ResponsiveMenu from "../components/ResponsiveMenu";
 import Footer from "../components/Footer";
 import CaseStudyLayout from "../style/CaseStudyLayout";
-import onfleetImage from "../assets/capsule/onfleet.png";
+/* import onfleetImage from "../assets/capsule/onfleet.png";
 import paycomImage from "../assets/capsule/paycom.png";
-import capsuleImage from "../assets/capsule/capsule.png";
+import capsuleImage from "../assets/capsule/capsule.png"; */
 import userFlowOnfleet from "../assets/capsule/userflow_onfleet.png";
 import introPicture from "../assets/capsule/intropictures.png";
 import capsuleUserFlow from "../assets/capsule/capsuleuserflow.png";
@@ -203,8 +203,8 @@ const CapsuleArticle = () => {
               </Text>
               <Text textStyle="p">
                 This case study examines the operational gaps created by
-                Capsule's dependence on external delivery platforms,
-                particularly Onfleet, and proposes a critical UX intervention
+                Capsule's dependence on external logistics + delivery software/app,
+                and proposes a critical UX intervention
                 that could significantly improve delivery success rates.
               </Text>
               <Box
@@ -263,11 +263,11 @@ const CapsuleArticle = () => {
                   >
                     <VStack>
                       <Box color="semantic.accent">
-                        <Image
+                        {/* <Image
                           src={capsuleImage}
                           alt="Capsule Logo"
                           maxW="100px"
-                        />
+                        /> */}
                       </Box>
                       <Text
                         textStyle={"captionbold"}
@@ -311,18 +311,18 @@ const CapsuleArticle = () => {
                   >
                     <VStack>
                       <Box color="semantic.accent">
-                        <Image
+                      {/* <Image
                           src={onfleetImage}
                           alt="Onfleet Logo"
                           maxW="100px"
-                        />
+                        /> */}
                       </Box>
                       <Text
                         textStyle={"captionbold"}
                         color="semantic.text.primary"
                         textTransform="uppercase"
                       >
-                        Delivery Management
+                        Logistics + delivery software
                       </Text>
                     </VStack>
                     <Divider variant="dividerSection" />
@@ -359,18 +359,18 @@ const CapsuleArticle = () => {
                   >
                     <VStack>
                       <Box color="semantic.accent">
-                        <Image
+                        {/* <Image
                           src={paycomImage}
                           alt="Paycom Logo"
                           maxW="100px"
-                        />
+                        /> */}
                       </Box>
                       <Text
                         textStyle={"captionbold"}
                         color="semantic.text.primary"
                         textTransform="uppercase"
                       >
-                        Courier Management
+                        Payroll/scheduling platform
                       </Text>
                     </VStack>
                     <Divider variant="dividerSection" />
@@ -466,7 +466,7 @@ const CapsuleArticle = () => {
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Timely dispatch via Onfleet.
+                          Timely dispatch via Logistics + delivery software/app.
                         </Text>
                       </ListItem>
                       <ListItem>
@@ -526,7 +526,7 @@ const CapsuleArticle = () => {
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Skipping orders is not available in onfleet to come
+                          Skipping orders is not available in logistics + delivery software/app to come
                           back later when customers ask to wait.
                         </Text>
                       </ListItem>
@@ -736,7 +736,7 @@ const CapsuleArticle = () => {
                       </ListItem>
                       <ListItem>
                         <Text textStyle="caption">
-                          Reliant on Onfleet's routing system.
+                          Reliant on logistics + delivery software/app's routing system.
                         </Text>
                       </ListItem>
                       <ListItem>
@@ -1268,7 +1268,7 @@ const CapsuleArticle = () => {
               </Text>
               
               <Text textStyle="p" my={4}>
-                While third-party solutions like Onfleet provide immediate
+                While third-party solutions like logistics + delivery software/app provide immediate
                 functionality, Capsule's long-term competitive advantage will
                 come from treating delivery not as an outsourced function, but
                 as an integral part of the end-to-end pharmacy experience they
