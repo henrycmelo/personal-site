@@ -3,9 +3,15 @@ import { dividerTheme } from "./divider";
 import { inputTheme } from "./input";
 import { textareaTheme } from "./textarea";
 
-const theme = extendTheme({
+const config = {
+  initialColorMode: "light",   // always start in light mode
+  useSystemColorMode: false,   // ignore system setting
+};
 
-  styles:{
+const theme = extendTheme({
+  config,
+  
+  styles: {
     global: {
       body: {
         bg: "semantic.background.primary",
@@ -14,13 +20,11 @@ const theme = extendTheme({
       },
     },
   },
- 
-    
+
   components: {
-    // You can define specific component styles here if needed.
     Divider: dividerTheme,
     Input: inputTheme,
-    Textarea: textareaTheme
+    Textarea: textareaTheme,
   },
   fonts: {
     heading: "Aeonik",
@@ -52,12 +56,11 @@ const theme = extendTheme({
       lineHeight: { base: "24px", sm: "28px", md: "32px" },
       fontWeight: "400",
     },
-    pbold:{
+    pbold: {
       fontSize: { base: "16px", sm: "18px", md: "20px" },
       lineHeight: { base: "24px", sm: "28px", md: "32px" },
       fontWeight: "600",
     },
-
     button: {
       fontSize: { base: "16px", md: "18px" },
       lineHeight: { base: "20px", md: "24px" },
@@ -67,21 +70,19 @@ const theme = extendTheme({
       fontSize: { base: "12px", md: "14px" },
       lineHeight: { base: "16px", md: "20px" },
       fontWeight: "400",
-   
+    },
+    captionbold: {
+      fontSize: { base: "12px", md: "14px" },
+      lineHeight: { base: "16px", md: "20px" },
+      fontWeight: "600",
+    },
+    muted: {
+      fontSize: { base: "12px", md: "14px" },
+      lineHeight: { base: "20px", md: "24px" },
+      fontWeight: "100",
+    },
   },
-  captionbold: {
-    fontSize: { base: "12px", md: "14px" },
-    lineHeight: { base: "16px", md: "20px" },
-    fontWeight: "600",
-  },
-  muted: {
-    fontSize: { base: "12px", md: "14px" },
-    lineHeight: { base: "20px", md: "24px" },
-    fontWeight: "100",
 
-  },
-  
-},
   colors: {
     gray: {
       50: "#F8F9FA",
@@ -100,25 +101,24 @@ const theme = extendTheme({
         secondary: "#E9ECEF",
         tertiary: "#DEE2E6",
         button: "#212529",
-        
       },
       text: {
         primary: "#212529",
         secondary: "#495057",
         muted: "#6C757D",
         button: "#495057",
-        hover:"#CED4DA"
+        hover: "#CED4DA",
       },
       border: "#CED4DA",
       divider: "#495057",
-      accent:"#107c7c", //teal
-      lightAccent: "#e6f2f2", // Light teal background
-      mediumAccent:"#b3dddd", // for some borders
+      accent: "#107c7c",       // teal
+      lightAccent: "#e6f2f2",  // light teal background
+      mediumAccent: "#b3dddd", // for some borders
       status: {
         success: "#228B67",   // Green
         warning: "#E0A800",   // Yellow
         error: "#B23A48",     // Red
-      }
+      },
     },
   },
 });

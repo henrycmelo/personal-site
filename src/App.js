@@ -15,7 +15,7 @@ import { AuthProvider } from "./context/AuthContext.js";
 import { LoginPage } from "./components/LoginPage.js";
 import { ProtectedRoute } from "./components/ProtectedRoute.js";
 import LeaveReviewPage from "./pages/LeaveReviewPage.js";
-import { AdminDashboard } from "./components/AdminDashboard.js";
+import { AdminDashboard } from "./components/admin/AdminDashboard.js";
 import FortyMinutesPage from "./pages/FortyMinutesPage.js";
 import CapsuleArticle from "./pages/CapsuleArticle.js";
 function App() {
